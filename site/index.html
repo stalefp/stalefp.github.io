@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Stale: Chrome fingerprint drift leaderboard</title>
+<!-- COPY: Nya (meta description) -->
+<meta name="description" content="Ground truth for browser fingerprints. See exactly what real Chrome sends, and how far behind the popular impersonation libraries are.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%232f5bd3%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <!-- COPY: Nya (name + tagline, from copy/EXPLAINER.md "Header") -->
+    <h1 class="brand">Stale</h1>
+    <p class="tagline">Ground truth for browser fingerprints. See exactly what real Chrome sends, and how far behind the popular impersonation libraries are.</p>
+    <!-- COPY: Nya (sub-line) -->
+    <p class="subline">Built from real Chrome captures and compared field by field.</p>
+    <nav class="nav" aria-label="Sections">
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#why">Why it matters</a><a href="#early-access">Early access</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- COPY: Nya ("What is this?" intro) -->
+  <section class="intro" aria-label="What is this?">
+    <p>Every time a browser opens a secure connection, it introduces itself with a handshake message called a ClientHello. The message lists which encryption options and extensions the browser supports, in a specific order. Real Chrome sends a very specific ClientHello, and that pattern changes as Chrome updates.</p>
+    <p>Tools that pretend to be Chrome (for testing, automation, or scraping) have to copy that pattern exactly. When Chrome changes and the tool doesn't, the tool stands out. Stale captures what real Chrome sends, compares it against the popular impersonation libraries, and shows which ones match and which have fallen behind.</p>
+  </section>
+
+  <div id="load-error" class="notice error" hidden></div>
+
+  <!-- 1. Current real Chrome fingerprint -->
+  <section id="chrome" class="card" aria-labelledby="chrome-h">
+    <!-- COPY: Nya ("What real Chrome sends right now" card title) -->
+    <h2 id="chrome-h">Current Chrome fingerprint</h2>
+    <p id="assumed-flag" class="notice" hidden>Prototype data: Chrome reference built from our one-off Chrome for Testing capture (assumed schema), not the live capture pipeline yet.</p>
+    <p id="stale-flag" class="notice" hidden></p>
+    <dl class="fp">
+      <!-- COPY: Nya (card labels; {chrome_version} {ja4} {h2_fingerprint} {captured_at} bound from data/latest.json) -->
+      <div><dt>Chrome version checked</dt><dd><span data-bind="chrome_version">…</span> <span class="muted" data-bind="chrome_build"></span></dd></div>
+      <div><dt>Last checked</dt><dd><time data-bind="captured_at">…</time></dd></div>
+      <div class="wide"><dt>TLS fingerprint (JA4), fresh connection
+          <!-- COPY: Nya (JA4 tooltip) -->
+          <button class="tip" type="button" aria-label="What is JA4?" data-tip="JA4 is a short code that summarizes a TLS handshake: the protocol version, how many ciphers and extensions it offers, and a hash of which ones. Two clients with the same JA4 look the same to a server at the TLS layer.">?</button></dt>
+        <dd class="code-row"><code data-bind="ja4">…</code><button class="copy" type="button" data-copy="ja4">Copy</button></dd></div>
+      <div class="wide"><dt>JA4, resumed connection</dt>
+        <dd class="code-row"><code data-bind="ja4_resumed">…</code><button class="copy" type="button" data-copy="ja4_resumed">Copy</button></dd></div>
+      <div class="wide"><dt>HTTP/2 fingerprint
+          <!-- COPY: Nya (HTTP/2 tooltip) -->
+          <button class="tip" type="button" aria-label="What is the HTTP/2 fingerprint?" data-tip="After the handshake, browsers also send HTTP/2 settings in a particular order with particular values. This string captures those settings. A client can match Chrome's TLS and still give itself away here.">?</button></dt>
+        <dd class="code-row"><code data-bind="h2_fingerprint">…</code><button class="copy" type="button" data-copy="h2_fingerprint">Copy</button></dd></div>
+      <!-- COPY: Nya (pass 3: Chrome card labels + tooltips; {ja4_no_ca34} {ja4_pq} {pq_pct} {ja4_quic} {h3_settings} bound from data/latest.json) -->
+      <div class="wide"><dt><span>Without <code>ca34</code> (less common)</span></dt>
+        <dd class="code-row"><code data-bind="ja4_no_ca34">…</code><button class="copy" type="button" data-copy="ja4_no_ca34">Copy</button></dd></div>
+      <div class="wide"><dt><span>Post-quantum experiment (about <span data-bind="pq_pct">…</span> of <span data-bind="pq_platform">…</span> users)</span>
+          <button class="tip" type="button" aria-label="What is the post-quantum experiment?" data-tip="Some Chrome users are in a Google post-quantum experiment (PqcBandwidthExperiment). Their handshake includes one extra extension, so their JA4 is different.">?</button></dt>
+        <dd class="code-row"><code data-bind="ja4_pq">…</code><button class="copy" type="button" data-copy="ja4_pq">Copy</button></dd></div>
+      <div class="wide"><dt>HTTP/3 (QUIC) fingerprint
+          <button class="tip" type="button" aria-label="What is the HTTP/3 fingerprint?" data-tip="When Chrome connects over HTTP/3, the handshake happens inside QUIC instead of a normal TCP connection, so it gets its own JA4. QUIC JA4s start with q instead of t.">?</button></dt>
+        <dd class="code-row"><code data-bind="ja4_quic">…</code><button class="copy" type="button" data-copy="ja4_quic">Copy</button>
+          <span class="sub">HTTP/3 SETTINGS: <code data-bind="h3_settings">…</code></span></dd></div>
+    </dl>
+    <details class="more">
+      <summary>Key details: signature algorithms, key shares, extensions</summary>
+      <dl class="fp small" id="chrome-details"></dl>
+    </details>
+    <!-- COPY: Nya (pass 3: caveat under the Chrome card, replaces the ca34 caveat; {pq_pct} bound from data/latest.json) -->
+    <p class="caveat">Chrome doesn't send just one fingerprint. Most people send the main one, which includes the trust-anchors extension (<code>ca34</code>). That extension can be switched off, which gives a second, less common fingerprint. And about <span data-bind="pq_pct2">…</span> of Chrome users on <span data-bind="pq_platform2">…</span> are in a Google post-quantum experiment, which adds one more extension (<code>0x12e0</code>) and gives a third. We show all three and say which one each library matches.</p>
+  </section>
+
+  <!-- 1b. Chrome per platform (Linux / Windows / macOS), data/platforms.json from capture/merge_platforms.py -->
+  <section id="platforms" class="card" aria-labelledby="platforms-h">
+    <h2 id="platforms-h">Chrome on Linux, Windows and macOS</h2>
+    <p class="muted small">The same capture runs on each operating system with official stable Google Chrome: fresh profile, no flags, against our local capture server. The leaderboard below is scored against the Linux capture.</p>
+    <div id="platform-grid" class="plat-grid"><p class="muted">Loading…</p></div>
+    <p class="muted small" id="platform-meta"></p>
+  </section>
+
+  <!-- 2. Leaderboard -->
+  <section id="leaderboard" aria-labelledby="lb-h">
+    <!-- COPY: Nya (leaderboard title + intro line) -->
+    <h2 id="lb-h">How far behind is each library?</h2>
+    <p>We run each library's newest Chrome profile, compare what it sends against our capture of real Chrome, and check the results field by field.</p>
+    <div class="controls">
+      <label><input type="checkbox" id="show-older"> Also show older profiles we tested</label>
+      <label class="sort-mobile">Sort by
+        <select id="sort-select">
+          <option value="verdict">Verdict</option><option value="library">Library</option><option value="behind">Versions behind</option><option value="pq">Post-quantum experiment</option><option value="h3">HTTP/3</option><option value="tested">Date tested</option>
+        </select>
+      </label>
+    </div>
+    <div class="table-wrap">
+      <table id="lb" class="lb">
+        <thead><tr>
+          <!-- COPY: Nya (column headers + tooltips) -->
+          <th data-sort="library" aria-sort="none"><button type="button">Library</button> <span class="tip" tabindex="0" data-tip="The impersonation library and the language it's written in.">?</span></th>
+          <th data-sort="profile" aria-sort="none"><button type="button">Newest Chrome profile</button> <span class="tip" tabindex="0" data-tip="The most recent Chrome version this library claims to imitate.">?</span></th>
+          <!-- COPY: Nya (pass 3: versions-behind tooltip) -->
+          <th data-sort="behind" aria-sort="none"><button type="button">Versions behind</button> <span class="tip" tabindex="0" data-tip="How many Chrome stable releases have shipped since this profile's version, counted from the newest release that has fully rolled out on each platform.">?</span></th>
+          <th data-sort="tls" aria-sort="none"><button type="button">TLS match</button> <span class="tip" tabindex="0" data-tip="Whether the library's JA4 matches real Chrome's exactly.">?</span></th>
+          <!-- COPY: Nya (pass 3: new column tooltip) -->
+          <th data-sort="pq" aria-sort="none"><button type="button">Post-quantum experiment</button> <span class="tip" tabindex="0" data-tip="Whether the library matches the fingerprint Chrome sends for users in Google's post-quantum experiment.">?</span></th>
+          <th data-sort="h2" aria-sort="none"><button type="button">HTTP/2 match</button> <span class="tip" tabindex="0" data-tip="Whether the library's HTTP/2 settings match real Chrome's exactly.">?</span></th>
+          <!-- COPY: Nya (pass 3: HTTP/3 tooltip) -->
+          <th data-sort="h3" aria-sort="none"><button type="button">HTTP/3</button> <span class="tip" tabindex="0" data-tip="Whether the library can speak HTTP/3 (QUIC), and if it can, whether its QUIC handshake matches Chrome's. Chrome uses HTTP/3 on many major sites, so a client that only uses TCP can stand out even when its TLS matches.">?</span></th>
+          <th data-sort="verdict" aria-sort="none"><button type="button">Verdict</button> <span class="tip tip-left" tabindex="0" data-tip="Exact, Exact (less common variant), Close, or Behind. See the legend below.">?</span></th>
+          <th>Missing vs. Chrome</th>
+          <th data-sort="tested" aria-sort="none"><button type="button">Tested</button></th>
+        </tr></thead>
+        <tbody><tr><td colspan="10" class="muted">Loading…</td></tr></tbody>
+      </table>
+    </div>
+    <p class="muted small" id="lb-meta"></p>
+    <p class="muted small vb-note" id="vb-note"></p>
+
+    <!-- COPY: Nya (verdict legend, pass 3: Exact / Exact, less common variant / Close / Behind) -->
+    <div class="legend" aria-label="Verdict legend">
+      <p><span class="badge v-exact">Exact</span> Matches Chrome's main fingerprint on every counted TLS and HTTP/2 field. The main fingerprint is the one branded Chrome sends by default, which includes <code>ca34</code>.</p>
+      <p><span class="badge v-variant">Exact, less common variant</span> Matches every counted field, but only for one of Chrome's smaller groups (Chrome with <code>ca34</code> turned off, or Chrome in the post-quantum experiment). Real Chrome users in the post-quantum experiment send that fingerprint (about <span data-bind="pq_pct3">…</span> on <span data-bind="pq_platform3">…</span>); we have no figure for how many send Chrome's fingerprint without <code>ca34</code>.</p>
+      <p><span class="badge v-close">Close</span> One counted field is different. For example, the library doesn't offer the ML-DSA (post-quantum) signature algorithms that Chrome now offers.</p>
+      <p><span class="badge v-behind">Behind</span> Two or more counted fields are different, so a site checking the handshake has more than one way to tell the library apart from Chrome.</p>
+      <p class="muted small">Counted fields, compared against Chrome's main fingerprint: cipher suites, extension set (including <code>ca34</code>), signature algorithms, supported groups, key shares, ALPS codepoint, certificate compression, HTTP/2 fingerprint. Header order, resumption and HTTP/3 are shown but never counted.</p>
+    </div>
+  </section>
+
+  <!-- 3. What changed -->
+  <section id="changes" class="card" aria-labelledby="changes-h">
+    <!-- COPY: Nya ("What changed" heading; empty state lives in js/app.js) -->
+    <h2 id="changes-h">What changed since the last capture</h2>
+    <div id="changes-body"><p class="muted">Loading…</p></div>
+  </section>
+
+  <!-- COPY: Nya ("Why this matters", two audiences) -->
+  <section id="why" aria-labelledby="why-h">
+    <h2 id="why-h">Why this matters</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>If you build clients or automation</h3>
+        <p>Sites increasingly check the handshake before they look at anything else. If your library is a few Chrome versions behind, your traffic can be flagged before a single page loads. Check here before you pick a library or blame your proxies.</p>
+      </div>
+      <div class="card">
+        <h3>If you defend a site</h3>
+        <p>Knowing exactly what current Chrome sends, and which popular libraries can and can't copy it, tells you which fingerprints are real users and which are tools pretending. Stale gives you that reference, built from real captures and compared field by field.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Early access -->
+  <section id="early-access" class="card" aria-labelledby="ea-h">
+    <!-- COPY: Nya (early access heading + blurb) -->
+    <h2 id="ea-h">Want this as a data feed?</h2>
+    <p>We're building a machine-readable version of this page: the current Chrome fingerprint, all three Chrome variants, and every library's match results, for teams who want to check against it automatically instead of reading a web page.</p>
+    <form id="early-access-form" class="signup" action="https://formsubmit.co/emailforcatgirls@proton.me" method="POST">
+      <label for="ea-email">Email</label>
+      <input id="ea-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      <input type="hidden" name="_subject" value="Stale data feed signup">
+      <input type="hidden" name="_template" value="table">
+      <div class="signup-honey" aria-hidden="true">
+        <label for="ea-honey">Leave this field blank</label>
+        <input id="ea-honey" name="_honey" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit">Join the waitlist</button>
+    </form>
+    <p id="signup-status" class="muted small" role="status" aria-live="polite"></p>
+    <p class="muted small signup-note">We'll only use your email to tell you when the data feed opens. No spam, no sharing.</p>
+  </section>
+</main>
+
+<!-- 5. Footer: methodology + ca34 caveat -->
+<footer class="site-footer">
+  <div class="wrap">
+    <h2>Methodology</h2>
+    <ul class="method" id="method-list">
+      <li>Chrome reference: <span data-bind="chrome_build_long">…</span>, captured with fresh browser profiles against a local capture server that records the raw ClientHello, HTTP/2 frames and the QUIC/HTTP/3 handshake (JA4 per the FoxIO spec, cross-checked against tshark). The three Chrome variants are separate real captures: default, <code>--disable-features=TLSTrustAnchorIDs</code>, and the forced post-quantum experiment group.</li>
+      <li>Libraries: each profile makes real requests to a TLS echo endpoint (<span data-bind="endpoints">…</span>). We normalize the ClientHello and HTTP/2 frames and diff them field by field against the reference. GREASE values and extension order are ignored, as in JA4.</li>
+      <li>Resumption: tested only where noted, by opening a new connection on the same client and checking for <code>pre_shared_key</code>.</li>
+      <li>HTTP/3: every library profile with an HTTP/3 client makes a real HTTP/3 request to the same local QUIC endpoint that captured Chrome's QUIC fingerprint (<span data-bind="h3_endpoint">…</span>). We record its QUIC JA4, transport parameters and HTTP/3 SETTINGS and diff them against Chrome. Libraries without an HTTP/3 client are marked "no HTTP/3 support". <!-- COPY: Nya (caveat) -->Chrome was forced onto HTTP/3 against our own local test server, not a live public site, so a real site's setup could change some details of Chrome's HTTP/3 fingerprint.</li>
+      <li>Every value comes from a real capture. Anything we didn't measure is shown as "not tested", never guessed. Leaderboard data generated <time data-bind="generated_at">…</time>.</li>
+    </ul>
+    <h3>Chrome sends more than one real fingerprint</h3>
+    <p id="ca34-caveat" class="caveat">…</p>
+    <!-- COPY: Nya (footer) -->
+    <p>Stale is a free, public reference. Right now the Chrome reference comes from a capture of branded Google Chrome <span data-bind="chrome_version_footer">…</span> on Linux. A scheduled job re-captures Chrome on Linux, Windows and macOS every day and refreshes this page. Found a mismatch or want a library added? <!-- TODO: link to GitHub issues once the repo exists --><span class="muted">A public place to report it is coming soon.</span></p>
+  </div>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

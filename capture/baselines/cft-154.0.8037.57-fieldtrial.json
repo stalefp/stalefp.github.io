@@ -1,0 +1,5 @@
+{"label": "Chrome for Testing 154.0.8037.57 WITH fieldtrial_testing_config (adds 0x12e0; answer key, /workspace/chrome154-capture/ANSWER_KEY.md)",
+ "version": "154.0.8037.57",
+ "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
+ "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+ "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"}

@@ -1,0 +1,196 @@
+name: Chrome capture
+
+# Daily: capture branded Google Chrome stable on Linux, Windows and macOS, rerun the library comparison,
+# rebuild the site data, commit it to main and redeploy GitHub Pages.
+on:
+  schedule:
+    - cron: "37 9 * * *"   # 09:37 UTC daily (off-peak minute)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: chrome-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    name: capture (${{ matrix.id }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest,  id: linux }
+          - { os: windows-latest, id: windows }
+          - { os: macos-latest,   id: macos }
+    env:
+      CHROME_CHANNEL: stable   # we install the stable channel below (Windows/macOS builds don't record it themselves)
+      CAPTURE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install official Google Chrome stable (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/chrome.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq "$RUNNER_TEMP/chrome.deb" xvfb
+          echo "CHROME_BIN=/opt/google/chrome/chrome" >> "$GITHUB_ENV"
+          /opt/google/chrome/chrome --version
+
+      - name: Install official Google Chrome stable (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/googlechrome.dmg" https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg
+          hdiutil attach -nobrowse -quiet -mountpoint /Volumes/googlechrome "$RUNNER_TEMP/googlechrome.dmg"
+          sudo rm -rf "/Applications/Google Chrome.app"
+          sudo ditto "/Volumes/googlechrome/Google Chrome.app" "/Applications/Google Chrome.app"
+          hdiutil detach -quiet /Volumes/googlechrome
+          codesign --verify --deep --strict "/Applications/Google Chrome.app"
+          codesign -dv --verbose=2 "/Applications/Google Chrome.app" 2>&1 | grep -E "^(Authority|TeamIdentifier)"
+          "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version
+
+      - name: Install official Google Chrome stable (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $msi = Join-Path $env:RUNNER_TEMP "chrome.msi"
+          Invoke-WebRequest -Uri "https://dl.google.com/dl/chrome/install/googlechromestandaloneenterprise64.msi" -OutFile $msi
+          $sig = Get-AuthenticodeSignature $msi
+          Write-Host "MSI signature: $($sig.Status) $($sig.SignerCertificate.Subject)"
+          if ($sig.Status -ne "Valid" -or $sig.SignerCertificate.Subject -notmatch "Google LLC") { throw "unexpected MSI signature" }
+          $p = Start-Process msiexec.exe -ArgumentList "/i `"$msi`" /qn /norestart /l*v `"$env:RUNNER_TEMP\chrome-msi.log`"" -Wait -PassThru
+          Write-Host "msiexec exit code $($p.ExitCode)"
+          if ($p.ExitCode -ne 0 -and $p.ExitCode -ne 3010) { Get-Content "$env:RUNNER_TEMP\chrome-msi.log" -Tail 40; Write-Warning "MSI install returned $($p.ExitCode)" }
+          $exe = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+          if (-not (Test-Path $exe)) { throw "chrome.exe not found" }
+          $v = (Get-Item $exe).VersionInfo
+          Write-Host "$($v.ProductName) $($v.ProductVersion)"
+          "CHROME_BIN=$exe" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
+      - name: Capture deps
+        run: python -m pip install -q -r capture/requirements.txt
+
+      - name: Capture (fresh throwaway self-signed cert, local TLS/QUIC capture server)
+        shell: bash
+        run: |
+          rm -rf capture/certs   # never reuse a cert; lib/capture.py generates a new one for capture.test
+          python -W ignore capture/lib/capture.py --out "out/capture-${{ matrix.id }}"
+          python - "out/capture-${{ matrix.id }}/latest.json" <<'PY'
+          import json, sys
+          d = json.load(open(sys.argv[1]))
+          ref = next((c for c in d["configs"] if c["name"] == d.get("reference_config")), {})
+          print(d["browser"], d["version"], d["channel"], "|", d["os"], "| platform", d["platform"])
+          for c in d["configs"]:
+              print("%-42s ja4=%s resumed=%s quic=%s h2=%s" % (c["name"], c["ja4"], c["ja4_resumed"], (c["quic"] or {}).get("ja4"), c["h2_akamai"]))
+          if not ref.get("ja4") or d["browser"] != "Google Chrome":
+              sys.exit("no usable default fingerprint")
+          PY
+
+      - name: Upload capture JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: capture-${{ matrix.id }}
+          path: |
+            out/capture-${{ matrix.id }}/latest.json
+            out/capture-${{ matrix.id }}/chrome-*.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload raw events (debugging)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-${{ matrix.id }}
+          path: out/capture-${{ matrix.id }}/raw/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  publish:
+    name: merge, leaderboard, commit
+    needs: capture
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+    env:
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: leaderboard/harness/gobench/go.mod
+          cache-dependency-path: leaderboard/harness/*/go.sum
+      - name: Python deps (capture server + pinned library versions)
+        run: python -m pip install -q -r capture/requirements.txt -r leaderboard/requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: capture-*
+          path: artifacts
+      - name: Merge per-OS captures
+        run: |
+          ls -R artifacts || true
+          python capture/merge_platforms.py --artifacts artifacts --attempt-url "$RUN_URL"
+      - name: Library comparison (build harness binaries from source, rerun, rebuild)
+        env:
+          HARNESS_PYTHON: python
+          CAPTURE_PYTHON: python
+          BUILD_PYTHON: python
+        run: |
+          cp leaderboard/data/libraries.json "$RUNNER_TEMP/libraries.prev.json"
+          leaderboard/run.sh || echo "::warning::leaderboard run failed"
+          python - "$RUNNER_TEMP/libraries.prev.json" leaderboard/data/libraries.json <<'PY'
+          import json, shutil, sys
+          prev, new = sys.argv[1], sys.argv[2]
+          tested = lambda p: {l["id"] for l in json.load(open(p))["libraries"] if l.get("verdict") != "not tested"}
+          try:
+              a, b = tested(prev), tested(new)
+          except Exception as e:
+              print("::warning::could not read new libraries.json (%s); keeping the previous one" % e); shutil.copy(prev, new); sys.exit()
+          lost = sorted(a - b)
+          if lost:
+              print("::warning::harness lost coverage for %s; keeping the previous libraries.json" % lost); shutil.copy(prev, new)
+          else:
+              print("leaderboard rebuilt: %d tested profiles" % len(b))
+          PY
+          # merge_platforms also feeds build.py's caveat; rebuild the summary after the leaderboard so both are current
+          python capture/merge_platforms.py
+      - name: Sync site data
+        run: site/sync.sh
+      - name: Commit data to main
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add capture/data leaderboard/data site/data
+          if git diff --cached --quiet; then echo "no data changes"; echo "committed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -q -m "data: Chrome capture $(date -u +%Y-%m-%d) (run ${{ github.run_id }})"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+          git log --oneline -1
+
+  deploy:
+    name: deploy Pages
+    needs: publish
+    if: ${{ needs.publish.result == 'success' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml

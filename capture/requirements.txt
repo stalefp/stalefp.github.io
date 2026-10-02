@@ -1,0 +1,7 @@
+# Capture server + driver deps (lib/capture.py, lib/server.py). tzdata: zoneinfo on Windows. cryptography: runtime cert.
+aioquic==1.3.0
+hpack==4.2.0
+websockets==17.1
+zstandard==0.25.0
+cryptography
+tzdata

@@ -1,0 +1,6 @@
+{
+ "note": "Past branded-Chrome captures (same layout as capture/data/latest.json, SCHEMA.md). The page diffs latest.json against the newest entry captured before it. Added 2026-10-01 by the leaderboard rewire, copied from latest.json before the 154.0.8037.97 recapture.",
+ "captures": [
+  {"file": "chrome-154.0.8037.57-2026-09-27.json", "chrome_version": "154.0.8037.57", "captured_at": "2026-09-27T01:59:50-05:00"}
+ ]
+}

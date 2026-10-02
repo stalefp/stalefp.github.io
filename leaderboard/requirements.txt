@@ -1,0 +1,6 @@
+# Library versions the leaderboard harness tests (pinned so unattended daily runs are reproducible; bump deliberately).
+curl_cffi==0.16.3
+primp==2.0.1
+rnet==3.0.0rc22
+noble-tls==0.1.9
+tls-client==1.0.1

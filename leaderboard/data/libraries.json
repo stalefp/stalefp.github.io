@@ -1,0 +1,6747 @@
+{
+ "schema_version": "leaderboard-0.2",
+ "generated_at": "2026-10-02T04:15:42Z",
+ "reference": {
+  "source": "capture/data/latest.json",
+  "schema": "capture/SCHEMA.md v1",
+  "assumed_schema": false,
+  "chrome_version": "154.0.8037.97",
+  "chrome_major": 154,
+  "browser": "Google Chrome",
+  "branded": true,
+  "channel": "stable",
+  "os": "Linux x86_64 (Debian GNU/Linux 13 (trixie), kernel 6.12.94+)",
+  "captured_at": "2026-10-01T22:20:28-05:00",
+  "reference_config": "default-headed",
+  "is_current_linux_stable": true,
+  "variations_source": "default seed",
+  "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
+  "variants": [
+   {
+    "id": "default",
+    "label": "Default (with ca34)",
+    "config": "default-headed",
+    "is_default": true,
+    "flags": [],
+    "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+    "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+    "has_trust_anchors": true,
+    "sends_12e0": false,
+    "http3_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "http3_ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
+    "h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    },
+    "population": {
+     "share": null,
+     "platform": null,
+     "study": null,
+     "groups": null,
+     "source": null,
+     "note": "Branded Chrome's built-in default (fresh profile, no flags). latest.json gives no share for it."
+    },
+    "population_pct": null
+   },
+   {
+    "id": "no_ca34",
+    "label": "Without ca34",
+    "config": "disable-TLSTrustAnchorIDs-headed",
+    "is_default": false,
+    "flags": [
+     "--disable-features=TLSTrustAnchorIDs"
+    ],
+    "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
+    "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+    "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+    "has_trust_anchors": false,
+    "sends_12e0": false,
+    "http3_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "http3_ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
+    "h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    },
+    "population": {
+     "share": null,
+     "platform": null,
+     "study": null,
+     "groups": null,
+     "source": null,
+     "note": "No study in the captured variations seed toggles TLSTrustAnchorIDs, so latest.json has no population figure; branded Chrome drops ca34 only with --disable-features=TLSTrustAnchorIDs (or a future Finch study)."
+    },
+    "population_pct": null
+   },
+   {
+    "id": "pq",
+    "label": "Post-quantum experiment (0x12e0)",
+    "config": "finch-AddTLSServerHandshakePadding-headed",
+    "is_default": false,
+    "flags": [
+     "--enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
+    ],
+    "ja4_fresh": "t13d1518h2_8daaf6152771_4980c97edce0",
+    "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+    "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+    "has_trust_anchors": true,
+    "sends_12e0": true,
+    "http3_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
+    "http3_ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
+    "h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    },
+    "population": {
+     "share": 0.06,
+     "platform": [
+      "linux"
+     ],
+     "channel": [
+      "stable"
+     ],
+     "study": "PqcBandwidthExperiment",
+     "groups": [
+      "Enabled_06000_20260922_gws_sortednames",
+      "Enabled_09000_20260922_gws_sortednames",
+      "Enabled_12000_20260922_gws_sortednames",
+      "Enabled_14000_20260922_gws_sortednames",
+      "Enabled_16000_20260922_gws_sortednames",
+      "Enabled_00000_20260922_gws_sortednames"
+     ],
+     "source": "latest.json finch_network_studies",
+     "note": "Sum of share_of_population over the study groups that enable AddTLSServerHandshakePadding."
+    },
+    "population_pct": "6%"
+   }
+  ],
+  "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+  "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+  "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+  "http3": {
+   "ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+   "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
+   "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
+   "h3_settings": {
+    "1": 65536,
+    "6": 262144,
+    "7": 100,
+    "51": 1
+   },
+   "h3_grease_settings": 1,
+   "transport_params": [
+    {
+     "id": "0x5",
+     "name": "initial_max_stream_data_bidi_local",
+     "len": 4,
+     "value": 6291456
+    },
+    {
+     "id": "0x11",
+     "name": "version_information",
+     "len": 12,
+     "hex": "00000001000000019a7a0aba"
+    },
+    {
+     "id": "0x8",
+     "name": "initial_max_streams_bidi",
+     "len": 2,
+     "value": 100
+    },
+    {
+     "id": "0x335cea92b778247b",
+     "name": "grease",
+     "len": 2,
+     "hex": "ce9b"
+    },
+    {
+     "id": "0x9",
+     "name": "initial_max_streams_uni",
+     "len": 2,
+     "value": 103
+    },
+    {
+     "id": "0xf",
+     "name": "initial_source_connection_id",
+     "len": 0,
+     "hex": ""
+    },
+    {
+     "id": "0x7",
+     "name": "initial_max_stream_data_uni",
+     "len": 4,
+     "value": 6291456
+    },
+    {
+     "id": "0x4",
+     "name": "initial_max_data",
+     "len": 4,
+     "value": 15728640
+    },
+    {
+     "id": "0x20",
+     "name": "max_datagram_frame_size",
+     "len": 4,
+     "value": 65536
+    },
+    {
+     "id": "0x3",
+     "name": "max_udp_payload_size",
+     "len": 2,
+     "value": 1472
+    },
+    {
+     "id": "0x6",
+     "name": "initial_max_stream_data_bidi_remote",
+     "len": 4,
+     "value": 6291456
+    },
+    {
+     "id": "0x1",
+     "name": "max_idle_timeout",
+     "len": 4,
+     "value": 30000
+    },
+    {
+     "id": "0x3128",
+     "name": "google_connection_options",
+     "len": 4,
+     "hex": "4f524947",
+     "ascii": "ORIG"
+    }
+   ],
+   "header_order": [
+    ":method",
+    ":authority",
+    ":scheme",
+    ":path",
+    "sec-ch-ua",
+    "sec-ch-ua-mobile",
+    "sec-ch-ua-platform",
+    "upgrade-insecure-requests",
+    "user-agent",
+    "accept",
+    "sec-fetch-site",
+    "sec-fetch-mode",
+    "sec-fetch-user",
+    "sec-fetch-dest",
+    "accept-encoding",
+    "accept-language",
+    "priority"
+   ],
+   "alpn": [
+    "h3"
+   ],
+   "alps": [
+    "h3"
+   ],
+   "has_trust_anchors": true,
+   "groups": [
+    "11ec",
+    "001d",
+    "0017",
+    "0018"
+   ],
+   "key_shares": [
+    "11ec",
+    "001d"
+   ],
+   "sig_algs": [
+    "0403",
+    "0804",
+    "0401",
+    "0503",
+    "0805",
+    "0501",
+    "0806",
+    "0601",
+    "0201"
+   ]
+  },
+  "current_stable": {
+   "linux": {
+    "highest_full_rollout": "154.0.8037.97",
+    "full_major": 154,
+    "newest": "154.0.8037.97",
+    "newest_major": 154,
+    "partial_newer_majors": [],
+    "error": null
+   },
+   "win": {
+    "highest_full_rollout": "154.0.8037.98",
+    "full_major": 154,
+    "newest": "155.0.8059.26",
+    "newest_major": 155,
+    "partial_newer_majors": [
+     {
+      "version": "155.0.8059.26",
+      "fraction": 0.005,
+      "fraction_group": "152",
+      "rollout_tags": [
+       "rollout"
+      ],
+      "serving_since": "2026-09-30T13:35:44-05:00"
+     }
+    ],
+    "error": null
+   },
+   "mac": {
+    "highest_full_rollout": "154.0.8037.98",
+    "full_major": 154,
+    "newest": "155.0.8059.26",
+    "newest_major": 155,
+    "partial_newer_majors": [
+     {
+      "version": "155.0.8059.26",
+      "fraction": 0.005,
+      "fraction_group": "195",
+      "rollout_tags": [
+       "rollout"
+      ],
+      "serving_since": "2026-09-30T13:35:36-05:00"
+     }
+    ],
+    "error": null
+   }
+  }
+ },
+ "verdict_rules": {
+  "reference": "Chrome's default fingerprint (branded Chrome, fresh profile, no flags; includes ca34)",
+  "counted_fields": [
+   "ciphers",
+   "extensions",
+   "signature_algorithms",
+   "supported_groups",
+   "key_shares",
+   "alps",
+   "cert_compression",
+   "http2_akamai"
+  ],
+  "exact": "0 counted fields differ from Chrome's default fingerprint",
+  "exact_variant": "0 counted fields differ from one of Chrome's less common variants (without ca34, or the post-quantum experiment), but not the default",
+  "close": "exactly 1 counted field differs from the default fingerprint",
+  "behind": "2 or more counted fields differ from the default fingerprint",
+  "informational": [
+   "header_order",
+   "resumption",
+   "http3"
+  ],
+  "versions_behind": "Chrome major of the newest fully rolled-out stable (per platform, latest.json current_stable.highest_full_rollout) minus the major in the profile name"
+ },
+ "caveats": [
+  "Chrome sends more than one real fingerprint. The default (branded Chrome 154.0.8037.97, fresh profile, no flags) includes the trust-anchors extension ca34; --disable-features=TLSTrustAnchorIDs removes it; and 6% of linux stable clients are in Google's PqcBandwidthExperiment, which adds extension 0x12e0. Every library is compared against all three; the verdict uses the default.",
+  "Reference: branded Google Chrome 154.0.8037.97 (stable), captured Oct 1, 2026 on Linux x86_64 against a local capture server (capture/lib/server.py).",
+  "No population figure exists in the capture for Chrome without ca34 (no Finch study in the seed toggles it), so none is shown.",
+  "HTTP/3: 8 library profiles were tested over QUIC against the same local aioquic endpoint that captured Chrome's QUIC fingerprint; libraries without an HTTP/3 client are marked 'no HTTP/3 support'.",
+  "Resumption was only tested for bogdanfinn tls-client (Chrome_152 and Chrome_152_PSK).",
+  "Header order is informational: the harness sets Chrome headers for the Go libraries, while Python cases use each library's defaults.",
+  "Only Linux Chrome was captured; Windows/macOS Chrome may differ and are often mid-rollout at another version."
+ ],
+ "harness": {
+  "runs_used": [
+   "20261002T040403Z"
+  ],
+  "endpoints": [
+   "https://tls.peet.ws/api/all"
+  ],
+  "http3_endpoints": [
+   "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost"
+  ]
+ },
+ "libraries": [
+  {
+   "id": "tls-client|chrome_152",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "profile": "Chrome_152",
+   "note": null,
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/tls-client(go)_Chrome_152.json",
+    "tested_at": "2026-10-02T04:04:15Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "case": "tls-client:Chrome_152",
+     "ok": true,
+     "proto": "HTTP/3.0",
+     "status": 200
+    },
+    "status": "tested",
+    "ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "ja4_r": "q13d0312h3_1301,1302,1303_0005,000a,000b,000d,0012,0017,002b,0033,0039,ff01_0804,0403,0807,0805,0806,0401,0501,0601,0503,0603,0201,0203",
+    "h3_settings": {
+     "51": 1
+    },
+    "h3_grease_settings": 0,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "accept-encoding",
+     "user-agent"
+    ],
+    "transport_params": [
+     "grease",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_stream_data_bidi_remote",
+     "initial_max_stream_data_uni",
+     "initial_max_data",
+     "initial_max_streams_bidi",
+     "initial_max_streams_uni",
+     "max_idle_timeout",
+     "max_udp_payload_size",
+     "max_ack_delay",
+     "active_connection_id_limit",
+     "initial_source_connection_id",
+     "max_datagram_frame_size"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "summary": "mismatch",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "0005 status_request",
+       "000a supported_groups",
+       "000b ec_point_formats",
+       "000d signature_algorithms",
+       "0012 signed_certificate_timestamp",
+       "0017 extended_master_secret",
+       "002b supported_versions",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "ff01 renegotiation_info"
+      ],
+      "missing": [
+       "001b",
+       "002d",
+       "44cd",
+       "ca34",
+       "fe0d"
+      ],
+      "extra": [
+       "0005",
+       "000b",
+       "0012",
+       "0017",
+       "ff01"
+      ]
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0804 rsa_pss_rsae_sha256",
+       "0403 ecdsa_secp256r1_sha256",
+       "0807 ed25519",
+       "0805 rsa_pss_rsae_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0401 rsa_pkcs1_sha256",
+       "0501 rsa_pkcs1_sha384",
+       "0601 rsa_pkcs1_sha512",
+       "0503 ecdsa_secp384r1_sha384",
+       "0603 ecdsa_secp521r1_sha512",
+       "0201 rsa_pkcs1_sha1",
+       "0203 ecdsa_sha1"
+      ],
+      "missing": [],
+      "extra": [
+       "0807",
+       "0603",
+       "0203"
+      ]
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384",
+       "0019 P-521"
+      ],
+      "missing": [],
+      "extra": [
+       "0019"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [],
+      "missing": [
+       "h3"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "active_connection_id_limit",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_ack_delay",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "missing": [
+       "google_connection_options"
+      ],
+      "extra": [
+       "active_connection_id_limit",
+       "max_ack_delay"
+      ]
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "active_connection_id_limit": 4,
+       "initial_max_data": 786432,
+       "initial_max_stream_data_bidi_local": 524288,
+       "initial_max_stream_data_bidi_remote": 524288,
+       "initial_max_stream_data_uni": 524288,
+       "initial_max_streams_bidi": 0,
+       "initial_max_streams_uni": 100,
+       "max_ack_delay": 26,
+       "max_datagram_frame_size": 16383,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1452
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": {
+       "51": 1
+      }
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": 0
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "v1.16.0",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/go/out/tls-client(go)_Chrome_152.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/tls-client(go)_Chrome_152.json",
+    "resumed": [
+     "leaderboard/raw/20261002T040403Z/resume/tls-client(go)_Chrome_152_req2.json",
+     "leaderboard/raw/20261002T040403Z/resume/tls-client(go)_Chrome_152_req3.json"
+    ]
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+    "ja4_r_fresh": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+    "sends_ca34": true,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": true,
+    "resumed": false,
+    "ja4": null,
+    "ja4s": [
+     "t13d1517h2_8daaf6152771_cb7bf5808d99",
+     "t13d1517h2_8daaf6152771_cb7bf5808d99"
+    ],
+    "attempts": 2,
+    "note": "new connection per request on the same client"
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": true,
+      "ja4_resumed": null,
+      "fields_exact": true,
+      "counted_mismatches": [],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "mismatch"
+   },
+   "matched_variant": "default",
+   "verdict": "exact",
+   "verdict_reason": "Every counted TLS and HTTP/2 field matches Chrome's default fingerprint (with ca34).",
+   "counted_mismatches": [],
+   "missing": [
+    {
+     "id": "resumption",
+     "label": "TLS session resumption (never sent pre_shared_key)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [],
+   "profile_chrome_major": 152,
+   "versions_behind_by_platform": {
+    "linux": 2,
+    "win": 2,
+    "mac": 2
+   },
+   "versions_behind": 2,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "tls-client|chrome_152_psk",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "profile": "Chrome_152_PSK",
+   "note": null,
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "tested_at": "2026-10-02T04:04:16Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "case": "tls-client:Chrome_152_PSK",
+     "ok": true,
+     "proto": "HTTP/3.0",
+     "status": 200
+    },
+    "status": "tested",
+    "ja4": "q13d0314h3_55b375c5d22e_74e6e096c8e5",
+    "ja4_r": "q13d0314h3_1301,1302,1303_0005,000a,000b,000d,0012,0017,0023,002b,002d,0033,0039,ff01_0804,0403,0807,0805,0806,0401,0501,0601,0503,0603,0201,0203",
+    "h3_settings": {
+     "51": 1
+    },
+    "h3_grease_settings": 0,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "accept-encoding",
+     "user-agent"
+    ],
+    "transport_params": [
+     "grease",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_stream_data_bidi_remote",
+     "initial_max_stream_data_uni",
+     "initial_max_data",
+     "initial_max_streams_bidi",
+     "initial_max_streams_uni",
+     "max_idle_timeout",
+     "max_udp_payload_size",
+     "max_ack_delay",
+     "active_connection_id_limit",
+     "initial_source_connection_id",
+     "max_datagram_frame_size"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "summary": "mismatch",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "0005 status_request",
+       "000a supported_groups",
+       "000b ec_point_formats",
+       "000d signature_algorithms",
+       "0012 signed_certificate_timestamp",
+       "0017 extended_master_secret",
+       "0023 session_ticket",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "ff01 renegotiation_info"
+      ],
+      "missing": [
+       "001b",
+       "44cd",
+       "ca34",
+       "fe0d"
+      ],
+      "extra": [
+       "0005",
+       "000b",
+       "0012",
+       "0017",
+       "0023",
+       "ff01"
+      ]
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0804 rsa_pss_rsae_sha256",
+       "0403 ecdsa_secp256r1_sha256",
+       "0807 ed25519",
+       "0805 rsa_pss_rsae_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0401 rsa_pkcs1_sha256",
+       "0501 rsa_pkcs1_sha384",
+       "0601 rsa_pkcs1_sha512",
+       "0503 ecdsa_secp384r1_sha384",
+       "0603 ecdsa_secp521r1_sha512",
+       "0201 rsa_pkcs1_sha1",
+       "0203 ecdsa_sha1"
+      ],
+      "missing": [],
+      "extra": [
+       "0807",
+       "0603",
+       "0203"
+      ]
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384",
+       "0019 P-521"
+      ],
+      "missing": [],
+      "extra": [
+       "0019"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [],
+      "missing": [
+       "h3"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "active_connection_id_limit",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_ack_delay",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "missing": [
+       "google_connection_options"
+      ],
+      "extra": [
+       "active_connection_id_limit",
+       "max_ack_delay"
+      ]
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "active_connection_id_limit": 4,
+       "initial_max_data": 786432,
+       "initial_max_stream_data_bidi_local": 524288,
+       "initial_max_stream_data_bidi_remote": 524288,
+       "initial_max_stream_data_uni": 524288,
+       "initial_max_streams_bidi": 0,
+       "initial_max_streams_uni": 100,
+       "max_ack_delay": 26,
+       "max_datagram_frame_size": 16383,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1452
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": {
+       "51": 1
+      }
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": 0
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "v1.16.0",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "resumed": [
+     "leaderboard/raw/20261002T040403Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
+     "leaderboard/raw/20261002T040403Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
+    ]
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+    "ja4_r_fresh": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0314h3_55b375c5d22e_74e6e096c8e5",
+    "user_agent": "Go-http-client/2.0",
+    "sends_ca34": true,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": true,
+    "resumed": true,
+    "ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "ja4s": [
+     "t13d1518h2_8daaf6152771_e2d80978ab2e",
+     "t13d1518h2_8daaf6152771_e2d80978ab2e"
+    ],
+    "attempts": 2,
+    "note": "new connection per request on the same client"
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": true,
+      "ja4_resumed": true,
+      "fields_exact": true,
+      "counted_mismatches": [],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": false,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": false,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "mismatch"
+   },
+   "matched_variant": "default",
+   "verdict": "exact",
+   "verdict_reason": "Every counted TLS and HTTP/2 field matches Chrome's default fingerprint (with ca34).",
+   "counted_mismatches": [],
+   "missing": [],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "user-agent",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "accept-encoding",
+      "user-agent"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [],
+   "profile_chrome_major": 152,
+   "versions_behind_by_platform": {
+    "linux": 2,
+    "win": 2,
+    "mac": 2
+   },
+   "versions_behind": 2,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "tls-client|chrome_150",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "profile": "Chrome_150",
+   "note": null,
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/tls-client(go)_Chrome_150.json",
+    "tested_at": "2026-10-02T04:04:18Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "case": "tls-client:Chrome_150",
+     "ok": true,
+     "proto": "HTTP/3.0",
+     "status": 200
+    },
+    "status": "tested",
+    "ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "ja4_r": "q13d0312h3_1301,1302,1303_0005,000a,000b,000d,0012,0017,002b,0033,0039,ff01_0804,0403,0807,0805,0806,0401,0501,0601,0503,0603,0201,0203",
+    "h3_settings": {
+     "51": 1
+    },
+    "h3_grease_settings": 0,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "accept-encoding",
+     "user-agent"
+    ],
+    "transport_params": [
+     "grease",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_stream_data_bidi_remote",
+     "initial_max_stream_data_uni",
+     "initial_max_data",
+     "initial_max_streams_bidi",
+     "initial_max_streams_uni",
+     "max_idle_timeout",
+     "max_udp_payload_size",
+     "max_ack_delay",
+     "active_connection_id_limit",
+     "initial_source_connection_id",
+     "max_datagram_frame_size"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "summary": "mismatch",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "0005 status_request",
+       "000a supported_groups",
+       "000b ec_point_formats",
+       "000d signature_algorithms",
+       "0012 signed_certificate_timestamp",
+       "0017 extended_master_secret",
+       "002b supported_versions",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "ff01 renegotiation_info"
+      ],
+      "missing": [
+       "001b",
+       "002d",
+       "44cd",
+       "ca34",
+       "fe0d"
+      ],
+      "extra": [
+       "0005",
+       "000b",
+       "0012",
+       "0017",
+       "ff01"
+      ]
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0804 rsa_pss_rsae_sha256",
+       "0403 ecdsa_secp256r1_sha256",
+       "0807 ed25519",
+       "0805 rsa_pss_rsae_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0401 rsa_pkcs1_sha256",
+       "0501 rsa_pkcs1_sha384",
+       "0601 rsa_pkcs1_sha512",
+       "0503 ecdsa_secp384r1_sha384",
+       "0603 ecdsa_secp521r1_sha512",
+       "0201 rsa_pkcs1_sha1",
+       "0203 ecdsa_sha1"
+      ],
+      "missing": [],
+      "extra": [
+       "0807",
+       "0603",
+       "0203"
+      ]
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384",
+       "0019 P-521"
+      ],
+      "missing": [],
+      "extra": [
+       "0019"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [],
+      "missing": [
+       "h3"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "active_connection_id_limit",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_ack_delay",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "missing": [
+       "google_connection_options"
+      ],
+      "extra": [
+       "active_connection_id_limit",
+       "max_ack_delay"
+      ]
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "active_connection_id_limit": 4,
+       "initial_max_data": 786432,
+       "initial_max_stream_data_bidi_local": 524288,
+       "initial_max_stream_data_bidi_remote": 524288,
+       "initial_max_stream_data_uni": 524288,
+       "initial_max_streams_bidi": 0,
+       "initial_max_streams_uni": 100,
+       "max_ack_delay": 26,
+       "max_datagram_frame_size": 16383,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1452
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": {
+       "51": 1
+      }
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": 0
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "v1.16.0",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/go/out/tls-client(go)_Chrome_150.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/tls-client(go)_Chrome_150.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": true,
+      "ja4_resumed": null,
+      "fields_exact": true,
+      "counted_mismatches": [],
+      "quic_ja4": false
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "mismatch"
+   },
+   "matched_variant": "no_ca34",
+   "verdict": "exact_variant",
+   "verdict_reason": "Every counted field matches the less common Chrome variant 'no_ca34'; vs the default fingerprint: extensions.",
+   "counted_mismatches": [
+    "extensions"
+   ],
+   "missing": [
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 150,
+   "versions_behind_by_platform": {
+    "linux": 4,
+    "win": 4,
+    "mac": 4
+   },
+   "versions_behind": 4,
+   "versions_behind_uniform": true,
+   "is_newest_profile": false
+  },
+  {
+   "id": "curl_cffi|chrome150",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "profile": "chrome150",
+   "note": "binds curl-impersonate (C/BoringSSL)",
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/curl_cffi_chrome150.json",
+    "tested_at": "2026-10-02T04:04:21Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "ok": true,
+     "proto": "30",
+     "status": 200,
+     "case": "curl_cffi:chrome150"
+    },
+    "status": "tested",
+    "ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
+    "h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    },
+    "h3_grease_settings": 1,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "transport_params": [
+     "initial_max_stream_data_uni",
+     "initial_max_data",
+     "max_idle_timeout",
+     "grease",
+     "google_connection_options",
+     "max_udp_payload_size",
+     "initial_source_connection_id",
+     "version_information",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_streams_uni",
+     "max_datagram_frame_size",
+     "initial_max_stream_data_bidi_remote",
+     "initial_max_streams_bidi"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": true,
+     "pq": false
+    },
+    "h3_settings_match": true,
+    "summary": "variant_match",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "fe0d encrypted_client_hello"
+      ],
+      "missing": [
+       "ca34"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ]
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [
+       "h3"
+      ]
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ]
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      }
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": 1
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "0.16.3",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/curl_cffi_chrome150.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/curl_cffi_chrome150.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": true,
+      "ja4_resumed": null,
+      "fields_exact": true,
+      "counted_mismatches": [],
+      "quic_ja4": true
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "variant_match"
+   },
+   "matched_variant": "no_ca34",
+   "verdict": "exact_variant",
+   "verdict_reason": "Every counted field matches the less common Chrome variant 'no_ca34'; vs the default fingerprint: extensions.",
+   "counted_mismatches": [
+    "extensions"
+   ],
+   "missing": [
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 150,
+   "versions_behind_by_platform": {
+    "linux": 4,
+    "win": 4,
+    "mac": 4
+   },
+   "versions_behind": 4,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "noble-tls|chrome_146",
+   "library": "noble-tls",
+   "maintainer": "Nitrams",
+   "language": "Python",
+   "profile": "chrome_146",
+   "note": "wraps Go tls-client",
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/noble-tls_chrome_146.json",
+    "tested_at": "2026-10-02T04:04:26Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "ok": true,
+     "proto": null,
+     "status": 200,
+     "case": "noble-tls:chrome_146"
+    },
+    "status": "tested",
+    "ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "ja4_r": "q13d0312h3_1301,1302,1303_0005,000a,000b,000d,0012,0017,002b,0033,0039,ff01_0804,0403,0807,0805,0806,0401,0501,0601,0503,0603,0201,0203",
+    "h3_settings": {
+     "51": 1
+    },
+    "h3_grease_settings": 0,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "accept",
+     "accept-encoding",
+     "user-agent"
+    ],
+    "transport_params": [
+     "grease",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_stream_data_bidi_remote",
+     "initial_max_stream_data_uni",
+     "initial_max_data",
+     "initial_max_streams_bidi",
+     "initial_max_streams_uni",
+     "max_idle_timeout",
+     "max_udp_payload_size",
+     "max_ack_delay",
+     "active_connection_id_limit",
+     "initial_source_connection_id",
+     "max_datagram_frame_size"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "summary": "mismatch",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "0005 status_request",
+       "000a supported_groups",
+       "000b ec_point_formats",
+       "000d signature_algorithms",
+       "0012 signed_certificate_timestamp",
+       "0017 extended_master_secret",
+       "002b supported_versions",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "ff01 renegotiation_info"
+      ],
+      "missing": [
+       "001b",
+       "002d",
+       "44cd",
+       "ca34",
+       "fe0d"
+      ],
+      "extra": [
+       "0005",
+       "000b",
+       "0012",
+       "0017",
+       "ff01"
+      ]
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0804 rsa_pss_rsae_sha256",
+       "0403 ecdsa_secp256r1_sha256",
+       "0807 ed25519",
+       "0805 rsa_pss_rsae_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0401 rsa_pkcs1_sha256",
+       "0501 rsa_pkcs1_sha384",
+       "0601 rsa_pkcs1_sha512",
+       "0503 ecdsa_secp384r1_sha384",
+       "0603 ecdsa_secp521r1_sha512",
+       "0201 rsa_pkcs1_sha1",
+       "0203 ecdsa_sha1"
+      ],
+      "missing": [],
+      "extra": [
+       "0807",
+       "0603",
+       "0203"
+      ]
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384",
+       "0019 P-521"
+      ],
+      "missing": [],
+      "extra": [
+       "0019"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [],
+      "missing": [
+       "h3"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "active_connection_id_limit",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_ack_delay",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "missing": [
+       "google_connection_options"
+      ],
+      "extra": [
+       "active_connection_id_limit",
+       "max_ack_delay"
+      ]
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "active_connection_id_limit": 4,
+       "initial_max_data": 786432,
+       "initial_max_stream_data_bidi_local": 524288,
+       "initial_max_stream_data_bidi_remote": 524288,
+       "initial_max_stream_data_uni": 524288,
+       "initial_max_streams_bidi": 0,
+       "initial_max_streams_uni": 100,
+       "max_ack_delay": 26,
+       "max_datagram_frame_size": 16383,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1452
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": {
+       "51": 1
+      }
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": 0
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "0.1.9",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/noble-tls_chrome_146.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/noble-tls_chrome_146.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1517h2_8daaf6152771_dcad5a053991",
+    "ja4_r_fresh": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "user_agent": "noble-tls/0.1.9",
+    "sends_ca34": true,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "mismatch"
+   },
+   "matched_variant": null,
+   "verdict": "close",
+   "verdict_reason": "One counted field differs from Chrome's default fingerprint: signature_algorithms.",
+   "counted_mismatches": [
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "user-agent",
+      "accept",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "accept",
+      "accept-encoding",
+      "user-agent"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 146,
+   "versions_behind_by_platform": {
+    "linux": 8,
+    "win": 8,
+    "mac": 8
+   },
+   "versions_behind": 8,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "azuretls-client|chrome",
+   "library": "azuretls-client",
+   "maintainer": "Noooste",
+   "language": "Go",
+   "profile": "Chrome",
+   "note": null,
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/azuretls_Chrome.json",
+    "tested_at": "2026-10-02T04:04:20Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "case": "azuretls:Chrome",
+     "ok": true,
+     "proto": "HTTP/3.0",
+     "status": 200
+    },
+    "status": "tested",
+    "ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
+    "h3_settings": null,
+    "h3_grease_settings": null,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "user-agent",
+     "accept-encoding"
+    ],
+    "transport_params": [
+     "initial_max_data",
+     "grease",
+     "google_connection_options",
+     "max_idle_timeout",
+     "initial_source_connection_id",
+     "initial_max_streams_bidi",
+     "google_user_agent_id",
+     "max_datagram_frame_size",
+     "initial_max_streams_uni",
+     "version_information",
+     "initial_max_stream_data_bidi_remote",
+     "max_udp_payload_size",
+     "initial_max_stream_data_uni",
+     "initial_max_stream_data_bidi_local"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": true,
+     "pq": false
+    },
+    "h3_settings_match": null,
+    "summary": "settings_not_observed",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "fe0d encrypted_client_hello"
+      ],
+      "missing": [
+       "ca34"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ]
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [
+       "h3"
+      ]
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "google_connection_options",
+       "google_user_agent_id",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "missing": [],
+      "extra": [
+       "google_user_agent_id"
+      ]
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "google_connection_options": "B2ON",
+       "google_user_agent_id": "00000001",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "not_tested",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": null,
+      "note": "no SETTINGS frame observed from the client"
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "not_tested",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": null
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "v1.13.2",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/go/out/azuretls_Chrome.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/azuretls_Chrome.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": true
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "settings_not_observed"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind_by_platform": {
+    "linux": null,
+    "win": null,
+    "mac": null
+   },
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "curl_cffi|chrome136",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "profile": "chrome136",
+   "note": "binds curl-impersonate (C/BoringSSL)",
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/curl_cffi_chrome136.json",
+    "tested_at": "2026-10-02T04:04:24Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "ok": true,
+     "proto": "30",
+     "status": 200,
+     "case": "curl_cffi:chrome136"
+    },
+    "status": "tested",
+    "ja4": "q13d0313h3_55b375c5d22e_05ee7905d32b",
+    "ja4_r": "q13d0313h3_1301,1302,1303_0005,000a,000d,0012,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601",
+    "h3_settings": {
+     "6": 4611686018427387903,
+     "1": 0,
+     "7": 0
+    },
+    "h3_grease_settings": 0,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "transport_params": [
+     "initial_source_connection_id",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_stream_data_bidi_remote",
+     "initial_max_stream_data_uni",
+     "initial_max_data",
+     "initial_max_streams_bidi",
+     "initial_max_streams_uni",
+     "version_information"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "summary": "mismatch",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "0005 status_request",
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "0012 signed_certificate_timestamp",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "fe0d encrypted_client_hello"
+      ],
+      "missing": [
+       "ca34"
+      ],
+      "extra": [
+       "0005",
+       "0012"
+      ]
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512"
+      ],
+      "missing": [
+       "0201"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [
+       "h3"
+      ]
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni"
+      ],
+      "missing": [
+       "google_connection_options",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "initial_max_data": 1048576000,
+       "initial_max_stream_data_bidi_local": 32768,
+       "initial_max_stream_data_bidi_remote": 32768,
+       "initial_max_stream_data_uni": 1048576000,
+       "initial_max_streams_bidi": 262144,
+       "initial_max_streams_uni": 262144
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": {
+       "6": 4611686018427387903,
+       "1": 0,
+       "7": 0
+      }
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": 0
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "0.16.3",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/curl_cffi_chrome136.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/curl_cffi_chrome136.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0313h3_55b375c5d22e_05ee7905d32b",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "mismatch"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 136,
+   "versions_behind_by_platform": {
+    "linux": 18,
+    "win": 18,
+    "mac": 18
+   },
+   "versions_behind": 18,
+   "versions_behind_uniform": true,
+   "is_newest_profile": false
+  },
+  {
+   "id": "curl_cffi|chrome146",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "profile": "chrome146",
+   "note": "binds curl-impersonate (C/BoringSSL)",
+   "http3": {
+    "source": "leaderboard/raw/20261002T040403Z/h3/curl_cffi_chrome146.json",
+    "tested_at": "2026-10-02T04:04:23Z",
+    "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
+    "client": {
+     "ok": true,
+     "proto": "30",
+     "status": 200,
+     "case": "curl_cffi:chrome146"
+    },
+    "status": "tested",
+    "ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
+    "h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    },
+    "h3_grease_settings": 1,
+    "header_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path",
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "transport_params": [
+     "google_initial_rtt",
+     "max_datagram_frame_size",
+     "initial_max_streams_bidi",
+     "google_connection_options",
+     "initial_max_stream_data_uni",
+     "initial_max_streams_uni",
+     "grease",
+     "initial_max_data",
+     "max_udp_payload_size",
+     "version_information",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_stream_data_bidi_remote",
+     "max_idle_timeout",
+     "initial_source_connection_id"
+    ],
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": true,
+     "pq": false
+    },
+    "h3_settings_match": true,
+    "summary": "variant_match",
+    "diff": [
+     {
+      "field": "q_ciphers",
+      "label": "QUIC cipher suites",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "1301",
+       "1302",
+       "1303"
+      ],
+      "library": [
+       "1301",
+       "1302",
+       "1303"
+      ]
+     },
+     {
+      "field": "q_extensions",
+      "label": "QUIC extension set",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "ca34 trust_anchors (ca34)",
+       "fe0d encrypted_client_hello"
+      ],
+      "library": [
+       "000a supported_groups",
+       "000d signature_algorithms",
+       "001b compress_certificate",
+       "002b supported_versions",
+       "002d psk_key_exchange_modes",
+       "0033 key_share",
+       "0039 quic_transport_parameters",
+       "44cd application_settings (ALPS, 17613)",
+       "fe0d encrypted_client_hello"
+      ],
+      "missing": [
+       "ca34"
+      ],
+      "extra": []
+     },
+     {
+      "field": "q_sigalgs",
+      "label": "QUIC signature algorithms",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ],
+      "library": [
+       "0403 ecdsa_secp256r1_sha256",
+       "0804 rsa_pss_rsae_sha256",
+       "0401 rsa_pkcs1_sha256",
+       "0503 ecdsa_secp384r1_sha384",
+       "0805 rsa_pss_rsae_sha384",
+       "0501 rsa_pkcs1_sha384",
+       "0806 rsa_pss_rsae_sha512",
+       "0601 rsa_pkcs1_sha512",
+       "0201 rsa_pkcs1_sha1"
+      ]
+     },
+     {
+      "field": "q_groups",
+      "label": "QUIC supported groups",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519",
+       "0017 P-256",
+       "0018 P-384"
+      ]
+     },
+     {
+      "field": "q_key_shares",
+      "label": "QUIC key shares",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ],
+      "library": [
+       "11ec X25519MLKEM768",
+       "001d X25519"
+      ]
+     },
+     {
+      "field": "q_alps",
+      "label": "QUIC ALPS",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "h3"
+      ],
+      "library": [
+       "h3"
+      ]
+     },
+     {
+      "field": "q_tp_names",
+      "label": "QUIC transport parameters (set; GREASE, CIDs, version_information ignored)",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": [
+       "google_connection_options",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "library": [
+       "google_connection_options",
+       "google_initial_rtt",
+       "initial_max_data",
+       "initial_max_stream_data_bidi_local",
+       "initial_max_stream_data_bidi_remote",
+       "initial_max_stream_data_uni",
+       "initial_max_streams_bidi",
+       "initial_max_streams_uni",
+       "max_datagram_frame_size",
+       "max_idle_timeout",
+       "max_udp_payload_size"
+      ],
+      "missing": [],
+      "extra": [
+       "google_initial_rtt"
+      ]
+     },
+     {
+      "field": "q_tp_values",
+      "label": "QUIC transport parameter values",
+      "status": "mismatch",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "google_connection_options": "ORIG",
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      },
+      "library": {
+       "google_connection_options": "ORIG",
+       "google_initial_rtt": 325562,
+       "initial_max_data": 15728640,
+       "initial_max_stream_data_bidi_local": 6291456,
+       "initial_max_stream_data_bidi_remote": 6291456,
+       "initial_max_stream_data_uni": 6291456,
+       "initial_max_streams_bidi": 100,
+       "initial_max_streams_uni": 103,
+       "max_datagram_frame_size": 65536,
+       "max_idle_timeout": 30000,
+       "max_udp_payload_size": 1472
+      }
+     },
+     {
+      "field": "h3_settings",
+      "label": "HTTP/3 SETTINGS (GREASE removed)",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      },
+      "library": {
+       "1": 65536,
+       "6": 262144,
+       "7": 100,
+       "51": 1
+      }
+     },
+     {
+      "field": "h3_grease",
+      "label": "HTTP/3 GREASE SETTINGS count",
+      "status": "match",
+      "counts_toward_verdict": false,
+      "chrome": 1,
+      "library": 1
+     }
+    ],
+    "chrome_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+    "chrome_h3_settings": {
+     "1": 65536,
+     "6": 262144,
+     "7": 100,
+     "51": 1
+    }
+   },
+   "version": "0.16.3",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/curl_cffi_chrome146.json",
+    "http3": "leaderboard/raw/20261002T040403Z/h3/curl_cffi_chrome146.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": true
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": false
+     }
+    },
+    "http2": true,
+    "http3": "variant_match"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 146,
+   "versions_behind_by_platform": {
+    "linux": 8,
+    "win": 8,
+    "mac": 8
+   },
+   "versions_behind": 8,
+   "versions_behind_uniform": true,
+   "is_newest_profile": false
+  },
+  {
+   "id": "primp|chrome_146",
+   "library": "primp",
+   "maintainer": "deedy5",
+   "language": "Python",
+   "profile": "chrome_146",
+   "note": "Rust core",
+   "http3": {
+    "status": "no_support",
+    "reason": "primp 2.0.1 has no HTTP/3 option and its binary contains no HTTP/3 stack"
+   },
+   "version": "2.0.1",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/primp_chrome_146.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": true,
+    "http3": "no_support"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 146,
+   "versions_behind_by_platform": {
+    "linux": 8,
+    "win": 8,
+    "mac": 8
+   },
+   "versions_behind": 8,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "rnet|chrome137",
+   "library": "rnet",
+   "maintainer": "0x676e67",
+   "language": "Python",
+   "profile": "Chrome137",
+   "note": "Rust core (wreq)",
+   "http3": {
+    "status": "no_support",
+    "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
+   },
+   "version": "3.0.0rc22",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/rnet_Chrome137.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": true,
+    "http3": "no_support"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "user-agent",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "accept",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 137,
+   "versions_behind_by_platform": {
+    "linux": 17,
+    "win": 17,
+    "mac": 17
+   },
+   "versions_behind": 17,
+   "versions_behind_uniform": true,
+   "is_newest_profile": false
+  },
+  {
+   "id": "rnet|chrome145",
+   "library": "rnet",
+   "maintainer": "0x676e67",
+   "language": "Python",
+   "profile": "Chrome145",
+   "note": "Rust core (wreq)",
+   "http3": {
+    "status": "no_support",
+    "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
+   },
+   "version": "3.0.0rc22",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/rnet_Chrome145.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": true,
+    "http3": "no_support"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "user-agent",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "accept",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 145,
+   "versions_behind_by_platform": {
+    "linux": 9,
+    "win": 9,
+    "mac": 9
+   },
+   "versions_behind": 9,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "utls|hellochrome_auto",
+   "library": "uTLS",
+   "maintainer": "refraction-networking",
+   "language": "Go",
+   "profile": "HelloChrome_Auto",
+   "note": "HTTP/2 via golang.org/x/net/http2 (uTLS is TLS-only)",
+   "http3": {
+    "status": "no_support",
+    "reason": "uTLS is a TLS-only library (no QUIC/HTTP/3 client); the harness pairs it with golang.org/x/net/http2"
+   },
+   "version": "v1.8.2",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/go/out/utls_HelloChrome_Auto.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": false,
+    "http3": "no_support"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "3 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "http2_akamai"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    },
+    {
+     "id": "h2",
+     "label": "Chrome HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":authority",
+      ":method",
+      ":path",
+      ":scheme",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-dest",
+      "upgrade-insecure-requests",
+      "sec-fetch-user",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind_by_platform": {
+    "linux": null,
+    "win": null,
+    "mac": null
+   },
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  },
+  {
+   "id": "tls-client-(python)|chrome_120",
+   "library": "tls-client (Python)",
+   "maintainer": "FlorianREGAZ",
+   "language": "Python",
+   "profile": "chrome_120",
+   "note": "wraps Go tls-client",
+   "http3": {
+    "status": "no_support",
+    "reason": "tls-client (Python) 1.0.1 bundles Go tls-client v1.7.2, which has no HTTP/3 support"
+   },
+   "version": "1.0.1",
+   "tested_at": "2026-10-02T04:04:03Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261002T040403Z/py/tls-client(py)_chrome_120.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": null,
+    "user_agent": "tls-client/1.0.1",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": true,
+    "http3": "no_support"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "alps"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "alps",
+     "label": "New ALPS codepoint (sends application_settings (old ALPS, 17513))",
+     "kind": "different"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "4469"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "user-agent",
+      "accept",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "accept",
+      "accept-encoding",
+      "user-agent"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 120,
+   "versions_behind_by_platform": {
+    "linux": 34,
+    "win": 34,
+    "mac": 34
+   },
+   "versions_behind": 34,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true
+  }
+ ]
+}

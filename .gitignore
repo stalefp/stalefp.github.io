@@ -1,0 +1,20 @@
+# secrets / keys: never commit
+.env
+.env.*
+*.pem
+*.key
+capture/certs/
+# large or machine-local
+capture/pkg/
+capture/data/raw/
+leaderboard/bin/
+leaderboard/raw/
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+site/screenshots/
+out/
+artifacts/
+_site/
+*.log
