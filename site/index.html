@@ -20,7 +20,7 @@
     <!-- COPY: Nya (sub-line) -->
     <p class="subline">Built from real Chrome captures and compared field by field.</p>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#why">Why it matters</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#why">Why it matters</a><a href="#early-access">Pricing</a><a href="feed/">Feed docs</a>
     </nav>
   </div>
 </header>
@@ -150,24 +150,46 @@
     </div>
   </section>
 
-  <!-- 4. Early access -->
-  <section id="early-access" class="card" aria-labelledby="ea-h">
-    <!-- COPY: Nya (early access heading + blurb) -->
-    <h2 id="ea-h">Want this as a data feed?</h2>
-    <p>We're building a machine-readable version of this page: the current Chrome fingerprint, all three Chrome variants, and every library's match results, for teams who want to check against it automatically instead of reading a web page.</p>
-    <form id="early-access-form" class="signup" action="https://formsubmit.co/50d7e0d9af03690ae1fe0929c222e407" method="POST">
-      <label for="ea-email">Email</label>
-      <input id="ea-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
-      <input type="hidden" name="_subject" value="Stale data feed signup">
-      <input type="hidden" name="_template" value="table">
-      <div class="signup-honey" aria-hidden="true">
-        <label for="ea-honey">Leave this field blank</label>
-        <input id="ea-honey" name="_honey" type="text" tabindex="-1" autocomplete="off">
+  <!-- 4. Pricing + pilot request (form = the existing FormSubmit early-access form) -->
+  <section id="early-access" aria-labelledby="ea-h">
+    <h2 id="ea-h">Pricing</h2>
+    <p>This page stays free and updates the same day as each capture. For teams that want to check against it automatically, there's a paid feed.</p>
+    <div class="tiers">
+      <div class="card tier">
+        <h3>Free</h3>
+        <p class="price">$0</p>
+        <ul>
+          <li>This page and its public JSON (<a href="data/latest.json">latest.json</a>, <a href="data/libraries.json">libraries.json</a>, <a href="data/platforms.json">platforms.json</a>)</li>
+          <li>Updated the same day as each capture</li>
+          <li>No key, no sign-up</li>
+          <li>No guarantee the JSON format stays the same</li>
+        </ul>
       </div>
-      <button type="submit">Join the waitlist</button>
-    </form>
-    <p id="signup-status" class="muted small" role="status" aria-live="polite"></p>
-    <p class="muted small signup-note">We'll only use your email to tell you when the data feed opens. No spam, no sharing.</p>
+      <div class="card tier tier-pro">
+        <h3>Pro: Stale Feed</h3>
+        <p class="price">$49/month <span class="price-note">early pilot price</span></p>
+        <ul>
+          <li>Private feed URL with an access key, in a stable, versioned format (<a href="feed/">stale-feed/v1 docs</a>)</li>
+          <li>Same-day change alerts by email or webhook <span class="muted">(rolling out with first customers)</span></li>
+          <li>Full capture history</li>
+          <li>Email support</li>
+        </ul>
+        <p class="small">Start with a free 30-day pilot. We set it up by email; nothing is charged automatically.</p>
+        <form id="early-access-form" class="signup" action="https://formsubmit.co/50d7e0d9af03690ae1fe0929c222e407" method="POST">
+          <label for="ea-email">Email</label>
+          <input id="ea-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+          <input type="hidden" name="_subject" value="Stale data feed signup">
+          <input type="hidden" name="_template" value="table">
+          <div class="signup-honey" aria-hidden="true">
+            <label for="ea-honey">Leave this field blank</label>
+            <input id="ea-honey" name="_honey" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit">Request a free 30-day pilot</button>
+        </form>
+        <p id="signup-status" class="muted small" role="status" aria-live="polite"></p>
+        <p class="muted small signup-note">We'll only use your email to reply about the pilot. No spam, no sharing.</p>
+      </div>
+    </div>
   </section>
 </main>
 

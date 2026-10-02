@@ -4,6 +4,7 @@
 #   data/latest.json     Chrome reference: capture/data/latest.json (Moe, capture/SCHEMA.md); the assumed-schema stand-in fallback is superseded
 #   data/libraries.json  leaderboard output (run leaderboard/run.sh first to refresh it)
 #   data/history/        capture/data/history/ if present; otherwise an empty index so the page shows its empty state
+#   feed/sample-v1.json  Stale Feed sample built from the files above by leaderboard/build_feed.py
 set -euo pipefail
 SITE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TB="$(dirname "$SITE")"
@@ -24,3 +25,5 @@ fi
 if [[ -f "$TB/capture/data/platforms/index.json" ]]; then
   cp "$TB/capture/data/platforms/index.json" "$SITE/data/platforms.json"; echo "platforms.json <- capture/data/platforms/index.json"
 fi
+# Stale Feed sample (stale-feed/v1, documented in feed/index.html): rebuilt from the data copied above so it stays current
+"${BUILD_PYTHON:-python3}" "$TB/leaderboard/build_feed.py" --site "$SITE"

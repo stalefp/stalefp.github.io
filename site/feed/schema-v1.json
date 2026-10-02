@@ -1,0 +1,821 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://stalefp.github.io/feed/schema-v1.json",
+ "title": "Stale Feed, stale-feed/v1",
+ "description": "Current real Chrome TLS/HTTP fingerprints per platform, what changed between captures, capture history, and per-library match results. Docs: https://stalefp.github.io/feed/. Within v1, fields are only ever added (as optional), never renamed, removed or retyped; consumers must ignore fields they don't know.",
+ "type": "object",
+ "required": [
+  "schema",
+  "generated_at",
+  "reference_platform",
+  "variant_definitions",
+  "platforms",
+  "changes",
+  "libraries_compared_against",
+  "libraries"
+ ],
+ "properties": {
+  "schema": {
+   "const": "stale-feed/v1"
+  },
+  "schema_url": {
+   "type": "string",
+   "format": "uri"
+  },
+  "docs_url": {
+   "type": "string",
+   "format": "uri"
+  },
+  "sample": {
+   "type": "boolean",
+   "description": "true for the public sample (site/feed/sample-v1.json)."
+  },
+  "generated_at": {
+   "type": "string",
+   "format": "date-time",
+   "pattern": "Z$",
+   "description": "Newest source timestamp that went into this payload (UTC)."
+  },
+  "reference_platform": {
+   "const": "linux",
+   "description": "Platform whose capture the library comparison is scored against."
+  },
+  "variant_definitions": {
+   "type": "object",
+   "description": "How each Chrome variant was produced, and its population share where the captured variations seed states one.",
+   "propertyNames": {
+    "enum": [
+     "default",
+     "no_ca34",
+     "pq"
+    ]
+   },
+   "additionalProperties": {
+    "$ref": "#/$defs/variant_definition"
+   }
+  },
+  "platforms": {
+   "type": "object",
+   "required": [
+    "linux",
+    "windows",
+    "macos"
+   ],
+   "properties": {
+    "linux": {
+     "$ref": "#/$defs/platform"
+    },
+    "windows": {
+     "$ref": "#/$defs/platform"
+    },
+    "macos": {
+     "$ref": "#/$defs/platform"
+    }
+   }
+  },
+  "changes": {
+   "type": "array",
+   "description": "One entry per pair of consecutive captures, newest first. An empty fields array means the capture was repeated and nothing compared changed.",
+   "items": {
+    "$ref": "#/$defs/change"
+   }
+  },
+  "history": {
+   "type": "array",
+   "description": "Archived captures plus the current one, newest first. A capture is archived when its version or a fingerprint field changed.",
+   "items": {
+    "$ref": "#/$defs/history_entry"
+   }
+  },
+  "libraries_compared_against": {
+   "type": "object",
+   "required": [
+    "platform",
+    "chrome_version",
+    "captured_at"
+   ],
+   "properties": {
+    "platform": {
+     "const": "linux"
+    },
+    "chrome_version": {
+     "type": "string"
+    },
+    "captured_at": {
+     "type": "string",
+     "format": "date-time",
+     "pattern": "Z$",
+     "description": "UTC, ISO 8601, e.g. 2026-10-02T05:38:28Z."
+    },
+    "endpoints": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "libraries": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/library"
+   }
+  }
+ },
+ "$defs": {
+  "variant_definition": {
+   "type": "object",
+   "required": [
+    "label",
+    "flags",
+    "population_share"
+   ],
+   "properties": {
+    "label": {
+     "type": "string"
+    },
+    "flags": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Chrome command-line flags used for the capture; [] = stock Chrome."
+    },
+    "population_share": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "minimum": 0,
+     "maximum": 1,
+     "description": "Share of stable users in this variant per the variations seed; null when the seed states none."
+    },
+    "population_platforms": {
+     "type": [
+      "array",
+      "null"
+     ],
+     "items": {
+      "type": "string"
+     }
+    },
+    "population_study": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "fingerprint": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "description": "One Chrome variant on one platform. null when that variant wasn't captured.",
+   "required": [
+    "ja4",
+    "ja4_resumed",
+    "quic_ja4",
+    "h2_akamai",
+    "h3_settings",
+    "has_trust_anchors"
+   ],
+   "properties": {
+    "config": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "ja4": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+     "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+    },
+    "ja4_resumed": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+     "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+    },
+    "ja4_r": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "quic_ja4": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+     "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+    },
+    "quic_ja4_resumed": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+     "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+    },
+    "h2_akamai": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "Akamai HTTP/2 fingerprint: SETTINGS|WINDOW_UPDATE|PRIORITY|pseudo-header order."
+    },
+    "h3_settings": {
+     "type": [
+      "object",
+      "null"
+     ],
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "propertyNames": {
+      "pattern": "^[0-9]+$"
+     },
+     "description": "HTTP/3 SETTINGS as {identifier (decimal string): value}; GREASE settings removed."
+    },
+    "has_trust_anchors": {
+     "type": [
+      "boolean",
+      "null"
+     ]
+    }
+   }
+  },
+  "platform": {
+   "type": "object",
+   "required": [
+    "status",
+    "platform"
+   ],
+   "properties": {
+    "status": {
+     "enum": [
+      "captured",
+      "not_captured"
+     ]
+    },
+    "platform": {
+     "enum": [
+      "linux",
+      "windows",
+      "macos"
+     ]
+    },
+    "browser": {
+     "type": "string"
+    },
+    "channel": {
+     "type": "string"
+    },
+    "version": {
+     "type": "string",
+     "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "os": {
+     "type": "string"
+    },
+    "captured_at": {
+     "type": "string",
+     "format": "date-time",
+     "pattern": "Z$",
+     "description": "UTC, ISO 8601, e.g. 2026-10-02T05:38:28Z."
+    },
+    "captured_date": {
+     "type": "string",
+     "format": "date",
+     "description": "UTC calendar date of captured_at (YYYY-MM-DD)."
+    },
+    "capture_run": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "format": "uri"
+    },
+    "stable_newest": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "stable_full_rollout": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "variants": {
+     "type": "object",
+     "required": [
+      "default",
+      "no_ca34",
+      "pq"
+     ],
+     "properties": {
+      "default": {
+       "$ref": "#/$defs/fingerprint"
+      },
+      "no_ca34": {
+       "$ref": "#/$defs/fingerprint"
+      },
+      "pq": {
+       "$ref": "#/$defs/fingerprint"
+      }
+     }
+    }
+   },
+   "if": {
+    "properties": {
+     "status": {
+      "const": "captured"
+     }
+    }
+   },
+   "then": {
+    "required": [
+     "browser",
+     "channel",
+     "version",
+     "os",
+     "captured_at",
+     "captured_date",
+     "variants"
+    ]
+   }
+  },
+  "capture_ref": {
+   "type": "object",
+   "required": [
+    "version",
+    "captured_at"
+   ],
+   "properties": {
+    "version": {
+     "type": "string"
+    },
+    "captured_at": {
+     "type": "string",
+     "format": "date-time",
+     "pattern": "Z$",
+     "description": "UTC, ISO 8601, e.g. 2026-10-02T05:38:28Z."
+    }
+   }
+  },
+  "change": {
+   "type": "object",
+   "required": [
+    "platform",
+    "date",
+    "previous",
+    "current",
+    "fields"
+   ],
+   "properties": {
+    "platform": {
+     "enum": [
+      "linux",
+      "windows",
+      "macos"
+     ]
+    },
+    "date": {
+     "type": "string",
+     "format": "date",
+     "description": "UTC date of the newer capture."
+    },
+    "previous": {
+     "$ref": "#/$defs/capture_ref"
+    },
+    "current": {
+     "$ref": "#/$defs/capture_ref"
+    },
+    "fields": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "field",
+       "variant",
+       "label",
+       "before",
+       "after"
+      ],
+      "properties": {
+       "field": {
+        "enum": [
+         "chrome_version",
+         "ja4",
+         "ja4_resumed",
+         "quic_ja4",
+         "quic_ja4_resumed",
+         "h2_akamai",
+         "h3_settings",
+         "has_trust_anchors",
+         "extensions",
+         "sig_algs",
+         "groups",
+         "ciphers",
+         "quic_transport_params",
+         "key_shares",
+         "alps",
+         "pq_population_share"
+        ]
+       },
+       "variant": {
+        "enum": [
+         "default",
+         "no_ca34",
+         "pq",
+         null
+        ]
+       },
+       "label": {
+        "type": "string"
+       },
+       "before": {
+        "description": "Previous value (any JSON type; null = not captured)."
+       },
+       "after": {
+        "description": "New value."
+       }
+      }
+     }
+    }
+   }
+  },
+  "history_entry": {
+   "type": "object",
+   "required": [
+    "platform",
+    "version",
+    "captured_at",
+    "variants"
+   ],
+   "properties": {
+    "platform": {
+     "enum": [
+      "linux",
+      "windows",
+      "macos"
+     ]
+    },
+    "version": {
+     "type": "string"
+    },
+    "captured_at": {
+     "type": "string",
+     "format": "date-time",
+     "pattern": "Z$",
+     "description": "UTC, ISO 8601, e.g. 2026-10-02T05:38:28Z."
+    },
+    "captured_date": {
+     "type": "string",
+     "format": "date",
+     "description": "UTC calendar date of captured_at (YYYY-MM-DD)."
+    },
+    "variants": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "default",
+       "no_ca34",
+       "pq"
+      ]
+     },
+     "additionalProperties": {
+      "type": "object",
+      "properties": {
+       "ja4": {
+        "type": [
+         "string",
+         "null"
+        ],
+        "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+        "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+       },
+       "ja4_resumed": {
+        "type": [
+         "string",
+         "null"
+        ],
+        "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+        "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+       },
+       "quic_ja4": {
+        "type": [
+         "string",
+         "null"
+        ],
+        "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+        "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+       },
+       "h2_akamai": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "library": {
+   "type": "object",
+   "required": [
+    "id",
+    "library",
+    "language",
+    "profile",
+    "verdict",
+    "counted_mismatches",
+    "variants",
+    "http2_match",
+    "http3",
+    "fingerprint",
+    "tested_at"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "description": "Stable id: '<library>|<profile>' lowercased."
+    },
+    "library": {
+     "type": "string"
+    },
+    "maintainer": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "language": {
+     "type": "string"
+    },
+    "library_version": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "profile": {
+     "type": "string"
+    },
+    "profile_chrome_major": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "is_newest_profile": {
+     "type": "boolean"
+    },
+    "tested_at": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date-time",
+       "pattern": "Z$",
+       "description": "UTC, ISO 8601, e.g. 2026-10-02T05:38:28Z."
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "verdict": {
+     "enum": [
+      "exact",
+      "exact_variant",
+      "close",
+      "behind",
+      "not_tested"
+     ]
+    },
+    "matched_variant": {
+     "enum": [
+      "default",
+      "no_ca34",
+      "pq",
+      null
+     ]
+    },
+    "counted_mismatches": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Counted fields that differ from Chrome's default variant."
+    },
+    "versions_behind": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    },
+    "versions_behind_by_platform": {
+     "type": "object",
+     "additionalProperties": {
+      "type": [
+       "integer",
+       "null"
+      ]
+     }
+    },
+    "variants": {
+     "type": "object",
+     "propertyNames": {
+      "enum": [
+       "default",
+       "no_ca34",
+       "pq"
+      ]
+     },
+     "additionalProperties": {
+      "type": "object",
+      "properties": {
+       "ja4_match": {
+        "type": [
+         "boolean",
+         "null"
+        ]
+       },
+       "ja4_resumed_match": {
+        "type": [
+         "boolean",
+         "null"
+        ]
+       },
+       "fields_exact": {
+        "type": [
+         "boolean",
+         "null"
+        ]
+       },
+       "counted_mismatches": {
+        "type": [
+         "array",
+         "null"
+        ],
+        "items": {
+         "type": "string"
+        }
+       },
+       "quic_ja4_match": {
+        "type": [
+         "boolean",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "http2_match": {
+     "type": [
+      "boolean",
+      "null"
+     ]
+    },
+    "http3": {
+     "type": "object",
+     "required": [
+      "status"
+     ],
+     "properties": {
+      "status": {
+       "enum": [
+        "tested",
+        "no_support",
+        "not_tested",
+        "failed"
+       ]
+      },
+      "summary": {
+       "enum": [
+        "match",
+        "variant_match",
+        "settings_not_observed",
+        "mismatch",
+        "failed",
+        null
+       ]
+      },
+      "quic_ja4": {
+       "type": [
+        "string",
+        "null"
+       ],
+       "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+       "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+      },
+      "ja4_matches": {
+       "type": [
+        "object",
+        "null"
+       ],
+       "additionalProperties": {
+        "type": [
+         "boolean",
+         "null"
+        ]
+       }
+      },
+      "h3_settings_match": {
+       "type": [
+        "boolean",
+        "null"
+       ]
+      },
+      "reason": {
+       "type": [
+        "string",
+        "null"
+       ]
+      }
+     }
+    },
+    "resumption": {
+     "type": "object",
+     "properties": {
+      "tested": {
+       "type": "boolean"
+      },
+      "resumed": {
+       "type": [
+        "boolean",
+        "null"
+       ]
+      }
+     }
+    },
+    "fingerprint": {
+     "type": "object",
+     "properties": {
+      "ja4": {
+       "type": [
+        "string",
+        "null"
+       ],
+       "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+       "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+      },
+      "ja4_resumed": {
+       "type": [
+        "string",
+        "null"
+       ],
+       "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+       "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+      },
+      "h2_akamai": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "quic_ja4": {
+       "type": [
+        "string",
+        "null"
+       ],
+       "pattern": "^[tq][0-9a-z]{9}_[0-9a-f]{12}_[0-9a-f]{12}$",
+       "description": "JA4 (FoxIO spec). t = TLS over TCP, q = QUIC."
+      }
+     }
+    },
+    "missing": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "id",
+       "label"
+      ],
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

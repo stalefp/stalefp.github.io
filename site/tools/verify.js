@@ -1,5 +1,6 @@
 // Headless-Chrome check: renders the site at desktop/mobile widths (+ dark mode), saves full-page screenshots,
 // and fails on console errors, uncaught exceptions, failed requests, unbound data-bind nodes or literal {placeholders}.
+// Also checks the feed docs page (feed/): same error checks, the sample excerpt must load and every data-sample is filled.
 // Usage: node --experimental-websocket site/tools/verify.js [url] [outdir]
 const { spawn } = require("child_process");
 const fs = require("fs"), path = require("path"), os = require("os");
@@ -29,7 +30,16 @@ const VIEWS = [
   const send = (method, params = {}, sessionId) => new Promise((res, rej) => { const i = ++id; pending.set(i, (j) => (j.error ? rej(new Error(method + ": " + j.error.message)) : res(j.result))); ws.send(JSON.stringify({ id: i, method, params, sessionId })); });
 
   let failed = false; const report = [];
-  for (const v of VIEWS) {
+  const FEED_URL = new URL("feed/", URL_).href;
+  const FEED_EXPR = `(() => ({
+      excerptLoaded: !!document.querySelector('#sample-excerpt pre'),
+      excerpt: (document.querySelector('#sample-excerpt') || {}).innerText?.slice(0, 300),
+      unfilled: [...document.querySelectorAll('[data-sample]')].filter(n => n.textContent.trim() === '…' || n.textContent === 'null').map(n => n.dataset.sample),
+      placeholders: document.body.innerText.match(/\{[a-z0-9_]+\}/gi) || [],
+      overflowX: document.documentElement.scrollWidth > window.innerWidth,
+    }))()`;
+  const PAGES = VIEWS.map((v) => ({ ...v, url: URL_, page: "main" })).concat(VIEWS.map((v) => ({ ...v, name: "feed-" + v.name, url: FEED_URL, page: "feed" })));
+  for (const v of PAGES) {
     const { targetId } = await send("Target.createTarget", { url: "about:blank" });
     const { sessionId } = await send("Target.attachToTarget", { targetId, flatten: true });
     const problems = [];
@@ -45,9 +55,9 @@ const VIEWS = [
     for (const d of ["Runtime", "Log", "Network", "Page"]) await send(d + ".enable", {}, sessionId);
     await send("Emulation.setDeviceMetricsOverride", { width: v.width, height: v.height, deviceScaleFactor: v.dsf, mobile: v.mobile }, sessionId);
     await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: v.dark ? "dark" : "light" }] }, sessionId);
-    await send("Page.navigate", { url: URL_ }, sessionId);
+    await send("Page.navigate", { url: v.url }, sessionId);
     await sleep(2500);
-    const { result } = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => ({
+    const { result } = await send("Runtime.evaluate", { returnByValue: true, expression: v.page === "feed" ? FEED_EXPR : `(() => ({
       rows: document.querySelectorAll('#lb tbody tr.row').length,
       verdicts: [...document.querySelectorAll('#lb tbody tr.row')].map(r => r.querySelector('.lib').textContent + ' ' + r.querySelector('code').textContent + ': ' + r.querySelector('.badge').textContent),
       version: document.querySelector('[data-bind=chrome_version]').textContent,
@@ -71,9 +81,11 @@ const VIEWS = [
     const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true, clip: { x: 0, y: 0, width: v.width, height: h, scale: 1 } }, sessionId);
     const file = path.join(OUT, v.name + ".png");
     fs.writeFileSync(file, Buffer.from(shot.data, "base64"));
-    const bad = problems.length || info.loadError || info.rows === 0 || info.unbound.length || info.placeholders.length || info.overflowX;
+    const bad = v.page === "feed"
+      ? problems.length || !info.excerptLoaded || info.unfilled.length || info.placeholders.length || info.overflowX
+      : problems.length || info.loadError || info.rows === 0 || info.unbound.length || info.placeholders.length || info.overflowX;
     if (bad) failed = true;
-    report.push({ view: v.name, screenshot: file, pageHeight: h, ok: !bad, problems, ...info });
+    report.push({ view: v.name, url: v.url, screenshot: file, pageHeight: h, ok: !bad, problems, ...info });
     listeners.splice(listeners.indexOf(onEvt), 1);
     await send("Target.closeTarget", { targetId });
   }

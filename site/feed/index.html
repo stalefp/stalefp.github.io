@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Stale Feed: format docs (stale-feed/v1)</title>
+<meta name="description" content="The Stale Feed: current real Chrome fingerprints per platform, what changed between captures, and per-library match results, as one versioned JSON document.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%232f5bd3%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/style.css">
+<script src="feed.js" defer></script>
+</head>
+<body class="doc">
+<header class="site-header">
+  <div class="wrap">
+    <p class="brand"><a href="../" class="brand-link">Stale</a> <span class="brand-sub">Feed</span></p>
+    <p class="tagline">Current real Chrome fingerprints, what changed, and how each impersonation library compares, as one versioned JSON document.</p>
+    <p class="subline">Format <code>stale-feed/v1</code>. Built from the same captures as the public page.</p>
+    <nav class="nav" aria-label="Sections">
+      <a href="../">Leaderboard</a><a href="#quick-start">Quick start</a><a href="#format">Format</a><a href="#platforms">Fingerprints</a><a href="#changes">Changes</a><a href="#libraries">Libraries</a><a href="#versioning">Versioning</a><a href="#delivery">Delivery</a><a href="../#early-access">Pricing</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc-main">
+  <section class="intro" aria-label="Overview">
+    <p>The Stale Feed is the data behind the leaderboard in one stable, documented JSON format. It's meant for anti-fraud and bot-detection teams who want to check traffic against what current Chrome really sends, automatically, instead of reading a web page.</p>
+    <p>Files: <a href="schema-v1.json">schema-v1.json</a> (JSON Schema, draft 2020-12) · <a href="sample-v1.json">sample-v1.json</a> (sample payload, regenerated from the current capture every time the site updates).</p>
+  </section>
+
+  <section id="quick-start" class="card" aria-labelledby="qs-h">
+    <h2 id="qs-h">Quick start</h2>
+    <p>The sample is public, so you can try it now:</p>
+    <pre><code>curl -s https://stalefp.github.io/feed/sample-v1.json \
+  | jq -r '.platforms[] | select(.status == "captured")
+           | [.platform, .version, .variants.default.ja4, .variants.default.quic_ja4] | @tsv'</code></pre>
+    <p>Every JA4 that real, current Chrome sends, across platforms and variants:</p>
+    <pre><code>import json, urllib.request
+feed = json.load(urllib.request.urlopen("https://stalefp.github.io/feed/sample-v1.json"))
+assert feed["schema"] == "stale-feed/v1"
+chrome_ja4 = {v[k] for p in feed["platforms"].values() if p["status"] == "captured"
+              for v in p["variants"].values() if v for k in ("ja4", "ja4_resumed", "quic_ja4") if v[k]}</code></pre>
+    <p class="small muted">A JA4 in this set is consistent with current Chrome; one that isn't, from a client claiming to be current Chrome, is worth a closer look. The library results below tell you which tools can produce which of these.</p>
+    <h3>From the current sample</h3>
+    <div id="sample-excerpt" class="excerpt"><p class="muted small">Loading sample-v1.json…</p></div>
+  </section>
+
+  <section id="format" aria-labelledby="fmt-h">
+    <h2 id="fmt-h">Format</h2>
+    <p>One JSON object. Times are UTC ISO 8601 (<code>2026-10-02T05:38:28Z</code>); dates are the UTC date of the capture. TLS values follow JA4 conventions (GREASE removed). A value we didn't measure is <code>null</code>, never guessed.</p>
+    <div class="table-wrap"><table class="doc-table">
+      <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>schema</code></td><td>string</td><td>Always <code>"stale-feed/v1"</code> for this version. Check it before parsing.</td></tr>
+        <tr><td><code>generated_at</code></td><td>date-time</td><td>Newest source timestamp in the payload (capture or leaderboard run).</td></tr>
+        <tr><td><code>sample</code></td><td>boolean</td><td><code>true</code> in the public sample.</td></tr>
+        <tr><td><code>variant_definitions</code></td><td>object</td><td>How each Chrome variant (<code>default</code>, <code>no_ca34</code>, <code>pq</code>) was captured: flags, and population share where Chrome's variations seed states one.</td></tr>
+        <tr><td><code>platforms</code></td><td>object</td><td><code>linux</code>, <code>windows</code>, <code>macos</code>: Chrome version, capture time and the fingerprints of each variant. See below.</td></tr>
+        <tr><td><code>changes</code></td><td>array</td><td>What changed between consecutive captures, newest first.</td></tr>
+        <tr><td><code>history</code></td><td>array</td><td>Past captures with their main fingerprints, newest first.</td></tr>
+        <tr><td><code>libraries_compared_against</code></td><td>object</td><td>Which Chrome capture the library results are scored against (Linux).</td></tr>
+        <tr><td><code>libraries</code></td><td>array</td><td>One entry per library profile tested: verdict, per-variant match results, HTTP/2 and HTTP/3 results.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="platforms" class="card" aria-labelledby="pl-h">
+    <h2 id="pl-h">Fingerprints per platform</h2>
+    <p><code>platforms.&lt;os&gt;</code> has <code>status</code> (<code>captured</code> or <code>not_captured</code>), and when captured: <code>browser</code>, <code>channel</code>, <code>version</code>, <code>os</code>, <code>captured_at</code>, <code>captured_date</code>, <code>capture_run</code> (the GitHub Actions run), <code>stable_newest</code> and <code>stable_full_rollout</code> (from Google's VersionHistory API at capture time), and <code>variants</code>.</p>
+    <p>Chrome doesn't send one fingerprint. Each platform has three real captures:</p>
+    <ul class="method">
+      <li><code>default</code>: branded Chrome, fresh profile, no flags. Includes the trust-anchors extension (<code>ca34</code>). What most users send.</li>
+      <li><code>no_ca34</code>: Chrome with <code>--disable-features=TLSTrustAnchorIDs</code>, the less common variant without <code>ca34</code>.</li>
+      <li><code>pq</code>: Chrome forced into Google's post-quantum experiment group, which adds extension <code>0x12e0</code>.</li>
+    </ul>
+    <div class="table-wrap"><table class="doc-table">
+      <thead><tr><th>Variant field</th><th>Example</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>ja4</code></td><td><code data-sample="ja4">…</code></td><td>TLS JA4, fresh connection.</td></tr>
+        <tr><td><code>ja4_resumed</code></td><td><code data-sample="ja4_resumed">…</code></td><td>TLS JA4 of a resumed connection (with <code>pre_shared_key</code>).</td></tr>
+        <tr><td><code>ja4_r</code></td><td>string</td><td>Raw JA4 (full cipher, extension and signature algorithm lists).</td></tr>
+        <tr><td><code>quic_ja4</code>, <code>quic_ja4_resumed</code></td><td><code data-sample="quic_ja4">…</code></td><td>JA4 of the TLS handshake inside QUIC (HTTP/3).</td></tr>
+        <tr><td><code>h2_akamai</code></td><td><code data-sample="h2_akamai">…</code></td><td>HTTP/2 fingerprint, Akamai format: SETTINGS | WINDOW_UPDATE | PRIORITY | pseudo-header order.</td></tr>
+        <tr><td><code>h3_settings</code></td><td><code data-sample="h3_settings">…</code></td><td>HTTP/3 SETTINGS, <code>{id: value}</code>, GREASE removed.</td></tr>
+        <tr><td><code>has_trust_anchors</code></td><td>boolean</td><td>Whether the capture sent <code>ca34</code>.</td></tr>
+        <tr><td><code>config</code></td><td>string</td><td>Name of the capture configuration it came from.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="caveat">HTTP/3 values come from Chrome forced onto HTTP/3 against our own local capture server, not a live public site, so a real site's setup could change some HTTP/3 details.</p>
+  </section>
+
+  <section id="changes" class="card" aria-labelledby="ch-h">
+    <h2 id="ch-h">Changes and history</h2>
+    <p><code>changes</code> has one entry per pair of consecutive captures, newest first: <code>platform</code>, <code>date</code>, <code>previous</code> and <code>current</code> (<code>{version, captured_at}</code>), and <code>fields</code>, a list of <code>{field, variant, label, before, after}</code>. An empty <code>fields</code> list means Chrome was recaptured and nothing we compare changed.</p>
+    <p>Compared fields: <code>chrome_version</code>; per variant <code>ja4</code>, <code>ja4_resumed</code>, <code>quic_ja4</code>, <code>quic_ja4_resumed</code>, <code>h2_akamai</code>, <code>h3_settings</code>, <code>has_trust_anchors</code>, <code>extensions</code>, <code>sig_algs</code>, <code>groups</code>, <code>ciphers</code>, <code>quic_transport_params</code>; for the default variant <code>key_shares</code> and <code>alps</code>; and <code>pq_population_share</code>.</p>
+    <p><code>history</code> lists archived captures plus the current one, each with the <code>ja4</code>, <code>ja4_resumed</code>, <code>quic_ja4</code> and <code>h2_akamai</code> of every variant. A capture is archived when the Chrome version or a fingerprint field changed.</p>
+    <p class="caveat">Today the change log and history cover Linux, starting with the capture of Sep 27, 2026. Windows and macOS captures started on Oct 2, 2026; their past captures aren't archived yet, so for those platforms the feed has the current capture only.</p>
+  </section>
+
+  <section id="libraries" class="card" aria-labelledby="lib-h">
+    <h2 id="lib-h">Library results</h2>
+    <p>Each entry in <code>libraries</code> is one library profile (for example curl_cffi <code>chrome150</code>), tested by making real requests and comparing what it sends against the Linux capture, field by field. The same data drives the <a href="../#leaderboard">leaderboard</a>.</p>
+    <div class="table-wrap"><table class="doc-table">
+      <thead><tr><th>Field</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code>, <code>library</code>, <code>maintainer</code>, <code>language</code>, <code>library_version</code>, <code>profile</code></td><td>What was tested. <code>id</code> is stable across runs.</td></tr>
+        <tr><td><code>verdict</code></td><td><code>exact</code>, <code>exact_variant</code>, <code>close</code>, <code>behind</code> or <code>not_tested</code>, against Chrome's default variant. <code>matched_variant</code> says which variant an <code>exact_variant</code> matches.</td></tr>
+        <tr><td><code>counted_mismatches</code></td><td>Counted fields that differ from the default variant (ciphers, extensions, signature algorithms, groups, key shares, ALPS, certificate compression, HTTP/2).</td></tr>
+        <tr><td><code>variants.&lt;id&gt;</code></td><td>Per Chrome variant: <code>ja4_match</code>, <code>ja4_resumed_match</code>, <code>quic_ja4_match</code>, <code>fields_exact</code>, <code>counted_mismatches</code>.</td></tr>
+        <tr><td><code>http2_match</code>, <code>http3</code></td><td>HTTP/2 match, and HTTP/3 <code>status</code> (<code>tested</code>, <code>no_support</code>, <code>not_tested</code>, <code>failed</code>) with <code>summary</code>, <code>quic_ja4</code> and <code>h3_settings_match</code>.</td></tr>
+        <tr><td><code>fingerprint</code></td><td>What the library actually sent: <code>ja4</code>, <code>ja4_resumed</code>, <code>h2_akamai</code>, <code>quic_ja4</code>. Useful as a deny or watch list.</td></tr>
+        <tr><td><code>versions_behind</code>, <code>profile_chrome_major</code>, <code>tested_at</code>, <code>resumption</code>, <code>missing</code></td><td>How far behind the profile is, when it was tested, whether it resumes sessions, and what it lacks compared with Chrome.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="versioning" aria-labelledby="ver-h">
+    <h2 id="ver-h">Versioning</h2>
+    <ul class="method">
+      <li>The <code>schema</code> field names the format. Within <code>stale-feed/v1</code>, fields are only added (as optional), never renamed, removed or given a different type.</li>
+      <li>Ignore fields you don't recognize; that's how new data reaches you without breaking anything.</li>
+      <li>A breaking change would ship as <code>stale-feed/v2</code> with its own schema file, and v1 stays available while you switch.</li>
+      <li>The public files the site reads (<code>data/latest.json</code>, <code>data/libraries.json</code>, <code>data/platforms.json</code>) are the site's internal layout and can change at any time. Build on the feed format, not on those.</li>
+    </ul>
+  </section>
+
+  <section id="delivery" class="card" aria-labelledby="del-h">
+    <h2 id="del-h">Delivery</h2>
+    <div class="two-col">
+      <div>
+        <h3>Free</h3>
+        <p>The public page and its public JSON, updated the same day as each capture. No key. No promise that the JSON layout stays the same. The <a href="sample-v1.json">sample</a> on this page uses the v1 format so you can build and test an integration against it.</p>
+      </div>
+      <div>
+        <h3>Pro</h3>
+        <ul class="method">
+          <li>A private feed URL with an access key, in the stable, versioned format above.</li>
+          <li>Same-day change alerts by email or webhook when a capture changes a compared field. <span class="badge v-variant">Rolling out with first customers</span></li>
+          <li>Full capture history.</li>
+          <li>Email support.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small muted">Chrome is captured once a day by a scheduled GitHub Actions job, and the feed is rebuilt from that capture. A capture can fail on a given day; the feed then keeps the last good one, and <code>captured_at</code> always tells you how fresh it is. There's no uptime or delivery SLA.</p>
+    <p><strong>Pro is $49/month, early pilot price, after a free 30-day pilot.</strong> <a href="../#early-access">Request a pilot</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Stale is a free, public reference for what real Chrome sends. The feed is built from the same captures as the <a href="../">leaderboard</a>; see its methodology for how they're made.</p>
+  </div>
+</footer>
+</body>
+</html>

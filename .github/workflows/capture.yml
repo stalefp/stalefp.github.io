@@ -178,7 +178,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add capture/data leaderboard/data site/data
+          git add capture/data leaderboard/data site/data site/feed/sample-v1.json
           if git diff --cached --quiet; then echo "no data changes"; echo "committed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -q -m "data: Chrome capture $(date -u +%Y-%m-%d) (run ${{ github.run_id }})"
           for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done

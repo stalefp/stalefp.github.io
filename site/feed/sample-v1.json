@@ -1,0 +1,1443 @@
+{
+ "schema": "stale-feed/v1",
+ "schema_url": "https://stalefp.github.io/feed/schema-v1.json",
+ "docs_url": "https://stalefp.github.io/feed/",
+ "sample": true,
+ "generated_at": "2026-10-02T05:50:13Z",
+ "reference_platform": "linux",
+ "variant_definitions": {
+  "default": {
+   "label": "Default (with ca34)",
+   "flags": [],
+   "population_share": null,
+   "population_platforms": null,
+   "population_study": null
+  },
+  "no_ca34": {
+   "label": "Without ca34",
+   "flags": [
+    "--disable-features=TLSTrustAnchorIDs"
+   ],
+   "population_share": null,
+   "population_platforms": null,
+   "population_study": null
+  },
+  "pq": {
+   "label": "Post-quantum experiment (0x12e0)",
+   "flags": [
+    "--enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
+   ],
+   "population_share": 0.06,
+   "population_platforms": [
+    "linux"
+   ],
+   "population_study": "PqcBandwidthExperiment"
+  }
+ },
+ "platforms": {
+  "linux": {
+   "status": "captured",
+   "platform": "linux",
+   "browser": "Google Chrome",
+   "channel": "stable",
+   "version": "154.0.8037.97",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
+   "captured_at": "2026-10-02T05:38:28Z",
+   "captured_date": "2026-10-02",
+   "capture_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/36969798429",
+   "stable_newest": "154.0.8037.97",
+   "stable_full_rollout": "154.0.8037.97",
+   "variants": {
+    "default": {
+     "config": "default-headed",
+     "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+     "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+     "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+     "quic_ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": true
+    },
+    "no_ca34": {
+     "config": "disable-TLSTrustAnchorIDs-headed",
+     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+     "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "quic_ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": false
+    },
+    "pq": {
+     "config": "finch-AddTLSServerHandshakePadding-headed",
+     "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
+     "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+     "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
+     "quic_ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": true
+    }
+   }
+  },
+  "windows": {
+   "status": "captured",
+   "platform": "windows",
+   "browser": "Google Chrome",
+   "channel": "stable",
+   "version": "154.0.8037.98",
+   "os": "Windows 2025Server (AMD64, build 10.0.26100)",
+   "captured_at": "2026-10-02T05:39:26Z",
+   "captured_date": "2026-10-02",
+   "capture_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/36969798429",
+   "stable_newest": "155.0.8059.26",
+   "stable_full_rollout": "154.0.8037.98",
+   "variants": {
+    "default": {
+     "config": "default-headed",
+     "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+     "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+     "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+     "quic_ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": true
+    },
+    "no_ca34": {
+     "config": "disable-TLSTrustAnchorIDs-headed",
+     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+     "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "quic_ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": false
+    },
+    "pq": {
+     "config": "finch-AddTLSServerHandshakePadding-headed",
+     "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
+     "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+     "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
+     "quic_ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": true
+    }
+   }
+  },
+  "macos": {
+   "status": "captured",
+   "platform": "macos",
+   "browser": "Google Chrome",
+   "channel": "stable",
+   "version": "154.0.8037.98",
+   "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
+   "captured_at": "2026-10-02T05:39:03Z",
+   "captured_date": "2026-10-02",
+   "capture_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/36969798429",
+   "stable_newest": "155.0.8059.26",
+   "stable_full_rollout": "154.0.8037.98",
+   "variants": {
+    "default": {
+     "config": "default-headed",
+     "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+     "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+     "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+     "quic_ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": true
+    },
+    "no_ca34": {
+     "config": "disable-TLSTrustAnchorIDs-headed",
+     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+     "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "quic_ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": false
+    },
+    "pq": {
+     "config": "finch-AddTLSServerHandshakePadding-headed",
+     "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
+     "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+     "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
+     "quic_ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": true
+    }
+   }
+  }
+ },
+ "changes": [
+  {
+   "platform": "linux",
+   "date": "2026-10-02",
+   "previous": {
+    "version": "154.0.8037.97",
+    "captured_at": "2026-10-02T03:20:28Z"
+   },
+   "current": {
+    "version": "154.0.8037.97",
+    "captured_at": "2026-10-02T05:38:28Z"
+   },
+   "fields": []
+  },
+  {
+   "platform": "linux",
+   "date": "2026-10-02",
+   "previous": {
+    "version": "154.0.8037.57",
+    "captured_at": "2026-09-27T06:59:50Z"
+   },
+   "current": {
+    "version": "154.0.8037.97",
+    "captured_at": "2026-10-02T03:20:28Z"
+   },
+   "fields": [
+    {
+     "field": "chrome_version",
+     "variant": null,
+     "label": "Chrome version",
+     "before": "154.0.8037.57",
+     "after": "154.0.8037.97"
+    }
+   ]
+  }
+ ],
+ "history": [
+  {
+   "platform": "linux",
+   "version": "154.0.8037.97",
+   "captured_at": "2026-10-02T05:38:28Z",
+   "captured_date": "2026-10-02",
+   "variants": {
+    "default": {
+     "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+     "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+     "quic_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    "no_ca34": {
+     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    "pq": {
+     "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
+     "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+     "quic_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    }
+   }
+  },
+  {
+   "platform": "linux",
+   "version": "154.0.8037.97",
+   "captured_at": "2026-10-02T03:20:28Z",
+   "captured_date": "2026-10-02",
+   "variants": {
+    "default": {
+     "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+     "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+     "quic_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    "no_ca34": {
+     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    "pq": {
+     "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
+     "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+     "quic_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    }
+   }
+  },
+  {
+   "platform": "linux",
+   "version": "154.0.8037.57",
+   "captured_at": "2026-09-27T06:59:50Z",
+   "captured_date": "2026-09-27",
+   "variants": {
+    "default": {
+     "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+     "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+     "quic_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    "no_ca34": {
+     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    "pq": {
+     "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
+     "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
+     "quic_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    }
+   }
+  }
+ ],
+ "libraries_compared_against": {
+  "platform": "linux",
+  "chrome_version": "154.0.8037.97",
+  "captured_at": "2026-10-02T05:38:28Z",
+  "endpoints": [
+   "https://tls.peet.ws/api/all"
+  ]
+ },
+ "libraries": [
+  {
+   "id": "tls-client|chrome_152",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "library_version": "v1.16.0",
+   "profile": "Chrome_152",
+   "profile_chrome_major": 152,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "exact",
+   "matched_variant": "default",
+   "counted_mismatches": [],
+   "versions_behind": 2,
+   "versions_behind_by_platform": {
+    "linux": 2,
+    "win": 2,
+    "mac": 2
+   },
+   "variants": {
+    "default": {
+     "ja4_match": true,
+     "ja4_resumed_match": null,
+     "fields_exact": true,
+     "counted_mismatches": [],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "mismatch",
+    "quic_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "reason": null
+   },
+   "resumption": {
+    "tested": true,
+    "resumed": false
+   },
+   "fingerprint": {
+    "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2"
+   },
+   "missing": [
+    {
+     "id": "resumption",
+     "label": "TLS session resumption (never sent pre_shared_key)"
+    }
+   ]
+  },
+  {
+   "id": "tls-client|chrome_152_psk",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "library_version": "v1.16.0",
+   "profile": "Chrome_152_PSK",
+   "profile_chrome_major": 152,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "exact",
+   "matched_variant": "default",
+   "counted_mismatches": [],
+   "versions_behind": 2,
+   "versions_behind_by_platform": {
+    "linux": 2,
+    "win": 2,
+    "mac": 2
+   },
+   "variants": {
+    "default": {
+     "ja4_match": true,
+     "ja4_resumed_match": true,
+     "fields_exact": true,
+     "counted_mismatches": [],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": false,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": false,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "mismatch",
+    "quic_ja4": "q13d0314h3_55b375c5d22e_74e6e096c8e5",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "reason": null
+   },
+   "resumption": {
+    "tested": true,
+    "resumed": true
+   },
+   "fingerprint": {
+    "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+    "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0314h3_55b375c5d22e_74e6e096c8e5"
+   },
+   "missing": []
+  },
+  {
+   "id": "tls-client|chrome_150",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "library_version": "v1.16.0",
+   "profile": "Chrome_150",
+   "profile_chrome_major": 150,
+   "is_newest_profile": false,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "exact_variant",
+   "matched_variant": "no_ca34",
+   "counted_mismatches": [
+    "extensions"
+   ],
+   "versions_behind": 4,
+   "versions_behind_by_platform": {
+    "linux": 4,
+    "win": 4,
+    "mac": 4
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": true,
+     "ja4_resumed_match": null,
+     "fields_exact": true,
+     "counted_mismatches": [],
+     "quic_ja4_match": false
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "mismatch",
+    "quic_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "reason": null
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2"
+   },
+   "missing": [
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "curl_cffi|chrome150",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "library_version": "0.16.3",
+   "profile": "chrome150",
+   "profile_chrome_major": 150,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "exact_variant",
+   "matched_variant": "no_ca34",
+   "counted_mismatches": [
+    "extensions"
+   ],
+   "versions_behind": 4,
+   "versions_behind_by_platform": {
+    "linux": 4,
+    "win": 4,
+    "mac": 4
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": true,
+     "ja4_resumed_match": null,
+     "fields_exact": true,
+     "counted_mismatches": [],
+     "quic_ja4_match": true
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "variant_match",
+    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": true,
+     "pq": false
+    },
+    "h3_settings_match": true,
+    "reason": null
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d"
+   },
+   "missing": [
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "noble-tls|chrome_146",
+   "library": "noble-tls",
+   "maintainer": "Nitrams",
+   "language": "Python",
+   "library_version": "0.1.9",
+   "profile": "chrome_146",
+   "profile_chrome_major": 146,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "close",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "signature_algorithms"
+   ],
+   "versions_behind": 8,
+   "versions_behind_by_platform": {
+    "linux": 8,
+    "win": 8,
+    "mac": 8
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "mismatch",
+    "quic_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "reason": null
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1517h2_8daaf6152771_dcad5a053991",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0312h3_55b375c5d22e_c183556c78e2"
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    }
+   ]
+  },
+  {
+   "id": "azuretls-client|chrome",
+   "library": "azuretls-client",
+   "maintainer": "Noooste",
+   "language": "Go",
+   "library_version": "v1.13.2",
+   "profile": "Chrome",
+   "profile_chrome_major": null,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "versions_behind": null,
+   "versions_behind_by_platform": {
+    "linux": null,
+    "win": null,
+    "mac": null
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": true
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "settings_not_observed",
+    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": true,
+     "pq": false
+    },
+    "h3_settings_match": null,
+    "reason": null
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d"
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "curl_cffi|chrome136",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "library_version": "0.16.3",
+   "profile": "chrome136",
+   "profile_chrome_major": 136,
+   "is_newest_profile": false,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "versions_behind": 18,
+   "versions_behind_by_platform": {
+    "linux": 18,
+    "win": 18,
+    "mac": 18
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "mismatch",
+    "quic_ja4": "q13d0313h3_55b375c5d22e_05ee7905d32b",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": false,
+     "pq": false
+    },
+    "h3_settings_match": false,
+    "reason": null
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0313h3_55b375c5d22e_05ee7905d32b"
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "curl_cffi|chrome146",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "library_version": "0.16.3",
+   "profile": "chrome146",
+   "profile_chrome_major": 146,
+   "is_newest_profile": false,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "versions_behind": 8,
+   "versions_behind_by_platform": {
+    "linux": 8,
+    "win": 8,
+    "mac": 8
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": true
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": false
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "tested",
+    "summary": "variant_match",
+    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+    "ja4_matches": {
+     "default": false,
+     "no_ca34": true,
+     "pq": false
+    },
+    "h3_settings_match": true,
+    "reason": null
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d"
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "primp|chrome_146",
+   "library": "primp",
+   "maintainer": "deedy5",
+   "language": "Python",
+   "library_version": "2.0.1",
+   "profile": "chrome_146",
+   "profile_chrome_major": 146,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "versions_behind": 8,
+   "versions_behind_by_platform": {
+    "linux": 8,
+    "win": 8,
+    "mac": 8
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "no_support",
+    "summary": null,
+    "quic_ja4": null,
+    "ja4_matches": null,
+    "h3_settings_match": null,
+    "reason": "primp 2.0.1 has no HTTP/3 option and its binary contains no HTTP/3 stack"
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": null
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "rnet|chrome137",
+   "library": "rnet",
+   "maintainer": "0x676e67",
+   "language": "Python",
+   "library_version": "3.0.0rc22",
+   "profile": "Chrome137",
+   "profile_chrome_major": 137,
+   "is_newest_profile": false,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "versions_behind": 17,
+   "versions_behind_by_platform": {
+    "linux": 17,
+    "win": 17,
+    "mac": 17
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "no_support",
+    "summary": null,
+    "quic_ja4": null,
+    "ja4_matches": null,
+    "h3_settings_match": null,
+    "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": null
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "rnet|chrome145",
+   "library": "rnet",
+   "maintainer": "0x676e67",
+   "language": "Python",
+   "library_version": "3.0.0rc22",
+   "profile": "Chrome145",
+   "profile_chrome_major": 145,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "versions_behind": 9,
+   "versions_behind_by_platform": {
+    "linux": 9,
+    "win": 9,
+    "mac": 9
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms"
+     ],
+     "quic_ja4_match": null
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "no_support",
+    "summary": null,
+    "quic_ja4": null,
+    "ja4_matches": null,
+    "h3_settings_match": null,
+    "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": null
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  },
+  {
+   "id": "utls|hellochrome_auto",
+   "library": "uTLS",
+   "maintainer": "refraction-networking",
+   "language": "Go",
+   "library_version": "v1.8.2",
+   "profile": "HelloChrome_Auto",
+   "profile_chrome_major": null,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "http2_akamai"
+   ],
+   "versions_behind": null,
+   "versions_behind_by_platform": {
+    "linux": null,
+    "win": null,
+    "mac": null
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms",
+      "http2_akamai"
+     ],
+     "quic_ja4_match": null
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms",
+      "http2_akamai"
+     ],
+     "quic_ja4_match": null
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms",
+      "http2_akamai"
+     ],
+     "quic_ja4_match": null
+    }
+   },
+   "http2_match": false,
+   "http3": {
+    "status": "no_support",
+    "summary": null,
+    "quic_ja4": null,
+    "ja4_matches": null,
+    "h3_settings_match": null,
+    "reason": "uTLS is a TLS-only library (no QUIC/HTTP/3 client); the harness pairs it with golang.org/x/net/http2"
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_resumed": null,
+    "h2_akamai": "2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s",
+    "quic_ja4": null
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    },
+    {
+     "id": "h2",
+     "label": "Chrome HTTP/2 SETTINGS / WINDOW_UPDATE"
+    }
+   ]
+  },
+  {
+   "id": "tls-client-(python)|chrome_120",
+   "library": "tls-client (Python)",
+   "maintainer": "FlorianREGAZ",
+   "language": "Python",
+   "library_version": "1.0.1",
+   "profile": "chrome_120",
+   "profile_chrome_major": 120,
+   "is_newest_profile": true,
+   "tested_at": "2026-10-02T05:49:48Z",
+   "verdict": "behind",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "alps"
+   ],
+   "versions_behind": 34,
+   "versions_behind_by_platform": {
+    "linux": 34,
+    "win": 34,
+    "mac": 34
+   },
+   "variants": {
+    "default": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms",
+      "supported_groups",
+      "key_shares",
+      "alps"
+     ],
+     "quic_ja4_match": null
+    },
+    "no_ca34": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "signature_algorithms",
+      "supported_groups",
+      "key_shares",
+      "alps"
+     ],
+     "quic_ja4_match": null
+    },
+    "pq": {
+     "ja4_match": false,
+     "ja4_resumed_match": null,
+     "fields_exact": false,
+     "counted_mismatches": [
+      "extensions",
+      "signature_algorithms",
+      "supported_groups",
+      "key_shares",
+      "alps"
+     ],
+     "quic_ja4_match": null
+    }
+   },
+   "http2_match": true,
+   "http3": {
+    "status": "no_support",
+    "summary": null,
+    "quic_ja4": null,
+    "ja4_matches": null,
+    "h3_settings_match": null,
+    "reason": "tls-client (Python) 1.0.1 bundles Go tls-client v1.7.2, which has no HTTP/3 support"
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null
+   },
+   "fingerprint": {
+    "ja4": "t13d1516h2_8daaf6152771_02713d6af862",
+    "ja4_resumed": null,
+    "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "quic_ja4": null
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)"
+    },
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share"
+    },
+    {
+     "id": "alps",
+     "label": "New ALPS codepoint (sends application_settings (old ALPS, 17513))"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)"
+    }
+   ]
+  }
+ ]
+}

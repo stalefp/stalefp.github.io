@@ -516,7 +516,7 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
       button.disabled = true;
       status.className = "muted small";
-      status.textContent = "Joining the waitlist…";
+      status.textContent = "Sending your pilot request…";
       var values = {};
       new FormData(form).forEach(function (value, key) { values[key] = value; });
       fetch(FORMSUBMIT_ENDPOINT, {
@@ -528,11 +528,11 @@
         return response.json();
       }).then(function () {
         status.className = "signup-success small";
-        status.textContent = "You're on the list. We'll email you when the feed opens.";
+        status.textContent = "Thanks, we got your request. We'll email you to set up your pilot.";
         form.reset();
       }).catch(function () {
         status.className = "signup-error small";
-        status.textContent = "Sorry, we couldn't add you right now. Please try again in a moment.";
+        status.textContent = "Sorry, we couldn't send your request right now. Please try again in a moment.";
       }).finally(function () { button.disabled = false; });
     });
   }
