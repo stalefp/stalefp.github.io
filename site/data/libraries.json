@@ -1,6 +1,6 @@
 {
  "schema_version": "leaderboard-0.2",
- "generated_at": "2026-10-02T05:50:13Z",
+ "generated_at": "2026-10-02T10:00:45Z",
  "reference": {
   "source": "capture/data/latest.json",
   "schema": "capture/SCHEMA.md v1",
@@ -11,7 +11,7 @@
   "branded": true,
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
-  "captured_at": "2026-10-02T00:38:28-05:00",
+  "captured_at": "2026-10-02T04:49:33-05:00",
   "reference_config": "default-headed",
   "is_current_linux_stable": true,
   "variations_source": "default seed",
@@ -137,17 +137,28 @@
    "h3_grease_settings": 1,
    "transport_params": [
     {
-     "id": "0x3128",
-     "name": "google_connection_options",
+     "id": "0x4",
+     "name": "initial_max_data",
      "len": 4,
-     "hex": "4f524947",
-     "ascii": "ORIG"
+     "value": 15728640
     },
     {
      "id": "0x8",
      "name": "initial_max_streams_bidi",
      "len": 2,
      "value": 100
+    },
+    {
+     "id": "0x9",
+     "name": "initial_max_streams_uni",
+     "len": 2,
+     "value": 103
+    },
+    {
+     "id": "0x1",
+     "name": "max_idle_timeout",
+     "len": 4,
+     "value": 30000
     },
     {
      "id": "0x3",
@@ -162,10 +173,29 @@
      "value": 6291456
     },
     {
+     "id": "0xf",
+     "name": "initial_source_connection_id",
+     "len": 0,
+     "hex": ""
+    },
+    {
+     "id": "0x119765a63d8065c4",
+     "name": "grease",
+     "len": 6,
+     "value": 985439008
+    },
+    {
+     "id": "0x3128",
+     "name": "google_connection_options",
+     "len": 4,
+     "hex": "4f524947",
+     "ascii": "ORIG"
+    },
+    {
      "id": "0x11",
      "name": "version_information",
      "len": 12,
-     "hex": "00000001fa4acaea00000001"
+     "hex": "000000017a2afa6a00000001"
     },
     {
      "id": "0x6",
@@ -174,40 +204,10 @@
      "value": 6291456
     },
     {
-     "id": "0x9",
-     "name": "initial_max_streams_uni",
-     "len": 2,
-     "value": 103
-    },
-    {
-     "id": "0x4",
-     "name": "initial_max_data",
-     "len": 4,
-     "value": 15728640
-    },
-    {
      "id": "0x7",
      "name": "initial_max_stream_data_uni",
      "len": 4,
      "value": 6291456
-    },
-    {
-     "id": "0x1",
-     "name": "max_idle_timeout",
-     "len": 4,
-     "value": 30000
-    },
-    {
-     "id": "0x1c8b38d7f86eeff4",
-     "name": "grease",
-     "len": 15,
-     "hex": "1b13334e6e20c1f7b89482f4cad168"
-    },
-    {
-     "id": "0xf",
-     "name": "initial_source_connection_id",
-     "len": 0,
-     "hex": ""
     },
     {
      "id": "0x20",
@@ -345,7 +345,7 @@
  ],
  "harness": {
   "runs_used": [
-   "20261002T054948Z"
+   "20261002T100022Z"
   ],
   "endpoints": [
    "https://tls.peet.ws/api/all"
@@ -363,8 +363,8 @@
    "profile": "Chrome_152",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/tls-client(go)_Chrome_152.json",
-    "tested_at": "2026-10-02T05:50:00Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/tls-client(go)_Chrome_152.json",
+    "tested_at": "2026-10-02T10:00:33Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152",
@@ -660,14 +660,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/go/out/tls-client(go)_Chrome_152.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/tls-client(go)_Chrome_152.json",
+    "fresh": "leaderboard/raw/20261002T100022Z/go/out/tls-client(go)_Chrome_152.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/tls-client(go)_Chrome_152.json",
     "resumed": [
-     "leaderboard/raw/20261002T054948Z/resume/tls-client(go)_Chrome_152_req2.json",
-     "leaderboard/raw/20261002T054948Z/resume/tls-client(go)_Chrome_152_req3.json"
+     "leaderboard/raw/20261002T100022Z/resume/tls-client(go)_Chrome_152_req2.json",
+     "leaderboard/raw/20261002T100022Z/resume/tls-client(go)_Chrome_152_req3.json"
     ]
    },
    "fingerprint": {
@@ -969,8 +969,8 @@
    "profile": "Chrome_152_PSK",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/tls-client(go)_Chrome_152_PSK.json",
-    "tested_at": "2026-10-02T05:50:02Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "tested_at": "2026-10-02T10:00:34Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152_PSK",
@@ -1268,14 +1268,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "fresh": "leaderboard/raw/20261002T100022Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/tls-client(go)_Chrome_152_PSK.json",
     "resumed": [
-     "leaderboard/raw/20261002T054948Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
-     "leaderboard/raw/20261002T054948Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
+     "leaderboard/raw/20261002T100022Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
+     "leaderboard/raw/20261002T100022Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
     ]
    },
    "fingerprint": {
@@ -1551,8 +1551,8 @@
    "profile": "Chrome_150",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/tls-client(go)_Chrome_150.json",
-    "tested_at": "2026-10-02T05:50:03Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/tls-client(go)_Chrome_150.json",
+    "tested_at": "2026-10-02T10:00:36Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_150",
@@ -1848,11 +1848,11 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/go/out/tls-client(go)_Chrome_150.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/tls-client(go)_Chrome_150.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/go/out/tls-client(go)_Chrome_150.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/tls-client(go)_Chrome_150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -2155,8 +2155,8 @@
    "profile": "chrome150",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/curl_cffi_chrome150.json",
-    "tested_at": "2026-10-02T05:50:06Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/curl_cffi_chrome150.json",
+    "tested_at": "2026-10-02T10:00:39Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -2194,19 +2194,19 @@
      "priority"
     ],
     "transport_params": [
-     "max_idle_timeout",
-     "initial_max_stream_data_bidi_remote",
-     "max_datagram_frame_size",
      "initial_max_data",
-     "initial_max_stream_data_uni",
-     "initial_max_streams_bidi",
-     "initial_max_streams_uni",
      "google_connection_options",
-     "max_udp_payload_size",
-     "grease",
-     "initial_max_stream_data_bidi_local",
+     "max_idle_timeout",
+     "version_information",
      "initial_source_connection_id",
-     "version_information"
+     "initial_max_stream_data_bidi_local",
+     "max_datagram_frame_size",
+     "initial_max_stream_data_bidi_remote",
+     "max_udp_payload_size",
+     "initial_max_streams_uni",
+     "grease",
+     "initial_max_streams_bidi",
+     "initial_max_stream_data_uni"
     ],
     "ja4_matches": {
      "default": false,
@@ -2433,11 +2433,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/curl_cffi_chrome150.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/curl_cffi_chrome150.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/curl_cffi_chrome150.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/curl_cffi_chrome150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -2740,8 +2740,8 @@
    "profile": "chrome_146",
    "note": "wraps Go tls-client",
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/noble-tls_chrome_146.json",
-    "tested_at": "2026-10-02T05:50:11Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/noble-tls_chrome_146.json",
+    "tested_at": "2026-10-02T10:00:44Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -3038,11 +3038,11 @@
     }
    },
    "version": "0.1.9",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/noble-tls_chrome_146.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/noble-tls_chrome_146.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/noble-tls_chrome_146.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/noble-tls_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1517h2_8daaf6152771_dcad5a053991",
@@ -3331,8 +3331,8 @@
    "profile": "Chrome",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/azuretls_Chrome.json",
-    "tested_at": "2026-10-02T05:50:05Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/azuretls_Chrome.json",
+    "tested_at": "2026-10-02T10:00:37Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "azuretls:Chrome",
@@ -3350,24 +3350,24 @@
      ":authority",
      ":scheme",
      ":path",
-     "user-agent",
-     "accept-encoding"
+     "accept-encoding",
+     "user-agent"
     ],
     "transport_params": [
-     "initial_max_streams_uni",
-     "initial_max_streams_bidi",
-     "max_datagram_frame_size",
-     "max_idle_timeout",
-     "initial_max_stream_data_bidi_remote",
      "max_udp_payload_size",
      "initial_source_connection_id",
-     "version_information",
-     "google_connection_options",
+     "max_idle_timeout",
+     "initial_max_data",
+     "initial_max_streams_uni",
      "grease",
-     "initial_max_stream_data_bidi_local",
      "initial_max_stream_data_uni",
      "google_user_agent_id",
-     "initial_max_data"
+     "initial_max_streams_bidi",
+     "version_information",
+     "initial_max_stream_data_bidi_remote",
+     "google_connection_options",
+     "initial_max_stream_data_bidi_local",
+     "max_datagram_frame_size"
     ],
     "ja4_matches": {
      "default": false,
@@ -3596,11 +3596,11 @@
     }
    },
    "version": "v1.13.2",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/go/out/azuretls_Chrome.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/azuretls_Chrome.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/go/out/azuretls_Chrome.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/azuretls_Chrome.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -3916,8 +3916,8 @@
    "profile": "chrome136",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/curl_cffi_chrome136.json",
-    "tested_at": "2026-10-02T05:50:10Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/curl_cffi_chrome136.json",
+    "tested_at": "2026-10-02T10:00:42Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -4194,11 +4194,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/curl_cffi_chrome136.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/curl_cffi_chrome136.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/curl_cffi_chrome136.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/curl_cffi_chrome136.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -4514,8 +4514,8 @@
    "profile": "chrome146",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261002T054948Z/h3/curl_cffi_chrome146.json",
-    "tested_at": "2026-10-02T05:50:08Z",
+    "source": "leaderboard/raw/20261002T100022Z/h3/curl_cffi_chrome146.json",
+    "tested_at": "2026-10-02T10:00:40Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -4553,19 +4553,19 @@
      "priority"
     ],
     "transport_params": [
+     "max_datagram_frame_size",
+     "max_idle_timeout",
+     "google_connection_options",
+     "initial_max_streams_bidi",
+     "initial_max_stream_data_bidi_remote",
+     "initial_max_data",
      "initial_max_streams_uni",
      "max_udp_payload_size",
-     "initial_max_stream_data_bidi_remote",
-     "google_connection_options",
-     "initial_source_connection_id",
-     "initial_max_stream_data_uni",
-     "initial_max_data",
      "version_information",
-     "grease",
-     "initial_max_streams_bidi",
-     "max_idle_timeout",
      "initial_max_stream_data_bidi_local",
-     "max_datagram_frame_size",
+     "initial_max_stream_data_uni",
+     "grease",
+     "initial_source_connection_id",
      "google_initial_rtt"
     ],
     "ja4_matches": {
@@ -4751,7 +4751,7 @@
       },
       "library": {
        "google_connection_options": "ORIG",
-       "google_initial_rtt": 337227,
+       "google_initial_rtt": 302044,
        "initial_max_data": 15728640,
        "initial_max_stream_data_bidi_local": 6291456,
        "initial_max_stream_data_bidi_remote": 6291456,
@@ -4799,11 +4799,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/curl_cffi_chrome146.json",
-    "http3": "leaderboard/raw/20261002T054948Z/h3/curl_cffi_chrome146.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/curl_cffi_chrome146.json",
+    "http3": "leaderboard/raw/20261002T100022Z/h3/curl_cffi_chrome146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5123,10 +5123,10 @@
     "reason": "primp 2.0.1 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "2.0.1",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/primp_chrome_146.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/primp_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5134,7 +5134,7 @@
     "ja4_resumed": null,
     "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
     "http3_ja4": null,
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36",
     "sends_ca34": false,
     "sends_12e0": false
    },
@@ -5446,10 +5446,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/rnet_Chrome137.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/rnet_Chrome137.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5767,10 +5767,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/rnet_Chrome145.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/rnet_Chrome145.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -6088,10 +6088,10 @@
     "reason": "uTLS is a TLS-only library (no QUIC/HTTP/3 client); the harness pairs it with golang.org/x/net/http2"
    },
    "version": "v1.8.2",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/go/out/utls_HelloChrome_Auto.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/go/out/utls_HelloChrome_Auto.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -6378,19 +6378,19 @@
       ":method",
       ":path",
       ":scheme",
-      "sec-fetch-user",
       "sec-fetch-dest",
       "accept-encoding",
       "sec-ch-ua",
       "sec-ch-ua-mobile",
-      "sec-ch-ua-platform",
-      "upgrade-insecure-requests",
+      "accept",
       "sec-fetch-site",
       "sec-fetch-mode",
       "accept-language",
       "priority",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
       "user-agent",
-      "accept"
+      "sec-fetch-user"
      ],
      "missing": [],
      "extra": [],
@@ -6422,10 +6422,10 @@
     "reason": "tls-client (Python) 1.0.1 bundles Go tls-client v1.7.2, which has no HTTP/3 support"
    },
    "version": "1.0.1",
-   "tested_at": "2026-10-02T05:49:48Z",
+   "tested_at": "2026-10-02T10:00:22Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261002T054948Z/py/tls-client(py)_chrome_120.json"
+    "fresh": "leaderboard/raw/20261002T100022Z/py/tls-client(py)_chrome_120.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
