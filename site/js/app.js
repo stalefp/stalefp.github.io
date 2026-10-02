@@ -207,7 +207,7 @@
     d.h2_akamai = ref.h2Akamai;
     var cs = (ref.currentStable || {}).linux || {};
     return { status: "captured", label: "Linux", browser: ref.browser, channel: ref.channel, version: ref.version, os: ref.os, captured_at: ref.capturedAt,
-      platform_stable_newest: cs.newest, variants: { "default": d, no_ca34: v("no_ca34"), pq: v("pq") } };
+      platform_stable_newest: cs.newest, platform_stable_full_rollout: cs.highest_full_rollout, variants: { "default": d, no_ca34: v("no_ca34"), pq: v("pq") } };
   }
   function renderPlatforms(ref, idx) {
     var grid = $("#platform-grid"); grid.innerHTML = "";
@@ -227,7 +227,8 @@
       }
       captured++;
       var d = (p.variants || {})["default"] || {};
-      var verTxt = (p.version || "unknown") + (p.platform_stable_newest && p.platform_stable_newest !== p.version ? " (newest " + name + " stable then: " + p.platform_stable_newest + ")" : "");
+      var nw = p.platform_stable_newest, full = p.platform_stable_full_rollout, verTxt = p.version || "unknown";
+      if (nw && nw !== p.version) verTxt += full === p.version ? " (fully rolled-out " + name + " stable; " + nw + " was rolling out to some users)" : " (newest " + name + " stable then: " + nw + ")";
       var row = function (label, val) { return el("div", {}, [el("dt", { text: label }), el("dd", {}, [el("code", { text: val || "not captured" })])]); };
       var note;
       if (id === "linux") note = el("p", { cls: "plat-cmp muted", text: "Reference for the leaderboard below." });
