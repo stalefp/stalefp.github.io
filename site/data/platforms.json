@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-10-02T05:35:17Z",
+ "generated_at": "2026-10-02T05:36:58Z",
  "platforms": {
   "linux": {
    "status": "captured",
@@ -87,19 +87,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x11",
-      "0x4",
-      "0x9",
-      "0x5",
-      "0x3",
-      "0x1",
-      "0x3128",
-      "0x7",
-      "0xf",
-      "0x8",
-      "0x6",
-      "0x20"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -173,19 +173,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x5",
-      "0x7",
-      "0xf",
-      "0x4",
-      "0x6",
-      "0x20",
-      "0x8",
-      "0x1",
-      "0x11",
-      "0x3",
-      "0x9",
-      "0x3128"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -261,19 +261,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x4",
-      "0x6",
-      "0x8",
-      "0xf",
-      "0x11",
-      "0x5",
-      "0x3128",
-      "0x7",
-      "0x9",
-      "0x1",
-      "0x3",
-      "0x20"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -365,19 +365,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x8",
-      "0x6",
-      "0x20",
-      "0x7",
-      "0xf",
-      "0x4",
-      "0x5",
-      "0x11",
-      "0x1",
-      "0x9",
-      "0x3128",
-      "0x3"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -451,19 +451,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x8",
-      "0x4",
-      "0xf",
-      "0x3",
-      "0x20",
-      "0x5",
-      "0x7",
-      "0x11",
-      "0x1",
-      "0x9",
-      "0x6",
-      "0x3128"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -539,19 +539,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x8",
-      "0x5",
-      "0x9",
-      "0xf",
-      "0x4",
-      "0x6",
-      "0x1",
-      "0x3",
-      "0x20",
-      "0x7",
-      "0x3128",
-      "0x11"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -643,19 +643,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x3",
-      "0xf",
-      "0x8",
-      "0x9",
-      "0x5",
-      "0x11",
-      "0x1",
-      "0x7",
-      "0x20",
-      "0x4",
-      "0x3128",
-      "0x6"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -729,19 +729,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x9",
-      "0x1",
-      "0x4",
-      "0x11",
-      "0xf",
-      "0x5",
-      "0x8",
-      "0x6",
-      "0x3",
-      "0x7",
-      "0x3128",
-      "0x20"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -817,19 +817,19 @@
       "0x002f",
       "0x0035"
      ],
-     "quic_transport_param_ids": [
-      "0x9",
-      "0x8",
-      "0x7",
-      "0x5",
-      "0x3128",
-      "0x20",
-      "0x6",
-      "0x3",
-      "0x11",
-      "0xf",
-      "0x1",
-      "0x4"
+     "quic_transport_params": [
+      "0x11=",
+      "0x1=30000",
+      "0x20=65536",
+      "0x3128=ORIG",
+      "0x3=1472",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf="
      ],
      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\""
@@ -854,11 +854,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_param_ids": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameter ids"
-     ]
+     "differs": []
     },
     "no_ca34": {
      "fields": {
@@ -872,11 +870,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_param_ids": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameter ids"
-     ]
+     "differs": []
     },
     "pq": {
      "fields": {
@@ -890,11 +886,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_param_ids": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameter ids"
-     ]
+     "differs": []
     }
    }
   },
@@ -914,11 +908,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_param_ids": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameter ids"
-     ]
+     "differs": []
     },
     "no_ca34": {
      "fields": {
@@ -932,11 +924,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_param_ids": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameter ids"
-     ]
+     "differs": []
     },
     "pq": {
      "fields": {
@@ -950,11 +940,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_param_ids": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameter ids"
-     ]
+     "differs": []
     }
    }
   }

@@ -27,7 +27,7 @@ VH = {"linux": "linux", "windows": "win", "macos": "mac"}
 COMPARE = [("ja4", "TLS JA4 (fresh)"), ("ja4_resumed", "TLS JA4 (resumed)"), ("quic_ja4", "QUIC JA4"),
            ("h2_akamai", "HTTP/2 fingerprint"), ("h3_settings", "HTTP/3 SETTINGS"), ("has_trust_anchors", "trust anchors (ca34)"),
            ("extensions_sorted", "TLS extension set"), ("sig_algs", "signature algorithms"), ("groups", "supported groups"),
-           ("ciphers", "cipher suites"), ("quic_transport_param_ids", "QUIC transport parameter ids")]
+           ("ciphers", "cipher suites"), ("quic_transport_params", "QUIC transport parameters")]
 
 
 def load(p):
@@ -59,7 +59,12 @@ def fp(c):
                 h3_settings=q.get("h3_settings"), has_trust_anchors=c.get("has_trust_anchors"),
                 extensions_sorted=c.get("extensions_sorted"), sig_algs=c.get("sig_algs"), groups=c.get("groups"),
                 ciphers=c.get("ciphers"),
-                quic_transport_param_ids=[t.get("id") for t in (q.get("transport_params") or []) if t.get("name") != "grease"] or None,
+                # Chrome shuffles transport-parameter order per connection, so compare the sorted set of id=value
+                # (GREASE params dropped; version_information/initial_source_connection_id compared by id only: they carry
+                # a GREASE version / per-connection bytes).
+                quic_transport_params=sorted(
+                    "%s=%s" % (t["id"], t.get("value", t.get("ascii", "")) if t.get("name") not in ("version_information", "initial_source_connection_id") else "")
+                    for t in (q.get("transport_params") or []) if t.get("name") != "grease") or None,
                 user_agent=c.get("user_agent"), sec_ch_ua=c.get("sec_ch_ua"))
 
 

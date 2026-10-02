@@ -244,7 +244,7 @@ def launch(chrome, rec, name, mode, flags, udd, port, spki, display, quic=False,
         if mode == "headed": env["DISPLAY"] = display
         else: env.pop("DISPLAY", None)
     try: os.remove(os.path.join(udd, "DevToolsActivePort"))
-    except FileNotFoundError: pass
+    except OSError: pass
     mark = rec.mark()
     logf = open(os.path.join(logdir, "%s%s.chrome.log" % (name, "-quic" if quic else "")), "w") if logdir else subprocess.DEVNULL
     pk = {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if IS_WIN else {"start_new_session": True}
@@ -253,10 +253,18 @@ def launch(chrome, rec, name, mode, flags, udd, port, spki, display, quic=False,
     cdp = None
     try:
         dtp = os.path.join(udd, "DevToolsActivePort")
+        def read_dtp():
+            # Windows: Chrome may still hold DevToolsActivePort open for writing -> PermissionError; just retry.
+            try:
+                with open(dtp) as f: return f.read()
+            except (FileNotFoundError, PermissionError): return ""
+        txt = ""
         for _ in range(300):   # up to 60 s (first launch on a cold Windows/macOS runner is slow)
-            if os.path.exists(dtp) and open(dtp).read().count("\n") >= 1: break
+            txt = read_dtp()
+            if txt.count("\n") >= 1 and txt.split("\n")[1].strip(): break
             time.sleep(0.2)
-        lines = open(dtp).read().split("\n"); dport = lines[0]
+        lines = txt.split("\n"); dport = lines[0]
+        if not dport.strip(): raise RuntimeError("DevToolsActivePort not readable after 60 s")
         res["devtools_version"] = http_json("http://127.0.0.1:%s/json/version" % dport)
         page = next(t for t in http_json("http://127.0.0.1:%s/json/list" % dport) if t["type"] == "page")
         cdp = CDP(page["webSocketDebuggerUrl"])
