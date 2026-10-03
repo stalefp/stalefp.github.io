@@ -6,7 +6,7 @@
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
   "platform": "linux",
-  "captured_at": "2026-10-02T04:49:33-05:00",
+  "captured_at": "2026-10-03T04:47:02-05:00",
   "chrome_path": "/opt/google/chrome/chrome",
   "chrome_version_string": "Google Chrome 154.0.8037.97",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
@@ -200,7 +200,7 @@
   },
   "is_current_linux_stable": true,
   "is_current_platform_stable": true,
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/36991936478",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/37114183343",
   "reference_config": "default-headed",
   "finch_network_studies": [
     {
@@ -1107,46 +1107,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "6fd2092cae0b0b84c38bbe795dcbc409",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,16-18-45-51764-11-5-65037-35-13-17613-43-27-23-10-0-65281-51,4588-29-23-24,0",
+      "ja3": "cb92b04803ea69c45aedb8bb2717c8cd",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51764-18-65037-35-27-16-10-51-13-45-17613-43-65281-0-5-11-23,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0x0010",
-        "0x0012",
-        "0x002d",
         "0xca34",
-        "0x000b",
-        "0x0005",
+        "0x0012",
         "0xfe0d",
         "0x0023",
+        "0x001b",
+        "0x0010",
+        "0x000a",
+        "0x0033",
         "0x000d",
+        "0x002d",
         "0x44cd",
         "0x002b",
-        "0x001b",
-        "0x0017",
-        "0x000a",
-        "0x0000",
         "0xff01",
-        "0x0033"
+        "0x0000",
+        "0x0005",
+        "0x000b",
+        "0x0017"
       ],
       "extensions_resumed": [
-        "0x0005",
-        "0x0017",
-        "0x0000",
-        "0x0023",
-        "0x000b",
-        "0x002d",
-        "0x000a",
-        "0xca34",
-        "0x0033",
-        "0x44cd",
-        "0xfe0d",
-        "0x000d",
-        "0xff01",
-        "0x001b",
-        "0x0012",
-        "0x0010",
         "0x002b",
+        "0x0017",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x000b",
+        "0xfe0d",
+        "0x0005",
+        "0x002d",
+        "0x0000",
+        "0x000a",
+        "0xff01",
+        "0x0010",
+        "0x0023",
+        "0xca34",
+        "0x001b",
+        "0x44cd",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1304,15 +1304,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35604,
+        "seed_file_bytes": 35805,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoOCggxNzkwOTI4MBICCAI=#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157441
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -1323,18 +1323,18 @@
         "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0010",
-          "0x0033",
+          "0x0039",
           "0x44cd",
-          "0x0000",
+          "0x0010",
           "0x002d",
-          "0x002b",
           "0x001b",
+          "0x0000",
+          "0xfe0d",
           "0x000a",
           "0x000d",
-          "0x0039",
-          "0xfe0d",
-          "0xca34"
+          "0xca34",
+          "0x0033",
+          "0x002b"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -1379,34 +1379,22 @@
         ],
         "transport_params": [
           {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
             "id": "0x6",
             "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
           },
           {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000019aba6aca00000001"
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x3128",
@@ -1416,28 +1404,22 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x16e8325e4b1e7fc7",
-            "name": "grease",
-            "len": 3,
-            "value": 41
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x3405f5b9b0fbe339",
+            "name": "grease",
+            "len": 6,
+            "value": 1070642746
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001ea7a9a1a00000001"
           },
           {
             "id": "0x9",
@@ -1446,16 +1428,34 @@
             "value": 103
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           }
         ],
         "h3_settings": {
@@ -1510,46 +1510,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "d2f3f30dec106c7c1e5a2c69d7d9ebd7",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,17613-5-65281-43-0-10-27-45-65037-13-11-51-16-23-35-51764-18,4588-29-23-24,0",
+      "ja3": "34e40aeae320a4211d7a07e539e4c61e",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,11-5-23-51-51764-13-10-65281-45-27-35-65037-0-17613-18-43-16,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0x44cd",
-        "0x0005",
-        "0xff01",
-        "0x002b",
-        "0x0000",
-        "0x000a",
-        "0x001b",
-        "0x002d",
-        "0xfe0d",
-        "0x000d",
         "0x000b",
-        "0x0033",
-        "0x0010",
+        "0x0005",
         "0x0017",
-        "0x0023",
+        "0x0033",
         "0xca34",
-        "0x0012"
-      ],
-      "extensions_resumed": [
-        "0x001b",
-        "0x000a",
-        "0x000b",
-        "0x0005",
-        "0x0023",
         "0x000d",
+        "0x000a",
+        "0xff01",
+        "0x002d",
+        "0x001b",
+        "0x0023",
+        "0xfe0d",
         "0x0000",
+        "0x44cd",
         "0x0012",
         "0x002b",
-        "0xff01",
-        "0x0033",
-        "0x0017",
-        "0x002d",
-        "0x44cd",
+        "0x0010"
+      ],
+      "extensions_resumed": [
         "0x0010",
-        "0xca34",
+        "0x0005",
         "0xfe0d",
+        "0x0000",
+        "0x44cd",
+        "0x0033",
+        "0x000a",
+        "0x000d",
+        "0x002d",
+        "0xff01",
+        "0x0017",
+        "0x0023",
+        "0x001b",
+        "0x000b",
+        "0x002b",
+        "0x0012",
+        "0xca34",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1659,6 +1659,7 @@
         ":authority",
         ":scheme",
         ":path",
+        "cache-control",
         "sec-ch-ua",
         "sec-ch-ua-mobile",
         "sec-ch-ua-platform",
@@ -1676,8 +1677,8 @@
       "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
       "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
       "variations_source": "variations server",
-      "command_line_variations": "--force-fieldtrials=\"*AIPageContentTrackedElementsPassword/EnabledLaunch/*AiSubscriptionAvatarRingDesktop/Default/ApiGlicAccessFromPromotionPage/Control_20260707/*AsyncBeforeUnload/Default/*AttributionReportingDeprecation/Default/AutofillAiImportConstraintsForSync/Default/*AutofillAiUsePrivateAi/Default/AutofillAiWalletPrivatePassesCapability/Control_50/AutofillEnableExpandIbanRegexPattern/Enabled_50/AutofillEnableNonAffiliatedLoyaltyCardsFilling/EnabledLaunch/AutofillEnableResurrectingPaymentsUsers/Control_stable50pct/AutofillFixCvcImport/EnabledLaunch/AutofillFixIframeOwnership/Default/*AutofillFixLabelGenerationForStreetAddress/Default/AutofillKeydownEditableElement/Default/AutofillNewSuggestionGeneration/Default/AutofillSupportSplitZipCode/Default/AutofillUpstreamEnforceStrikeDelay/Default1/AutofillYourSavedInfoHatsSurveysContactInfo/Default/AutofillYourSavedInfoHatsSurveysIdentityDocs/Default/AutofillYourSavedInfoHatsSurveysPasswords/Default/AutofillYourSavedInfoHatsSurveysPayments/Default/AutofillYourSavedInfoHatsSurveysTravel/Default/AutofillYourSavedInfoHatsSurveysYourSavedInfo/Default/BackForwardCacheCCNSIgnoreUnchangedCookies/Control_20260930/*BrokenAlternativeServiceDelays/Default/*BrowserActionMigration/EnabledLaunch/*BrowserLaunchMetadataReporting/EnabledLaunch/*CacheGurlSchemeIsHttpOrHttpsResult/Default/*CdmServicePriorityElevation/ThreadPriorityOnly_20260912/*CentralizedInfoBarFramework/Control_20260921_1/CheckAutoCommitInCommitAndRollback/Default/*ChromeChannelStable/Enabled/*ClearBrowsingHistoryJourney/EnabledLaunch/*ClientSideDetectionLocalResourceCheckFix/EnabledLaunch/*ClientSideDetectionScamScore/Launched/*ComponentsBase32InRust/Default/*ConstructableStylesheetCacheKillSwitch/Disabled_EmergencyKillSwitch/*ContextMenuAnimationLimiting/EnabledLaunch/*ContextualTasksDesktop/SignedInSidePanelUnificationOnly_20260908/CredentialManagementUnifiedUi/Enabled_20260908/CrossDeviceSigninFromDesktop/Control_20260917/CtrlTabMru/EnabledLaunch/*DecodeScriptsInBlink/Default/*DeprecateUnload/Default_pct=100_1/*DeprecateUnloadByBucket/Enabled_permanent_bucket_22/*DesktopNtpDriveModuleLink/Default/*DesktopNtpSimplificationBookmarkBar/EnabledLaunch/*DesktopRealboxContextualSearchIPH/EnabledLaunch/*DesktopToMobilePromos/Default/DiceProtocolVersion2/EnabledLaunch/DisallowLegacyPrefMacFallback/Default/*EnableAccountPreviewData/EnabledLaunch/EnableCancelUploadOnContentAnalysis/EnabledLaunch/EnableNewUploadSizeLimit/Enabled_20260921Launch/*EnableQuicReadMultipleAndUdpGRO/EnabledQuicUseReadMultipleAndUdpGro_20261001/EnableWatermarkTimestampTimezone/EnabledLaunch/*EncryptBookmarks_Phase1/Phase1_5/*EncryptSessionStorage_Phase1/Phase1_5/*EnergyEffectMotionStudy/Launched/*EnergyEffectVisdStudy/Launched/EnforceP2PSocketPortRestrictionsKillSwitch/Disabled_EmergencyKillSwitch/EnterpriseDataProtectionForGlic/EnabledLaunch/*EnterpriseReleaseNotes/EnabledLaunch/*ExpiredHistograms/ExpiryEnabledWithAllowlist/*ExtensionsPinnedByDefault/EnabledLaunch/*ExtremeLightweightUAFDetector/Default/*FedCmSegmentationPlatform/EnabledLaunch/*GaiaAccountIdEnforcement/Default/*GenerateXSLTWarningBanner/Disabled_Uncontrolled_20260918/GlicActorObservationDelayExcludeAdFrameLoading/Control_2026_05_19/*GlicActorRolloutControl/Enabled_ExternalAllowableByPolicy_US/GlicAnchorEntryPointForOnboardedUsersUnlaunch/Disabled_EmergencyKillSwitch/GlicColdWarmingDelay/Default/*GlicExperimentalTriggering/Enabled_20260710Launch/*GlicPdfSummarizeButton/Disabled_20260723_V2/*GlicPrivateApi/Enabled_20260601Launch/GlicUseMainPartitionForUnifiedFre/Default/*GlicValueFirstOnboarding/Control_20260930/GlicWebActuationSettingsToggle/Default/*GmailOtpBackendInfrastructure/Default/*HangoutsExtensionV3/Default/*HttpCacheZstdCompression/Default/*HttpsFirstBalancedModeAutoEnableDesktop/Default/*IgnoreQuicCryptoConfigMemoryPressure/Control_20260902/*ImprovedStartupBestEffortDelay/Default/*IncreaseCongestionWindow/Control_20260911_STABLE_30/*IncreaseHttp3Usage/EnabledWithConfigureMinimalQuicHints/IndexedDBConnectionDeduplication/Default/*InfoBarInlineLinks/EnabledLaunch/*InstantHandoffPhase1/EnabledLaunch/*KillSwitch_SearchNavigationPrefetch/Disabled_EmergencyKillSwitch/LazilySetCustomActionCaption/Default/*LazyInitializeSpellcheckCharAttribute/Default/*NtpBrowserPromos/OnePromo/*NtpDisableBrowserInitiatedLinks/EnabledLaunch/OpenTranslationSettings/EnabledLaunch/*OptimisticDnsForTcp/OptimisticDns_AdjustIPv6_50ms_IPv6RTT_1_1_STABLE_10_20260908/*OptimizationGuideProactivePersonalizedHintsFetching/Default/*PMLoadingPageVoter/Default/*PWAInstallDialogRefresh/EnabledLaunch/*PageActionsOptimizations/Default/*PageActionsPrioritySelector/Default/*PasskeyUnlockErrorUi/Default/PaymentRequestMandatoryPaymentAppUi/Default/PaymentRequestRejectTooSmallWindows/Enabled_20260921/PdfBufferedPaintManager/Enabled_20260909/PdfInkSignaturesTextAnnotations/Control_20260911_50/*PermissionsAIv4/Default/*PervasiveSharedDictionaries/Default/*PinExtensionJourney/EnabledLaunch/*PqcCupSigning/EnabledLaunch/*PreconnectManagerDirectFastPath/Default/ProactivePasswordProtection/Default/*ProtectedAudienceDeprecation/Default/*ReadAnythingLineFocusExperiment/EnabledLaunch/*ReadAnythingOmnibox/Disabled_20260903_Stable/*RecordLockAcquisitionTimeStudy/EnabledLaunch/RestrictBackgroundFetchFromServiceWorker/Enabled/RestrictLinkHeaderOnSubresource/Default/*RetroactivePreperiod/Default_Linux/*SafeBrowsingLocalListsUseSBv5/Default/SafeBrowsingWaitForDnsForRealTimeLookup/Default/*SafetyHubIncreasePasswordCheckFrequencyV2/Enabled_2d_20260914_80/*ScalableFrameEviction/EnabledLaunch/ScrollJankV4MetricFastScrollContinuityRequiresSameDirection/Enabled_20260909/*SeedFileTrial/SeedFilesLaunched/*ServiceWorkerBackgroundUpdate/Default/*ServiceWorkerDatabaseDoomOnMissingNextId/Default/*SessionRestoreInfobarSticky/EnabledOptIn/*SharedTabGroups/Control_20260218/SimplifiedHindiModel/Default/*SingleAxisScrollContainers/Default_20260922/SmartRestartLockScreen/Default/*SplitViewHorizontal/EnabledIndirectAccess/*StatefulMemoryPressure/EnabledLaunch/*StructuredHeadersInRust/Default/SuspiciousSiteWarnings/Default/TabSearchCjkWordBoundary/EnabledLaunch/*ThreeDSecureTelemetry/Default/*ThrottleConsecutiveNoDamageMainFrames/Default/*TopicsDeprecation/Default/*TransientKeepAlivePolicy/Enabled_217s_Limit5_20260914/TranslateShortTextStaticContext/Default/*UKM/Enabled_20180314/*UMA-Population-Restrict/normal/*UMA-Uniformity-Trial-0.5-Percent-1/group_33/*UMA-Uniformity-Trial-0.5-Percent-2/group_197/*UMA-Uniformity-Trial-1-Percent/group_78/*UMA-Uniformity-Trial-10-Percent/group_07/*UMA-Uniformity-Trial-10-Percent-sanity/group_04/*UMA-Uniformity-Trial-100-Percent/group_01/*UMA-Uniformity-Trial-20-Percent/group_01/*UMA-Uniformity-Trial-20-Percent-Session/group_02/*UMA-Uniformity-Trial-5-Percent/group_05/*UMA-Uniformity-Trial-50-Percent/group_01/UkmSamplingRate/Downsampled_202309/*UniversalOptOut/Default/*UnoPhase2FollowUpDesktop/Default/UnthrottleAsyncTouchMovesV2/Default/*UseDynamicBackingAllocations/Default/UserValueDefaultBrowserStrings/Enabled_20260903/*UtfConversionAsciiFastPath/Default/*V8DateTimePatternGeneratorCacheEviction/Default/*V8HomomorphicIC/EnabledLaunch/*V8SqrtAllocationLimits/Default/*V8Turbolev/Default/*VariationsRuntimeMutability/Enabled_20260914/*VerticalTabsExpandOnHoverLaunch/Enabled/*ViewDownloadedFileJourney/EnabledLaunch/*VoiceTyping/Default/WebGLMemoryExperiments/Default/*WebRTC-LibaomAv1Encoder-DropRepeatFramesOnEnhancementLayers/Default,_20260929/*WebRTC-MediaTaskQueuePriorities/Enabled_Launch/*WebRTC-RFC8888CongestionControlFeedback/Control,_20260922/*WebUIRoundedIcons/Default/*WhatsNewHats/Enabled_en_20260929/*XMLParsingRustNonXsltKillSwitch_153_155/Disabled_EmergencyKillSwitch\" --force-fieldtrial-params=\"ClearBrowsingHistoryJourney.EnabledLaunch:en_site_id/R8iDTcjjT0ugnJ3q1cK0TiRRjjy4/probability/1%2E0,ContextualTasksDesktop.SignedInSidePanelUnificationOnly_20260908:allow-signed-out/false,DeprecateUnload.Default_pct%3D100_1:allowlist/a%2Ecom%2Cb%2Ecom%2Cc%2Ecom%2Cd%2Ecom%2Ce%2Ecom%2Cf%2Ecom%2Cweb-platform%2Etest%2Cwww1%2Eweb-platform%2Etest%2C127%2E0%2E0%2E1%2Cexample%2Etest%2Cwww%2Egoogle%2Ecom%2Cwww%2Eyoutube%2Ecom%2Cwww%2Efacebook%2Ecom%2Cwww%2Epornhub%2Ecom%2Cwww%2Exvideos%2Ecom%2Ctwitter%2Ecom%2Cwww%2Ewikipedia%2Eorg%2Cwww%2Einstagram%2Ecom%2Cwww%2Ereddit%2Ecom%2Cwww%2Eamazon%2Ecom%2Cduckduckgo%2Ecom%2Cwww%2Eyahoo%2Ecom%2Cwww%2Exnxx%2Ecom%2Cwww%2Etiktok%2Ecom%2Cwww%2Ebing%2Ecom%2Cwww%2Eyahoo%2Eco%2Ejp%2Cweather%2Ecom%2Cwww%2Ewhatsapp%2Ecom%2Cdzen%2Eru%2Cxhamster%2Ecom%2Copenai%2Ecom%2Coutlook%2Elive%2Ecom%2Cwww%2Emicrosoft%2Ecom%2Cmicrosoftonline%2Ecom%2Cwww%2Emicrosoftonline%2Ecom%2Cwww%2Elinkedin%2Ecom%2Cwww%2Equora%2Ecom%2Cwww%2Etwitch%2Etv%2Cwww%2Enaver%2Ecom%2Cnetflix%2Ecom%2Cwww%2Enetflix%2Ecom%2Cwww%2Eoffice%2Ecom%2Cvk%2Ecom%2Cwww%2Evk%2Ecom%2Cwww%2Eglobo%2Ecom%2Cwww%2Ealiexpress%2Ecom%2Cwww%2Ecnn%2Ecom%2Czoom%2Eus%2Cwww%2Ezoom%2Eus%2Cwww%2Eimdb%2Ecom%2Cx%2Ecom%2Cwww%2Enytimes%2Ecom%2Conlyfans%2Ecom%2Cwww%2Eespn%2Ecom%2Cwww%2Eamazon%2Eco%2Ejp%2Cwww%2Epinterest%2Ecom%2Cwww%2Euol%2Ecom%2Ebr%2Cwww%2Eebay%2Ecom%2Cwww%2Emarca%2Ecom%2Cwww%2Ecanva%2Ecom%2Cwww%2Espotify%2Ecom%2Cwww%2Ebbc%2Ecom%2Cwww%2Epaypal%2Ecom%2Cwww%2Eapple%2Ecom/rollout_percent/80,DeprecateUnloadByBucket.Enabled_permanent_bucket_22:rollout_bucket/22,EnableNewUploadSizeLimit.Enabled_20260921Launch:max_file_size_mb/250,EncryptBookmarks_Phase1.Phase1_5:stage/write_both_read_only_clear,EncryptSessionStorage_Phase1.Phase1_5:stage/write_both_read_only_clear,EnergyEffectVisdStudy.Launched:EnergyEffectVariantParam/energy-effect-fusebox,ExpiredHistograms.ExpiryEnabledWithAllowlist:allowlist/,GlicActorRolloutControl.Enabled_ExternalAllowableByPolicy_US:glic-actor-eligible-tiers/1%2C2/glic_actor_enterprise_pref_default/disabled_by_default,IncreaseCongestionWindow.Control_20260911_STABLE_30:quic_options/ORIG,IncreaseHttp3Usage.EnabledWithConfigureMinimalQuicHints:quic_hints/google%2Ecom%2C443%2C443%2Cwww%2Egoogle%2Ecom%2C443%2C443,NtpBrowserPromos.OnePromo:max-terms/3/promo-type/simple/session-rotation/2,OptimisticDnsForTcp.OptimisticDns_AdjustIPv6_50ms_IPv6RTT_1_1_STABLE_10_20260908:IPv6FallbackMax/1500ms/IPv6FallbackMin/50ms/IPv6FallbackRTTMultiplier/1%2E1/fallback_time/50ms/use_stale_connectors/true,PinExtensionJourney.EnabledLaunch:en_site_id/8RJXcn5t20ugnJ3q1cK0VLDGHPAz/probability/1%2E0,RecordLockAcquisitionTimeStudy.EnabledLaunch:RecordLockAcquisitionTimeAllowedThreads/CrBrowserMain%2CCrRendererMain%2CCrGpuMain%2CVizCompositor%2CCompositor%2CBrowserIO%2CNetworkService%2CGPU%2EForegroundWorker%2CGPU%2EBackgroundWorker%2CRenderer%2EForegroundWorker%2CRenderer%2EBackgroundWorker%2CBrowser%2EForegroundWorker%2CBrowser%2EBackgroundWorker,RestrictBackgroundFetchFromServiceWorker.Enabled:allowlist/https%3A%2F%2Fcuutruyen%2Enet%2Chttps%3A%2F%2Fwww%2Emon%2Eemg-u%2Ecom%2Chttps%3A%2F%2Feki%2Eecuakaraoke%2Ecom%2Eec%2Chttps%3A%2F%2Fhetcuutruyen%2Enet%2Chttps%3A%2F%2Fillusorium%2Eaquarium%2Eapp%2Chttps%3A%2F%2Fintranet%2Evzo%2Ech%2Chttps%3A%2F%2Fmy%2Eduaux%2Ecom%2Chttps%3A%2F%2Fnxg-prod-cvag%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-heagmobilo%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-rlg%2Einnotix%2Ecom%2Chttps%3A%2F%2Fwhatpwacando%2Etoday%2Chttps%3A%2F%2Fwww%2Eapkz%2Ecom%2Chttps%3A%2F%2Fk-bibel%2Ede%2Chttps%3A%2F%2Fconnect%2Ecmcv%2Eac%2Ein%2Chttps%3A%2F%2Ffilmtor%2Ecom%2Chttps%3A%2F%2Fmozaic%2Efm%2Chttps%3A%2F%2Fwww%2Ehaeuserlexikon%2Ede%2Chttps%3A%2F%2Fwww%2Eyouthconnektburkina%2Ebf,SafetyHubIncreasePasswordCheckFrequencyV2.Enabled_2d_20260914_80:background-password-check-interval/2d/password-check-mon-weight/5/password-check-sat-weight/9/password-check-sun-weight/9,SessionRestoreInfobarSticky.EnabledOptIn:continue_session/false,SplitViewHorizontal.EnabledIndirectAccess:split_view_horizontal_direct_access/false,TransientKeepAlivePolicy.Enabled_217s_Limit5_20260914:count/5/duration/217s,UkmSamplingRate.Downsampled_202309:AbandonedSRPNavigation/2/Accessibility%2ECanvas/16/AdFrameLoad/25/Android%2EMultiWindowState/3/Autofill%2EFieldFillStatus/45/Autofill%2EFieldTypeValidation/160/Autofill%2EFormEvent/20/BackgroundSyncRegistered/2/Blink%2EFrameLoader/550/Blink%2EHTMLParsing/16/Blink%2EPageLoad/20/Blink%2EPaintTiming/12/Blink%2EUpdateTime/40/ClientHints%2EAcceptCHFrameUsage/70/ClientHints%2EAcceptCHHeaderUsage/60/ClientHints%2EDelegateCHMetaUsage/3/ClientRenderingAPI/420/Compose%2ETextElementUsage/2/ContentManagementSystemPageLoad/16/ContextualCueing%2ENudgeDecision/6/Cookies%2EBlocked%2EDueToOriginMismatch/60/CrossOriginSubframeWithoutEmbeddingControl/70/DocumentCreated/100/DomDistiller%2EAndroid%2EDistillabilityLatency/10/DomDistiller%2EAndroid%2EDistillabilityResult/14/DomDistiller%2EModelResult%2EDistillable/18/Download%2ECompleted/Download/Download%2EInterrupted/Download/Download%2EResumed/Download/Download%2EStarted/Download/Extensions%2EOnNavigation/70/Extensions%2EWebRequest%2EKeepaliveRequestFinished/100/GoogleDocsOfflineExtension/8/HistoryApi%2EPushState/10/HistoryManipulationIntervention/2/InstalledRelatedApps/6/JavascriptFrameworkPageLoad/16/LoadCountsPerTopLevelDocument/20/LoadingPredictor/12/MainFrameNavigation/2/Media/35/Media%2EAutoplay%2EAttempt/14/Media%2EBasicPlayback/Media/Media%2EEME%2EGetStatusForPolicy/30/Media%2EVideoDecodePerfRecord/8/Media%2EWebAudio%2EAudioContext%2EAudibleTime/Media/Media%2EWebMediaPlayerState/Media/Memory%2EExperimental/100/Memory%2ETabFootprint/20/MobileFriendliness%2ETappedBadTargets/12/Navigation%2EFromGoogleSearch%2ETimingInformation/2/Navigation%2EReceivedResponse/20/NavigationPredictor/70/NavigationPredictorAnchorElementMetrics/NavigationPredictor/NavigationPredictorPageLinkClick/NavigationPredictor/NavigationPredictorPageLinkMetrics/NavigationPredictor/NavigationPredictorPreloadOnHover/NavigationPredictor/NavigationPredictorUserInteractions/NavigationPredictor/NavigationTiming/14/Network%2EDataUrls/90/OmniboxSecurityIndicator%2EFormSubmission/8/OptimizationGuide/60/OptimizationGuide%2EAnnotatedPageContent/16/OptimizationGuide%2EPageContentExtraction/30/PageContentAnnotations2/35/PageForegroundSession/30/PageLifecycleMetricsOnNewPageCommit/25/PageLoadInitiatorForAdTagging/16/PaidContentPageLoad/20/PartitionedCookiePresentV3/6/PerformanceAPI%2ELongAnimationFrame/480/PerformanceAPI%2ELongTask/14/PerformanceAPI%2EMemory%2ELegacy/2000/PerformanceManager%2EFreezingEligibility/4/PerformanceManager%2EPageResourceUsage2/160/PermissionUsage/4/PermissionUsage%2ENotificationShown/2/Popup%2EClosed/Popup/Popup%2EPage/Popup/PowerUsageScenariosIntervalData/20/PrefetchProxy%2EPrefetchedResource/4/Preloading%2EAttempt/PreloadingAttempt/Preloading%2EAttempt%2EPreviousPrimaryPage/PreloadingAttempt/Preloading%2EPrediction/200/Preloading%2EPrediction%2EPreviousPrimaryPage/270/Responsiveness%2EUserInteraction/90/SamesiteRedirectContextDowngrade/10/Security%2ESiteEngagement/14/ServiceWorker%2EMainResourceLoadCompleted/6/Site%2EInstall/3/Site%2EManifest/3/Site%2EQuality/3/SiteFamiliarityHeuristicResult/18/SubresourceFilter/20/SubresourceLoad%2EZstdContentEncoding/420/TabManager%2ETabLifetime/4/TabRevisitTracker%2ETabStateChange/30/Translate/20/TranslatePageLoad/25/Unload/14/UserPerceivedPageVisit/50/V8%2EGC%2EFullCycle/40/V8%2EWasm/6/V8%2EWasm%2EModuleCompiled/V8%2EWasm/V8%2EWasm%2EModuleDecoded/V8%2EWasm/V8%2EWasm%2EModuleInstantiated/V8%2EWasm/WebOTPImpact/10/XR%2EWebXR/2/_default_sampling/1/_webdx_features_sampling/1,VerticalTabsExpandOnHoverLaunch.Enabled:expand_on_hover_default_enabled/true/expand_on_hover_use_velocity_heuristic/true/expand_on_hover_velocity_heuristic_delay/50ms/expand_on_hover_velocity_heuristic_distance_from_edge/12/expand_on_hover_velocity_heuristic_edge_delay/200ms/expand_on_hover_velocity_heuristic_interval/10ms/expand_on_hover_velocity_heuristic_min_samples/3/expand_on_hover_velocity_heuristic_threshold/0%2E25,ViewDownloadedFileJourney.EnabledLaunch:en_site_id/mL46CjHkE0ugnJ3q1cK0NsAQJpTP/probability/1%2E0,WhatsNewHats.Enabled_en_20260929:en_site_id/6bnVh68QF0ugnJ3q1cK0NQxjpCFS/probability/0%2E01\" --enable-features=\"AIPageContentTrackedElementsPassword<AIPageContentTrackedElementsPassword,*AdInterestGroupAPI<ProtectedAudienceDeprecation,AdjustIPv6FallbackTime<OptimisticDnsForTcp,*AiModePageActionOptimization<PageActionsOptimizations,AomVpxUsePresentationThreadType<WebRTC-MediaTaskQueuePriorities,ApiGlicPrivate<GlicPrivateApi,*AutofillAiImportConstraintsForSync<AutofillAiImportConstraintsForSync,*AutofillAiPrivateAiShadowMetric<AutofillAiUsePrivateAi,*AutofillAiUsePrivateAi<AutofillAiUsePrivateAi,*AutofillDisallowMoreHyphenLikeLabels<AutofillSupportSplitZipCode,AutofillEnableExpandIbanRegexPattern<AutofillEnableExpandIbanRegexPattern,AutofillEnableNonAffiliatedLoyaltyCardsFilling<AutofillEnableNonAffiliatedLoyaltyCardsFilling,AutofillFixCvcImport<AutofillFixCvcImport,*AutofillFixIframeOwnership<AutofillFixIframeOwnership,*AutofillFixLabelGenerationForStreetAddress<AutofillFixLabelGenerationForStreetAddress,*AutofillKeydownEditableElement<AutofillKeydownEditableElement,*AutofillNewSuggestionGeneration<AutofillNewSuggestionGeneration,*AutofillSupportSplitZipCode<AutofillSupportSplitZipCode,*AutofillUpstreamEnforceStrikeDelay<AutofillUpstreamEnforceStrikeDelay,BrowserLaunchMetadataReporting<BrowserLaunchMetadataReporting,*BrowsingTopics<TopicsDeprecation,CdmThreadPriorityElevation<CdmServicePriorityElevation,*CheckAutoCommitInCommitAndRollback<CheckAutoCommitInCommitAndRollback,ClearBrowsingHistoryJourney<ClearBrowsingHistoryJourney,ClientSideDetectionLocalResourceCheckFix<ClientSideDetectionLocalResourceCheckFix,ClientSideDetectionScamScore<ClientSideDetectionScamScore,*ComponentsBase32InRust<ComponentsBase32InRust,ConfigureQuicHints<IncreaseHttp3Usage,ContextMenuAnimationLimiting<ContextMenuAnimationLimiting,ContextualTasksSidePanel<ContextualTasksDesktop,*ConversionMeasurement<AttributionReportingDeprecation,CredentialManagementUnifiedUi<CredentialManagementUnifiedUi,CtrlTabMru<CtrlTabMru,DataControlsGlic<EnterpriseDataProtectionForGlic,*DecodeScriptsInBlink<DecodeScriptsInBlink,DeprecateUnload<DeprecateUnload,DeprecateUnloadByAllowList<DeprecateUnload,DeprecateUnloadByBucket<DeprecateUnloadByBucket,DiceHeaderVersion2<DiceProtocolVersion2,*Dictation<VoiceTyping,*DisallowLegacyPrefMacFallback<DisallowLegacyPrefMacFallback,EnableAccountPreviewData<EnableAccountPreviewData,EnableAccountPreviewEntityPreviews<EnableAccountPreviewData,EnableCancelUploadOnContentAnalysis<EnableCancelUploadOnContentAnalysis,*EnableCrossDevicePrefTracker<DesktopToMobilePromos,EnableIntermediateDnsResults<OptimisticDnsForTcp,EnableNewUploadSizeLimit<EnableNewUploadSizeLimit,EnableNtpBrowserPromos<NtpBrowserPromos,EnableUdpGro<EnableQuicReadMultipleAndUdpGRO,EnableWatermarkTimestampTimezone<EnableWatermarkTimestampTimezone,EncryptBookmarks<EncryptBookmarks_Phase1,EncryptSessionStorage<EncryptSessionStorage_Phase1,EnergyEffect<EnergyEffectVisdStudy,EnergyEffectAnimation<EnergyEffectMotionStudy,EnterpriseReleaseNotes<EnterpriseReleaseNotes,ExpiredHistogramLogic<ExpiredHistograms,ExtensionsPinnedByDefault<ExtensionsPinnedByDefault,*ExtremeLightweightUAFDetector<ExtremeLightweightUAFDetector,*Fledge<ProtectedAudienceDeprecation,GlicActor<GlicActorRolloutControl,GlicActorUi<GlicActorRolloutControl,GlicBulkDataEntrySupport<EnterpriseDataProtectionForGlic,GlicExperimentalTriggering<GlicExperimentalTriggering,*GlicUseMainPartitionForUnifiedFre<GlicUseMainPartitionForUnifiedFre,*GlicWarming<GlicColdWarmingDelay,*GlicWebActuationSettingsToggle<GlicWebActuationSettingsToggle,*GmailOtpRetrievalService<GmailOtpBackendInfrastructure,*HangoutsExtensionV3<HangoutsExtensionV3,HappinessTrackingSurveysForClearBrowsingHistory<ClearBrowsingHistoryJourney,HappinessTrackingSurveysForDesktopWhatsNew<WhatsNewHats,HappinessTrackingSurveysForDownloadJourney<ViewDownloadedFileJourney,HappinessTrackingSurveysForPinExtensionJourney<PinExtensionJourney,*HttpCacheZstdCompression<HttpCacheZstdCompression,*HttpCacheZstdDecompression<HttpCacheZstdCompression,*HttpsFirstBalancedModeAutoEnable<HttpsFirstBalancedModeAutoEnableDesktop,IPH_BookmarkBarSimplified<DesktopNtpSimplificationBookmarkBar,IPH_DesktopRealboxContextualSearchFeature<DesktopRealboxContextualSearchIPH,IPH_VerticalTabsExpandOnHoverFeature<VerticalTabsExpandOnHoverLaunch,IPv6FallbackBasedOnRTT<OptimisticDnsForTcp,*ImprovedStartupBestEffortDelay<ImprovedStartupBestEffortDelay,*IndexedDBConnectionDeduplication<IndexedDBConnectionDeduplication,InfoBarInlineLinks<InfoBarInlineLinks,*InitialDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,*LazilySetCustomActionCaption<LazilySetCustomActionCaption,*LazyInitializeSpellcheckCharAttribute<LazyInitializeSpellcheckCharAttribute,*LensOverlayHomeworkPageActionFocusOptimization<PageActionsOptimizations,LensSidePanelUnification<ContextualTasksDesktop,*ManageContactInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysContactInfo,*ManageIdentityDocsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysIdentityDocs,*ManagePasswordsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPasswords,*ManagePaymentsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPayments,*ManageTravelPerceptionSurvey<AutofillYourSavedInfoHatsSurveysTravel,*ManageYourSavedInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysYourSavedInfo,*MaxDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,*MobilePromoOnDesktopWithQRCodeWave1<DesktopToMobilePromos,NtpDisableBrowserInitiatedLinks<NtpDisableBrowserInitiatedLinks,NtpSimplificationBookmarkBar<DesktopNtpSimplificationBookmarkBar,*OffscreenCanvasPropagateVisibility<WebGLMemoryExperiments,*OneTimeTokenBackendNotification<GmailOtpBackendInfrastructure,OptimisticDnsForTcp<OptimisticDnsForTcp,*PMLoadingPageVoter<PMLoadingPageVoter,*PageActionsPrioritySelector<PageActionsPrioritySelector,*PaymentRequestMandatoryPaymentAppUi<PaymentRequestMandatoryPaymentAppUi,PaymentRequestRejectTooSmallWindows<PaymentRequestRejectTooSmallWindows,PdfBufferedPaintManager<PdfBufferedPaintManager,PdfInk2<PdfInkSignaturesTextAnnotations,*PervasiveSharedDictionaries<PervasiveSharedDictionaries,PinExtensionJourney<PinExtensionJourney,PqcCupSigning<PqcCupSigning,*ProactivePasswordProtection<ProactivePasswordProtection,QuicUseReadMultiple<EnableQuicReadMultipleAndUdpGRO,ReadAnythingLineFocus<ReadAnythingLineFocusExperiment,RecordLockAcquisitionTime<RecordLockAcquisitionTimeStudy,RestrictBackgroundFetchFromServiceWorker<RestrictBackgroundFetchFromServiceWorker,*RestrictLinkHeaderOnSubresource<RestrictLinkHeaderOnSubresource,*SafeBrowsingLocalListsUseSBv5<SafeBrowsingLocalListsUseSBv5,*SafeBrowsingWaitForDnsForRealTimeLookup<SafeBrowsingWaitForDnsForRealTimeLookup,SafetyHub<SafetyHubIncreasePasswordCheckFrequencyV2,ScalableFrameEviction<ScalableFrameEviction,ScrollJankV4MetricFastScrollContinuityRequiresSameDirection<ScrollJankV4MetricFastScrollContinuityRequiresSameDirection,SegmentationPlatformFedCmUser<FedCmSegmentationPlatform,SendTabToSelfAutoOpen<InstantHandoffPhase1,SendTabToSelfEnhancedBottomsheet<InstantHandoffPhase1,SendTabToSelfEnhancedDesktopUI<InstantHandoffPhase1,SendTabToSelfExtraEntryPoints<InstantHandoffPhase1,SendTabToSelfImprovedLastActiveLabels<InstantHandoffPhase1,SendTabToSelfPostSendToast<InstantHandoffPhase1,SendTabToSelfPropagateFormFields<InstantHandoffPhase1,SendTabToSelfPropagateScrollPosition<InstantHandoffPhase1,*ServiceWorkerDatabaseDoomOnMissingNextId<ServiceWorkerDatabaseDoomOnMissingNextId,SessionRestoreInfobar<SessionRestoreInfobarSticky,*SingleAxisScrollContainers<SingleAxisScrollContainers,*SmartRestartLockScreen<SmartRestartLockScreen,*SpellcheckSeparateLocalAndAccountDictionaries<UnoPhase2FollowUpDesktop,SplitViewHorizontal<SplitViewHorizontal,StatefulMemoryPressure<StatefulMemoryPressure,*StructuredHeadersInRust<StructuredHeadersInRust,*SuspiciousSiteWarnings<SuspiciousSiteWarnings,SyncSessionsUsePreferredDisplayName<InstantHandoffPhase1,SyncSimplifyDeviceNaming<InstantHandoffPhase1,SyncUseServerDeterminedDeviceName<InstantHandoffPhase1,TabSearchCjkWordBoundary<TabSearchCjkWordBoundary,*ThreeDSecureTelemetry<ThreeDSecureTelemetry,*ThrottleRepeatedNoDamageFrames<ThrottleConsecutiveNoDamageMainFrames,TrackEmptyRendererProcessesForReuse<TransientKeepAlivePolicy,TransientKeepAlivePolicy<TransientKeepAlivePolicy,*TranslateElementExperimentFeatures<TranslateShortTextStaticContext,TranslateOpenSettings<OpenTranslationSettings,*TranslateSimplifiedHindi<SimplifiedHindiModel,TryQuicByDefault<IncreaseCongestionWindow,Ukm<UKM,UkmSamplingRate<UkmSamplingRate,*UnoPhase2FollowUp<UnoPhase2FollowUpDesktop,*UnthrottleAsyncTouchMoves<UnthrottleAsyncTouchMovesV2,UseActionsForBrowserCommands<BrowserActionMigration,*UseDynamicBackingAllocations<UseDynamicBackingAllocations,UseHighPriorityThreadGroup<WebRTC-MediaTaskQueuePriorities,UserValueDefaultBrowserStrings<UserValueDefaultBrowserStrings,*UtfConversionAsciiFastPath<UtfConversionAsciiFastPath,V8Flag_homomorphic_ic<V8HomomorphicIC,*V8Flag_sqrt_allocation_limits<V8SqrtAllocationLimits,*V8Flag_turbolev<V8Turbolev,VariationsRuntimeMutability<VariationsRuntimeMutability,VerticalTabsExpandOnHover<VerticalTabsExpandOnHoverLaunch,ViewDownloadedFileFromAppMenuJourney<ViewDownloadedFileJourney,ViewDownloadedFileJourney<ViewDownloadedFileJourney,WebAppInstallDialog<PWAInstallDialogRefresh,*WebGLDiscardBackBuffer<WebGLMemoryExperiments,WebRTCBoostMediaIOThreads<WebRTC-MediaTaskQueuePriorities,WebRtcUseMediaThreadTypes<WebRTC-MediaTaskQueuePriorities,*WebUIRoundedIcons<WebUIRoundedIcons\" --disable-features=\"ApiGlicAccessFromPromotionPage<ApiGlicAccessFromPromotionPage,AutofillAiWalletPrivatePassesCapability<AutofillAiWalletPrivatePassesCapability,AutofillEnableResurrectingPaymentsUsers<AutofillEnableResurrectingPaymentsUsers,BackForwardCacheCCNSIgnoreUnchangedCookies<BackForwardCacheCCNSIgnoreUnchangedCookies,CdmProcessPriorityElevation<CdmServicePriorityElevation,CentralizedInfoBarFramework<CentralizedInfoBarFramework,ConstructableStylesheetCache<ConstructableStylesheetCacheKillSwitch,ContextualTasks<ContextualTasksDesktop,ContextualTasksBackButtonExpandsSidePanel<ContextualTasksDesktop,ContextualTasksCookiePrefetch<ContextualTasksDesktop,CrossDeviceSigninFromDesktop<CrossDeviceSigninFromDesktop,EnforceP2PSocketPortRestrictions<EnforceP2PSocketPortRestrictionsKillSwitch,GenerateXSLTWarningBanner<GenerateXSLTWarningBanner,GlicActorObservationDelayExcludeAdFrameLoading<GlicActorObservationDelayExcludeAdFrameLoading,GlicAnchorEntryPointForOnboardedUsers<GlicAnchorEntryPointForOnboardedUsersUnlaunch,IPH_ReadingModePageActionLabel<ReadAnythingOmnibox,IgnoreQuicCryptoConfigMemoryPressure<IgnoreQuicCryptoConfigMemoryPressure,PaintHolding,PdfGlicSummarize<GlicPdfSummarizeButton,ReadAnythingOmniboxChip<ReadAnythingOmnibox,ReadSupportsWalletPrivatePassesInAutofillCapability<AutofillAiWalletPrivatePassesCapability,SearchNavigationPrefetch<KillSwitch_SearchNavigationPrefetch,XMLRustForNonXslt<XMLParsingRustNonXsltKillSwitch_153_155\" --disable-field-trial-config",
-      "active_variations_count": 147,
+      "command_line_variations": "--force-fieldtrials=\"*AIPageContentTrackedElementsPassword/EnabledLaunch/*AiSubscriptionAvatarRingDesktop/Default/ApiGlicAccessFromPromotionPage/Control_20260707/*AsyncBeforeUnload/Default/*AttributionReportingDeprecation/Default/AutofillAiImportConstraintsForSync/Default/*AutofillAiUsePrivateAi/Default/AutofillAiWalletPrivatePassesCapability/Enabled_50/AutofillEnableExpandIbanRegexPattern/Control_50/AutofillEnableNonAffiliatedLoyaltyCardsFilling/EnabledLaunch/AutofillEnableResurrectingPaymentsUsers/Launched_Security/AutofillFixCvcImport/EnabledLaunch/AutofillFixIframeOwnership/Default/*AutofillFixLabelGenerationForStreetAddress/Default/AutofillKeydownEditableElement/Default/AutofillNewSuggestionGeneration/Default/AutofillSupportSplitZipCode/Default/AutofillUpstreamEnforceStrikeDelay/Default4/AutofillYourSavedInfoHatsSurveysContactInfo/Default/AutofillYourSavedInfoHatsSurveysIdentityDocs/Default/AutofillYourSavedInfoHatsSurveysPasswords/Default/AutofillYourSavedInfoHatsSurveysPayments/Default/AutofillYourSavedInfoHatsSurveysTravel/Default/AutofillYourSavedInfoHatsSurveysYourSavedInfo/Default/BackForwardCacheCCNSIgnoreUnchangedCookies/Enabled_20260930/*BrokenAlternativeServiceDelays/Default/*BrowserActionMigration/EnabledLaunch/*BrowserInitiatedAutomaticPictureInPicture/Default/*BrowserLaunchMetadataReporting/EnabledLaunch/*CacheGurlSchemeIsHttpOrHttpsResult/Default/*CdmServicePriorityElevation/Control_20260912/*CentralizedInfoBarFramework/EnabledV1_20260921_1/CheckAutoCommitInCommitAndRollback/Default/*ChromeChannelStable/Enabled/*ClearBrowsingHistoryJourney/EnabledLaunch/*ClientSideDetectionLocalResourceCheckFix/EnabledLaunch/*ClientSideDetectionScamScore/Launched/*ComponentsBase32InRust/Default/*ConstructableStylesheetCacheKillSwitch/Disabled_EmergencyKillSwitch/*ContextMenuAnimationLimiting/EnabledLaunch/*ContextualTasksDesktop/SignedInSidePanelUnificationOnly_20260908/CredentialManagementUnifiedUi/Default/CrossDeviceSigninFromDesktop/Enabled_with_new_badge_20260917/CtrlTabMru/EnabledLaunch/*DecodeScriptsInBlink/Default/*DeprecateUnload/Default_pct=100_1/*DeprecateUnloadByBucket/Enabled_permanent_bucket_32/*DesktopNtpDriveModuleLink/Default/*DesktopNtpSimplificationBookmarkBar/EnabledLaunch/*DesktopRealboxContextualSearchIPH/EnabledLaunch/*DesktopToMobilePromos/Default/DiceProtocolVersion2/EnabledLaunch/DisallowLegacyPrefMacFallback/Default/*EnableAccountPreviewData/EnabledLaunch/EnableCancelUploadOnContentAnalysis/EnabledLaunch/EnableNewUploadSizeLimit/Enabled_20260929Launch/*EnableQuicReadMultipleAndUdpGRO/EnabledQuicUseReadMultipleAndUdpGro_20261001/EnableWatermarkTimestampTimezone/EnabledLaunch/*EncryptBookmarks_Phase1/Phase1_5/*EncryptSessionStorage_Phase1/Phase1_5/*EnergyEffectMotionStudy/Launched/*EnergyEffectVisdStudy/Launched/EnforceP2PSocketPortRestrictionsKillSwitch/Disabled_EmergencyKillSwitch/EnterpriseDataProtectionForGlic/EnabledLaunch/*EnterpriseReleaseNotes/EnabledLaunch/*ExpiredHistograms/ExpiryEnabledWithAllowlist/*ExtensionsPinnedByDefault/EnabledLaunch/*ExtremeLightweightUAFDetector/Default/*FedCmSegmentationPlatform/EnabledLaunch/*GCMMessageBuffering/Default/*GenerateXSLTWarningBanner/Disabled_Uncontrolled_20260918/GlicActorObservationDelayExcludeAdFrameLoading/Enabled_2026_05_19/*GlicActorRolloutControl/Enabled_ExternalAllowableByPolicy_US/GlicAnchorEntryPointForOnboardedUsersUnlaunch/Disabled_EmergencyKillSwitch/GlicColdWarmingDelay/Default/*GlicExperimentalTriggering/Enabled_20260710Launch/*GlicMediaData/Control_NonDogfood_20260810/*GlicPdfSummarizeButton/Disabled_20260723_V2/*GlicPrivateApi/Enabled_20260601Launch/GlicUseMainPartitionForUnifiedFre/Default/GlicWebActuationSettingsToggle/Default/*GmailOtpBackendInfrastructure/Default/*HangoutsExtensionV3/Control_20260225/*HttpCacheZstdCompression/Default/*HttpsFirstBalancedModeAutoEnableDesktop/Default/*IgnoreQuicCryptoConfigMemoryPressure/Control_20260902/*ImprovedStartupBestEffortDelay/Default/*IncreaseHttp3Usage/EnabledWithConfigureMinimalQuicHints/IndexedDBConnectionDeduplication/Default/*InfoBarInlineLinks/EnabledLaunch/*InstantHandoffPhase1/EnabledLaunch/*KillSwitch_SearchNavigationPrefetch/Disabled_EmergencyKillSwitch/LazilySetCustomActionCaption/Enabled_20260902/*LazyInitializeSpellcheckCharAttribute/Default/*NtpDisableBrowserInitiatedLinks/EnabledLaunch/OpenTranslationSettings/EnabledLaunch/*OptimisticDnsForTcp/Default/*OptimizationGuideProactivePersonalizedHintsFetching/Default/*PMLoadingPageVoter/Default/*PWAInstallDialogRefresh/EnabledLaunch/*PageActionsOptimizations/Default/*PageActionsPrioritySelector/Default/*PartitionAllocMiracleObject/current_large_ram_launch_20260908/*PasskeyUnlockErrorUi/Default/PaymentRequestMandatoryPaymentAppUi/Default/PaymentRequestRejectTooSmallWindows/Default/PdfBufferedPaintManager/Enabled_20260909/PdfInkSignaturesTextAnnotations/Enabled_20260911_50/*PermissionsAIv4/Default/*PervasiveSharedDictionaries/Default/*PinExtensionJourney/EnabledLaunch/*PqcCupSigning/EnabledLaunch/*PreconnectManagerDirectFastPath/Default/ProactivePasswordProtection/Default/*ProtectedAudienceDeprecation/Control_20260930/*ReadAnythingLineFocusExperiment/EnabledLaunch/*RecordLockAcquisitionTimeStudy/EnabledLaunch/*ReduceMojoURLLoaderFactoryCloning/Control_20260918/RestrictBackgroundFetchFromServiceWorker/Enabled/RestrictLinkHeaderOnSubresource/Default/*RetroactivePreperiod/Default_Linux/*SafeBrowsingLocalListsUseSBv5/Default/SafeBrowsingWaitForDnsForRealTimeLookup/Default/*SafetyHubIncreasePasswordCheckFrequencyV2/Enabled_10d_20260914_20/*ScalableFrameEviction/EnabledLaunch/ScrollJankV4MetricFastScrollContinuityRequiresSameDirection/Default/*SeedFileTrial/SeedFilesLaunched/*ServiceWorkerBackgroundUpdate/Default/*ServiceWorkerDatabaseDoomOnMissingNextId/Default/*SharedTabGroups/Control_20260218/SimplifiedHindiModel/Default/*SingleAxisScrollContainers/Default_20260922/SmartRestartLockScreen/Default/*SplitViewHorizontal/EnabledIndirectAccess/*StatefulMemoryPressure/EnabledLaunch/*StructuredHeadersInRust/Default/SuspiciousSiteWarnings/Default/TabSearchCjkWordBoundary/EnabledLaunch/*ThreeDSecureTelemetry/Default/*ThrottleConsecutiveNoDamageMainFrames/Default/*TopicsDeprecation/Disabled_20261001/*TransientKeepAlivePolicy/Enabled_20260914/TranslateShortTextStaticContext/Default/*UKM/Enabled_20180314/*UMA-Population-Restrict/normal/*UMA-Uniformity-Trial-0.5-Percent-1/group_120/*UMA-Uniformity-Trial-0.5-Percent-2/group_24/*UMA-Uniformity-Trial-1-Percent/group_32/*UMA-Uniformity-Trial-10-Percent/group_06/*UMA-Uniformity-Trial-10-Percent-sanity/group_04/*UMA-Uniformity-Trial-100-Percent/group_01/*UMA-Uniformity-Trial-20-Percent/group_02/*UMA-Uniformity-Trial-20-Percent-Session/group_03/*UMA-Uniformity-Trial-5-Percent/group_14/*UMA-Uniformity-Trial-50-Percent/default/UkmSamplingRate/Downsampled_202309/*UniversalOptOut/Default/*UnoPhase2Desktop/Control_9p_20260318/*UnoPhase2FollowUpDesktop/Default/UnthrottleAsyncTouchMovesV2/Default/*UseDynamicBackingAllocations/Default/UserValueDefaultBrowserStrings/Enabled_20260903/*UtfConversionAsciiFastPath/Default/*V8DateTimePatternGeneratorCacheEviction/Default/*V8HomomorphicIC/EnabledLaunch/*V8SqrtAllocationLimits/Default/*V8Turbolev/Default/*VariationsRuntimeMutability/Enabled_20260914/*VerticalTabsExpandOnHoverLaunch/Enabled/*ViewDownloadedFileJourney/EnabledLaunch/*VisitCustomSearchOnUndefaulting/EnabledLaunch/*VoiceTyping/Default/WaylandExternalBeginFrameSource/Default/WebGLMemoryExperiments/Default/*WebRTC-LibaomAv1Encoder-DropRepeatFramesOnEnhancementLayers/Default,_20260929/*WebRTC-MediaTaskQueuePriorities/Enabled_Launch/*WebRTC-RFC8888CongestionControlFeedback/Enabled,_20260922/*WebUIRoundedIcons/Default/*WhatsNewHats/Enabled_en_20260929/*XMLParsingRustNonXsltKillSwitch_153_155/Disabled_EmergencyKillSwitch\" --force-fieldtrial-params=\"AutofillEnableResurrectingPaymentsUsers.Launched_Security:autofill_enable_resurrecting_payments_churned_users_treatment/1,CentralizedInfoBarFramework.EnabledV1_20260921_1:MigratedCollectedCookies/true/MigratedInstallerDownloader/true/MigratedPageInfo/true/MigratedPdf/true,ClearBrowsingHistoryJourney.EnabledLaunch:en_site_id/R8iDTcjjT0ugnJ3q1cK0TiRRjjy4/probability/1%2E0,ContextualTasksDesktop.SignedInSidePanelUnificationOnly_20260908:allow-signed-out/false,CrossDeviceSigninFromDesktop.Enabled_with_new_badge_20260917:show_new_badge/true/url/https%3A%2F%2Fwww%2Egoogle%2Ecom%2Fchrome%2Fgo-mobile%3Fentry_point_id%3D1%26email%3D%241,DeprecateUnload.Default_pct%3D100_1:allowlist/a%2Ecom%2Cb%2Ecom%2Cc%2Ecom%2Cd%2Ecom%2Ce%2Ecom%2Cf%2Ecom%2Cweb-platform%2Etest%2Cwww1%2Eweb-platform%2Etest%2C127%2E0%2E0%2E1%2Cexample%2Etest%2Cwww%2Egoogle%2Ecom%2Cwww%2Eyoutube%2Ecom%2Cwww%2Efacebook%2Ecom%2Cwww%2Epornhub%2Ecom%2Cwww%2Exvideos%2Ecom%2Ctwitter%2Ecom%2Cwww%2Ewikipedia%2Eorg%2Cwww%2Einstagram%2Ecom%2Cwww%2Ereddit%2Ecom%2Cwww%2Eamazon%2Ecom%2Cduckduckgo%2Ecom%2Cwww%2Eyahoo%2Ecom%2Cwww%2Exnxx%2Ecom%2Cwww%2Etiktok%2Ecom%2Cwww%2Ebing%2Ecom%2Cwww%2Eyahoo%2Eco%2Ejp%2Cweather%2Ecom%2Cwww%2Ewhatsapp%2Ecom%2Cdzen%2Eru%2Cxhamster%2Ecom%2Copenai%2Ecom%2Coutlook%2Elive%2Ecom%2Cwww%2Emicrosoft%2Ecom%2Cmicrosoftonline%2Ecom%2Cwww%2Emicrosoftonline%2Ecom%2Cwww%2Elinkedin%2Ecom%2Cwww%2Equora%2Ecom%2Cwww%2Etwitch%2Etv%2Cwww%2Enaver%2Ecom%2Cnetflix%2Ecom%2Cwww%2Enetflix%2Ecom%2Cwww%2Eoffice%2Ecom%2Cvk%2Ecom%2Cwww%2Evk%2Ecom%2Cwww%2Eglobo%2Ecom%2Cwww%2Ealiexpress%2Ecom%2Cwww%2Ecnn%2Ecom%2Czoom%2Eus%2Cwww%2Ezoom%2Eus%2Cwww%2Eimdb%2Ecom%2Cx%2Ecom%2Cwww%2Enytimes%2Ecom%2Conlyfans%2Ecom%2Cwww%2Eespn%2Ecom%2Cwww%2Eamazon%2Eco%2Ejp%2Cwww%2Epinterest%2Ecom%2Cwww%2Euol%2Ecom%2Ebr%2Cwww%2Eebay%2Ecom%2Cwww%2Emarca%2Ecom%2Cwww%2Ecanva%2Ecom%2Cwww%2Espotify%2Ecom%2Cwww%2Ebbc%2Ecom%2Cwww%2Epaypal%2Ecom%2Cwww%2Eapple%2Ecom/rollout_percent/80,DeprecateUnloadByBucket.Enabled_permanent_bucket_32:rollout_bucket/32,EnableNewUploadSizeLimit.Enabled_20260929Launch:max_file_size_mb/250,EncryptBookmarks_Phase1.Phase1_5:stage/write_both_read_only_clear,EncryptSessionStorage_Phase1.Phase1_5:stage/write_both_read_only_clear,EnergyEffectVisdStudy.Launched:EnergyEffectVariantParam/energy-effect-fusebox,ExpiredHistograms.ExpiryEnabledWithAllowlist:allowlist/,GlicActorRolloutControl.Enabled_ExternalAllowableByPolicy_US:glic-actor-eligible-tiers/1%2C2/glic_actor_enterprise_pref_default/disabled_by_default,IncreaseHttp3Usage.EnabledWithConfigureMinimalQuicHints:quic_hints/google%2Ecom%2C443%2C443%2Cwww%2Egoogle%2Ecom%2C443%2C443,PartitionAllocMiracleObject.current_large_ram_launch_20260908:PartitionAllocSchedulerLoopQuarantineConfig/%7B%22%2A%22%3A%7B%22amsc%22%3A%7B%22branch-capacity-in-bytes%22%3A524288%2C%22enable-quarantine%22%3Atrue%2C%22enable-zapping%22%3Atrue%2C%22leak-on-destruction%22%3Afalse%7D%7D%2C%22browser%22%3A%7B%22main%22%3A%7B%22branch-capacity-in-bytes%22%3A524288%2C%22enable-quarantine%22%3Atrue%2C%22enable-zapping%22%3Atrue%2C%22leak-on-destruction%22%3Afalse%7D%7D%7D/enabled-processes/browser-only,PdfInkSignaturesTextAnnotations.Enabled_20260911_50:text-annotations/true,PinExtensionJourney.EnabledLaunch:en_site_id/8RJXcn5t20ugnJ3q1cK0VLDGHPAz/probability/1%2E0,RecordLockAcquisitionTimeStudy.EnabledLaunch:RecordLockAcquisitionTimeAllowedThreads/CrBrowserMain%2CCrRendererMain%2CCrGpuMain%2CVizCompositor%2CCompositor%2CBrowserIO%2CNetworkService%2CGPU%2EForegroundWorker%2CGPU%2EBackgroundWorker%2CRenderer%2EForegroundWorker%2CRenderer%2EBackgroundWorker%2CBrowser%2EForegroundWorker%2CBrowser%2EBackgroundWorker,RestrictBackgroundFetchFromServiceWorker.Enabled:allowlist/https%3A%2F%2Fcuutruyen%2Enet%2Chttps%3A%2F%2Fwww%2Emon%2Eemg-u%2Ecom%2Chttps%3A%2F%2Feki%2Eecuakaraoke%2Ecom%2Eec%2Chttps%3A%2F%2Fhetcuutruyen%2Enet%2Chttps%3A%2F%2Fillusorium%2Eaquarium%2Eapp%2Chttps%3A%2F%2Fintranet%2Evzo%2Ech%2Chttps%3A%2F%2Fmy%2Eduaux%2Ecom%2Chttps%3A%2F%2Fnxg-prod-cvag%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-heagmobilo%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-rlg%2Einnotix%2Ecom%2Chttps%3A%2F%2Fwhatpwacando%2Etoday%2Chttps%3A%2F%2Fwww%2Eapkz%2Ecom%2Chttps%3A%2F%2Fk-bibel%2Ede%2Chttps%3A%2F%2Fconnect%2Ecmcv%2Eac%2Ein%2Chttps%3A%2F%2Ffilmtor%2Ecom%2Chttps%3A%2F%2Fmozaic%2Efm%2Chttps%3A%2F%2Fwww%2Ehaeuserlexikon%2Ede%2Chttps%3A%2F%2Fwww%2Eyouthconnektburkina%2Ebf,SafetyHubIncreasePasswordCheckFrequencyV2.Enabled_10d_20260914_20:background-password-check-interval/10d/password-check-mon-weight/4/password-check-sat-weight/4/password-check-sun-weight/4,SplitViewHorizontal.EnabledIndirectAccess:split_view_horizontal_direct_access/false,UkmSamplingRate.Downsampled_202309:AbandonedSRPNavigation/2/Accessibility%2ECanvas/16/AdFrameLoad/25/Android%2EMultiWindowState/3/Autofill%2EFieldFillStatus/45/Autofill%2EFieldTypeValidation/160/Autofill%2EFormEvent/20/BackgroundSyncRegistered/2/Blink%2EFrameLoader/550/Blink%2EHTMLParsing/16/Blink%2EPageLoad/20/Blink%2EPaintTiming/12/Blink%2EUpdateTime/40/ClientHints%2EAcceptCHFrameUsage/70/ClientHints%2EAcceptCHHeaderUsage/60/ClientHints%2EDelegateCHMetaUsage/3/ClientRenderingAPI/420/Compose%2ETextElementUsage/2/ContentManagementSystemPageLoad/16/ContextualCueing%2ENudgeDecision/6/Cookies%2EBlocked%2EDueToOriginMismatch/60/CrossOriginSubframeWithoutEmbeddingControl/70/DocumentCreated/100/DomDistiller%2EAndroid%2EDistillabilityLatency/10/DomDistiller%2EAndroid%2EDistillabilityResult/14/DomDistiller%2EModelResult%2EDistillable/18/Download%2ECompleted/Download/Download%2EInterrupted/Download/Download%2EResumed/Download/Download%2EStarted/Download/Extensions%2EOnNavigation/70/Extensions%2EWebRequest%2EKeepaliveRequestFinished/100/GoogleDocsOfflineExtension/8/HistoryApi%2EPushState/10/HistoryManipulationIntervention/2/InstalledRelatedApps/6/JavascriptFrameworkPageLoad/16/LoadCountsPerTopLevelDocument/20/LoadingPredictor/12/MainFrameNavigation/2/Media/35/Media%2EAutoplay%2EAttempt/14/Media%2EBasicPlayback/Media/Media%2EEME%2EGetStatusForPolicy/30/Media%2EVideoDecodePerfRecord/8/Media%2EWebAudio%2EAudioContext%2EAudibleTime/Media/Media%2EWebMediaPlayerState/Media/Memory%2EExperimental/100/Memory%2ETabFootprint/20/MobileFriendliness%2ETappedBadTargets/12/Navigation%2EFromGoogleSearch%2ETimingInformation/2/Navigation%2EReceivedResponse/20/NavigationPredictor/70/NavigationPredictorAnchorElementMetrics/NavigationPredictor/NavigationPredictorPageLinkClick/NavigationPredictor/NavigationPredictorPageLinkMetrics/NavigationPredictor/NavigationPredictorPreloadOnHover/NavigationPredictor/NavigationPredictorUserInteractions/NavigationPredictor/NavigationTiming/14/Network%2EDataUrls/90/OmniboxSecurityIndicator%2EFormSubmission/8/OptimizationGuide/60/OptimizationGuide%2EAnnotatedPageContent/16/OptimizationGuide%2EPageContentExtraction/30/PageContentAnnotations2/35/PageForegroundSession/30/PageLifecycleMetricsOnNewPageCommit/25/PageLoadInitiatorForAdTagging/16/PaidContentPageLoad/20/PartitionedCookiePresentV3/6/PerformanceAPI%2ELongAnimationFrame/480/PerformanceAPI%2ELongTask/14/PerformanceAPI%2EMemory%2ELegacy/2000/PerformanceManager%2EFreezingEligibility/4/PerformanceManager%2EPageResourceUsage2/160/PermissionUsage/4/PermissionUsage%2ENotificationShown/2/Popup%2EClosed/Popup/Popup%2EPage/Popup/PowerUsageScenariosIntervalData/20/PrefetchProxy%2EPrefetchedResource/4/Preloading%2EAttempt/PreloadingAttempt/Preloading%2EAttempt%2EPreviousPrimaryPage/PreloadingAttempt/Preloading%2EPrediction/200/Preloading%2EPrediction%2EPreviousPrimaryPage/270/Responsiveness%2EUserInteraction/90/SamesiteRedirectContextDowngrade/10/Security%2ESiteEngagement/14/ServiceWorker%2EMainResourceLoadCompleted/6/Site%2EInstall/3/Site%2EManifest/3/Site%2EQuality/3/SiteFamiliarityHeuristicResult/18/SubresourceFilter/20/SubresourceLoad%2EZstdContentEncoding/420/TabManager%2ETabLifetime/4/TabRevisitTracker%2ETabStateChange/30/Translate/20/TranslatePageLoad/25/Unload/14/UserPerceivedPageVisit/50/V8%2EGC%2EFullCycle/40/V8%2EWasm/6/V8%2EWasm%2EModuleCompiled/V8%2EWasm/V8%2EWasm%2EModuleDecoded/V8%2EWasm/V8%2EWasm%2EModuleInstantiated/V8%2EWasm/WebOTPImpact/10/XR%2EWebXR/2/_default_sampling/1/_webdx_features_sampling/1,VerticalTabsExpandOnHoverLaunch.Enabled:expand_on_hover_default_enabled/true/expand_on_hover_use_velocity_heuristic/true/expand_on_hover_velocity_heuristic_delay/50ms/expand_on_hover_velocity_heuristic_distance_from_edge/12/expand_on_hover_velocity_heuristic_edge_delay/200ms/expand_on_hover_velocity_heuristic_interval/10ms/expand_on_hover_velocity_heuristic_min_samples/3/expand_on_hover_velocity_heuristic_threshold/0%2E25,ViewDownloadedFileJourney.EnabledLaunch:en_site_id/mL46CjHkE0ugnJ3q1cK0NsAQJpTP/probability/1%2E0,WhatsNewHats.Enabled_en_20260929:en_site_id/6bnVh68QF0ugnJ3q1cK0NQxjpCFS/probability/0%2E01\" --enable-features=\"AIPageContentTrackedElementsPassword<AIPageContentTrackedElementsPassword,AdInterestGroupAPI<ProtectedAudienceDeprecation,*AiModePageActionOptimization<PageActionsOptimizations,AomVpxUsePresentationThreadType<WebRTC-MediaTaskQueuePriorities,ApiGlicPrivate<GlicPrivateApi,*AutofillAiImportConstraintsForSync<AutofillAiImportConstraintsForSync,*AutofillAiPrivateAiShadowMetric<AutofillAiUsePrivateAi,*AutofillAiUsePrivateAi<AutofillAiUsePrivateAi,AutofillAiWalletPrivatePassesCapability<AutofillAiWalletPrivatePassesCapability,*AutofillDisallowMoreHyphenLikeLabels<AutofillSupportSplitZipCode,AutofillEnableNonAffiliatedLoyaltyCardsFilling<AutofillEnableNonAffiliatedLoyaltyCardsFilling,AutofillEnableResurrectingPaymentsUsers<AutofillEnableResurrectingPaymentsUsers,AutofillFixCvcImport<AutofillFixCvcImport,*AutofillFixIframeOwnership<AutofillFixIframeOwnership,*AutofillFixLabelGenerationForStreetAddress<AutofillFixLabelGenerationForStreetAddress,*AutofillKeydownEditableElement<AutofillKeydownEditableElement,*AutofillNewSuggestionGeneration<AutofillNewSuggestionGeneration,*AutofillSupportSplitZipCode<AutofillSupportSplitZipCode,*AutofillUpstreamEnforceStrikeDelay<AutofillUpstreamEnforceStrikeDelay,BackForwardCacheCCNSIgnoreUnchangedCookies<BackForwardCacheCCNSIgnoreUnchangedCookies,*BrowserInitiatedAutomaticPictureInPicture<BrowserInitiatedAutomaticPictureInPicture,BrowserLaunchMetadataReporting<BrowserLaunchMetadataReporting,CentralizedInfoBarFramework<CentralizedInfoBarFramework,*CheckAutoCommitInCommitAndRollback<CheckAutoCommitInCommitAndRollback,ClearBrowsingHistoryJourney<ClearBrowsingHistoryJourney,ClientSideDetectionLocalResourceCheckFix<ClientSideDetectionLocalResourceCheckFix,ClientSideDetectionScamScore<ClientSideDetectionScamScore,*ComponentsBase32InRust<ComponentsBase32InRust,ConfigureQuicHints<IncreaseHttp3Usage,ContextMenuAnimationLimiting<ContextMenuAnimationLimiting,ContextualTasksSidePanel<ContextualTasksDesktop,*ConversionMeasurement<AttributionReportingDeprecation,*CredentialManagementUnifiedUi<CredentialManagementUnifiedUi,CrossDeviceSigninFromDesktop<CrossDeviceSigninFromDesktop,CtrlTabMru<CtrlTabMru,DataControlsGlic<EnterpriseDataProtectionForGlic,*DecodeScriptsInBlink<DecodeScriptsInBlink,DeprecateUnload<DeprecateUnload,DeprecateUnloadByAllowList<DeprecateUnload,DeprecateUnloadByBucket<DeprecateUnloadByBucket,DiceHeaderVersion2<DiceProtocolVersion2,*Dictation<VoiceTyping,*DisallowLegacyPrefMacFallback<DisallowLegacyPrefMacFallback,EnableAccountPreviewData<EnableAccountPreviewData,EnableAccountPreviewEntityPreviews<EnableAccountPreviewData,EnableCancelUploadOnContentAnalysis<EnableCancelUploadOnContentAnalysis,*EnableCrossDevicePrefTracker<DesktopToMobilePromos,EnableNewUploadSizeLimit<EnableNewUploadSizeLimit,EnableUdpGro<EnableQuicReadMultipleAndUdpGRO,EnableWatermarkTimestampTimezone<EnableWatermarkTimestampTimezone,EncryptBookmarks<EncryptBookmarks_Phase1,EncryptSessionStorage<EncryptSessionStorage_Phase1,EnergyEffect<EnergyEffectVisdStudy,EnergyEffectAnimation<EnergyEffectMotionStudy,EnterpriseReleaseNotes<EnterpriseReleaseNotes,ExpiredHistogramLogic<ExpiredHistograms,ExtensionsPinnedByDefault<ExtensionsPinnedByDefault,*ExtremeLightweightUAFDetector<ExtremeLightweightUAFDetector,Fledge<ProtectedAudienceDeprecation,*GCMMessageBuffering<GCMMessageBuffering,GlicActor<GlicActorRolloutControl,GlicActorObservationDelayExcludeAdFrameLoading<GlicActorObservationDelayExcludeAdFrameLoading,GlicActorUi<GlicActorRolloutControl,GlicBulkDataEntrySupport<EnterpriseDataProtectionForGlic,GlicExperimentalTriggering<GlicExperimentalTriggering,*GlicUseMainPartitionForUnifiedFre<GlicUseMainPartitionForUnifiedFre,*GlicWarming<GlicColdWarmingDelay,*GlicWebActuationSettingsToggle<GlicWebActuationSettingsToggle,*GmailOtpRetrievalService<GmailOtpBackendInfrastructure,HappinessTrackingSurveysForClearBrowsingHistory<ClearBrowsingHistoryJourney,HappinessTrackingSurveysForDesktopWhatsNew<WhatsNewHats,HappinessTrackingSurveysForDownloadJourney<ViewDownloadedFileJourney,HappinessTrackingSurveysForPinExtensionJourney<PinExtensionJourney,*HttpCacheZstdCompression<HttpCacheZstdCompression,*HttpCacheZstdDecompression<HttpCacheZstdCompression,*HttpsFirstBalancedModeAutoEnable<HttpsFirstBalancedModeAutoEnableDesktop,IPH_BookmarkBarSimplified<DesktopNtpSimplificationBookmarkBar,IPH_DesktopRealboxContextualSearchFeature<DesktopRealboxContextualSearchIPH,IPH_SignoutWebIntercept<UnoPhase2Desktop,IPH_VerticalTabsExpandOnHoverFeature<VerticalTabsExpandOnHoverLaunch,*ImprovedStartupBestEffortDelay<ImprovedStartupBestEffortDelay,*IndexedDBConnectionDeduplication<IndexedDBConnectionDeduplication,InfoBarInlineLinks<InfoBarInlineLinks,*InitialDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,LazilySetCustomActionCaption<LazilySetCustomActionCaption,*LazyInitializeSpellcheckCharAttribute<LazyInitializeSpellcheckCharAttribute,*LensOverlayHomeworkPageActionFocusOptimization<PageActionsOptimizations,LensSidePanelUnification<ContextualTasksDesktop,*ManageContactInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysContactInfo,*ManageIdentityDocsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysIdentityDocs,*ManagePasswordsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPasswords,*ManagePaymentsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPayments,*ManageTravelPerceptionSurvey<AutofillYourSavedInfoHatsSurveysTravel,*ManageYourSavedInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysYourSavedInfo,*MaxDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,*MobilePromoOnDesktopWithQRCodeWave1<DesktopToMobilePromos,NtpDisableBrowserInitiatedLinks<NtpDisableBrowserInitiatedLinks,NtpSimplificationBookmarkBar<DesktopNtpSimplificationBookmarkBar,*OffscreenCanvasPropagateVisibility<WebGLMemoryExperiments,*OneTimeTokenBackendNotification<GmailOtpBackendInfrastructure,*PMLoadingPageVoter<PMLoadingPageVoter,*PageActionsPrioritySelector<PageActionsPrioritySelector,PartitionAllocSchedulerLoopQuarantine<PartitionAllocMiracleObject,PartitionAllocSchedulerLoopQuarantineTaskObserverForBrowserUIThread<PartitionAllocMiracleObject,PartitionAllocWithAdvancedChecks<PartitionAllocMiracleObject,*PaymentRequestMandatoryPaymentAppUi<PaymentRequestMandatoryPaymentAppUi,*PaymentRequestRejectTooSmallWindows<PaymentRequestRejectTooSmallWindows,PdfBufferedPaintManager<PdfBufferedPaintManager,PdfInk2<PdfInkSignaturesTextAnnotations,*PervasiveSharedDictionaries<PervasiveSharedDictionaries,PinExtensionJourney<PinExtensionJourney,PqcCupSigning<PqcCupSigning,*ProactivePasswordProtection<ProactivePasswordProtection,QuicUseReadMultiple<EnableQuicReadMultipleAndUdpGRO,ReadAnythingLineFocus<ReadAnythingLineFocusExperiment,ReadSupportsWalletPrivatePassesInAutofillCapability<AutofillAiWalletPrivatePassesCapability,RecordLockAcquisitionTime<RecordLockAcquisitionTimeStudy,RestrictBackgroundFetchFromServiceWorker<RestrictBackgroundFetchFromServiceWorker,*RestrictLinkHeaderOnSubresource<RestrictLinkHeaderOnSubresource,*SafeBrowsingLocalListsUseSBv5<SafeBrowsingLocalListsUseSBv5,*SafeBrowsingWaitForDnsForRealTimeLookup<SafeBrowsingWaitForDnsForRealTimeLookup,SafetyHub<SafetyHubIncreasePasswordCheckFrequencyV2,ScalableFrameEviction<ScalableFrameEviction,*ScrollJankV4MetricFastScrollContinuityRequiresSameDirection<ScrollJankV4MetricFastScrollContinuityRequiresSameDirection,SegmentationPlatformFedCmUser<FedCmSegmentationPlatform,SendTabToSelfAutoOpen<InstantHandoffPhase1,SendTabToSelfEnhancedBottomsheet<InstantHandoffPhase1,SendTabToSelfEnhancedDesktopUI<InstantHandoffPhase1,SendTabToSelfExtraEntryPoints<InstantHandoffPhase1,SendTabToSelfImprovedLastActiveLabels<InstantHandoffPhase1,SendTabToSelfPostSendToast<InstantHandoffPhase1,SendTabToSelfPropagateFormFields<InstantHandoffPhase1,SendTabToSelfPropagateScrollPosition<InstantHandoffPhase1,*ServiceWorkerDatabaseDoomOnMissingNextId<ServiceWorkerDatabaseDoomOnMissingNextId,*SingleAxisScrollContainers<SingleAxisScrollContainers,*SmartRestartLockScreen<SmartRestartLockScreen,*SpellcheckSeparateLocalAndAccountDictionaries<UnoPhase2FollowUpDesktop,SplitViewHorizontal<SplitViewHorizontal,StatefulMemoryPressure<StatefulMemoryPressure,*StructuredHeadersInRust<StructuredHeadersInRust,*SuspiciousSiteWarnings<SuspiciousSiteWarnings,SyncSessionsUsePreferredDisplayName<InstantHandoffPhase1,SyncSimplifyDeviceNaming<InstantHandoffPhase1,SyncUseServerDeterminedDeviceName<InstantHandoffPhase1,TabSearchCjkWordBoundary<TabSearchCjkWordBoundary,*ThreeDSecureTelemetry<ThreeDSecureTelemetry,*ThrottleRepeatedNoDamageFrames<ThrottleConsecutiveNoDamageMainFrames,TrackEmptyRendererProcessesForReuse<TransientKeepAlivePolicy,TransientKeepAlivePolicy<TransientKeepAlivePolicy,*TranslateElementExperimentFeatures<TranslateShortTextStaticContext,TranslateOpenSettings<OpenTranslationSettings,*TranslateSimplifiedHindi<SimplifiedHindiModel,Ukm<UKM,UkmSamplingRate<UkmSamplingRate,*UnoPhase2FollowUp<UnoPhase2FollowUpDesktop,*UnthrottleAsyncTouchMoves<UnthrottleAsyncTouchMovesV2,UseActionsForBrowserCommands<BrowserActionMigration,*UseDynamicBackingAllocations<UseDynamicBackingAllocations,UseHighPriorityThreadGroup<WebRTC-MediaTaskQueuePriorities,UserValueDefaultBrowserStrings<UserValueDefaultBrowserStrings,*UtfConversionAsciiFastPath<UtfConversionAsciiFastPath,V8Flag_homomorphic_ic<V8HomomorphicIC,*V8Flag_sqrt_allocation_limits<V8SqrtAllocationLimits,*V8Flag_turbolev<V8Turbolev,VariationsRuntimeMutability<VariationsRuntimeMutability,VerticalTabsExpandOnHover<VerticalTabsExpandOnHoverLaunch,ViewDownloadedFileFromAppMenuJourney<ViewDownloadedFileJourney,ViewDownloadedFileJourney<ViewDownloadedFileJourney,VisitCustomSearchOnUndefaulting<VisitCustomSearchOnUndefaulting,*WaylandExternalBeginFrameSource<WaylandExternalBeginFrameSource,WebAppInstallDialog<PWAInstallDialogRefresh,*WebGLDiscardBackBuffer<WebGLMemoryExperiments,WebRTCBoostMediaIOThreads<WebRTC-MediaTaskQueuePriorities,WebRtcUseMediaThreadTypes<WebRTC-MediaTaskQueuePriorities,*WebUIRoundedIcons<WebUIRoundedIcons\" --disable-features=\"AnnotatedPageContentWithMediaData<GlicMediaData,ApiGlicAccessFromPromotionPage<ApiGlicAccessFromPromotionPage,AutofillEnableExpandIbanRegexPattern<AutofillEnableExpandIbanRegexPattern,BrowsingTopics<TopicsDeprecation,CdmProcessPriorityElevation<CdmServicePriorityElevation,CdmThreadPriorityElevation<CdmServicePriorityElevation,ConstructableStylesheetCache<ConstructableStylesheetCacheKillSwitch,ContextualTasks<ContextualTasksDesktop,ContextualTasksBackButtonExpandsSidePanel<ContextualTasksDesktop,ContextualTasksCookiePrefetch<ContextualTasksDesktop,EnforceP2PSocketPortRestrictions<EnforceP2PSocketPortRestrictionsKillSwitch,GenerateXSLTWarningBanner<GenerateXSLTWarningBanner,GlicAnchorEntryPointForOnboardedUsers<GlicAnchorEntryPointForOnboardedUsersUnlaunch,HangoutsExtensionV3<HangoutsExtensionV3,HeadlessCaptionEarlyStart<GlicMediaData,HeadlessLiveCaption<GlicMediaData,IPH_SignInBenefits<UnoPhase2Desktop,IgnoreQuicCryptoConfigMemoryPressure<IgnoreQuicCryptoConfigMemoryPressure,MediaTrasncriptsFlagInPageMetadata<GlicMediaData,PaintHolding,PdfGlicSummarize<GlicPdfSummarizeButton,ReduceMojoURLLoaderFactoryCloning<ReduceMojoURLLoaderFactoryCloning,ReplaceSyncPromosWithSignInPromos<UnoPhase2Desktop,SearchNavigationPrefetch<KillSwitch_SearchNavigationPrefetch,SyncEnableContactInfoDataTypeForCustomPassphraseUsers<UnoPhase2Desktop,XMLRustForNonXslt<XMLParsingRustNonXsltKillSwitch_153_155\" --disable-field-trial-config",
+      "active_variations_count": 148,
       "active_variations": [
         "6c9bc01b-377be55a",
         "832e9e2-ca7d8d80",
@@ -1687,10 +1688,11 @@
         "2ad3343-ca7d8d80",
         "9a26d980-ca7d8d80",
         "d609f093-377be55a",
+        "da968c94-ca7d8d80",
         "7f4cbd4d-377be55a",
         "99fb13df-ca7d8d80",
-        "cdc6dc11-ddffc668",
-        "92b406bd-9b37107",
+        "cdc6dc11-3a9d12b",
+        "92b406bd-4de29222",
         "3095aa95-3f4a17df",
         "c2bfaa56-377be55a",
         "4bf7b406-377be55a",
@@ -1701,7 +1703,7 @@
         "ff1e0777-6b128be5",
         "153d998a-ca7d8d80",
         "f314f5b9-bc521987",
-        "238649f0-ccd6d3ee",
+        "238649f0-6e82a989",
         "8095bf60-ca7d8d80",
         "352f87df-377be55a",
         "c9c3bf92-377be55a",
@@ -1717,51 +1719,49 @@
         "6a64ab7e-377be55a",
         "bd6dd170-ca7d8d80",
         "68f499c8-377be55a",
-        "6d423f36-ca7d8d80",
+        "7515e6ea-ca7d8d80",
         "a218ad40-7937fad3",
         "9d5ecd8d-feaa56f4",
         "310c8bf2-722cbc7b",
+        "6e4912ad-540c53e0",
         "ed102d29-ee29209c",
         "d09c2d9-f54bd3e4",
-        "9ae8bfc4-6e522a5b",
         "635e5df5-ca7d8d80",
-        "432d9464-ca7d8d80",
+        "432d9464-d9659f4c",
         "334b1a1c-ca7d8d80",
         "1db33038-ca7d8d80",
         "2bdb6f15-dd1de3b5",
         "f181271f-ca7d8d80",
-        "7ffa5386-40b00f09",
         "78049c75-7bc9a52b",
         "9f03bb1b-377be55a",
         "1eb4d00c-377be55a",
         "c6072f65-f9a43703",
         "4d4e8d94-ca7d8d80",
-        "66657049-17464aed",
         "c0e01b2-377be55a",
-        "5199db31-a6a0c948",
+        "5199db31-ca7d8d80",
         "260bef7d-ca7d8d80",
         "73d480d9-ca7d8d80",
         "861960c3-377be55a",
         "70640dfa-ca7d8d80",
         "b252442a-ca7d8d80",
+        "c290aefb-3f4e3571",
         "9f8a0fd2-ca7d8d80",
         "3ac9fcb9-ca7d8d80",
         "a015f6e1-ca7d8d80",
         "b706019d-377be55a",
         "23a3e365-377be55a",
         "d09b7b7d-ca7d8d80",
-        "a3652538-ca7d8d80",
+        "a3652538-6e522a5b",
         "4fa4e3b8-377be55a",
-        "44fe0078-a1f0f862",
         "a52330dc-377be55a",
+        "3ede7bd6-6d665e7b",
         "1edcddf4-31889cb4",
         "6cd68a95-ca7d8d80",
-        "1f490b80-6d76f654",
+        "1f490b80-9778ffa5",
         "41392635-377be55a",
         "b6f29041-9af5ba90",
         "53c64de7-ca7d8d80",
         "c526ddf6-ca7d8d80",
-        "b08c5f0c-202f7bc4",
         "a374fdf0-bea66037",
         "29be5797-5f2635af",
         "3bce3df7-5eb61fbc",
@@ -1769,21 +1769,22 @@
         "bc0b4e45-ca7d8d80",
         "299dc502-ca7d8d80",
         "eff066ba-ca7d8d80",
-        "3728c466-ca7d8d80",
-        "c6080aa-2ae15f90",
+        "3728c466-5bd7c597",
+        "c6080aa-36d48ccb",
         "494d8760-52325d43",
         "3ac60855-486e2a9c",
-        "63dcb6a3-f433a0a7",
-        "e706e746-823cc8ce",
-        "f296190c-92a7f5c9",
-        "4442aae2-75cb33fc",
+        "63dcb6a3-99ced8a4",
+        "e706e746-30f715f3",
+        "f296190c-6960c22a",
+        "4442aae2-6e597ede",
         "f690cf64-a5822863",
         "ed1d377-e1cc0f14",
-        "75f0f0a0-e1cc0f14",
-        "710c3f90-6bdfffe7",
-        "e2b18481-7158671e",
-        "e7e71889-e1cc0f14",
+        "75f0f0a0-6bdfffe7",
+        "710c3f90-d7f6b13c",
+        "e2b18481-7564fb06",
+        "e7e71889-4ad60575",
         "fd0aa8ec-ca7d8d80",
+        "a39574eb-4ec3b71c",
         "f8b97b53-ca7d8d80",
         "4776ceb-ca7d8d80",
         "d5e1fd03-ca7d8d80",
@@ -1794,10 +1795,11 @@
         "a2ca4614-36d48ccb",
         "105bcc2f-3f4a17df",
         "f2f8b883-377be55a",
+        "7976d448-377be55a",
         "55b8c148-ca7d8d80",
         "bc3e7cb0-6fd9ec9",
         "2f95a72f-4d2fac87",
-        "3eef4209-4f3c4859",
+        "3eef4209-ded736b8",
         "77ca3281-ca7d8d80",
         "c55491ea-1e96d9f7",
         "390c1b55-f9a43703",
@@ -1832,9 +1834,9 @@
         "seed_file": "VariationsSeedV2",
         "seed_file_bytes": 172,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoOCggxNzkwOTI4MBICCAI=#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
-        "last_fetch_time": "13435408371174407",
+        "last_fetch_time": "13435494618254777",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": null,
         "seed_scan_error": "stored seed is only 163 bytes decompressed at exit; not a full seed, not scanned",
@@ -1850,17 +1852,17 @@
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
           "0x0033",
+          "0x0010",
+          "0x0039",
+          "0x000a",
+          "0x000d",
+          "0x44cd",
+          "0xfe0d",
+          "0x001b",
           "0x002b",
           "0x002d",
-          "0x000a",
-          "0x001b",
-          "0x0000",
-          "0x44cd",
-          "0x0039",
-          "0x0010",
           "0xca34",
-          "0xfe0d",
-          "0x000d"
+          "0x0000"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -1905,16 +1907,52 @@
         ],
         "transport_params": [
           {
-            "id": "0x4",
-            "name": "initial_max_data",
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
             "len": 4,
-            "value": 15728640
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000015aaa7ada00000001"
           },
           {
             "id": "0x20",
             "name": "max_datagram_frame_size",
             "len": 4,
             "value": 65536
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
           },
           {
             "id": "0x3128",
@@ -1924,64 +1962,28 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x12e146b354b5ef31",
-            "name": "grease",
-            "len": 3,
-            "value": 55
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
             "id": "0x5",
             "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001fafadaea00000001"
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
+            "id": "0x22a78f1183adada6",
+            "name": "grease",
+            "len": 6,
+            "value": 26
           },
           {
             "id": "0x6",
             "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           }
         ],
         "h3_settings": {
@@ -2018,11 +2020,11 @@
       ],
       "network_trial_groups": {
         "IgnoreQuicCryptoConfigMemoryPressure": "Control_20260902",
-        "IncreaseCongestionWindow": "Control_20260911_STABLE_30",
+        "IncreaseCongestionWindow": null,
         "NetTaskScheduler": null,
         "IncreaseAmplificationFactor": null,
         "PqcBandwidthExperiment": null,
-        "GlicMediaData": null,
+        "GlicMediaData": "Control_NonDogfood_20260810",
         "IncreaseHttp3Usage": "EnabledWithConfigureMinimalQuicHints",
         "PqcCupSigning": "EnabledLaunch",
         "EnableQuicReadMultipleAndUdpGRO": "EnabledQuicUseReadMultipleAndUdpGro_20261001"
@@ -2040,46 +2042,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "1b7f0a1d72ec01141c5a331e7aded7df",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-51-27-11-35-10-45-65281-16-23-0-5-18-17613-43-13-51764,4588-29-23-24,0",
+      "ja3": "0e5286e2a06b76c0eccb49a76ea2e6e9",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,27-51-45-23-43-65281-0-51764-10-11-13-16-35-5-17613-65037-18,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0xfe0d",
-        "0x0033",
         "0x001b",
-        "0x000b",
-        "0x0023",
-        "0x000a",
+        "0x0033",
         "0x002d",
-        "0xff01",
-        "0x0010",
         "0x0017",
-        "0x0000",
-        "0x0005",
-        "0x0012",
-        "0x44cd",
         "0x002b",
+        "0xff01",
+        "0x0000",
+        "0xca34",
+        "0x000a",
+        "0x000b",
         "0x000d",
-        "0xca34"
+        "0x0010",
+        "0x0023",
+        "0x0005",
+        "0x44cd",
+        "0xfe0d",
+        "0x0012"
       ],
       "extensions_resumed": [
-        "0x0012",
-        "0x002b",
-        "0xff01",
-        "0x0005",
-        "0x0000",
-        "0x44cd",
-        "0x0033",
-        "0x000a",
-        "0xfe0d",
         "0x002d",
-        "0x0017",
-        "0x000b",
-        "0x0023",
-        "0x000d",
+        "0x0012",
         "0x0010",
-        "0xca34",
+        "0xfe0d",
+        "0x0005",
+        "0x000a",
+        "0x0023",
+        "0x0017",
+        "0x0033",
         "0x001b",
+        "0x000b",
+        "0xff01",
+        "0x000d",
+        "0x44cd",
+        "0xca34",
+        "0x0000",
+        "0x002b",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -2237,15 +2239,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35603,
+        "seed_file_bytes": 35806,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoOCggxNzkwOTI4MBICCAI=#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157441
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -2257,18 +2259,18 @@
         "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0xca34",
-          "0x001b",
-          "0x002b",
           "0x002d",
-          "0x0010",
-          "0x0033",
+          "0xfe0d",
+          "0x002b",
+          "0x0000",
           "0x44cd",
+          "0x001b",
           "0x000d",
           "0x0039",
-          "0x0000",
+          "0xca34",
+          "0x0010",
           "0x000a",
-          "0xfe0d"
+          "0x0033"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -2313,47 +2315,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
             "id": "0x7",
             "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
           },
           {
             "id": "0x1",
@@ -2362,10 +2327,22 @@
             "value": 30000
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "0000000100000001ea1a3a8a"
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x3e035d7154fbcbcc",
+            "name": "grease",
+            "len": 5,
+            "value": 61
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
             "id": "0x5",
@@ -2374,10 +2351,22 @@
             "value": 6291456
           },
           {
-            "id": "0x27dd1ada1b866d33",
-            "name": "grease",
-            "len": 11,
-            "hex": "f9830e20e7407aad0cc208"
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "0000000100000001aafada7a"
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x20",
@@ -2386,10 +2375,23 @@
             "value": 65536
           },
           {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
             "id": "0x9",
             "name": "initial_max_streams_uni",
             "len": 2,
             "value": 103
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
           }
         ],
         "h3_settings": {
@@ -2446,44 +2448,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "3c2d9edc6b42f00c971dd12c782485f7",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-45-13-11-0-51-17613-23-18-65037-35-5-10-16-43-27,4588-29-23-24,0",
+      "ja3": "0feeef8012e169f57c66b5d18e8d1ec7",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-51-13-27-43-11-10-16-65281-0-17613-18-45-23-5-35,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0xff01",
-        "0x002d",
-        "0x000d",
-        "0x000b",
-        "0x0000",
-        "0x0033",
-        "0x44cd",
-        "0x0017",
-        "0x0012",
         "0xfe0d",
-        "0x0023",
-        "0x0005",
+        "0x0033",
+        "0x000d",
+        "0x001b",
+        "0x002b",
+        "0x000b",
         "0x000a",
         "0x0010",
-        "0x002b",
-        "0x001b"
+        "0xff01",
+        "0x0000",
+        "0x44cd",
+        "0x0012",
+        "0x002d",
+        "0x0017",
+        "0x0005",
+        "0x0023"
       ],
       "extensions_resumed": [
-        "0x44cd",
-        "0x0033",
+        "0x000b",
+        "0x0010",
         "0xff01",
+        "0x001b",
+        "0x0012",
+        "0x0000",
         "0x002b",
         "0x000a",
-        "0x0017",
+        "0x0005",
+        "0x000d",
+        "0x44cd",
         "0x002d",
         "0x0023",
-        "0x000d",
+        "0x0033",
         "0xfe0d",
-        "0x000b",
-        "0x001b",
-        "0x0000",
-        "0x0012",
-        "0x0005",
-        "0x0010",
+        "0x0017",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -2640,15 +2642,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35602,
+        "seed_file_bytes": 35807,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoOCggxNzkwOTI4MBICCAI=#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157441
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -2660,17 +2662,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x001b",
-          "0x0039",
-          "0x0033",
-          "0x000d",
-          "0x0010",
           "0x0000",
-          "0xfe0d",
-          "0x44cd",
-          "0x000a",
+          "0x002b",
           "0x002d",
-          "0x002b"
+          "0x0033",
+          "0x0010",
+          "0x000d",
+          "0x001b",
+          "0x44cd",
+          "0x0039",
+          "0x000a",
+          "0xfe0d"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -2715,16 +2717,34 @@
         ],
         "transport_params": [
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
             "len": 2,
-            "value": 103
+            "value": 100
           },
           {
             "id": "0x6",
             "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000017abaea3a"
           },
           {
             "id": "0x7",
@@ -2740,28 +2760,10 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x28cf2c0acf47ab32",
+            "name": "grease",
+            "len": 13,
+            "hex": "08bd895d9c51f7b4580e40a1d2"
           },
           {
             "id": "0x20",
@@ -2770,28 +2772,28 @@
             "value": 65536
           },
           {
-            "id": "0xba0029b02ec5760",
-            "name": "grease",
-            "len": 14,
-            "hex": "887c4972b64bf75a44709386bfac"
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
             "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000014aaa4aca"
+            "value": 103
           },
           {
             "id": "0x5",
             "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           }
         ],
         "h3_settings": {
@@ -2848,48 +2850,48 @@
       "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
       "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1519h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "e1d9ff80c9e91390028dfd26fe7e9933",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,11-16-45-65037-23-4832-0-27-51-17613-18-51764-65281-43-35-13-10-5,4588-29-23-24,0",
+      "ja3": "b7dd53093c65d3cc5acdcfc65db6f041",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-17613-65037-51764-16-10-45-13-23-4832-43-35-18-0-11-5-51-27,4588-29-23-24,0",
       "ja3n": "a3a3161a080b73bda9cc285fb367fcc0",
       "extensions": [
-        "0x000b",
-        "0x0010",
-        "0x002d",
+        "0xff01",
+        "0x44cd",
         "0xfe0d",
+        "0xca34",
+        "0x0010",
+        "0x000a",
+        "0x002d",
+        "0x000d",
         "0x0017",
         "0x12e0",
-        "0x0000",
-        "0x001b",
-        "0x0033",
-        "0x44cd",
-        "0x0012",
-        "0xca34",
-        "0xff01",
         "0x002b",
         "0x0023",
-        "0x000d",
-        "0x000a",
-        "0x0005"
+        "0x0012",
+        "0x0000",
+        "0x000b",
+        "0x0005",
+        "0x0033",
+        "0x001b"
       ],
       "extensions_resumed": [
-        "0x44cd",
-        "0x0005",
-        "0x000d",
-        "0x12e0",
-        "0x0010",
-        "0x000b",
-        "0x0012",
-        "0xff01",
-        "0x0033",
-        "0x0000",
-        "0x002b",
-        "0x001b",
-        "0x0023",
         "0x002d",
+        "0x000d",
+        "0x0010",
+        "0x44cd",
+        "0x0033",
+        "0x0023",
+        "0xff01",
+        "0x0012",
         "0xfe0d",
+        "0x001b",
+        "0x002b",
+        "0x0005",
         "0xca34",
+        "0x0000",
         "0x000a",
         "0x0017",
+        "0x000b",
+        "0x12e0",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -3049,15 +3051,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35607,
+        "seed_file_bytes": 35807,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoQCggxNzkwOTI4MBIECAIQAQ==#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157445
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -3069,19 +3071,19 @@
         "ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
         "ja4_r": "q13d0313h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,12e0,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0xca34",
           "0x0010",
+          "0xfe0d",
+          "0x44cd",
+          "0x002b",
+          "0x002d",
           "0x001b",
           "0x000d",
-          "0x0000",
-          "0x44cd",
+          "0xca34",
           "0x000a",
-          "0x0039",
-          "0x12e0",
-          "0xfe0d",
-          "0x002b",
           "0x0033",
-          "0x002d"
+          "0x12e0",
+          "0x0039",
+          "0x0000"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -3126,10 +3128,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x4",
+            "name": "initial_max_data",
             "len": 4,
-            "value": 6291456
+            "value": 15728640
           },
           {
             "id": "0x8",
@@ -3138,10 +3140,40 @@
             "value": 100
           },
           {
-            "id": "0x1",
-            "name": "max_idle_timeout",
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
-            "value": 30000
+            "value": 6291456
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x147290917224c519",
+            "name": "grease",
+            "len": 7,
+            "value": 12966
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000017a6aba5a"
           },
           {
             "id": "0x3128",
@@ -3157,10 +3189,10 @@
             "value": 6291456
           },
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
           },
           {
             "id": "0x5",
@@ -3173,36 +3205,6 @@
             "name": "initial_source_connection_id",
             "len": 0,
             "hex": ""
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x122624fe0f789fa9",
-            "name": "grease",
-            "len": 13,
-            "hex": "df3a714a300af1b52c51fd6dbd"
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000019a5a7aca00000001"
           }
         ],
         "h3_settings": {
@@ -3257,46 +3259,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "9f2607e59a69adade0e3c1dc4b11e3c5",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,17613-23-43-16-5-65037-45-51-18-11-13-35-0-10-27-51764-65281,4588-29-23-24,0",
+      "ja3": "4475635b2883a92db9b0e8905147b510",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,5-65281-16-11-35-51-27-18-10-43-65037-17613-45-0-51764-13-23,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0x44cd",
-        "0x0017",
-        "0x002b",
-        "0x0010",
         "0x0005",
-        "0xfe0d",
-        "0x002d",
-        "0x0033",
-        "0x0012",
+        "0xff01",
+        "0x0010",
         "0x000b",
-        "0x000d",
         "0x0023",
-        "0x0000",
-        "0x000a",
+        "0x0033",
         "0x001b",
+        "0x0012",
+        "0x000a",
+        "0x002b",
+        "0xfe0d",
+        "0x44cd",
+        "0x002d",
+        "0x0000",
         "0xca34",
-        "0xff01"
+        "0x000d",
+        "0x0017"
       ],
       "extensions_resumed": [
-        "0x001b",
-        "0x002d",
-        "0xca34",
-        "0x44cd",
-        "0x0017",
-        "0xff01",
         "0xfe0d",
-        "0x000d",
-        "0x0012",
-        "0x000a",
-        "0x0010",
-        "0x000b",
-        "0x0033",
         "0x0000",
-        "0x0023",
-        "0x002b",
+        "0x001b",
         "0x0005",
+        "0x0033",
+        "0x0010",
+        "0x000d",
+        "0x0017",
+        "0x002b",
+        "0x44cd",
+        "0x000b",
+        "0x0023",
+        "0xca34",
+        "0x000a",
+        "0x0012",
+        "0xff01",
+        "0x002d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -3424,7 +3426,7 @@
       "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
       "variations_source": "default seed",
       "command_line_variations": "--force-fieldtrials=\"*SeedFileTrial/SeedFilesLaunched/UkmSamplingRate/Sampled_NoSeed_Stable\" --force-fieldtrial-params=\"UkmSamplingRate.Sampled_NoSeed_Stable:_default_sampling/1000000\" --enable-features=\"UkmSamplingRate<UkmSamplingRate\" --disable-field-trial-config",
-      "active_variations_count": 22,
+      "active_variations_count": 24,
       "active_variations": [
         "b6f29041-9af5ba90",
         "f4f00e05-ca7d8d80",
@@ -3447,20 +3449,22 @@
         "370ace14-3f4a17df",
         "386dc267-3d47f4f4",
         "a4406b35-1657e2d6",
-        "408da146-1657e2d6"
+        "408da146-1657e2d6",
+        "d69d967d-4866ef6e",
+        "3c8f75a1-21623f2a"
       ],
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35604,
+        "seed_file_bytes": 35806,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoQCggxNzkwOTI4MBIECAIQAQ==#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157445
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -3471,18 +3475,18 @@
         "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0xca34",
-          "0xfe0d",
-          "0x44cd",
-          "0x001b",
-          "0x002d",
-          "0x000d",
-          "0x000a",
-          "0x0010",
           "0x002b",
-          "0x0000",
+          "0xca34",
+          "0x0010",
+          "0x44cd",
+          "0x002d",
           "0x0033",
-          "0x0039"
+          "0x000d",
+          "0x0000",
+          "0x000a",
+          "0x0039",
+          "0xfe0d",
+          "0x001b"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -3527,16 +3531,16 @@
         ],
         "transport_params": [
           {
-            "id": "0x4",
-            "name": "initial_max_data",
+            "id": "0x1",
+            "name": "max_idle_timeout",
             "len": 4,
-            "value": 15728640
+            "value": 30000
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
           },
           {
             "id": "0x9",
@@ -3545,20 +3549,38 @@
             "value": 103
           },
           {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
             "id": "0x5",
             "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001ea2aaada00000001"
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
           },
@@ -3569,10 +3591,16 @@
             "hex": ""
           },
           {
-            "id": "0x119765a63d8065c4",
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x9a94d650123de03",
             "name": "grease",
-            "len": 6,
-            "value": 985439008
+            "len": 7,
+            "hex": "c856d461d2f991"
           },
           {
             "id": "0x3128",
@@ -3580,30 +3608,6 @@
             "len": 4,
             "hex": "4f524947",
             "ascii": "ORIG"
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000017a2afa6a00000001"
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
           }
         ],
         "h3_settings": {
@@ -3658,46 +3662,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "69ca8b58ed6e989bbe79d00d9a28eab1",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,0-51-27-45-17613-65037-51764-43-10-23-13-65281-16-18-5-11-35,4588-29-23-24,0",
+      "ja3": "ed912e040b23d0f4d987db87a9849fb7",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,13-35-51-51764-16-65037-5-23-43-65281-0-18-45-11-27-10-17613,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0x0000",
-        "0x0033",
-        "0x001b",
-        "0x002d",
-        "0x44cd",
-        "0xfe0d",
-        "0xca34",
-        "0x002b",
-        "0x000a",
-        "0x0017",
         "0x000d",
-        "0xff01",
+        "0x0023",
+        "0x0033",
+        "0xca34",
         "0x0010",
-        "0x0012",
+        "0xfe0d",
         "0x0005",
+        "0x0017",
+        "0x002b",
+        "0xff01",
+        "0x0000",
+        "0x0012",
+        "0x002d",
         "0x000b",
-        "0x0023"
+        "0x001b",
+        "0x000a",
+        "0x44cd"
       ],
       "extensions_resumed": [
-        "0x000d",
-        "0x0033",
-        "0x002b",
         "0x0010",
-        "0x001b",
-        "0x0005",
-        "0x0012",
-        "0xca34",
-        "0x000a",
-        "0xff01",
-        "0x000b",
-        "0x002d",
         "0x0017",
-        "0x0000",
+        "0x0005",
+        "0x0033",
+        "0x000a",
+        "0x000b",
+        "0x001b",
         "0x44cd",
+        "0x002d",
         "0x0023",
+        "0x0000",
+        "0x000d",
+        "0xca34",
+        "0xff01",
+        "0x0012",
         "0xfe0d",
+        "0x002b",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -3824,8 +3828,8 @@
       "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
       "sec_ch_ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
       "variations_source": "variations server",
-      "command_line_variations": "--force-fieldtrials=\"*AIPageContentTrackedElementsPassword/EnabledLaunch/*AiSubscriptionAvatarRingDesktop/Default/ApiGlicAccessFromPromotionPage/Control_20260707/*AsyncBeforeUnload/Default/*AttributionReportingDeprecation/Default/AutofillAiImportConstraintsForSync/Default/*AutofillAiUsePrivateAi/Default/AutofillAiWalletPrivatePassesCapability/Enabled_50/AutofillEnableExpandIbanRegexPattern/Enabled_50/AutofillEnableNonAffiliatedLoyaltyCardsFilling/EnabledLaunch/AutofillEnableResurrectingPaymentsUsers/Enabled_Security_stable50pct/AutofillFixCvcImport/EnabledLaunch/AutofillFixIframeOwnership/Default/*AutofillFixLabelGenerationForStreetAddress/Default/AutofillKeydownEditableElement/Default/AutofillNewSuggestionGeneration/Default/AutofillSupportSplitZipCode/Default/AutofillUpstreamEnforceStrikeDelay/Default4/AutofillYourSavedInfoHatsSurveysContactInfo/Default/AutofillYourSavedInfoHatsSurveysIdentityDocs/Default/AutofillYourSavedInfoHatsSurveysPasswords/Default/AutofillYourSavedInfoHatsSurveysPayments/Default/AutofillYourSavedInfoHatsSurveysTravel/Default/AutofillYourSavedInfoHatsSurveysYourSavedInfo/Default/BackForwardCacheCCNSIgnoreUnchangedCookies/Control_20260930/*BrokenAlternativeServiceDelays/Default/*BrowserActionMigration/EnabledLaunch/*BrowserLaunchMetadataReporting/EnabledLaunch/*CacheGurlSchemeIsHttpOrHttpsResult/Default/*CdmServicePriorityElevation/Default/*CentralizedInfoBarFramework/Control_20260921_1/CheckAutoCommitInCommitAndRollback/Default/*ChromeChannelStable/Enabled/*ClearBrowsingHistoryJourney/EnabledLaunch/*ClientSideDetectionLocalResourceCheckFix/EnabledLaunch/*ClientSideDetectionScamScore/Launched/*ComponentsBase32InRust/Default/*ConstructableStylesheetCacheKillSwitch/Disabled_EmergencyKillSwitch/*ContextMenuAnimationLimiting/EnabledLaunch/*ContextualTasksDesktop/SignedInSidePanelUnificationOnly_20260908/*ContextualTasks_EphemeralPinning_Desktop/EphemeralOnly_20260929/CredentialManagementUnifiedUi/Default/CrossDeviceSigninFromDesktop/Control_20260917/CtrlTabMru/EnabledLaunch/*DecodeScriptsInBlink/Default/*DeprecateUnload/Default_pct=100_1/*DeprecateUnloadByBucket/Enabled_permanent_bucket_56/*DesktopDynamicAiModeButton/Control_Stable_30pct_20260924/*DesktopNtpDriveModuleLink/Default/*DesktopNtpSimplificationBookmarkBar/EnabledLaunch/*DesktopRealboxContextualSearchIPH/EnabledLaunch/*DesktopToMobilePromos/Default/DiceProtocolVersion2/EnabledLaunch/DisallowLegacyPrefMacFallback/Default/*EnableAccountPreviewData/EnabledLaunch/EnableCancelUploadOnContentAnalysis/EnabledLaunch/EnableNewUploadSizeLimit/Enabled_20260921Launch/*EnableQuicReadMultipleAndUdpGRO/Control_20261001/EnableWatermarkTimestampTimezone/EnabledLaunch/*EncryptBookmarks_Phase1/Phase1_5/*EncryptSessionStorage_Phase1/Phase1_5/*EnergyEffectMotionStudy/Launched/*EnergyEffectVisdStudy/Launched/EnforceP2PSocketPortRestrictionsKillSwitch/Disabled_EmergencyKillSwitch/EnterpriseDataProtectionForGlic/EnabledLaunch/*EnterpriseReleaseNotes/EnabledLaunch/*ExpiredHistograms/ExpiryEnabledWithAllowlist/*ExtensionsPinnedByDefault/EnabledLaunch/*ExtremeLightweightUAFDetector/Default/*FedCmSegmentationPlatform/EnabledLaunch/*GaiaAccountIdEnforcement/Default/*GenerateXSLTWarningBanner/Disabled_Uncontrolled_20260918/GlicActorObservationDelayExcludeAdFrameLoading/Default/*GlicActorRolloutControl/Enabled_ExternalAllowableByPolicy_US/GlicAnchorEntryPointForOnboardedUsersUnlaunch/Disabled_EmergencyKillSwitch/GlicColdWarmingDelay/Default/*GlicExperimentalTriggering/Enabled_20260710Launch/*GlicLuminousRollout/Enabled_50/*GlicMediaData/Control_NonDogfood_20260810/*GlicPdfSummarizeButton/Disabled_20260723_V2/*GlicPrivateApi/Enabled_20260601Launch/*GlicSummarizeVideoSuggestion/Control_20260423/GlicUseMainPartitionForUnifiedFre/Default/GlicWebActuationSettingsToggle/Default/*GmailOtpBackendInfrastructure/Default/*HangoutsExtensionV3/Default/*HttpCacheZstdCompression/Default/*HttpsFirstBalancedModeAutoEnableDesktop/Default/*IgnoreQuicCryptoConfigMemoryPressure/Enabled_20260902/*ImprovedStartupBestEffortDelay/Default/*IncreaseHttp3Usage/EnabledWithConfigureMinimalQuicHints/IndexedDBConnectionDeduplication/Default/*Indigo/Enabled_20260904/*InfoBarInlineLinks/EnabledLaunch/*InstantHandoffPhase1/EnabledLaunch/*KillSwitch_SearchNavigationPrefetch/Disabled_EmergencyKillSwitch/*LazilySetCustomActionCaption/Default/*LazyInitializeSpellcheckCharAttribute/Default/*NetTaskScheduler/Control_20260826/*NtpBrowserPromos/OnePromo/*NtpDisableBrowserInitiatedLinks/EnabledLaunch/OpenTranslationSettings/EnabledLaunch/*OptimisticDnsForTcp/Default/*OptimizationGuideProactivePersonalizedHintsFetching/Default/*PMLoadingPageVoter/Default/*PWAInstallDialogRefresh/EnabledLaunch/*PageActionsOptimizations/Default/*PageActionsPrioritySelector/Default/*PasskeyUnlockErrorUi/Default/PaymentRequestMandatoryPaymentAppUi/Default/PaymentRequestRejectTooSmallWindows/Default/PdfBufferedPaintManager/Control_20260909/PdfInkSignaturesTextAnnotations/Enabled_20260911_50/*PermissionsAIv4/Control_20260908/*PervasiveSharedDictionaries/Default/*PinExtensionJourney/EnabledLaunch/*PqcCupSigning/EnabledLaunch/*PreconnectManagerDirectFastPath/Default/ProactivePasswordProtection/Default/*ProtectedAudienceDeprecation/Default/*ReadAnythingLineFocusExperiment/EnabledLaunch/*ReadAnythingOmnibox/Disabled_20260903_Stable/*RecordLockAcquisitionTimeStudy/EnabledLaunch/RestrictBackgroundFetchFromServiceWorker/Enabled/RestrictLinkHeaderOnSubresource/Default/*RetroactivePreperiod/Default_Linux/*SafeBrowsingLocalListsUseSBv5/Default/SafeBrowsingWaitForDnsForRealTimeLookup/Default/*SafetyHubIncreasePasswordCheckFrequencyV2/Enabled_2d_20260914_80/*ScalableFrameEviction/EnabledLaunch/ScrollJankV4MetricFastScrollContinuityRequiresSameDirection/Default/*SeedFileTrial/SeedFilesLaunched/*ServiceWorkerBackgroundUpdate/Default/*ServiceWorkerDatabaseDoomOnMissingNextId/Default/*SessionRestoreInfobarSticky/EnabledOptIn/*SharedTabGroups/JoinOnlyEnabled_20260218/SimplifiedHindiModel/Default/*SingleAxisScrollContainers/Default_20260922/SmartRestartLockScreen/Default/*SplitViewHorizontal/EnabledIndirectAccess/*StatefulMemoryPressure/EnabledLaunch/*StructuredHeadersInRust/Default/SuspiciousSiteWarnings/Default/TabSearchCjkWordBoundary/EnabledLaunch/*ThreeDSecureTelemetry/Default/*ThrottleConsecutiveNoDamageMainFrames/Default/*TopicsDeprecation/Default/*TransientKeepAlivePolicy/Enabled_5s_Limit1_20260914/TranslateShortTextStaticContext/Default/*UKM/Enabled_20180314/*UMA-Population-Restrict/normal/*UMA-Uniformity-Trial-0.5-Percent-1/group_194/*UMA-Uniformity-Trial-0.5-Percent-2/group_51/*UMA-Uniformity-Trial-1-Percent/group_74/*UMA-Uniformity-Trial-10-Percent/group_02/*UMA-Uniformity-Trial-10-Percent-sanity/group_02/*UMA-Uniformity-Trial-100-Percent/group_01/*UMA-Uniformity-Trial-20-Percent/default/*UMA-Uniformity-Trial-20-Percent-Session/group_02/*UMA-Uniformity-Trial-5-Percent/group_01/*UMA-Uniformity-Trial-50-Percent/group_01/UkmSamplingRate/Downsampled_202309/*UniversalOptOut/Default/*UnoPhase2FollowUpDesktop/Default/UnthrottleAsyncTouchMovesV2/Default/*UseDynamicBackingAllocations/Default/UserValueDefaultBrowserStrings/Enabled_20260903/*UtfConversionAsciiFastPath/Default/*V8DateTimePatternGeneratorCacheEviction/Default/*V8HomomorphicIC/EnabledLaunch/*V8SqrtAllocationLimits/Default/*V8Turbolev/Default/*VariationsRuntimeMutability/Control_20260914/*VerticalTabsExpandOnHoverLaunch/Enabled/*ViewDownloadedFileJourney/EnabledLaunch/*VoiceTyping/Default/WebGLMemoryExperiments/Default/*WebRTC-LibaomAv1Encoder-DropRepeatFramesOnEnhancementLayers/Default,_20260929/*WebRTC-MediaTaskQueuePriorities/Enabled_Launch/*WebRTC-RFC8888CongestionControlFeedback/Default/*WebUIRoundedIcons/Control_20260908/*WhatsNewHats/Enabled_en_20260929/*XMLParsingRustNonXsltKillSwitch_153_155/Disabled_EmergencyKillSwitch\" --force-fieldtrial-params=\"AutofillEnableResurrectingPaymentsUsers.Enabled_Security_stable50pct:autofill_enable_resurrecting_payments_churned_users_treatment/1,ClearBrowsingHistoryJourney.EnabledLaunch:en_site_id/R8iDTcjjT0ugnJ3q1cK0TiRRjjy4/probability/1%2E0,ContextualTasksDesktop.SignedInSidePanelUnificationOnly_20260908:allow-signed-out/false,ContextualTasks_EphemeralPinning_Desktop.EphemeralOnly_20260929:ContextualTasksEntryPoint/toolbar-ephemeral-branded,DeprecateUnload.Default_pct%3D100_1:allowlist/a%2Ecom%2Cb%2Ecom%2Cc%2Ecom%2Cd%2Ecom%2Ce%2Ecom%2Cf%2Ecom%2Cweb-platform%2Etest%2Cwww1%2Eweb-platform%2Etest%2C127%2E0%2E0%2E1%2Cexample%2Etest%2Cwww%2Egoogle%2Ecom%2Cwww%2Eyoutube%2Ecom%2Cwww%2Efacebook%2Ecom%2Cwww%2Epornhub%2Ecom%2Cwww%2Exvideos%2Ecom%2Ctwitter%2Ecom%2Cwww%2Ewikipedia%2Eorg%2Cwww%2Einstagram%2Ecom%2Cwww%2Ereddit%2Ecom%2Cwww%2Eamazon%2Ecom%2Cduckduckgo%2Ecom%2Cwww%2Eyahoo%2Ecom%2Cwww%2Exnxx%2Ecom%2Cwww%2Etiktok%2Ecom%2Cwww%2Ebing%2Ecom%2Cwww%2Eyahoo%2Eco%2Ejp%2Cweather%2Ecom%2Cwww%2Ewhatsapp%2Ecom%2Cdzen%2Eru%2Cxhamster%2Ecom%2Copenai%2Ecom%2Coutlook%2Elive%2Ecom%2Cwww%2Emicrosoft%2Ecom%2Cmicrosoftonline%2Ecom%2Cwww%2Emicrosoftonline%2Ecom%2Cwww%2Elinkedin%2Ecom%2Cwww%2Equora%2Ecom%2Cwww%2Etwitch%2Etv%2Cwww%2Enaver%2Ecom%2Cnetflix%2Ecom%2Cwww%2Enetflix%2Ecom%2Cwww%2Eoffice%2Ecom%2Cvk%2Ecom%2Cwww%2Evk%2Ecom%2Cwww%2Eglobo%2Ecom%2Cwww%2Ealiexpress%2Ecom%2Cwww%2Ecnn%2Ecom%2Czoom%2Eus%2Cwww%2Ezoom%2Eus%2Cwww%2Eimdb%2Ecom%2Cx%2Ecom%2Cwww%2Enytimes%2Ecom%2Conlyfans%2Ecom%2Cwww%2Eespn%2Ecom%2Cwww%2Eamazon%2Eco%2Ejp%2Cwww%2Epinterest%2Ecom%2Cwww%2Euol%2Ecom%2Ebr%2Cwww%2Eebay%2Ecom%2Cwww%2Emarca%2Ecom%2Cwww%2Ecanva%2Ecom%2Cwww%2Espotify%2Ecom%2Cwww%2Ebbc%2Ecom%2Cwww%2Epaypal%2Ecom%2Cwww%2Eapple%2Ecom/rollout_percent/80,DeprecateUnloadByBucket.Enabled_permanent_bucket_56:rollout_bucket/56,EnableNewUploadSizeLimit.Enabled_20260921Launch:max_file_size_mb/250,EncryptBookmarks_Phase1.Phase1_5:stage/write_both_read_only_clear,EncryptSessionStorage_Phase1.Phase1_5:stage/write_both_read_only_clear,EnergyEffectVisdStudy.Launched:EnergyEffectVariantParam/energy-effect-fusebox,ExpiredHistograms.ExpiryEnabledWithAllowlist:allowlist/,GlicActorRolloutControl.Enabled_ExternalAllowableByPolicy_US:glic-actor-eligible-tiers/1%2C2/glic_actor_enterprise_pref_default/disabled_by_default,IncreaseHttp3Usage.EnabledWithConfigureMinimalQuicHints:quic_hints/google%2Ecom%2C443%2C443%2Cwww%2Egoogle%2Ecom%2C443%2C443,Indigo.Enabled_20260904:indigo_component_attribute/HFNFONBLIIDDGCEFHIFEOHNBNMHPJGCE/indigo_delete_url/https%3A%2F%2Ftryonyou%2Epa%2Egoogleapis%2Ecom%2Fv1%2FremoveUserImage/indigo_generate_url/https%3A%2F%2Ftryonyou%2Epa%2Egoogleapis%2Ecom%2Fv1%2FtryOnYouImage/indigo_glic_prompt_key/v5/indigo_glic_skill_id/cf148a36-03ee-4d83-9f87-25d15ad4d12a/indigo_onboarding_url/https%3A%2F%2Fwww%2Egoogle%2Ecom%2Fshopping%2Fpage%2Ftryonyou%2Fonboarding/indigo_saved_url/https%3A%2F%2Fwww%2Egoogle%2Ecom%2Fsaves/indigo_scopes/https%3A%2F%2Fwww%2Egoogleapis%2Ecom%2Fauth%2Fuserinfo%2Eemail%2Chttps%3A%2F%2Fwww%2Egoogleapis%2Ecom%2Fauth%2Ftryonyou/indigo_status_url/https%3A%2F%2Ftryonyou%2Epa%2Egoogleapis%2Ecom%2Fv1%2FtryOnYouViewerConfig,NtpBrowserPromos.OnePromo:max-terms/3/promo-type/simple/session-rotation/2,PdfInkSignaturesTextAnnotations.Enabled_20260911_50:text-annotations/true,PinExtensionJourney.EnabledLaunch:en_site_id/8RJXcn5t20ugnJ3q1cK0VLDGHPAz/probability/1%2E0,RecordLockAcquisitionTimeStudy.EnabledLaunch:RecordLockAcquisitionTimeAllowedThreads/CrBrowserMain%2CCrRendererMain%2CCrGpuMain%2CVizCompositor%2CCompositor%2CBrowserIO%2CNetworkService%2CGPU%2EForegroundWorker%2CGPU%2EBackgroundWorker%2CRenderer%2EForegroundWorker%2CRenderer%2EBackgroundWorker%2CBrowser%2EForegroundWorker%2CBrowser%2EBackgroundWorker,RestrictBackgroundFetchFromServiceWorker.Enabled:allowlist/https%3A%2F%2Fcuutruyen%2Enet%2Chttps%3A%2F%2Fwww%2Emon%2Eemg-u%2Ecom%2Chttps%3A%2F%2Feki%2Eecuakaraoke%2Ecom%2Eec%2Chttps%3A%2F%2Fhetcuutruyen%2Enet%2Chttps%3A%2F%2Fillusorium%2Eaquarium%2Eapp%2Chttps%3A%2F%2Fintranet%2Evzo%2Ech%2Chttps%3A%2F%2Fmy%2Eduaux%2Ecom%2Chttps%3A%2F%2Fnxg-prod-cvag%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-heagmobilo%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-rlg%2Einnotix%2Ecom%2Chttps%3A%2F%2Fwhatpwacando%2Etoday%2Chttps%3A%2F%2Fwww%2Eapkz%2Ecom%2Chttps%3A%2F%2Fk-bibel%2Ede%2Chttps%3A%2F%2Fconnect%2Ecmcv%2Eac%2Ein%2Chttps%3A%2F%2Ffilmtor%2Ecom%2Chttps%3A%2F%2Fmozaic%2Efm%2Chttps%3A%2F%2Fwww%2Ehaeuserlexikon%2Ede%2Chttps%3A%2F%2Fwww%2Eyouthconnektburkina%2Ebf,SafetyHubIncreasePasswordCheckFrequencyV2.Enabled_2d_20260914_80:background-password-check-interval/2d/password-check-mon-weight/5/password-check-sat-weight/9/password-check-sun-weight/9,SessionRestoreInfobarSticky.EnabledOptIn:continue_session/false,SharedTabGroups.JoinOnlyEnabled_20260218:show_send_feedback/true,SplitViewHorizontal.EnabledIndirectAccess:split_view_horizontal_direct_access/false,TransientKeepAlivePolicy.Enabled_5s_Limit1_20260914:count/1/duration/5s,UkmSamplingRate.Downsampled_202309:AbandonedSRPNavigation/2/Accessibility%2ECanvas/16/AdFrameLoad/25/Android%2EMultiWindowState/3/Autofill%2EFieldFillStatus/45/Autofill%2EFieldTypeValidation/160/Autofill%2EFormEvent/20/BackgroundSyncRegistered/2/Blink%2EFrameLoader/550/Blink%2EHTMLParsing/16/Blink%2EPageLoad/20/Blink%2EPaintTiming/12/Blink%2EUpdateTime/40/ClientHints%2EAcceptCHFrameUsage/70/ClientHints%2EAcceptCHHeaderUsage/60/ClientHints%2EDelegateCHMetaUsage/3/ClientRenderingAPI/420/Compose%2ETextElementUsage/2/ContentManagementSystemPageLoad/16/ContextualCueing%2ENudgeDecision/6/Cookies%2EBlocked%2EDueToOriginMismatch/60/CrossOriginSubframeWithoutEmbeddingControl/70/DocumentCreated/100/DomDistiller%2EAndroid%2EDistillabilityLatency/10/DomDistiller%2EAndroid%2EDistillabilityResult/14/DomDistiller%2EModelResult%2EDistillable/18/Download%2ECompleted/Download/Download%2EInterrupted/Download/Download%2EResumed/Download/Download%2EStarted/Download/Extensions%2EOnNavigation/70/Extensions%2EWebRequest%2EKeepaliveRequestFinished/100/GoogleDocsOfflineExtension/8/HistoryApi%2EPushState/10/HistoryManipulationIntervention/2/InstalledRelatedApps/6/JavascriptFrameworkPageLoad/16/LoadCountsPerTopLevelDocument/20/LoadingPredictor/12/MainFrameNavigation/2/Media/35/Media%2EAutoplay%2EAttempt/14/Media%2EBasicPlayback/Media/Media%2EEME%2EGetStatusForPolicy/30/Media%2EVideoDecodePerfRecord/8/Media%2EWebAudio%2EAudioContext%2EAudibleTime/Media/Media%2EWebMediaPlayerState/Media/Memory%2EExperimental/100/Memory%2ETabFootprint/20/MobileFriendliness%2ETappedBadTargets/12/Navigation%2EFromGoogleSearch%2ETimingInformation/2/Navigation%2EReceivedResponse/20/NavigationPredictor/70/NavigationPredictorAnchorElementMetrics/NavigationPredictor/NavigationPredictorPageLinkClick/NavigationPredictor/NavigationPredictorPageLinkMetrics/NavigationPredictor/NavigationPredictorPreloadOnHover/NavigationPredictor/NavigationPredictorUserInteractions/NavigationPredictor/NavigationTiming/14/Network%2EDataUrls/90/OmniboxSecurityIndicator%2EFormSubmission/8/OptimizationGuide/60/OptimizationGuide%2EAnnotatedPageContent/16/OptimizationGuide%2EPageContentExtraction/30/PageContentAnnotations2/35/PageForegroundSession/30/PageLifecycleMetricsOnNewPageCommit/25/PageLoadInitiatorForAdTagging/16/PaidContentPageLoad/20/PartitionedCookiePresentV3/6/PerformanceAPI%2ELongAnimationFrame/480/PerformanceAPI%2ELongTask/14/PerformanceAPI%2EMemory%2ELegacy/2000/PerformanceManager%2EFreezingEligibility/4/PerformanceManager%2EPageResourceUsage2/160/PermissionUsage/4/PermissionUsage%2ENotificationShown/2/Popup%2EClosed/Popup/Popup%2EPage/Popup/PowerUsageScenariosIntervalData/20/PrefetchProxy%2EPrefetchedResource/4/Preloading%2EAttempt/PreloadingAttempt/Preloading%2EAttempt%2EPreviousPrimaryPage/PreloadingAttempt/Preloading%2EPrediction/200/Preloading%2EPrediction%2EPreviousPrimaryPage/270/Responsiveness%2EUserInteraction/90/SamesiteRedirectContextDowngrade/10/Security%2ESiteEngagement/14/ServiceWorker%2EMainResourceLoadCompleted/6/Site%2EInstall/3/Site%2EManifest/3/Site%2EQuality/3/SiteFamiliarityHeuristicResult/18/SubresourceFilter/20/SubresourceLoad%2EZstdContentEncoding/420/TabManager%2ETabLifetime/4/TabRevisitTracker%2ETabStateChange/30/Translate/20/TranslatePageLoad/25/Unload/14/UserPerceivedPageVisit/50/V8%2EGC%2EFullCycle/40/V8%2EWasm/6/V8%2EWasm%2EModuleCompiled/V8%2EWasm/V8%2EWasm%2EModuleDecoded/V8%2EWasm/V8%2EWasm%2EModuleInstantiated/V8%2EWasm/WebOTPImpact/10/XR%2EWebXR/2/_default_sampling/1/_webdx_features_sampling/1,VerticalTabsExpandOnHoverLaunch.Enabled:expand_on_hover_default_enabled/true/expand_on_hover_use_velocity_heuristic/true/expand_on_hover_velocity_heuristic_delay/50ms/expand_on_hover_velocity_heuristic_distance_from_edge/12/expand_on_hover_velocity_heuristic_edge_delay/200ms/expand_on_hover_velocity_heuristic_interval/10ms/expand_on_hover_velocity_heuristic_min_samples/3/expand_on_hover_velocity_heuristic_threshold/0%2E25,ViewDownloadedFileJourney.EnabledLaunch:en_site_id/mL46CjHkE0ugnJ3q1cK0NsAQJpTP/probability/1%2E0,WhatsNewHats.Enabled_en_20260929:en_site_id/6bnVh68QF0ugnJ3q1cK0NQxjpCFS/probability/0%2E01\" --enable-features=\"AIPageContentTrackedElementsPassword<AIPageContentTrackedElementsPassword,*AdInterestGroupAPI<ProtectedAudienceDeprecation,*AiModePageActionOptimization<PageActionsOptimizations,AomVpxUsePresentationThreadType<WebRTC-MediaTaskQueuePriorities,ApiGlicPrivate<GlicPrivateApi,*AutofillAiImportConstraintsForSync<AutofillAiImportConstraintsForSync,*AutofillAiPrivateAiShadowMetric<AutofillAiUsePrivateAi,*AutofillAiUsePrivateAi<AutofillAiUsePrivateAi,AutofillAiWalletPrivatePassesCapability<AutofillAiWalletPrivatePassesCapability,*AutofillDisallowMoreHyphenLikeLabels<AutofillSupportSplitZipCode,AutofillEnableExpandIbanRegexPattern<AutofillEnableExpandIbanRegexPattern,AutofillEnableNonAffiliatedLoyaltyCardsFilling<AutofillEnableNonAffiliatedLoyaltyCardsFilling,AutofillEnableResurrectingPaymentsUsers<AutofillEnableResurrectingPaymentsUsers,AutofillFixCvcImport<AutofillFixCvcImport,*AutofillFixIframeOwnership<AutofillFixIframeOwnership,*AutofillFixLabelGenerationForStreetAddress<AutofillFixLabelGenerationForStreetAddress,*AutofillKeydownEditableElement<AutofillKeydownEditableElement,*AutofillNewSuggestionGeneration<AutofillNewSuggestionGeneration,*AutofillSupportSplitZipCode<AutofillSupportSplitZipCode,*AutofillUpstreamEnforceStrikeDelay<AutofillUpstreamEnforceStrikeDelay,BrowserLaunchMetadataReporting<BrowserLaunchMetadataReporting,*BrowsingTopics<TopicsDeprecation,*CdmProcessPriorityElevation<CdmServicePriorityElevation,*CdmThreadPriorityElevation<CdmServicePriorityElevation,*CheckAutoCommitInCommitAndRollback<CheckAutoCommitInCommitAndRollback,ClearBrowsingHistoryJourney<ClearBrowsingHistoryJourney,ClientSideDetectionLocalResourceCheckFix<ClientSideDetectionLocalResourceCheckFix,ClientSideDetectionScamScore<ClientSideDetectionScamScore,*ComponentsBase32InRust<ComponentsBase32InRust,ConfigureQuicHints<IncreaseHttp3Usage,ContextMenuAnimationLimiting<ContextMenuAnimationLimiting,ContextualTasksEphemeralBrandedEntryPoint<ContextualTasks_EphemeralPinning_Desktop,ContextualTasksSidePanel<ContextualTasksDesktop,*ConversionMeasurement<AttributionReportingDeprecation,*CredentialManagementUnifiedUi<CredentialManagementUnifiedUi,CtrlTabMru<CtrlTabMru,DataControlsGlic<EnterpriseDataProtectionForGlic,DataSharingJoinOnly<SharedTabGroups,*DecodeScriptsInBlink<DecodeScriptsInBlink,DeprecateUnload<DeprecateUnload,DeprecateUnloadByAllowList<DeprecateUnload,DeprecateUnloadByBucket<DeprecateUnloadByBucket,DiceHeaderVersion2<DiceProtocolVersion2,*Dictation<VoiceTyping,*DisallowLegacyPrefMacFallback<DisallowLegacyPrefMacFallback,EnableAccountPreviewData<EnableAccountPreviewData,EnableAccountPreviewEntityPreviews<EnableAccountPreviewData,EnableCancelUploadOnContentAnalysis<EnableCancelUploadOnContentAnalysis,*EnableCrossDevicePrefTracker<DesktopToMobilePromos,EnableNewUploadSizeLimit<EnableNewUploadSizeLimit,EnableNtpBrowserPromos<NtpBrowserPromos,EnableWatermarkTimestampTimezone<EnableWatermarkTimestampTimezone,EncryptBookmarks<EncryptBookmarks_Phase1,EncryptSessionStorage<EncryptSessionStorage_Phase1,EnergyEffect<EnergyEffectVisdStudy,EnergyEffectAnimation<EnergyEffectMotionStudy,EnterpriseReleaseNotes<EnterpriseReleaseNotes,ExpiredHistogramLogic<ExpiredHistograms,ExtensionsPinnedByDefault<ExtensionsPinnedByDefault,*ExtremeLightweightUAFDetector<ExtremeLightweightUAFDetector,*Fledge<ProtectedAudienceDeprecation,GlicActor<GlicActorRolloutControl,*GlicActorObservationDelayExcludeAdFrameLoading<GlicActorObservationDelayExcludeAdFrameLoading,GlicActorUi<GlicActorRolloutControl,GlicBulkDataEntrySupport<EnterpriseDataProtectionForGlic,GlicExperimentalTriggering<GlicExperimentalTriggering,*GlicUseMainPartitionForUnifiedFre<GlicUseMainPartitionForUnifiedFre,*GlicWarming<GlicColdWarmingDelay,*GlicWebActuationSettingsToggle<GlicWebActuationSettingsToggle,*GmailOtpRetrievalService<GmailOtpBackendInfrastructure,*HangoutsExtensionV3<HangoutsExtensionV3,HappinessTrackingSurveysForClearBrowsingHistory<ClearBrowsingHistoryJourney,HappinessTrackingSurveysForDesktopWhatsNew<WhatsNewHats,HappinessTrackingSurveysForDownloadJourney<ViewDownloadedFileJourney,HappinessTrackingSurveysForPinExtensionJourney<PinExtensionJourney,*HttpCacheZstdCompression<HttpCacheZstdCompression,*HttpCacheZstdDecompression<HttpCacheZstdCompression,*HttpsFirstBalancedModeAutoEnable<HttpsFirstBalancedModeAutoEnableDesktop,IPH_BookmarkBarSimplified<DesktopNtpSimplificationBookmarkBar,IPH_DesktopRealboxContextualSearchFeature<DesktopRealboxContextualSearchIPH,IPH_VerticalTabsExpandOnHoverFeature<VerticalTabsExpandOnHoverLaunch,IgnoreQuicCryptoConfigMemoryPressure<IgnoreQuicCryptoConfigMemoryPressure,ImageReplacement<Indigo,*ImprovedStartupBestEffortDelay<ImprovedStartupBestEffortDelay,*IndexedDBConnectionDeduplication<IndexedDBConnectionDeduplication,Indigo<Indigo,IndigoComponent<Indigo,IndigoMetadataKeywordHeuristic<Indigo,IndigoOpenGlic<Indigo,InfoBarInlineLinks<InfoBarInlineLinks,*InitialDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,*LazilySetCustomActionCaption<LazilySetCustomActionCaption,*LazyInitializeSpellcheckCharAttribute<LazyInitializeSpellcheckCharAttribute,*LensOverlayHomeworkPageActionFocusOptimization<PageActionsOptimizations,LensSidePanelUnification<ContextualTasksDesktop,*ManageContactInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysContactInfo,*ManageIdentityDocsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysIdentityDocs,*ManagePasswordsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPasswords,*ManagePaymentsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPayments,*ManageTravelPerceptionSurvey<AutofillYourSavedInfoHatsSurveysTravel,*ManageYourSavedInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysYourSavedInfo,*MaxDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,*MobilePromoOnDesktopWithQRCodeWave1<DesktopToMobilePromos,NetTaskScheduler<NetTaskScheduler,NtpDisableBrowserInitiatedLinks<NtpDisableBrowserInitiatedLinks,NtpSimplificationBookmarkBar<DesktopNtpSimplificationBookmarkBar,*OffscreenCanvasPropagateVisibility<WebGLMemoryExperiments,*OneTimeTokenBackendNotification<GmailOtpBackendInfrastructure,*PMLoadingPageVoter<PMLoadingPageVoter,*PageActionsPrioritySelector<PageActionsPrioritySelector,*PaymentRequestMandatoryPaymentAppUi<PaymentRequestMandatoryPaymentAppUi,*PaymentRequestRejectTooSmallWindows<PaymentRequestRejectTooSmallWindows,PdfInk2<PdfInkSignaturesTextAnnotations,*PervasiveSharedDictionaries<PervasiveSharedDictionaries,PinExtensionJourney<PinExtensionJourney,PqcCupSigning<PqcCupSigning,*ProactivePasswordProtection<ProactivePasswordProtection,ReadAnythingLineFocus<ReadAnythingLineFocusExperiment,ReadSupportsWalletPrivatePassesInAutofillCapability<AutofillAiWalletPrivatePassesCapability,RecordLockAcquisitionTime<RecordLockAcquisitionTimeStudy,RestrictBackgroundFetchFromServiceWorker<RestrictBackgroundFetchFromServiceWorker,*RestrictLinkHeaderOnSubresource<RestrictLinkHeaderOnSubresource,*SafeBrowsingLocalListsUseSBv5<SafeBrowsingLocalListsUseSBv5,*SafeBrowsingWaitForDnsForRealTimeLookup<SafeBrowsingWaitForDnsForRealTimeLookup,SafetyHub<SafetyHubIncreasePasswordCheckFrequencyV2,ScalableFrameEviction<ScalableFrameEviction,*ScrollJankV4MetricFastScrollContinuityRequiresSameDirection<ScrollJankV4MetricFastScrollContinuityRequiresSameDirection,SegmentationPlatformFedCmUser<FedCmSegmentationPlatform,SendTabToSelfAutoOpen<InstantHandoffPhase1,SendTabToSelfEnhancedBottomsheet<InstantHandoffPhase1,SendTabToSelfEnhancedDesktopUI<InstantHandoffPhase1,SendTabToSelfExtraEntryPoints<InstantHandoffPhase1,SendTabToSelfImprovedLastActiveLabels<InstantHandoffPhase1,SendTabToSelfPostSendToast<InstantHandoffPhase1,SendTabToSelfPropagateFormFields<InstantHandoffPhase1,SendTabToSelfPropagateScrollPosition<InstantHandoffPhase1,*ServiceWorkerDatabaseDoomOnMissingNextId<ServiceWorkerDatabaseDoomOnMissingNextId,SessionRestoreInfobar<SessionRestoreInfobarSticky,*SingleAxisScrollContainers<SingleAxisScrollContainers,*SmartRestartLockScreen<SmartRestartLockScreen,*SpellcheckSeparateLocalAndAccountDictionaries<UnoPhase2FollowUpDesktop,SplitViewHorizontal<SplitViewHorizontal,StatefulMemoryPressure<StatefulMemoryPressure,*StructuredHeadersInRust<StructuredHeadersInRust,*SuspiciousSiteWarnings<SuspiciousSiteWarnings,SyncSessionsUsePreferredDisplayName<InstantHandoffPhase1,SyncSimplifyDeviceNaming<InstantHandoffPhase1,SyncUseServerDeterminedDeviceName<InstantHandoffPhase1,TabSearchCjkWordBoundary<TabSearchCjkWordBoundary,*ThreeDSecureTelemetry<ThreeDSecureTelemetry,*ThrottleRepeatedNoDamageFrames<ThrottleConsecutiveNoDamageMainFrames,TrackEmptyRendererProcessesForReuse<TransientKeepAlivePolicy,TransientKeepAlivePolicy<TransientKeepAlivePolicy,*TranslateElementExperimentFeatures<TranslateShortTextStaticContext,TranslateOpenSettings<OpenTranslationSettings,*TranslateSimplifiedHindi<SimplifiedHindiModel,Ukm<UKM,UkmSamplingRate<UkmSamplingRate,*UnoPhase2FollowUp<UnoPhase2FollowUpDesktop,*UnthrottleAsyncTouchMoves<UnthrottleAsyncTouchMovesV2,UseActionsForBrowserCommands<BrowserActionMigration,*UseDynamicBackingAllocations<UseDynamicBackingAllocations,UseHighPriorityThreadGroup<WebRTC-MediaTaskQueuePriorities,UserValueDefaultBrowserStrings<UserValueDefaultBrowserStrings,*UtfConversionAsciiFastPath<UtfConversionAsciiFastPath,V8Flag_homomorphic_ic<V8HomomorphicIC,*V8Flag_sqrt_allocation_limits<V8SqrtAllocationLimits,*V8Flag_turbolev<V8Turbolev,VerticalTabsExpandOnHover<VerticalTabsExpandOnHoverLaunch,ViewDownloadedFileFromAppMenuJourney<ViewDownloadedFileJourney,ViewDownloadedFileJourney<ViewDownloadedFileJourney,WebAppInstallDialog<PWAInstallDialogRefresh,*WebGLDiscardBackBuffer<WebGLMemoryExperiments,WebRTCBoostMediaIOThreads<WebRTC-MediaTaskQueuePriorities,WebRtcUseMediaThreadTypes<WebRTC-MediaTaskQueuePriorities\" --disable-features=\"AnnotatedPageContentWithMediaData<GlicMediaData,ApiGlicAccessFromPromotionPage<ApiGlicAccessFromPromotionPage,BackForwardCacheCCNSIgnoreUnchangedCookies<BackForwardCacheCCNSIgnoreUnchangedCookies,CentralizedInfoBarFramework<CentralizedInfoBarFramework,ConstructableStylesheetCache<ConstructableStylesheetCacheKillSwitch,ContextualTasks<ContextualTasksDesktop,ContextualTasksBackButtonExpandsSidePanel<ContextualTasksDesktop,ContextualTasksCookiePrefetch<ContextualTasksDesktop,CrossDeviceSigninFromDesktop<CrossDeviceSigninFromDesktop,DataSharing<SharedTabGroups,DrainSpdySessionSynchronouslyOnRemoteEndpointDisconnect<NetTaskScheduler,EnableUdpGro<EnableQuicReadMultipleAndUdpGRO,EnforceP2PSocketPortRestrictions<EnforceP2PSocketPortRestrictionsKillSwitch,GenerateXSLTWarningBanner<GenerateXSLTWarningBanner,GlicAnchorEntryPointForOnboardedUsers<GlicAnchorEntryPointForOnboardedUsersUnlaunch,GlicSummarizeVideoSuggestion<GlicSummarizeVideoSuggestion,HeadlessCaptionEarlyStart<GlicMediaData,HeadlessLiveCaption<GlicMediaData,IPH_ReadingModePageActionLabel<ReadAnythingOmnibox,MediaTrasncriptsFlagInPageMetadata<GlicMediaData,NetTaskScheduler2<NetTaskScheduler,NetTaskSchedulerHostResolver<NetTaskScheduler,NetworkServicePerPriorityTaskQueues<NetTaskScheduler,NtpRealboxDynamicAiModeButton<DesktopDynamicAiModeButton,PdfBufferedPaintManager<PdfBufferedPaintManager,PdfGlicSummarize<GlicPdfSummarizeButton,PermissionsAIv4<PermissionsAIv4,QuicUseReadMultiple<EnableQuicReadMultipleAndUdpGRO,ReadAnythingOmniboxChip<ReadAnythingOmnibox,SearchNavigationPrefetch<KillSwitch_SearchNavigationPrefetch,VariationsRuntimeMutability<VariationsRuntimeMutability,WebUIOmniboxDynamicAiModeButton<DesktopDynamicAiModeButton,WebUIRoundedIcons<WebUIRoundedIcons,XMLRustForNonXslt<XMLParsingRustNonXsltKillSwitch_153_155\" --disable-field-trial-config",
-      "active_variations_count": 153,
+      "command_line_variations": "--force-fieldtrials=\"*AIPageContentTrackedElementsPassword/EnabledLaunch/*AiSubscriptionAvatarRingDesktop/Default/ApiGlicAccessFromPromotionPage/Control_20260707/*AsyncBeforeUnload/Default/*AttributionReportingDeprecation/Default/AutofillAiImportConstraintsForSync/Default/*AutofillAiUsePrivateAi/Default/AutofillAiWalletPrivatePassesCapability/Control_50/AutofillEnableExpandIbanRegexPattern/Control_50/AutofillEnableNonAffiliatedLoyaltyCardsFilling/EnabledLaunch/AutofillEnableResurrectingPaymentsUsers/Launched_Security/AutofillFixCvcImport/EnabledLaunch/AutofillFixIframeOwnership/Default/*AutofillFixLabelGenerationForStreetAddress/Default/AutofillKeydownEditableElement/Default/AutofillNewSuggestionGeneration/Default/AutofillSupportSplitZipCode/Default/AutofillUpstreamEnforceStrikeDelay/Default4/AutofillYourSavedInfoHatsSurveysContactInfo/Default/AutofillYourSavedInfoHatsSurveysIdentityDocs/Default/AutofillYourSavedInfoHatsSurveysPasswords/Default/AutofillYourSavedInfoHatsSurveysPayments/Default/AutofillYourSavedInfoHatsSurveysTravel/Default/AutofillYourSavedInfoHatsSurveysYourSavedInfo/Default/BackForwardCacheCCNSIgnoreUnchangedCookies/Control_20260930/*BrokenAlternativeServiceDelays/Default/*BrowserActionMigration/EnabledLaunch/*BrowserInitiatedAutomaticPictureInPicture/Default/*BrowserLaunchMetadataReporting/EnabledLaunch/*CacheGurlSchemeIsHttpOrHttpsResult/Default/*CdmServicePriorityElevation/Default/*CentralizedInfoBarFramework/EnabledV1_20260921_1/CheckAutoCommitInCommitAndRollback/Default/*ChromeChannelStable/Enabled/*ClearBrowsingHistoryJourney/EnabledLaunch/*ClientSideDetectionLocalResourceCheckFix/EnabledLaunch/*ClientSideDetectionScamScore/Launched/*ComponentsBase32InRust/Default/*ComposeboxDriveContextMenuOptionDesktop/Enabled_5pct/*ConstructableStylesheetCacheKillSwitch/Disabled_EmergencyKillSwitch/*ContextMenuAnimationLimiting/EnabledLaunch/*ContextualCueingV2/Control_20260925/*ContextualTasksDesktop/SignedInSidePanelUnificationOnly_20260908/CredentialManagementUnifiedUi/Default/CrossDeviceSigninFromDesktop/Enabled_with_new_badge_20260917/CtrlTabMru/EnabledLaunch/*DecodeScriptsInBlink/Default/*DeprecateUnload/Default_pct=100_1/*DeprecateUnloadByBucket/Enabled_permanent_bucket_44/*DesktopNtpDriveModuleLink/Default/*DesktopNtpSimplificationBookmarkBar/EnabledLaunch/*DesktopRealboxContextualSearchIPH/EnabledLaunch/*DesktopToMobilePromos/Default/DiceProtocolVersion2/EnabledLaunch/DisallowLegacyPrefMacFallback/Default/*EnableAccountPreviewData/EnabledLaunch/EnableCancelUploadOnContentAnalysis/EnabledLaunch/EnableNewUploadSizeLimit/Enabled_20260929Launch/*EnableQuicReadMultipleAndUdpGRO/Default/EnableWatermarkTimestampTimezone/EnabledLaunch/*EncryptBookmarks_Phase1/Phase1_5/*EncryptSessionStorage_Phase1/Phase1_5/*EnergyEffectMotionStudy/Launched/*EnergyEffectVisdStudy/Launched/EnforceP2PSocketPortRestrictionsKillSwitch/Disabled_EmergencyKillSwitch/EnterpriseDataProtectionForGlic/EnabledLaunch/*EnterpriseReleaseNotes/EnabledLaunch/*ExpiredHistograms/ExpiryEnabledWithAllowlist/*ExtensionsPinnedByDefault/EnabledLaunch/*ExtremeLightweightUAFDetector/Default/*FedCmSegmentationPlatform/EnabledLaunch/*GCMMessageBuffering/Default/*GenerateXSLTWarningBanner/Disabled_Uncontrolled_20260918/GlicActorObservationDelayExcludeAdFrameLoading/Default/*GlicActorRolloutControl/Enabled_ExternalAllowableByPolicy_US/GlicAnchorEntryPointForOnboardedUsersUnlaunch/Disabled_EmergencyKillSwitch/GlicColdWarmingDelay/Default/*GlicExperimentalTriggering/Enabled_20260710Launch/*GlicPdfSummarizeButton/Enabled_Arm3_20260928_V3/*GlicPrivateApi/Enabled_20260601Launch/GlicUseMainPartitionForUnifiedFre/Default/GlicWebActuationSettingsToggle/Default/*GmailOtpBackendInfrastructure/Default/*HangoutsExtensionV3/Default/*HttpCacheZstdCompression/Default/*HttpsFirstBalancedModeAutoEnableDesktop/Default/*IgnoreQuicCryptoConfigMemoryPressure/Control_20260902/*ImprovedStartupBestEffortDelay/Control_20260804/*IncreaseCongestionWindow/EnabledDoubleForPreconnect_20260911_STABLE_30/*IncreaseHttp3Usage/EnabledWithConfigureMinimalQuicHints/IndexedDBConnectionDeduplication/Default/*InfoBarInlineLinks/EnabledLaunch/*InstantHandoffPhase1/EnabledLaunch/*KillSwitch_SearchNavigationPrefetch/Disabled_EmergencyKillSwitch/*LazilySetCustomActionCaption/Default/*LazyInitializeSpellcheckCharAttribute/Control_20260923/*MigrateSyncingUserToSignedInDesktop/Control_20260921/*NtpBrowserPromos/OnePromo/*NtpDisableBrowserInitiatedLinks/EnabledLaunch/OpenTranslationSettings/EnabledLaunch/*OptimisticDnsForTcp/OptimisticDns_AdjustIPv6_100ms_IPv6RTT_1_2_STABLE_10_20260908/*OptimizationGuideProactivePersonalizedHintsFetching/Default/*PMLoadingPageVoter/Default/*PWAInstallDialogRefresh/EnabledLaunch/*PageActionsOptimizations/Default/*PageActionsPrioritySelector/Default/*PasskeyUnlockErrorUi/Default/PaymentRequestMandatoryPaymentAppUi/Default/PaymentRequestRejectTooSmallWindows/Default/PdfBufferedPaintManager/Control_20260909/PdfInkSignaturesTextAnnotations/Enabled_20260911_50/*PermissionsAIv4/Default/*PervasiveSharedDictionaries/Default/*PinExtensionJourney/EnabledLaunch/*PqcCupSigning/EnabledLaunch/*PreconnectManagerDirectFastPath/Default/*PrewarmZeroSuggestTrigger/Control_20260924/ProactivePasswordProtection/Default/*ProtectedAudienceDeprecation/Default/*ReadAnythingLineFocusExperiment/EnabledLaunch/*ReadAnythingOmnibox/Enabled_20260903_Stable/*RecordLockAcquisitionTimeStudy/EnabledLaunch/*ReduceMojoURLLoaderFactoryCloning/Control_20260918/RestrictBackgroundFetchFromServiceWorker/Enabled/RestrictLinkHeaderOnSubresource/Default/*RetroactivePreperiod/Default_Linux/*SafeBrowsingLocalListsUseSBv5/Default/SafeBrowsingWaitForDnsForRealTimeLookup/Default/*SafetyHubIncreasePasswordCheckFrequencyV2/Enabled_2d_20260914_80/*ScalableFrameEviction/EnabledLaunch/ScrollJankV4MetricFastScrollContinuityRequiresSameDirection/Enabled_20260909/*SeedFileTrial/SeedFilesLaunched/*ServiceWorkerBackgroundUpdate/Default/*ServiceWorkerDatabaseDoomOnMissingNextId/Default/*SessionRestoreInfobarSticky/EnabledOptIn/*SharedTabGroups/JoinOnlyEnabled_20260218/SimplifiedHindiModel/Default/*SingleAxisScrollContainers/Default_20260922/SmartRestartLockScreen/Default/*SplitViewHorizontal/EnabledIndirectAccess/*StatefulMemoryPressure/EnabledLaunch/*StructuredHeadersInRust/Default/SuspiciousSiteWarnings/Default/TabSearchCjkWordBoundary/EnabledLaunch/*ThreeDSecureTelemetry/Default/*ThrottleConsecutiveNoDamageMainFrames/Default/*TopicsDeprecation/Default/*TransientKeepAlivePolicy/Default/TranslateShortTextStaticContext/Default/*UKM/Enabled_20180314/*UMA-Population-Restrict/normal/*UMA-Uniformity-Trial-0.5-Percent-1/group_164/*UMA-Uniformity-Trial-0.5-Percent-2/group_107/*UMA-Uniformity-Trial-1-Percent/group_57/*UMA-Uniformity-Trial-10-Percent/group_09/*UMA-Uniformity-Trial-10-Percent-sanity/group_03/*UMA-Uniformity-Trial-100-Percent/group_01/*UMA-Uniformity-Trial-20-Percent/default/*UMA-Uniformity-Trial-20-Percent-Session/group_03/*UMA-Uniformity-Trial-5-Percent/group_09/*UMA-Uniformity-Trial-50-Percent/default/UkmSamplingRate/Downsampled_202309/*UniversalOptOut/Default/*UnoPhase2Desktop/Control_9p_20260318/*UnoPhase2FollowUpDesktop/Default/UnthrottleAsyncTouchMovesV2/Default/*UseDynamicBackingAllocations/Default/UserValueDefaultBrowserStrings/Enabled_20260903/*UtfConversionAsciiFastPath/Default/*V8DateTimePatternGeneratorCacheEviction/Default/*V8HomomorphicIC/EnabledLaunch/*V8SqrtAllocationLimits/Default/*V8Turbolev/Enabled_20260903/*VariationsRuntimeMutability/Enabled_20260914/*VerticalTabsExpandOnHoverLaunch/Enabled/*ViewDownloadedFileJourney/EnabledLaunch/*VisitCustomSearchOnUndefaulting/EnabledLaunch/*VoiceTyping/Default/WaylandExternalBeginFrameSource/Default/WebGLMemoryExperiments/Default/*WebRTC-LibaomAv1Encoder-DropRepeatFramesOnEnhancementLayers/Default,_20260929/*WebRTC-MediaTaskQueuePriorities/Enabled_Launch/*WebRTC-RFC8888CongestionControlFeedback/Default/*WebUIRoundedIcons/Default/*WhatsNewHats/Enabled_en_20260929/*XMLParsingRustNonXsltKillSwitch_153_155/Disabled_EmergencyKillSwitch\" --force-fieldtrial-params=\"AutofillEnableResurrectingPaymentsUsers.Launched_Security:autofill_enable_resurrecting_payments_churned_users_treatment/1,CentralizedInfoBarFramework.EnabledV1_20260921_1:MigratedCollectedCookies/true/MigratedInstallerDownloader/true/MigratedPageInfo/true/MigratedPdf/true,ClearBrowsingHistoryJourney.EnabledLaunch:en_site_id/R8iDTcjjT0ugnJ3q1cK0TiRRjjy4/probability/1%2E0,ContextualTasksDesktop.SignedInSidePanelUnificationOnly_20260908:allow-signed-out/false,CrossDeviceSigninFromDesktop.Enabled_with_new_badge_20260917:show_new_badge/true/url/https%3A%2F%2Fwww%2Egoogle%2Ecom%2Fchrome%2Fgo-mobile%3Fentry_point_id%3D1%26email%3D%241,DeprecateUnload.Default_pct%3D100_1:allowlist/a%2Ecom%2Cb%2Ecom%2Cc%2Ecom%2Cd%2Ecom%2Ce%2Ecom%2Cf%2Ecom%2Cweb-platform%2Etest%2Cwww1%2Eweb-platform%2Etest%2C127%2E0%2E0%2E1%2Cexample%2Etest%2Cwww%2Egoogle%2Ecom%2Cwww%2Eyoutube%2Ecom%2Cwww%2Efacebook%2Ecom%2Cwww%2Epornhub%2Ecom%2Cwww%2Exvideos%2Ecom%2Ctwitter%2Ecom%2Cwww%2Ewikipedia%2Eorg%2Cwww%2Einstagram%2Ecom%2Cwww%2Ereddit%2Ecom%2Cwww%2Eamazon%2Ecom%2Cduckduckgo%2Ecom%2Cwww%2Eyahoo%2Ecom%2Cwww%2Exnxx%2Ecom%2Cwww%2Etiktok%2Ecom%2Cwww%2Ebing%2Ecom%2Cwww%2Eyahoo%2Eco%2Ejp%2Cweather%2Ecom%2Cwww%2Ewhatsapp%2Ecom%2Cdzen%2Eru%2Cxhamster%2Ecom%2Copenai%2Ecom%2Coutlook%2Elive%2Ecom%2Cwww%2Emicrosoft%2Ecom%2Cmicrosoftonline%2Ecom%2Cwww%2Emicrosoftonline%2Ecom%2Cwww%2Elinkedin%2Ecom%2Cwww%2Equora%2Ecom%2Cwww%2Etwitch%2Etv%2Cwww%2Enaver%2Ecom%2Cnetflix%2Ecom%2Cwww%2Enetflix%2Ecom%2Cwww%2Eoffice%2Ecom%2Cvk%2Ecom%2Cwww%2Evk%2Ecom%2Cwww%2Eglobo%2Ecom%2Cwww%2Ealiexpress%2Ecom%2Cwww%2Ecnn%2Ecom%2Czoom%2Eus%2Cwww%2Ezoom%2Eus%2Cwww%2Eimdb%2Ecom%2Cx%2Ecom%2Cwww%2Enytimes%2Ecom%2Conlyfans%2Ecom%2Cwww%2Eespn%2Ecom%2Cwww%2Eamazon%2Eco%2Ejp%2Cwww%2Epinterest%2Ecom%2Cwww%2Euol%2Ecom%2Ebr%2Cwww%2Eebay%2Ecom%2Cwww%2Emarca%2Ecom%2Cwww%2Ecanva%2Ecom%2Cwww%2Espotify%2Ecom%2Cwww%2Ebbc%2Ecom%2Cwww%2Epaypal%2Ecom%2Cwww%2Eapple%2Ecom/rollout_percent/80,DeprecateUnloadByBucket.Enabled_permanent_bucket_44:rollout_bucket/44,EnableNewUploadSizeLimit.Enabled_20260929Launch:max_file_size_mb/250,EncryptBookmarks_Phase1.Phase1_5:stage/write_both_read_only_clear,EncryptSessionStorage_Phase1.Phase1_5:stage/write_both_read_only_clear,EnergyEffectVisdStudy.Launched:EnergyEffectVariantParam/energy-effect-fusebox,ExpiredHistograms.ExpiryEnabledWithAllowlist:allowlist/,GlicActorRolloutControl.Enabled_ExternalAllowableByPolicy_US:glic-actor-eligible-tiers/1%2C2/glic_actor_enterprise_pref_default/disabled_by_default,GlicPdfSummarizeButton.Enabled_Arm3_20260928_V3:arm/3,IncreaseCongestionWindow.EnabledDoubleForPreconnect_20260911_STABLE_30:QuicConnectionOptions/ECCP%2CIW2X/quic_options/ORIG,IncreaseHttp3Usage.EnabledWithConfigureMinimalQuicHints:quic_hints/google%2Ecom%2C443%2C443%2Cwww%2Egoogle%2Ecom%2C443%2C443,NtpBrowserPromos.OnePromo:max-terms/3/promo-type/simple/session-rotation/2,OptimisticDnsForTcp.OptimisticDns_AdjustIPv6_100ms_IPv6RTT_1_2_STABLE_10_20260908:IPv6FallbackMax/1500ms/IPv6FallbackMin/50ms/IPv6FallbackRTTMultiplier/1%2E2/fallback_time/100ms/use_stale_connectors/true,PdfInkSignaturesTextAnnotations.Enabled_20260911_50:text-annotations/true,PinExtensionJourney.EnabledLaunch:en_site_id/8RJXcn5t20ugnJ3q1cK0VLDGHPAz/probability/1%2E0,RecordLockAcquisitionTimeStudy.EnabledLaunch:RecordLockAcquisitionTimeAllowedThreads/CrBrowserMain%2CCrRendererMain%2CCrGpuMain%2CVizCompositor%2CCompositor%2CBrowserIO%2CNetworkService%2CGPU%2EForegroundWorker%2CGPU%2EBackgroundWorker%2CRenderer%2EForegroundWorker%2CRenderer%2EBackgroundWorker%2CBrowser%2EForegroundWorker%2CBrowser%2EBackgroundWorker,RestrictBackgroundFetchFromServiceWorker.Enabled:allowlist/https%3A%2F%2Fcuutruyen%2Enet%2Chttps%3A%2F%2Fwww%2Emon%2Eemg-u%2Ecom%2Chttps%3A%2F%2Feki%2Eecuakaraoke%2Ecom%2Eec%2Chttps%3A%2F%2Fhetcuutruyen%2Enet%2Chttps%3A%2F%2Fillusorium%2Eaquarium%2Eapp%2Chttps%3A%2F%2Fintranet%2Evzo%2Ech%2Chttps%3A%2F%2Fmy%2Eduaux%2Ecom%2Chttps%3A%2F%2Fnxg-prod-cvag%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-heagmobilo%2Einnotix%2Ecom%2Chttps%3A%2F%2Fnxg-prod-rlg%2Einnotix%2Ecom%2Chttps%3A%2F%2Fwhatpwacando%2Etoday%2Chttps%3A%2F%2Fwww%2Eapkz%2Ecom%2Chttps%3A%2F%2Fk-bibel%2Ede%2Chttps%3A%2F%2Fconnect%2Ecmcv%2Eac%2Ein%2Chttps%3A%2F%2Ffilmtor%2Ecom%2Chttps%3A%2F%2Fmozaic%2Efm%2Chttps%3A%2F%2Fwww%2Ehaeuserlexikon%2Ede%2Chttps%3A%2F%2Fwww%2Eyouthconnektburkina%2Ebf,SafetyHubIncreasePasswordCheckFrequencyV2.Enabled_2d_20260914_80:background-password-check-interval/2d/password-check-mon-weight/5/password-check-sat-weight/9/password-check-sun-weight/9,SessionRestoreInfobarSticky.EnabledOptIn:continue_session/false,SharedTabGroups.JoinOnlyEnabled_20260218:show_send_feedback/true,SplitViewHorizontal.EnabledIndirectAccess:split_view_horizontal_direct_access/false,UkmSamplingRate.Downsampled_202309:AbandonedSRPNavigation/2/Accessibility%2ECanvas/16/AdFrameLoad/25/Android%2EMultiWindowState/3/Autofill%2EFieldFillStatus/45/Autofill%2EFieldTypeValidation/160/Autofill%2EFormEvent/20/BackgroundSyncRegistered/2/Blink%2EFrameLoader/550/Blink%2EHTMLParsing/16/Blink%2EPageLoad/20/Blink%2EPaintTiming/12/Blink%2EUpdateTime/40/ClientHints%2EAcceptCHFrameUsage/70/ClientHints%2EAcceptCHHeaderUsage/60/ClientHints%2EDelegateCHMetaUsage/3/ClientRenderingAPI/420/Compose%2ETextElementUsage/2/ContentManagementSystemPageLoad/16/ContextualCueing%2ENudgeDecision/6/Cookies%2EBlocked%2EDueToOriginMismatch/60/CrossOriginSubframeWithoutEmbeddingControl/70/DocumentCreated/100/DomDistiller%2EAndroid%2EDistillabilityLatency/10/DomDistiller%2EAndroid%2EDistillabilityResult/14/DomDistiller%2EModelResult%2EDistillable/18/Download%2ECompleted/Download/Download%2EInterrupted/Download/Download%2EResumed/Download/Download%2EStarted/Download/Extensions%2EOnNavigation/70/Extensions%2EWebRequest%2EKeepaliveRequestFinished/100/GoogleDocsOfflineExtension/8/HistoryApi%2EPushState/10/HistoryManipulationIntervention/2/InstalledRelatedApps/6/JavascriptFrameworkPageLoad/16/LoadCountsPerTopLevelDocument/20/LoadingPredictor/12/MainFrameNavigation/2/Media/35/Media%2EAutoplay%2EAttempt/14/Media%2EBasicPlayback/Media/Media%2EEME%2EGetStatusForPolicy/30/Media%2EVideoDecodePerfRecord/8/Media%2EWebAudio%2EAudioContext%2EAudibleTime/Media/Media%2EWebMediaPlayerState/Media/Memory%2EExperimental/100/Memory%2ETabFootprint/20/MobileFriendliness%2ETappedBadTargets/12/Navigation%2EFromGoogleSearch%2ETimingInformation/2/Navigation%2EReceivedResponse/20/NavigationPredictor/70/NavigationPredictorAnchorElementMetrics/NavigationPredictor/NavigationPredictorPageLinkClick/NavigationPredictor/NavigationPredictorPageLinkMetrics/NavigationPredictor/NavigationPredictorPreloadOnHover/NavigationPredictor/NavigationPredictorUserInteractions/NavigationPredictor/NavigationTiming/14/Network%2EDataUrls/90/OmniboxSecurityIndicator%2EFormSubmission/8/OptimizationGuide/60/OptimizationGuide%2EAnnotatedPageContent/16/OptimizationGuide%2EPageContentExtraction/30/PageContentAnnotations2/35/PageForegroundSession/30/PageLifecycleMetricsOnNewPageCommit/25/PageLoadInitiatorForAdTagging/16/PaidContentPageLoad/20/PartitionedCookiePresentV3/6/PerformanceAPI%2ELongAnimationFrame/480/PerformanceAPI%2ELongTask/14/PerformanceAPI%2EMemory%2ELegacy/2000/PerformanceManager%2EFreezingEligibility/4/PerformanceManager%2EPageResourceUsage2/160/PermissionUsage/4/PermissionUsage%2ENotificationShown/2/Popup%2EClosed/Popup/Popup%2EPage/Popup/PowerUsageScenariosIntervalData/20/PrefetchProxy%2EPrefetchedResource/4/Preloading%2EAttempt/PreloadingAttempt/Preloading%2EAttempt%2EPreviousPrimaryPage/PreloadingAttempt/Preloading%2EPrediction/200/Preloading%2EPrediction%2EPreviousPrimaryPage/270/Responsiveness%2EUserInteraction/90/SamesiteRedirectContextDowngrade/10/Security%2ESiteEngagement/14/ServiceWorker%2EMainResourceLoadCompleted/6/Site%2EInstall/3/Site%2EManifest/3/Site%2EQuality/3/SiteFamiliarityHeuristicResult/18/SubresourceFilter/20/SubresourceLoad%2EZstdContentEncoding/420/TabManager%2ETabLifetime/4/TabRevisitTracker%2ETabStateChange/30/Translate/20/TranslatePageLoad/25/Unload/14/UserPerceivedPageVisit/50/V8%2EGC%2EFullCycle/40/V8%2EWasm/6/V8%2EWasm%2EModuleCompiled/V8%2EWasm/V8%2EWasm%2EModuleDecoded/V8%2EWasm/V8%2EWasm%2EModuleInstantiated/V8%2EWasm/WebOTPImpact/10/XR%2EWebXR/2/_default_sampling/1/_webdx_features_sampling/1,VerticalTabsExpandOnHoverLaunch.Enabled:expand_on_hover_default_enabled/true/expand_on_hover_use_velocity_heuristic/true/expand_on_hover_velocity_heuristic_delay/50ms/expand_on_hover_velocity_heuristic_distance_from_edge/12/expand_on_hover_velocity_heuristic_edge_delay/200ms/expand_on_hover_velocity_heuristic_interval/10ms/expand_on_hover_velocity_heuristic_min_samples/3/expand_on_hover_velocity_heuristic_threshold/0%2E25,ViewDownloadedFileJourney.EnabledLaunch:en_site_id/mL46CjHkE0ugnJ3q1cK0NsAQJpTP/probability/1%2E0,WhatsNewHats.Enabled_en_20260929:en_site_id/6bnVh68QF0ugnJ3q1cK0NQxjpCFS/probability/0%2E01\" --enable-features=\"AIPageContentTrackedElementsPassword<AIPageContentTrackedElementsPassword,*AdInterestGroupAPI<ProtectedAudienceDeprecation,AdjustIPv6FallbackTime<OptimisticDnsForTcp,*AiModePageActionOptimization<PageActionsOptimizations,AomVpxUsePresentationThreadType<WebRTC-MediaTaskQueuePriorities,ApiGlicPrivate<GlicPrivateApi,*AutofillAiImportConstraintsForSync<AutofillAiImportConstraintsForSync,*AutofillAiPrivateAiShadowMetric<AutofillAiUsePrivateAi,*AutofillAiUsePrivateAi<AutofillAiUsePrivateAi,*AutofillDisallowMoreHyphenLikeLabels<AutofillSupportSplitZipCode,AutofillEnableNonAffiliatedLoyaltyCardsFilling<AutofillEnableNonAffiliatedLoyaltyCardsFilling,AutofillEnableResurrectingPaymentsUsers<AutofillEnableResurrectingPaymentsUsers,AutofillFixCvcImport<AutofillFixCvcImport,*AutofillFixIframeOwnership<AutofillFixIframeOwnership,*AutofillFixLabelGenerationForStreetAddress<AutofillFixLabelGenerationForStreetAddress,*AutofillKeydownEditableElement<AutofillKeydownEditableElement,*AutofillNewSuggestionGeneration<AutofillNewSuggestionGeneration,*AutofillSupportSplitZipCode<AutofillSupportSplitZipCode,*AutofillUpstreamEnforceStrikeDelay<AutofillUpstreamEnforceStrikeDelay,*BrowserInitiatedAutomaticPictureInPicture<BrowserInitiatedAutomaticPictureInPicture,BrowserLaunchMetadataReporting<BrowserLaunchMetadataReporting,*BrowsingTopics<TopicsDeprecation,*CdmProcessPriorityElevation<CdmServicePriorityElevation,*CdmThreadPriorityElevation<CdmServicePriorityElevation,CentralizedInfoBarFramework<CentralizedInfoBarFramework,*CheckAutoCommitInCommitAndRollback<CheckAutoCommitInCommitAndRollback,ClearBrowsingHistoryJourney<ClearBrowsingHistoryJourney,ClientSideDetectionLocalResourceCheckFix<ClientSideDetectionLocalResourceCheckFix,ClientSideDetectionScamScore<ClientSideDetectionScamScore,*ComponentsBase32InRust<ComponentsBase32InRust,ComposeboxDriveContextMenuOption<ComposeboxDriveContextMenuOptionDesktop,ComposeboxDriveContextMenuOptionDisclaimer<ComposeboxDriveContextMenuOptionDesktop,ConfigureQuicHints<IncreaseHttp3Usage,ContextMenuAnimationLimiting<ContextMenuAnimationLimiting,ContextualTasksSidePanel<ContextualTasksDesktop,*ConversionMeasurement<AttributionReportingDeprecation,*CredentialManagementUnifiedUi<CredentialManagementUnifiedUi,CrossDeviceSigninFromDesktop<CrossDeviceSigninFromDesktop,CtrlTabMru<CtrlTabMru,DataControlsGlic<EnterpriseDataProtectionForGlic,DataSharingJoinOnly<SharedTabGroups,*DecodeScriptsInBlink<DecodeScriptsInBlink,DeprecateUnload<DeprecateUnload,DeprecateUnloadByAllowList<DeprecateUnload,DeprecateUnloadByBucket<DeprecateUnloadByBucket,DiceHeaderVersion2<DiceProtocolVersion2,*Dictation<VoiceTyping,*DisallowLegacyPrefMacFallback<DisallowLegacyPrefMacFallback,EnableAccountPreviewData<EnableAccountPreviewData,EnableAccountPreviewEntityPreviews<EnableAccountPreviewData,EnableCancelUploadOnContentAnalysis<EnableCancelUploadOnContentAnalysis,*EnableCrossDevicePrefTracker<DesktopToMobilePromos,EnableIntermediateDnsResults<OptimisticDnsForTcp,EnableNewUploadSizeLimit<EnableNewUploadSizeLimit,EnableNtpBrowserPromos<NtpBrowserPromos,*EnableUdpGro<EnableQuicReadMultipleAndUdpGRO,EnableWatermarkTimestampTimezone<EnableWatermarkTimestampTimezone,EncryptBookmarks<EncryptBookmarks_Phase1,EncryptSessionStorage<EncryptSessionStorage_Phase1,EnergyEffect<EnergyEffectVisdStudy,EnergyEffectAnimation<EnergyEffectMotionStudy,EnterpriseReleaseNotes<EnterpriseReleaseNotes,ExpiredHistogramLogic<ExpiredHistograms,ExtensionsPinnedByDefault<ExtensionsPinnedByDefault,*ExtremeLightweightUAFDetector<ExtremeLightweightUAFDetector,*Fledge<ProtectedAudienceDeprecation,*GCMMessageBuffering<GCMMessageBuffering,GlicActor<GlicActorRolloutControl,*GlicActorObservationDelayExcludeAdFrameLoading<GlicActorObservationDelayExcludeAdFrameLoading,GlicActorUi<GlicActorRolloutControl,GlicBulkDataEntrySupport<EnterpriseDataProtectionForGlic,GlicExperimentalTriggering<GlicExperimentalTriggering,*GlicUseMainPartitionForUnifiedFre<GlicUseMainPartitionForUnifiedFre,*GlicWarming<GlicColdWarmingDelay,*GlicWebActuationSettingsToggle<GlicWebActuationSettingsToggle,*GmailOtpRetrievalService<GmailOtpBackendInfrastructure,*HangoutsExtensionV3<HangoutsExtensionV3,HappinessTrackingSurveysForClearBrowsingHistory<ClearBrowsingHistoryJourney,HappinessTrackingSurveysForDesktopWhatsNew<WhatsNewHats,HappinessTrackingSurveysForDownloadJourney<ViewDownloadedFileJourney,HappinessTrackingSurveysForPinExtensionJourney<PinExtensionJourney,*HttpCacheZstdCompression<HttpCacheZstdCompression,*HttpCacheZstdDecompression<HttpCacheZstdCompression,*HttpsFirstBalancedModeAutoEnable<HttpsFirstBalancedModeAutoEnableDesktop,IPH_BookmarkBarSimplified<DesktopNtpSimplificationBookmarkBar,IPH_DesktopRealboxContextualSearchFeature<DesktopRealboxContextualSearchIPH,IPH_ReadingModePageActionLabel<ReadAnythingOmnibox,IPH_SignoutWebIntercept<UnoPhase2Desktop,IPH_VerticalTabsExpandOnHoverFeature<VerticalTabsExpandOnHoverLaunch,IPv6FallbackBasedOnRTT<OptimisticDnsForTcp,*IndexedDBConnectionDeduplication<IndexedDBConnectionDeduplication,InfoBarInlineLinks<InfoBarInlineLinks,*InitialDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,*LazilySetCustomActionCaption<LazilySetCustomActionCaption,*LensOverlayHomeworkPageActionFocusOptimization<PageActionsOptimizations,LensSidePanelUnification<ContextualTasksDesktop,*ManageContactInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysContactInfo,*ManageIdentityDocsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysIdentityDocs,*ManagePasswordsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPasswords,*ManagePaymentsPerceptionSurvey<AutofillYourSavedInfoHatsSurveysPayments,*ManageTravelPerceptionSurvey<AutofillYourSavedInfoHatsSurveysTravel,*ManageYourSavedInfoPerceptionSurvey<AutofillYourSavedInfoHatsSurveysYourSavedInfo,*MaxDelayForBrokenAlternativeService<BrokenAlternativeServiceDelays,*MobilePromoOnDesktopWithQRCodeWave1<DesktopToMobilePromos,NtpDisableBrowserInitiatedLinks<NtpDisableBrowserInitiatedLinks,NtpSimplificationBookmarkBar<DesktopNtpSimplificationBookmarkBar,*OffscreenCanvasPropagateVisibility<WebGLMemoryExperiments,*OneTimeTokenBackendNotification<GmailOtpBackendInfrastructure,OptimisticDnsForTcp<OptimisticDnsForTcp,*PMLoadingPageVoter<PMLoadingPageVoter,*PageActionsPrioritySelector<PageActionsPrioritySelector,*PaymentRequestMandatoryPaymentAppUi<PaymentRequestMandatoryPaymentAppUi,*PaymentRequestRejectTooSmallWindows<PaymentRequestRejectTooSmallWindows,PdfGlicSummarize<GlicPdfSummarizeButton,PdfInk2<PdfInkSignaturesTextAnnotations,*PervasiveSharedDictionaries<PervasiveSharedDictionaries,PinExtensionJourney<PinExtensionJourney,PqcCupSigning<PqcCupSigning,*ProactivePasswordProtection<ProactivePasswordProtection,*QuicUseReadMultiple<EnableQuicReadMultipleAndUdpGRO,ReadAnythingLineFocus<ReadAnythingLineFocusExperiment,ReadAnythingOmniboxChip<ReadAnythingOmnibox,RecordLockAcquisitionTime<RecordLockAcquisitionTimeStudy,RestrictBackgroundFetchFromServiceWorker<RestrictBackgroundFetchFromServiceWorker,*RestrictLinkHeaderOnSubresource<RestrictLinkHeaderOnSubresource,*SafeBrowsingLocalListsUseSBv5<SafeBrowsingLocalListsUseSBv5,*SafeBrowsingWaitForDnsForRealTimeLookup<SafeBrowsingWaitForDnsForRealTimeLookup,SafetyHub<SafetyHubIncreasePasswordCheckFrequencyV2,ScalableFrameEviction<ScalableFrameEviction,ScrollJankV4MetricFastScrollContinuityRequiresSameDirection<ScrollJankV4MetricFastScrollContinuityRequiresSameDirection,SearchEnginePreconnect2<IncreaseCongestionWindow,SegmentationPlatformFedCmUser<FedCmSegmentationPlatform,SendTabToSelfAutoOpen<InstantHandoffPhase1,SendTabToSelfEnhancedBottomsheet<InstantHandoffPhase1,SendTabToSelfEnhancedDesktopUI<InstantHandoffPhase1,SendTabToSelfExtraEntryPoints<InstantHandoffPhase1,SendTabToSelfImprovedLastActiveLabels<InstantHandoffPhase1,SendTabToSelfPostSendToast<InstantHandoffPhase1,SendTabToSelfPropagateFormFields<InstantHandoffPhase1,SendTabToSelfPropagateScrollPosition<InstantHandoffPhase1,*ServiceWorkerDatabaseDoomOnMissingNextId<ServiceWorkerDatabaseDoomOnMissingNextId,SessionRestoreInfobar<SessionRestoreInfobarSticky,*SingleAxisScrollContainers<SingleAxisScrollContainers,*SmartRestartLockScreen<SmartRestartLockScreen,*SpellcheckSeparateLocalAndAccountDictionaries<UnoPhase2FollowUpDesktop,SplitViewHorizontal<SplitViewHorizontal,StatefulMemoryPressure<StatefulMemoryPressure,*StructuredHeadersInRust<StructuredHeadersInRust,*SuspiciousSiteWarnings<SuspiciousSiteWarnings,SyncSessionsUsePreferredDisplayName<InstantHandoffPhase1,SyncSimplifyDeviceNaming<InstantHandoffPhase1,SyncUseServerDeterminedDeviceName<InstantHandoffPhase1,TabSearchCjkWordBoundary<TabSearchCjkWordBoundary,*ThreeDSecureTelemetry<ThreeDSecureTelemetry,*ThrottleRepeatedNoDamageFrames<ThrottleConsecutiveNoDamageMainFrames,*TrackEmptyRendererProcessesForReuse<TransientKeepAlivePolicy,*TransientKeepAlivePolicy<TransientKeepAlivePolicy,*TranslateElementExperimentFeatures<TranslateShortTextStaticContext,TranslateOpenSettings<OpenTranslationSettings,*TranslateSimplifiedHindi<SimplifiedHindiModel,TryQuicByDefault<IncreaseCongestionWindow,Ukm<UKM,UkmSamplingRate<UkmSamplingRate,*UnoPhase2FollowUp<UnoPhase2FollowUpDesktop,*UnthrottleAsyncTouchMoves<UnthrottleAsyncTouchMovesV2,UseActionsForBrowserCommands<BrowserActionMigration,*UseDynamicBackingAllocations<UseDynamicBackingAllocations,UseHighPriorityThreadGroup<WebRTC-MediaTaskQueuePriorities,UserValueDefaultBrowserStrings<UserValueDefaultBrowserStrings,*UtfConversionAsciiFastPath<UtfConversionAsciiFastPath,V8Flag_homomorphic_ic<V8HomomorphicIC,*V8Flag_sqrt_allocation_limits<V8SqrtAllocationLimits,V8Flag_turbolev<V8Turbolev,VariationsRuntimeMutability<VariationsRuntimeMutability,VerticalTabsExpandOnHover<VerticalTabsExpandOnHoverLaunch,ViewDownloadedFileFromAppMenuJourney<ViewDownloadedFileJourney,ViewDownloadedFileJourney<ViewDownloadedFileJourney,VisitCustomSearchOnUndefaulting<VisitCustomSearchOnUndefaulting,*WaylandExternalBeginFrameSource<WaylandExternalBeginFrameSource,WebAppInstallDialog<PWAInstallDialogRefresh,*WebGLDiscardBackBuffer<WebGLMemoryExperiments,WebRTCBoostMediaIOThreads<WebRTC-MediaTaskQueuePriorities,WebRtcUseMediaThreadTypes<WebRTC-MediaTaskQueuePriorities,*WebUIRoundedIcons<WebUIRoundedIcons\" --disable-features=\"ApiGlicAccessFromPromotionPage<ApiGlicAccessFromPromotionPage,AutofillAiWalletPrivatePassesCapability<AutofillAiWalletPrivatePassesCapability,AutofillEnableExpandIbanRegexPattern<AutofillEnableExpandIbanRegexPattern,BackForwardCacheCCNSIgnoreUnchangedCookies<BackForwardCacheCCNSIgnoreUnchangedCookies,ConstructableStylesheetCache<ConstructableStylesheetCacheKillSwitch,ContextualCueingV2<ContextualCueingV2,ContextualTasks<ContextualTasksDesktop,ContextualTasksBackButtonExpandsSidePanel<ContextualTasksDesktop,ContextualTasksCookiePrefetch<ContextualTasksDesktop,DataSharing<SharedTabGroups,EnforceP2PSocketPortRestrictions<EnforceP2PSocketPortRestrictionsKillSwitch,GenerateXSLTWarningBanner<GenerateXSLTWarningBanner,GlicAnchorEntryPointForOnboardedUsers<GlicAnchorEntryPointForOnboardedUsersUnlaunch,GlicContextualCueingV2AutoSubmit<ContextualCueingV2,IPH_SignInBenefits<UnoPhase2Desktop,IgnoreQuicCryptoConfigMemoryPressure<IgnoreQuicCryptoConfigMemoryPressure,ImprovedStartupBestEffortDelay<ImprovedStartupBestEffortDelay,LazyInitializeSpellcheckCharAttribute<LazyInitializeSpellcheckCharAttribute,MigrateSyncingUserToSignedIn<MigrateSyncingUserToSignedInDesktop,PdfBufferedPaintManager<PdfBufferedPaintManager,PrewarmDisableOnStartup<PrewarmZeroSuggestTrigger,PrewarmZeroSuggestTrigger<PrewarmZeroSuggestTrigger,ReadSupportsWalletPrivatePassesInAutofillCapability<AutofillAiWalletPrivatePassesCapability,ReduceMojoURLLoaderFactoryCloning<ReduceMojoURLLoaderFactoryCloning,ReplaceSyncPromosWithSignInPromos<UnoPhase2Desktop,SearchNavigationPrefetch<KillSwitch_SearchNavigationPrefetch,SyncEnableContactInfoDataTypeForCustomPassphraseUsers<UnoPhase2Desktop,XMLRustForNonXslt<XMLParsingRustNonXsltKillSwitch_153_155\" --disable-field-trial-config",
+      "active_variations_count": 155,
       "active_variations": [
         "6c9bc01b-377be55a",
         "832e9e2-ca7d8d80",
@@ -3835,29 +3839,30 @@
         "2ad3343-ca7d8d80",
         "9a26d980-ca7d8d80",
         "d609f093-377be55a",
+        "da968c94-ca7d8d80",
         "7f4cbd4d-377be55a",
         "99fb13df-ca7d8d80",
         "cdc6dc11-ca7d8d80",
-        "92b406bd-9b37107",
+        "92b406bd-4de29222",
         "3095aa95-3f4a17df",
         "c2bfaa56-377be55a",
         "4bf7b406-377be55a",
         "5033fb03-33c3eba5",
         "e4d43646-ca7d8d80",
+        "a8d4875a-57bb3fed",
         "997c398c-f9a43703",
         "ba27f42b-377be55a",
+        "8e887d5e-b861deaf",
         "ff1e0777-6b128be5",
-        "5e40cc59-9fdeeb23",
         "153d998a-ca7d8d80",
         "f314f5b9-bc521987",
-        "238649f0-3f1fdc81",
-        "b5c2948-9428839b",
+        "238649f0-dbc94766",
         "8095bf60-ca7d8d80",
         "352f87df-377be55a",
         "c9c3bf92-377be55a",
         "b1b6eab0-ca7d8d80",
         "216faa60-377be55a",
-        "e05af48e-5d70dfe1",
+        "e05af48e-ca7d8d80",
         "66ac3cfc-93b963",
         "4cde0e9a-93b963",
         "7242b8f5-33c3eba5",
@@ -3867,47 +3872,46 @@
         "6a64ab7e-377be55a",
         "bd6dd170-ca7d8d80",
         "68f499c8-377be55a",
-        "6d423f36-ca7d8d80",
+        "7515e6ea-ca7d8d80",
         "a218ad40-7937fad3",
         "9d5ecd8d-feaa56f4",
         "310c8bf2-722cbc7b",
-        "d9f7b6b1-6edc92c7",
-        "6e4912ad-540c53e0",
-        "ed102d29-ee29209c",
+        "ed102d29-bd161bc",
         "d09c2d9-f54bd3e4",
-        "67dae843-ed17b9c6",
         "635e5df5-ca7d8d80",
         "432d9464-ca7d8d80",
         "334b1a1c-ca7d8d80",
         "1db33038-ca7d8d80",
-        "2bdb6f15-f6b7b819",
-        "f181271f-ca7d8d80",
+        "2bdb6f15-dd1de3b5",
+        "f181271f-319ed6eb",
+        "7ffa5386-3c3df76e",
         "78049c75-7bc9a52b",
-        "46294e3b-aebaa9a8",
         "9f03bb1b-377be55a",
         "1eb4d00c-377be55a",
         "c6072f65-f9a43703",
         "210f81c-ca7d8d80",
-        "4d4e8d94-ca7d8d80",
-        "eac788b4-60a10697",
+        "4d4e8d94-56d23478",
+        "55cc39e1-42e09f37",
         "66657049-17464aed",
         "c0e01b2-377be55a",
-        "5199db31-ca7d8d80",
+        "5199db31-12b40aaa",
         "260bef7d-ca7d8d80",
         "73d480d9-ca7d8d80",
         "861960c3-377be55a",
         "70640dfa-ca7d8d80",
         "b252442a-ca7d8d80",
         "9f8a0fd2-ca7d8d80",
-        "3ac9fcb9-1dc5a03c",
+        "3ac9fcb9-ca7d8d80",
         "a015f6e1-ca7d8d80",
         "b706019d-377be55a",
         "23a3e365-377be55a",
         "d09b7b7d-ca7d8d80",
+        "f1082cd7-3ec2d9e5",
         "a3652538-ca7d8d80",
         "4fa4e3b8-377be55a",
-        "44fe0078-a1f0f862",
+        "44fe0078-8e216dde",
         "a52330dc-377be55a",
+        "3ede7bd6-6d665e7b",
         "1edcddf4-31889cb4",
         "6cd68a95-ca7d8d80",
         "1f490b80-6d76f654",
@@ -3924,35 +3928,37 @@
         "299dc502-ca7d8d80",
         "eff066ba-ca7d8d80",
         "3728c466-ca7d8d80",
-        "c6080aa-cf34ef23",
+        "c6080aa-ca7d8d80",
         "494d8760-52325d43",
         "3ac60855-486e2a9c",
-        "63dcb6a3-931a559f",
-        "e706e746-610f13e6",
-        "f296190c-f9f7acb5",
-        "4442aae2-6bdfffe7",
-        "f690cf64-6bdfffe7",
+        "63dcb6a3-32058365",
+        "e706e746-c96dc8f1",
+        "f296190c-5192b0cf",
+        "4442aae2-6e3b1976",
+        "f690cf64-d7f6b13c",
         "ed1d377-e1cc0f14",
         "75f0f0a0-4ad60575",
-        "710c3f90-6bdfffe7",
-        "e2b18481-e1cc0f14",
-        "e7e71889-e1cc0f14",
+        "710c3f90-d7f6b13c",
+        "e2b18481-6e3b1976",
+        "e7e71889-4ad60575",
         "fd0aa8ec-ca7d8d80",
+        "a39574eb-4ec3b71c",
         "f8b97b53-ca7d8d80",
         "4776ceb-ca7d8d80",
         "d5e1fd03-ca7d8d80",
         "a49a69c3-ca7d8d80",
         "2cee8ab6-377be55a",
         "798ea899-ca7d8d80",
-        "7b4be1f2-ca7d8d80",
-        "a2ca4614-6839e3f2",
+        "7b4be1f2-463f4d40",
+        "a2ca4614-36d48ccb",
         "105bcc2f-3f4a17df",
         "f2f8b883-377be55a",
+        "7976d448-377be55a",
         "55b8c148-ca7d8d80",
         "bc3e7cb0-6fd9ec9",
         "2f95a72f-4d2fac87",
         "3eef4209-ca7d8d80",
-        "77ca3281-1dc5a03c",
+        "77ca3281-ca7d8d80",
         "c55491ea-1e96d9f7",
         "390c1b55-f9a43703",
         "f4f00e05-ca7d8d80",
@@ -3986,9 +3992,9 @@
         "seed_file": "VariationsSeedV2",
         "seed_file_bytes": 172,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoQCggxNzkwOTI4MBIECAIQAQ==#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
-        "last_fetch_time": "13435408627163557",
+        "last_fetch_time": "13435494875747021",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": null,
         "seed_scan_error": "stored seed is only 163 bytes decompressed at exit; not a full seed, not scanned",
@@ -4003,18 +4009,18 @@
         "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x002d",
-          "0xfe0d",
-          "0xca34",
-          "0x000d",
-          "0x0010",
           "0x0033",
-          "0x001b",
-          "0x44cd",
-          "0x0000",
-          "0x000a",
           "0x002b",
-          "0x0039"
+          "0x0039",
+          "0x44cd",
+          "0x000a",
+          "0x001b",
+          "0x000d",
+          "0xca34",
+          "0xfe0d",
+          "0x002d",
+          "0x0010",
+          "0x0000"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -4059,28 +4065,35 @@
         ],
         "transport_params": [
           {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000013afa9a1a00000001"
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
           },
           {
-            "id": "0x1719cbc652d6ff1c",
-            "name": "grease",
-            "len": 15,
-            "hex": "3fa44d737e722e81da4468b1c1bd8f"
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
           },
           {
             "id": "0x5",
@@ -4095,16 +4108,16 @@
             "value": 103
           },
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
             "id": "0x6",
             "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           },
           {
             "id": "0x20",
@@ -4113,16 +4126,10 @@
             "value": 65536
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "0000000100000001caaa1afa"
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x4",
@@ -4131,11 +4138,10 @@
             "value": 15728640
           },
           {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
+            "id": "0x2b917625f4c8c14c",
+            "name": "grease",
+            "len": 3,
+            "value": 24
           }
         ],
         "h3_settings": {
@@ -4171,15 +4177,15 @@
         "same user-data-dir as default-headed, relaunched after lingering 180s; variations seed present before relaunch: True"
       ],
       "network_trial_groups": {
-        "IgnoreQuicCryptoConfigMemoryPressure": "Enabled_20260902",
-        "IncreaseCongestionWindow": null,
-        "NetTaskScheduler": "Control_20260826",
+        "IgnoreQuicCryptoConfigMemoryPressure": "Control_20260902",
+        "IncreaseCongestionWindow": "EnabledDoubleForPreconnect_20260911_STABLE_30",
+        "NetTaskScheduler": null,
         "IncreaseAmplificationFactor": null,
         "PqcBandwidthExperiment": null,
-        "GlicMediaData": "Control_NonDogfood_20260810",
+        "GlicMediaData": null,
         "IncreaseHttp3Usage": "EnabledWithConfigureMinimalQuicHints",
         "PqcCupSigning": "EnabledLaunch",
-        "EnableQuicReadMultipleAndUdpGRO": "Control_20261001"
+        "EnableQuicReadMultipleAndUdpGRO": "Default"
       }
     },
     {
@@ -4194,46 +4200,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "f9b04290ffebfea672ece25b73408be4",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51764-18-10-11-27-5-65037-23-51-17613-65281-0-35-16-13-43-45,4588-29-23-24,0",
+      "ja3": "0117453cfe31ff4aeb3a31034e9bd963",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,45-5-51-43-65281-16-13-10-51764-18-17613-11-65037-35-23-0-27,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0xca34",
-        "0x0012",
-        "0x000a",
-        "0x000b",
-        "0x001b",
-        "0x0005",
-        "0xfe0d",
-        "0x0017",
-        "0x0033",
-        "0x44cd",
-        "0xff01",
-        "0x0000",
-        "0x0023",
-        "0x0010",
-        "0x000d",
-        "0x002b",
-        "0x002d"
-      ],
-      "extensions_resumed": [
-        "0x000b",
-        "0x0012",
-        "0x002b",
-        "0x44cd",
-        "0x000d",
-        "0xfe0d",
-        "0x000a",
-        "0x0010",
-        "0xff01",
-        "0x001b",
-        "0xca34",
-        "0x0033",
-        "0x0000",
-        "0x0023",
-        "0x0017",
         "0x002d",
         "0x0005",
+        "0x0033",
+        "0x002b",
+        "0xff01",
+        "0x0010",
+        "0x000d",
+        "0x000a",
+        "0xca34",
+        "0x0012",
+        "0x44cd",
+        "0x000b",
+        "0xfe0d",
+        "0x0023",
+        "0x0017",
+        "0x0000",
+        "0x001b"
+      ],
+      "extensions_resumed": [
+        "0x0012",
+        "0x0005",
+        "0x001b",
+        "0x002b",
+        "0x000d",
+        "0x0000",
+        "0xfe0d",
+        "0x0023",
+        "0x002d",
+        "0x000a",
+        "0x44cd",
+        "0xff01",
+        "0x0017",
+        "0x0033",
+        "0x0010",
+        "0xca34",
+        "0x000b",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -4391,15 +4397,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35605,
+        "seed_file_bytes": 35804,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoQCggxNzkwOTI4MBIECAIQAQ==#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157445
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -4412,17 +4418,17 @@
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
           "0x002b",
+          "0x44cd",
           "0x002d",
-          "0xfe0d",
+          "0x0033",
           "0xca34",
-          "0x0000",
-          "0x000d",
           "0x0010",
           "0x001b",
-          "0x0033",
-          "0x0039",
+          "0xfe0d",
           "0x000a",
-          "0x44cd"
+          "0x0000",
+          "0x0039",
+          "0x000d"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -4467,52 +4473,22 @@
         ],
         "transport_params": [
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000010a1a9aea00000001"
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
           },
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
             "id": "0x20",
             "name": "max_datagram_frame_size",
             "len": 4,
             "value": 65536
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000011adaea5a00000001"
           },
           {
             "id": "0x3128",
@@ -4522,10 +4498,10 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x4c7fd058d541197",
-            "name": "grease",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
-            "value": 62
+            "value": 6291456
           },
           {
             "id": "0x7",
@@ -4534,16 +4510,46 @@
             "value": 6291456
           },
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x8",
             "name": "initial_max_streams_bidi",
             "len": 2,
             "value": 100
+          },
+          {
+            "id": "0x34bbd12d1c13e634",
+            "name": "grease",
+            "len": 6,
+            "value": 1238
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           }
         ],
         "h3_settings": {
@@ -4600,44 +4606,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "b9a8acf59e2c1eb86187471fd7a2c02c",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,13-51-23-43-65037-35-0-27-10-17613-18-5-45-11-65281-16,4588-29-23-24,0",
+      "ja3": "775a727d9a1699ea6d681bea5c0b4b82",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,35-11-10-51-23-65281-27-5-16-43-13-45-17613-0-65037-18,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x000d",
+        "0x0023",
+        "0x000b",
+        "0x000a",
         "0x0033",
         "0x0017",
-        "0x002b",
-        "0xfe0d",
-        "0x0023",
-        "0x0000",
-        "0x001b",
-        "0x000a",
-        "0x44cd",
-        "0x0012",
-        "0x0005",
-        "0x002d",
-        "0x000b",
         "0xff01",
-        "0x0010"
+        "0x001b",
+        "0x0005",
+        "0x0010",
+        "0x002b",
+        "0x000d",
+        "0x002d",
+        "0x44cd",
+        "0x0000",
+        "0xfe0d",
+        "0x0012"
       ],
       "extensions_resumed": [
         "0x0010",
-        "0x000b",
-        "0x001b",
-        "0x000d",
         "0x0005",
-        "0xff01",
+        "0x44cd",
+        "0x0000",
         "0x002d",
-        "0x002b",
-        "0x0012",
+        "0x000a",
+        "0x0023",
+        "0x0033",
         "0x0017",
         "0xfe0d",
-        "0x44cd",
-        "0x0023",
-        "0x000a",
-        "0x0000",
-        "0x0033",
+        "0x001b",
+        "0x0012",
+        "0x002b",
+        "0x000d",
+        "0x000b",
+        "0xff01",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -4794,15 +4800,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35609,
+        "seed_file_bytes": 35806,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoQCggxNzkwOTI4MBIECAIQAQ==#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157445
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -4814,17 +4820,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0039",
-          "0x002d",
-          "0x002b",
           "0x000a",
-          "0x44cd",
-          "0x000d",
-          "0x001b",
-          "0x0033",
+          "0x0010",
+          "0x002d",
           "0xfe0d",
+          "0x001b",
           "0x0000",
-          "0x0010"
+          "0x002b",
+          "0x000d",
+          "0x0033",
+          "0x0039",
+          "0x44cd"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -4869,10 +4875,46 @@
         ],
         "transport_params": [
           {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
-            "value": 65536
+            "value": 6291456
+          },
+          {
+            "id": "0x272beb9257f09be7",
+            "name": "grease",
+            "len": 7,
+            "value": 694991914
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
             "id": "0x1",
@@ -4881,8 +4923,14 @@
             "value": 30000
           },
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000015a9a4a2a00000001"
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
           },
@@ -4893,59 +4941,17 @@
             "value": 103
           },
           {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
             "id": "0x3128",
             "name": "google_connection_options",
             "len": 4,
             "hex": "4f524947",
             "ascii": "ORIG"
-          },
-          {
-            "id": "0x1b62e72f15f9cf1f",
-            "name": "grease",
-            "len": 0,
-            "value": null
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000014aba4aaa"
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
           }
         ],
         "h3_settings": {
@@ -5002,48 +5008,48 @@
       "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
       "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1519h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "7d4d987c0d739c47bbc7aa4690ee5cd8",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,0-5-65037-17613-10-27-23-51764-43-13-45-51-35-4832-16-65281-18-11,4588-29-23-24,0",
+      "ja3": "5d03b276196e8bacba5efed5d0fe165e",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-4832-5-27-11-51-17613-51764-23-65037-0-45-16-35-13-10-43-18,4588-29-23-24,0",
       "ja3n": "a3a3161a080b73bda9cc285fb367fcc0",
       "extensions": [
-        "0x0000",
-        "0x0005",
-        "0xfe0d",
-        "0x44cd",
-        "0x000a",
-        "0x001b",
-        "0x0017",
-        "0xca34",
-        "0x002b",
-        "0x000d",
-        "0x002d",
-        "0x0033",
-        "0x0023",
-        "0x12e0",
-        "0x0010",
         "0xff01",
-        "0x0012",
-        "0x000b"
-      ],
-      "extensions_resumed": [
+        "0x12e0",
+        "0x0005",
         "0x001b",
         "0x000b",
-        "0x002b",
-        "0x0012",
-        "0xfe0d",
-        "0x000d",
-        "0xca34",
-        "0x0000",
         "0x0033",
-        "0x0010",
-        "0xff01",
-        "0x12e0",
-        "0x0017",
-        "0x0005",
-        "0x002d",
         "0x44cd",
-        "0x000a",
+        "0xca34",
+        "0x0017",
+        "0xfe0d",
+        "0x0000",
+        "0x002d",
+        "0x0010",
         "0x0023",
+        "0x000d",
+        "0x000a",
+        "0x002b",
+        "0x0012"
+      ],
+      "extensions_resumed": [
+        "0xfe0d",
+        "0x000a",
+        "0x0010",
+        "0x0023",
+        "0x44cd",
+        "0x000d",
+        "0x001b",
+        "0x0033",
+        "0x12e0",
+        "0x0000",
+        "0x0017",
+        "0x000b",
+        "0x002d",
+        "0x0012",
+        "0x0005",
+        "0xca34",
+        "0x002b",
+        "0xff01",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -5203,15 +5209,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 35608,
+        "seed_file_bytes": 35801,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "SMChYyMDI2MTAwMS0xNzAwNTEuNjY1MDAwEgsIAhADGJoBIAAoARoQCggxNzkwOTI4MBIECAIQAQ==#HLNfvBL3Mc4=",
+        "seed_serial_number": "SMChYyMDI2MTAwMi0xNzAyMDYuMzMxMDAwEgsIAhADGJoBIAAoAQ==#Owu7+cD4AqU=",
         "variations_country": "us",
         "last_fetch_time": null,
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 157445
+        "seed_decompressed_bytes": 159572
       },
       "quic": {
         "flags": [
@@ -5223,19 +5229,19 @@
         "ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
         "ja4_r": "q13d0313h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,12e0,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0xca34",
-          "0x000d",
-          "0x0000",
-          "0x12e0",
-          "0x002b",
           "0x002d",
-          "0x0010",
-          "0xfe0d",
-          "0x0039",
-          "0x44cd",
           "0x001b",
           "0x0033",
-          "0x000a"
+          "0xca34",
+          "0x000a",
+          "0x000d",
+          "0x44cd",
+          "0x002b",
+          "0x12e0",
+          "0x0039",
+          "0xfe0d",
+          "0x0010",
+          "0x0000"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -5280,59 +5286,10 @@
         ],
         "transport_params": [
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000011a7a2a2a00000001"
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x332d8a3155b0e597",
-            "name": "grease",
-            "len": 0,
-            "value": null
           },
           {
             "id": "0x4",
@@ -5341,10 +5298,46 @@
             "value": 15728640
           },
           {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000016a2a6a2a"
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
             "id": "0x20",
             "name": "max_datagram_frame_size",
             "len": 4,
             "value": 65536
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
           },
           {
             "id": "0x8",
@@ -5353,10 +5346,23 @@
             "value": 100
           },
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0xbc72fdf80c41e21",
+            "name": "grease",
+            "len": 12,
+            "hex": "c488a80e63035290955fd88e"
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
             "len": 4,
-            "value": 6291456
+            "hex": "4f524947",
+            "ascii": "ORIG"
           }
         ],
         "h3_settings": {
@@ -5607,12 +5613,12 @@
     "disable-field-trial-config: headless vs headed differ in no TLS/H2 fingerprint fields; user-agent differs ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36' vs 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36')",
     "disable-TLSTrustAnchorIDs: headless vs headed differ in no TLS/H2 fingerprint fields; user-agent differs ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36' vs 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36')",
     "finch-AddTLSServerHandshakePadding: headless vs headed differ in no TLS/H2 fingerprint fields; user-agent differs ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36' vs 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36')",
-    "default-relaunched: headless vs headed differ in no TLS/H2 fingerprint fields; user-agent differs ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36' vs 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36')",
+    "default-relaunched: headless vs headed differ in ['header_order']; user-agent differs ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36' vs 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36')",
     "Chrome randomizes TLS extension order per connection: 'extensions' and 'ja3' reflect one observed connection; use 'ja4' / 'ja3n' / 'extensions_sorted' for stable comparison.",
     "default-headless: fresh profile (Variations Source 'default seed', 24 active variations) has 0xca34=True; seed downloaded during the run: True; that seed does NOT mention TrustAnchor",
-    "default-headless vs default-relaunched-headless (seed applied, Variations Source 'variations server', 147 active variations): JA4 same, resumed JA4 same, 0xca34 same",
-    "default-headed: fresh profile (Variations Source 'default seed', 22 active variations) has 0xca34=True; seed downloaded during the run: True; that seed does NOT mention TrustAnchor",
-    "default-headed vs default-relaunched-headed (seed applied, Variations Source 'variations server', 153 active variations): JA4 same, resumed JA4 same, 0xca34 same",
+    "default-headless vs default-relaunched-headless (seed applied, Variations Source 'variations server', 148 active variations): JA4 same, resumed JA4 same, 0xca34 same",
+    "default-headed: fresh profile (Variations Source 'default seed', 24 active variations) has 0xca34=True; seed downloaded during the run: True; that seed does NOT mention TrustAnchor",
+    "default-headed vs default-relaunched-headed (seed applied, Variations Source 'variations server', 155 active variations): JA4 same, resumed JA4 same, 0xca34 same",
     "Finch study PqcBandwidthExperiment (features ['AddTLSServerHandshakePadding'], ~0.06 of eligible clients per seed layer, groups [('Enabled_06000_20260922_gws_sortednames', 0.01), ('Enabled_09000_20260922_gws_sortednames', 0.01), ('Enabled_12000_20260922_gws_sortednames', 0.01), ('Enabled_14000_20260922_gws_sortednames', 0.01), ('Enabled_16000_20260922_gws_sortednames', 0.01), ('Enabled_00000_20260922_gws_sortednames', 0.01)]) can change the ClientHello: ['0x12e0']"
   ]
 }
