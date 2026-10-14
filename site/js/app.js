@@ -571,6 +571,23 @@
     a.addEventListener("change", run); b.addEventListener("change", run); run();
   }
 
+  /* ---------------- README badges (files built by leaderboard/badges.py at deploy) ---------------- */
+  function badgeSlug(id) { return id.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
+  function renderBadges(lb) {
+    var box = $("#badge-list"); if (!box) return; box.innerHTML = "";
+    var base = location.origin + location.pathname.replace(/[^/]*$/, "");
+    (lb.libraries || []).filter(function (l) { return l.is_newest_profile !== false; }).forEach(function (l) {
+      var ep = base + "api/badges/" + badgeSlug(l.id) + ".json";
+      var img = "https://img.shields.io/endpoint?url=" + encodeURIComponent(ep);
+      var md = "[![Chrome match](" + img + ")](" + base + "#leaderboard)";
+      box.appendChild(el("div", { cls: "badge-item" }, [
+        el("span", { cls: "lib", text: l.library + " " }), el("code", { text: l.profile }), " ",
+        el("img", { src: img, alt: "Chrome match badge for " + l.library + " " + l.profile, loading: "lazy", height: "20" }),
+        el("div", { cls: "code-row" }, [el("code", { cls: "md", text: md }), copyBtn(md)])
+      ]));
+    });
+  }
+
   /* ---------------- misc ---------------- */
   function initCopy() {
     $$("button.copy").forEach(function (b) {
@@ -643,6 +660,7 @@
         renderChrome(REF, res[1]);
         renderPlatforms(REF, res[3]);
         initTable(res[1]);
+        renderBadges(res[1]);
         renderFooter(res[1]);
         getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });
         return renderChanges(REF, res[2]);

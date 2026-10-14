@@ -38,6 +38,8 @@ jobs:
           cp site/data/latest.json site/data/libraries.json _site/api/
           [ -f site/data/platforms.json ] && cp site/data/platforms.json _site/api/ || true
           [ -f site/data/history/index.json ] && cp site/data/history/index.json _site/api/history.json || true
+          # README badges (shields.io endpoint JSON), one per leaderboard row, built from the libraries.json being published
+          python3 leaderboard/badges.py site/data/libraries.json _site/api/badges
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

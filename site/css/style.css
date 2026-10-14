@@ -132,3 +132,4 @@ tr.detail td{background:var(--code);padding:12px}
 .fix-label { color: var(--muted, #888); }
 .fix code { white-space: nowrap; }
 .fix-old { text-decoration: line-through; opacity: .7; }
+.badge-item{padding:8px 0;border-bottom:1px solid var(--line)}.badge-item img{vertical-align:middle}.badge-item code.md{font-size:.75rem;word-break:break-all;white-space:normal}

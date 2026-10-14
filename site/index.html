@@ -20,7 +20,7 @@
     <!-- COPY: Nya (sub-line) -->
     <p class="subline">Built from real Chrome captures and compared field by field.</p>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
     </nav>
   </div>
 </header>
@@ -169,6 +169,13 @@
       <div class="wide"><dt><a href="api/history.json"><code>/api/history.json</code></a></dt><dd>Index of past captures; each file is at <code>/data/history/&lt;file&gt;</code>.</dd></div>
     </dl>
     <p class="muted small">Example: <code>curl -s https://stalefp.github.io/api/latest.json | jq -r .version</code>. Field names may grow but existing ones won't be renamed without notice here.</p>
+  </section>
+
+  <!-- README badges -->
+  <section id="badges" class="card" aria-labelledby="badges-h">
+    <h2 id="badges-h">README badges</h2>
+    <p class="muted small">Show how current a library's Chrome profile is. Each badge is a <a href="https://shields.io/badges/endpoint-badge">shields.io endpoint</a> at <code>/api/badges/&lt;id&gt;.json</code>, rebuilt every time the site deploys. Paste the Markdown into a README.</p>
+    <div id="badge-list"><p class="muted">Loading…</p></div>
   </section>
 
   <!-- 4. Early access -->
