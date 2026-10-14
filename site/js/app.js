@@ -475,6 +475,8 @@
     $("#show-older").addEventListener("change", function (e) { state.showOlder = e.target.checked; renderTable(); });
     renderVbNote(lb);
     renderTable();
+    renderUpcoming(lb.upcoming || []);
+    renderCatchup(lb.catchup);
   }
 
   /* ---------------- 3. What changed ---------------- */
@@ -508,6 +510,55 @@
     scalar("Post-quantum experiment share", pp(prev), pp(cur));
     return out;
   }
+  var CHLABEL = { beta: "Beta", dev: "Dev", canary: "Canary" };
+  function listText(v) { return v == null ? "none" : Array.isArray(v) ? (v.length ? v.join(", ") : "none") : String(v); }
+  function renderUpcoming(list) {
+    var box = $("#upcoming-body"); box.innerHTML = "";
+    if (!list.length || list.every(function (u) { return u.status !== "captured"; })) {
+      box.appendChild(el("p", { cls: "muted", text: "No Beta, Dev or Canary capture yet. The first ones arrive with the next daily run." }));
+      return;
+    }
+    list.forEach(function (u) {
+      var name = "Chrome " + (CHLABEL[u.channel] || u.channel);
+      if (u.status !== "captured") { box.appendChild(el("p", { cls: "muted small", text: name + ": not captured yet." })); return; }
+      var head = name + " " + u.version + " (captured " + (localDate(u.captured_at) || "") + ")";
+      if (u.same_as_stable) { box.appendChild(el("p", {}, [el("strong", { text: head + ": " }), "same fingerprint as stable " + u.stable_version + ", so nothing is coming yet."])); return; }
+      var items = u.differences.map(function (d) {
+        if (d.added || d.removed) {
+          var parts = [];
+          if (d.added.length) parts.push("adds " + d.added.join(", "));
+          if (d.removed.length) parts.push("drops " + d.removed.join(", "));
+          if (!parts.length && d.reordered) parts.push("same items, new order");
+          return el("li", {}, [d.label + ": " + parts.join("; ")]);
+        }
+        return el("li", {}, [d.label + ": ", el("code", { text: listText(d.stable) }), " → ", el("code", { text: listText(d.channel) })]);
+      });
+      var brk = u.breaks.length
+        ? el("p", {}, ["Will break: " + u.breaks.map(function (b) { return b.library + " " + b.profile + " (" + b.fields.join(", ") + ")"; }).join("; ") + "."])
+        : el("p", { cls: "muted", text: "None of the rows that match stable today would stop matching." });
+      box.appendChild(el("div", { cls: "up-item" }, [el("p", {}, [el("strong", { text: "Coming in Chrome " + (u.major || "?") + ": " }), head + " differs from stable " + u.stable_version + "."]),
+        el("ul", { cls: "why-list" }, items), brk]));
+    });
+  }
+  function renderCatchup(c) {
+    var box = $("#catchup-body"); box.innerHTML = "";
+    if (!c) { box.appendChild(el("p", { cls: "muted", text: "Not enough data yet." })); return; }
+    var meta = "Tracking since " + (c.tracking_since || "?") + " (" + c.days_logged + " daily runs), " +
+      (c.fingerprint_changes.length ? c.fingerprint_changes.length + " Chrome fingerprint change" + (c.fingerprint_changes.length === 1 ? "" : "s") + " seen." : "no Chrome fingerprint change seen yet.");
+    if (!c.enough_data) box.appendChild(el("p", { cls: "notice", text: "Not enough data yet. " + meta + " The ranking fills in after Chrome's fingerprint next changes and libraries catch up." }));
+    else box.appendChild(el("p", { cls: "muted small", text: meta }));
+    var t = el("table", { cls: "diff-table" }, [el("thead", {}, [el("tr", {}, [el("th", { text: "#" }), el("th", { text: "Library" }), el("th", { text: "Average days to match" }), el("th", { text: "Still behind on" })])])]);
+    var tb = el("tbody"), n = 0;
+    c.libraries.forEach(function (r) {
+      var behind = r.still_behind.map(function (p) { return "Chrome " + p.chrome_version + " (" + p.days_so_far + " days so far)"; }).join("; ");
+      tb.appendChild(el("tr", {}, [el("td", { text: r.enough_data ? String(++n) : "" }), el("td", { text: r.library }),
+        el("td", { text: r.enough_data ? r.avg_days + " (" + r.caught_up.length + " change" + (r.caught_up.length === 1 ? "" : "s") + ")" : "not enough data yet" }),
+        el("td", { text: behind || "nothing" })]));
+    });
+    t.appendChild(tb); box.appendChild(t);
+    box.appendChild(el("p", { cls: "muted small", text: c.method }));
+  }
+
   function renderChanges(ref, index) {
     var body = $("#changes-body"); body.innerHTML = "";
     var caps = ((index && index.captures) || []).filter(function (c) { return c.captured_at && ref.capturedAt && Date.parse(c.captured_at) < Date.parse(ref.capturedAt); });
