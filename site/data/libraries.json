@@ -966,7 +966,12 @@
    ],
    "notes": [
     "Fresh handshakes match Chrome exactly, but switch to Chrome_152_PSK if you need session resumption to look like Chrome too."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   }
   },
   {
    "id": "tls-client|chrome_152_psk",
@@ -1550,10 +1555,17 @@
    "versions_behind_uniform": true,
    "is_newest_profile": true,
    "behind_text": "Copies Chrome 152, 3 versions behind current 155; its fingerprint still matches current Chrome on every counted field.",
-   "why": [],
+   "why": [
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept-encoding before user-agent; Chrome sends user-agent first."
+   ],
    "notes": [
     "Best pick today: in v1.16.0 this profile matched current Chrome's default fingerprint exactly, including resumed connections."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   }
   },
   {
    "id": "tls-client|chrome_150",
@@ -2164,7 +2176,12 @@
    ],
    "notes": [
     "Matches Chrome only with trust anchors turned off (the no_ca34 variant), so prefer Chrome_152_PSK in the same release."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   }
   },
   {
    "id": "curl_cffi|chrome150",
@@ -2756,7 +2773,12 @@
    ],
    "notes": [
     "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   }
   },
   {
    "id": "noble-tls|chrome_146",
@@ -3350,11 +3372,17 @@
    "is_newest_profile": true,
    "behind_text": "Copies Chrome 146, 9 versions behind current 155; 1 counted field differs from current Chrome.",
    "why": [
-    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured."
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before user-agent; Chrome sends user-agent first."
    ],
    "notes": [
     "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   }
   },
   {
    "id": "azuretls-client|chrome",
@@ -3945,7 +3973,12 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   }
   },
   {
    "id": "curl_cffi|chrome136",
@@ -4551,7 +4584,12 @@
    ],
    "notes": [
     "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   }
   },
   {
    "id": "curl_cffi|chrome146",
@@ -5164,7 +5202,12 @@
    ],
    "notes": [
     "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   }
   },
   {
    "id": "primp|chrome_146",
@@ -5493,7 +5536,12 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   }
   },
   {
    "id": "rnet|chrome137",
@@ -5818,11 +5866,17 @@
    "behind_text": "Copies Chrome 137, 18 versions behind current 155; 2 counted fields differ from current Chrome.",
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
-    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
+    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends sec-fetch-dest before accept; Chrome sends accept first."
    ],
    "notes": [
     "Chrome145 is the newer rnet profile we tested, but it has the same two gaps."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   }
   },
   {
    "id": "rnet|chrome145",
@@ -6147,9 +6201,15 @@
    "behind_text": "Copies Chrome 145, 10 versions behind current 155; 2 counted fields differ from current Chrome.",
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
-    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
+    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends sec-fetch-dest before accept; Chrome sends accept first."
    ],
-   "notes": []
+   "notes": [],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   }
   },
   {
    "id": "utls|hellochrome_auto",
@@ -6488,11 +6548,17 @@
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
-    "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s."
+    "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :authority before :method; Chrome sends :method first."
    ],
    "notes": [
     "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   }
   },
   {
    "id": "tls-client-(python)|chrome_120",
@@ -6831,11 +6897,17 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Doesn't send the X25519MLKEM768 post-quantum key share; Chrome already sent it in 151, the oldest version we've captured.",
     "Uses the old ALPS codepoint 0x4469; Chrome sends the new one, 0x44cd.",
-    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
+    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before user-agent; Chrome sends user-agent first."
    ],
    "notes": [
     "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly."
-   ]
+   ],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   }
   }
  ],
  "chrome_timeline": [

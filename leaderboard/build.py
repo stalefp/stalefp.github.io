@@ -407,7 +407,25 @@ def why_lines(e, rf, timeline):
             out.append("%s differ from Chrome's." % dfs[f]["label"])
         elif f not in covered:
             out.append("%s differs from Chrome's." % dfs[f]["label"])
+    ho = dfs.get("header_order") or {}
+    if ho.get("status") == "mismatch" and ho.get("chrome") and ho.get("library"):
+        c1, l1 = ho["chrome"], ho["library"]
+        i = next((k for k in range(min(len(c1), len(l1))) if c1[k] != l1[k]), None)
+        if i is not None:
+            out.append("HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): "
+                       "this library sends %s before %s; Chrome sends %s first." % (l1[i], c1[i], c1[i]))
     return out
+
+
+def http2_grade(e):
+    """HTTP/2 sub-grade from real captures: SETTINGS/WINDOW_UPDATE/PRIORITY/pseudo-header order (Akamai string,
+    counted in the verdict) and regular header order (shown, not counted)."""
+    dfs = {d["field"]: d for d in e.get("diff") or []}
+    ak, ho = (dfs.get("http2_akamai") or {}).get("status"), (dfs.get("header_order") or {}).get("status")
+    if ak in (None, "not_tested"):
+        return dict(grade="not_tested", settings=None, header_order=None)
+    g = "settings_differ" if ak == "mismatch" else ("header_order_differs" if ho == "mismatch" else ("match" if ho == "match" else "settings_match"))
+    return dict(grade=g, settings=ak == "match", header_order=None if ho in (None, "not_tested") else ho == "match")
 
 
 def behind_text(e, cur_major):
@@ -441,6 +459,7 @@ def annotate(data):
     for e in data["libraries"]:
         e["behind_text"] = behind_text(e, cur)
         e["why"] = why_lines(e, rf, timeline)
+        e["http2_grade"] = http2_grade(e)
         n = notes.get(e["id"]) or notes.get(e["library"])
         e["notes"] = ([n] if isinstance(n, str) else list(n)) if n else []
     data["chrome_timeline"] = [dict(major=m, version=v) for m, v, _ in timeline]

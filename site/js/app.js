@@ -308,6 +308,12 @@
     return [el("span", { cls: "line" }, ["QUIC JA4 ", el("span", { cls: jm["default"] ? "yes" : (jm.no_ca34 || jm.pq) ? "vary" : "no", text: ja4Txt })]),
       el("span", { cls: "line" }, ["SETTINGS ", el("span", { cls: setTxt === "✓" ? "yes" : setTxt === "✗" ? "no" : "na", text: setTxt })])];
   }
+  function h2Cell(l, m) {
+    var g = l.http2_grade;
+    if (!g) return [mark(m.http2)];
+    return [el("span", { cls: "line" }, ["settings ", mark(g.settings)]),
+      el("span", { cls: "line", title: "Order of the regular headers both send. Shown, not counted in the verdict." }, ["header order ", mark(g.header_order)])];
+  }
   function vbCell(l) {
     if (l.versions_behind == null) return [el("span", { cls: "na", title: "The profile name doesn't state a Chrome version", text: "unknown" })];
     var by = l.versions_behind_by_platform || {};
@@ -403,7 +409,7 @@
         td("Versions behind", vbCell(l)),
         td("TLS match (JA4)", [el("span", { cls: "line" }, ["default ", mark(d0.ja4_fresh)]), el("span", { cls: "line" }, ["without ca34 ", mark(d1.ja4_fresh)]), resumedNote], "tls-cell"),
         td("Post-quantum experiment", [mark(d2.ja4_fresh), d2.counted_mismatches ? el("span", { cls: "sub", text: d2.counted_mismatches.length ? (d2.counted_mismatches.length === 1 ? "1 field differs" : d2.counted_mismatches.length + " fields differ") : "all fields match" }) : null]),
-        td("HTTP/2 match", [mark(m.http2)]),
+        td("HTTP/2 match", h2Cell(l, m)),
         td("HTTP/3", h3Cell(l)),
         td("Verdict", verdictCell),
         td("Missing vs. Chrome", [el("div", { cls: "missing" }, chips)]),
