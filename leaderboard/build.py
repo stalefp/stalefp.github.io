@@ -731,6 +731,7 @@ def build():
     )
     annotate(data)
     json.dump(data, open(OUT, "w"), indent=1)
+    import row_history; row_history.record(data)   # per-row status history (leaderboard/data/row_history.json)
     print(f"wrote {OUT} (reference: {ref['source']}, Chrome {ref['version']})")
     for l in libs:
         pv = (l.get("matches") or {}).get("variants") or {}

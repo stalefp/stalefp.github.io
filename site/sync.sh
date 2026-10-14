@@ -37,3 +37,7 @@ for p in sorted(glob.glob(os.path.join(src, "chrome-*.json"))):
 json.dump({"note": "Older Chrome captures copied from capture/data/ by site/sync.sh (same layout as latest.json).", "captures": caps}, open(os.path.join(dst, "index.json"), "w"), indent=1)
 print("archive/      <- %d capture(s) from capture/data/chrome-*.json" % len(caps))
 PY
+# Per-row status history (leaderboard/row_history.py)
+if [[ -f "$TB/leaderboard/data/row_history.json" ]]; then
+  cp "$TB/leaderboard/data/row_history.json" "$SITE/data/row_history.json"; echo "row_history.json <- leaderboard/data/row_history.json"
+fi

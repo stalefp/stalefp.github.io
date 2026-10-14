@@ -1,0 +1,869 @@
+{
+ "_format": "One entry per UTC day, newest build of that day. rows[id] = {verdict, versions_behind, mismatches} from that day's leaderboard/data/libraries.json. Seeded from git history of that file; appended by leaderboard/build.py.",
+ "entries": [
+  {
+   "date": "2026-10-02",
+   "chrome_version": "154.0.8037.97",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 8,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 17,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 34,
+     "mismatches": 5
+    }
+   },
+   "source": "git a23a61a"
+  },
+  {
+   "date": "2026-10-03",
+   "chrome_version": "154.0.8037.97",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 8,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 17,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 34,
+     "mismatches": 5
+    }
+   },
+   "source": "git 36b42fc"
+  },
+  {
+   "date": "2026-10-04",
+   "chrome_version": "154.0.8037.97",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 8,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 17,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 34,
+     "mismatches": 5
+    }
+   },
+   "source": "git 839bc6f"
+  },
+  {
+   "date": "2026-10-05",
+   "chrome_version": "154.0.8037.97",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 8,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 17,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 34,
+     "mismatches": 5
+    }
+   },
+   "source": "git b619d89"
+  },
+  {
+   "date": "2026-10-06",
+   "chrome_version": "154.0.8037.97",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 2,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 4,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 8,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 8,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 17,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 34,
+     "mismatches": 5
+    }
+   },
+   "source": "git f5de165"
+  },
+  {
+   "date": "2026-10-07",
+   "chrome_version": "155.0.8059.39",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 9,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 35,
+     "mismatches": 5
+    }
+   },
+   "source": "git 7862647"
+  },
+  {
+   "date": "2026-10-08",
+   "chrome_version": "155.0.8059.39",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 9,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 35,
+     "mismatches": 5
+    }
+   },
+   "source": "git 41fd402"
+  },
+  {
+   "date": "2026-10-09",
+   "chrome_version": "155.0.8059.39",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 9,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 35,
+     "mismatches": 5
+    }
+   },
+   "source": "git 2cc9814"
+  },
+  {
+   "date": "2026-10-10",
+   "chrome_version": "155.0.8059.39",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 9,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 35,
+     "mismatches": 5
+    }
+   },
+   "source": "git 200c262"
+  },
+  {
+   "date": "2026-10-12",
+   "chrome_version": "155.0.8059.39",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 9,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 35,
+     "mismatches": 5
+    }
+   },
+   "source": "git 70bc18c"
+  },
+  {
+   "date": "2026-10-13",
+   "chrome_version": "155.0.8059.39",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 9,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 35,
+     "mismatches": 5
+    }
+   },
+   "source": "git 8d314f6"
+  },
+  {
+   "date": "2026-10-14",
+   "chrome_version": "155.0.8059.79",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 3,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 5,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 9,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 9,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 18,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 35,
+     "mismatches": 5
+    }
+   },
+   "source": "git 56a338d"
+  }
+ ]
+}
