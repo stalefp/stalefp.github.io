@@ -278,6 +278,7 @@
     library: function (l) { return [l.library.toLowerCase(), l.profile]; },
     profile: function (l) { return [l.profile.toLowerCase()]; },
     behind: function (l) { return [l.versions_behind == null ? 999 : l.versions_behind, l.library]; },
+    resumed: function (l) { return [["match", "match_variant", "mismatch", "never", "not_tested"].indexOf(l.resumed_status || "not_tested"), VORDER[l.verdict]]; },
     tls: function (l) { return [tlsRank(l), VORDER[l.verdict]]; },
     pq: function (l) { return [pv(l, "pq").ja4_fresh ? 0 : 1, (pv(l, "pq").counted_mismatches || []).length, VORDER[l.verdict]]; },
     h2: function (l) { return [(l.matches || {}).http2 ? 0 : 1, VORDER[l.verdict]]; },
@@ -313,6 +314,17 @@
     if (!g) return [mark(m.http2)];
     return [el("span", { cls: "line" }, ["settings ", mark(g.settings)]),
       el("span", { cls: "line", title: "Order of the regular headers both send. Shown, not counted in the verdict." }, ["header order ", mark(g.header_order)])];
+  }
+  var RESUMED = {
+    match: ["yes", "✓ matches Chrome", "Resumed handshakes (with pre_shared_key) have the same JA4 as Chrome's default resumed handshake."],
+    match_variant: ["vary", "✓ less common variant", "Resumed JA4 matches one of Chrome's less common variants, not the default."],
+    mismatch: ["no", "✗ differs", "The library resumes sessions, but its resumed JA4 differs from Chrome's."],
+    never: ["no", "✗ never resumes", "Opened new connections on the same client and never sent pre_shared_key; Chrome resumes."],
+    not_tested: ["na", "not tested", "Our harness only tests session resumption for some libraries."]
+  };
+  function resumedCell(l) {
+    var r = RESUMED[l.resumed_status] || RESUMED.not_tested;
+    return [el("span", { cls: r[0], title: r[2], text: r[1] })];
   }
   function vbCell(l) {
     if (l.versions_behind == null) return [el("span", { cls: "na", title: "The profile name doesn't state a Chrome version", text: "unknown" })];
@@ -367,7 +379,7 @@
       h3block = el("p", { cls: "small muted", text: "HTTP/3: " + (h.status === "no_support" ? "no HTTP/3 support" : h.status === "failed" ? "failed" : "not tested") + (h.reason ? " (" + h.reason + ")" : "") });
     }
     var nt = (l.not_tested || []).length ? el("p", { cls: "muted small", text: "Not tested: " + l.not_tested.join("; ") }) : null;
-    return el("tr", { cls: "detail" }, [el("td", { colspan: "10" }, [info, vt, tbl, h3block, nt])]);
+    return el("tr", { cls: "detail" }, [el("td", { colspan: "11" }, [info, vt, tbl, h3block, nt])]);
   }
 
   function whyRow(l) {
@@ -380,8 +392,10 @@
     })));
     var items = (l.why || []).map(function (w) { return el("li", { text: w }); });
     if (items.length) kids.push(el("ul", { cls: "why-list" }, items));
+    if (l.fix) kids.push(el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + (VLABEL[l.fix.to_verdict] || l.fix.to_verdict) + " in our test): " }),
+      el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]));
     (l.notes || []).forEach(function (n) { kids.push(el("p", { cls: "why-note", text: n })); });
-    return el("tr", { cls: "why-row" }, [el("td", { colspan: "10" }, kids)]);
+    return el("tr", { cls: "why-row" }, [el("td", { colspan: "11" }, kids)]);
   }
 
   function renderTable() {
@@ -400,14 +414,12 @@
       var toggle = el("button", { cls: "diff-toggle", type: "button", "aria-expanded": state.open[l.id] ? "true" : "false", text: state.open[l.id] ? "Hide field diff" : "Field diff" });
       toggle.addEventListener("click", function () { state.open[l.id] = !state.open[l.id]; renderTable(); });
       var d0 = pv(l, "default"), d1 = pv(l, "no_ca34"), d2 = pv(l, "pq");
-      var resumedNote = l.resumption && l.resumption.tested
-        ? el("span", { cls: "line", text: "resumed JA4 " + (d0.ja4_resumed ? "✓" : d1.ja4_resumed ? "✓ without ca34" : l.resumption.resumed ? "✗" : "✗ (never resumes)") })
-        : null;
       var tr = el("tr", { cls: "row" }, [
         td("Library", [el("span", { cls: "lib", text: l.library }), el("span", { cls: "lang", text: l.language + (l.maintainer ? " · " + l.maintainer : "") + (l.version ? " · " + l.version : "") }), toggle], "first"),
         td("Chrome profile", [el("code", { text: l.profile })]),
         td("Versions behind", vbCell(l)),
-        td("TLS match (JA4)", [el("span", { cls: "line" }, ["default ", mark(d0.ja4_fresh)]), el("span", { cls: "line" }, ["without ca34 ", mark(d1.ja4_fresh)]), resumedNote], "tls-cell"),
+        td("TLS match (JA4)", [el("span", { cls: "line" }, ["default ", mark(d0.ja4_fresh)]), el("span", { cls: "line" }, ["without ca34 ", mark(d1.ja4_fresh)])], "tls-cell"),
+        td("Resumed connection", resumedCell(l)),
         td("Post-quantum experiment", [mark(d2.ja4_fresh), d2.counted_mismatches ? el("span", { cls: "sub", text: d2.counted_mismatches.length ? (d2.counted_mismatches.length === 1 ? "1 field differs" : d2.counted_mismatches.length + " fields differ") : "all fields match" }) : null]),
         td("HTTP/2 match", h2Cell(l, m)),
         td("HTTP/3", h3Cell(l)),

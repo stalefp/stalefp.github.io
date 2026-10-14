@@ -462,8 +462,46 @@ def annotate(data):
         e["http2_grade"] = http2_grade(e)
         n = notes.get(e["id"]) or notes.get(e["library"])
         e["notes"] = ([n] if isinstance(n, str) else list(n)) if n else []
+    VR = {"exact": 0, "exact_variant": 1, "close": 2, "behind": 3}
+    for e in data["libraries"]:
+        e["resumed_status"] = resumed_status(e)
+    rank = lambda x: (VR.get(x["verdict"], 9), len(x.get("counted_mismatches") or []), x["resumed_status"] != "match",
+                      -(x.get("profile_chrome_major") or 0))
+    for e in data["libraries"]:
+        peers = [x for x in data["libraries"] if x["library"] == e["library"] and x["verdict"] in VR]
+        best = min(peers, key=rank) if peers else None
+        e["fix"] = None
+        if best and best is not e and rank(best)[:3] < rank(e)[:3] and e["library"] in FIX_TEMPLATES:
+            t = FIX_TEMPLATES[e["library"]]
+            e["fix"] = dict(to_id=best["id"], to_profile=best["profile"], to_verdict=best["verdict"],
+                            old=t % e["profile"], new=t % best["profile"])
     data["chrome_timeline"] = [dict(major=m, version=v) for m, v, _ in timeline]
     return data
+
+
+# One-line fix snippets: the real call each harness case uses (leaderboard/harness/bench.py, gobench/main.go)
+FIX_TEMPLATES = {
+    "curl_cffi": 'requests.get(url, impersonate="%s")',
+    "primp": 'primp.Client(impersonate="%s")',
+    "rnet": "rnet.Client(emulation=rnet.Emulation.%s)",
+    "tls-client": "tls_client.WithClientProfile(profiles.%s)",
+    "tls-client (Python)": 'tls_client.Session(client_identifier="%s")',
+}
+
+
+def resumed_status(e):
+    """Resumed-connection result from data already in the entry: match / match_variant / mismatch / never / not_tested."""
+    r = e.get("resumption") or {}
+    if not r.get("tested"):
+        return "not_tested"
+    if not r.get("resumed"):
+        return "never"
+    v = (e.get("matches") or {}).get("variants") or {}
+    if (v.get("default") or {}).get("ja4_resumed"):
+        return "match"
+    if any(x.get("ja4_resumed") for k, x in v.items() if k != "default"):
+        return "match_variant"
+    return "mismatch"
 
 
 # ---------------------------------------------------------------- build

@@ -128,3 +128,7 @@ tr.detail td{background:var(--code);padding:12px}
 .fp-id{display:inline-flex;align-items:center;gap:6px;max-width:100%}.fp-id code{word-break:break-all;white-space:normal!important}
 .fp-id button.copy{font-size:.72rem;padding:1px 7px}
 .vd-list{margin:6px 0 0;padding-left:18px}.vd-list li{margin:3px 0;word-break:break-word}
+.fix { margin: .35rem 0; font-size: .9em; }
+.fix-label { color: var(--muted, #888); }
+.fix code { white-space: nowrap; }
+.fix-old { text-decoration: line-through; opacity: .7; }

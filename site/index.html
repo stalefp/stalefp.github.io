@@ -89,7 +89,7 @@
       <label><input type="checkbox" id="show-older"> Also show older profiles we tested</label>
       <label class="sort-mobile">Sort by
         <select id="sort-select">
-          <option value="verdict">Verdict</option><option value="library">Library</option><option value="behind">Versions behind</option><option value="pq">Post-quantum experiment</option><option value="h3">HTTP/3</option><option value="tested">Date tested</option>
+          <option value="verdict">Verdict</option><option value="library">Library</option><option value="behind">Versions behind</option><option value="resumed">Resumed connection</option><option value="pq">Post-quantum experiment</option><option value="h3">HTTP/3</option><option value="tested">Date tested</option>
         </select>
       </label>
     </div>
@@ -103,6 +103,7 @@
           <th data-sort="behind" aria-sort="none"><button type="button">Versions behind</button> <span class="tip" tabindex="0" data-tip="How many Chrome stable releases have shipped since this profile's version, counted from the newest release that has fully rolled out on each platform.">?</span></th>
           <th data-sort="tls" aria-sort="none"><button type="button">TLS match</button> <span class="tip" tabindex="0" data-tip="Whether the library's JA4 matches real Chrome's exactly.">?</span></th>
           <!-- COPY: Nya (pass 3: new column tooltip) -->
+          <th data-sort="resumed" aria-sort="none"><button type="button">Resumed connection</button> <span class="tip" tabindex="0" data-tip="Chrome reuses TLS sessions on repeat connections (pre_shared_key). Does the library resume too, and does its resumed JA4 match Chrome's?">?</span></th>
           <th data-sort="pq" aria-sort="none"><button type="button">Post-quantum experiment</button> <span class="tip" tabindex="0" data-tip="Whether the library matches the fingerprint Chrome sends for users in Google's post-quantum experiment.">?</span></th>
           <th data-sort="h2" aria-sort="none"><button type="button">HTTP/2 match</button> <span class="tip" tabindex="0" data-tip="Whether the library's HTTP/2 settings match real Chrome's exactly.">?</span></th>
           <!-- COPY: Nya (pass 3: HTTP/3 tooltip) -->

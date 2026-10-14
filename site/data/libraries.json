@@ -971,6 +971,14 @@
     "grade": "match",
     "settings": true,
     "header_order": true
+   },
+   "resumed_status": "never",
+   "fix": {
+    "to_id": "tls-client|chrome_152_psk",
+    "to_profile": "Chrome_152_PSK",
+    "to_verdict": "exact",
+    "old": "tls_client.WithClientProfile(profiles.Chrome_152)",
+    "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
    }
   },
   {
@@ -1565,7 +1573,9 @@
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
-   }
+   },
+   "resumed_status": "match",
+   "fix": null
   },
   {
    "id": "tls-client|chrome_150",
@@ -2181,6 +2191,14 @@
     "grade": "match",
     "settings": true,
     "header_order": true
+   },
+   "resumed_status": "not_tested",
+   "fix": {
+    "to_id": "tls-client|chrome_152_psk",
+    "to_profile": "Chrome_152_PSK",
+    "to_verdict": "exact",
+    "old": "tls_client.WithClientProfile(profiles.Chrome_150)",
+    "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
    }
   },
   {
@@ -2778,7 +2796,9 @@
     "grade": "match",
     "settings": true,
     "header_order": true
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   },
   {
    "id": "noble-tls|chrome_146",
@@ -3382,7 +3402,9 @@
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   },
   {
    "id": "azuretls-client|chrome",
@@ -3978,7 +4000,9 @@
     "grade": "match",
     "settings": true,
     "header_order": true
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   },
   {
    "id": "curl_cffi|chrome136",
@@ -4589,6 +4613,14 @@
     "grade": "match",
     "settings": true,
     "header_order": true
+   },
+   "resumed_status": "not_tested",
+   "fix": {
+    "to_id": "curl_cffi|chrome150",
+    "to_profile": "chrome150",
+    "to_verdict": "exact_variant",
+    "old": "requests.get(url, impersonate=\"chrome136\")",
+    "new": "requests.get(url, impersonate=\"chrome150\")"
    }
   },
   {
@@ -5207,6 +5239,14 @@
     "grade": "match",
     "settings": true,
     "header_order": true
+   },
+   "resumed_status": "not_tested",
+   "fix": {
+    "to_id": "curl_cffi|chrome150",
+    "to_profile": "chrome150",
+    "to_verdict": "exact_variant",
+    "old": "requests.get(url, impersonate=\"chrome146\")",
+    "new": "requests.get(url, impersonate=\"chrome150\")"
    }
   },
   {
@@ -5541,7 +5581,9 @@
     "grade": "match",
     "settings": true,
     "header_order": true
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   },
   {
    "id": "rnet|chrome137",
@@ -5876,7 +5918,9 @@
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   },
   {
    "id": "rnet|chrome145",
@@ -6209,7 +6253,9 @@
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   },
   {
    "id": "utls|hellochrome_auto",
@@ -6558,7 +6604,9 @@
     "grade": "settings_differ",
     "settings": false,
     "header_order": false
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   },
   {
    "id": "tls-client-(python)|chrome_120",
@@ -6907,7 +6955,9 @@
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
-   }
+   },
+   "resumed_status": "not_tested",
+   "fix": null
   }
  ],
  "chrome_timeline": [
