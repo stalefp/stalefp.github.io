@@ -124,3 +124,6 @@ tr.detail td{background:var(--code);padding:12px}
 .why-head{margin:0;font-weight:600}
 .why-list{margin:3px 0 0;padding-left:18px;color:var(--muted)}
 .why-note{margin:4px 0 0;font-style:italic}
+.fp-ids{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 2px;font-size:.8rem}
+.fp-id{display:inline-flex;align-items:center;gap:6px;max-width:100%}.fp-id code{word-break:break-all;white-space:normal!important}
+.fp-id button.copy{font-size:.72rem;padding:1px 7px}
