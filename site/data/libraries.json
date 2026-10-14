@@ -1,6 +1,6 @@
 {
  "schema_version": "leaderboard-0.2",
- "generated_at": "2026-10-14T13:47:39Z",
+ "generated_at": "2026-10-14T20:13:46Z",
  "reference": {
   "source": "capture/data/latest.json",
   "schema": "capture/SCHEMA.md v1",
@@ -11,7 +11,7 @@
   "branded": true,
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
-  "captured_at": "2026-10-14T08:36:14-05:00",
+  "captured_at": "2026-10-14T14:59:21-05:00",
   "reference_config": "default-headed",
   "is_current_linux_stable": true,
   "variations_source": "default seed",
@@ -137,28 +137,22 @@
    "h3_grease_settings": 1,
    "transport_params": [
     {
-     "id": "0x7",
-     "name": "initial_max_stream_data_uni",
+     "id": "0x84a85b41e34ae7c",
+     "name": "grease",
+     "len": 2,
+     "value": 58
+    },
+    {
+     "id": "0x6",
+     "name": "initial_max_stream_data_bidi_remote",
      "len": 4,
      "value": 6291456
     },
     {
-     "id": "0x1a39de1f446dc31b",
-     "name": "grease",
-     "len": 1,
-     "hex": "f5"
-    },
-    {
-     "id": "0xf",
-     "name": "initial_source_connection_id",
-     "len": 0,
-     "hex": ""
-    },
-    {
-     "id": "0x20",
-     "name": "max_datagram_frame_size",
+     "id": "0x4",
+     "name": "initial_max_data",
      "len": 4,
-     "value": 65536
+     "value": 15728640
     },
     {
      "id": "0x3128",
@@ -166,18 +160,6 @@
      "len": 4,
      "hex": "4f524947",
      "ascii": "ORIG"
-    },
-    {
-     "id": "0x1",
-     "name": "max_idle_timeout",
-     "len": 4,
-     "value": 30000
-    },
-    {
-     "id": "0x6",
-     "name": "initial_max_stream_data_bidi_remote",
-     "len": 4,
-     "value": 6291456
     },
     {
      "id": "0x3",
@@ -192,6 +174,18 @@
      "value": 6291456
     },
     {
+     "id": "0x1",
+     "name": "max_idle_timeout",
+     "len": 4,
+     "value": 30000
+    },
+    {
+     "id": "0x7",
+     "name": "initial_max_stream_data_uni",
+     "len": 4,
+     "value": 6291456
+    },
+    {
      "id": "0x9",
      "name": "initial_max_streams_uni",
      "len": 2,
@@ -201,19 +195,25 @@
      "id": "0x11",
      "name": "version_information",
      "len": 12,
-     "hex": "00000001000000016a9a2a0a"
+     "hex": "00000001eaba7a9a00000001"
     },
     {
-     "id": "0x4",
-     "name": "initial_max_data",
+     "id": "0x20",
+     "name": "max_datagram_frame_size",
      "len": 4,
-     "value": 15728640
+     "value": 65536
     },
     {
      "id": "0x8",
      "name": "initial_max_streams_bidi",
      "len": 2,
      "value": 100
+    },
+    {
+     "id": "0xf",
+     "name": "initial_source_connection_id",
+     "len": 0,
+     "hex": ""
     }
    ],
    "header_order": [
@@ -345,7 +345,7 @@
  ],
  "harness": {
   "runs_used": [
-   "20261014T134715Z"
+   "20261014T201324Z"
   ],
   "endpoints": [
    "https://tls.peet.ws/api/all"
@@ -363,8 +363,8 @@
    "profile": "Chrome_152",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/tls-client(go)_Chrome_152.json",
-    "tested_at": "2026-10-14T13:47:27Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/tls-client(go)_Chrome_152.json",
+    "tested_at": "2026-10-14T20:13:33Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152",
@@ -660,14 +660,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/go/out/tls-client(go)_Chrome_152.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/tls-client(go)_Chrome_152.json",
+    "fresh": "leaderboard/raw/20261014T201324Z/go/out/tls-client(go)_Chrome_152.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/tls-client(go)_Chrome_152.json",
     "resumed": [
-     "leaderboard/raw/20261014T134715Z/resume/tls-client(go)_Chrome_152_req2.json",
-     "leaderboard/raw/20261014T134715Z/resume/tls-client(go)_Chrome_152_req3.json"
+     "leaderboard/raw/20261014T201324Z/resume/tls-client(go)_Chrome_152_req2.json",
+     "leaderboard/raw/20261014T201324Z/resume/tls-client(go)_Chrome_152_req3.json"
     ]
    },
    "fingerprint": {
@@ -964,14 +964,14 @@
    "why": [
     "Never resumes a TLS session (no pre_shared_key on new connections), unlike Chrome."
    ],
-   "notes": [
-    "Fresh handshakes match Chrome exactly, but switch to Chrome_152_PSK if you need session resumption to look like Chrome too."
-   ],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
+   "notes": [
+    "Fresh handshakes match Chrome exactly, but switch to Chrome_152_PSK if you need session resumption to look like Chrome too."
+   ],
    "resumed_status": "never",
    "fix": {
     "to_id": "tls-client|chrome_152_psk",
@@ -989,8 +989,8 @@
    "profile": "Chrome_152_PSK",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/tls-client(go)_Chrome_152_PSK.json",
-    "tested_at": "2026-10-14T13:47:28Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "tested_at": "2026-10-14T20:13:34Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152_PSK",
@@ -1288,14 +1288,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "fresh": "leaderboard/raw/20261014T201324Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/tls-client(go)_Chrome_152_PSK.json",
     "resumed": [
-     "leaderboard/raw/20261014T134715Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
-     "leaderboard/raw/20261014T134715Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
+     "leaderboard/raw/20261014T201324Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
+     "leaderboard/raw/20261014T201324Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
     ]
    },
    "fingerprint": {
@@ -1566,14 +1566,14 @@
    "why": [
     "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept-encoding before user-agent; Chrome sends user-agent first."
    ],
-   "notes": [
-    "Best pick today: in v1.16.0 this profile matched current Chrome's default fingerprint exactly, including resumed connections."
-   ],
    "http2_grade": {
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
    },
+   "notes": [
+    "Best pick today: in v1.16.0 this profile matched current Chrome's default fingerprint exactly, including resumed connections."
+   ],
    "resumed_status": "match",
    "fix": null
   },
@@ -1585,8 +1585,8 @@
    "profile": "Chrome_150",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/tls-client(go)_Chrome_150.json",
-    "tested_at": "2026-10-14T13:47:30Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/tls-client(go)_Chrome_150.json",
+    "tested_at": "2026-10-14T20:13:36Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_150",
@@ -1882,11 +1882,11 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/go/out/tls-client(go)_Chrome_150.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/tls-client(go)_Chrome_150.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/go/out/tls-client(go)_Chrome_150.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/tls-client(go)_Chrome_150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -2184,14 +2184,14 @@
    "why": [
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": [
-    "Matches Chrome only with trust anchors turned off (the no_ca34 variant), so prefer Chrome_152_PSK in the same release."
-   ],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
+   "notes": [
+    "Matches Chrome only with trust anchors turned off (the no_ca34 variant), so prefer Chrome_152_PSK in the same release."
+   ],
    "resumed_status": "not_tested",
    "fix": {
     "to_id": "tls-client|chrome_152_psk",
@@ -2209,8 +2209,8 @@
    "profile": "chrome150",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/curl_cffi_chrome150.json",
-    "tested_at": "2026-10-14T13:47:33Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/curl_cffi_chrome150.json",
+    "tested_at": "2026-10-14T20:13:39Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -2248,19 +2248,19 @@
      "priority"
     ],
     "transport_params": [
-     "initial_max_data",
-     "initial_max_streams_bidi",
-     "initial_source_connection_id",
-     "initial_max_stream_data_bidi_remote",
      "max_udp_payload_size",
-     "initial_max_streams_uni",
-     "grease",
-     "max_datagram_frame_size",
      "google_connection_options",
+     "version_information",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_stream_data_bidi_remote",
+     "max_datagram_frame_size",
      "initial_max_stream_data_uni",
      "max_idle_timeout",
-     "version_information",
-     "initial_max_stream_data_bidi_local"
+     "initial_max_data",
+     "initial_max_streams_uni",
+     "grease",
+     "initial_max_streams_bidi",
+     "initial_source_connection_id"
     ],
     "ja4_matches": {
      "default": false,
@@ -2487,11 +2487,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/curl_cffi_chrome150.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/curl_cffi_chrome150.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/curl_cffi_chrome150.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/curl_cffi_chrome150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -2789,14 +2789,14 @@
    "why": [
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": [
-    "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends."
-   ],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
+   "notes": [
+    "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends."
+   ],
    "resumed_status": "not_tested",
    "fix": null
   },
@@ -2808,8 +2808,8 @@
    "profile": "chrome_146",
    "note": "wraps Go tls-client",
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/noble-tls_chrome_146.json",
-    "tested_at": "2026-10-14T13:47:38Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/noble-tls_chrome_146.json",
+    "tested_at": "2026-10-14T20:13:44Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -3106,11 +3106,11 @@
     }
    },
    "version": "0.1.9",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/noble-tls_chrome_146.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/noble-tls_chrome_146.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/noble-tls_chrome_146.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/noble-tls_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1517h2_8daaf6152771_dcad5a053991",
@@ -3395,14 +3395,14 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before user-agent; Chrome sends user-agent first."
    ],
-   "notes": [
-    "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly."
-   ],
    "http2_grade": {
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
    },
+   "notes": [
+    "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly."
+   ],
    "resumed_status": "not_tested",
    "fix": null
   },
@@ -3414,8 +3414,8 @@
    "profile": "Chrome",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/azuretls_Chrome.json",
-    "tested_at": "2026-10-14T13:47:31Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/azuretls_Chrome.json",
+    "tested_at": "2026-10-14T20:13:37Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "azuretls:Chrome",
@@ -3433,24 +3433,24 @@
      ":authority",
      ":scheme",
      ":path",
-     "user-agent",
-     "accept-encoding"
+     "accept-encoding",
+     "user-agent"
     ],
     "transport_params": [
-     "initial_max_streams_bidi",
+     "max_idle_timeout",
+     "google_user_agent_id",
      "initial_source_connection_id",
+     "version_information",
+     "grease",
+     "initial_max_stream_data_bidi_local",
+     "google_connection_options",
+     "max_udp_payload_size",
+     "initial_max_data",
+     "max_datagram_frame_size",
+     "initial_max_streams_bidi",
      "initial_max_stream_data_bidi_remote",
      "initial_max_stream_data_uni",
-     "google_user_agent_id",
-     "google_connection_options",
-     "initial_max_data",
-     "version_information",
-     "max_idle_timeout",
-     "grease",
-     "initial_max_streams_uni",
-     "max_udp_payload_size",
-     "max_datagram_frame_size",
-     "initial_max_stream_data_bidi_local"
+     "initial_max_streams_uni"
     ],
     "ja4_matches": {
      "default": false,
@@ -3679,11 +3679,11 @@
     }
    },
    "version": "v1.13.2",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/go/out/azuretls_Chrome.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/azuretls_Chrome.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/go/out/azuretls_Chrome.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/azuretls_Chrome.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -3995,12 +3995,12 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": [],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
+   "notes": [],
    "resumed_status": "not_tested",
    "fix": null
   },
@@ -4012,8 +4012,8 @@
    "profile": "chrome136",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/curl_cffi_chrome136.json",
-    "tested_at": "2026-10-14T13:47:36Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/curl_cffi_chrome136.json",
+    "tested_at": "2026-10-14T20:13:42Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -4290,11 +4290,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/curl_cffi_chrome136.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/curl_cffi_chrome136.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/curl_cffi_chrome136.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/curl_cffi_chrome136.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -4606,14 +4606,14 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": [
-    "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
-   ],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
+   "notes": [
+    "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
+   ],
    "resumed_status": "not_tested",
    "fix": {
     "to_id": "curl_cffi|chrome150",
@@ -4631,8 +4631,8 @@
    "profile": "chrome146",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261014T134715Z/h3/curl_cffi_chrome146.json",
-    "tested_at": "2026-10-14T13:47:34Z",
+    "source": "leaderboard/raw/20261014T201324Z/h3/curl_cffi_chrome146.json",
+    "tested_at": "2026-10-14T20:13:40Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -4670,20 +4670,20 @@
      "priority"
     ],
     "transport_params": [
-     "google_initial_rtt",
-     "max_udp_payload_size",
+     "initial_max_stream_data_bidi_local",
      "initial_max_stream_data_uni",
      "version_information",
-     "max_idle_timeout",
-     "initial_max_stream_data_bidi_local",
-     "initial_source_connection_id",
-     "initial_max_streams_bidi",
-     "grease",
+     "max_datagram_frame_size",
      "initial_max_streams_uni",
      "google_connection_options",
+     "initial_source_connection_id",
+     "initial_max_streams_bidi",
      "initial_max_data",
+     "grease",
+     "max_udp_payload_size",
+     "max_idle_timeout",
      "initial_max_stream_data_bidi_remote",
-     "max_datagram_frame_size"
+     "google_initial_rtt"
     ],
     "ja4_matches": {
      "default": false,
@@ -4868,7 +4868,7 @@
       },
       "library": {
        "google_connection_options": "ORIG",
-       "google_initial_rtt": 348411,
+       "google_initial_rtt": 285922,
        "initial_max_data": 15728640,
        "initial_max_stream_data_bidi_local": 6291456,
        "initial_max_stream_data_bidi_remote": 6291456,
@@ -4916,11 +4916,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/curl_cffi_chrome146.json",
-    "http3": "leaderboard/raw/20261014T134715Z/h3/curl_cffi_chrome146.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/curl_cffi_chrome146.json",
+    "http3": "leaderboard/raw/20261014T201324Z/h3/curl_cffi_chrome146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5232,14 +5232,14 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": [
-    "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
-   ],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
+   "notes": [
+    "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
+   ],
    "resumed_status": "not_tested",
    "fix": {
     "to_id": "curl_cffi|chrome150",
@@ -5261,10 +5261,10 @@
     "reason": "primp 2.0.1 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "2.0.1",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/primp_chrome_146.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/primp_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5272,7 +5272,7 @@
     "ja4_resumed": null,
     "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
     "http3_ja4": null,
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
     "sends_ca34": false,
     "sends_12e0": false
    },
@@ -5576,12 +5576,12 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": [],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
+   "notes": [],
    "resumed_status": "not_tested",
    "fix": null
   },
@@ -5597,10 +5597,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/rnet_Chrome137.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/rnet_Chrome137.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5911,14 +5911,14 @@
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
     "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends sec-fetch-dest before accept; Chrome sends accept first."
    ],
-   "notes": [
-    "Chrome145 is the newer rnet profile we tested, but it has the same two gaps."
-   ],
    "http2_grade": {
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
    },
+   "notes": [
+    "Chrome145 is the newer rnet profile we tested, but it has the same two gaps."
+   ],
    "resumed_status": "not_tested",
    "fix": null
   },
@@ -5934,10 +5934,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/rnet_Chrome145.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/rnet_Chrome145.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -6248,12 +6248,12 @@
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
     "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends sec-fetch-dest before accept; Chrome sends accept first."
    ],
-   "notes": [],
    "http2_grade": {
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
    },
+   "notes": [],
    "resumed_status": "not_tested",
    "fix": null
   },
@@ -6269,10 +6269,10 @@
     "reason": "uTLS is a TLS-only library (no QUIC/HTTP/3 client); the harness pairs it with golang.org/x/net/http2"
    },
    "version": "v1.8.2",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/go/out/utls_HelloChrome_Auto.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/go/out/utls_HelloChrome_Auto.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -6561,17 +6561,17 @@
       ":scheme",
       "sec-ch-ua",
       "sec-ch-ua-mobile",
-      "upgrade-insecure-requests",
-      "sec-fetch-mode",
-      "sec-fetch-dest",
-      "accept-encoding",
-      "accept-language",
-      "priority",
-      "sec-ch-ua-platform",
-      "user-agent",
       "accept",
+      "sec-fetch-mode",
+      "accept-encoding",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
       "sec-fetch-site",
-      "sec-fetch-user"
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-language",
+      "priority"
      ],
      "missing": [],
      "extra": [],
@@ -6597,14 +6597,14 @@
     "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s.",
     "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :authority before :method; Chrome sends :method first."
    ],
-   "notes": [
-    "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
-   ],
    "http2_grade": {
     "grade": "settings_differ",
     "settings": false,
     "header_order": false
    },
+   "notes": [
+    "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
+   ],
    "resumed_status": "not_tested",
    "fix": null
   },
@@ -6620,10 +6620,10 @@
     "reason": "tls-client (Python) 1.0.1 bundles Go tls-client v1.7.2, which has no HTTP/3 support"
    },
    "version": "1.0.1",
-   "tested_at": "2026-10-14T13:47:15Z",
+   "tested_at": "2026-10-14T20:13:24Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261014T134715Z/py/tls-client(py)_chrome_120.json"
+    "fresh": "leaderboard/raw/20261014T201324Z/py/tls-client(py)_chrome_120.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
@@ -6948,14 +6948,14 @@
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
     "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before user-agent; Chrome sends user-agent first."
    ],
-   "notes": [
-    "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly."
-   ],
    "http2_grade": {
     "grade": "header_order_differs",
     "settings": true,
     "header_order": false
    },
+   "notes": [
+    "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly."
+   ],
    "resumed_status": "not_tested",
    "fix": null
   }
@@ -6977,15 +6977,36 @@
  "upcoming": [
   {
    "channel": "beta",
-   "status": "not_captured"
+   "status": "captured",
+   "version": "156.0.8078.12",
+   "major": 156,
+   "captured_at": "2026-10-14T14:59:16-05:00",
+   "stable_version": "155.0.8059.79",
+   "same_as_stable": true,
+   "differences": [],
+   "breaks": []
   },
   {
    "channel": "dev",
-   "status": "not_captured"
+   "status": "captured",
+   "version": "157.0.8092.0",
+   "major": 157,
+   "captured_at": "2026-10-14T14:59:13-05:00",
+   "stable_version": "155.0.8059.79",
+   "same_as_stable": true,
+   "differences": [],
+   "breaks": []
   },
   {
    "channel": "canary",
-   "status": "not_captured"
+   "status": "captured",
+   "version": "158.0.8104.0",
+   "major": 158,
+   "captured_at": "2026-10-14T14:59:13-05:00",
+   "stable_version": "155.0.8059.79",
+   "same_as_stable": true,
+   "differences": [],
+   "breaks": []
   }
  ],
  "catchup": {
