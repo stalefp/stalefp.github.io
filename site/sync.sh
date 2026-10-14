@@ -41,3 +41,7 @@ PY
 if [[ -f "$TB/leaderboard/data/row_history.json" ]]; then
   cp "$TB/leaderboard/data/row_history.json" "$SITE/data/row_history.json"; echo "row_history.json <- leaderboard/data/row_history.json"
 fi
+# Firefox reference (capture/lib/capture_firefox.py); optional
+if [[ -f "$TB/capture/data/firefox/latest.json" ]]; then
+  cp "$TB/capture/data/firefox/latest.json" "$SITE/data/firefox.json"; echo "firefox.json  <- capture/data/firefox/latest.json"
+fi

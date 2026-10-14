@@ -203,6 +203,19 @@ jobs:
           PY
           # merge_platforms also feeds build.py's caveat; rebuild the summary after the leaderboard so both are current
           python capture/merge_platforms.py
+      - name: Firefox capture (official Mozilla release; isolated, can't fail the Chrome run)
+        continue-on-error: true
+        timeout-minutes: 10
+        run: |
+          set -euo pipefail
+          V=$(curl -sSf https://product-details.mozilla.org/1.0/firefox_versions.json | python -c 'import json,sys; print(json.load(sys.stdin)["LATEST_FIREFOX_VERSION"])')
+          B=https://archive.mozilla.org/pub/firefox/releases/$V
+          F=$(curl -sSf "$B/SHA512SUMS" | awk -v f="linux-x86_64/en-US/firefox-$V.tar.xz" '$2==f{print $1}')
+          [ -n "$F" ] || { echo "no SHA512 for Firefox $V"; exit 1; }
+          curl -sSfL -o "$RUNNER_TEMP/ff.tar.xz" "$B/linux-x86_64/en-US/firefox-$V.tar.xz"
+          echo "$F  $RUNNER_TEMP/ff.tar.xz" | sha512sum -c -
+          tar -xJf "$RUNNER_TEMP/ff.tar.xz" -C "$RUNNER_TEMP"
+          python capture/lib/capture_firefox.py --firefox "$RUNNER_TEMP/firefox/firefox"
       - name: Sync site data
         run: site/sync.sh
       - name: Commit data to main

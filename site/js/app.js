@@ -649,6 +649,25 @@
     });
   }
 
+  /* ---------------- Current Firefox ---------------- */
+  function renderFirefox(ff) {
+    var box = $("#ff-body"); if (!box || !ff || !ff.ja4) return; box.innerHTML = "";
+    var h2 = ff.http2 || {};
+    var row = function (label, val, copy) {
+      return el("div", { cls: "wide" }, [el("dt", { text: label }), el("dd", { cls: "code-row" }, [el("code", { text: val || "not captured" })].concat(copy && val ? [copyBtn(val)] : []))]);
+    };
+    box.appendChild(el("dl", { cls: "fp" }, [
+      el("div", {}, [el("dt", { text: "Firefox version checked" }), el("dd", { text: ff.version + " (" + ff.channel + ", " + ff.os + ")" })]),
+      el("div", {}, [el("dt", { text: "Last checked" }), el("dd", { text: localTime(ff.captured_at) })]),
+      row("TLS fingerprint (JA4), fresh connection", ff.ja4, true),
+      row("JA4, resumed connection", ff.ja4_resumed, true),
+      row("HTTP/2 fingerprint", h2.akamai, true),
+      row("HTTP/2 header order", (h2.header_order || []).join(", ")),
+      row("User-Agent", ff.user_agent)
+    ]));
+    if ((ff.errors || []).length) box.appendChild(el("p", { cls: "muted small", text: "Capture notes: " + ff.errors.join("; ") }));
+  }
+
   /* ---------------- misc ---------------- */
   function initCopy() {
     $$("button.copy").forEach(function (b) {
@@ -723,6 +742,7 @@
         initTable(res[1]);
         getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); }, function () { /* no history yet */ });
         renderBadges(res[1]);
+        getJSON("data/firefox.json").then(renderFirefox, function () { /* no Firefox capture yet */ });
         renderFooter(res[1]);
         getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });
         return renderChanges(REF, res[2]);

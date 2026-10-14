@@ -20,7 +20,7 @@
     <!-- COPY: Nya (sub-line) -->
     <p class="subline">Built from real Chrome captures and compared field by field.</p>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#firefox">Firefox</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
     </nav>
   </div>
 </header>
@@ -70,6 +70,13 @@
     </details>
     <!-- COPY: Nya (pass 3: caveat under the Chrome card, replaces the ca34 caveat; {pq_pct} bound from data/latest.json) -->
     <p class="caveat">Chrome doesn't send just one fingerprint. Most people send the main one, which includes the trust-anchors extension (<code>ca34</code>). That extension can be switched off, which gives a second, less common fingerprint. And about <span data-bind="pq_pct2">…</span> of Chrome users on <span data-bind="pq_platform2">…</span> are in a Google post-quantum experiment, which adds one more extension (<code>0x12e0</code>) and gives a third. We show all three and say which one each library matches.</p>
+  </section>
+
+  <!-- Current Firefox (capture/lib/capture_firefox.py) -->
+  <section id="firefox" class="card" aria-labelledby="ff-h">
+    <h2 id="ff-h">Current Firefox fingerprint</h2>
+    <p class="muted small">Official Mozilla Firefox release on Linux, fresh profile, headless, against the same local capture server. Shown for reference; libraries are scored against Chrome only.</p>
+    <div id="ff-body"><p class="muted">No Firefox capture yet. It's added to the daily capture and will appear after the next run.</p></div>
   </section>
 
   <!-- 1b. Chrome per platform (Linux / Windows / macOS), data/platforms.json from capture/merge_platforms.py -->
