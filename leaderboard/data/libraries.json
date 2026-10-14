@@ -6973,5 +6973,84 @@
    "major": 155,
    "version": "155.0.8059.79"
   }
- ]
+ ],
+ "upcoming": [
+  {
+   "channel": "beta",
+   "status": "not_captured"
+  },
+  {
+   "channel": "dev",
+   "status": "not_captured"
+  },
+  {
+   "channel": "canary",
+   "status": "not_captured"
+  }
+ ],
+ "catchup": {
+  "tracking_since": "2026-10-02",
+  "days_logged": 12,
+  "fingerprint_changes": [],
+  "enough_data": false,
+  "libraries": [
+   {
+    "library": "azuretls-client",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   },
+   {
+    "library": "curl_cffi",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   },
+   {
+    "library": "noble-tls",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   },
+   {
+    "library": "primp",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   },
+   {
+    "library": "rnet",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   },
+   {
+    "library": "tls-client",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   },
+   {
+    "library": "tls-client (Python)",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   },
+   {
+    "library": "uTLS",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false
+   }
+  ],
+  "method": "Counts only changes of Chrome's default TLS JA4 seen after tracking began; a library catches up on the first logged day one of its tested profiles is an exact match again."
+ }
 }

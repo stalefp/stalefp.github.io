@@ -476,7 +476,95 @@ def annotate(data):
             e["fix"] = dict(to_id=best["id"], to_profile=best["profile"], to_verdict=best["verdict"],
                             old=t % e["profile"], new=t % best["profile"])
     data["chrome_timeline"] = [dict(major=m, version=v) for m, v, _ in timeline]
+    data["upcoming"] = upcoming(data)
+    data["catchup"] = catchup(data)
     return data
+
+
+CATCHUP_LOG = os.path.join(HERE, "data", "catchup_log.json")
+
+
+def catchup(data):
+    """Catch-up ranking. Logs one entry per harness day (date of data["generated_at"]) to data/catchup_log.json, then for every
+    change of Chrome's default JA4 seen in the log counts the days until each library had a profile that matched it again."""
+    log = json.load(open(CATCHUP_LOG)) if os.path.exists(CATCHUP_LOG) else {"entries": []}
+    r = data.get("reference") or {}
+    if r.get("ja4_fresh") and data.get("libraries"):
+        exact = {}
+        for e in data["libraries"]:
+            if e["verdict"] != "not tested":
+                exact[e["library"]] = exact.get(e["library"], False) or e["verdict"] == "exact"
+        day = data["generated_at"][:10]
+        log["entries"] = [x for x in log["entries"] if x["date"] != day] + [
+            dict(date=day, chrome_version=r.get("chrome_version"), chrome_ja4=r["ja4_fresh"], exact=exact)]
+        log["entries"].sort(key=lambda x: x["date"])
+        json.dump(log, open(CATCHUP_LOG, "w"), indent=1)
+    ent = log["entries"]
+    D = lambda s: dt.date.fromisoformat(s)
+    events = [dict(date=b["date"], chrome_version=b["chrome_version"], from_ja4=a["chrome_ja4"], to_ja4=b["chrome_ja4"])
+              for a, b in zip(ent, ent[1:]) if a["chrome_ja4"] != b["chrome_ja4"]]
+    libs = sorted({l for x in ent for l in x["exact"]})
+    rows = []
+    for lib in libs:
+        done, pending = [], []
+        for i, ev in enumerate(events):
+            end = events[i + 1]["date"] if i + 1 < len(events) else "9999"
+            hit = next((x for x in ent if ev["date"] <= x["date"] < end and x["exact"].get(lib)), None)
+            if hit:
+                done.append(dict(chrome_version=ev["chrome_version"], changed=ev["date"], matched=hit["date"], days=(D(hit["date"]) - D(ev["date"])).days))
+            elif i + 1 == len(events):
+                pending.append(dict(chrome_version=ev["chrome_version"], changed=ev["date"], days_so_far=(D(ent[-1]["date"]) - D(ev["date"])).days))
+        avg = round(sum(x["days"] for x in done) / len(done), 1) if done else None
+        rows.append(dict(library=lib, avg_days=avg, caught_up=done, still_behind=pending, enough_data=bool(done)))
+    rows.sort(key=lambda x: (x["avg_days"] is None, x["avg_days"] if x["avg_days"] is not None else 0, -max([p["days_so_far"] for p in x["still_behind"]] or [0]), x["library"]))
+    return dict(tracking_since=ent[0]["date"] if ent else None, days_logged=len(ent), fingerprint_changes=events,
+                enough_data=any(x["enough_data"] for x in rows), libraries=rows,
+                method="Counts only changes of Chrome's default TLS JA4 seen after tracking began; a library catches up on the first logged day one of its tested profiles is an exact match again.")
+
+
+def upcoming(data):
+    """'Coming in Chrome N': compare each pre-release channel capture (capture/data/channels/<c>.json, written by
+    merge_platforms.py) with the current stable reference, and list the library rows that match stable today but
+    would stop matching on that field."""
+    sys.path.insert(0, os.path.join(TLSBENCH, "capture"))
+    import merge_platforms as mp
+    stable = mp.load(os.path.join(TLSBENCH, "capture", "data", "latest.json"))
+    if not mp.usable(stable):
+        return []
+    sv = {vid: mp.fp(mp.cfg(stable, base)) for vid, base in (("default", "default"), ("no_ca34", "disable-TLSTrustAnchorIDs"))}
+    out = []
+    for c in mp.CHANNELS:
+        d = mp.load(os.path.join(mp.CHAN_DIR, c + ".json"))
+        if not mp.usable(d):
+            out.append(dict(channel=c, status="not_captured"))
+            continue
+        cv = {vid: mp.fp(mp.cfg(d, base)) for vid, base in (("default", "default"), ("no_ca34", "disable-TLSTrustAnchorIDs"))}
+        a, b = sv["default"] or {}, cv["default"] or {}
+        diffs = []
+        for f, lbl in mp.COMPARE:
+            if a.get(f) is not None and b.get(f) is not None and a.get(f) != b.get(f):
+                x, y = a.get(f), b.get(f)
+                if isinstance(x, list) and isinstance(y, list):
+                    diffs.append(dict(field=f, label=lbl, added=[i for i in y if i not in x], removed=[i for i in x if i not in y],
+                                      reordered=sorted(x) == sorted(y)))
+                else:
+                    diffs.append(dict(field=f, label=lbl, stable=x, channel=y))
+        breaks = []
+        for e in data["libraries"]:
+            fpl, mv = e.get("fingerprint") or {}, ((e.get("matches") or {}).get("variants") or {})
+            why = []
+            for vid in ("default", "no_ca34"):
+                if (mv.get(vid) or {}).get("ja4_fresh") and cv.get(vid) and fpl.get("ja4_fresh") != cv[vid]["ja4"]:
+                    why.append("TLS JA4" + ("" if vid == "default" else " (without ca34)"))
+            if (e.get("matches") or {}).get("http2") and fpl.get("http2_akamai") and fpl["http2_akamai"] != b.get("h2_akamai"):
+                why.append("HTTP/2 fingerprint")
+            if why:
+                breaks.append(dict(id=e["id"], library=e["library"], profile=e["profile"], fields=why))
+        m = re.match(r"(\d+)", d.get("version") or "")
+        out.append(dict(channel=c, status="captured", version=d.get("version"), major=int(m.group(1)) if m else None,
+                        captured_at=d.get("captured_at"), stable_version=stable.get("version"),
+                        same_as_stable=not diffs, differences=diffs, breaks=breaks))
+    return out
 
 
 # One-line fix snippets: the real call each harness case uses (leaderboard/harness/bench.py, gobench/main.go)

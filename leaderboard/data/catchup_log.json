@@ -1,0 +1,196 @@
+{
+ "_format": "One entry per day (leaderboard/build.py). exact[library] = some tested profile of that library matched Chrome's default fingerprint that day. Seeded from git history of libraries.json.",
+ "entries": [
+  {
+   "date": "2026-10-02",
+   "chrome_version": "154.0.8037.97",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git a23a61a"
+  },
+  {
+   "date": "2026-10-03",
+   "chrome_version": "154.0.8037.97",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 36b42fc"
+  },
+  {
+   "date": "2026-10-04",
+   "chrome_version": "154.0.8037.97",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 839bc6f"
+  },
+  {
+   "date": "2026-10-05",
+   "chrome_version": "154.0.8037.97",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git b619d89"
+  },
+  {
+   "date": "2026-10-06",
+   "chrome_version": "154.0.8037.97",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git f5de165"
+  },
+  {
+   "date": "2026-10-07",
+   "chrome_version": "155.0.8059.39",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 7862647"
+  },
+  {
+   "date": "2026-10-08",
+   "chrome_version": "155.0.8059.39",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 41fd402"
+  },
+  {
+   "date": "2026-10-09",
+   "chrome_version": "155.0.8059.39",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 2cc9814"
+  },
+  {
+   "date": "2026-10-10",
+   "chrome_version": "155.0.8059.39",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 200c262"
+  },
+  {
+   "date": "2026-10-12",
+   "chrome_version": "155.0.8059.39",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 70bc18c"
+  },
+  {
+   "date": "2026-10-13",
+   "chrome_version": "155.0.8059.39",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   },
+   "source": "git 8d314f6"
+  },
+  {
+   "date": "2026-10-14",
+   "chrome_version": "155.0.8059.79",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "uTLS": false,
+    "tls-client (Python)": false
+   }
+  }
+ ]
+}
