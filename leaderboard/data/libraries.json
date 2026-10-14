@@ -964,7 +964,9 @@
    "why": [
     "Never resumes a TLS session (no pre_shared_key on new connections), unlike Chrome."
    ],
-   "notes": []
+   "notes": [
+    "Fresh handshakes match Chrome exactly, but switch to Chrome_152_PSK if you need session resumption to look like Chrome too."
+   ]
   },
   {
    "id": "tls-client|chrome_152_psk",
@@ -1549,7 +1551,9 @@
    "is_newest_profile": true,
    "behind_text": "Copies Chrome 152, 3 versions behind current 155; its fingerprint still matches current Chrome on every counted field.",
    "why": [],
-   "notes": []
+   "notes": [
+    "Best pick today: in v1.16.0 this profile matched current Chrome's default fingerprint exactly, including resumed connections."
+   ]
   },
   {
    "id": "tls-client|chrome_150",
@@ -2158,7 +2162,9 @@
    "why": [
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [
+    "Matches Chrome only with trust anchors turned off (the no_ca34 variant), so prefer Chrome_152_PSK in the same release."
+   ]
   },
   {
    "id": "curl_cffi|chrome150",
@@ -2748,7 +2754,9 @@
    "why": [
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [
+    "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends."
+   ]
   },
   {
    "id": "noble-tls|chrome_146",
@@ -3344,7 +3352,9 @@
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured."
    ],
-   "notes": []
+   "notes": [
+    "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly."
+   ]
   },
   {
    "id": "azuretls-client|chrome",
@@ -4539,7 +4549,9 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [
+    "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
+   ]
   },
   {
    "id": "curl_cffi|chrome146",
@@ -5150,7 +5162,9 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [
+    "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
+   ]
   },
   {
    "id": "primp|chrome_146",
@@ -5806,7 +5820,9 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [
+    "Chrome145 is the newer rnet profile we tested, but it has the same two gaps."
+   ]
   },
   {
    "id": "rnet|chrome145",
@@ -6474,7 +6490,9 @@
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
     "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s."
    ],
-   "notes": []
+   "notes": [
+    "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
+   ]
   },
   {
    "id": "tls-client-(python)|chrome_120",
@@ -6815,7 +6833,9 @@
     "Uses the old ALPS codepoint 0x4469; Chrome sends the new one, 0x44cd.",
     "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
    ],
-   "notes": []
+   "notes": [
+    "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly."
+   ]
   }
  ],
  "chrome_timeline": [

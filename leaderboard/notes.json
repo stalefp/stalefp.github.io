@@ -1,3 +1,13 @@
 {
- "_format": "Hand-written explanations shown under a leaderboard row. Key = library entry id (e.g. \"curl_cffi|chrome146\", see libraries.json \"id\") or a bare library name (e.g. \"curl_cffi\") to apply to all its profiles; an id key wins. Value = a string or a list of strings. Keys starting with _ are ignored. Rebuild with: python leaderboard/build.py --annotate-only && site/sync.sh"
+ "_format": "Hand-written explanations shown under a leaderboard row. Key = library entry id (e.g. \"curl_cffi|chrome146\", see libraries.json \"id\") or a bare library name (e.g. \"curl_cffi\") to apply to all its profiles; an id key wins. Value = a string or a list of strings. Keys starting with _ are ignored. Rebuild with: python leaderboard/build.py --annotate-only && site/sync.sh",
+ "tls-client|chrome_152_psk": "Best pick today: in v1.16.0 this profile matched current Chrome's default fingerprint exactly, including resumed connections.",
+ "tls-client|chrome_152": "Fresh handshakes match Chrome exactly, but switch to Chrome_152_PSK if you need session resumption to look like Chrome too.",
+ "tls-client|chrome_150": "Matches Chrome only with trust anchors turned off (the no_ca34 variant), so prefer Chrome_152_PSK in the same release.",
+ "curl_cffi|chrome150": "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends.",
+ "curl_cffi|chrome146": "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors.",
+ "curl_cffi|chrome136": "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors.",
+ "rnet|chrome137": "Chrome145 is the newer rnet profile we tested, but it has the same two gaps.",
+ "noble-tls": "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly.",
+ "tls-client (Python)": "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly.",
+ "uTLS": "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
 }
