@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-10-14T10:18:50Z",
+ "generated_at": "2026-10-14T13:47:40Z",
  "platforms": {
   "linux": {
    "status": "captured",
@@ -11,8 +11,8 @@
    "version": "155.0.8059.79",
    "channel": "stable",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
-   "captured_at": "2026-10-14T05:05:39-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38547068339",
+   "captured_at": "2026-10-14T08:36:14-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38573093597",
    "platform_stable_newest": "155.0.8059.79",
    "platform_stable_full_rollout": "155.0.8059.79",
    "reference_config": "default-headed",
@@ -289,8 +289,8 @@
    "version": "155.0.8059.80",
    "channel": "stable",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
-   "captured_at": "2026-10-14T05:06:57-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38547068339",
+   "captured_at": "2026-10-14T08:37:02-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38573093597",
    "platform_stable_newest": "156.0.8078.12",
    "platform_stable_full_rollout": "155.0.8059.80",
    "reference_config": "default-headed",
@@ -564,13 +564,13 @@
    "platform": "macos",
    "label": "macOS",
    "browser": "Google Chrome",
-   "version": "155.0.8059.40",
+   "version": "155.0.8059.80",
    "channel": "stable",
    "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
-   "captured_at": "2026-10-13T04:53:57-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38379458901",
+   "captured_at": "2026-10-14T08:37:05-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38573093597",
    "platform_stable_newest": "156.0.8078.12",
-   "platform_stable_full_rollout": "155.0.8059.40",
+   "platform_stable_full_rollout": "155.0.8059.80",
    "reference_config": "default-headed",
    "variants": {
     "default": {
@@ -949,22 +949,22 @@
  },
  "last_attempt": {
   "linux": {
-   "at": "2026-10-14T10:18:26Z",
+   "at": "2026-10-14T13:47:15Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38547068339",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38573093597",
    "detail": null
   },
   "windows": {
-   "at": "2026-10-14T10:18:26Z",
+   "at": "2026-10-14T13:47:15Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38547068339",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38573093597",
    "detail": null
   },
   "macos": {
-   "at": "2026-10-14T10:18:26Z",
-   "ok": false,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38547068339",
-   "detail": "no capture artifact"
+   "at": "2026-10-14T13:47:15Z",
+   "ok": true,
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38573093597",
+   "detail": null
   }
  }
 }
