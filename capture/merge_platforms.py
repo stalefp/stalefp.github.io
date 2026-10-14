@@ -22,6 +22,9 @@ DATA = os.path.join(HERE, "data")
 PLAT_DIR = os.path.join(DATA, "platforms")
 HIST = os.path.join(DATA, "history")
 PLATFORMS = ["linux", "windows", "macos"]
+CHANNELS = ["beta", "dev", "canary"]          # pre-release Linux captures (artifact capture-<channel>), stored in data/channels/
+CHAN_DIR = os.path.join(DATA, "channels")
+CHAN_ALIAS = {"unstable": "dev"}              # google-chrome-unstable's CHROME_VERSION_EXTRA
 LABEL = {"linux": "Linux", "windows": "Windows", "macos": "macOS"}
 VH = {"linux": "linux", "windows": "win", "macos": "mac"}
 COMPARE = [("ja4", "TLS JA4 (fresh)"), ("ja4_resumed", "TLS JA4 (resumed)"), ("quic_ja4", "QUIC JA4"),
@@ -121,6 +124,15 @@ def merge(artifacts, attempt_url):
         else:
             json.dump(new, open(os.path.join(PLAT_DIR, p + ".json"), "w"), indent=2)
         print("%s: Chrome %s captured %s" % (p, new.get("version"), new.get("captured_at")))
+    os.makedirs(CHAN_DIR, exist_ok=True)
+    for c in CHANNELS:
+        new = load(os.path.join(artifacts, "capture-" + c, "latest.json"))
+        ch = CHAN_ALIAS.get((new or {}).get("channel"), (new or {}).get("channel"))
+        if usable(new) and new.get("browser") == "Google Chrome" and ch == c:
+            json.dump(new, open(os.path.join(CHAN_DIR, c + ".json"), "w"), indent=2)
+            print("%s: Chrome %s captured %s" % (c, new.get("version"), new.get("captured_at")))
+        else:
+            print("%s: no usable capture in this run; keeping previous data" % c)
     return attempts
 
 

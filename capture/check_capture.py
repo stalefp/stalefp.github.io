@@ -23,7 +23,8 @@ def problems(d, expect_version=None, expect_channel=None):
         out.append("version %r is not a full Chrome version" % v)
     if expect_version and v != expect_version:
         out.append("captured Chrome %s but the runner installed %s" % (v, expect_version))
-    if expect_channel and (d.get("channel") or "") != expect_channel:
+    alias = {"unstable": "dev"}
+    if expect_channel and alias.get(d.get("channel"), d.get("channel") or "") != alias.get(expect_channel, expect_channel):
         out.append("channel is %r, expected %r" % (d.get("channel"), expect_channel))
     cfgs = d.get("configs") or []
     if not cfgs:

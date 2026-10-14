@@ -26,8 +26,12 @@ jobs:
           - { os: ubuntu-24.04,   id: linux }
           - { os: windows-latest, id: windows }
           - { os: macos-latest,   id: macos }
+          # pre-release channels (Linux only): compared against stable for the "coming in Chrome N" warnings
+          - { os: ubuntu-24.04,   id: beta,   channel: beta,   deb: google-chrome-beta }
+          - { os: ubuntu-24.04,   id: dev,    channel: dev,    deb: google-chrome-unstable }
+          - { os: ubuntu-24.04,   id: canary, channel: canary, deb: google-chrome-canary }
     env:
-      CHROME_CHANNEL: stable   # we install the stable channel below (Windows/macOS builds don't record it themselves)
+      CHROME_CHANNEL: ${{ matrix.channel || 'stable' }}   # Windows/macOS builds don't record their channel themselves
       CAPTURE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
       PYTHONUTF8: "1"
     steps:
@@ -36,15 +40,19 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install official Google Chrome stable (Linux)
+      - name: Install official Google Chrome ${{ matrix.channel || 'stable' }} (Linux)
         if: runner.os == 'Linux'
+        env:
+          PKG: ${{ matrix.deb || 'google-chrome-stable' }}
         run: |
-          curl -fsSL --retry 3 -o "$RUNNER_TEMP/chrome.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/chrome.deb" "https://dl.google.com/linux/direct/${PKG}_current_amd64.deb"
           sudo apt-get update -qq
           sudo apt-get install -y -qq "$RUNNER_TEMP/chrome.deb" xvfb
-          echo "CHROME_BIN=/opt/google/chrome/chrome" >> "$GITHUB_ENV"
-          /opt/google/chrome/chrome --version
-          echo "CHROME_INSTALLED_VERSION=$(/opt/google/chrome/chrome --version | grep -oE '[0-9]+(\.[0-9]+){3}')" >> "$GITHUB_ENV"
+          bin=$(dpkg -L "$PKG" | grep -E '^/opt/google/[^/]+/chrome$' | head -1)
+          [ -x "$bin" ] || { echo "::error::chrome binary not found in $PKG"; exit 1; }
+          echo "CHROME_BIN=$bin" >> "$GITHUB_ENV"
+          "$bin" --version
+          echo "CHROME_INSTALLED_VERSION=$("$bin" --version | grep -oE '[0-9]+(\.[0-9]+){3}')" >> "$GITHUB_ENV"
 
       - name: Install official Google Chrome stable (macOS)
         if: runner.os == 'macOS'
