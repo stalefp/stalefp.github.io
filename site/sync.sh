@@ -24,3 +24,16 @@ fi
 if [[ -f "$TB/capture/data/platforms/index.json" ]]; then
   cp "$TB/capture/data/platforms/index.json" "$SITE/data/platforms.json"; echo "platforms.json <- capture/data/platforms/index.json"
 fi
+# Older one-off captures (capture/data/chrome-*.json) for the "Compare two Chrome versions" picker
+rm -rf "$SITE/data/archive"; mkdir -p "$SITE/data/archive"
+python3 - "$TB/capture/data" "$SITE/data/archive" <<'PY'
+import glob, json, os, shutil, sys
+src, dst = sys.argv[1], sys.argv[2]
+caps = []
+for p in sorted(glob.glob(os.path.join(src, "chrome-*.json"))):
+    d = json.load(open(p))
+    shutil.copy(p, dst)
+    caps.append(dict(file=os.path.basename(p), chrome_version=d.get("version"), captured_at=d.get("captured_at")))
+json.dump({"note": "Older Chrome captures copied from capture/data/ by site/sync.sh (same layout as latest.json).", "captures": caps}, open(os.path.join(dst, "index.json"), "w"), indent=1)
+print("archive/      <- %d capture(s) from capture/data/chrome-*.json" % len(caps))
+PY

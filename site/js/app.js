@@ -506,6 +506,53 @@
     });
   }
 
+  /* ---------------- 3b. Compare any two captured Chrome versions ---------------- */
+  // Only real captures: data/history/<file> (listed in data/history/index.json) plus data/latest.json.
+  function plainDiff(r) {
+    var nc = function (x) { return x === "none" ? "not captured" : x.replace(/(^| \/ )(?= \/ |$)/g, "$1not captured"); };
+    var a = nc(r[1]), b = nc(r[2]);
+    if (a === "not captured" || b === "not captured") return r[0] + ": " + (a === "not captured" ? "not captured in the older capture; the newer one has " + b : b + " in the newer capture; the older one had " + a) + ".";
+    if (/^removed: |^added: |^—$/.test(a) || /^added: |^—$/.test(b)) {
+      var parts = [];
+      if (/^added: /.test(b)) parts.push("added " + b.slice(7));
+      if (/^removed: /.test(a)) parts.push("removed " + a.slice(9));
+      return r[0] + ": " + parts.join("; ") + ".";
+    }
+    if (/^order: /.test(a)) return r[0] + ": same items, different order.";
+    return r[0] + " changed from " + a + " to " + b + ".";
+  }
+  function initVersionDiff(ref, latestRaw, index, archive) {
+    var seen = {}, list = [];
+    [["data/history/", index], ["data/archive/", archive]].forEach(function (x) {
+      ((x[1] && x[1].captures) || []).forEach(function (c) {
+        var id = c.chrome_version + "|" + c.captured_at;   // the same capture can sit in both folders
+        if (!c.chrome_version || seen[id] || (c.chrome_version === ref.version && c.captured_at === ref.capturedAt)) return;
+        seen[id] = 1; list.push({ key: x[0] + c.file, at: c.captured_at, label: "Chrome " + c.chrome_version + " (" + localDate(c.captured_at) + ")" });
+      });
+    });
+    var opts = list.sort(function (a, b) { return Date.parse(a.at) - Date.parse(b.at); });
+    opts.push({ key: "latest", label: "Chrome " + ref.version + " (" + localDate(ref.capturedAt) + ", latest)" });
+    var a = $("#vd-a"), b = $("#vd-b"), out = $("#vd-out");
+    if (!a || opts.length < 2) { if (out) out.textContent = "Only one capture so far, so there's nothing to compare yet."; return; }
+    opts.forEach(function (o) { a.appendChild(el("option", { value: o.key, text: o.label })); b.appendChild(el("option", { value: o.key, text: o.label })); });
+    a.value = opts[0].key; b.value = "latest";
+    var cache = { latest: Promise.resolve(latestRaw) };
+    var load = function (k) { return cache[k] || (cache[k] = getJSON(k)); };
+    var run = function () {
+      out.innerHTML = ""; out.appendChild(el("p", { cls: "muted", text: "Loading…" }));
+      Promise.all([load(a.value), load(b.value)]).then(function (res) {
+        var p = adaptChromeReference(res[0]), c = adaptChromeReference(res[1]);
+        var rows = diffRefs(p, c).filter(function (r) { return r[0] !== "Chrome version"; });
+        out.innerHTML = "";
+        out.appendChild(el("p", { cls: "small muted", text: "Chrome " + p.version + " → Chrome " + c.version }));
+        if (a.value === b.value) { out.appendChild(el("p", { text: "Pick two different captures." })); return; }
+        if (!rows.length) { out.appendChild(el("div", { cls: "empty", text: "Nothing in the fingerprint differs between these two captures." })); return; }
+        out.appendChild(el("ul", { cls: "vd-list" }, rows.map(function (r) { return el("li", { cls: "vd-row", text: plainDiff(r) }); })));
+      }).catch(function (e) { out.textContent = "Couldn't load a capture (" + e.message + ")."; });
+    };
+    a.addEventListener("change", run); b.addEventListener("change", run); run();
+  }
+
   /* ---------------- misc ---------------- */
   function initCopy() {
     $$("button.copy").forEach(function (b) {
@@ -579,6 +626,7 @@
         renderPlatforms(REF, res[3]);
         initTable(res[1]);
         renderFooter(res[1]);
+        getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });
         return renderChanges(REF, res[2]);
       })
       .catch(function (err) {

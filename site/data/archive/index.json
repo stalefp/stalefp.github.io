@@ -1,0 +1,20 @@
+{
+ "note": "Older Chrome captures copied from capture/data/ by site/sync.sh (same layout as latest.json).",
+ "captures": [
+  {
+   "file": "chrome-151.0.7922.169-2026-09-27.json",
+   "chrome_version": "151.0.7922.169",
+   "captured_at": "2026-09-27T01:51:03-05:00"
+  },
+  {
+   "file": "chrome-154.0.8037.57-2026-09-27.json",
+   "chrome_version": "154.0.8037.57",
+   "captured_at": "2026-09-27T01:59:50-05:00"
+  },
+  {
+   "file": "chrome-154.0.8037.97-2026-10-01.json",
+   "chrome_version": "154.0.8037.97",
+   "captured_at": "2026-10-01T22:20:28-05:00"
+  }
+ ]
+}

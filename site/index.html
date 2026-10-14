@@ -20,7 +20,7 @@
     <!-- COPY: Nya (sub-line) -->
     <p class="subline">Built from real Chrome captures and compared field by field.</p>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#early-access">Early access</a>
     </nav>
   </div>
 </header>
@@ -132,6 +132,14 @@
     <!-- COPY: Nya ("What changed" heading; empty state lives in js/app.js) -->
     <h2 id="changes-h">What changed since the last capture</h2>
     <div id="changes-body"><p class="muted">Loading…</p></div>
+  </section>
+
+  <!-- 3b. Compare two captured Chrome versions -->
+  <section id="compare" class="card" aria-labelledby="vd-h">
+    <h2 id="vd-h">Compare two Chrome versions</h2>
+    <p class="muted small">Pick any two of our real Chrome captures (Linux, default profile) to see what changed in the fingerprint.</p>
+    <div class="controls"><label>From <select id="vd-a"></select></label> <label>To <select id="vd-b"></select></label></div>
+    <div id="vd-out"></div>
   </section>
 
   <!-- COPY: Nya ("Why this matters", two audiences) -->
