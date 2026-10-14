@@ -1,0 +1,3 @@
+{
+ "_format": "Hand-written explanations shown under a leaderboard row. Key = library entry id (e.g. \"curl_cffi|chrome146\", see libraries.json \"id\") or a bare library name (e.g. \"curl_cffi\") to apply to all its profiles; an id key wins. Value = a string or a list of strings. Keys starting with _ are ignored. Rebuild with: python leaderboard/build.py --annotate-only && site/sync.sh"
+}

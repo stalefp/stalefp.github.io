@@ -328,6 +328,125 @@ def h3_result(case, ref, all_runs):
                 chrome_ja4=chrome["ja4"], chrome_h3_settings=chrome.get("h3_settings"))
 
 
+
+# ---------------------------------------------------------------- plain-words summary + "why" lines
+NOTES = os.path.join(HERE, "notes.json")
+
+
+def chrome_timeline():
+    """Every real Chrome capture in the repo (capture/data/*.json, history/, latest.json), oldest major first, one per
+    major (newest build of that major). Used only to say in which captured Chrome version a field first appeared."""
+    seen = {}
+    for p in glob.glob(os.path.join(TLSBENCH, "capture", "data", "*.json")) + glob.glob(os.path.join(TLSBENCH, "capture", "data", "history", "chrome-*.json")):
+        try:
+            r = adapt_chrome_reference(json.load(open(p)))
+        except Exception:
+            continue
+        key = tuple(int(x) for x in r["version"].split("."))
+        if r["major"] not in seen or key > seen[r["major"]][0]:
+            seen[r["major"]] = (key, r["version"], r["variants"][0]["fingerprint"])
+    return [(m, v[1], v[2]) for m, v in sorted(seen.items())]
+
+
+def first_seen(timeline, has, it="it"):
+    """'added in N' only when an older capture lacks it; otherwise 'already in N' (N = oldest capture we have)."""
+    hits = [i for i, (_, _, f) in enumerate(timeline) if has(f)]
+    if not hits:
+        return None
+    i = hits[0]
+    if i > 0:
+        return "Chrome added %s in %d" % (it, timeline[i][0])
+    return "Chrome already sent %s in %d, the oldest version we've captured" % (it, timeline[0][0])
+
+
+def _ext_name(x):
+    n = EXT_NAMES.get(x, "")
+    return ("%s (%s)" % (n.replace("_", " "), x)) if n else x
+
+
+def why_lines(e, rf, timeline):
+    """Plain-language reasons from the real field diff vs Chrome's default fingerprint. Nothing invented: every line
+    comes from a diff entry or a missing_items() entry computed from captures."""
+    out = []
+    dfs = {d["field"]: d for d in e.get("diff") or []}
+    for it in e.get("missing") or []:
+        i = it["id"]
+        if i.startswith("ext-"):
+            x = i[4:]
+            when = first_seen(timeline, lambda f, x=x: x in (f.get("extensions") or []))
+            out.append("Missing 1 extension: %s%s." % ("trust anchors (ca34)" if x == CA34 else _ext_name(x), "; " + when if when else ""))
+        elif i.startswith("extra-"):
+            out.append("Sends extension %s, which Chrome doesn't send." % _ext_name(i[6:]))
+        elif i == "ml-dsa":
+            when = first_seen(timeline, lambda f: any(a in (f.get("signature_algorithms") or []) for a in ML_DSA), "them")
+            out.append("Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906)%s." % ("; " + when if when else ""))
+        elif i == "mlkem":
+            when = first_seen(timeline, lambda f: MLKEM in (f.get("key_shares") or []))
+            out.append("Doesn't send the X25519MLKEM768 post-quantum key share%s." % ("; " + when if when else ""))
+        elif i == "alps":
+            out.append("Uses the old ALPS codepoint 0x%s; Chrome sends the new one, 0x%s." % ((dfs.get("alps") or {}).get("library"), rf["alps"]))
+        elif i == "h2":
+            d = dfs.get("http2_akamai") or {}
+            out.append("HTTP/2 settings differ: Chrome sends %s, this library sends %s." % (d.get("chrome"), d.get("library")))
+        elif i == "ciphers":
+            d = dfs.get("ciphers") or {}
+            out.append("Cipher suites differ (%s missing, %s extra)." % (len(d.get("missing") or []), len(d.get("extra") or [])))
+        elif i == "sigalgs":
+            d = dfs.get("signature_algorithms") or {}
+            out.append("Signature algorithm list differs" + (": " + d["note"] if d.get("note") else "") + ".")
+        elif i == "certc":
+            d = dfs.get("cert_compression") or {}
+            out.append("Certificate compression differs: Chrome %s, library %s." % (d.get("chrome"), d.get("library")))
+        elif i == "resumption":
+            out.append("Never resumes a TLS session (no pre_shared_key on new connections), unlike Chrome.")
+        else:
+            out.append(it["label"] + ".")
+    covered = {"extensions", "signature_algorithms", "key_shares", "supported_groups", "alps", "http2_akamai", "ciphers", "cert_compression"}
+    for f in e.get("counted_mismatches") or []:
+        if f in ("supported_groups", "key_shares") and not any("MLKEM" in l for l in out):
+            out.append("%s differ from Chrome's." % dfs[f]["label"])
+        elif f not in covered:
+            out.append("%s differs from Chrome's." % dfs[f]["label"])
+    return out
+
+
+def behind_text(e, cur_major):
+    if e["verdict"] == "not tested":
+        return "Not tested yet."
+    p, vb = e.get("profile_chrome_major"), e.get("versions_behind")
+    if p is None or vb is None:
+        head = "The profile name doesn't say which Chrome version it copies"
+    elif vb <= 0:
+        head = "Copies current Chrome %d" % p
+    elif not e.get("versions_behind_uniform", True):
+        head = "Copies Chrome %d, up to %d versions behind current Chrome (varies by platform)" % (p, vb)
+    else:
+        head = "Copies Chrome %d, %d version%s behind current %s" % (p, vb, "" if vb == 1 else "s", cur_major)
+    tail = {"exact": "its fingerprint still matches current Chrome on every counted field",
+            "exact_variant": "it matches a less common current-Chrome variant, not the default",
+            "close": "1 counted field differs from current Chrome",
+            "behind": "%d counted fields differ from current Chrome" % len(e.get("counted_mismatches") or [])}[e["verdict"]]
+    return head + "; " + tail + "."
+
+
+def annotate(data):
+    """Add behind_text / why / notes to every library entry. Notes come from leaderboard/notes.json (hand-written)."""
+    timeline = chrome_timeline()
+    ref = load_reference()
+    rf = {v["id"]: v for v in ref["variants"]}["default"]["fingerprint"]
+    stable = (data.get("reference") or {}).get("current_stable") or {}
+    cur = (stable.get("linux") or {}).get("full_major") or data["reference"].get("chrome_major")
+    notes = json.load(open(NOTES)) if os.path.exists(NOTES) else {}
+    notes = {k: v for k, v in notes.items() if not k.startswith("_")}
+    for e in data["libraries"]:
+        e["behind_text"] = behind_text(e, cur)
+        e["why"] = why_lines(e, rf, timeline)
+        n = notes.get(e["id"]) or notes.get(e["library"])
+        e["notes"] = ([n] if isinstance(n, str) else list(n)) if n else []
+    data["chrome_timeline"] = [dict(major=m, version=v) for m, v, _ in timeline]
+    return data
+
+
 # ---------------------------------------------------------------- build
 def build():
     ref = load_reference()
@@ -465,6 +584,7 @@ def build():
                      http3_endpoints=sorted({l["http3"].get("endpoint") for l in libs if l["http3"].get("endpoint")})),
         libraries=libs,
     )
+    annotate(data)
     json.dump(data, open(OUT, "w"), indent=1)
     print(f"wrote {OUT} (reference: {ref['source']}, Chrome {ref['version']})")
     for l in libs:
@@ -477,4 +597,10 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    if "--annotate-only" in sys.argv:   # refresh behind_text / why / notes in the existing libraries.json (no harness data needed)
+        d = annotate(json.load(open(OUT)))
+        json.dump(d, open(OUT, "w"), indent=1)
+        for l in d["libraries"]:
+            print(" ", l["id"], "|", l["behind_text"], "|", l["why"], l["notes"])
+    else:
+        build()

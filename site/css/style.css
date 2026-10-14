@@ -117,3 +117,10 @@ tr.detail td{background:var(--code);padding:12px}
 .plat.pending{border-style:dashed;color:var(--muted)}
 .plat.pending p{margin:.3rem 0;font-size:.9rem}
 @media (max-width:900px){.plat-grid{grid-template-columns:1fr}}
+
+/* plain-words summary under each leaderboard row */
+.lb tr.why-row td{padding:2px 8px 10px;border-bottom:1px solid var(--line);font-size:.85rem}
+.lb tr.row td{border-bottom:0}
+.why-head{margin:0;font-weight:600}
+.why-list{margin:3px 0 0;padding-left:18px;color:var(--muted)}
+.why-note{margin:4px 0 0;font-style:italic}
