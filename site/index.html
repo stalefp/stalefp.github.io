@@ -20,7 +20,7 @@
     <!-- COPY: Nya (sub-line) -->
     <p class="subline">Built from real Chrome captures and compared field by field.</p>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#why">Why it matters</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#changes">What changed</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#early-access">Early access</a>
     </nav>
   </div>
 </header>
@@ -147,6 +147,19 @@
         <p>Knowing exactly what current Chrome sends, and which popular libraries can and can't copy it, tells you which fingerprints are real users and which are tools pretending. Stale gives you that reference, built from real captures and compared field by field.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Free JSON feed -->
+  <section id="api" class="card" aria-labelledby="api-h">
+    <h2 id="api-h">Free JSON feed</h2>
+    <p>Everything on this page is available as plain JSON at stable URLs, refreshed by the same daily capture. No key, no sign-up; CORS is open, so you can fetch it from a browser or a script.</p>
+    <dl class="fp small">
+      <div class="wide"><dt><a href="api/latest.json"><code>/api/latest.json</code></a></dt><dd>Latest real Chrome capture (Linux): version, JA4 (fresh and resumed), HTTP/2 fingerprint, extensions, signature algorithms, key shares, all three Chrome variants and the HTTP/3 (QUIC) handshake. Format: <code>capture/SCHEMA.md</code> in the repo.</dd></div>
+      <div class="wide"><dt><a href="api/libraries.json"><code>/api/libraries.json</code></a></dt><dd>The leaderboard: every library profile with its JA4, HTTP/2 fingerprint, verdict, versions behind, field-by-field diff and plain-words reasons (<code>behind_text</code>, <code>why</code>).</dd></div>
+      <div class="wide"><dt><a href="api/platforms.json"><code>/api/platforms.json</code></a></dt><dd>Chrome on Linux, Windows and macOS side by side.</dd></div>
+      <div class="wide"><dt><a href="api/history.json"><code>/api/history.json</code></a></dt><dd>Index of past captures; each file is at <code>/data/history/&lt;file&gt;</code>.</dd></div>
+    </dl>
+    <p class="muted small">Example: <code>curl -s https://stalefp.github.io/api/latest.json | jq -r .version</code>. Field names may grow but existing ones won't be renamed without notice here.</p>
   </section>
 
   <!-- 4. Early access -->
