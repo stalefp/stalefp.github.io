@@ -44,6 +44,7 @@ jobs:
           sudo apt-get install -y -qq "$RUNNER_TEMP/chrome.deb" xvfb
           echo "CHROME_BIN=/opt/google/chrome/chrome" >> "$GITHUB_ENV"
           /opt/google/chrome/chrome --version
+          echo "CHROME_INSTALLED_VERSION=$(/opt/google/chrome/chrome --version | grep -oE '[0-9]+(\.[0-9]+){3}')" >> "$GITHUB_ENV"
 
       - name: Install official Google Chrome stable (macOS)
         if: runner.os == 'macOS'
@@ -57,6 +58,7 @@ jobs:
           codesign --verify --deep --strict "/Applications/Google Chrome.app"
           codesign -dv --verbose=2 "/Applications/Google Chrome.app" 2>&1 | grep -E "^(Authority|TeamIdentifier)"
           "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version
+          echo "CHROME_INSTALLED_VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "/Applications/Google Chrome.app/Contents/Info.plist")" >> "$GITHUB_ENV"
 
       - name: Install official Google Chrome stable (Windows)
         if: runner.os == 'Windows'
@@ -75,6 +77,7 @@ jobs:
           $v = (Get-Item $exe).VersionInfo
           Write-Host "$($v.ProductName) $($v.ProductVersion)"
           "CHROME_BIN=$exe" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          "CHROME_INSTALLED_VERSION=$($v.ProductVersion)" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
 
       - name: Capture deps
         run: python -m pip install -q -r capture/requirements.txt
@@ -92,8 +95,17 @@ jobs:
           for c in d["configs"]:
               print("%-42s ja4=%s resumed=%s quic=%s h2=%s" % (c["name"], c["ja4"], c["ja4_resumed"], (c["quic"] or {}).get("ja4"), c["h2_akamai"]))
           if not ref.get("ja4") or d["browser"] != "Google Chrome":
-              sys.exit("no usable default fingerprint")
+              print("::error::no usable default fingerprint")
           PY
+
+      - name: Check capture (installed version, not empty, well-formed)
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: |
+          # On failure latest.json is moved aside, so the artifact carries no capture and merge keeps the previous data;
+          # the job (and the run) shows as failed.
+          python capture/check_capture.py "out/capture-${{ matrix.id }}/latest.json" --quarantine \
+            --expect-version "${CHROME_INSTALLED_VERSION:?installed Chrome version not recorded}" --expect-channel "$CHROME_CHANNEL"
 
       - name: Upload capture JSON
         if: always()
@@ -148,6 +160,17 @@ jobs:
         run: |
           ls -R artifacts || true
           python capture/merge_platforms.py --artifacts artifacts --attempt-url "$RUN_URL"
+      - name: Check merged capture before the site data updates
+        run: |
+          ok=1
+          python capture/check_capture.py capture/data/latest.json --expect-channel stable || ok=0
+          for p in windows macos; do
+            [ -f capture/data/platforms/$p.json ] && { python capture/check_capture.py capture/data/platforms/$p.json --expect-channel stable || ok=0; }
+          done
+          if [ $ok = 0 ]; then
+            git checkout -- capture/data leaderboard/data site/data && git clean -fdq capture/data
+            echo "::error::merged capture failed the check; kept the previous data and stopped before publishing"; exit 1
+          fi
       - name: Library comparison (build harness binaries from source, rerun, rebuild)
         env:
           HARNESS_PYTHON: python
