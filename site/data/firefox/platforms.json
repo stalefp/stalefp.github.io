@@ -25,7 +25,15 @@
    "label": "Windows"
   },
   "macos": {
-   "status": "not captured yet",
+   "status": "captured",
+   "version": "158.0",
+   "captured_at": "2026-10-15T13:33:38-05:00",
+   "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
+   "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
+   "ja4_resumed": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+   "h2_akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
+   "quic_ja4": "q13d0315h3_55b375c5d22e_dc5437974b47",
+   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",
    "label": "macOS"
   }
  }
