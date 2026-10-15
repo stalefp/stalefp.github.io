@@ -135,6 +135,50 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+      # Firefox (official Mozilla release, SHA512-verified). Isolated: continue-on-error, runs after Chrome's artifacts are
+      # uploaded, separate artifact, so a Firefox failure can never affect the Chrome capture or the deploy.
+      - name: Firefox capture (official Mozilla release)
+        if: ${{ !cancelled() && (matrix.id == 'linux' || matrix.id == 'windows' || matrix.id == 'macos') }}
+        continue-on-error: true
+        timeout-minutes: 12
+        shell: bash
+        run: |
+          set -euo pipefail
+          V=$(curl -sSf https://product-details.mozilla.org/1.0/firefox_versions.json | python -c 'import json,sys; print(json.load(sys.stdin)["LATEST_FIREFOX_VERSION"])')
+          B=https://archive.mozilla.org/pub/firefox/releases/$V
+          case "$RUNNER_OS" in
+            Linux)   F="linux-x86_64/en-US/firefox-$V.tar.xz"; PKG="$RUNNER_TEMP/ff.tar.xz" ;;
+            Windows) F="win64/en-US/Firefox Setup $V.exe";     PKG="$RUNNER_TEMP/ff-setup.exe" ;;
+            macOS)   F="mac/en-US/Firefox $V.dmg";              PKG="$RUNNER_TEMP/ff.dmg" ;;
+          esac
+          curl -sSf -o "$RUNNER_TEMP/SHA512SUMS" "$B/SHA512SUMS"
+          curl -sSfL --retry 3 -o "$PKG" "$B/${F// /%20}"
+          python - "$RUNNER_TEMP/SHA512SUMS" "$F" "$PKG" <<'PY'
+          import hashlib, sys
+          sums, name, pkg = sys.argv[1:]
+          want = next(l[:128] for l in open(sums) if l.rstrip("\n")[130:] == name)
+          got = hashlib.sha512(open(pkg, "rb").read()).hexdigest()
+          assert got == want, "SHA512 mismatch for " + name
+          print("SHA512 OK", name)
+          PY
+          case "$RUNNER_OS" in
+            Linux)   tar -xJf "$PKG" -C "$RUNNER_TEMP"; BIN="$RUNNER_TEMP/firefox/firefox" ;;
+            Windows) 7z x -y -o"$RUNNER_TEMP/ffsetup" "$PKG" > /dev/null; BIN="$RUNNER_TEMP/ffsetup/core/firefox.exe" ;;
+            macOS)   hdiutil attach -nobrowse -quiet -mountpoint /Volumes/ffcap "$PKG"; cp -R "/Volumes/ffcap/Firefox.app" "$RUNNER_TEMP/"; hdiutil detach -quiet /Volumes/ffcap
+                     BIN="$RUNNER_TEMP/Firefox.app/Contents/MacOS/firefox" ;;
+          esac
+          python -W ignore capture/lib/capture_firefox.py --firefox "$BIN" --out "out/firefox-${{ matrix.id }}"
+
+      - name: Upload Firefox capture JSON
+        if: ${{ !cancelled() && (matrix.id == 'linux' || matrix.id == 'windows' || matrix.id == 'macos') }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: firefox-${{ matrix.id }}
+          path: out/firefox-${{ matrix.id }}/latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
   publish:
     name: merge, leaderboard, commit
     needs: capture
@@ -203,19 +247,18 @@ jobs:
           PY
           # merge_platforms also feeds build.py's caveat; rebuild the summary after the leaderboard so both are current
           python capture/merge_platforms.py
-      - name: Firefox capture (official Mozilla release; isolated, can't fail the Chrome run)
+      - name: Download Firefox captures
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: firefox-*
+          path: ff-artifacts
+      - name: Merge Firefox captures + Firefox library comparison (isolated, can't fail the Chrome run)
         continue-on-error: true
         timeout-minutes: 10
         run: |
-          set -euo pipefail
-          V=$(curl -sSf https://product-details.mozilla.org/1.0/firefox_versions.json | python -c 'import json,sys; print(json.load(sys.stdin)["LATEST_FIREFOX_VERSION"])')
-          B=https://archive.mozilla.org/pub/firefox/releases/$V
-          F=$(curl -sSf "$B/SHA512SUMS" | awk -v f="linux-x86_64/en-US/firefox-$V.tar.xz" '$2==f{print $1}')
-          [ -n "$F" ] || { echo "no SHA512 for Firefox $V"; exit 1; }
-          curl -sSfL -o "$RUNNER_TEMP/ff.tar.xz" "$B/linux-x86_64/en-US/firefox-$V.tar.xz"
-          echo "$F  $RUNNER_TEMP/ff.tar.xz" | sha512sum -c -
-          tar -xJf "$RUNNER_TEMP/ff.tar.xz" -C "$RUNNER_TEMP"
-          python capture/lib/capture_firefox.py --firefox "$RUNNER_TEMP/firefox/firefox"
+          python capture/merge_firefox.py --artifacts ff-artifacts
+          leaderboard/run_firefox.sh || echo "::warning::Firefox leaderboard run failed"
       - name: Sync site data
         run: site/sync.sh
       - name: Commit data to main
