@@ -312,7 +312,11 @@
     "header_order": true
    },
    "behind_text": "The profile name doesn't say which Firefox version it copies; 2 counted fields differ from current Firefox.",
-   "is_newest_profile": true
+   "is_newest_profile": true,
+   "notes": [
+    "No profile in this library matches current Firefox yet; it still sends cipher suites 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
+   ],
+   "fix": null
   },
   {
    "id": "tls-client|firefox_148",
@@ -612,7 +616,11 @@
     "header_order": true
    },
    "behind_text": "Copies Firefox 148, 10 versions behind current 158; 2 counted fields differ from current Firefox.",
-   "is_newest_profile": true
+   "is_newest_profile": true,
+   "notes": [
+    "Best tls-client Firefox profile we tested, but it still sends cipher suites 0x0033, 0x0039, 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
+   ],
+   "fix": null
   },
   {
    "id": "curl_cffi|firefox144",
@@ -908,7 +916,11 @@
     "header_order": true
    },
    "behind_text": "Copies Firefox 144, 14 versions behind current 158; 2 counted fields differ from current Firefox.",
-   "is_newest_profile": false
+   "is_newest_profile": false,
+   "notes": [
+    "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null
   },
   {
    "id": "curl_cffi|firefox147",
@@ -1204,7 +1216,11 @@
     "header_order": true
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 2 counted fields differ from current Firefox.",
-   "is_newest_profile": true
+   "is_newest_profile": true,
+   "notes": [
+    "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null
   },
   {
    "id": "rnet|firefox139",
@@ -1499,7 +1515,11 @@
     "header_order": false
    },
    "behind_text": "Copies Firefox 139, 19 versions behind current 158; 2 counted fields differ from current Firefox.",
-   "is_newest_profile": false
+   "is_newest_profile": false,
+   "notes": [
+    "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null
   },
   {
    "id": "rnet|firefox147",
@@ -1794,7 +1814,11 @@
     "header_order": false
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 2 counted fields differ from current Firefox.",
-   "is_newest_profile": true
+   "is_newest_profile": true,
+   "notes": [
+    "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null
   },
   {
    "id": "tls-client|firefox_147",
@@ -2100,7 +2124,19 @@
     "header_order": true
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 3 counted fields differ from current Firefox.",
-   "is_newest_profile": false
+   "is_newest_profile": false,
+   "notes": [
+    "Firefox_148 in the same release has one fewer counted difference (its signature algorithms match Firefox), though it sends two extra cipher suites Firefox doesn't (0x0033, 0x0039)."
+   ],
+   "fix": {
+    "to_id": "tls-client|firefox_148",
+    "to_profile": "Firefox_148",
+    "to_verdict": "behind",
+    "from_diffs": 3,
+    "to_diffs": 2,
+    "old": "tls_client.WithClientProfile(profiles.Firefox_147)",
+    "new": "tls_client.WithClientProfile(profiles.Firefox_148)"
+   }
   },
   {
    "id": "noble-tls|firefox_147",
@@ -2393,7 +2429,11 @@
     "header_order": false
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 3 counted fields differ from current Firefox.",
-   "is_newest_profile": true
+   "is_newest_profile": true,
+   "notes": [
+    "No profile in this library matches current Firefox yet; it wraps Go tls-client, whose Firefox_148 profile had one fewer counted difference in our test."
+   ],
+   "fix": null
   },
   {
    "id": "utls|hellofirefox_auto",
@@ -2721,7 +2761,11 @@
     "header_order": false
    },
    "behind_text": "The profile name doesn't say which Firefox version it copies; 5 counted fields differ from current Firefox.",
-   "is_newest_profile": true
+   "is_newest_profile": true,
+   "notes": [
+    "No profile in this library matches current Firefox yet; HelloFirefox_Auto lacks the X25519MLKEM768 key share and the 0012 and 001b extensions Firefox 158 sends."
+   ],
+   "fix": null
   },
   {
    "id": "tls-client-(python)|firefox_120",
@@ -3045,7 +3089,11 @@
     "header_order": false
    },
    "behind_text": "Copies Firefox 120, 38 versions behind current 158; 5 counted fields differ from current Firefox.",
-   "is_newest_profile": true
+   "is_newest_profile": true,
+   "notes": [
+    "No profile in this library matches current Firefox yet; firefox_120 is the only Firefox profile we tested, and it lacks the X25519MLKEM768 key share and four extensions Firefox 158 sends."
+   ],
+   "fix": null
   }
  ]
 }

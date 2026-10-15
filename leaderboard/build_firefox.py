@@ -139,11 +139,42 @@ def build(run):
                          "Header order is informational: the Go cases send Firefox's captured header names in Firefox's order; Python cases use each library's defaults.",
                          "Resumption and HTTP/3 are not tested for Firefox profiles yet."],
                 libraries=libs)
+    annotate(data)
     json.dump(data, open(OUT, "w"), indent=1)
     print("wrote %s (Firefox %s)" % (OUT, raw["version"]))
     for l in libs:
         print("  %-12s %-34s %s" % (l["verdict"], l["library"] + " " + l["profile"], l.get("behind_text")))
 
 
+NOTES = os.path.join(HERE, "firefox_notes.json")
+VR = {"exact": 0, "close": 2, "behind": 3}
+
+
+def annotate(data):
+    """Hand-written notes (firefox_notes.json) + one-line fix: only when another tested profile of the same library has
+    strictly fewer counted differences from Firefox (same rule and call templates as the Chrome board, build.FIX_TEMPLATES)."""
+    notes = json.load(open(NOTES)) if os.path.exists(NOTES) else {}
+    notes = {k: v for k, v in notes.items() if not k.startswith("_")}
+    rank = lambda x: (len(x.get("counted_mismatches") or []), VR.get(x["verdict"], 9))
+    for e in data["libraries"]:
+        n = notes.get(e["id"]) or notes.get(e["library"])
+        e["notes"] = ([n] if isinstance(n, str) else list(n)) if n else []
+        e["fix"] = None
+        peers = [x for x in data["libraries"] if x["library"] == e["library"] and x["verdict"] in VR]
+        best = min(peers, key=rank) if peers else None
+        if best and best is not e and e["verdict"] in VR and rank(best) < rank(e) and e["library"] in B.FIX_TEMPLATES:
+            t = B.FIX_TEMPLATES[e["library"]]
+            e["fix"] = dict(to_id=best["id"], to_profile=best["profile"], to_verdict=best["verdict"],
+                            from_diffs=len(e["counted_mismatches"]), to_diffs=len(best["counted_mismatches"]),
+                            old=t % e["profile"], new=t % best["profile"])
+    return data
+
+
 if __name__ == "__main__":
-    build(sys.argv[1] if len(sys.argv) > 1 else None)
+    if "--annotate-only" in sys.argv:
+        d = annotate(json.load(open(OUT)))
+        json.dump(d, open(OUT, "w"), indent=1)
+        for l in d["libraries"]:
+            print(" ", l["id"], "| fix:", (l["fix"] or {}).get("new"), "|", l["notes"])
+    else:
+        build(sys.argv[1] if len(sys.argv) > 1 else None)

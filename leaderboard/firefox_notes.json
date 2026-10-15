@@ -1,0 +1,11 @@
+{
+ "_format": "Hand-written notes for Firefox leaderboard rows (leaderboard/build_firefox.py). Same keys as notes.json: row id (e.g. \"curl_cffi|firefox147\") or bare library name. Fix snippets are generated, never written here: only when another tested profile of the same library has fewer counted differences. Rebuild: python leaderboard/build_firefox.py --annotate-only && site/sync.sh",
+ "tls-client|firefox_147": "Firefox_148 in the same release has one fewer counted difference (its signature algorithms match Firefox), though it sends two extra cipher suites Firefox doesn't (0x0033, 0x0039).",
+ "tls-client|firefox_148": "Best tls-client Firefox profile we tested, but it still sends cipher suites 0x0033, 0x0039, 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't.",
+ "azuretls-client": "No profile in this library matches current Firefox yet; it still sends cipher suites 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't.",
+ "curl_cffi": "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072.",
+ "rnet": "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072.",
+ "noble-tls": "No profile in this library matches current Firefox yet; it wraps Go tls-client, whose Firefox_148 profile had one fewer counted difference in our test.",
+ "uTLS": "No profile in this library matches current Firefox yet; HelloFirefox_Auto lacks the X25519MLKEM768 key share and the 0012 and 001b extensions Firefox 158 sends.",
+ "tls-client (Python)": "No profile in this library matches current Firefox yet; firefox_120 is the only Firefox profile we tested, and it lacks the X25519MLKEM768 key share and four extensions Firefox 158 sends."
+}

@@ -749,8 +749,11 @@
         el("p", { cls: "why-head", text: l.behind_text || "" }),
         ids.length ? el("div", { cls: "fp-ids" }, ids.map(function (x) { return el("span", { cls: "fp-id" }, [el("span", { cls: "muted", text: x[0] + " " }), el("code", { text: x[1] }), copyBtn(x[1])]); })) : null,
         (l.why || []).length ? el("ul", { cls: "why-list" }, l.why.map(function (w) { return el("li", { text: w }); })) : null,
+        l.fix ? el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): " }),
+          el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]) : null
+      ].concat((l.notes || []).map(function (n) { return el("p", { cls: "why-note", text: n }); })).concat([
         l.verdict !== "not tested" ? el("div", { cls: "code-row small" }, [el("span", { cls: "muted", text: "Badge " }), el("code", { cls: "md", text: md }), copyBtn(md)]) : null
-      ])]));
+      ]))]));
     });
     t.appendChild(tb); box.appendChild(el("div", { cls: "table-wrap" }, [t]));
   }
