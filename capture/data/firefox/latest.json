@@ -4,7 +4,7 @@
  "channel": "release",
  "version": "158.0",
  "os": "Linux x86_64",
- "captured_at": "2026-10-14T15:28:45-05:00",
+ "captured_at": "2026-10-15T05:17:36-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
