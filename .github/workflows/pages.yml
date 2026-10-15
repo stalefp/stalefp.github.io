@@ -41,6 +41,10 @@ jobs:
           [ -f site/data/firefox.json ] && cp site/data/firefox.json _site/api/firefox.json || true
           # README badges (shields.io endpoint JSON), one per leaderboard row, built from the libraries.json being published
           python3 leaderboard/badges.py site/data/libraries.json _site/api/badges
+          if [ -f site/data/firefox_libraries.json ]; then
+            python3 leaderboard/badges.py site/data/firefox_libraries.json _site/api/badges/firefox "Firefox match"
+            cp site/data/firefox_libraries.json _site/api/firefox_libraries.json
+          fi
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
