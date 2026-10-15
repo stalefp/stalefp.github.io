@@ -45,3 +45,9 @@ fi
 if [[ -f "$TB/capture/data/firefox/latest.json" ]]; then
   cp "$TB/capture/data/firefox/latest.json" "$SITE/data/firefox.json"; echo "firefox.json  <- capture/data/firefox/latest.json"
 fi
+# Firefox per-OS summary + dated history (capture/merge_firefox.py) and Firefox leaderboard (leaderboard/build_firefox.py)
+rm -rf "$SITE/data/firefox"; mkdir -p "$SITE/data/firefox"
+[[ -f "$TB/capture/data/firefox/platforms/index.json" ]] && cp "$TB/capture/data/firefox/platforms/index.json" "$SITE/data/firefox/platforms.json"
+[[ -d "$TB/capture/data/firefox/history" ]] && cp -r "$TB/capture/data/firefox/history" "$SITE/data/firefox/history"
+[[ -f "$TB/leaderboard/data/firefox_libraries.json" ]] && cp "$TB/leaderboard/data/firefox_libraries.json" "$SITE/data/firefox_libraries.json"
+echo "firefox/      <- capture/data/firefox (platforms, history), leaderboard/data/firefox_libraries.json"
