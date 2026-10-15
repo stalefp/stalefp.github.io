@@ -1,0 +1,17 @@
+{
+ "note": "Dated Firefox captures (Linux), one per day; same layout as ../latest.json.",
+ "captures": [
+  {
+   "file": "firefox-158.0-2026-10-14.json",
+   "firefox_version": "158.0",
+   "captured_at": "2026-10-14T15:28:45-05:00",
+   "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d"
+  },
+  {
+   "file": "firefox-158.0-2026-10-15.json",
+   "firefox_version": "158.0",
+   "captured_at": "2026-10-15T05:17:36-05:00",
+   "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d"
+  }
+ ]
+}
