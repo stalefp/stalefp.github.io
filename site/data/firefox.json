@@ -1,10 +1,11 @@
 {
- "schema": "firefox-capture-1",
+ "schema": "firefox-capture-2",
  "browser": "Mozilla Firefox",
  "channel": "release",
  "version": "158.0",
- "os": "Linux x86_64",
- "captured_at": "2026-10-15T05:17:36-05:00",
+ "platform": "linux",
+ "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
+ "captured_at": "2026-10-15T13:11:50-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -98,6 +99,26 @@
   "0x0304",
   "0x0303"
  ],
+ "alps_codepoint": null,
+ "has_trust_anchors": false,
+ "h2_akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
+ "header_order": [
+  ":method",
+  ":path",
+  ":authority",
+  ":scheme",
+  "user-agent",
+  "accept",
+  "accept-language",
+  "accept-encoding",
+  "upgrade-insecure-requests",
+  "sec-fetch-dest",
+  "sec-fetch-mode",
+  "sec-fetch-site",
+  "sec-fetch-user",
+  "priority",
+  "te"
+ ],
  "http2": {
   "akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
   "settings": {
@@ -124,6 +145,101 @@
    "priority",
    "te"
   ]
+ },
+ "http3": {
+  "ja4": "q13d0315h3_55b375c5d22e_dc5437974b47",
+  "ja4_r": "q13d0315h3_1301,1302,1303_0005,000a,000d,0017,001b,001c,0022,002b,002d,0033,0039,fe0d,ff01_0403,0503,0603,0203,0804,0805,0806,0401,0501,0601,0201",
+  "ja4_resumed": null,
+  "transport_params": [
+   {
+    "id": "0x1",
+    "name": "max_idle_timeout",
+    "len": 4,
+    "value": 30000
+   },
+   {
+    "id": "0x4",
+    "name": "initial_max_data",
+    "len": 4,
+    "value": 25165824
+   },
+   {
+    "id": "0x5",
+    "name": "initial_max_stream_data_bidi_local",
+    "len": 4,
+    "value": 12582912
+   },
+   {
+    "id": "0x6",
+    "name": "initial_max_stream_data_bidi_remote",
+    "len": 4,
+    "value": 1048576
+   },
+   {
+    "id": "0x7",
+    "name": "initial_max_stream_data_uni",
+    "len": 4,
+    "value": 1048576
+   },
+   {
+    "id": "0x8",
+    "name": "initial_max_streams_bidi",
+    "len": 2,
+    "value": 100
+   },
+   {
+    "id": "0x9",
+    "name": "initial_max_streams_uni",
+    "len": 2,
+    "value": 100
+   },
+   {
+    "id": "0xb",
+    "name": "max_ack_delay",
+    "len": 1,
+    "value": 20
+   },
+   {
+    "id": "0xe",
+    "name": "active_connection_id_limit",
+    "len": 1,
+    "value": 8
+   },
+   {
+    "id": "0xf",
+    "name": "initial_source_connection_id",
+    "len": 3,
+    "hex": "588417"
+   },
+   {
+    "id": "0x11",
+    "name": "version_information",
+    "len": 16,
+    "hex": "000000010a8a3a5a6b3343cf00000001"
+   },
+   {
+    "id": "0x1d",
+    "name": "unknown",
+    "len": 0,
+    "value": null
+   },
+   {
+    "id": "0xff02de1a",
+    "name": "grease",
+    "len": 2,
+    "value": 1000
+   },
+   {
+    "id": "0x20",
+    "name": "max_datagram_frame_size",
+    "len": 4,
+    "value": 65535
+   }
+  ],
+  "h3_settings": null,
+  "header_order": null,
+  "request_over_h3": false,
+  "errors": []
  },
  "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:158.0) Gecko/20100101 Firefox/158.0",
  "protocol": "h2",
