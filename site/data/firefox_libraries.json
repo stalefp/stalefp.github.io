@@ -1,6 +1,6 @@
 {
  "schema_version": "firefox-leaderboard-1",
- "generated_at": "2026-10-15T18:49:02Z",
+ "generated_at": "2026-10-16T00:17:28Z",
  "reference": {
   "browser": "Mozilla Firefox",
   "firefox_version": "158.0",
@@ -26,10 +26,10 @@
    "profile": "Firefox",
    "note": null,
    "version": "v1.13.2",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/go/out/azuretls_Firefox.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/go/out/azuretls_Firefox.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -327,10 +327,10 @@
    "profile": "Firefox_148",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/go/out/tls-client(go)_Firefox_148.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/go/out/tls-client(go)_Firefox_148.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -632,10 +632,10 @@
    "profile": "firefox144",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/py/curl_cffi_firefox144.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/py/curl_cffi_firefox144.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -933,10 +933,10 @@
    "profile": "firefox147",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/py/curl_cffi_firefox147.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/py/curl_cffi_firefox147.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -1234,10 +1234,10 @@
    "profile": "Firefox139",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/py/rnet_Firefox139.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/py/rnet_Firefox139.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -1534,10 +1534,10 @@
    "profile": "Firefox147",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/py/rnet_Firefox147.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/py/rnet_Firefox147.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -1834,10 +1834,10 @@
    "profile": "Firefox_147",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/go/out/tls-client(go)_Firefox_147.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/go/out/tls-client(go)_Firefox_147.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Firefox's default fingerprint: ciphers, signature_algorithms, supported_groups.",
@@ -2153,10 +2153,10 @@
    "profile": "firefox_147",
    "note": "wraps Go tls-client",
    "version": "0.1.9",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/py/noble-tls_firefox_147.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/py/noble-tls_firefox_147.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Firefox's default fingerprint: ciphers, signature_algorithms, supported_groups.",
@@ -2451,10 +2451,10 @@
    "profile": "HelloFirefox_Auto",
    "note": "HTTP/2 via golang.org/x/net/http2 (uTLS is TLS-only)",
    "version": "v1.8.2",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/go/out/utls_HelloFirefox_Auto.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/go/out/utls_HelloFirefox_Auto.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
@@ -2691,14 +2691,14 @@
       ":path",
       ":scheme",
       "user-agent",
-      "accept-language",
+      "accept",
       "accept-encoding",
       "upgrade-insecure-requests",
       "sec-fetch-dest",
       "sec-fetch-site",
       "sec-fetch-user",
       "priority",
-      "accept",
+      "accept-language",
       "sec-fetch-mode",
       "te"
      ],
@@ -2783,11 +2783,11 @@
    "language": "Python",
    "profile": "firefox_120",
    "note": "wraps Go tls-client",
-   "version": "1.0.1",
-   "tested_at": "2026-10-15T18:48:59Z",
+   "version": "2.0.0",
+   "tested_at": "2026-10-16T00:17:26Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261015T184859Z/py/tls-client(py)_firefox_120.json"
+    "fresh": "leaderboard/raw/firefox-20261016T001726Z/py/tls-client(py)_firefox_120.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
@@ -3028,7 +3028,7 @@
     "ja4_fresh": "t13d1713h2_5b57614c22b0_748f4c70de1c",
     "ja4_r_fresh": "t13d1713h2_002f,0035,009c,009d,1301,1302,1303,c009,c00a,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0017,001c,0022,002b,0033,fe0d,ff01_0403,0503,0603,0804,0805,0806,0401,0501,0601,0203,0201",
     "http2_akamai": "1:65536;4:131072;5:16384|12517377|3:0:0:201,5:0:0:101,7:0:0:1,9:0:7:1,11:0:3:1,13:0:0:241|m,p,a,s",
-    "user_agent": "tls-client/1.0.1"
+    "user_agent": "tls-client/2.0.0"
    },
    "matches": {
     "http2": false,
@@ -3103,7 +3103,12 @@
     "No profile in this library matches current Firefox yet; firefox_120 is the only Firefox profile we tested, and it lacks the X25519MLKEM768 key share and four extensions Firefox 158 sends."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": {
+    "version": "2.0.0",
+    "released_at": "2026-10-10T15:22:07.197014Z",
+    "retested_at": "2026-10-16T00:17:28Z",
+    "text": "Updated to 2.0.0 on Oct 16, 2026: still 38 versions behind."
+   }
   }
  ]
 }

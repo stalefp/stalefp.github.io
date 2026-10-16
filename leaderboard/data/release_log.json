@@ -1,0 +1,53 @@
+{
+ "_format": "One event per library release we re-tested (leaderboard/release_watch.py).",
+ "events": [
+  {
+   "library": "tls-client (Python)",
+   "from_version": "1.0.1",
+   "version": "2.0.0",
+   "released_at": "2026-10-10T15:22:07.197014Z",
+   "release_url": "https://pypi.org/project/tls-client/2.0.0/",
+   "retested_at": "2026-10-16T00:17:28Z",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/38828554488",
+   "boards": {
+    "chrome": {
+     "before": {
+      "best_profile": "chrome_120",
+      "verdict": "behind",
+      "counted_diffs": 5,
+      "versions_behind": 35,
+      "matches": false
+     },
+     "after": {
+      "best_profile": "chrome_120",
+      "verdict": "behind",
+      "counted_diffs": 5,
+      "versions_behind": 35,
+      "matches": false
+     },
+     "gap_closed": false,
+     "improved": false
+    },
+    "firefox": {
+     "before": {
+      "best_profile": "firefox_120",
+      "verdict": "behind",
+      "counted_diffs": 5,
+      "versions_behind": 38,
+      "matches": false
+     },
+     "after": {
+      "best_profile": "firefox_120",
+      "verdict": "behind",
+      "counted_diffs": 5,
+      "versions_behind": 38,
+      "matches": false
+     },
+     "gap_closed": false,
+     "improved": false
+    }
+   },
+   "gap_closed": false
+  }
+ ]
+}

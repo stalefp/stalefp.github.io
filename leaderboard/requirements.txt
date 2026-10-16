@@ -3,4 +3,4 @@ curl_cffi==0.16.3
 primp==2.0.1
 rnet==3.0.0rc22
 noble-tls==0.1.9
-tls-client==1.0.1
+tls-client==2.0.0

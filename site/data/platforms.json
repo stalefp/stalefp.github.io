@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-10-15T18:48:58Z",
+ "generated_at": "2026-10-16T00:17:29Z",
  "platforms": {
   "linux": {
    "status": "captured",
