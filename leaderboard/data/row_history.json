@@ -939,7 +939,7 @@
   },
   {
    "date": "2026-10-16",
-   "chrome_version": "155.0.8059.79",
+   "chrome_version": "155.0.8059.84",
    "rows": {
     "tls-client|chrome_152": {
      "verdict": "exact",
