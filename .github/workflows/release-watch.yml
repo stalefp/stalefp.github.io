@@ -1,0 +1,100 @@
+name: Library release watch
+
+# Daily: check each tested library's newest release (PyPI / Go module proxy). Only when one is newer than the pinned
+# version: pin it, re-run the library harnesses (Chrome + Firefox boards), validate, record the release event, commit and
+# redeploy. No new release -> the job stops after the check (about a minute).
+on:
+  schedule:
+    - cron: "17 15 * * *"   # 15:17 UTC daily, well after the 09:37 capture
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: chrome-capture   # never overlaps the daily capture (both commit data to main)
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+    env:
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Check for new releases
+        id: check
+        run: |
+          python -m pip install -q packaging
+          python leaderboard/release_watch.py check
+      - uses: actions/setup-go@v7
+        if: steps.check.outputs.updates != '0'
+        with:
+          go-version-file: leaderboard/harness/gobench/go.mod
+          cache-dependency-path: leaderboard/harness/*/go.sum
+      - name: Pin the new versions
+        if: steps.check.outputs.updates != '0'
+        run: python leaderboard/release_watch.py bump && git diff --stat
+      - name: Install deps (new pins)
+        if: steps.check.outputs.updates != '0'
+        run: python -m pip install -q -r capture/requirements.txt -r leaderboard/requirements.txt
+      - name: Check the Chrome and Firefox references (same daily-run check as the capture)
+        if: steps.check.outputs.updates != '0'
+        run: |
+          python capture/check_capture.py capture/data/latest.json --expect-channel stable
+          if [ -f capture/data/firefox/latest.json ]; then python -c "import json; d=json.load(open('capture/data/firefox/latest.json')); assert d.get('browser') and d.get('version') and d.get('ja4') and d.get('h2_akamai'), 'bad Firefox reference'"; fi
+      - name: Re-test (both boards), validate, record
+        if: steps.check.outputs.updates != '0'
+        env:
+          HARNESS_PYTHON: python
+          CAPTURE_PYTHON: python
+          BUILD_PYTHON: python
+        run: |
+          mkdir -p "$RUNNER_TEMP/before"
+          cp leaderboard/data/libraries.json leaderboard/data/firefox_libraries.json "$RUNNER_TEMP/before/" 2>/dev/null || true
+          ok=1
+          leaderboard/run.sh || ok=0
+          if [ -f capture/data/firefox/latest.json ]; then leaderboard/run_firefox.sh || ok=0; fi
+          python leaderboard/release_watch.py validate || ok=0
+          if [ $ok = 0 ]; then
+            # keep the previous data and pins; fail visibly
+            git checkout -- leaderboard capture site && git clean -fdq leaderboard/data
+            echo "::error::re-test with the new release failed; kept the previous data and pins"; exit 1
+          fi
+          python leaderboard/release_watch.py record "$RUNNER_TEMP/before"
+          python leaderboard/build.py --annotate-only > /dev/null
+          python leaderboard/build_firefox.py --annotate-only > /dev/null
+          python capture/merge_platforms.py
+          site/sync.sh
+      - name: Commit data and pins to main
+        id: commit
+        if: steps.check.outputs.updates != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add leaderboard capture/data site/data
+          if git diff --cached --quiet; then echo "committed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -q -m "data: re-test after library release ($(python -c "import json; print(', '.join('%s %s' % (u['library'], u['to_version']) for u in json.load(open('leaderboard/raw/release_updates.json'))))")) (run ${{ github.run_id }})"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+          git log --oneline -1
+
+  deploy:
+    name: deploy Pages
+    needs: watch
+    if: ${{ needs.watch.outputs.committed == 'true' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml
