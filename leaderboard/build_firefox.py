@@ -167,6 +167,7 @@ def annotate(data):
             e["fix"] = dict(to_id=best["id"], to_profile=best["profile"], to_verdict=best["verdict"],
                             from_diffs=len(e["counted_mismatches"]), to_diffs=len(best["counted_mismatches"]),
                             old=t % e["profile"], new=t % best["profile"])
+    B.release_updates(data, "Firefox")
     return data
 
 

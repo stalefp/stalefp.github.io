@@ -478,7 +478,37 @@ def annotate(data):
     data["chrome_timeline"] = [dict(major=m, version=v) for m, v, _ in timeline]
     data["upcoming"] = upcoming(data)
     data["catchup"] = catchup(data)
+    release_updates(data, "Chrome")
     return data
+
+
+RELEASE_LOG = os.path.join(HERE, "data", "release_log.json")
+
+
+def release_events():
+    return (json.load(open(RELEASE_LOG)) if os.path.exists(RELEASE_LOG) else {}).get("events", [])
+
+
+def release_updates(data, browser):
+    """Per row: the newest release re-test (leaderboard/release_watch.py) of its library, worded from the row's own data."""
+    last = {}
+    for ev in release_events():
+        last[ev["library"]] = ev
+    for e in data["libraries"]:
+        ev = last.get(e["library"])
+        e["release_update"] = None
+        if not ev or (e.get("version") or "").lstrip("v") != ev["version"].lstrip("v") or e["verdict"] == "not tested":
+            continue
+        when = dt.date.fromisoformat(ev["retested_at"][:10]).strftime("%b %-d, %Y")
+        if e["verdict"] == "exact":
+            state = "now matches current %s" % browser
+        elif e.get("versions_behind"):
+            state = "still %d version%s behind" % (e["versions_behind"], "" if e["versions_behind"] == 1 else "s")
+        else:
+            n = len(e.get("counted_mismatches") or [])
+            state = "still %d counted field%s differ%s" % (n, "" if n == 1 else "s", "s" if n == 1 else "")
+        e["release_update"] = dict(version=ev["version"], released_at=ev["released_at"], retested_at=ev["retested_at"],
+                                   text="Updated to %s on %s: %s." % (ev["version"], when, state))
 
 
 CATCHUP_LOG = os.path.join(HERE, "data", "catchup_log.json")
@@ -515,7 +545,9 @@ def catchup(data):
             elif i + 1 == len(events):
                 pending.append(dict(chrome_version=ev["chrome_version"], changed=ev["date"], days_so_far=(D(ent[-1]["date"]) - D(ev["date"])).days))
         avg = round(sum(x["days"] for x in done) / len(done), 1) if done else None
-        rows.append(dict(library=lib, avg_days=avg, caught_up=done, still_behind=pending, enough_data=bool(done)))
+        rel = [dict(version=r["version"], released_at=r["released_at"], retested_at=r["retested_at"], gap_closed=r["gap_closed"])
+               for r in release_events() if r["library"] == lib]
+        rows.append(dict(library=lib, avg_days=avg, caught_up=done, still_behind=pending, enough_data=bool(done), releases=rel))
     rows.sort(key=lambda x: (x["avg_days"] is None, x["avg_days"] if x["avg_days"] is not None else 0, -max([p["days_so_far"] for p in x["still_behind"]] or [0]), x["library"]))
     return dict(tracking_since=ent[0]["date"] if ent else None, days_logged=len(ent), fingerprint_changes=events,
                 enough_data=any(x["enough_data"] for x in rows), libraries=rows,
