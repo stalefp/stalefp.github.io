@@ -402,6 +402,7 @@
       }))));
     var items = (l.why || []).map(function (w) { return el("li", { text: w }); });
     if (items.length) kids.push(el("ul", { cls: "why-list" }, items));
+    if (l.release_update) kids.push(el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?") + "; we re-tested it the day we saw it.", text: l.release_update.text }));
     if (l.fix) kids.push(el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + (VLABEL[l.fix.to_verdict] || l.fix.to_verdict) + " in our test): " }),
       el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]));
     (l.notes || []).forEach(function (n) { kids.push(el("p", { cls: "why-note", text: n })); });
@@ -547,13 +548,14 @@
       (c.fingerprint_changes.length ? c.fingerprint_changes.length + " Chrome fingerprint change" + (c.fingerprint_changes.length === 1 ? "" : "s") + " seen." : "no Chrome fingerprint change seen yet.");
     if (!c.enough_data) box.appendChild(el("p", { cls: "notice", text: "Not enough data yet. " + meta + " The ranking fills in after Chrome's fingerprint next changes and libraries catch up." }));
     else box.appendChild(el("p", { cls: "muted small", text: meta }));
-    var t = el("table", { cls: "diff-table" }, [el("thead", {}, [el("tr", {}, [el("th", { text: "#" }), el("th", { text: "Library" }), el("th", { text: "Average days to match" }), el("th", { text: "Still behind on" })])])]);
+    var t = el("table", { cls: "diff-table" }, [el("thead", {}, [el("tr", {}, [el("th", { text: "#" }), el("th", { text: "Library" }), el("th", { text: "Average days to match" }), el("th", { text: "Still behind on" }), el("th", { text: "Releases re-tested" })])])]);
     var tb = el("tbody"), n = 0;
     c.libraries.forEach(function (r) {
       var behind = r.still_behind.map(function (p) { return "Chrome " + p.chrome_version + " (" + p.days_so_far + " days so far)"; }).join("; ");
       tb.appendChild(el("tr", {}, [el("td", { text: r.enough_data ? String(++n) : "" }), el("td", { text: r.library }),
         el("td", { text: r.enough_data ? r.avg_days + " (" + r.caught_up.length + " change" + (r.caught_up.length === 1 ? "" : "s") + ")" : "not enough data yet" }),
-        el("td", { text: behind || "nothing" })]));
+        el("td", { text: behind || "nothing" }),
+        el("td", { text: (r.releases || []).length ? r.releases.map(function (x) { return x.version + " (" + (localDate(x.retested_at) || "?") + (x.gap_closed ? ", closed the gap" : "") + ")"; }).join("; ") : "none yet" })]));
     });
     t.appendChild(tb); box.appendChild(t);
     box.appendChild(el("p", { cls: "muted small", text: c.method }));
@@ -749,6 +751,7 @@
         el("p", { cls: "why-head", text: l.behind_text || "" }),
         ids.length ? el("div", { cls: "fp-ids" }, ids.map(function (x) { return el("span", { cls: "fp-id" }, [el("span", { cls: "muted", text: x[0] + " " }), el("code", { text: x[1] }), copyBtn(x[1])]); })) : null,
         (l.why || []).length ? el("ul", { cls: "why-list" }, l.why.map(function (w) { return el("li", { text: w }); })) : null,
+        l.release_update ? el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?"), text: l.release_update.text }) : null,
         l.fix ? el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): " }),
           el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]) : null
       ].concat((l.notes || []).map(function (n) { return el("p", { cls: "why-note", text: n }); })).concat([

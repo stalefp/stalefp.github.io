@@ -997,7 +997,8 @@
     "to_verdict": "exact",
     "old": "tls_client.WithClientProfile(profiles.Chrome_152)",
     "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
-   }
+   },
+   "release_update": null
   },
   {
    "id": "tls-client|chrome_152_psk",
@@ -1593,7 +1594,8 @@
     "Best pick today: in v1.16.0 this profile matched current Chrome's default fingerprint exactly, including resumed connections."
    ],
    "resumed_status": "match",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "tls-client|chrome_150",
@@ -2217,7 +2219,8 @@
     "to_verdict": "exact",
     "old": "tls_client.WithClientProfile(profiles.Chrome_150)",
     "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
-   }
+   },
+   "release_update": null
   },
   {
    "id": "curl_cffi|chrome150",
@@ -2816,7 +2819,8 @@
     "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends."
    ],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "noble-tls|chrome_146",
@@ -3422,7 +3426,8 @@
     "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly."
    ],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "azuretls-client|chrome",
@@ -4020,7 +4025,8 @@
    },
    "notes": [],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "curl_cffi|chrome136",
@@ -4639,7 +4645,8 @@
     "to_verdict": "exact_variant",
     "old": "requests.get(url, impersonate=\"chrome136\")",
     "new": "requests.get(url, impersonate=\"chrome150\")"
-   }
+   },
+   "release_update": null
   },
   {
    "id": "curl_cffi|chrome146",
@@ -5265,7 +5272,8 @@
     "to_verdict": "exact_variant",
     "old": "requests.get(url, impersonate=\"chrome146\")",
     "new": "requests.get(url, impersonate=\"chrome150\")"
-   }
+   },
+   "release_update": null
   },
   {
    "id": "primp|chrome_146",
@@ -5601,7 +5609,8 @@
    },
    "notes": [],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "rnet|chrome137",
@@ -5938,7 +5947,8 @@
     "Chrome145 is the newer rnet profile we tested, but it has the same two gaps."
    ],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "rnet|chrome145",
@@ -6273,7 +6283,8 @@
    },
    "notes": [],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "utls|hellochrome_auto",
@@ -6624,7 +6635,8 @@
     "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
    ],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "tls-client-(python)|chrome_120",
@@ -6975,7 +6987,8 @@
     "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly."
    ],
    "resumed_status": "not_tested",
-   "fix": null
+   "fix": null,
+   "release_update": null
   }
  ],
  "chrome_timeline": [
@@ -7038,56 +7051,64 @@
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    },
    {
     "library": "curl_cffi",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    },
    {
     "library": "noble-tls",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    },
    {
     "library": "primp",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    },
    {
     "library": "rnet",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    },
    {
     "library": "tls-client",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    },
    {
     "library": "tls-client (Python)",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    },
    {
     "library": "uTLS",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
-    "enough_data": false
+    "enough_data": false,
+    "releases": []
    }
   ],
   "method": "Counts only changes of Chrome's default TLS JA4 seen after tracking began; a library catches up on the first logged day one of its tested profiles is an exact match again."

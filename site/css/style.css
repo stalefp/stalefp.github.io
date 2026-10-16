@@ -145,3 +145,4 @@ tr.detail td{background:var(--code);padding:12px}
   pre{overflow-x:auto}
   #toast{max-width:calc(100vw - 32px)}
 }
+.release-note{margin:4px 0 0;font-size:.88em;font-weight:600}
