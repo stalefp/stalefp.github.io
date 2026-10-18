@@ -41,6 +41,15 @@ CASES = [
     dict(library="rnet", maintainer="0x676e67", language=PY, profile="Chrome137", pkg=("py", "rnet"), no_h3="rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack", fresh=("py", "rnet_Chrome137"), note="Rust core (wreq)"),
     dict(library="noble-tls", maintainer="Nitrams", language=PY, profile="chrome_146", pkg=("py", "noble-tls"), fresh=("py", "noble-tls_chrome_146"), h3=("h3", "noble-tls_chrome_146"), note="wraps Go tls-client"),
     dict(library="tls-client (Python)", maintainer="FlorianREGAZ", language=PY, profile="chrome_120", pkg=("py", "tls-client"), no_h3="tls-client (Python) 1.0.1 bundles Go tls-client v1.7.2, which has no HTTP/3 support", fresh=("py", "tls-client(py)_chrome_120"), note="wraps Go tls-client"),
+    # Extra libraries (leaderboard/harness/extra/run_extra.sh): only profiles each pinned release really ships.
+    dict(library="wreq", maintainer="0x676e67", language="Rust", profile="Chrome149", pkg=("rust", "wreq"), fresh=("ext", "wreq_Chrome149"),
+         note="Rust crate (BoringSSL); profile from wreq-util 0.2.0, platform Linux"),
+    dict(library="got-scraping", maintainer="apify", language="Node.js", profile="chrome (header-generator)", pkg=("npm", "got-scraping"),
+         fresh=("ext", "got-scraping_chrome"), note="Node's own TLS (OpenSSL) with got-scraping's Chrome cipher/sigalg/curve lists; headers from header-generator"),
+    dict(library="hrequests", maintainer="daijro", language=PY, profile="chrome 131", pkg=("py", "hrequests"), fresh=("ext", "hrequests_chrome131"),
+         note="wraps a Go tls-client bridge (hrequests-cgo), downloaded from its GitHub releases on first use"),
+    dict(library="CycleTLS", maintainer="Danny-Dasilva", language="Node.js", profile="README Chrome example", pkg=("npm", "cycletls"),
+         fresh=("ext", "cycletls_chrome"), note="no built-in browser profiles; this is the README's Chrome example (ja4r + Chrome HTTP/2 fingerprint + Chrome 138 UA)"),
 ]
 
 def iso(ts):
@@ -135,7 +144,7 @@ LEGACY_RESULTS = None
 def find_capture(kind, name, all_runs):
     """Return (raw_or_None, fp, meta) for the newest capture of this case."""
     global LEGACY_RESULTS
-    sub = {"py": "py", "go": "go/out", "resume": "resume", "h3": "h3"}[kind]
+    sub = {"py": "py", "go": "go/out", "resume": "resume", "h3": "h3", "ext": "ext"}[kind]
     for r in all_runs:
         p = os.path.join(r["dir"], sub, name + ".json")
         if os.path.exists(p):
@@ -163,6 +172,17 @@ def find_capture(kind, name, all_runs):
                 return normalize_legacy_summary(res["fp"]), dict(path="results.json", tested_at=iso(os.path.getmtime(p)),
                                                                  endpoint="https://tls.peet.ws/api/all", versions=lv, run="legacy")
     return None, None
+
+
+def last_error(kind, name, all_runs):
+    """Error text a harness left for this case in the newest run that has it (extra harness: <name>.error.txt)."""
+    for r in all_runs:
+        p = os.path.join(r["dir"], kind, name + ".error.txt")
+        if os.path.exists(p):
+            return open(p).read().strip()[:300]
+        if os.path.exists(os.path.join(r["dir"], kind)):
+            return None
+    return None
 
 
 # ---------------------------------------------------------------- diff
@@ -667,8 +687,9 @@ def build():
                      language=c["language"], profile=c["profile"], note=c.get("note"))
         entry["http3"] = h3_result(c, ref, all_runs)
         if fp is None:
+            err = last_error(*c["fresh"], all_runs)
             entry.update(verdict="not tested", tested_at=None, version=None, fingerprint=None, diff=[], missing=[],
-                         not_tested=["everything: no capture found"])
+                         not_tested=["everything: " + ("the newest harness run failed: " + err if err else "no capture found")])
             libs.append(entry)
             continue
         kind, pkg = c["pkg"]

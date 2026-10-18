@@ -252,6 +252,20 @@ jobs:
             git checkout -- capture/data leaderboard/data site/data && git clean -fdq capture/data
             echo "::error::merged capture failed the check; kept the previous data and stopped before publishing"; exit 1
           fi
+      # Extra libraries (leaderboard/harness/extra): wreq needs Rust >= 1.98 (+ cmake/clang, preinstalled), hrequests via pip,
+      # got-scraping/CycleTLS via npm ci from the lockfile. Optional: if this fails, run_extra.sh skips what's missing.
+      - name: Extra harness toolchains (Rust stable, hrequests)
+        continue-on-error: true
+        run: |
+          rustup toolchain install stable --profile minimal --no-self-update && rustup default stable && rustc --version
+          python -m pip install -q -r leaderboard/harness/extra/requirements.txt
+      - uses: actions/cache@v6
+        continue-on-error: true
+        with:
+          path: |
+            ~/.cargo/registry
+            leaderboard/harness/extra/wreq/target
+          key: wreq-${{ runner.os }}-${{ hashFiles('leaderboard/harness/extra/wreq/Cargo.lock') }}
       - name: Library comparison (build harness binaries from source, rerun, rebuild)
         env:
           HARNESS_PYTHON: python
@@ -263,7 +277,9 @@ jobs:
           python - "$RUNNER_TEMP/libraries.prev.json" leaderboard/data/libraries.json <<'PY'
           import json, shutil, sys
           prev, new = sys.argv[1], sys.argv[2]
-          tested = lambda p: {l["id"] for l in json.load(open(p))["libraries"] if l.get("verdict") != "not tested"}
+          # extra-harness rows (harness/extra, sources under raw/<run>/ext/) may drop out for a day without freezing the board
+          tested = lambda p: {l["id"] for l in json.load(open(p))["libraries"] if l.get("verdict") != "not tested"
+                              and "/ext/" not in ((l.get("sources") or {}).get("fresh") or "")}
           try:
               a, b = tested(prev), tested(new)
           except Exception as e:

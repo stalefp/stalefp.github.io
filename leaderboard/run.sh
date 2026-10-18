@@ -40,6 +40,7 @@ if [[ "${1:-}" != "--no-rerun" ]]; then
   echo "[harness] resumption (goresume_raw)"; "$LB/bin/goresume_raw" "$RUN/resume" | tee "$RUN/resume/_stdout.txt" || echo "goresume failed"
   echo "[harness] behaviour probe (probe.py: resumption, extension order, header order; both boards)"
   (cd "$LB/harness/goprobe" && go build -o "$LB/bin/goprobe" .) && "$CAPPY" "$LB/harness/probe.py" || echo "behaviour probe failed"
+  echo "[harness] extra libraries (wreq, got-scraping, hrequests, CycleTLS)"; "$LB/harness/extra/run_extra.sh" "$RUN/ext" chrome || echo "extra harness failed"
   echo "[harness] HTTP/3 (run_h3.py, local QUIC endpoint)"; "$CAPPY" "$LB/harness/run_h3.py" "$RUN/h3" || echo "HTTP/3 harness failed"
   "$PYBIN" - "$RUN" "$STARTED" "$LB/harness/gobench/go.mod" <<'PY'
 import json, re, sys, importlib.metadata as md, datetime as dt
@@ -51,6 +52,9 @@ for d in ("curl_cffi", "primp", "rnet", "noble-tls", "tls-client"):
 for line in open(gomod):
     m = re.match(r"\s*(github\.com/\S+)\s+(v\S+)", line)
     if m: v["go:" + m.group(1).lower()] = m.group(2)
+import os
+ext = os.path.join(run, "ext", "_versions.json")
+if os.path.exists(ext): v.update(json.load(open(ext)))
 json.dump(dict(started_at=started, finished_at=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                endpoint="https://tls.peet.ws/api/all", h3_endpoint="local capture/lib/server.py QUICServer, UDP 28544", versions=v), open(run + "/meta.json", "w"), indent=1)
 PY

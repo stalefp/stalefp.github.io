@@ -29,6 +29,15 @@ CASES = [
     dict(library="rnet", maintainer="0x676e67", language=PY, profile="Firefox139", raw="py/rnet_Firefox139", pkg="py:rnet"),
     dict(library="noble-tls", maintainer="Nitrams", language=PY, profile="firefox_147", raw="py/noble-tls_firefox_147", pkg="py:noble-tls", note="wraps Go tls-client"),
     dict(library="tls-client (Python)", maintainer="FlorianREGAZ", language=PY, profile="firefox_120", raw="py/tls-client(py)_firefox_120", pkg="py:tls-client", note="wraps Go tls-client"),
+    # Extra libraries (harness/extra/run_extra.sh): only profiles each pinned release really ships.
+    dict(library="wreq", maintainer="0x676e67", language="Rust", profile="Firefox151", raw="ext/wreq_Firefox151", pkg="rust:wreq",
+         note="Rust crate (BoringSSL); profile from wreq-util 0.2.0, platform Linux"),
+    dict(library="got-scraping", maintainer="apify", language="Node.js", profile="firefox (header-generator)", raw="ext/got-scraping_firefox", pkg="npm:got-scraping",
+         note="Node's own TLS (OpenSSL) with got-scraping's Firefox cipher/sigalg/curve lists; headers from header-generator"),
+    dict(library="hrequests", maintainer="daijro", language=PY, profile="firefox 132", raw="ext/hrequests_firefox132", pkg="py:hrequests",
+         note="wraps a Go tls-client bridge (hrequests-cgo), downloaded from its GitHub releases on first use"),
+    dict(library="CycleTLS", maintainer="Danny-Dasilva", language="Node.js", profile="README Firefox example", raw="ext/cycletls_firefox", pkg="npm:cycletls",
+         note="no built-in browser profiles; this is the README's Firefox example (ja3 + Firefox HTTP/2 fingerprint + Firefox 141 UA)"),
 ]
 
 
@@ -95,16 +104,20 @@ def build(run):
     meta = json.load(open(os.path.join(run, "meta.json"))) if run and os.path.exists(os.path.join(run, "meta.json")) else {}
     prev = {l["id"]: l for l in json.load(open(OUT))["libraries"]} if os.path.exists(OUT) else {}
     vers, tl = go_versions(), timeline()
+    if run and os.path.exists(os.path.join(run, "ext", "_versions.json")):
+        vers.update(json.load(open(os.path.join(run, "ext", "_versions.json"))))
     libs = []
     for c in CASES:
         rid = ("%s|%s" % (c["library"], c["profile"])).lower().replace(" ", "-")
         p = os.path.join(run, c["raw"] + ".json") if run else None
         if not p or not os.path.exists(p):
-            if rid in prev:
+            err = os.path.join(run, c["raw"] + ".error.txt") if run else None
+            if rid in prev and prev[rid].get("verdict") != "not tested":
                 old = prev[rid]; old.setdefault("not_tested", []); libs.append(old); continue
             libs.append(dict(id=rid, library=c["library"], maintainer=c["maintainer"], language=c["language"], profile=c["profile"], note=c.get("note"),
                              verdict="not tested", diff=[], missing=[], why=[], counted_mismatches=[], tested_at=None, fingerprint=None,
-                             behind_text="Not tested yet.", not_tested=["everything: no capture found"]))
+                             behind_text="Not tested yet.", not_tested=["everything: " + ("the newest harness run failed: " + open(err).read().strip()[:300]
+                                                                           if err and os.path.exists(err) else "no capture found")]))
             continue
         fp = normalize_echo(json.load(open(p)))
         dfs = B.diff(rf, fp)
