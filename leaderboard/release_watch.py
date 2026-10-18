@@ -17,6 +17,9 @@ from packaging.version import Version, InvalidVersion
 HERE = os.path.dirname(os.path.abspath(__file__))
 REQ = os.path.join(HERE, "requirements.txt")
 GOMODS = sorted(glob.glob(os.path.join(HERE, "harness", "*", "go.mod")))
+EXTRA = os.path.join(HERE, "harness", "extra")
+REQS = [REQ, os.path.join(EXTRA, "requirements.txt")]          # PyPI pins (main + extra harness)
+NODE_DIR, CARGO = os.path.join(EXTRA, "node"), os.path.join(EXTRA, "wreq", "Cargo.toml")
 UPD = os.path.join(HERE, "raw", "release_updates.json")
 LOG = os.path.join(HERE, "data", "release_log.json")
 BOARDS = {"chrome": os.path.join(HERE, "data", "libraries.json"), "firefox": os.path.join(HERE, "data", "firefox_libraries.json"),
@@ -27,6 +30,9 @@ SOURCES = {
     "noble-tls": ("pypi", "noble-tls"), "tls-client (Python)": ("pypi", "tls-client"),
     "tls-client": ("go", "github.com/bogdanfinn/tls-client"), "azuretls-client": ("go", "github.com/Noooste/azuretls-client"),
     "uTLS": ("go", "github.com/refraction-networking/utls"),
+    # extra harness (leaderboard/harness/extra)
+    "hrequests": ("pypi", "hrequests"), "got-scraping": ("npm", "got-scraping"), "CycleTLS": ("npm", "cycletls"),
+    "wreq": ("crates", "wreq"),
 }
 TODAY = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
 
@@ -45,10 +51,18 @@ def V(s):
 
 def pinned():
     out = {}
-    for line in open(REQ):
-        m = re.match(r"\s*([A-Za-z0-9_.-]+)==(\S+)", line)
-        if m:
-            out[("pypi", m.group(1).lower().replace("_", "-"))] = m.group(2)
+    for req in REQS:
+        for line in (open(req) if os.path.exists(req) else []):
+            m = re.match(r"\s*([A-Za-z0-9_.-]+)==(\S+)", line)
+            if m:
+                out[("pypi", m.group(1).lower().replace("_", "-"))] = m.group(2)
+    pj = os.path.join(NODE_DIR, "package.json")
+    if os.path.exists(pj):
+        for k, v in json.load(open(pj)).get("dependencies", {}).items():
+            out[("npm", k.lower())] = v.lstrip("=^~")
+    if os.path.exists(CARGO):
+        for m in re.finditer(r'(?m)^([A-Za-z0-9_-]+)\s*=\s*"=?([^"]+)"', open(CARGO).read()):
+            out[("crates", m.group(1).lower())] = m.group(2)
     for line in open(GOMODS[0]):
         m = re.match(r"\s*(github\.com/\S+)\s+(v\S+)", line)
         if m:
@@ -63,6 +77,15 @@ def latest(eco, pkg, cur):
         rel = {v: f for v, f in d["releases"].items() if f and not all(x.get("yanked") for x in f) and V(v) and (pre_ok or not V(v).is_prerelease)}
         best = max(rel, key=V)
         return best, min(x["upload_time_iso_8601"] for x in rel[best]), "https://pypi.org/project/%s/%s/" % (pkg, best)
+    if eco == "npm":
+        d = get("https://registry.npmjs.org/%s" % pkg)
+        best = d["dist-tags"]["latest"]
+        return best, d["time"][best], "https://www.npmjs.com/package/%s/v/%s" % (pkg, best)
+    if eco == "crates":
+        d = get("https://crates.io/api/v1/crates/%s" % pkg)
+        vs = [v for v in d["versions"] if not v.get("yanked") and V(v["num"]) and (pre_ok or not V(v["num"]).is_prerelease)]
+        best = max(vs, key=lambda v: V(v["num"]))
+        return best["num"], best["created_at"], "https://crates.io/crates/%s/%s" % (pkg, best["num"])
     esc = re.sub(r"[A-Z]", lambda m: "!" + m.group(0).lower(), pkg)
     d = get("https://proxy.golang.org/%s/@latest" % esc)
     if V(d["Version"]) and V(d["Version"]).is_prerelease and not pre_ok:
@@ -106,10 +129,22 @@ def bump():
     ups = json.load(open(UPD))
     for u in ups:
         if u["ecosystem"] == "pypi":
-            s = open(REQ).read()
-            s2 = re.sub(r"(?im)^(%s)==\S+" % re.sub(r"[-_]", "[-_]", u["package"]), r"\g<1>==" + u["to_version"], s)
+            hit = False
+            for req in REQS:
+                s = open(req).read()
+                s2 = re.sub(r"(?im)^(%s)==\S+" % re.sub(r"[-_]", "[-_]", u["package"]), r"\g<1>==" + u["to_version"], s)
+                if s2 != s:
+                    open(req, "w").write(s2); hit = True
+            assert hit, "pin for %s not found" % u["package"]
+        elif u["ecosystem"] == "npm":   # exact pin in package.json + lockfile (integrity hashes) updated together
+            subprocess.run(["npm", "install", "--save-exact", "--package-lock-only", "--no-audit", "--no-fund", "%s@%s" % (u["package"], u["to_version"])],
+                           cwd=NODE_DIR, check=True)
+        elif u["ecosystem"] == "crates":
+            s = open(CARGO).read()
+            s2 = re.sub(r'(?m)^(%s\s*=\s*)"=?[^"]+"' % re.escape(u["package"]), r'\g<1>"=%s"' % u["to_version"], s)
             assert s2 != s, "pin for %s not found" % u["package"]
-            open(REQ, "w").write(s2)
+            open(CARGO, "w").write(s2)
+            subprocess.run(["cargo", "update", "-p", u["package"], "--precise", u["to_version"]], cwd=os.path.dirname(CARGO), check=True)
         else:
             for gm in GOMODS:
                 if u["package"].lower() in open(gm).read().lower():

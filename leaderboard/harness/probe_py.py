@@ -52,7 +52,16 @@ def noble_tls(profile, browser, hdrs):
     return lambda url: loop.run_until_complete(s.get(url, headers=dict(hdrs), insecure_skip_verify=True, timeout_seconds=20))
 
 
-ADAPTERS = {"curl_cffi": curl_cffi, "primp": primp, "rnet": rnet, "tls-client (Python)": tls_client_py, "noble-tls": noble_tls}
+def hrequests(profile, browser, hdrs):
+    """Board profile "chrome 131" = hrequests' built-in browser + version (harness/extra/hrequests_bench.py)."""
+    import hrequests as hr
+    b, v = profile.split()
+    s = hr.Session(browser=b, version=int(v), os="lin", verify=False, header_order=[k for k, _ in hdrs])
+    s.headers.clear()
+    return lambda url: s.get(url, headers=dict(hdrs), verify=False, timeout=20)
+
+
+ADAPTERS = {"hrequests": hrequests, "curl_cffi": curl_cffi, "primp": primp, "rnet": rnet, "tls-client (Python)": tls_client_py, "noble-tls": noble_tls}
 
 if __name__ == "__main__":
     lib, profile, browser, url, n, hdrs = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], int(sys.argv[5]), json.loads(sys.argv[6])

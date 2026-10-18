@@ -42,12 +42,20 @@ jobs:
         with:
           go-version-file: leaderboard/harness/gobench/go.mod
           cache-dependency-path: leaderboard/harness/*/go.sum
+      # extra harness (wreq needs Rust >= 1.98; got-scraping/CycleTLS use the runner's Node + npm; hrequests via pip):
+      # needed before bump too (npm/cargo update the lockfiles)
+      - name: Extra harness toolchains (Rust stable, hrequests)
+        if: steps.check.outputs.updates != '0'
+        continue-on-error: true
+        run: |
+          rustup toolchain install stable --profile minimal --no-self-update && rustup default stable && rustc --version
+          python -m pip install -q -r leaderboard/harness/extra/requirements.txt
       - name: Pin the new versions
         if: steps.check.outputs.updates != '0'
         run: python leaderboard/release_watch.py bump && git diff --stat
       - name: Install deps (new pins)
         if: steps.check.outputs.updates != '0'
-        run: python -m pip install -q -r capture/requirements.txt -r leaderboard/requirements.txt
+        run: python -m pip install -q -r capture/requirements.txt -r leaderboard/requirements.txt -r leaderboard/harness/extra/requirements.txt
       - name: Check the Chrome and Firefox references (same daily-run check as the capture)
         if: steps.check.outputs.updates != '0'
         run: |

@@ -77,6 +77,18 @@ def header_set(board):
     return [[k, vals[k]] for k in order if not k.startswith(":") and k in vals]
 
 
+# Adapters in other languages (harness/extra): library -> command prefix, or None when its toolchain/build is missing
+# (the row then says no_adapter). Every adapter takes: <library> <profile> <browser> <url> <n> <headers-json> and prints
+# {ok, done, error} as its last line. To plug in a new library, add a line here (or to probe_py.py / goprobe).
+EXTRA = os.path.join(HERE, "extra")
+_have = lambda *p: os.path.exists(os.path.join(EXTRA, *p))
+NODE_CMD = lambda: ["node", os.path.join(EXTRA, "node", "probe.mjs")] if _have("node", "node_modules") else None
+EXTRA_CMDS = {
+    "got-scraping": NODE_CMD, "CycleTLS": NODE_CMD,
+    "wreq": lambda: [os.path.join(EXTRA, "wreq", "target", "release", "wreq_bench"), "--probe"] if _have("wreq", "target", "release", "wreq_bench") else None,
+}
+
+
 def run_case(rec, port, board, row, hdrs, n):
     lib, prof = row["library"], row["profile"]
     url = "https://localhost:%d/probe?case=%s" % (port, row["id"].replace(" ", "_"))
@@ -84,6 +96,8 @@ def run_case(rec, port, board, row, hdrs, n):
         cmd = [PY, os.path.join(HERE, "probe_py.py")]
     elif lib in GO_LIBS:
         cmd = [GO_BIN]
+    elif lib in EXTRA_CMDS and EXTRA_CMDS[lib]():
+        cmd = EXTRA_CMDS[lib]()
     else:
         return dict(status="no_adapter")
     m = rec.mark()
