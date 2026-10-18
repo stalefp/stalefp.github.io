@@ -167,6 +167,7 @@
     ["pq_platform", "pq_platform2", "pq_platform3"].forEach(function (k) { bind(k, pl); });
     bind("ja4_quic", ref.h3 && ref.h3.ja4);
     bind("h3_settings", ref.h3 ? h3SettingsText(ref.h3.settings, ref.h3.greaseSettings) : null);
+    bind("h3_header_order", ref.h3 && ref.h3.headerOrder.length ? ref.h3.headerOrder.join(", ") : null);
     bind("h3_endpoint", ((lb.harness || {}).http3_endpoints || []).join(", "));
     var lin = (ref.currentStable || {}).linux || {};
     var stale = $("#stale-flag");
@@ -672,6 +673,8 @@
       row("HTTP/2 header order", (h2.header_order || []).join(", ")),
       row("User-Agent", ff.user_agent),
       row("HTTP/3 (QUIC) JA4", (ff.http3 || {}).ja4, true),
+      row("HTTP/3 SETTINGS", (ff.http3 || {}).request_over_h3 ? h3SettingsText((ff.http3 || {}).h3_settings, (ff.http3 || {}).h3_grease_settings) : null, true),
+      row("HTTP/3 header order", ((ff.http3 || {}).header_order || []).join(", ") || null),
       row("QUIC transport parameters", ((ff.http3 || {}).transport_params || []).filter(function (t) { return t.name !== "grease"; }).map(function (t) { return t.name + (t.value != null ? "=" + t.value : ""); }).join(", ") || null)
     ]));
     if (ff.http3 && ff.http3.ja4 && !ff.http3.request_over_h3)
