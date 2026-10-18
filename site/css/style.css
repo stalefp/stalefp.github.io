@@ -151,3 +151,4 @@ tr.detail td{background:var(--code);padding:12px}
 @media (max-width:760px){.sum-grid{grid-template-columns:1fr}}
 .recent-note{margin:3px 0;font-size:.8rem}
 .why-list.behaviour{color:inherit}
+#brand-grid p, #brand-grid code { overflow-wrap: anywhere; }
