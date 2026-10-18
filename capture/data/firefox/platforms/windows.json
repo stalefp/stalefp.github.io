@@ -5,7 +5,7 @@
  "version": "158.0",
  "platform": "windows",
  "os": "Windows 2025Server (AMD64, build 10.0.26100)",
- "captured_at": "2026-10-18T09:07:45-05:00",
+ "captured_at": "2026-10-18T09:39:47-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -147,122 +147,20 @@
   ]
  },
  "http3": {
-  "ja4": "q13d0315h3_55b375c5d22e_dc5437974b47",
-  "ja4_r": "q13d0315h3_1301,1302,1303_0005,000a,000d,0017,001b,001c,0022,002b,002d,0033,0039,fe0d,ff01_0403,0503,0603,0203,0804,0805,0806,0401,0501,0601,0201",
+  "ja4": null,
+  "ja4_r": null,
   "ja4_resumed": null,
-  "transport_params": [
-   {
-    "id": "0x1",
-    "name": "max_idle_timeout",
-    "len": 4,
-    "value": 30000
-   },
-   {
-    "id": "0x4",
-    "name": "initial_max_data",
-    "len": 4,
-    "value": 25165824
-   },
-   {
-    "id": "0x5",
-    "name": "initial_max_stream_data_bidi_local",
-    "len": 4,
-    "value": 12582912
-   },
-   {
-    "id": "0x6",
-    "name": "initial_max_stream_data_bidi_remote",
-    "len": 4,
-    "value": 1048576
-   },
-   {
-    "id": "0x7",
-    "name": "initial_max_stream_data_uni",
-    "len": 4,
-    "value": 1048576
-   },
-   {
-    "id": "0x8",
-    "name": "initial_max_streams_bidi",
-    "len": 2,
-    "value": 100
-   },
-   {
-    "id": "0x9",
-    "name": "initial_max_streams_uni",
-    "len": 2,
-    "value": 100
-   },
-   {
-    "id": "0xb",
-    "name": "max_ack_delay",
-    "len": 1,
-    "value": 20
-   },
-   {
-    "id": "0xe",
-    "name": "active_connection_id_limit",
-    "len": 1,
-    "value": 8
-   },
-   {
-    "id": "0xf",
-    "name": "initial_source_connection_id",
-    "len": 3,
-    "hex": "2f5058"
-   },
-   {
-    "id": "0x11",
-    "name": "version_information",
-    "len": 16,
-    "hex": "000000014acafada6b3343cf00000001"
-   },
-   {
-    "id": "0x1d",
-    "name": "unknown",
-    "len": 0,
-    "value": null
-   },
-   {
-    "id": "0xff02de1a",
-    "name": "grease",
-    "len": 2,
-    "value": 1000
-   },
-   {
-    "id": "0x20",
-    "name": "max_datagram_frame_size",
-    "len": 4,
-    "value": 65535
-   }
-  ],
-  "h3_settings": {
-   "1": 65536,
-   "7": 20,
-   "727725890": 0,
-   "16765559": 1,
-   "51": 1,
-   "8": 1
-  },
-  "header_order": [
-   ":method",
-   ":scheme",
-   ":authority",
-   ":path",
-   "user-agent",
-   "accept",
-   "accept-language",
-   "accept-encoding",
-   "alt-used",
-   "upgrade-insecure-requests",
-   "sec-fetch-dest",
-   "sec-fetch-mode",
-   "sec-fetch-site",
-   "sec-fetch-user",
-   "priority"
-  ],
-  "request_over_h3": true,
-  "errors": []
+  "transport_params": null,
+  "h3_settings": null,
+  "header_order": null,
+  "request_over_h3": false,
+  "errors": [
+   "navigate fresh: browsingContext.navigate: Expected \"context\" to be a string, got [object Null] null",
+   "no request seen for /fresh?cfg=quic-firefox",
+   "navigate resumed: browsingContext.navigate: Expected \"context\" to be a string, got [object Null] null",
+   "no request seen for /resumed?cfg=quic-firefox",
+   "no QUIC ClientHello captured (Firefox did not use HTTP/3)"
+  ]
  },
  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
  "protocol": "h2",

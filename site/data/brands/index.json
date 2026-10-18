@@ -7,13 +7,14 @@
    "version": "155.0.4283.62",
    "brand_version": "155.0.4283.62",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T09:06:07-05:00",
+   "captured_at": "2026-10-18T09:37:29-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "155.0.4283.62-1",
     "repo": "https://packages.microsoft.com/repos/edge",
     "sha256": "3e53834d9d6e505bc57e6bff44d92cfe8cf0bed9064e88efc5b0d8f1c75f70fa",
-    "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF"
+    "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
+    "kind": "signed apt repo .deb"
    },
    "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
    "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
@@ -65,13 +66,14 @@
      "version": "155.0.4283.62",
      "brand_version": "155.0.4283.62",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T09:06:07-05:00",
+     "captured_at": "2026-10-18T09:37:29-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
       "version": "155.0.4283.62-1",
       "repo": "https://packages.microsoft.com/repos/edge",
       "sha256": "3e53834d9d6e505bc57e6bff44d92cfe8cf0bed9064e88efc5b0d8f1c75f70fa",
-      "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF"
+      "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
+      "kind": "signed apt repo .deb"
      },
      "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
      "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
@@ -118,8 +120,60 @@
      "label": "Linux"
     },
     "windows": {
-     "status": "not captured yet",
+     "status": "captured",
      "browser": "Microsoft Edge",
+     "version": "154.0.4258.62",
+     "brand_version": "154.0.4258.62",
+     "chromium_major": 154,
+     "captured_at": "2026-10-18T09:39:50-05:00",
+     "os": "Windows 2025Server (AMD64, build 10.0.26100)",
+     "package": {
+      "version": "154.0.4258.62",
+      "repo": "preinstalled on the runner image",
+      "sha256": "",
+      "signing_key": "CN=Microsoft Corporation",
+      "kind": "windows installer (SHA256 + Authenticode checked)"
+     },
+     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "header_order": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+     "sec_ch_ua": "\"Chromium\";v=\"154\", \"Microsoft Edge\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "vs_chrome": {
+      "chrome_version": "155.0.8059.85",
+      "ja4": false,
+      "ja4_resumed": false,
+      "h2_akamai": true,
+      "header_order": true,
+      "quic_ja4": false,
+      "h3_settings": true
+     },
      "id": "edge",
      "platform": "windows",
      "label": "Windows"
@@ -132,13 +186,14 @@
    "version": "155.1.97.59",
    "brand_version": "1.97.59",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T09:06:36-05:00",
+   "captured_at": "2026-10-18T09:37:56-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "1.97.59",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
     "sha256": "666f817b640a3284fbb5c9b34917b78854e2acd92fa7febad704dc2b29349be5",
-    "signing_key": "DBF1A116C220B8C7164F98230686B78420038257"
+    "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
+    "kind": "signed apt repo .deb"
    },
    "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
    "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
@@ -191,13 +246,14 @@
      "version": "155.1.97.59",
      "brand_version": "1.97.59",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T09:06:36-05:00",
+     "captured_at": "2026-10-18T09:37:56-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
       "version": "1.97.59",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
       "sha256": "666f817b640a3284fbb5c9b34917b78854e2acd92fa7febad704dc2b29349be5",
-      "signing_key": "DBF1A116C220B8C7164F98230686B78420038257"
+      "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
+      "kind": "signed apt repo .deb"
      },
      "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
      "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",

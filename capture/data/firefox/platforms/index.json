@@ -3,7 +3,7 @@
   "linux": {
    "status": "captured",
    "version": "158.0",
-   "captured_at": "2026-10-18T09:05:51-05:00",
+   "captured_at": "2026-10-18T09:37:11-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
    "ja4_resumed": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
@@ -15,19 +15,19 @@
   "windows": {
    "status": "captured",
    "version": "158.0",
-   "captured_at": "2026-10-18T09:07:45-05:00",
+   "captured_at": "2026-10-18T09:39:47-05:00",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
    "ja4_resumed": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
    "h2_akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
-   "quic_ja4": "q13d0315h3_55b375c5d22e_dc5437974b47",
+   "quic_ja4": null,
    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
    "label": "Windows"
   },
   "macos": {
    "status": "captured",
    "version": "158.0",
-   "captured_at": "2026-10-18T09:07:26-05:00",
+   "captured_at": "2026-10-18T09:38:49-05:00",
    "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
    "ja4_resumed": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
