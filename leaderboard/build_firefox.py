@@ -136,8 +136,8 @@ def build(run):
                 verdict_rules="Same counted fields and thresholds as the Chrome leaderboard, against Firefox's default fingerprint. "
                               "Versions behind = current Firefox release major minus the major in the profile name.",
                 caveats=["Libraries are tested against the public TLS echo endpoint (tls.peet.ws); real Firefox is captured against our local capture server. Both record the raw ClientHello and HTTP/2 frames.",
-                         "Header order is informational: the Go cases send Firefox's captured header names in Firefox's order; Python cases use each library's defaults.",
-                         "Resumption and HTTP/3 are not tested for Firefox profiles yet."],
+                         "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",
+                         "HTTP/3 is not tested for Firefox profiles yet."],
                 libraries=libs)
     annotate(data)
     json.dump(data, open(OUT, "w"), indent=1)

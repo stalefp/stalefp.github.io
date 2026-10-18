@@ -781,8 +781,7 @@ def build():
             "No population figure exists in the capture for Chrome without ca34 (no Finch study in the seed toggles it), so none is shown.",
             ("HTTP/3: %d library profiles were tested over QUIC against the same local aioquic endpoint that captured Chrome's QUIC fingerprint; "
              "libraries without an HTTP/3 client are marked 'no HTTP/3 support'." % len(h3_tested)),
-            "Resumption was only tested for bogdanfinn tls-client (Chrome_152 and Chrome_152_PSK).",
-            "Header order is informational: the harness sets Chrome headers for the Go libraries, while Python cases use each library's defaults.",
+            "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",
             platform_caveat(),
         ],
         harness=dict(runs_used=sorted({l["sources"]["fresh"].split("/")[2] if l.get("sources", {}).get("fresh", "").startswith("leaderboard/raw/") else "legacy" for l in libs if l.get("sources")}),
