@@ -321,7 +321,8 @@
     match_variant: ["vary", "✓ less common variant", "Resumed JA4 matches one of Chrome's less common variants, not the default."],
     mismatch: ["no", "✗ differs", "The library resumes sessions, but its resumed JA4 differs from Chrome's."],
     never: ["no", "✗ never resumes", "Opened new connections on the same client and never sent pre_shared_key; Chrome resumes."],
-    not_tested: ["na", "not tested", "Our harness only tests session resumption for some libraries."]
+    unsupported: ["no", "✗ never resumed", "No profile of this library resumed the TLS session in our reconnection test; Chrome resumes."],
+    not_tested: ["na", "not tested", "This row has no reconnection test yet."]
   };
   function resumedCell(l) {
     var r = RESUMED[l.resumed_status] || RESUMED.not_tested;
@@ -405,6 +406,7 @@
       }))));
     var items = (l.why || []).map(function (w) { return el("li", { text: w }); });
     if (items.length) kids.push(el("ul", { cls: "why-list" }, items));
+    if ((l.behaviour || []).length) kids.push(el("ul", { cls: "why-list behaviour" }, l.behaviour.map(function (b) { return el("li", { text: b }); })));
     if (l.release_update) kids.push(el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?") + "; we re-tested it the day we saw it.", text: l.release_update.text }));
     if (l.fix) kids.push(el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + (VLABEL[l.fix.to_verdict] || l.fix.to_verdict) + " in our test): " }),
       el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]));
@@ -759,6 +761,7 @@
         el("p", { cls: "why-head", text: l.behind_text || "" }),
         ids.length ? el("div", { cls: "fp-ids" }, ids.map(function (x) { return el("span", { cls: "fp-id" }, [el("span", { cls: "muted", text: x[0] + " " }), el("code", { text: x[1] }), copyBtn(x[1])]); })) : null,
         (l.why || []).length ? el("ul", { cls: "why-list" }, l.why.map(function (w) { return el("li", { text: w }); })) : null,
+        (l.behaviour || []).length ? el("ul", { cls: "why-list behaviour" }, l.behaviour.map(function (b) { return el("li", { text: b }); })) : null,
         l.release_update ? el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?"), text: l.release_update.text }) : null,
         l.fix ? el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): " }),
           el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]) : null
