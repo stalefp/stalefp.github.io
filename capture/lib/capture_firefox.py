@@ -26,7 +26,9 @@ def quic_prefs(port):
     """Force HTTP/3 to the local QUIC endpoint (Firefox's own testing prefs for Alt-Svc mapping)."""
     return {"network.http.http3.enable": True,
             "network.http.http3.alt-svc-mapping-for-testing": "%s;h3=:%d" % (HOST, port),
-            "network.http.http3.force-use-alt-svc-mapping-for-testing": True}
+            "network.http.http3.force-use-alt-svc-mapping-for-testing": True,
+            # Firefox turns HTTP/3 off when it sees non-built-in (enterprise/policy) roots; our capture CA is one.
+            "network.http.http3.disable_when_third_party_roots_found": False}
 
 
 def ff_version(path):
