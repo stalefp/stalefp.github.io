@@ -70,4 +70,5 @@ $v = (Get-Item -LiteralPath $exe).VersionInfo
 "BRAND_PKG_VERSION=$($v.ProductVersion)"
 "BRAND_REPO=$src"
 "BRAND_DEB_SHA256=$sha"
-"BRAND_KEY=$(($key -split ',')[0])"
+$cn = if ($key -match 'CN="([^"]+)"') { $matches[1] } elseif ($key -match 'CN=([^,]+)') { $matches[1] } else { $key }   # 'CN="Brave Software, Inc.", ...'
+"BRAND_KEY=$cn"
