@@ -715,10 +715,11 @@
   }
 
   /* Edge + Brave on Linux (data/brands/index.json, capture/merge_brands.py) */
-  function renderBrands(idx) {
+  function renderBrands(idx, only) {
     var box = $("#brand-grid"); if (!box || !idx || !idx.brands) return; box.innerHTML = "";
-    ["edge", "brave"].forEach(function (bid) {
+    (only || ["edge", "brave"]).forEach(function (bid) {
       var b = idx.brands[bid] || {}, vs = b.vs_chrome || {};
+      if (b.captured_at) lastUpdated(b.captured_at);
       var same = function (k) { return vs[k] == null ? "" : vs[k] ? " (same as Chrome)" : " (differs from Chrome)"; };
       var row = function (label, val, k) { return el("div", {}, [el("dt", { text: label + (k ? same(k) : "") }), el("dd", {}, [el("code", { text: val || "not captured" })])]); };
       var pkg = b.package || {};
@@ -931,7 +932,7 @@
     $$(".browser-nav a[data-page]").forEach(function (a) { if (a.getAttribute("data-page") === PAGE) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
   }
 
-  /* Main page: Chrome only (plus Edge/Brave and Beta/Dev/Canary, which are Chromium). */
+  /* Main page: Chrome only (stable per OS plus Beta/Dev/Canary). Edge and Brave live on /edge/ and /brave/. */
   function initChrome() {
     initCopy(); initSignup();
     Promise.all([getJSON("data/latest.json"), getJSON("data/libraries.json"), getJSON("data/history/index.json").catch(function () { return { captures: [] }; }),
@@ -944,7 +945,6 @@
         sumBoard("#sum-chrome", "Chrome", res[1], REF.version);
         getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); sumMovers(h, res[1]); }, function () { /* no history yet */ });
         renderBadges(res[1]);
-        getJSON("data/brands/index.json").then(renderBrands, function () { /* no Edge/Brave capture yet */ });
         renderFooter(res[1]);
         getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });
         return renderChanges(REF, res[2]);
@@ -974,8 +974,13 @@
     ]).catch(loadError);
   }
 
-  // One entry per page; a new page (e.g. Edge, Brave) adds its init here and sets <body data-page="...">.
-  var PAGES = { chrome: initChrome, firefox: initFirefox, safari: initSafari };
+  /* /edge/ and /brave/: one Chromium-based browser each (data/brands/index.json, capture/merge_brands.py). */
+  function initBrand(bid) {
+    return function () { initCopy(); getJSON("data/brands/index.json").then(function (idx) { renderBrands(idx, [bid]); }, function () { /* no capture yet */ }); };
+  }
+
+  // One entry per page; a new page adds its init here and sets <body data-page="...">.
+  var PAGES = { chrome: initChrome, firefox: initFirefox, safari: initSafari, edge: initBrand("edge"), brave: initBrand("brave") };
   function init() { markNav(); (PAGES[PAGE] || initChrome)(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();

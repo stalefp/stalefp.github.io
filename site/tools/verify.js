@@ -47,18 +47,18 @@ const VIEWS = [
     await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: v.dark ? "dark" : "light" }] }, sessionId);
     await send("Page.navigate", { url: URL_ }, sessionId);
     await sleep(2500);
-    // Main page (data-page=chrome) checks the Chrome table; /firefox/ and /safari/ check their own board.
+    // Main page (data-page=chrome) checks the Chrome table; /firefox/ and /safari/ check their own board; /edge/ and /brave/ need a captured card.
     const { result } = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => {
       const q = (s) => document.querySelector(s), t = (s) => (q(s) ? q(s).textContent : null);
       const page = document.body.dataset.page || "chrome";
-      const board = { chrome: "#lb tbody tr.row", firefox: "#ff-board tbody tr.row", safari: "#sf-board tbody tr.row" }[page] || "tbody tr.row";
+      const board = { chrome: "#lb tbody tr.row", firefox: "#ff-board tbody tr.row", safari: "#sf-board tbody tr.row", edge: "#brand-grid .plat dl", brave: "#brand-grid .plat dl" }[page] || "tbody tr.row";
       return {
       page,
       navCurrent: t('.browser-nav a[aria-current=page]'),
       navLinks: [...document.querySelectorAll('.browser-nav a')].map(a => a.getAttribute('href')),
       summary: q('#summary') ? q('#summary').innerText.slice(0, 400) : null,
       rows: document.querySelectorAll(board).length,
-      verdicts: [...document.querySelectorAll(board)].map(r => r.querySelector('.lib').textContent + ' ' + r.querySelector('code').textContent + ': ' + r.querySelector('.badge').textContent),
+      verdicts: [...document.querySelectorAll(board)].filter(r => r.querySelector('.lib')).map(r => r.querySelector('.lib').textContent + ' ' + r.querySelector('code').textContent + ': ' + r.querySelector('.badge').textContent),
       version: t('[data-bind=chrome_version]'),
       ja4: t('[data-bind=ja4]'),
       captured: t('[data-bind=captured_at]'),

@@ -13,7 +13,8 @@
 // Firefox and Safari moved to their own pages: send old #firefox / #safari links (and badges) there, keeping the anchor.
 (function () {
   var MOVED = { "#firefox": "firefox/", "#ff-h": "firefox/", "#firefox-board": "firefox/", "#ffb-h": "firefox/", "#ff-history": "firefox/", "#ff-platforms": "firefox/",
-    "#safari": "safari/", "#sf-h": "safari/", "#safari-board": "safari/", "#sfb-h": "safari/" };
+    "#safari": "safari/", "#sf-h": "safari/", "#safari-board": "safari/", "#sfb-h": "safari/",
+    "#brands": "edge/", "#brands-h": "edge/", "#brand-grid": "edge/" };
   function go() { var t = MOVED[location.hash]; if (t) location.replace(t + location.hash); }
   go(); window.addEventListener("hashchange", go);
 })();
@@ -35,9 +36,11 @@
       <a href="/" data-page="chrome">Chrome</a>
       <a href="/firefox/" data-page="firefox">Firefox</a>
       <a href="/safari/" data-page="safari">Safari</a>
+      <a href="/edge/" data-page="edge">Edge</a>
+      <a href="/brave/" data-page="brave">Brave</a>
     </nav>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#brands">Edge &amp; Brave</a><a href="#leaderboard">Leaderboard</a><a href="#upcoming">Coming soon</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#leaderboard">Leaderboard</a><a href="#upcoming">Coming soon</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
     </nav>
   </div>
 </header>
@@ -98,13 +101,6 @@
     </details>
     <!-- COPY: Nya (pass 3: caveat under the Chrome card, replaces the ca34 caveat; {pq_pct} bound from data/latest.json) -->
     <p class="caveat">Chrome doesn't send just one fingerprint. Most people send the main one, which includes the trust-anchors extension (<code>ca34</code>). That extension can be switched off, which gives a second, less common fingerprint. And about <span data-bind="pq_pct2">…</span> of Chrome users on <span data-bind="pq_platform2">…</span> are in a Google post-quantum experiment, which adds one more extension (<code>0x12e0</code>) and gives a third. We show all three and say which one each library matches.</p>
-  </section>
-
-  <!-- 1c. Other Chromium-based browsers, data/brands/index.json from capture/merge_brands.py -->
-  <section id="brands" class="card" aria-labelledby="brands-h">
-    <h2 id="brands-h">Microsoft Edge and Brave (Linux)</h2>
-    <p class="muted small">Official stable builds from each vendor's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256), fresh profile, no flags, headed, same local capture server as Chrome. Captured daily, kept separate from the Chrome data; "same as Chrome" compares with the Chrome reference capture.</p>
-    <div id="brand-grid" class="plat-grid"><p class="muted">No Edge or Brave capture yet. They're added to the daily capture and will appear after the next run.</p></div>
   </section>
 
   <!-- 1b. Chrome per platform (Linux / Windows / macOS), data/platforms.json from capture/merge_platforms.py -->
