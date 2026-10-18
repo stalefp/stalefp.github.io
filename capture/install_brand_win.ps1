@@ -19,10 +19,13 @@ if ($Brand -eq "edge") {
   $exe = "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe"
   if (-not (Test-Path $exe)) { $exe = "$env:ProgramFiles\Microsoft\Edge\Application\msedge.exe" }
   $have = Ver $exe
-  $rel = (Invoke-RestMethod "https://edgeupdates.microsoft.com/api/products" | Where-Object Product -eq "Stable").Releases |
+  # Invoke-RestMethod hands back the JSON array as one pipeline object; unroll it before filtering
+  $prods = @(Invoke-RestMethod "https://edgeupdates.microsoft.com/api/products") | ForEach-Object { $_ }
+  $rel = ($prods | Where-Object { $_.Product -eq "Stable" }).Releases |
     Where-Object { $_.Platform -eq "Windows" -and $_.Architecture -eq "x64" } | Sort-Object { [version]$_.ProductVersion } -Descending | Select-Object -First 1
   $src = "preinstalled on the runner image"; $sha = $null
   [Console]::Error.WriteLine("Edge preinstalled: $have, newest Stable x64 per edgeupdates API: $($rel.ProductVersion)")
+  if (-not $rel) { throw "edgeupdates API returned no Stable Windows x64 release" }
   if ($rel -and (-not $have -or [version]$have -lt [version]$rel.ProductVersion)) {
     $art = $rel.Artifacts | Where-Object ArtifactName -eq "msi" | Select-Object -First 1
     $msi = Join-Path $Work "edge.msi"
@@ -45,7 +48,9 @@ if ($Brand -eq "edge") {
   $sumA = $rel.assets | Where-Object name -eq "BraveBrowserStandaloneSilentSetup.exe.sha256"
   $setup = Join-Path $Work "brave-setup.exe"
   Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $setup
-  $want = ((Invoke-WebRequest -Uri $sumA.browser_download_url).Content | Out-String).Trim().Split(" ")[0].ToLower()
+  $sumF = Join-Path $Work "brave-setup.sha256"
+  Invoke-WebRequest -Uri $sumA.browser_download_url -OutFile $sumF   # served as octet-stream, so read it from disk as text
+  $want = (Get-Content -Raw -LiteralPath $sumF).Trim().Split(" ")[0].ToLower()
   $sha = (Get-FileHash -Algorithm SHA256 $setup).Hash.ToLower()
   if ($sha -ne $want) { throw "Brave installer SHA256 mismatch ($sha vs $want)" }
   Need-Signature $setup "Brave Software" | Out-Null
