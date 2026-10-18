@@ -9,9 +9,18 @@
 <meta name="description" content="Ground truth for browser fingerprints. See exactly what real Chrome sends, and how far behind the popular impersonation libraries are.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%232f5bd3%22/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css">
+<script>
+// Firefox and Safari moved to their own pages: send old #firefox / #safari links (and badges) there, keeping the anchor.
+(function () {
+  var MOVED = { "#firefox": "firefox/", "#ff-h": "firefox/", "#firefox-board": "firefox/", "#ffb-h": "firefox/", "#ff-history": "firefox/", "#ff-platforms": "firefox/",
+    "#safari": "safari/", "#sf-h": "safari/", "#safari-board": "safari/", "#sfb-h": "safari/" };
+  function go() { var t = MOVED[location.hash]; if (t) location.replace(t + location.hash); }
+  go(); window.addEventListener("hashchange", go);
+})();
+</script>
 <script src="js/app.js" defer></script>
 </head>
-<body>
+<body data-page="chrome">
 <header class="site-header">
   <div class="wrap">
     <!-- COPY: Nya (name + tagline, from copy/EXPLAINER.md "Header") -->
@@ -20,8 +29,15 @@
     <p class="tagline">Ground truth for browser fingerprints. See exactly what real Chrome sends, and how far behind the popular impersonation libraries are.</p>
     <!-- COPY: Nya (sub-line) -->
     <p class="subline">Built from real Chrome captures and compared field by field.</p>
+    <!-- BROWSER NAV: keep this block identical on every page (index.html, firefox/, safari/, ...). One <a> per page;
+         data-page must equal that page's <body data-page>, which js/app.js uses to mark the current link. -->
+    <nav class="browser-nav" aria-label="Browsers">
+      <a href="/" data-page="chrome">Chrome</a>
+      <a href="/firefox/" data-page="firefox">Firefox</a>
+      <a href="/safari/" data-page="safari">Safari</a>
+    </nav>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#firefox">Firefox</a><a href="#safari">Safari</a><a href="#brands">Edge &amp; Brave</a><a href="#leaderboard">Leaderboard</a><a href="#firefox-board">Firefox leaderboard</a><a href="#safari-board">Safari leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#brands">Edge &amp; Brave</a><a href="#leaderboard">Leaderboard</a><a href="#upcoming">Coming soon</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
     </nav>
   </div>
 </header>
@@ -35,16 +51,14 @@
 
   <div id="load-error" class="notice error" hidden></div>
 
-  <!-- Summary: who's current right now (filled by js/app.js from data/libraries.json, firefox_libraries.json, row_history.json) -->
+  <!-- Summary: who's current right now, Chrome only (filled by js/app.js from data/libraries.json, row_history.json) -->
   <section id="summary" class="card summary" aria-labelledby="sum-h">
     <h2 id="sum-h">Who's current right now</h2>
     <div class="sum-grid">
       <div id="sum-chrome"><p class="muted">Loading…</p></div>
-      <div id="sum-firefox"></div>
-      <div id="sum-safari"></div>
+      <div id="sum-movers"></div>
     </div>
-    <div id="sum-movers"></div>
-    <p class="muted small">Details below: <a href="#leaderboard">Chrome leaderboard</a> · <a href="#firefox-board">Firefox leaderboard</a> · <a href="#safari-board">Safari leaderboard</a> · <a href="#chrome">Current Chrome</a> · <a href="#firefox">Current Firefox</a> · <a href="#api">JSON feed</a></p>
+    <p class="muted small">Details below: <a href="#leaderboard">Chrome leaderboard</a> · <a href="#chrome">Current Chrome</a> · <a href="#api">JSON feed</a>. Firefox and Safari have their own pages: <a href="/firefox/">Firefox</a> · <a href="/safari/">Safari</a>.</p>
   </section>
 
   <!-- 1. Current real Chrome fingerprint -->
@@ -84,24 +98,6 @@
     </details>
     <!-- COPY: Nya (pass 3: caveat under the Chrome card, replaces the ca34 caveat; {pq_pct} bound from data/latest.json) -->
     <p class="caveat">Chrome doesn't send just one fingerprint. Most people send the main one, which includes the trust-anchors extension (<code>ca34</code>). That extension can be switched off, which gives a second, less common fingerprint. And about <span data-bind="pq_pct2">…</span> of Chrome users on <span data-bind="pq_platform2">…</span> are in a Google post-quantum experiment, which adds one more extension (<code>0x12e0</code>) and gives a third. We show all three and say which one each library matches.</p>
-  </section>
-
-  <!-- Current Firefox (capture/lib/capture_firefox.py) -->
-  <section id="firefox" class="card" aria-labelledby="ff-h">
-    <h2 id="ff-h">Current Firefox fingerprint</h2>
-    <p class="muted small">Official Mozilla Firefox release, fresh profile, headless, against the same local capture server. The Firefox leaderboard below grades the libraries' Firefox profiles against it.</p>
-    <div id="ff-body"><p class="muted">No Firefox capture yet. It's added to the daily capture and will appear after the next run.</p></div>
-    <h3>What changed in Firefox</h3>
-    <div id="ff-history"></div>
-    <h3>Firefox on Linux, Windows and macOS</h3>
-    <div id="ff-platforms" class="plat-grid"><p class="muted">No per-OS Firefox capture yet. Windows and macOS are captured daily from now on.</p></div>
-  </section>
-
-  <!-- Current Safari (capture/lib/capture_safari.py, macOS runner) -->
-  <section id="safari" class="card" aria-labelledby="sf-h">
-    <h2 id="sf-h">Current Safari fingerprint</h2>
-    <p class="muted small">The Safari that ships with macOS on the GitHub macOS runner, driven by Apple's safaridriver against the same local capture server. The Safari leaderboard below grades the libraries' desktop Safari profiles against it.</p>
-    <div id="sf-body"><p class="muted">No Safari capture yet. It's part of the daily capture on macOS and will appear after the next successful run.</p></div>
   </section>
 
   <!-- 1c. Other Chromium-based browsers, data/brands/index.json from capture/merge_brands.py -->
@@ -182,20 +178,6 @@
     <div id="catchup-body"><p class="muted">Loading…</p></div>
   </section>
 
-  <!-- Firefox leaderboard -->
-  <section id="firefox-board" aria-labelledby="ffb-h">
-    <h2 id="ffb-h">How far behind is each library's Firefox profile?</h2>
-    <p>The same check as above, for the libraries' Firefox profiles, graded against our capture of real Firefox.</p>
-    <div id="ff-board"><p class="muted">The Firefox leaderboard is built by the daily capture and will appear after the next run.</p></div>
-  </section>
-
-  <!-- Safari leaderboard (leaderboard/build_safari.py) -->
-  <section id="safari-board" aria-labelledby="sfb-h">
-    <h2 id="sfb-h">How far behind is each library's Safari profile?</h2>
-    <p>The same check, for the libraries' desktop Safari profiles, graded against our capture of real Safari on macOS. iOS profiles aren't graded: we have no real iPhone capture to compare them with.</p>
-    <div id="sf-board"><p class="muted">The Safari leaderboard is built by the daily capture once real Safari has been captured.</p></div>
-  </section>
-
   <!-- 3. What changed -->
   <section id="changes" class="card" aria-labelledby="changes-h">
     <!-- COPY: Nya ("What changed" heading; empty state lives in js/app.js) -->
@@ -236,6 +218,7 @@
       <div class="wide"><dt><a href="api/platforms.json"><code>/api/platforms.json</code></a></dt><dd>Chrome on Linux, Windows and macOS side by side.</dd></div>
       <div class="wide"><dt><a href="api/history.json"><code>/api/history.json</code></a></dt><dd>Index of past captures; each file is at <code>/data/history/&lt;file&gt;</code>.</dd></div>
     </dl>
+    <p class="muted small">Firefox has its own feeds and badges, listed on the <a href="/firefox/#api">Firefox page</a>.</p>
     <p class="muted small">Example: <code>curl -s https://stalefp.github.io/api/latest.json | jq -r .version</code>. Field names may grow but existing ones won't be renamed without notice here.</p>
   </section>
 

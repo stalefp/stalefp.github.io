@@ -47,31 +47,37 @@ const VIEWS = [
     await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: v.dark ? "dark" : "light" }] }, sessionId);
     await send("Page.navigate", { url: URL_ }, sessionId);
     await sleep(2500);
-    const { result } = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => ({
-      rows: document.querySelectorAll('#lb tbody tr.row').length,
-      verdicts: [...document.querySelectorAll('#lb tbody tr.row')].map(r => r.querySelector('.lib').textContent + ' ' + r.querySelector('code').textContent + ': ' + r.querySelector('.badge').textContent),
-      version: document.querySelector('[data-bind=chrome_version]').textContent,
-      ja4: document.querySelector('[data-bind=ja4]').textContent,
-      ja4r: document.querySelector('[data-bind=ja4_resumed]').textContent,
-      h2: document.querySelector('[data-bind=h2_fingerprint]').textContent,
-      captured: document.querySelector('[data-bind=captured_at]').textContent,
-      changes: document.querySelector('#changes-body').innerText.slice(0, 600),
-      loadError: document.querySelector("#load-error").hidden ? false : document.querySelector("#load-error").textContent,
-      signupDisabled: document.querySelector('#early-access-form button').disabled && document.querySelector('#early-access-form button').textContent,
-      formAction: document.querySelector('#early-access-form').getAttribute('action'),
+    // Main page (data-page=chrome) checks the Chrome table; /firefox/ and /safari/ check their own board.
+    const { result } = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => {
+      const q = (s) => document.querySelector(s), t = (s) => (q(s) ? q(s).textContent : null);
+      const page = document.body.dataset.page || "chrome";
+      const board = { chrome: "#lb tbody tr.row", firefox: "#ff-board tbody tr.row", safari: "#sf-board tbody tr.row" }[page] || "tbody tr.row";
+      return {
+      page,
+      navCurrent: t('.browser-nav a[aria-current=page]'),
+      navLinks: [...document.querySelectorAll('.browser-nav a')].map(a => a.getAttribute('href')),
+      summary: q('#summary') ? q('#summary').innerText.slice(0, 400) : null,
+      rows: document.querySelectorAll(board).length,
+      verdicts: [...document.querySelectorAll(board)].map(r => r.querySelector('.lib').textContent + ' ' + r.querySelector('code').textContent + ': ' + r.querySelector('.badge').textContent),
+      version: t('[data-bind=chrome_version]'),
+      ja4: t('[data-bind=ja4]'),
+      captured: t('[data-bind=captured_at]'),
+      changes: q('#changes-body') ? q('#changes-body').innerText.slice(0, 600) : (q('#ff-history') ? q('#ff-history').innerText.slice(0, 300) : null),
+      loadError: !q("#load-error") || q("#load-error").hidden ? false : q("#load-error").textContent,
+      formAction: q('#early-access-form') ? q('#early-access-form').getAttribute('action') : null,
       unbound: [...document.querySelectorAll('[data-bind]')].filter(n => n.textContent.trim() === '…').map(n => n.dataset.bind),
-      placeholders: (document.body.innerText.match(/\{[a-z0-9_]+\}/gi) || []).concat([...document.querySelectorAll('[data-tip]')].map(n => n.dataset.tip).join(' ').match(/\{[a-z0-9_]+\}/gi) || []),
+      placeholders: (document.body.innerText.match(/\\{[a-z0-9_]+\\}/gi) || []).concat([...document.querySelectorAll('[data-tip]')].map(n => n.dataset.tip).join(' ').match(/\\{[a-z0-9_]+\\}/gi) || []),
       notCaptured: [...document.querySelectorAll('[data-bind]')].filter(n => n.textContent.trim() === 'not captured').map(n => n.dataset.bind),
-      variantBadges: [...document.querySelectorAll('#lb .badge.v-variant')].length,
       overflowX: document.documentElement.scrollWidth > window.innerWidth,
-    }))()` }, sessionId);
+      scrollWidth: document.documentElement.scrollWidth,
+    }; })()` }, sessionId);
     const info = result.value;
     const m = await send("Page.getLayoutMetrics", {}, sessionId);
     const h = Math.ceil(m.cssContentSize.height);
     const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true, clip: { x: 0, y: 0, width: v.width, height: h, scale: 1 } }, sessionId);
     const file = path.join(OUT, v.name + ".png");
     fs.writeFileSync(file, Buffer.from(shot.data, "base64"));
-    const bad = problems.length || info.loadError || info.rows === 0 || info.unbound.length || info.placeholders.length || info.overflowX;
+    const bad = problems.length || info.loadError || info.rows === 0 || !info.navCurrent || info.unbound.length || info.placeholders.length || info.overflowX;
     if (bad) failed = true;
     report.push({ view: v.name, screenshot: file, pageHeight: h, ok: !bad, problems, ...info });
     listeners.splice(listeners.indexOf(onEvt), 1);

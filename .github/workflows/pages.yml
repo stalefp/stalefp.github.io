@@ -32,6 +32,8 @@ jobs:
         run: |
           mkdir _site
           cp -r site/index.html site/css site/js site/data _site/
+          # Per-browser pages: every site/<name>/index.html (firefox/, safari/, ...) becomes /<name>/
+          for d in site/*/; do if [ -f "$d/index.html" ]; then cp -r "$d" _site/; fi; done
           touch _site/.nojekyll
           # Free JSON feed: stable /api/ URLs, copied from the same data the page reads
           mkdir -p _site/api

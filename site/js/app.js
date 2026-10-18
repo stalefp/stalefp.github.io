@@ -93,6 +93,11 @@
   // Swap this endpoint for FormSubmit's random alias string after activation.
   var FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/emailforcatgirls@proton.me";
 
+  // Site root (where index.html, data/ and api/ live), from this script's own URL (/js/app.js), so the same file works on
+  // the main page and on the per-browser pages (/firefox/, /safari/). PAGE comes from <body data-page>.
+  var ROOT = new URL("..", (document.currentScript && document.currentScript.src) || location.href).href;
+  var PAGE = (document.body && document.body.getAttribute("data-page")) || "chrome";
+
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   function el(tag, attrs, kids) {
@@ -143,7 +148,7 @@
     return (codes || []).map(function (c) { return table[c] ? c + " " + table[c] : c; }).join(", ");
   }
   function getJSON(path) {
-    return fetch(path, { cache: "no-cache" }).then(function (r) {
+    return fetch(new URL(path, ROOT).href, { cache: "no-cache" }).then(function (r) {
       if (!r.ok) throw new Error(path + ": HTTP " + r.status);
       return r.json();
     });
@@ -669,7 +674,7 @@
   function badgeSlug(id) { return id.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
   function renderBadges(lb) {
     var box = $("#badge-list"); if (!box) return; box.innerHTML = "";
-    var base = location.origin + location.pathname.replace(/[^/]*$/, "");
+    var base = ROOT;
     (lb.libraries || []).filter(function (l) { return l.is_newest_profile !== false; }).forEach(function (l) {
       var ep = base + "api/badges/" + badgeSlug(l.id) + ".json";
       var img = "https://img.shields.io/endpoint?url=" + encodeURIComponent(ep);
@@ -781,13 +786,13 @@
 
   /* Firefox leaderboard (data/firefox_libraries.json, leaderboard/build_firefox.py) */
   // Also renders the Safari board (data/safari_libraries.json, leaderboard/build_safari.py): same row shape.
-  var FF_OPTS = { box: "#ff-board", name: "Firefox", ver: "firefox_version", anchor: "firefox-board", badge: "firefox" };
+  var FF_OPTS = { box: "#ff-board", name: "Firefox", ver: "firefox_version", anchor: "firefox/#firefox-board", badge: "firefox" };
   function renderFirefoxBoard(lb, o) {
     o = o || FF_OPTS;
     var box = $(o.box); if (!box || !lb || !lb.libraries) return; box.innerHTML = "";
     var r = lb.reference || {};
     box.appendChild(el("p", { cls: "muted small", text: "Graded against real " + o.name + " " + r[o.ver] + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard. " + (lb.caveats || []).join(" ") }));
-    var base = location.origin + location.pathname.replace(/[^/]*$/, "");
+    var base = ROOT;
     var t = el("table", { cls: "lb" }, [el("thead", {}, [el("tr", {}, ["Library", o.name + " profile", "Versions behind", "TLS match", "HTTP/2", "Verdict", "Tested"].map(function (h) { return el("th", { text: h }); }))])]);
     var tb = el("tbody");
     lb.libraries.forEach(function (l) {
@@ -801,7 +806,7 @@
         td("Verdict", [el("span", { cls: "badge " + (VCLS[l.verdict] || "v-na"), text: VLABEL[l.verdict] || l.verdict })]),
         td("Tested", [el("time", { text: localDate(l.tested_at) || "not tested" })])
       ]));
-      var md = o.badge ? "[![" + o.name + " match](https://img.shields.io/endpoint?url=" + encodeURIComponent(base + "api/badges/" + o.badge + "/" + badgeSlug(l.id) + ".json") + ")](" + base + "#" + o.anchor + ")" : null;
+      var md = o.badge ? "[![" + o.name + " match](https://img.shields.io/endpoint?url=" + encodeURIComponent(base + "api/badges/" + o.badge + "/" + badgeSlug(l.id) + ".json") + ")](" + base + o.anchor + ")" : null;
       var ids = [["JA4", f.ja4_fresh], ["HTTP/2", f.http2_akamai]].filter(function (x) { return x[1]; });
       tb.appendChild(el("tr", { cls: "why-row" }, [el("td", { colspan: "7" }, [
         el("p", { cls: "why-head", text: l.behind_text || "" }),
@@ -879,7 +884,7 @@
     document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (e) { /* ignore */ } ta.remove();
   }
   function initSignup() {
-    var form = $("#early-access-form");
+    var form = $("#early-access-form"); if (!form) return;
     var button = form.querySelector("button[type=submit]");
     var status = $("#signup-status");
     form.addEventListener("submit", function (e) {
@@ -917,7 +922,17 @@
     (lb.caveats || []).slice(1).forEach(function (c) { ml.appendChild(el("li", { text: c })); });
   }
 
-  function init() {
+  function loadError(err) {
+    var box = $("#load-error"); if (!box) return; box.hidden = false;
+    box.textContent = "Couldn't load the data files (" + err.message + "). Run site/sync.sh and serve the site folder over HTTP.";
+  }
+  // Current page in the browser nav (<nav class="browser-nav">, one <a data-page> per page).
+  function markNav() {
+    $$(".browser-nav a[data-page]").forEach(function (a) { if (a.getAttribute("data-page") === PAGE) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  }
+
+  /* Main page: Chrome only (plus Edge/Brave and Beta/Dev/Canary, which are Chromium). */
+  function initChrome() {
     initCopy(); initSignup();
     Promise.all([getJSON("data/latest.json"), getJSON("data/libraries.json"), getJSON("data/history/index.json").catch(function () { return { captures: [] }; }),
       getJSON("data/platforms.json").catch(function () { return null; })])
@@ -929,24 +944,38 @@
         sumBoard("#sum-chrome", "Chrome", res[1], REF.version);
         getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); sumMovers(h, res[1]); }, function () { /* no history yet */ });
         renderBadges(res[1]);
-        getJSON("data/firefox.json").then(renderFirefox, function () { /* no Firefox capture yet */ });
-        getJSON("data/firefox/history/index.json").then(initFirefoxHistory, function () { initFirefoxHistory(null); });
-        getJSON("data/firefox_libraries.json").then(function (f) { renderFirefoxBoard(f); sumBoard("#sum-firefox", "Firefox", f, (f.reference || {}).firefox_version); }, function () { /* Firefox leaderboard not built yet */ });
-        getJSON("data/safari/latest.json").then(function (sf) { renderFirefox(sf, { box: "#sf-body", name: "Safari" }); }, function () { /* no Safari capture yet */ });
-        getJSON("data/safari_libraries.json").then(function (f) {
-          renderFirefoxBoard(f, { box: "#sf-board", name: "Safari", ver: "safari_version", anchor: "safari-board", badge: null });
-          sumBoard("#sum-safari", "Safari", f, (f.reference || {}).safari_version);
-        }, function () { /* Safari leaderboard not built yet */ });
-        getJSON("data/firefox/platforms.json").then(renderFirefoxPlatforms, function () { /* no per-OS Firefox data yet */ });
         getJSON("data/brands/index.json").then(renderBrands, function () { /* no Edge/Brave capture yet */ });
         renderFooter(res[1]);
         getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });
         return renderChanges(REF, res[2]);
       })
-      .catch(function (err) {
-        var box = $("#load-error"); box.hidden = false;
-        box.textContent = "Couldn't load the data files (" + err.message + "). Run site/sync.sh and serve the site folder over HTTP.";
-      });
+      .catch(loadError);
   }
+
+  /* /firefox/: current Firefox (incl. HTTP/3), per-OS, leaderboard, history. */
+  function initFirefox() {
+    Promise.all([
+      getJSON("data/firefox.json").then(renderFirefox, function () { /* no Firefox capture yet */ }),
+      getJSON("data/firefox/history/index.json").then(initFirefoxHistory, function () { initFirefoxHistory(null); }),
+      getJSON("data/firefox_libraries.json").then(function (f) { renderFirefoxBoard(f); sumBoard("#sum-firefox", "Firefox", f, (f.reference || {}).firefox_version); },
+        function () { var b = $("#sum-firefox"); if (b) b.innerHTML = "<p class=\"muted\">The Firefox leaderboard isn't built yet.</p>"; }),
+      getJSON("data/firefox/platforms.json").then(renderFirefoxPlatforms, function () { /* no per-OS Firefox data yet */ })
+    ]).catch(loadError);
+  }
+
+  /* /safari/: current Safari and the Safari leaderboard. */
+  function initSafari() {
+    Promise.all([
+      getJSON("data/safari/latest.json").then(function (sf) { renderFirefox(sf, { box: "#sf-body", name: "Safari" }); }, function () { /* no Safari capture yet */ }),
+      getJSON("data/safari_libraries.json").then(function (f) {
+        renderFirefoxBoard(f, { box: "#sf-board", name: "Safari", ver: "safari_version", anchor: "safari/#safari-board", badge: null });
+        sumBoard("#sum-safari", "Safari", f, (f.reference || {}).safari_version);
+      }, function () { var b = $("#sum-safari"); if (b) b.innerHTML = "<p class=\"muted\">The Safari leaderboard isn't built yet.</p>"; })
+    ]).catch(loadError);
+  }
+
+  // One entry per page; a new page (e.g. Edge, Brave) adds its init here and sets <body data-page="...">.
+  var PAGES = { chrome: initChrome, firefox: initFirefox, safari: initSafari };
+  function init() { markNav(); (PAGES[PAGE] || initChrome)(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();

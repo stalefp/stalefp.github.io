@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Stale: Firefox fingerprint drift leaderboard</title>
+<meta name="description" content="What real Firefox sends right now, and how far behind the impersonation libraries' Firefox profiles are.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%232f5bd3%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/app.js" defer></script>
+</head>
+<body data-page="firefox">
+<header class="site-header">
+  <div class="wrap">
+    <h1 class="brand"><a href="/" class="brand-link">Stale</a></h1>
+    <p class="last-updated muted small" id="last-updated" hidden></p>
+    <p class="tagline">What real Firefox sends right now, and how far behind the impersonation libraries' Firefox profiles are.</p>
+    <p class="subline">Built from real Firefox captures and compared field by field.</p>
+    <!-- BROWSER NAV: keep this block identical on every page (index.html, firefox/, safari/, ...). One <a> per page;
+         data-page must equal that page's <body data-page>, which js/app.js uses to mark the current link. -->
+    <nav class="browser-nav" aria-label="Browsers">
+      <a href="/" data-page="chrome">Chrome</a>
+      <a href="/firefox/" data-page="firefox">Firefox</a>
+      <a href="/safari/" data-page="safari">Safari</a>
+    </nav>
+    <nav class="nav" aria-label="Sections">
+      <a href="#firefox">Current Firefox</a><a href="#ff-platforms-card">By platform</a><a href="#firefox-board">Leaderboard</a><a href="#firefox-changes">What changed</a><a href="#api">JSON feed &amp; badges</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="load-error" class="notice error" hidden></div>
+
+  <!-- Summary: who's current right now, Firefox only (js/app.js, data/firefox_libraries.json) -->
+  <section id="summary" class="card summary" aria-labelledby="sum-h">
+    <h2 id="sum-h">Who's current right now</h2>
+    <div class="sum-grid one">
+      <div id="sum-firefox"><p class="muted">Loading…</p></div>
+    </div>
+    <p class="muted small">Details below: <a href="#firefox-board">Firefox leaderboard</a> · <a href="#firefox">Current Firefox</a> · <a href="#api">JSON feed</a></p>
+  </section>
+
+  <!-- Current Firefox (capture/lib/capture_firefox.py), incl. HTTP/3 -->
+  <section id="firefox" class="card" aria-labelledby="ff-h">
+    <h2 id="ff-h">Current Firefox fingerprint</h2>
+    <p class="muted small">Official Mozilla Firefox release, fresh profile, headless, against the same local capture server as Chrome. The Firefox leaderboard below grades the libraries' Firefox profiles against it.</p>
+    <div id="ff-body"><p class="muted">No Firefox capture yet. It's added to the daily capture and will appear after the next run.</p></div>
+  </section>
+
+  <!-- Firefox per OS (capture/merge_firefox.py) -->
+  <section id="ff-platforms-card" class="card" aria-labelledby="ffp-h">
+    <h2 id="ffp-h">Firefox on Linux, Windows and macOS</h2>
+    <div id="ff-platforms" class="plat-grid"><p class="muted">No per-OS Firefox capture yet. Windows and macOS are captured daily from now on.</p></div>
+  </section>
+
+  <!-- Firefox leaderboard (leaderboard/build_firefox.py) -->
+  <section id="firefox-board" aria-labelledby="ffb-h">
+    <h2 id="ffb-h">How far behind is each library's Firefox profile?</h2>
+    <p>We run each library's Firefox profiles, compare what they send against our capture of real Firefox, and check the results field by field, the same way as the <a href="/#leaderboard">Chrome leaderboard</a>.</p>
+    <div id="ff-board"><p class="muted">The Firefox leaderboard is built by the daily capture and will appear after the next run.</p></div>
+  </section>
+
+  <!-- Firefox history + what changed (data/firefox/history/) -->
+  <section id="firefox-changes" class="card" aria-labelledby="ffc-h">
+    <h2 id="ffc-h">What changed in Firefox</h2>
+    <div id="ff-history"></div>
+  </section>
+
+  <!-- Firefox JSON feed + badges -->
+  <section id="api" class="card" aria-labelledby="api-h">
+    <h2 id="api-h">Firefox JSON feed and badges</h2>
+    <p>Free, no key, CORS open, refreshed by the same daily capture.</p>
+    <dl class="fp small">
+      <div class="wide"><dt><a href="/api/firefox.json"><code>/api/firefox.json</code></a></dt><dd>Latest real Firefox capture (Linux): version, JA4 (fresh and resumed), HTTP/2 fingerprint and header order, HTTP/3 (QUIC) JA4, SETTINGS and transport parameters.</dd></div>
+      <div class="wide"><dt><a href="/api/firefox_libraries.json"><code>/api/firefox_libraries.json</code></a></dt><dd>The Firefox leaderboard: every library's Firefox profile with its fingerprint, verdict and field-by-field reasons.</dd></div>
+      <div class="wide"><dt><code>/api/badges/firefox/&lt;id&gt;.json</code></dt><dd>A <a href="https://shields.io/badges/endpoint-badge">shields.io endpoint</a> badge per row. Each row in the leaderboard above has its Markdown ready to copy.</dd></div>
+    </dl>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Stale is a free, public reference. Firefox is captured daily on Linux, Windows and macOS from the official Mozilla release with a fresh profile. Every value comes from a real capture; anything we didn't measure is shown as "not captured" or "not tested", never guessed. Chrome, which most people use, is on the <a href="/">main page</a>.</p>
+  </div>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
