@@ -127,15 +127,20 @@ def lines(e, b):
     out = []
     r = e.get("resumption_probe") or {}
     n = r.get("connections")
-    if r.get("status") == "resumes":
+    br = r.get("browser_resumed_ja4") is not None   # did the real browser resume in our own capture?
+    if r.get("status") == "resumes" and not br:
+        out.append("Reconnecting: resumed the TLS session on %d of %d new connections; real %s did not resume in our capture, so this differs."
+                   % (r["resumed_connections"], n - 1, b))
+    elif r.get("status") == "resumes":
         m = ("and its resumed JA4 matches %s's" % b if r["matches_browser"] else "and its resumed JA4 matches one of %s's variants" % b
              if r["matches_browser_variant"] else "but its resumed JA4 differs from %s's" % b)
         out.append("Reconnecting: resumed the TLS session on %d of %d new connections, %s." % (r["resumed_connections"], n - 1, m))
     elif r.get("status") == "profile_no_resume":
-        out.append("Reconnecting: this profile never resumed the TLS session in %d connections; the library's %s profile did in our test, and %s resumes."
-                   % (n, r["resuming_profile"], b))
+        out.append("Reconnecting: this profile never resumed the TLS session in %d connections; the library's %s profile did in our test. %s"
+                   % (n, r["resuming_profile"], ("%s resumes." % b) if br else ("Real %s didn't resume in our capture either, which matches." % b)))
     elif r.get("status") == "no_resume":
-        out.append("Reconnecting: never resumed the TLS session in %d connections, and no profile of this library resumed in our test; %s resumes." % (n, b))
+        out.append("Reconnecting: never resumed the TLS session in %d connections, and no profile of this library resumed in our test; %s" % (
+            n, ("%s resumes." % b) if br else ("real %s didn't resume in our capture either, which matches." % b)))
     s = e.get("shuffle") or {}
     if s:
         bv = "varies on every connection" if s["browser_varies"] else "stays the same on every connection"

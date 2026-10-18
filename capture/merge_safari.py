@@ -27,6 +27,8 @@ def main():
     idx = {"platforms": {}}
     for pid, label in OSES:
         src = os.path.join(a.artifacts, "safari-" + pid, "latest.json")
+        if not os.path.exists(src):   # download-artifact puts a single matching artifact straight into the folder
+            src = os.path.join(a.artifacts, "latest.json")
         dst = os.path.join(FF, "platforms", pid + ".json")
         status = None
         if os.path.exists(src):

@@ -1,0 +1,3999 @@
+{
+ "schema_version": "safari-leaderboard-1",
+ "generated_at": "2026-10-18T13:44:41Z",
+ "reference": {
+  "browser": "Apple Safari",
+  "safari_version": "26.6.2",
+  "safari_major": 26,
+  "captured_at": "2026-10-18T08:40:16-05:00",
+  "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
+  "ja4_fresh": "t13d2013h2_a09f3c656075_7f0f34a4126d",
+  "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+  "source": "capture/data/safari/latest.json"
+ },
+ "verdict_rules": "Same counted fields and thresholds as the Chrome leaderboard, against Safari's default fingerprint. Versions behind = current Safari major minus the major in the profile name.",
+ "caveats": [
+  "Libraries are tested against the public TLS echo endpoint (tls.peet.ws); real Safari (preinstalled on the GitHub macOS runner, driven by safaridriver) is captured against our local capture server. Both record the raw ClientHello and HTTP/2 frames.",
+  "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",
+  "Only desktop (macOS) Safari profiles are graded; iOS/iPadOS profiles have no real-device capture to compare against. HTTP/3 is not tested for Safari."
+ ],
+ "libraries": [
+  {
+   "id": "curl_cffi|safari2601",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "profile": "safari2601",
+   "note": null,
+   "version": "0.16.3",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/py/curl_cffi_safari2601.json"
+   },
+   "verdict": "exact",
+   "verdict_reason": "Every counted TLS and HTTP/2 field matches Safari's default fingerprint (with ca34).",
+   "counted_mismatches": [],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2013h2_a09f3c656075_7f0f34a4126d",
+    "ja4_r_fresh": "t13d2013h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": true
+     }
+    }
+   },
+   "missing": [],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 26,
+   "versions_behind": 0,
+   "versions_behind_uniform": true,
+   "why": [],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "behind_text": "Copies current Safari 26; its fingerprint still matches current Safari on every counted field.",
+   "is_newest_profile": true,
+   "base_verdict": "exact",
+   "base_counted": [],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections; real Safari did not resume in our capture, so this differs.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+    "browser_resumed_ja4": null,
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":authority",
+     ":path"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "primp|safari_26",
+   "library": "primp",
+   "maintainer": "deedy5",
+   "language": "Python",
+   "profile": "safari_26",
+   "note": null,
+   "version": "2.0.1",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/py/primp_safari_26.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Safari's default fingerprint: supported_groups, cert_compression.",
+   "counted_mismatches": [
+    "supported_groups",
+    "cert_compression"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "missing": [
+      "0019"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "brotli",
+      "zlib",
+      "zstd"
+     ],
+     "missing": [],
+     "extra": [
+      "brotli",
+      "zstd"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "accept",
+      "accept-language",
+      "accept-encoding",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "priority",
+      "user-agent"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2013h2_a09f3c656075_7f0f34a4126d",
+    "ja4_r_fresh": "t13d2013h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": true
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "certc",
+     "label": "Certificate compression differs",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 26,
+   "versions_behind": 0,
+   "versions_behind_uniform": true,
+   "why": [
+    "Certificate compression differs: Safari ['zlib'], library ['brotli', 'zlib', 'zstd'].",
+    "Supported groups differ: doesn't offer P-521 (0x0019).",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before sec-fetch-dest; Safari sends sec-fetch-dest first."
+   ],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   },
+   "behind_text": "Copies current Safari 26; 2 counted fields differ from current Safari.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "supported_groups",
+    "cert_compression"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections; real Safari did not resume in our capture, so this differs.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+    "browser_resumed_ja4": null,
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":authority",
+     ":path"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "curl_cffi|safari184",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "profile": "safari184",
+   "note": null,
+   "version": "0.16.3",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/py/curl_cffi_safari184.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "3 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares.",
+   "counted_mismatches": [
+    "extensions",
+    "supported_groups",
+    "key_shares"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_e42f34c56612",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 18,
+   "versions_behind": 8,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send."
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "behind_text": "Copies Safari 18, 8 versions behind current 26; 3 counted fields differ from current Safari.",
+   "is_newest_profile": false,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "supported_groups",
+    "key_shares"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections; real Safari did not resume in our capture, so this differs.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+    "browser_resumed_ja4": null,
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":authority",
+     ":path"
+    ]
+   },
+   "notes": [],
+   "fix": {
+    "to_id": "curl_cffi|safari2601",
+    "to_profile": "safari2601",
+    "to_verdict": "exact",
+    "from_diffs": 3,
+    "to_diffs": 0,
+    "old": "requests.get(url, impersonate=\"safari184\")",
+    "new": "requests.get(url, impersonate=\"safari2601\")"
+   },
+   "release_update": null
+  },
+  {
+   "id": "rnet|safari18_5",
+   "library": "rnet",
+   "maintainer": "0x676e67",
+   "language": "Python",
+   "profile": "Safari18_5",
+   "note": null,
+   "version": "3.0.0rc22",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/py/rnet_Safari18_5.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "3 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares.",
+   "counted_mismatches": [
+    "extensions",
+    "supported_groups",
+    "key_shares"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_e42f34c56612",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 18,
+   "versions_behind": 8,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send."
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "behind_text": "Copies Safari 18, 8 versions behind current 26; 3 counted fields differ from current Safari.",
+   "is_newest_profile": false,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "supported_groups",
+    "key_shares"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome137 profile did in our test. Real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Chrome137",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":authority",
+     ":path"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "rnet|safari26_2",
+   "library": "rnet",
+   "maintainer": "0x676e67",
+   "language": "Python",
+   "profile": "Safari26_2",
+   "note": null,
+   "version": "3.0.0rc22",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/py/rnet_Safari26_2.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "3 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares.",
+   "counted_mismatches": [
+    "extensions",
+    "supported_groups",
+    "key_shares"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_e42f34c56612",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 26,
+   "versions_behind": 0,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send."
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "behind_text": "Copies current Safari 26; 3 counted fields differ from current Safari.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "supported_groups",
+    "key_shares"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome137 profile did in our test. Real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Chrome137",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":authority",
+     ":path"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "azuretls-client|safari",
+   "library": "azuretls-client",
+   "maintainer": "Noooste",
+   "language": "Go",
+   "profile": "Safari",
+   "note": null,
+   "version": "v1.13.2",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/go/out/azuretls_Safari.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "4 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "2:0;3:100;4:2097152;8:1;9:1|10420225|0|m,s,a,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "accept",
+      "sec-fetch-site",
+      "accept-encoding",
+      "sec-fetch-mode",
+      "user-agent",
+      "accept-language",
+      "sec-fetch-dest",
+      "priority"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_e42f34c56612",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "2:0;3:100;4:2097152;8:1;9:1|10420225|0|m,s,a,p",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "h2",
+     "label": "Safari HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send.",
+    "HTTP/2 settings differ: Safari sends 2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p, this library sends 2:0;3:100;4:2097152;8:1;9:1|10420225|0|m,s,a,p.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before sec-fetch-dest; Safari sends sec-fetch-dest first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "behind_text": "The profile name doesn't say which Safari version it copies; 4 counted fields differ from current Safari.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":authority",
+     ":path"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "tls-client|safari_15_6_1",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "profile": "Safari_15_6_1",
+   "note": null,
+   "version": "v1.16.0",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/go/out/tls-client(go)_Safari_15_6_1.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0203 ecdsa_sha1",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "missing": [],
+     "extra": [
+      "0203"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "4:4194304;3:100|10485760|0|m,s,p,a"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority",
+      "accept",
+      "sec-fetch-site",
+      "accept-encoding",
+      "sec-fetch-mode",
+      "user-agent",
+      "accept-language",
+      "sec-fetch-dest",
+      "priority"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_14788d8d241b",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0203,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "4:4194304;3:100|10485760|0|m,s,p,a",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "sigalgs",
+     "label": "Signature algorithm list differs",
+     "kind": "different"
+    },
+    {
+     "id": "h2",
+     "label": "Safari HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 15,
+   "versions_behind": 11,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send.",
+    "Signature algorithm list differs.",
+    "HTTP/2 settings differ: Safari sends 2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p, this library sends 4:4194304;3:100|10485760|0|m,s,p,a.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :path before :authority; Safari sends :authority first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "behind_text": "Copies Safari 15, 11 versions behind current 26; 5 counted fields differ from current Safari.",
+   "is_newest_profile": false,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test. Real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Chrome_152_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":path",
+     ":authority"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "tls-client|safari_16_0",
+   "library": "tls-client",
+   "maintainer": "bogdanfinn",
+   "language": "Go",
+   "profile": "Safari_16_0",
+   "note": null,
+   "version": "v1.16.0",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/go/out/tls-client(go)_Safari_16_0.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0203 ecdsa_sha1",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "missing": [],
+     "extra": [
+      "0203"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "4:4194304;3:100|10485760|0|m,s,p,a"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority",
+      "accept",
+      "sec-fetch-site",
+      "accept-encoding",
+      "sec-fetch-mode",
+      "user-agent",
+      "accept-language",
+      "sec-fetch-dest",
+      "priority"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_14788d8d241b",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0203,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "4:4194304;3:100|10485760|0|m,s,p,a",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "sigalgs",
+     "label": "Signature algorithm list differs",
+     "kind": "different"
+    },
+    {
+     "id": "h2",
+     "label": "Safari HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 16,
+   "versions_behind": 10,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send.",
+    "Signature algorithm list differs.",
+    "HTTP/2 settings differ: Safari sends 2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p, this library sends 4:4194304;3:100|10485760|0|m,s,p,a.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :path before :authority; Safari sends :authority first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "behind_text": "Copies Safari 16, 10 versions behind current 26; 5 counted fields differ from current Safari.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test. Real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Chrome_152_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":path",
+     ":authority"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "utls|hellosafari_auto",
+   "library": "uTLS",
+   "maintainer": "refraction-networking",
+   "language": "Go",
+   "profile": "HelloSafari_Auto",
+   "note": "HTTP/2 via golang.org/x/net/http2 (uTLS is TLS-only)",
+   "version": "v1.8.2",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/go/out/utls_HelloSafari_Auto.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0203 ecdsa_sha1",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "missing": [],
+     "extra": [
+      "0203"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "sec-fetch-dest",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "accept-language",
+      "priority",
+      "accept-encoding"
+     ],
+     "library": [
+      ":authority",
+      ":method",
+      ":path",
+      ":scheme",
+      "sec-fetch-mode",
+      "user-agent",
+      "accept-language",
+      "sec-fetch-dest",
+      "priority",
+      "accept",
+      "sec-fetch-site",
+      "accept-encoding"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_14788d8d241b",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0203,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "sigalgs",
+     "label": "Signature algorithm list differs",
+     "kind": "different"
+    },
+    {
+     "id": "h2",
+     "label": "Safari HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send.",
+    "Signature algorithm list differs.",
+    "HTTP/2 settings differ: Safari sends 2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p, this library sends 2:0;4:4194304;5:16384;6:10485760|1073741824|0|a,m,p,s.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :authority before :method; Safari sends :method first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "behind_text": "The profile name doesn't say which Safari version it copies; 5 counted fields differ from current Safari.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (not graded for this row): the header order changed from request to request (6 different orders in 8 requests), so the caller can't control it."
+   ],
+   "resumption_probe": {
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": false,
+    "unfair_reason": "the header order changed from request to request (6 different orders in 8 requests), so the caller can't control it",
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": null,
+    "counted": false,
+    "pseudo_order": [
+     ":authority",
+     ":method",
+     ":path",
+     ":scheme"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "noble-tls|safari_16_0",
+   "library": "noble-tls",
+   "maintainer": "Nitrams",
+   "language": "Python",
+   "profile": "safari_16_0",
+   "note": "wraps Go tls-client",
+   "version": "0.1.9",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/py/noble-tls_safari_16_0.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0203 ecdsa_sha1",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "missing": [],
+     "extra": [
+      "0203"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "4:4194304;3:100|10485760|0|m,s,p,a"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "user-agent",
+      "accept",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority",
+      "accept",
+      "accept-encoding",
+      "user-agent"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_14788d8d241b",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0203,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "4:4194304;3:100|10485760|0|m,s,p,a",
+    "user_agent": "noble-tls/0.1.9"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "sigalgs",
+     "label": "Signature algorithm list differs",
+     "kind": "different"
+    },
+    {
+     "id": "h2",
+     "label": "Safari HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 16,
+   "versions_behind": 10,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send.",
+    "Signature algorithm list differs.",
+    "HTTP/2 settings differ: Safari sends 2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p, this library sends 4:4194304;3:100|10485760|0|m,s,p,a.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :path before :authority; Safari sends :authority first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "behind_text": "Copies Safari 16, 10 versions behind current 26; 5 counted fields differ from current Safari.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_146_PSK profile did in our test. Real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "chrome_146_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":path",
+     ":authority"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "tls-client-(python)|safari_16_0",
+   "library": "tls-client (Python)",
+   "maintainer": "FlorianREGAZ",
+   "language": "Python",
+   "profile": "safari_16_0",
+   "note": "wraps Go tls-client",
+   "version": "2.0.0",
+   "tested_at": "2026-10-18T13:44:35Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/safari-20261018T134435Z/py/tls-client(py)_safari_16_0.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c008",
+      "c009",
+      "c00a",
+      "c012",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0203 ecdsa_sha1",
+      "0805 rsa_pss_rsae_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "missing": [],
+     "extra": [
+      "0203"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib"
+     ],
+     "library": [
+      "zlib"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
+     "library": "4:4194304;3:100|10485760|0|m,s,p,a"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path",
+      "user-agent",
+      "accept",
+      "accept-encoding"
+     ],
+     "library": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority",
+      "accept",
+      "accept-encoding",
+      "user-agent"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d2014h2_a09f3c656075_14788d8d241b",
+    "ja4_r_fresh": "t13d2014h2_000a,002f,0035,009c,009d,1301,1302,1303,c008,c009,c00a,c012,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,002b,002d,0033,ff01_0403,0804,0401,0503,0203,0805,0805,0501,0806,0601,0201",
+    "http2_akamai": "4:4194304;3:100|10485760|0|m,s,p,a",
+    "user_agent": "tls-client/2.0.0"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "sigalgs",
+     "label": "Signature algorithm list differs",
+     "kind": "different"
+    },
+    {
+     "id": "h2",
+     "label": "Safari HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 16,
+   "versions_behind": 10,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Safari already sent it in 26, the oldest version we've captured.",
+    "Sends extension padding (0015), which Safari doesn't send.",
+    "Signature algorithm list differs.",
+    "HTTP/2 settings differ: Safari sends 2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p, this library sends 4:4194304;3:100|10485760|0|m,s,p,a.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :path before :authority; Safari sends :authority first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "behind_text": "Copies Safari 16, 10 versions behind current 26; 5 counted fields differ from current Safari.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_152_PSK profile did in our test. Real Safari didn't resume in our capture either, which matches.",
+    "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Safari header set in Safari's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "chrome_152_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": null,
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "browser": [
+     "sec-fetch-dest",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "accept-language",
+     "priority",
+     "accept-encoding"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":scheme",
+     ":path",
+     ":authority"
+    ]
+   },
+   "notes": [],
+   "fix": null,
+   "release_update": {
+    "version": "2.0.0",
+    "released_at": "2026-10-10T15:22:07.197014Z",
+    "retested_at": "2026-10-16T00:17:28Z",
+    "text": "Updated to 2.0.0 on Oct 16, 2026: still 10 versions behind."
+   }
+  }
+ ],
+ "probe_reference": {
+  "captures": 27,
+  "distinct_orders": 1,
+  "varies": false,
+  "resumed_ja4s": [],
+  "default_resumed_ja4": null,
+  "header_order": [
+   "sec-fetch-dest",
+   "user-agent",
+   "accept",
+   "sec-fetch-site",
+   "sec-fetch-mode",
+   "accept-language",
+   "priority",
+   "accept-encoding"
+  ],
+  "connections_per_row": 8,
+  "generated_at": "2026-10-18T13:44:56Z",
+  "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
+  "requested_headers": [
+   "sec-fetch-dest",
+   "user-agent",
+   "accept",
+   "sec-fetch-site",
+   "sec-fetch-mode",
+   "accept-language",
+   "priority",
+   "accept-encoding"
+  ]
+ }
+}

@@ -993,7 +993,7 @@
    "base_verdict": "exact",
    "base_counted": [],
    "behaviour": [
-    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test, and Chrome resumes.",
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test. Chrome resumes.",
     "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
     "Header order (counted): sent our Chrome header set in Chrome's order."
    ],
@@ -2353,7 +2353,7 @@
     "extensions"
    ],
    "behaviour": [
-    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test, and Chrome resumes.",
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test. Chrome resumes.",
     "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
     "Header order (counted): sent our Chrome header set in Chrome's order."
    ],
@@ -3706,7 +3706,7 @@
     "signature_algorithms"
    ],
    "behaviour": [
-    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_146_PSK profile did in our test, and Chrome resumes.",
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_146_PSK profile did in our test. Chrome resumes.",
     "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
     "Header order (counted): sent our Chrome header set in Chrome's order."
    ],
@@ -9105,7 +9105,7 @@
    "versions_behind": null,
    "versions_behind_uniform": true,
    "is_newest_profile": true,
-   "behind_text": "The profile name doesn't say which Chrome version it copies; 5 counted fields differ from current Chrome.",
+   "behind_text": "The profile name doesn't say which Chrome version it copies; 6 counted fields differ from current Chrome.",
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
     "Doesn't send the X25519MLKEM768 post-quantum key share; Chrome already sent it in 151, the oldest version we've captured.",
@@ -9115,6 +9115,7 @@
     "Missing 1 extension: encrypted client hello (fe0d); Chrome already sent it in 151, the oldest version we've captured.",
     "Sends extension 0016, which Chrome doesn't send.",
     "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 2:0;4:33554432|4128769|0|m,p,a,s.",
+    "HTTP/2 header order (headers both send) differs from Chrome's.",
     "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :path before :authority; Chrome sends :authority first."
    ],
    "http2_grade": {
@@ -9559,7 +9560,7 @@
     "alps"
    ],
    "behaviour": [
-    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_152_PSK profile did in our test, and Chrome resumes.",
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_152_PSK profile did in our test. Chrome resumes.",
     "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
     "Header order (counted): sent our Chrome header set in Chrome's order."
    ],
@@ -9659,7 +9660,7 @@
    "priority"
   ],
   "connections_per_row": 8,
-  "generated_at": "2026-10-18T13:42:35Z",
+  "generated_at": "2026-10-18T13:44:56Z",
   "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
   "requested_headers": [
    "sec-ch-ua",

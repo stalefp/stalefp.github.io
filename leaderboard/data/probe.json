@@ -9934,9 +9934,2908 @@
      "error": null
     }
    }
+  },
+  "safari": {
+   "rows": {
+    "curl_cffi|safari2601": {
+     "status": "tested",
+     "client": {
+      "ok": true,
+      "done": 8
+     },
+     "connections": [
+      {
+       "ja4": "t13d2013h2_a09f3c656075_7f0f34a4126d",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path"
+     ],
+     "tested_at": "2026-10-18T13:44:42Z",
+     "library": "curl_cffi",
+     "profile": "safari2601"
+    },
+    "primp|safari_26": {
+     "status": "tested",
+     "client": {
+      "ok": true,
+      "done": 8
+     },
+     "connections": [
+      {
+       "ja4": "t13d2013h2_a09f3c656075_7f0f34a4126d",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0012",
+        "0x0000",
+        "0x0010",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0xff01"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path"
+     ],
+     "tested_at": "2026-10-18T13:44:44Z",
+     "library": "primp",
+     "profile": "safari_26"
+    },
+    "curl_cffi|safari184": {
+     "status": "tested",
+     "client": {
+      "ok": true,
+      "done": 8
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_cfa2fb88e388",
+       "has_psk": true,
+       "server_resumed": true,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path"
+     ],
+     "tested_at": "2026-10-18T13:44:45Z",
+     "library": "curl_cffi",
+     "profile": "safari184"
+    },
+    "rnet|safari18_5": {
+     "status": "tested",
+     "client": {
+      "ok": true,
+      "done": 8
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path"
+     ],
+     "tested_at": "2026-10-18T13:44:47Z",
+     "library": "rnet",
+     "profile": "Safari18_5"
+    },
+    "rnet|safari26_2": {
+     "status": "tested",
+     "client": {
+      "ok": true,
+      "done": 8
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path"
+     ],
+     "tested_at": "2026-10-18T13:44:48Z",
+     "library": "rnet",
+     "profile": "Safari26_2"
+    },
+    "azuretls-client|safari": {
+     "status": "tested",
+     "client": {
+      "done": 8,
+      "ok": true
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_e42f34c56612",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":authority",
+      ":path"
+     ],
+     "tested_at": "2026-10-18T13:44:49Z",
+     "library": "azuretls-client",
+     "profile": "Safari"
+    },
+    "tls-client|safari_15_6_1": {
+     "status": "tested",
+     "client": {
+      "done": 8,
+      "ok": true
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority"
+     ],
+     "tested_at": "2026-10-18T13:44:51Z",
+     "library": "tls-client",
+     "profile": "Safari_15_6_1"
+    },
+    "tls-client|safari_16_0": {
+     "status": "tested",
+     "client": {
+      "done": 8,
+      "ok": true
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority"
+     ],
+     "tested_at": "2026-10-18T13:44:52Z",
+     "library": "tls-client",
+     "profile": "Safari_16_0"
+    },
+    "utls|hellosafari_auto": {
+     "status": "tested",
+     "client": {
+      "done": 8,
+      "ok": true
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding",
+       "sec-fetch-dest",
+       "user-agent",
+       "accept"
+      ],
+      [
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding",
+       "sec-fetch-dest",
+       "user-agent"
+      ],
+      [
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding",
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "accept-language",
+       "priority",
+       "accept-encoding",
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode"
+      ],
+      [
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding",
+       "sec-fetch-dest",
+       "user-agent",
+       "accept"
+      ],
+      [
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding",
+       "sec-fetch-dest"
+      ]
+     ],
+     "pseudo_order": [
+      ":authority",
+      ":method",
+      ":path",
+      ":scheme"
+     ],
+     "tested_at": "2026-10-18T13:44:53Z",
+     "library": "uTLS",
+     "profile": "HelloSafari_Auto"
+    },
+    "noble-tls|safari_16_0": {
+     "status": "tested",
+     "client": {
+      "ok": true,
+      "done": 8
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority"
+     ],
+     "tested_at": "2026-10-18T13:44:55Z",
+     "library": "noble-tls",
+     "profile": "safari_16_0"
+    },
+    "tls-client-(python)|safari_16_0": {
+     "status": "tested",
+     "client": {
+      "ok": true,
+      "done": 8
+     },
+     "connections": [
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      },
+      {
+       "ja4": "t13d2014h2_a09f3c656075_14788d8d241b",
+       "has_psk": false,
+       "server_resumed": false,
+       "ext_order": [
+        "0x0000",
+        "0x0017",
+        "0xff01",
+        "0x000a",
+        "0x000b",
+        "0x0010",
+        "0x0005",
+        "0x000d",
+        "0x0012",
+        "0x0033",
+        "0x002d",
+        "0x002b",
+        "0x001b"
+       ]
+      }
+     ],
+     "request_headers": [
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ],
+      [
+       "sec-fetch-dest",
+       "user-agent",
+       "accept",
+       "sec-fetch-site",
+       "sec-fetch-mode",
+       "accept-language",
+       "priority",
+       "accept-encoding"
+      ]
+     ],
+     "pseudo_order": [
+      ":method",
+      ":scheme",
+      ":path",
+      ":authority"
+     ],
+     "tested_at": "2026-10-18T13:44:56Z",
+     "library": "tls-client (Python)",
+     "profile": "safari_16_0"
+    }
+   },
+   "requested_headers": [
+    [
+     "sec-fetch-dest",
+     "document"
+    ],
+    [
+     "user-agent",
+     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.2 Safari/605.1.15"
+    ],
+    [
+     "accept",
+     "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    ],
+    [
+     "sec-fetch-site",
+     "none"
+    ],
+    [
+     "sec-fetch-mode",
+     "navigate"
+    ],
+    [
+     "accept-language",
+     "en-US,en;q=0.9"
+    ],
+    [
+     "priority",
+     "u=0, i"
+    ],
+    [
+     "accept-encoding",
+     "gzip, deflate, br"
+    ]
+   ],
+   "capability": {}
   }
  },
- "generated_at": "2026-10-18T13:42:35Z",
+ "generated_at": "2026-10-18T13:44:56Z",
  "connections_per_row": 8,
  "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)"
 }
