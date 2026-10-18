@@ -3,6 +3,7 @@
 package main
 
 import (
+	"strings"
 	"context"
 	"crypto/tls"
 	"encoding/json"
@@ -101,6 +102,9 @@ func main() {
 		"utls_HelloFirefox_Auto":     utlsAuto,
 	}
 	for name, f := range cases {
+		if !wanted(name) {
+			continue
+		}
 		b, err := f()
 		if err != nil {
 			fmt.Println(name, "ERR", err)
@@ -114,4 +118,20 @@ func main() {
 		os.WriteFile("out/"+name+".json", b, 0644)
 		fmt.Println(name, "ok")
 	}
+}
+
+// wanted: STALE_LIBS (comma-separated board library names, e.g. "tls-client,uTLS") limits the run to those libraries;
+// empty = every case. Used by the release watch to re-test only the library that shipped an update.
+func wanted(name string) bool {
+	v := os.Getenv("STALE_LIBS")
+	if v == "" {
+		return true
+	}
+	lib := map[string]string{"tls-client(go)": "tls-client", "azuretls": "azuretls-client", "utls": "uTLS"}[strings.SplitN(name, "_", 2)[0]]
+	for _, x := range strings.Split(v, ",") {
+		if strings.TrimSpace(x) == lib {
+			return true
+		}
+	}
+	return false
 }

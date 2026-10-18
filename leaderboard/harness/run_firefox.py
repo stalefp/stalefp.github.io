@@ -36,9 +36,18 @@ CASES = [("curl_cffi", "firefox147", run_curl), ("curl_cffi", "firefox144", run_
          ("rnet", "Firefox147", run_rnet), ("rnet", "Firefox139", run_rnet),
          ("noble-tls", "firefox_147", run_noble), ("tls-client(py)", "firefox_120", run_tlsclient)]
 
+def wanted(lib):
+    """STALE_LIBS (comma-separated board library names) limits the run to those libraries; empty = all cases."""
+    import os
+    v = os.environ.get("STALE_LIBS", "")
+    return not v or {"tls-client(py)": "tls-client (Python)", "tls-client(go)": "tls-client", "azuretls": "azuretls-client", "utls": "uTLS"}.get(lib, lib) in [x.strip() for x in v.split(",")]
+
+
 if __name__ == "__main__":
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
     for lib, profile, fn in CASES:
+        if not wanted(lib):
+            continue
         name = f"{lib}_{profile}"
         try:
             d = fn(profile)

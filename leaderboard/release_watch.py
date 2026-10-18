@@ -172,6 +172,31 @@ def record(before_dir):
     return 0
 
 
+def libs():
+    """Board library names that have a new release (for STALE_LIBS, which limits every harness to those libraries)."""
+    print(",".join(u["library"] for u in json.load(open(UPD))))
+    return 0
+
+
+def merge(before_dir):
+    """After a re-test limited to the updated libraries (STALE_LIBS): keep their new rows, and put every other library's
+    rows back from before the run, so a partial run never drops or 'not tested's the libraries it skipped."""
+    upd = {u["library"] for u in json.load(open(UPD))}
+    for board, path in BOARDS.items():
+        prev = os.path.join(before_dir, os.path.basename(path))
+        if not (os.path.exists(prev) and os.path.exists(path)):
+            continue
+        old, new = json.load(open(prev)), json.load(open(path))
+        fresh = {e["id"]: e for e in new["libraries"] if e["library"] in upd}
+        rows = [fresh.pop(e["id"], e) if e["library"] in upd else e for e in old["libraries"]] + list(fresh.values())
+        new["libraries"] = rows
+        json.dump(new, open(path, "w"), indent=1)
+        print("%s board: %d rows re-tested (%s), %d kept from before" % (board, sum(e["library"] in upd for e in rows), ", ".join(sorted(upd)),
+                                                                       sum(e["library"] not in upd for e in rows)))
+    return 0
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "check"
-    sys.exit({"check": check, "bump": bump, "validate": validate}.get(cmd, lambda: record(sys.argv[2]))())
+    fn = {"check": check, "bump": bump, "validate": validate, "libs": libs}.get(cmd)
+    sys.exit(fn() if fn else merge(sys.argv[2]) if cmd == "merge" else record(sys.argv[2]))

@@ -61,10 +61,15 @@ jobs:
           BUILD_PYTHON: python
         run: |
           mkdir -p "$RUNNER_TEMP/before"
-          cp leaderboard/data/libraries.json leaderboard/data/firefox_libraries.json "$RUNNER_TEMP/before/" 2>/dev/null || true
+          cp leaderboard/data/*libraries.json "$RUNNER_TEMP/before/" 2>/dev/null || true
           ok=1
+          # re-test ONLY the libraries with a new release (every harness honours STALE_LIBS), then merge their rows
+          # into the existing boards so the other libraries keep their data
+          STALE_LIBS="$(python leaderboard/release_watch.py libs)"; export STALE_LIBS
+          echo "re-testing: $STALE_LIBS"
           leaderboard/run.sh || ok=0
           if [ -f capture/data/firefox/latest.json ]; then leaderboard/run_firefox.sh || ok=0; fi
+          python leaderboard/release_watch.py merge "$RUNNER_TEMP/before" || ok=0
           python leaderboard/release_watch.py validate || ok=0
           if [ $ok = 0 ]; then
             # keep the previous data and pins; fail visibly

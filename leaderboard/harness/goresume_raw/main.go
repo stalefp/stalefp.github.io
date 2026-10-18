@@ -4,6 +4,7 @@
 package main
 
 import (
+	"strings"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -26,6 +27,9 @@ func main() {
 		url = os.Args[2]
 	}
 	os.MkdirAll(out, 0755)
+	if !wanted("tls-client(go)_resume") {
+		return
+	}
 	for name, p := range map[string]profiles.ClientProfile{"Chrome_152": profiles.Chrome_152, "Chrome_152_PSK": profiles.Chrome_152_PSK} {
 		c, _ := tls_client.NewHttpClient(tls_client.NewNoopLogger(), tls_client.WithClientProfile(p), tls_client.WithTimeoutSeconds(30))
 		for i := 0; i < 3; i++ {
@@ -50,4 +54,20 @@ func main() {
 			time.Sleep(500 * time.Millisecond)
 		}
 	}
+}
+
+// wanted: STALE_LIBS (comma-separated board library names, e.g. "tls-client,uTLS") limits the run to those libraries;
+// empty = every case. Used by the release watch to re-test only the library that shipped an update.
+func wanted(name string) bool {
+	v := os.Getenv("STALE_LIBS")
+	if v == "" {
+		return true
+	}
+	lib := map[string]string{"tls-client(go)": "tls-client", "azuretls": "azuretls-client", "utls": "uTLS"}[strings.SplitN(name, "_", 2)[0]]
+	for _, x := range strings.Split(v, ",") {
+		if strings.TrimSpace(x) == lib {
+			return true
+		}
+	}
+	return false
 }

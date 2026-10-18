@@ -113,7 +113,7 @@ def run_case(rec, port, board, row, hdrs, n):
 
 def main():
     a = sys.argv
-    only = a[a.index("--library") + 1] if "--library" in a else None
+    only = a[a.index("--library") + 1] if "--library" in a else (os.environ.get("STALE_LIBS") or None)
     boards = [a[a.index("--board") + 1]] if "--board" in a else list(BOARDS)
     n = int(a[a.index("--n") + 1]) if "--n" in a else 8
     port = int(a[a.index("--port") + 1]) if "--port" in a else 28643
@@ -134,7 +134,7 @@ def main():
         if not only:
             res["rows"] = {k: v for k, v in res["rows"].items() if any(r["id"] == k for r in rows)}
         for row in rows:
-            if only and row["library"] != only:
+            if only and row["library"] not in only.split(","):
                 continue
             r = run_case(rec, port, board, row, hdrs, n)
             r.update(library=row["library"], profile=row["profile"])
@@ -145,7 +145,7 @@ def main():
                 ((r.get("client") or {}).get("error") or "")[:80]), flush=True)
         cap = res.setdefault("capability", {})
         for lib, prof in CAPABILITY.get(board, []):
-            if only and lib != only:
+            if only and lib not in only.split(","):
                 continue
             r = run_case(rec, port, board, dict(id="cap|%s|%s" % (lib, prof), library=lib, profile=prof), hdrs, n)
             c = r.get("connections") or []

@@ -23,6 +23,13 @@ for node in tree.body:
         keep.append(node)
     elif isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id in ("URL", "CASES") for t in node.targets):
         keep.append(node)
+def wanted(lib):
+    """STALE_LIBS (comma-separated board library names) limits the run to those libraries; empty = all cases."""
+    import os
+    v = os.environ.get("STALE_LIBS", "")
+    return not v or {"tls-client(py)": "tls-client (Python)", "tls-client(go)": "tls-client", "azuretls": "azuretls-client", "utls": "uTLS"}.get(lib, lib) in [x.strip() for x in v.split(",")]
+
+
 ns = {"__name__": "bench_cases"}
 exec(compile(ast.Module(body=keep, type_ignores=[]), "bench.py", "exec"), ns)
 if url:
@@ -30,6 +37,8 @@ if url:
 
 summary = []
 for lib, profile, fn in ns["CASES"]:
+    if not wanted(lib):
+        continue
     name = f"{lib}_{profile}"
     t0 = time.time()
     try:

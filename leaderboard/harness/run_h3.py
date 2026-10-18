@@ -36,6 +36,13 @@ def h3_split(raw):
     s = {k: v for k, v in raw.items() if (int(k) - 0x21) % 0x1F != 0}   # same GREASE rule as capture.py
     return s, len(raw) - len(s)
 
+def wanted(lib):
+    """STALE_LIBS (comma-separated board library names) limits the run to those libraries; empty = all cases."""
+    import os
+    v = os.environ.get("STALE_LIBS", "")
+    return not v or {"tls-client(py)": "tls-client (Python)", "tls-client(go)": "tls-client", "azuretls": "azuretls-client", "utls": "uTLS"}.get(lib, lib) in [x.strip() for x in v.split(",")]
+
+
 def main():
     out = sys.argv[1]; port = int(sys.argv[sys.argv.index("--port") + 1]) if "--port" in sys.argv else 28544
     os.makedirs(out, exist_ok=True)
@@ -49,6 +56,8 @@ def main():
     started = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     summary = []
     for name, cmd, cid in CASES:
+        if not wanted(next((p for p in ("tls-client(go)", "azuretls", "curl_cffi", "noble-tls") if name.startswith(p)), name)):
+            continue
         url = "https://%s:%d/fresh?case=%s" % (HOST, port, name)
         m = rec.mark(); t0 = time.time()
         try:
