@@ -19,7 +19,8 @@ REQ = os.path.join(HERE, "requirements.txt")
 GOMODS = sorted(glob.glob(os.path.join(HERE, "harness", "*", "go.mod")))
 UPD = os.path.join(HERE, "raw", "release_updates.json")
 LOG = os.path.join(HERE, "data", "release_log.json")
-BOARDS = {"chrome": os.path.join(HERE, "data", "libraries.json"), "firefox": os.path.join(HERE, "data", "firefox_libraries.json")}
+BOARDS = {"chrome": os.path.join(HERE, "data", "libraries.json"), "firefox": os.path.join(HERE, "data", "firefox_libraries.json"),
+          "safari": os.path.join(HERE, "data", "safari_libraries.json")}
 # leaderboard library name -> (ecosystem, package / module)
 SOURCES = {
     "curl_cffi": ("pypi", "curl_cffi"), "primp": ("pypi", "primp"), "rnet": ("pypi", "rnet"),

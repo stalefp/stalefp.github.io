@@ -106,7 +106,7 @@
     return e;
   }
   var bound = {};
-  // "Last updated N hours ago": newest of the capture / board timestamps seen so far; refreshed every minute.
+  // "Last updated N hours ago": newest real-browser capture (Chrome, Firefox, Safari) seen so far; refreshed every minute.
   var lastStamp = 0;
   function ago(ms) {
     var m = Math.max(0, Math.round((Date.now() - ms) / 60000));
@@ -683,14 +683,16 @@
   }
 
   /* ---------------- Current Firefox ---------------- */
-  function renderFirefox(ff) {
-    var box = $("#ff-body"); if (!box || !ff || !ff.ja4) return; box.innerHTML = "";
+  function renderFirefox(ff, o) {
+    o = o || { box: "#ff-body", name: "Firefox" };
+    var box = $(o.box); if (!box || !ff || !ff.ja4) return; box.innerHTML = "";
+    lastUpdated(ff.captured_at);
     var h2 = ff.http2 || {};
     var row = function (label, val, copy) {
       return el("div", { cls: "wide" }, [el("dt", { text: label }), el("dd", { cls: "code-row" }, [el("code", { text: val || "not captured" })].concat(copy && val ? [copyBtn(val)] : []))]);
     };
     box.appendChild(el("dl", { cls: "fp" }, [
-      el("div", {}, [el("dt", { text: "Firefox version checked" }), el("dd", { text: ff.version + " (" + ff.channel + ", " + ff.os + ")" })]),
+      el("div", {}, [el("dt", { text: o.name + " version checked" }), el("dd", { text: ff.version + " (" + ff.channel + ", " + ff.os + ")" })]),
       el("div", {}, [el("dt", { text: "Last checked" }), el("dd", { text: localTime(ff.captured_at) })]),
       row("TLS fingerprint (JA4), fresh connection", ff.ja4, true),
       row("JA4, resumed connection", ff.ja4_resumed, true),
@@ -778,25 +780,28 @@
   }
 
   /* Firefox leaderboard (data/firefox_libraries.json, leaderboard/build_firefox.py) */
-  function renderFirefoxBoard(lb) {
-    var box = $("#ff-board"); if (!box || !lb || !lb.libraries) return; box.innerHTML = "";
+  // Also renders the Safari board (data/safari_libraries.json, leaderboard/build_safari.py): same row shape.
+  var FF_OPTS = { box: "#ff-board", name: "Firefox", ver: "firefox_version", anchor: "firefox-board", badge: "firefox" };
+  function renderFirefoxBoard(lb, o) {
+    o = o || FF_OPTS;
+    var box = $(o.box); if (!box || !lb || !lb.libraries) return; box.innerHTML = "";
     var r = lb.reference || {};
-    box.appendChild(el("p", { cls: "muted small", text: "Graded against real Firefox " + r.firefox_version + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard. " + (lb.caveats || []).join(" ") }));
+    box.appendChild(el("p", { cls: "muted small", text: "Graded against real " + o.name + " " + r[o.ver] + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard. " + (lb.caveats || []).join(" ") }));
     var base = location.origin + location.pathname.replace(/[^/]*$/, "");
-    var t = el("table", { cls: "lb" }, [el("thead", {}, [el("tr", {}, ["Library", "Firefox profile", "Versions behind", "TLS match", "HTTP/2", "Verdict", "Tested"].map(function (h) { return el("th", { text: h }); }))])]);
+    var t = el("table", { cls: "lb" }, [el("thead", {}, [el("tr", {}, ["Library", o.name + " profile", "Versions behind", "TLS match", "HTTP/2", "Verdict", "Tested"].map(function (h) { return el("th", { text: h }); }))])]);
     var tb = el("tbody");
     lb.libraries.forEach(function (l) {
       var f = l.fingerprint || {}, g = l.http2_grade || {};
       tb.appendChild(el("tr", { cls: "row" }, [
         td("Library", [el("span", { cls: "lib", text: l.library }), el("span", { cls: "lang", text: l.language + (l.version ? " · " + l.version : "") })], "first"),
-        td("Firefox profile", [el("code", { text: l.profile })]),
+        td(o.name + " profile", [el("code", { text: l.profile })]),
         td("Versions behind", [el("span", { text: l.versions_behind == null ? "unknown" : String(l.versions_behind) })]),
         td("TLS match", [mark(((l.matches || {}).variants || {}).default ? l.matches.variants.default.ja4_fresh : null)]),
         td("HTTP/2", [el("span", { cls: "line" }, ["settings ", mark(g.settings)]), el("span", { cls: "line" }, ["header order ", mark(g.header_order)])]),
         td("Verdict", [el("span", { cls: "badge " + (VCLS[l.verdict] || "v-na"), text: VLABEL[l.verdict] || l.verdict })]),
         td("Tested", [el("time", { text: localDate(l.tested_at) || "not tested" })])
       ]));
-      var md = "[![Firefox match](https://img.shields.io/endpoint?url=" + encodeURIComponent(base + "api/badges/firefox/" + badgeSlug(l.id) + ".json") + ")](" + base + "#firefox-board)";
+      var md = o.badge ? "[![" + o.name + " match](https://img.shields.io/endpoint?url=" + encodeURIComponent(base + "api/badges/" + o.badge + "/" + badgeSlug(l.id) + ".json") + ")](" + base + "#" + o.anchor + ")" : null;
       var ids = [["JA4", f.ja4_fresh], ["HTTP/2", f.http2_akamai]].filter(function (x) { return x[1]; });
       tb.appendChild(el("tr", { cls: "why-row" }, [el("td", { colspan: "7" }, [
         el("p", { cls: "why-head", text: l.behind_text || "" }),
@@ -807,7 +812,7 @@
         l.fix ? el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): " }),
           el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]) : null
       ].concat((l.notes || []).map(function (n) { return el("p", { cls: "why-note", text: n }); })).concat([
-        l.verdict !== "not tested" ? el("div", { cls: "code-row small" }, [el("span", { cls: "muted", text: "Badge " }), el("code", { cls: "md", text: md }), copyBtn(md)]) : null
+        md && l.verdict !== "not tested" ? el("div", { cls: "code-row small" }, [el("span", { cls: "muted", text: "Badge " }), el("code", { cls: "md", text: md }), copyBtn(md)]) : null
       ]))]));
     });
     t.appendChild(tb); box.appendChild(el("div", { cls: "table-wrap" }, [t]));
@@ -907,7 +912,6 @@
     bind("chrome_build_long", [r.browser, r.chrome_version, r.channel].filter(Boolean).join(" ") + (r.os ? " on " + r.os : ""));
     bind("endpoints", ((lb.harness || {}).endpoints || []).join(", "));
     bind("generated_at", localTime(lb.generated_at));
-    lastUpdated(lb.generated_at);
     $("#ca34-caveat").textContent = (lb.caveats || [])[0] || "";
     var ml = $("#method-list");
     (lb.caveats || []).slice(1).forEach(function (c) { ml.appendChild(el("li", { text: c })); });
@@ -928,6 +932,11 @@
         getJSON("data/firefox.json").then(renderFirefox, function () { /* no Firefox capture yet */ });
         getJSON("data/firefox/history/index.json").then(initFirefoxHistory, function () { initFirefoxHistory(null); });
         getJSON("data/firefox_libraries.json").then(function (f) { renderFirefoxBoard(f); sumBoard("#sum-firefox", "Firefox", f, (f.reference || {}).firefox_version); }, function () { /* Firefox leaderboard not built yet */ });
+        getJSON("data/safari/latest.json").then(function (sf) { renderFirefox(sf, { box: "#sf-body", name: "Safari" }); }, function () { /* no Safari capture yet */ });
+        getJSON("data/safari_libraries.json").then(function (f) {
+          renderFirefoxBoard(f, { box: "#sf-board", name: "Safari", ver: "safari_version", anchor: "safari-board", badge: null });
+          sumBoard("#sum-safari", "Safari", f, (f.reference || {}).safari_version);
+        }, function () { /* Safari leaderboard not built yet */ });
         getJSON("data/firefox/platforms.json").then(renderFirefoxPlatforms, function () { /* no per-OS Firefox data yet */ });
         getJSON("data/brands/index.json").then(renderBrands, function () { /* no Edge/Brave capture yet */ });
         renderFooter(res[1]);

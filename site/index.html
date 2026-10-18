@@ -21,7 +21,7 @@
     <!-- COPY: Nya (sub-line) -->
     <p class="subline">Built from real Chrome captures and compared field by field.</p>
     <nav class="nav" aria-label="Sections">
-      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#firefox">Firefox</a><a href="#brands">Edge &amp; Brave</a><a href="#leaderboard">Leaderboard</a><a href="#firefox-board">Firefox leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
+      <a href="#chrome">Current Chrome</a><a href="#platforms">By platform</a><a href="#firefox">Firefox</a><a href="#safari">Safari</a><a href="#brands">Edge &amp; Brave</a><a href="#leaderboard">Leaderboard</a><a href="#firefox-board">Firefox leaderboard</a><a href="#safari-board">Safari leaderboard</a><a href="#changes">What changed</a><a href="#compare">Compare versions</a><a href="#why">Why it matters</a><a href="#api">JSON feed</a><a href="#badges">Badges</a><a href="#early-access">Early access</a>
     </nav>
   </div>
 </header>
@@ -41,9 +41,10 @@
     <div class="sum-grid">
       <div id="sum-chrome"><p class="muted">Loading…</p></div>
       <div id="sum-firefox"></div>
+      <div id="sum-safari"></div>
     </div>
     <div id="sum-movers"></div>
-    <p class="muted small">Details below: <a href="#leaderboard">Chrome leaderboard</a> · <a href="#firefox-board">Firefox leaderboard</a> · <a href="#chrome">Current Chrome</a> · <a href="#firefox">Current Firefox</a> · <a href="#api">JSON feed</a></p>
+    <p class="muted small">Details below: <a href="#leaderboard">Chrome leaderboard</a> · <a href="#firefox-board">Firefox leaderboard</a> · <a href="#safari-board">Safari leaderboard</a> · <a href="#chrome">Current Chrome</a> · <a href="#firefox">Current Firefox</a> · <a href="#api">JSON feed</a></p>
   </section>
 
   <!-- 1. Current real Chrome fingerprint -->
@@ -94,6 +95,13 @@
     <div id="ff-history"></div>
     <h3>Firefox on Linux, Windows and macOS</h3>
     <div id="ff-platforms" class="plat-grid"><p class="muted">No per-OS Firefox capture yet. Windows and macOS are captured daily from now on.</p></div>
+  </section>
+
+  <!-- Current Safari (capture/lib/capture_safari.py, macOS runner) -->
+  <section id="safari" class="card" aria-labelledby="sf-h">
+    <h2 id="sf-h">Current Safari fingerprint</h2>
+    <p class="muted small">The Safari that ships with macOS on the GitHub macOS runner, driven by Apple's safaridriver against the same local capture server. The Safari leaderboard below grades the libraries' desktop Safari profiles against it.</p>
+    <div id="sf-body"><p class="muted">No Safari capture yet. It's part of the daily capture on macOS and will appear after the next successful run.</p></div>
   </section>
 
   <!-- 1c. Other Chromium-based browsers, data/brands/index.json from capture/merge_brands.py -->
@@ -179,6 +187,13 @@
     <h2 id="ffb-h">How far behind is each library's Firefox profile?</h2>
     <p>The same check as above, for the libraries' Firefox profiles, graded against our capture of real Firefox.</p>
     <div id="ff-board"><p class="muted">The Firefox leaderboard is built by the daily capture and will appear after the next run.</p></div>
+  </section>
+
+  <!-- Safari leaderboard (leaderboard/build_safari.py) -->
+  <section id="safari-board" aria-labelledby="sfb-h">
+    <h2 id="sfb-h">How far behind is each library's Safari profile?</h2>
+    <p>The same check, for the libraries' desktop Safari profiles, graded against our capture of real Safari on macOS. iOS profiles aren't graded: we have no real iPhone capture to compare them with.</p>
+    <div id="sf-board"><p class="muted">The Safari leaderboard is built by the daily capture once real Safari has been captured.</p></div>
   </section>
 
   <!-- 3. What changed -->

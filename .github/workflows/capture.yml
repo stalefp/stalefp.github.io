@@ -179,6 +179,28 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
+      # Safari (macOS only): the Safari preinstalled on the runner, driven by Apple's safaridriver. Isolated like Firefox:
+      # continue-on-error, separate artifact, so a Safari failure can never affect the Chrome capture or the deploy.
+      - name: Safari capture (preinstalled Safari via safaridriver)
+        if: ${{ !cancelled() && matrix.id == 'macos' }}
+        continue-on-error: true
+        timeout-minutes: 10
+        shell: bash
+        run: |
+          sw_vers
+          /usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" /Applications/Safari.app/Contents/Info.plist
+          python -W ignore capture/lib/capture_safari.py --out out/safari-macos
+
+      - name: Upload Safari capture JSON
+        if: ${{ !cancelled() && matrix.id == 'macos' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: safari-macos
+          path: out/safari-macos/latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
       # Microsoft Edge + Brave (Linux only): official stable .debs from the vendors' signed apt repos (pinned signing-key
       # fingerprint -> InRelease signature -> Packages SHA256 -> .deb SHA256, capture/install_brand_deb.sh). Isolated like Firefox.
       - name: Edge + Brave capture (official signed Linux packages)
@@ -304,6 +326,22 @@ jobs:
         run: |
           python capture/merge_firefox.py --artifacts ff-artifacts
           leaderboard/run_firefox.sh || echo "::warning::Firefox leaderboard run failed"
+      - name: Download Safari capture
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: safari-*
+          path: sf-artifacts
+      - name: Merge Safari capture + Safari library comparison (isolated, can't fail the Chrome run)
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          HARNESS_PYTHON: python
+          CAPTURE_PYTHON: python
+          BUILD_PYTHON: python
+        run: |
+          python capture/merge_safari.py --artifacts sf-artifacts
+          leaderboard/run_safari.sh || echo "::warning::Safari leaderboard run failed"
       - name: Download Edge + Brave captures
         continue-on-error: true
         uses: actions/download-artifact@v8

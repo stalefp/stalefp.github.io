@@ -56,3 +56,9 @@ rm -rf "$SITE/data/brands"
 if [[ -f "$TB/capture/data/brands/index.json" ]]; then
   mkdir -p "$SITE/data/brands"; cp "$TB/capture/data/brands/index.json" "$SITE/data/brands/index.json"; echo "brands/       <- capture/data/brands/index.json"
 fi
+# Safari on macOS (capture/lib/capture_safari.py, capture/merge_safari.py) and Safari leaderboard (leaderboard/build_safari.py); optional
+rm -rf "$SITE/data/safari"; mkdir -p "$SITE/data/safari"
+[[ -f "$TB/capture/data/safari/latest.json" ]] && cp "$TB/capture/data/safari/latest.json" "$SITE/data/safari/latest.json"
+[[ -f "$TB/capture/data/safari/platforms/index.json" ]] && cp "$TB/capture/data/safari/platforms/index.json" "$SITE/data/safari/platforms.json"
+[[ -f "$TB/leaderboard/data/safari_libraries.json" ]] && cp "$TB/leaderboard/data/safari_libraries.json" "$SITE/data/safari_libraries.json"
+echo "safari/       <- capture/data/safari, leaderboard/data/safari_libraries.json"

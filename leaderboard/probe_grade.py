@@ -38,7 +38,7 @@ def browser_behaviour(board):
         for f in files:
             d = _load(f)
             if d and d.get("extensions"):
-                caps += [d.get("extensions"), d.get("extensions_resumed")]
+                caps += [d.get("extensions"), d.get("extensions_resumed")] + list(d.get("extension_orders") or [])
         d = _load(os.path.join(base, "latest.json")) or {}
         default_resumed, hdr = d.get("ja4_resumed"), d.get("header_order")
         resumed = [default_resumed] if default_resumed else []
@@ -67,7 +67,7 @@ def apply(board, data, browser_name):
     # a profile of the library that resumed (board row or capability case, any board): "this profile doesn't" vs "never seen"
     resumers = {}
     boards = probe.get("boards") or {}
-    for b in [boards[board]] * (board in boards) + [v for k, v in boards.items() if k != board]:   # same board first
+    for b in ([boards[board]] if board in boards else []) + [v for k, v in boards.items() if k != board]:   # same board first
         for r in b.get("rows", {}).values():
             if any(c.get("has_psk") and c.get("server_resumed") for c in r.get("connections") or []):
                 resumers.setdefault(r["library"], r["profile"])
