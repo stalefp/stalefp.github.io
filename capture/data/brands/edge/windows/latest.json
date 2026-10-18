@@ -6,11 +6,11 @@
   "channel": "stable",
   "os": "Windows 2025Server (AMD64, build 10.0.26100)",
   "platform": "windows",
-  "captured_at": "2026-10-18T09:59:43-05:00",
+  "captured_at": "2026-10-18T10:18:44-05:00",
   "chrome_path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
   "chrome_version_string": "Microsoft Edge 155.0.4283.62",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39137387564",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39137915701",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "e8138fffd21f90f39e70c58f01129c78",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,16-65037-13-11-65281-43-10-35-45-0-51-5-27-23-18-17613,4588-29-23-24,0",
+      "ja3": "42df93a477464a9a610635f8bb5f2f6a",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-43-45-65281-23-16-27-0-35-10-17613-11-51-13-18-5,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x0010",
         "0xfe0d",
-        "0x000d",
-        "0x000b",
-        "0xff01",
         "0x002b",
-        "0x000a",
-        "0x0023",
         "0x002d",
-        "0x0000",
-        "0x0033",
-        "0x0005",
-        "0x001b",
+        "0xff01",
         "0x0017",
+        "0x0010",
+        "0x001b",
+        "0x0000",
+        "0x0023",
+        "0x000a",
+        "0x44cd",
+        "0x000b",
+        "0x0033",
+        "0x000d",
         "0x0012",
-        "0x44cd"
+        "0x0005"
       ],
       "extensions_resumed": [
-        "0x002b",
-        "0x0017",
-        "0x0005",
-        "0x0012",
-        "0x002d",
+        "0x000b",
         "0x0000",
         "0x000a",
-        "0x000b",
-        "0x001b",
-        "0x0033",
-        "0x44cd",
+        "0x002b",
         "0x0023",
-        "0xfe0d",
-        "0x0010",
+        "0x44cd",
+        "0x002d",
+        "0x0017",
+        "0x001b",
         "0xff01",
         "0x000d",
+        "0x0005",
+        "0x0010",
+        "0x0033",
+        "0x0012",
+        "0xfe0d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -383,15 +383,15 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0010",
-          "0x000a",
-          "0x0039",
-          "0x0000",
-          "0x002b",
-          "0x001b",
           "0x44cd",
-          "0x000d",
           "0x0033",
+          "0x000a",
+          "0x001b",
+          "0x000d",
+          "0x002b",
+          "0x0000",
+          "0x0039",
+          "0x0010",
           "0x002d",
           "0xfe0d"
         ],
@@ -438,71 +438,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x9b898e8b31d4f0a",
-            "name": "grease",
-            "len": 3,
-            "value": 8504
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
             "id": "0xf",
             "name": "initial_source_connection_id",
             "len": 0,
             "hex": ""
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000010a9a3aaa"
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
           },
           {
             "id": "0x20",
@@ -515,6 +454,67 @@
             "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000013a0a2a2a"
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0x3936acf03b2858f8",
+            "name": "grease",
+            "len": 1,
+            "hex": "9b"
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           }
         ],
         "h3_settings": {

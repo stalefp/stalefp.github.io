@@ -6,11 +6,11 @@
   "channel": "stable",
   "os": "Windows 2025Server (AMD64, build 10.0.26100)",
   "platform": "windows",
-  "captured_at": "2026-10-18T10:01:18-05:00",
+  "captured_at": "2026-10-18T10:20:18-05:00",
   "chrome_path": "C:\\Users\\runneradmin\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
   "chrome_version_string": "Brave Browser 155.1.97.59",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39137387564",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39137915701",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "116f21cf93b41d4c72689f9e110e6c19",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-11-17613-10-35-27-43-5-51-45-23-13-0-18-16-65037,4588-29-23-24,0",
+      "ja3": "0a344bba2b4273cf395f9d15409541a1",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,43-45-13-0-23-51-27-65037-18-35-65281-11-16-10-5-17613,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0xff01",
-        "0x000b",
-        "0x44cd",
-        "0x000a",
-        "0x0023",
-        "0x001b",
         "0x002b",
-        "0x0005",
-        "0x0033",
         "0x002d",
-        "0x0017",
         "0x000d",
         "0x0000",
+        "0x0017",
+        "0x0033",
+        "0x001b",
+        "0xfe0d",
         "0x0012",
+        "0x0023",
+        "0xff01",
+        "0x000b",
         "0x0010",
-        "0xfe0d"
+        "0x000a",
+        "0x0005",
+        "0x44cd"
       ],
       "extensions_resumed": [
-        "0x0012",
-        "0x000a",
-        "0x0005",
-        "0xff01",
-        "0x0033",
-        "0x0017",
-        "0x0000",
-        "0x000b",
-        "0x002d",
         "0x44cd",
-        "0x001b",
-        "0x0010",
-        "0x000d",
-        "0x002b",
-        "0xfe0d",
         "0x0023",
+        "0x0000",
+        "0x002b",
+        "0x002d",
+        "0x000b",
+        "0x0010",
+        "0x0033",
+        "0xff01",
+        "0x0005",
+        "0x000a",
+        "0x0012",
+        "0xfe0d",
+        "0x000d",
+        "0x001b",
+        "0x0017",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -206,180 +206,10 @@
         "seed_scan_error": null,
         "seed_decompressed_bytes": 23351
       },
-      "quic": {
-        "flags": [
-          "--enable-quic",
-          "--origin-to-force-quic-on=capture.test:18544"
-        ],
-        "ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
-        "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
-        "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
-        "extensions": [
-          "0x001b",
-          "0x0033",
-          "0x0010",
-          "0x0000",
-          "0xfe0d",
-          "0x000d",
-          "0x44cd",
-          "0x002d",
-          "0x000a",
-          "0x0039",
-          "0x002b"
-        ],
-        "has_trust_anchors": false,
-        "ciphers": [
-          "0x1301",
-          "0x1302",
-          "0x1303"
-        ],
-        "sig_algs": [
-          "0x0403",
-          "0x0804",
-          "0x0401",
-          "0x0503",
-          "0x0805",
-          "0x0501",
-          "0x0806",
-          "0x0601",
-          "0x0201"
-        ],
-        "groups": [
-          "0x11ec",
-          "0x001d",
-          "0x0017",
-          "0x0018"
-        ],
-        "key_shares": [
-          {
-            "group": "0x11ec",
-            "name": "X25519MLKEM768",
-            "key_length": 1216
-          },
-          {
-            "group": "0x001d",
-            "name": "x25519",
-            "key_length": 32
-          }
-        ],
-        "alpn": [
-          "h3"
-        ],
-        "alps": [
-          "h3"
-        ],
-        "transport_params": [
-          {
-            "id": "0x1ad5442d993067ad",
-            "name": "grease",
-            "len": 6,
-            "value": 12594
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000012a7a1a2a"
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          }
-        ],
-        "h3_settings": {
-          "1": 65536,
-          "6": 262144,
-          "7": 100,
-          "51": 1
-        },
-        "h3_grease_settings": 1,
-        "http_version": "h3",
-        "header_order": [
-          ":method",
-          ":authority",
-          ":scheme",
-          ":path",
-          "sec-ch-ua",
-          "sec-ch-ua-mobile",
-          "sec-ch-ua-platform",
-          "upgrade-insecure-requests",
-          "user-agent",
-          "accept",
-          "sec-gpc",
-          "sec-fetch-site",
-          "sec-fetch-mode",
-          "sec-fetch-user",
-          "sec-fetch-dest",
-          "accept-encoding",
-          "accept-language",
-          "priority"
-        ],
-        "notes": []
-      },
-      "notes": [],
+      "quic": null,
+      "notes": [
+        "QUIC: no QUIC ClientHello captured; launch/cdp error: "
+      ],
       "network_trial_groups": null
     }
   ],

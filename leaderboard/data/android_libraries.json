@@ -1,0 +1,1330 @@
+{
+ "schema_version": "android-leaderboard-1",
+ "generated_at": "2026-10-18T15:23:51Z",
+ "reference": {
+  "browser": "Google Chrome (Android)",
+  "android_version": "155.0.8059.84",
+  "android_major": 155,
+  "captured_at": "2026-10-18T10:06:57-05:00",
+  "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
+  "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+  "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+  "source": "capture/data/platforms/android.json",
+  "apk_source": "apk",
+  "version_verified": true
+ },
+ "verdict_rules": "Same counted fields and thresholds as the Chrome leaderboard, against Chrome for Android's default fingerprint (the less common no-ca34 and post-quantum variants count as 'Exact, less common variant').",
+ "caveats": [
+  "Libraries are tested against the public TLS echo endpoint (tls.peet.ws); real Chrome for Android is captured on an Android emulator (Google Play system image, x86_64) against our local capture server. Both record the raw ClientHello and HTTP/2 frames.",
+  "Resumption, extension-order shuffling and HTTP/3 are not tested for the Android profiles yet."
+ ],
+ "libraries": [
+  {
+   "id": "android|primp|chrome_146",
+   "library": "primp",
+   "maintainer": "deedy5",
+   "language": "Python",
+   "profile": "chrome_146 (os android)",
+   "note": "desktop Chrome 146 profile with impersonate_os=\"android\"",
+   "version": "2.0.1",
+   "tested_at": "2026-10-18T15:23:50Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/android-20261018T152350Z/py/primp_chrome_146_android.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ]
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ]
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ]
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome for Android's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "extension-order shuffling",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 146,
+   "versions_behind": 9,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
+    "Missing 1 extension: trust anchors (ca34)."
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "behind_text": "Copies Chrome 146, 9 versions behind current 155; 2 counted fields differ from current Chrome for Android.",
+   "is_newest_profile": true
+  },
+  {
+   "id": "android|rnet|chrome145",
+   "library": "rnet",
+   "maintainer": "0x676e67",
+   "language": "Python",
+   "profile": "Chrome145 (EmulationOS.Android)",
+   "note": "desktop Chrome 145 emulation with emulation_os=Android",
+   "version": "3.0.0rc22",
+   "tested_at": "2026-10-18T15:23:50Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/android-20261018T152350Z/py/rnet_Chrome145_Android.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "user-agent",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "accept",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ]
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ]
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ]
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome for Android's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "extension-order shuffling",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 145,
+   "versions_behind": 10,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
+    "Missing 1 extension: trust anchors (ca34).",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends sec-fetch-dest before accept; Chrome sends accept first."
+   ],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   },
+   "behind_text": "Copies Chrome 145, 10 versions behind current 155; 2 counted fields differ from current Chrome for Android.",
+   "is_newest_profile": true
+  },
+  {
+   "id": "android|curl_cffi|chrome131_android",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "profile": "chrome131_android",
+   "note": null,
+   "version": "0.16.3",
+   "tested_at": "2026-10-18T15:23:50Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/android-20261018T152350Z/py/curl_cffi_chrome131_android.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps.",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "alps"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "4469"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps"
+      ]
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps"
+      ]
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps"
+      ]
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "alps",
+     "label": "New ALPS codepoint (sends application_settings (old ALPS, 17513))",
+     "kind": "different"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome for Android's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "extension-order shuffling",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 131,
+   "versions_behind": 24,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
+    "Doesn't send the X25519MLKEM768 post-quantum key share.",
+    "Uses the old ALPS codepoint 0x4469; Chrome sends the new one, 0x44cd.",
+    "Missing 1 extension: trust anchors (ca34)."
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "behind_text": "Copies Chrome 131, 24 versions behind current 155; 5 counted fields differ from current Chrome for Android.",
+   "is_newest_profile": true
+  },
+  {
+   "id": "android|curl_cffi|chrome99_android",
+   "library": "curl_cffi",
+   "maintainer": "lexiforest",
+   "language": "Python",
+   "profile": "chrome99_android",
+   "note": null,
+   "version": "0.16.3",
+   "tested_at": "2026-10-18T15:23:50Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/android-20261018T152350Z/py/curl_cffi_chrome99_android.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "6 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps, http2_akamai.",
+   "matched_variant": null,
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "alps",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34",
+      "fe0d"
+     ],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "4469"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;3:1000;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_e5627efa2ab1",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,0023,002b,002d,0033,4469,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "http2_akamai": "1:65536;3:1000;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "user_agent": "Mozilla/5.0 (Linux; Android 12; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.58 Mobile Safari/537.36"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps",
+       "http2_akamai"
+      ]
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps",
+       "http2_akamai"
+      ]
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "alps",
+       "http2_akamai"
+      ]
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "alps",
+     "label": "New ALPS codepoint (sends application_settings (old ALPS, 17513))",
+     "kind": "different"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome for Android's default sends it)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-fe0d",
+     "label": "Extension fe0d encrypted_client_hello",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "h2",
+     "label": "Chrome HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "extension-order shuffling",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 99,
+   "versions_behind": 56,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
+    "Doesn't send the X25519MLKEM768 post-quantum key share.",
+    "Uses the old ALPS codepoint 0x4469; Chrome sends the new one, 0x44cd.",
+    "Missing 1 extension: trust anchors (ca34).",
+    "Missing 1 extension: encrypted client hello (fe0d).",
+    "Sends extension padding (0015), which Chrome doesn't send.",
+    "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 1:65536;3:1000;4:6291456;6:262144|15663105|0|m,a,s,p."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": true
+   },
+   "behind_text": "Copies Chrome 99, 56 versions behind current 155; 6 counted fields differ from current Chrome for Android.",
+   "is_newest_profile": false
+  }
+ ]
+}

@@ -7,7 +7,7 @@
    "version": "155.0.4283.62",
    "brand_version": "155.0.4283.62",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T09:54:50-05:00",
+   "captured_at": "2026-10-18T10:14:56-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "155.0.4283.62-1",
@@ -66,7 +66,7 @@
      "version": "155.0.4283.62",
      "brand_version": "155.0.4283.62",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T09:54:50-05:00",
+     "captured_at": "2026-10-18T10:14:56-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
       "version": "155.0.4283.62-1",
@@ -125,7 +125,7 @@
      "version": "155.0.4283.62",
      "brand_version": "155.0.4283.62",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T09:59:43-05:00",
+     "captured_at": "2026-10-18T10:18:44-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "155.0.4283.62",
@@ -186,7 +186,7 @@
    "version": "155.1.97.59",
    "brand_version": "1.97.59",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T09:55:18-05:00",
+   "captured_at": "2026-10-18T10:15:25-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "1.97.59",
@@ -246,7 +246,7 @@
      "version": "155.1.97.59",
      "brand_version": "1.97.59",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T09:55:18-05:00",
+     "captured_at": "2026-10-18T10:15:25-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
       "version": "1.97.59",
@@ -306,7 +306,7 @@
      "version": "155.1.97.59",
      "brand_version": "1.97.59",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T10:01:18-05:00",
+     "captured_at": "2026-10-18T10:20:18-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "155.1.97.59",
@@ -340,21 +340,16 @@
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Brave\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
-     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
-     "h3_settings": {
-      "1": 65536,
-      "6": 262144,
-      "7": 100,
-      "51": 1
-     },
+     "quic_ja4": null,
+     "h3_settings": null,
      "vs_chrome": {
       "chrome_version": "155.0.8059.85",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
       "header_order": false,
-      "quic_ja4": false,
-      "h3_settings": true
+      "quic_ja4": null,
+      "h3_settings": null
      },
      "id": "brave",
      "platform": "windows",
