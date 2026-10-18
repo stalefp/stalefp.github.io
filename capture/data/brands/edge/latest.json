@@ -6,11 +6,11 @@
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
   "platform": "linux",
-  "captured_at": "2026-10-18T07:55:27-05:00",
+  "captured_at": "2026-10-18T08:12:47-05:00",
   "chrome_path": "/opt/microsoft/msedge/msedge",
   "chrome_version_string": "Microsoft Edge 155.0.4283.62 unknown",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39128643889",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39129159580",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "702ad878d1d12ae1a0c20868f0b730fe",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-18-35-65281-27-43-11-45-0-13-10-17613-23-5-16-51,4588-29-23-24,0",
+      "ja3": "c9bb8539e5f5dba3bfba85569952c693",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,35-16-0-65037-43-17613-18-65281-5-45-27-23-51-13-10-11,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0xfe0d",
-        "0x0012",
         "0x0023",
-        "0xff01",
-        "0x001b",
-        "0x002b",
-        "0x000b",
-        "0x002d",
+        "0x0010",
         "0x0000",
+        "0xfe0d",
+        "0x002b",
+        "0x44cd",
+        "0x0012",
+        "0xff01",
+        "0x0005",
+        "0x002d",
+        "0x001b",
+        "0x0017",
+        "0x0033",
         "0x000d",
         "0x000a",
-        "0x44cd",
-        "0x0017",
-        "0x0005",
-        "0x0010",
-        "0x0033"
+        "0x000b"
       ],
       "extensions_resumed": [
+        "0x0000",
+        "0x0023",
+        "0x0017",
+        "0xfe0d",
+        "0x000a",
+        "0x002d",
         "0x44cd",
         "0x0005",
         "0x000b",
-        "0x0010",
-        "0x0000",
-        "0xff01",
         "0x000d",
-        "0x002d",
-        "0x0023",
-        "0x000a",
-        "0x0017",
         "0x0012",
         "0x002b",
+        "0x0010",
+        "0xff01",
         "0x001b",
         "0x0033",
-        "0xfe0d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -316,8 +316,8 @@
         "seed_file_bytes": null,
         "local_state_seed_bytes": 732,
         "seed_serial_number": "\"NusoTb7gejBy/c2hGB9h3d0ePe/ZptR2D5XrgN9702c=\"",
-        "variations_country": "CA",
-        "last_fetch_time": "13436801729548771",
+        "variations_country": "US",
+        "last_fetch_time": "13436802769125851",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": null,
         "seed_scan_error": "stored seed is only 938 bytes decompressed at exit; not a full seed, not scanned",
@@ -332,16 +332,16 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0033",
-          "0x002d",
-          "0x44cd",
-          "0x0039",
-          "0x0010",
-          "0x000a",
-          "0x0000",
-          "0x000d",
           "0x001b",
+          "0x44cd",
+          "0x000a",
+          "0x0010",
+          "0x000d",
+          "0x0033",
+          "0x0000",
           "0xfe0d",
+          "0x002d",
+          "0x0039",
           "0x002b"
         ],
         "has_trust_anchors": false,
@@ -387,10 +387,10 @@
         ],
         "transport_params": [
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000019a9a1afa00000001"
           },
           {
             "id": "0x8",
@@ -399,34 +399,10 @@
             "value": 100
           },
           {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x3f0fbf06ad0eab53",
-            "name": "grease",
-            "len": 1,
-            "value": 51
-          },
-          {
             "id": "0x6",
             "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
           },
           {
             "id": "0x4",
@@ -435,10 +411,28 @@
             "value": 15728640
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "0000000100000001fa8a0ada"
+            "id": "0x2ea33709e4164b0e",
+            "name": "grease",
+            "len": 6,
+            "value": 881509027
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
             "id": "0x3128",
@@ -446,12 +440,6 @@
             "len": 4,
             "hex": "4f524947",
             "ascii": "ORIG"
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
           },
           {
             "id": "0x3",
@@ -464,6 +452,18 @@
             "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
           }
         ],
         "h3_settings": {

@@ -1163,7 +1163,7 @@
     "got-scraping|chrome-(header-generator)": {
      "verdict": "behind",
      "versions_behind": null,
-     "mismatches": 5
+     "mismatches": 6
     },
     "tls-client-(python)|chrome_120": {
      "verdict": "behind",

@@ -1,6 +1,6 @@
 {
  "schema_version": "leaderboard-0.2",
- "generated_at": "2026-10-18T13:01:54Z",
+ "generated_at": "2026-10-18T13:26:52Z",
  "reference": {
   "source": "capture/data/latest.json",
   "schema": "capture/SCHEMA.md v1",
@@ -11,7 +11,7 @@
   "branded": true,
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
-  "captured_at": "2026-10-18T07:46:12-05:00",
+  "captured_at": "2026-10-18T08:03:32-05:00",
   "reference_config": "default-headed",
   "is_current_linux_stable": true,
   "variations_source": "default seed",
@@ -137,29 +137,28 @@
    "h3_grease_settings": 1,
    "transport_params": [
     {
+     "id": "0xf",
+     "name": "initial_source_connection_id",
+     "len": 0,
+     "hex": ""
+    },
+    {
      "id": "0x1",
      "name": "max_idle_timeout",
      "len": 4,
      "value": 30000
     },
     {
-     "id": "0x20",
-     "name": "max_datagram_frame_size",
+     "id": "0x4",
+     "name": "initial_max_data",
      "len": 4,
-     "value": 65536
+     "value": 15728640
     },
     {
-     "id": "0x11",
-     "name": "version_information",
-     "len": 12,
-     "hex": "000000018a3a0a2a00000001"
-    },
-    {
-     "id": "0x3128",
-     "name": "google_connection_options",
-     "len": 4,
-     "hex": "4f524947",
-     "ascii": "ORIG"
+     "id": "0x34f7bb5ecafb1d34",
+     "name": "grease",
+     "len": 3,
+     "hex": "ffb5f5"
     },
     {
      "id": "0x3",
@@ -168,8 +167,8 @@
      "value": 1472
     },
     {
-     "id": "0x5",
-     "name": "initial_max_stream_data_bidi_local",
+     "id": "0x7",
+     "name": "initial_max_stream_data_uni",
      "len": 4,
      "value": 6291456
     },
@@ -180,20 +179,27 @@
      "value": 103
     },
     {
-     "id": "0x4",
-     "name": "initial_max_data",
-     "len": 4,
-     "value": 15728640
-    },
-    {
      "id": "0x6",
      "name": "initial_max_stream_data_bidi_remote",
      "len": 4,
      "value": 6291456
     },
     {
-     "id": "0x7",
-     "name": "initial_max_stream_data_uni",
+     "id": "0x20",
+     "name": "max_datagram_frame_size",
+     "len": 4,
+     "value": 65536
+    },
+    {
+     "id": "0x3128",
+     "name": "google_connection_options",
+     "len": 4,
+     "hex": "4f524947",
+     "ascii": "ORIG"
+    },
+    {
+     "id": "0x5",
+     "name": "initial_max_stream_data_bidi_local",
      "len": 4,
      "value": 6291456
     },
@@ -204,16 +210,10 @@
      "value": 100
     },
     {
-     "id": "0xf",
-     "name": "initial_source_connection_id",
-     "len": 0,
-     "hex": ""
-    },
-    {
-     "id": "0x15f78a525cc82158",
-     "name": "grease",
-     "len": 1,
-     "hex": "8c"
+     "id": "0x11",
+     "name": "version_information",
+     "len": 12,
+     "hex": "00000001000000015a5aea7a"
     }
    ],
    "header_order": [
@@ -362,7 +362,7 @@
  ],
  "harness": {
   "runs_used": [
-   "20261018T125825Z"
+   "20261018T132521Z"
   ],
   "endpoints": [
    "https://tls.peet.ws/api/all"
@@ -380,8 +380,8 @@
    "profile": "Chrome_152",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152.json",
-    "tested_at": "2026-10-18T13:01:41Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/tls-client(go)_Chrome_152.json",
+    "tested_at": "2026-10-18T13:26:39Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152",
@@ -677,14 +677,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/go/out/tls-client(go)_Chrome_152.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152.json",
+    "fresh": "leaderboard/raw/20261018T132521Z/go/out/tls-client(go)_Chrome_152.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/tls-client(go)_Chrome_152.json",
     "resumed": [
-     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_req2.json",
-     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_req3.json"
+     "leaderboard/raw/20261018T132521Z/resume/tls-client(go)_Chrome_152_req2.json",
+     "leaderboard/raw/20261018T132521Z/resume/tls-client(go)_Chrome_152_req3.json"
     ]
    },
    "fingerprint": {
@@ -1075,8 +1075,8 @@
    "profile": "Chrome_152_PSK",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152_PSK.json",
-    "tested_at": "2026-10-18T13:01:42Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "tested_at": "2026-10-18T13:26:41Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152_PSK",
@@ -1374,14 +1374,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "fresh": "leaderboard/raw/20261018T132521Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/tls-client(go)_Chrome_152_PSK.json",
     "resumed": [
-     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
-     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
+     "leaderboard/raw/20261018T132521Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
+     "leaderboard/raw/20261018T132521Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
     ]
    },
    "fingerprint": {
@@ -1740,8 +1740,8 @@
    "profile": "Chrome_150",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_150.json",
-    "tested_at": "2026-10-18T13:01:44Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/tls-client(go)_Chrome_150.json",
+    "tested_at": "2026-10-18T13:26:42Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_150",
@@ -2037,11 +2037,11 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/go/out/tls-client(go)_Chrome_150.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_150.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/go/out/tls-client(go)_Chrome_150.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/tls-client(go)_Chrome_150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -2435,8 +2435,8 @@
    "profile": "chrome150",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome150.json",
-    "tested_at": "2026-10-18T13:01:47Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/curl_cffi_chrome150.json",
+    "tested_at": "2026-10-18T13:26:45Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -2474,19 +2474,19 @@
      "priority"
     ],
     "transport_params": [
+     "max_idle_timeout",
+     "initial_max_stream_data_bidi_local",
+     "max_udp_payload_size",
+     "grease",
+     "version_information",
+     "initial_max_streams_uni",
+     "max_datagram_frame_size",
+     "initial_max_stream_data_bidi_remote",
      "google_connection_options",
      "initial_source_connection_id",
-     "initial_max_streams_bidi",
-     "initial_max_stream_data_bidi_remote",
      "initial_max_stream_data_uni",
-     "grease",
-     "initial_max_data",
-     "initial_max_streams_uni",
-     "initial_max_stream_data_bidi_local",
-     "version_information",
-     "max_idle_timeout",
-     "max_datagram_frame_size",
-     "max_udp_payload_size"
+     "initial_max_streams_bidi",
+     "initial_max_data"
     ],
     "ja4_matches": {
      "default": false,
@@ -2713,11 +2713,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/curl_cffi_chrome150.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome150.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/curl_cffi_chrome150.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/curl_cffi_chrome150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -3105,8 +3105,8 @@
    "profile": "chrome_146",
    "note": "wraps Go tls-client",
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/noble-tls_chrome_146.json",
-    "tested_at": "2026-10-18T13:01:52Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/noble-tls_chrome_146.json",
+    "tested_at": "2026-10-18T13:26:50Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -3403,11 +3403,11 @@
     }
    },
    "version": "0.1.9",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/noble-tls_chrome_146.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/noble-tls_chrome_146.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/noble-tls_chrome_146.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/noble-tls_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1517h2_8daaf6152771_dcad5a053991",
@@ -3782,8 +3782,8 @@
    "profile": "Chrome",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/azuretls_Chrome.json",
-    "tested_at": "2026-10-18T13:01:45Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/azuretls_Chrome.json",
+    "tested_at": "2026-10-18T13:26:44Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "azuretls:Chrome",
@@ -3805,20 +3805,20 @@
      "accept-encoding"
     ],
     "transport_params": [
-     "max_datagram_frame_size",
      "max_idle_timeout",
-     "version_information",
-     "initial_max_stream_data_bidi_local",
-     "grease",
-     "google_user_agent_id",
-     "initial_max_streams_uni",
-     "initial_max_stream_data_bidi_remote",
-     "max_udp_payload_size",
-     "initial_max_streams_bidi",
      "google_connection_options",
      "initial_max_data",
+     "grease",
+     "initial_source_connection_id",
+     "version_information",
+     "max_datagram_frame_size",
+     "max_udp_payload_size",
      "initial_max_stream_data_uni",
-     "initial_source_connection_id"
+     "initial_max_stream_data_bidi_remote",
+     "google_user_agent_id",
+     "initial_max_streams_bidi",
+     "initial_max_stream_data_bidi_local",
+     "initial_max_streams_uni"
     ],
     "ja4_matches": {
      "default": false,
@@ -4047,11 +4047,11 @@
     }
    },
    "version": "v1.13.2",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/go/out/azuretls_Chrome.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/azuretls_Chrome.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/go/out/azuretls_Chrome.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/azuretls_Chrome.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -4452,8 +4452,8 @@
    "profile": "chrome136",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome136.json",
-    "tested_at": "2026-10-18T13:01:50Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/curl_cffi_chrome136.json",
+    "tested_at": "2026-10-18T13:26:48Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -4730,11 +4730,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/curl_cffi_chrome136.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome136.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/curl_cffi_chrome136.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/curl_cffi_chrome136.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5143,8 +5143,8 @@
    "profile": "chrome146",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome146.json",
-    "tested_at": "2026-10-18T13:01:49Z",
+    "source": "leaderboard/raw/20261018T132521Z/h3/curl_cffi_chrome146.json",
+    "tested_at": "2026-10-18T13:26:47Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -5182,20 +5182,20 @@
      "priority"
     ],
     "transport_params": [
-     "google_connection_options",
-     "max_udp_payload_size",
-     "max_idle_timeout",
-     "google_initial_rtt",
-     "initial_max_streams_uni",
-     "initial_max_stream_data_uni",
-     "initial_max_stream_data_bidi_remote",
-     "grease",
-     "max_datagram_frame_size",
-     "initial_max_streams_bidi",
-     "initial_max_stream_data_bidi_local",
      "initial_max_data",
+     "initial_max_stream_data_bidi_remote",
+     "max_datagram_frame_size",
      "version_information",
-     "initial_source_connection_id"
+     "max_udp_payload_size",
+     "initial_max_stream_data_bidi_local",
+     "google_connection_options",
+     "initial_source_connection_id",
+     "google_initial_rtt",
+     "initial_max_streams_bidi",
+     "grease",
+     "initial_max_streams_uni",
+     "max_idle_timeout",
+     "initial_max_stream_data_uni"
     ],
     "ja4_matches": {
      "default": false,
@@ -5380,7 +5380,7 @@
       },
       "library": {
        "google_connection_options": "ORIG",
-       "google_initial_rtt": 338049,
+       "google_initial_rtt": 335939,
        "initial_max_data": 15728640,
        "initial_max_stream_data_bidi_local": 6291456,
        "initial_max_stream_data_bidi_remote": 6291456,
@@ -5428,11 +5428,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/curl_cffi_chrome146.json",
-    "http3": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome146.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/curl_cffi_chrome146.json",
+    "http3": "leaderboard/raw/20261018T132521Z/h3/curl_cffi_chrome146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5845,10 +5845,10 @@
     "reason": "primp 2.0.1 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "2.0.1",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/primp_chrome_146.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/primp_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5856,7 +5856,7 @@
     "ja4_resumed": null,
     "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
     "http3_ja4": null,
-    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36",
     "sends_ca34": false,
     "sends_12e0": false
    },
@@ -6253,10 +6253,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/rnet_Chrome137.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/rnet_Chrome137.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -6662,10 +6662,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/rnet_Chrome145.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/rnet_Chrome145.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -7069,10 +7069,10 @@
     "reason": "no HTTP/3 case in the harness"
    },
    "version": "0.16.1",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/ext/wreq_Chrome149.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/ext/wreq_Chrome149.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -7395,13 +7395,72 @@
     "extensions",
     "signature_algorithms"
    ],
-   "behaviour": [],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Chrome's.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
    "resumption_probe": {
-    "status": "not_tested"
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1517h2_8daaf6152771_b6f405a00624",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": false,
+    "matches_browser_variant": false
    },
-   "shuffle": null,
-   "header_order_probe": null,
-   "resumed_status": "not_tested",
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   },
+   "resumed_status": "mismatch",
    "fix": null,
    "release_update": null
   },
@@ -7417,10 +7476,10 @@
     "reason": "uTLS is a TLS-only library (no QUIC/HTTP/3 client); the harness pairs it with golang.org/x/net/http2"
    },
    "version": "v1.8.2",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/go/out/utls_HelloChrome_Auto.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/go/out/utls_HelloChrome_Auto.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -7707,19 +7766,19 @@
       ":method",
       ":path",
       ":scheme",
-      "sec-fetch-user",
-      "accept-encoding",
-      "upgrade-insecure-requests",
-      "sec-fetch-site",
-      "sec-fetch-dest",
-      "accept-language",
-      "priority",
       "sec-ch-ua",
       "sec-ch-ua-mobile",
       "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "sec-fetch-mode",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "priority",
       "user-agent",
       "accept",
-      "sec-fetch-mode"
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "accept-language"
      ],
      "missing": [],
      "extra": [],
@@ -7787,19 +7846,19 @@
     "fair": false,
     "unfair_reason": "the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it",
     "sent": [
-     "upgrade-insecure-requests",
+     "user-agent",
      "accept",
      "sec-fetch-site",
-     "sec-fetch-mode",
+     "sec-fetch-user",
      "sec-fetch-dest",
      "sec-ch-ua-mobile",
-     "sec-ch-ua-platform",
-     "user-agent",
-     "sec-fetch-user",
+     "sec-fetch-mode",
      "accept-encoding",
      "accept-language",
      "priority",
-     "sec-ch-ua"
+     "sec-ch-ua",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests"
     ],
     "browser": [
      "sec-ch-ua",
@@ -7841,10 +7900,10 @@
     "reason": "no HTTP/3 case in the harness"
    },
    "version": "0.9.2",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/ext/hrequests_chrome131.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/ext/hrequests_chrome131.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
@@ -7852,7 +7911,7 @@
     "ja4_resumed": null,
     "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
     "http3_ja4": null,
-    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
     "sends_ca34": false,
     "sends_12e0": false
    },
@@ -8181,13 +8240,72 @@
     "signature_algorithms",
     "alps"
    ],
-   "behaviour": [],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
    "resumption_probe": {
-    "status": "not_tested"
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
    },
-   "shuffle": null,
-   "header_order_probe": null,
-   "resumed_status": "not_tested",
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   },
+   "resumed_status": "unsupported",
    "fix": null,
    "release_update": null
   },
@@ -8203,10 +8321,10 @@
     "reason": "no HTTP/3 case in the harness"
    },
    "version": "2.0.5",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/ext/cycletls_chrome.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/ext/cycletls_chrome.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -8544,13 +8662,72 @@
     "key_shares",
     "http2_akamai"
    ],
-   "behaviour": [],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's stayed the same in all 8 connections, which doesn't match.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
    "resumption_probe": {
-    "status": "not_tested"
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
    },
-   "shuffle": null,
-   "header_order_probe": null,
-   "resumed_status": "not_tested",
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": true,
+    "match": false
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   },
+   "resumed_status": "unsupported",
    "fix": null,
    "release_update": null
   },
@@ -8566,10 +8743,10 @@
     "reason": "no HTTP/3 case in the harness"
    },
    "version": "4.2.2",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/ext/got-scraping_chrome.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/ext/got-scraping_chrome.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1513h2_8daaf6152771_ff9cead5a15b",
@@ -8577,7 +8754,7 @@
     "ja4_resumed": null,
     "http2_akamai": "2:0;4:33554432|4128769|0|m,p,a,s",
     "http3_ja4": null,
-    "user_agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
     "sends_ca34": false,
     "sends_12e0": false
    },
@@ -8640,7 +8817,8 @@
     "signature_algorithms",
     "supported_groups",
     "key_shares",
-    "http2_akamai"
+    "http2_akamai",
+    "header_order"
    ],
    "missing": [
     {
@@ -8878,6 +9056,9 @@
       ":authority",
       ":scheme",
       ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
       "upgrade-insecure-requests",
       "user-agent",
       "accept",
@@ -8893,6 +9074,9 @@
       ":path",
       ":authority",
       ":scheme",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
       "upgrade-insecure-requests",
       "user-agent",
       "accept",
@@ -8948,13 +9132,72 @@
     "key_shares",
     "http2_akamai"
    ],
-   "behaviour": [],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's stayed the same in all 8 connections, which doesn't match.",
+    "Header order (counted): sent the same headers in a different order than Chrome."
+   ],
    "resumption_probe": {
-    "status": "not_tested"
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
    },
-   "shuffle": null,
-   "header_order_probe": null,
-   "resumed_status": "not_tested",
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": true,
+    "match": false
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": false,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   },
+   "resumed_status": "unsupported",
    "fix": null,
    "release_update": null
   },
@@ -8970,10 +9213,10 @@
     "reason": "tls-client (Python) 1.0.1 bundles Go tls-client v1.7.2, which has no HTTP/3 support"
    },
    "version": "2.0.0",
-   "tested_at": "2026-10-18T12:58:25Z",
+   "tested_at": "2026-10-18T13:25:21Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T125825Z/py/tls-client(py)_chrome_120.json"
+    "fresh": "leaderboard/raw/20261018T132521Z/py/tls-client(py)_chrome_120.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
@@ -9416,7 +9659,7 @@
    "priority"
   ],
   "connections_per_row": 8,
-  "generated_at": "2026-10-18T12:59:46Z",
+  "generated_at": "2026-10-18T13:26:39Z",
   "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
   "requested_headers": [
    "sec-ch-ua",
@@ -9454,7 +9697,7 @@
    "status": "captured",
    "version": "157.0.8103.6",
    "major": 157,
-   "captured_at": "2026-10-18T07:46:18-05:00",
+   "captured_at": "2026-10-18T08:03:33-05:00",
    "stable_version": "155.0.8059.84",
    "same_as_stable": true,
    "differences": [],
@@ -9465,7 +9708,7 @@
    "status": "captured",
    "version": "158.0.8106.0",
    "major": 158,
-   "captured_at": "2026-10-18T07:46:16-05:00",
+   "captured_at": "2026-10-18T08:03:38-05:00",
    "stable_version": "155.0.8059.84",
    "same_as_stable": true,
    "differences": [],
@@ -9476,7 +9719,7 @@
    "status": "captured",
    "version": "158.0.8110.0",
    "major": 158,
-   "captured_at": "2026-10-18T07:46:23-05:00",
+   "captured_at": "2026-10-18T08:03:49-05:00",
    "stable_version": "155.0.8059.84",
    "same_as_stable": true,
    "differences": [],
