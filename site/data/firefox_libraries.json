@@ -317,7 +317,73 @@
     "No profile in this library matches current Firefox yet; it still sends cipher suites 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; Firefox resumes.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "tls-client|firefox_148",
@@ -622,7 +688,73 @@
     "Best tls-client Firefox profile we tested, but it still sends cipher suites 0x0033, 0x0039, 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Firefox_147_PSK profile did in our test, and Firefox resumes.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Firefox_147_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "curl_cffi|firefox144",
@@ -923,7 +1055,73 @@
     "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Firefox's.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1718h2_5b57614c22b0_5dff20295fdc",
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "curl_cffi|firefox147",
@@ -1224,7 +1422,73 @@
     "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Firefox's.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1718h2_5b57614c22b0_5dff20295fdc",
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "rnet|firefox139",
@@ -1524,7 +1788,73 @@
     "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Firefox's.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1717h2_5b57614c22b0_e6dcd7ae0a9e",
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 2,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "rnet|firefox147",
@@ -1824,7 +2154,73 @@
     "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Firefox's.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1717h2_5b57614c22b0_e6dcd7ae0a9e",
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 2,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "tls-client|firefox_147",
@@ -2143,7 +2539,74 @@
     "old": "tls_client.WithClientProfile(profiles.Firefox_147)",
     "new": "tls_client.WithClientProfile(profiles.Firefox_148)"
    },
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "signature_algorithms",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Firefox_147_PSK profile did in our test, and Firefox resumes.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Firefox_147_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "noble-tls|firefox_147",
@@ -2441,7 +2904,74 @@
     "No profile in this library matches current Firefox yet; it wraps Go tls-client, whose Firefox_148 profile had one fewer counted difference in our test."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "signature_algorithms",
+    "supported_groups"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's firefox_147_PSK profile did in our test, and Firefox resumes.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "firefox_147_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "utls|hellofirefox_auto",
@@ -2774,7 +3304,76 @@
     "No profile in this library matches current Firefox yet; HelloFirefox_Auto lacks the X25519MLKEM768 key share and the 0012 and 001b extensions Firefox 158 sends."
    ],
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "extensions",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; Firefox resumes.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (not graded for this row): the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it."
+   ],
+   "resumption_probe": {
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": false,
+    "unfair_reason": "the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it",
+    "sent": [
+     "user-agent",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "priority",
+     "te",
+     "accept",
+     "accept-language",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": null,
+    "counted": false,
+    "pseudo_order": [
+     ":authority",
+     ":method",
+     ":path",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "tls-client-(python)|firefox_120",
@@ -3108,7 +3707,114 @@
     "released_at": "2026-10-10T15:22:07.197014Z",
     "retested_at": "2026-10-16T00:17:28Z",
     "text": "Updated to 2.0.0 on Oct 16, 2026: still 38 versions behind."
+   },
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "extensions",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's firefox_147_PSK profile did in our test, and Firefox resumes.",
+    "Extension order: Firefox stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
+    "Header order (counted): sent our Firefox header set in Firefox's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "firefox_147_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": false,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "browser": [
+     "user-agent",
+     "accept",
+     "accept-language",
+     "accept-encoding",
+     "upgrade-insecure-requests",
+     "sec-fetch-dest",
+     "sec-fetch-mode",
+     "sec-fetch-site",
+     "sec-fetch-user",
+     "priority",
+     "te"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":path",
+     ":authority",
+     ":scheme"
+    ]
    }
   }
- ]
+ ],
+ "probe_reference": {
+  "captures": 9,
+  "distinct_orders": 1,
+  "varies": false,
+  "resumed_ja4s": [
+   "t13d1517h2_8daaf6152771_e6dcd7ae0a9e"
+  ],
+  "default_resumed_ja4": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
+  "header_order": [
+   "user-agent",
+   "accept",
+   "accept-language",
+   "accept-encoding",
+   "upgrade-insecure-requests",
+   "sec-fetch-dest",
+   "sec-fetch-mode",
+   "sec-fetch-site",
+   "sec-fetch-user",
+   "priority",
+   "te"
+  ],
+  "connections_per_row": 8,
+  "generated_at": "2026-10-18T12:37:00Z",
+  "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
+  "requested_headers": [
+   "user-agent",
+   "accept",
+   "accept-language",
+   "accept-encoding",
+   "upgrade-insecure-requests",
+   "sec-fetch-dest",
+   "sec-fetch-mode",
+   "sec-fetch-site",
+   "sec-fetch-user",
+   "priority",
+   "te"
+  ]
+ }
 }

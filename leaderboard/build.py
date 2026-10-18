@@ -481,6 +481,8 @@ def annotate(data):
         e["recent_match"] = recent_match(e, timeline, cur)
         n = notes.get(e["id"]) or notes.get(e["library"])
         e["notes"] = ([n] if isinstance(n, str) else list(n)) if n else []
+    import probe_grade
+    probe_grade.apply("chrome", data, "Chrome")
     VR = {"exact": 0, "exact_variant": 1, "close": 2, "behind": 3}
     for e in data["libraries"]:
         e["resumed_status"] = resumed_status(e)
@@ -629,7 +631,15 @@ FIX_TEMPLATES = {
 
 
 def resumed_status(e):
-    """Resumed-connection result from data already in the entry: match / match_variant / mismatch / never / not_tested."""
+    """Resumed-connection result: match / match_variant / mismatch / never / unsupported / not_tested.
+    The behaviour probe (probe_grade.py, every library) wins; the older tls-client-only resumption run is the fallback."""
+    p = e.get("resumption_probe") or {}
+    if p.get("status") == "resumes":
+        return "match" if p["matches_browser"] else "match_variant" if p["matches_browser_variant"] else "mismatch"
+    if p.get("status") == "profile_no_resume":
+        return "never"
+    if p.get("status") == "no_resume":
+        return "unsupported"
     r = e.get("resumption") or {}
     if not r.get("tested"):
         return "not_tested"

@@ -999,7 +999,74 @@
     "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
    },
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "exact",
+   "base_counted": [],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test, and Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Chrome_152_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "tls-client|chrome_152_psk",
@@ -1597,7 +1664,74 @@
    "resumed_status": "match",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "exact",
+   "base_counted": [],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, and its resumed JA4 matches Chrome's.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": true,
+    "matches_browser_variant": true
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "tls-client|chrome_150",
@@ -2214,7 +2348,7 @@
    "notes": [
     "Matches Chrome only with trust anchors turned off (the no_ca34 variant), so prefer Chrome_152_PSK in the same release."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "never",
    "fix": {
     "to_id": "tls-client|chrome_152_psk",
     "to_profile": "Chrome_152_PSK",
@@ -2223,7 +2357,76 @@
     "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
    },
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "exact_variant",
+   "base_counted": [
+    "extensions"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's Chrome_152_PSK profile did in our test, and Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "Chrome_152_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "curl_cffi|chrome150",
@@ -2821,10 +3024,79 @@
    "notes": [
     "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "match_variant",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "exact_variant",
+   "base_counted": [
+    "extensions"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, and its resumed JA4 matches one of Chrome's variants.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1517h2_8daaf6152771_a87ad97598a9",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": false,
+    "matches_browser_variant": true
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "noble-tls|chrome_146",
@@ -3429,10 +3701,79 @@
    "notes": [
     "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "never",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "close",
+   "base_counted": [
+    "signature_algorithms"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_146_PSK profile did in our test, and Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "chrome_146_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "azuretls-client|chrome",
@@ -4029,10 +4370,80 @@
     "header_order": true
    },
    "notes": [],
-   "resumed_status": "not_tested",
+   "resumed_status": "unsupported",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "curl_cffi|chrome136",
@@ -4644,7 +5055,7 @@
    "notes": [
     "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "mismatch",
    "fix": {
     "to_id": "curl_cffi|chrome150",
     "to_profile": "chrome150",
@@ -4653,7 +5064,77 @@
     "new": "requests.get(url, impersonate=\"chrome150\")"
    },
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Chrome's.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1517h2_8daaf6152771_b6f405a00624",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "curl_cffi|chrome146",
@@ -5272,7 +5753,7 @@
    "notes": [
     "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "mismatch",
    "fix": {
     "to_id": "curl_cffi|chrome150",
     "to_profile": "chrome150",
@@ -5281,7 +5762,77 @@
     "new": "requests.get(url, impersonate=\"chrome150\")"
    },
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Chrome's.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1517h2_8daaf6152771_b6f405a00624",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "primp|chrome_146",
@@ -5616,10 +6167,80 @@
     "header_order": true
    },
    "notes": [],
-   "resumed_status": "not_tested",
+   "resumed_status": "mismatch",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Chrome's.",
+    "Extension order: Chrome varies on every connection; this library's stayed the same in all 8 connections, which doesn't match.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1517h2_8daaf6152771_b6f405a00624",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 1,
+    "varies": false,
+    "browser_varies": true,
+    "match": false
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "rnet|chrome137",
@@ -5955,10 +6576,80 @@
    "notes": [
     "Chrome145 is the newer rnet profile we tested, but it has the same two gaps."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "mismatch",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Chrome's.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1517h2_8daaf6152771_b6f405a00624",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "rnet|chrome145",
@@ -6292,10 +6983,80 @@
     "header_order": false
    },
    "notes": [],
-   "resumed_status": "not_tested",
+   "resumed_status": "mismatch",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "behaviour": [
+    "Reconnecting: resumed the TLS session on 7 of 7 new connections, but its resumed JA4 differs from Chrome's.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "resumes",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 7,
+    "offered_psk": 7,
+    "resumed_ja4": "t13d1517h2_8daaf6152771_b6f405a00624",
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": false,
+    "matches_browser_variant": false
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   },
   {
    "id": "utls|hellochrome_auto",
@@ -6645,10 +7406,81 @@
    "notes": [
     "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "unsupported",
    "fix": null,
    "release_update": null,
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "http2_akamai"
+   ],
+   "behaviour": [
+    "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (not graded for this row): the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it."
+   ],
+   "resumption_probe": {
+    "status": "no_resume",
+    "resuming_profile": null,
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": false,
+    "unfair_reason": "the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it",
+    "sent": [
+     "user-agent",
+     "accept",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "accept-language",
+     "priority",
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": null,
+    "counted": false,
+    "pseudo_order": [
+     ":authority",
+     ":method",
+     ":path",
+     ":scheme"
+    ]
+   }
   },
   {
    "id": "tls-client-(python)|chrome_120",
@@ -6998,7 +7830,7 @@
    "notes": [
     "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly."
    ],
-   "resumed_status": "not_tested",
+   "resumed_status": "never",
    "fix": null,
    "release_update": {
     "version": "2.0.0",
@@ -7006,7 +7838,80 @@
     "retested_at": "2026-10-16T00:17:28Z",
     "text": "Updated to 2.0.0 on Oct 16, 2026: still 35 versions behind."
    },
-   "recent_match": null
+   "recent_match": null,
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "alps"
+   ],
+   "behaviour": [
+    "Reconnecting: this profile never resumed the TLS session in 8 connections; the library's chrome_152_PSK profile did in our test, and Chrome resumes.",
+    "Extension order: Chrome varies on every connection; this library's varied (8 different orders in 8 connections), which matches.",
+    "Header order (counted): sent our Chrome header set in Chrome's order."
+   ],
+   "resumption_probe": {
+    "status": "profile_no_resume",
+    "resuming_profile": "chrome_152_PSK",
+    "connections": 8,
+    "resumed_connections": 0,
+    "offered_psk": 0,
+    "resumed_ja4": null,
+    "browser_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+    "matches_browser": null,
+    "matches_browser_variant": null
+   },
+   "shuffle": {
+    "connections": 8,
+    "distinct_orders": 8,
+    "varies": true,
+    "browser_varies": true,
+    "match": true
+   },
+   "header_order_probe": {
+    "fair": true,
+    "unfair_reason": null,
+    "sent": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "browser": [
+     "sec-ch-ua",
+     "sec-ch-ua-mobile",
+     "sec-ch-ua-platform",
+     "upgrade-insecure-requests",
+     "user-agent",
+     "accept",
+     "sec-fetch-site",
+     "sec-fetch-mode",
+     "sec-fetch-user",
+     "sec-fetch-dest",
+     "accept-encoding",
+     "accept-language",
+     "priority"
+    ],
+    "match": true,
+    "counted": true,
+    "pseudo_order": [
+     ":method",
+     ":authority",
+     ":scheme",
+     ":path"
+    ]
+   }
   }
  ],
  "chrome_timeline": [
@@ -7137,5 +8042,49 @@
    }
   ],
   "method": "Counts only changes of Chrome's default TLS JA4 seen after tracking began; a library catches up on the first logged day one of its tested profiles is an exact match again."
+ },
+ "probe_reference": {
+  "captures": 60,
+  "distinct_orders": 60,
+  "varies": true,
+  "resumed_ja4s": [
+   "t13d1517h2_8daaf6152771_a87ad97598a9",
+   "t13d1518h2_8daaf6152771_e2d80978ab2e",
+   "t13d1519h2_8daaf6152771_3d1b1b7bef36"
+  ],
+  "default_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+  "header_order": [
+   "sec-ch-ua",
+   "sec-ch-ua-mobile",
+   "sec-ch-ua-platform",
+   "upgrade-insecure-requests",
+   "user-agent",
+   "accept",
+   "sec-fetch-site",
+   "sec-fetch-mode",
+   "sec-fetch-user",
+   "sec-fetch-dest",
+   "accept-encoding",
+   "accept-language",
+   "priority"
+  ],
+  "connections_per_row": 8,
+  "generated_at": "2026-10-18T12:37:00Z",
+  "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
+  "requested_headers": [
+   "sec-ch-ua",
+   "sec-ch-ua-mobile",
+   "sec-ch-ua-platform",
+   "upgrade-insecure-requests",
+   "user-agent",
+   "accept",
+   "sec-fetch-site",
+   "sec-fetch-mode",
+   "sec-fetch-user",
+   "sec-fetch-dest",
+   "accept-encoding",
+   "accept-language",
+   "priority"
+  ]
  }
 }

@@ -153,6 +153,8 @@ VR = {"exact": 0, "close": 2, "behind": 3}
 def annotate(data):
     """Hand-written notes (firefox_notes.json) + one-line fix: only when another tested profile of the same library has
     strictly fewer counted differences from Firefox (same rule and call templates as the Chrome board, build.FIX_TEMPLATES)."""
+    import probe_grade
+    probe_grade.apply("firefox", data, "Firefox")
     notes = json.load(open(NOTES)) if os.path.exists(NOTES) else {}
     notes = {k: v for k, v in notes.items() if not k.startswith("_")}
     rank = lambda x: (len(x.get("counted_mismatches") or []), VR.get(x["verdict"], 9))
