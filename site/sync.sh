@@ -51,3 +51,8 @@ rm -rf "$SITE/data/firefox"; mkdir -p "$SITE/data/firefox"
 [[ -d "$TB/capture/data/firefox/history" ]] && cp -r "$TB/capture/data/firefox/history" "$SITE/data/firefox/history"
 [[ -f "$TB/leaderboard/data/firefox_libraries.json" ]] && cp "$TB/leaderboard/data/firefox_libraries.json" "$SITE/data/firefox_libraries.json"
 echo "firefox/      <- capture/data/firefox (platforms, history), leaderboard/data/firefox_libraries.json"
+# Edge + Brave on Linux (capture/lib/capture_brand.py, capture/merge_brands.py); optional
+rm -rf "$SITE/data/brands"
+if [[ -f "$TB/capture/data/brands/index.json" ]]; then
+  mkdir -p "$SITE/data/brands"; cp "$TB/capture/data/brands/index.json" "$SITE/data/brands/index.json"; echo "brands/       <- capture/data/brands/index.json"
+fi

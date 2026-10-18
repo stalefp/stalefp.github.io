@@ -684,6 +684,24 @@
     if ((ff.errors || []).length) box.appendChild(el("p", { cls: "muted small", text: "Capture notes: " + ff.errors.join("; ") }));
   }
 
+  /* Edge + Brave on Linux (data/brands/index.json, capture/merge_brands.py) */
+  function renderBrands(idx) {
+    var box = $("#brand-grid"); if (!box || !idx || !idx.brands) return; box.innerHTML = "";
+    ["edge", "brave"].forEach(function (bid) {
+      var b = idx.brands[bid] || {}, vs = b.vs_chrome || {};
+      var same = function (k) { return vs[k] == null ? "" : vs[k] ? " (same as Chrome)" : " (differs from Chrome)"; };
+      var row = function (label, val, k) { return el("div", {}, [el("dt", { text: label + (k ? same(k) : "") }), el("dd", {}, [el("code", { text: val || "not captured" })])]); };
+      var pkg = b.package || {};
+      box.appendChild(el("div", { cls: "card plat" }, [el("h3", { text: b.browser || bid }),
+        el("p", { cls: "muted small", text: b.version ? (b.browser + " " + (b.brand_version || b.version) + " (Chromium " + b.chromium_major + ") · " + localDate(b.captured_at) +
+          (b.status === "captured" ? "" : " · " + b.status)) : (b.status || "not captured yet") }),
+        b.version ? el("dl", { cls: "fp small" }, [row("JA4", b.ja4, "ja4"), row("JA4 resumed", b.ja4_resumed, "ja4_resumed"), row("HTTP/2", b.h2_akamai, "h2_akamai"),
+          row("Header order", (b.header_order || []).join(", "), "header_order"), row("QUIC JA4", b.quic_ja4, "quic_ja4"),
+          row("HTTP/3 SETTINGS", h3SettingsText(b.h3_settings), "h3_settings"), row("User-Agent", b.user_agent)]) : null,
+        b.version && pkg.version ? el("p", { cls: "muted small", text: "Package " + pkg.version + " from " + pkg.repo + ", sha256 " + String(pkg.sha256 || "").slice(0, 16) + "…, repo signed by key " + (pkg.signing_key || "?") + ". Compared with Chrome " + (vs.chrome_version || "?") + "." }) : null]));
+    });
+  }
+
   /* Firefox on each OS (data/firefox/platforms.json, capture/merge_firefox.py) */
   function renderFirefoxPlatforms(idx) {
     var box = $("#ff-platforms"); if (!box || !idx || !idx.platforms) return; box.innerHTML = "";
@@ -887,6 +905,7 @@
         getJSON("data/firefox/history/index.json").then(initFirefoxHistory, function () { initFirefoxHistory(null); });
         getJSON("data/firefox_libraries.json").then(function (f) { renderFirefoxBoard(f); sumBoard("#sum-firefox", "Firefox", f, (f.reference || {}).firefox_version); }, function () { /* Firefox leaderboard not built yet */ });
         getJSON("data/firefox/platforms.json").then(renderFirefoxPlatforms, function () { /* no per-OS Firefox data yet */ });
+        getJSON("data/brands/index.json").then(renderBrands, function () { /* no Edge/Brave capture yet */ });
         renderFooter(res[1]);
         getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });
         return renderChanges(REF, res[2]);
