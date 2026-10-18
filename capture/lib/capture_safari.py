@@ -12,7 +12,7 @@ Navigation: /fresh, /resumed, then /again?i=1..N. The server closes every connec
 navigation is a new TLS connection: the first is the fresh handshake, later ones show resumption and whether the
 extension order changes between connections (the shuffle reference for the Safari board).
 """
-import argparse, json, os, plistlib, subprocess, sys, time, urllib.request
+import argparse, json, os, plistlib, subprocess, sys, time, urllib.error, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import server
 from capture import ensure_cert, analyse, h2_fields, now_iso, log, os_string, HOST, HERE, PLATFORM  # noqa: F401
@@ -21,9 +21,17 @@ SAFARI = "/Applications/Safari.app"
 HOSTS_LINE = "127.0.0.1 %s # stale-capture" % HOST
 
 
-def sh(*cmd, check=True):
+def sh(*cmd, check=True, timeout=60):
     log("$", " ".join(cmd))
-    return subprocess.run(list(cmd), check=check, capture_output=True, text=True)
+    try:
+        r = subprocess.run(list(cmd), check=check, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        log("  timed out after %ds" % timeout)
+        if check: raise
+        return None
+    if r.returncode or r.stderr.strip():
+        log("  rc=%s %s" % (r.returncode, (r.stdout + r.stderr).strip()[-300:]))
+    return r
 
 
 def wd(port, method, path, body=None):
@@ -35,13 +43,16 @@ def wd(port, method, path, body=None):
 
 def setup(crt):
     sh("sudo", "safaridriver", "--enable")
+    sh("defaults", "write", "com.apple.Safari", "AllowRemoteAutomation", "-bool", "true", check=False)
+    sh("defaults", "write", "com.apple.Safari", "IncludeDevelopMenu", "-bool", "true", check=False)
     sh("sudo", "security", "add-trusted-cert", "-d", "-r", "trustRoot", "-k", "/Library/Keychains/System.keychain", os.path.abspath(crt))
     subprocess.run(["sudo", "tee", "-a", "/etc/hosts"], input=HOSTS_LINE + "\n", text=True, check=True, capture_output=True)
     sh("sudo", "dscacheutil", "-flushcache", check=False)
 
 
 def teardown(crt):
-    sh("sudo", "security", "remove-trusted-cert", "-d", os.path.abspath(crt), check=False)
+    # delete-certificate needs no confirmation (remove-trusted-cert waited for a GUI prompt on the runner and hung)
+    sh("sudo", "security", "delete-certificate", "-c", HOST, "-t", "/Library/Keychains/System.keychain", check=False, timeout=30)
     sh("sudo", "sed", "-i", "", "/# stale-capture$/d", "/etc/hosts", check=False)
 
 
@@ -59,15 +70,26 @@ def main():
     server.TCPServer(rec, a.tcp_port, crt, key).start()
     errors, mark = [], rec.mark()
     setup(crt)
-    drv = subprocess.Popen(["safaridriver", "-p", str(a.driver_port)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    dlog = open(os.path.join(HERE, "certs", "safaridriver.log"), "w+")
+    drv = subprocess.Popen(["safaridriver", "--port", str(a.driver_port)], stdout=dlog, stderr=subprocess.STDOUT)
     sid = None
     try:
-        for _ in range(100):
+        up = False
+        for _ in range(150):
             try:
-                wd(a.driver_port, "GET", "/status"); break
+                wd(a.driver_port, "GET", "/status"); up = True; break
             except Exception:
+                if drv.poll() is not None: break
                 time.sleep(0.2)
-        sid = wd(a.driver_port, "POST", "/session", {"capabilities": {"alwaysMatch": {"browserName": "safari"}}})["sessionId"]
+        if not up:
+            dlog.seek(0); raise RuntimeError("safaridriver did not come up (exit %s): %s" % (drv.poll(), dlog.read()[-500:]))
+        for attempt in range(3):   # the first session on a fresh runner can fail while Safari starts
+            try:
+                sid = wd(a.driver_port, "POST", "/session", {"capabilities": {"alwaysMatch": {"browserName": "safari"}}})["sessionId"]; break
+            except urllib.error.HTTPError as e:
+                msg = e.read().decode(errors="replace")[-400:]; log("new session failed (%d): %s" % (e.code, msg))
+                if attempt == 2: raise RuntimeError("safaridriver refused a session: " + msg)
+                time.sleep(5)
         origin = "https://%s:%d" % (HOST, a.tcp_port)
         paths = ["/fresh?cfg=safari", "/resumed?cfg=safari"] + ["/again?cfg=safari&i=%d" % i for i in range(1, a.again + 1)]
         for path in paths:
@@ -81,11 +103,15 @@ def main():
             else:
                 errors.append("no request seen for %s" % path)
             time.sleep(2.0)   # server closes the connection; the next navigation opens a new one
+    except Exception as e:
+        log("Safari capture failed:", repr(e)[:600]); errors.append(repr(e)[:300])
     finally:
         if sid:
             try: wd(a.driver_port, "DELETE", "/session/%s" % sid)
             except Exception: pass
         drv.terminate()
+        try: drv.wait(10)
+        except subprocess.TimeoutExpired: drv.kill()
         teardown(crt)
     ev = rec.snapshot(mark)
     t = analyse({"events": ev}, "tcp")
