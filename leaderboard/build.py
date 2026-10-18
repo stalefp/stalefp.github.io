@@ -447,6 +447,24 @@ def behind_text(e, cur_major):
     return head + "; " + tail + "."
 
 
+RECENT_WINDOW = 2   # majors below current stable that still count as "a version real users still run"
+
+
+def recent_match(e, timeline, cur):
+    """Informational only (never changes the verdict): the newest captured Chrome major within RECENT_WINDOW below current
+    whose default fingerprint this row matches exactly (same fresh JA4 and same HTTP/2 Akamai string). None if the row
+    already matches current Chrome, or no capture in the window matches."""
+    f = e.get("fingerprint") or {}
+    if not cur or e.get("verdict") in ("exact", "not tested") or not f.get("ja4_fresh"):
+        return None
+    for major, version, fp in sorted(timeline, reverse=True):
+        if major >= cur or major < cur - RECENT_WINDOW:
+            continue
+        if fp.get("ja4") == f["ja4_fresh"] and (fp.get("http2") or {}).get("akamai") == f.get("http2_akamai"):
+            return dict(major=major, version=version, window=RECENT_WINDOW, current=cur)
+    return None
+
+
 def annotate(data):
     """Add behind_text / why / notes to every library entry. Notes come from leaderboard/notes.json (hand-written)."""
     timeline = chrome_timeline()
@@ -460,6 +478,7 @@ def annotate(data):
         e["behind_text"] = behind_text(e, cur)
         e["why"] = why_lines(e, rf, timeline)
         e["http2_grade"] = http2_grade(e)
+        e["recent_match"] = recent_match(e, timeline, cur)
         n = notes.get(e["id"]) or notes.get(e["library"])
         e["notes"] = ([n] if isinstance(n, str) else list(n)) if n else []
     VR = {"exact": 0, "exact_variant": 1, "close": 2, "behind": 3}

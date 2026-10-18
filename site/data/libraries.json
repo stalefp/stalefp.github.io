@@ -998,7 +998,8 @@
     "old": "tls_client.WithClientProfile(profiles.Chrome_152)",
     "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
    },
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "tls-client|chrome_152_psk",
@@ -1595,7 +1596,8 @@
    ],
    "resumed_status": "match",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "tls-client|chrome_150",
@@ -2220,7 +2222,8 @@
     "old": "tls_client.WithClientProfile(profiles.Chrome_150)",
     "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
    },
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "curl_cffi|chrome150",
@@ -2820,7 +2823,8 @@
    ],
    "resumed_status": "not_tested",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "noble-tls|chrome_146",
@@ -3427,7 +3431,8 @@
    ],
    "resumed_status": "not_tested",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "azuretls-client|chrome",
@@ -4026,7 +4031,8 @@
    "notes": [],
    "resumed_status": "not_tested",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "curl_cffi|chrome136",
@@ -4646,7 +4652,8 @@
     "old": "requests.get(url, impersonate=\"chrome136\")",
     "new": "requests.get(url, impersonate=\"chrome150\")"
    },
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "curl_cffi|chrome146",
@@ -5273,7 +5280,8 @@
     "old": "requests.get(url, impersonate=\"chrome146\")",
     "new": "requests.get(url, impersonate=\"chrome150\")"
    },
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "primp|chrome_146",
@@ -5610,7 +5618,8 @@
    "notes": [],
    "resumed_status": "not_tested",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "rnet|chrome137",
@@ -5948,7 +5957,8 @@
    ],
    "resumed_status": "not_tested",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "rnet|chrome145",
@@ -6284,7 +6294,8 @@
    "notes": [],
    "resumed_status": "not_tested",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "utls|hellochrome_auto",
@@ -6636,7 +6647,8 @@
    ],
    "resumed_status": "not_tested",
    "fix": null,
-   "release_update": null
+   "release_update": null,
+   "recent_match": null
   },
   {
    "id": "tls-client-(python)|chrome_120",
@@ -6993,7 +7005,8 @@
     "released_at": "2026-10-10T15:22:07.197014Z",
     "retested_at": "2026-10-16T00:17:28Z",
     "text": "Updated to 2.0.0 on Oct 16, 2026: still 35 versions behind."
-   }
+   },
+   "recent_match": null
   }
  ],
  "chrome_timeline": [

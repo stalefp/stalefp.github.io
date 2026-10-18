@@ -149,3 +149,4 @@ tr.detail td{background:var(--code);padding:12px}
 /* summary at the top */
 .summary h3{margin:.2em 0 .3em}.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.sum-chips{display:flex;flex-wrap:wrap;gap:6px;margin:.3em 0}
 @media (max-width:760px){.sum-grid{grid-template-columns:1fr}}
+.recent-note{margin:3px 0;font-size:.8rem}
