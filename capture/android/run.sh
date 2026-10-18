@@ -14,7 +14,7 @@ echo "preinstalled Chrome: ${pre:-none}"
 sysapk=$(adb shell pm path com.android.chrome | tr -d '\r' | sed 's/^package://' | grep -m1 'base.apk\|Chrome.*\.apk' || true)
 syscert=""
 if [ -n "$sysapk" ]; then
-  adb pull "$sysapk" "$T/system-chrome.apk" >/dev/null && syscert=$("$BT/apksigner" verify --print-certs "$T/system-chrome.apk" 2>/dev/null | grep -m1 -oE 'certificate SHA-256 digest: [0-9a-f]{64}' | awk '{print $4}')
+  adb pull "$sysapk" "$T/system-chrome.apk" >/dev/null && syscert=$("$BT/apksigner" verify --print-certs "$T/system-chrome.apk" 2>/dev/null | grep -E "^Signer.* certificate SHA-256 digest: " | grep -oE "[0-9a-f]{64}" | sort -u | paste -sd,)
   "$BT/aapt2" dump badging "$T/system-chrome.apk" 2>/dev/null | grep -E "^package|uses-static-library|native-code" | head -5
   adb shell pm list libraries 2>/dev/null | grep -i trichrome || true
 fi
