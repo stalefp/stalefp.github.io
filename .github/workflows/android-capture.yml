@@ -1,0 +1,81 @@
+name: Android capture
+
+# Chrome for Android on an Android emulator (Google Play system image, x86_64, KVM). Called by the daily capture
+# (capture.yml) and runnable on its own. Isolated: the job is continue-on-error and writes its own artifact
+# (capture-android), so it can never block or change the desktop captures. See capture/lib/capture_android.py.
+on:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    name: capture (android)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    continue-on-error: true
+    env:
+      CAPTURE_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      ANDROID_IMAGE: system-images;android-35;google_apis_playstore;x86_64
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Capture deps
+        run: python -m pip install -q -r capture/requirements.txt
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+      - name: Emulator + capture
+        timeout-minutes: 35
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis_playstore
+          arch: x86_64
+          profile: pixel_6
+          ram-size: 4096M
+          disk-size: 8G
+          emulator-boot-timeout: 900
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot
+          disable-animations: true
+          script: bash capture/android/run.sh
+      - name: Check capture (version verified, not empty, well-formed)
+        if: ${{ !cancelled() }}
+        run: |
+          python capture/check_capture.py out/capture-android/latest.json --quarantine \
+            --expect-version "${ANDROID_CHROME_VERSION:?Chrome version on the emulator not recorded}" --expect-channel stable
+          python - out/capture-android/latest.json <<'PY'
+          import json, sys
+          d = json.load(open(sys.argv[1]))
+          print(d["browser"], d["version"], "|", d["os"], "|", d["android"]["source"], "| serving on stable:", d["is_current_platform_stable"])
+          for c in d["configs"]:
+              print("%-42s ja4=%s resumed=%s quic=%s h2=%s" % (c["name"], c["ja4"], c["ja4_resumed"], (c["quic"] or {}).get("ja4"), c["h2_akamai"]))
+          for n in d["notes"]: print(" -", n)
+          PY
+      - name: Upload capture JSON
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: capture-android
+          path: |
+            out/capture-android/latest.json
+            out/capture-android/latest.invalid.json
+            out/capture-android/chrome-android-*.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Upload raw events + logcat (debugging)
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: raw-android
+          path: |
+            out/capture-android/raw/
+            out/capture-android/logcat-tail.txt
+          if-no-files-found: ignore
+          retention-days: 7

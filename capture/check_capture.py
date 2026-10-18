@@ -39,6 +39,14 @@ def problems(d, expect_version=None, expect_channel=None):
             out.append("default HTTP/2 fingerprint %r is missing or malformed" % ref.get("h2_akamai"))
         if not ref.get("extensions_sorted"):
             out.append("default config has no TLS extensions")
+    if d.get("platform") == "android":
+        # Android (emulator): the version must be verified (package manager, DevTools and chrome://version agree, and the
+        # APK / preinstalled Chrome is signed with Google's Chrome certificate) and the capture flags must have been applied.
+        an = d.get("android") or {}
+        if not an.get("version_verified"):
+            out.append("Android Chrome version not verified: %s" % an.get("version_checks"))
+        if not an.get("flags_applied"):
+            out.append("Android Chrome did not apply the capture command line (chrome://version shows no --host-resolver-rules)")
     if not d.get("captured_at"):
         out.append("captured_at missing")
     return out
