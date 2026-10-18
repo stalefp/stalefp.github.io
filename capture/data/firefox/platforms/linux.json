@@ -5,7 +5,7 @@
  "version": "158.0",
  "platform": "linux",
  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
- "captured_at": "2026-10-18T08:37:32-05:00",
+ "captured_at": "2026-10-18T09:05:51-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -209,13 +209,13 @@
     "id": "0xf",
     "name": "initial_source_connection_id",
     "len": 3,
-    "hex": "e3a556"
+    "hex": "79d63a"
    },
    {
     "id": "0x11",
     "name": "version_information",
     "len": 16,
-    "hex": "000000015a4a2afa6b3343cf00000001"
+    "hex": "000000017a2a7a9a6b3343cf00000001"
    },
    {
     "id": "0x1d",

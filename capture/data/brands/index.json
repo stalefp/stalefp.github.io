@@ -7,7 +7,7 @@
    "version": "155.0.4283.62",
    "brand_version": "155.0.4283.62",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T08:37:49-05:00",
+   "captured_at": "2026-10-18T09:06:07-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "155.0.4283.62-1",
@@ -63,7 +63,7 @@
    "version": "155.1.97.59",
    "brand_version": "1.97.59",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T08:38:18-05:00",
+   "captured_at": "2026-10-18T09:06:36-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "1.97.59",
