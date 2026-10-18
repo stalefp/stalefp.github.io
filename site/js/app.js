@@ -761,6 +761,42 @@
     t.appendChild(tb); box.appendChild(el("div", { cls: "table-wrap" }, [t]));
   }
 
+  /* ---------------- Summary at the top ---------------- */
+  var SUMVR = { exact: 0, exact_variant: 1, close: 2, behind: 3, "not tested": 4 };
+  function sumBoard(boxId, title, lb, browserVersion) {
+    var box = $(boxId); if (!box || !lb) return; box.innerHTML = "";
+    var rows = (lb.libraries || []).filter(function (l) { return l.is_newest_profile !== false && l.verdict !== "not tested"; });
+    var count = function (v) { return rows.filter(function (l) { return l.verdict === v; }).length; };
+    var exact = rows.filter(function (l) { return l.verdict === "exact"; });
+    var chip = function (n, v, label) { return n ? el("span", { cls: "badge " + VCLS[v], text: n + " " + label }) : null; };
+    box.appendChild(el("h3", { text: title + " " + (browserVersion || "") }));
+    box.appendChild(el("p", { cls: "sum-chips" }, [chip(count("exact"), "exact", "exact"), " ", chip(count("exact_variant"), "exact_variant", "less common variant"), " ",
+      chip(count("close"), "close", "close"), " ", chip(count("behind"), "behind", "behind")]));
+    box.appendChild(el("p", { cls: "small", text: exact.length ? "Matching current " + title + " exactly: " + exact.map(function (l) { return l.library + " " + l.profile; }).join(", ") + "."
+      : "No library profile matches current " + title + " exactly right now." }));
+    box.appendChild(el("p", { cls: "muted small", text: "Counts each library's newest tested profiles (" + rows.length + " in total)." }));
+  }
+  function sumMovers(hist, lb) {
+    var box = $("#sum-movers"); if (!box) return; box.innerHTML = "";
+    var es = (hist && hist.entries) || [];
+    if (es.length < 2) return;
+    var last = es[es.length - 1], cutoff = new Date(Date.parse(last.date) - 7 * 864e5).toISOString().slice(0, 10);
+    var first = es.filter(function (e) { return e.date >= cutoff; })[0] || es[0];
+    var names = {}; (lb.libraries || []).forEach(function (l) { names[l.id] = l.library + " " + l.profile; });
+    var moves = [];
+    Object.keys(last.rows || {}).forEach(function (id) {
+      var a = (first.rows || {})[id], b = last.rows[id];
+      if (!a || !b || a.verdict === "not tested" || b.verdict === "not tested") return;
+      var dv = (SUMVR[a.verdict] - SUMVR[b.verdict]), dm = (a.mismatches || 0) - (b.mismatches || 0);
+      if (dv || dm) moves.push({ id: id, up: dv > 0 || (!dv && dm > 0), txt: (names[id] || id) + ": " + (VLABEL[a.verdict] || a.verdict) + " → " + (VLABEL[b.verdict] || b.verdict) +
+        (dm && !dv ? " (" + a.mismatches + " → " + b.mismatches + " fields differ)" : "") });
+    });
+    box.appendChild(el("h3", { text: "Movers since " + localDate(first.date + "T12:00:00Z") }));
+    if (!moves.length) { box.appendChild(el("p", { cls: "small muted", text: "No library changed its Chrome verdict between " + first.date + " and " + last.date + " (Chrome " + (first.chrome_version || "?") + " → " + (last.chrome_version || "?") + ")." })); return; }
+    moves.sort(function (x, y) { return (y.up ? 1 : 0) - (x.up ? 1 : 0); });
+    box.appendChild(el("ul", { cls: "why-list" }, moves.slice(0, 5).map(function (m) { return el("li", { text: (m.up ? "▲ " : "▼ ") + m.txt }); })));
+  }
+
   /* ---------------- misc ---------------- */
   function initCopy() {
     $$("button.copy").forEach(function (b) {
@@ -833,11 +869,12 @@
         renderChrome(REF, res[1]);
         renderPlatforms(REF, res[3]);
         initTable(res[1]);
-        getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); }, function () { /* no history yet */ });
+        sumBoard("#sum-chrome", "Chrome", res[1], REF.version);
+        getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); sumMovers(h, res[1]); }, function () { /* no history yet */ });
         renderBadges(res[1]);
         getJSON("data/firefox.json").then(renderFirefox, function () { /* no Firefox capture yet */ });
         getJSON("data/firefox/history/index.json").then(initFirefoxHistory, function () { initFirefoxHistory(null); });
-        getJSON("data/firefox_libraries.json").then(renderFirefoxBoard, function () { /* Firefox leaderboard not built yet */ });
+        getJSON("data/firefox_libraries.json").then(function (f) { renderFirefoxBoard(f); sumBoard("#sum-firefox", "Firefox", f, (f.reference || {}).firefox_version); }, function () { /* Firefox leaderboard not built yet */ });
         getJSON("data/firefox/platforms.json").then(renderFirefoxPlatforms, function () { /* no per-OS Firefox data yet */ });
         renderFooter(res[1]);
         getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });

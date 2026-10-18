@@ -146,3 +146,6 @@ tr.detail td{background:var(--code);padding:12px}
   #toast{max-width:calc(100vw - 32px)}
 }
 .release-note{margin:4px 0 0;font-size:.88em;font-weight:600}
+/* summary at the top */
+.summary h3{margin:.2em 0 .3em}.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.sum-chips{display:flex;flex-wrap:wrap;gap:6px;margin:.3em 0}
+@media (max-width:760px){.sum-grid{grid-template-columns:1fr}}

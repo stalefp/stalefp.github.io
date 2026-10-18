@@ -34,6 +34,17 @@
 
   <div id="load-error" class="notice error" hidden></div>
 
+  <!-- Summary: who's current right now (filled by js/app.js from data/libraries.json, firefox_libraries.json, row_history.json) -->
+  <section id="summary" class="card summary" aria-labelledby="sum-h">
+    <h2 id="sum-h">Who's current right now</h2>
+    <div class="sum-grid">
+      <div id="sum-chrome"><p class="muted">Loading…</p></div>
+      <div id="sum-firefox"></div>
+    </div>
+    <div id="sum-movers"></div>
+    <p class="muted small">Details below: <a href="#leaderboard">Chrome leaderboard</a> · <a href="#firefox-board">Firefox leaderboard</a> · <a href="#chrome">Current Chrome</a> · <a href="#firefox">Current Firefox</a> · <a href="#api">JSON feed</a></p>
+  </section>
+
   <!-- 1. Current real Chrome fingerprint -->
   <section id="chrome" class="card" aria-labelledby="chrome-h">
     <!-- COPY: Nya ("What real Chrome sends right now" card title) -->
