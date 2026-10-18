@@ -38,6 +38,8 @@ if [[ "${1:-}" != "--no-rerun" ]]; then
   echo "[harness] python cases (bench.py)";   "$PYBIN" "$LB/harness/run_python.py" "$RUN/py" || echo "python harness failed"
   echo "[harness] go cases (gobench)";        (cd "$RUN/go" && "$LB/bin/gobench") || echo "gobench failed"
   echo "[harness] resumption (goresume_raw)"; "$LB/bin/goresume_raw" "$RUN/resume" | tee "$RUN/resume/_stdout.txt" || echo "goresume failed"
+  echo "[harness] behaviour probe (probe.py: resumption, extension order, header order; both boards)"
+  (cd "$LB/harness/goprobe" && go build -o "$LB/bin/goprobe" .) && "$CAPPY" "$LB/harness/probe.py" || echo "behaviour probe failed"
   echo "[harness] HTTP/3 (run_h3.py, local QUIC endpoint)"; "$CAPPY" "$LB/harness/run_h3.py" "$RUN/h3" || echo "HTTP/3 harness failed"
   "$PYBIN" - "$RUN" "$STARTED" "$LB/harness/gobench/go.mod" <<'PY'
 import json, re, sys, importlib.metadata as md, datetime as dt
