@@ -5,7 +5,7 @@
  "version": "158.0",
  "platform": "windows",
  "os": "Windows 2025Server (AMD64, build 10.0.26100)",
- "captured_at": "2026-10-17T05:09:51-05:00",
+ "captured_at": "2026-10-18T05:09:18-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -209,13 +209,13 @@
     "id": "0xf",
     "name": "initial_source_connection_id",
     "len": 3,
-    "hex": "363f3e"
+    "hex": "da28cc"
    },
    {
     "id": "0x11",
     "name": "version_information",
     "len": 16,
-    "hex": "000000016a8a9a1a6b3343cf00000001"
+    "hex": "000000011acaca1a6b3343cf00000001"
    },
    {
     "id": "0x1d",
