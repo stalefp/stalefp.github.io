@@ -62,9 +62,10 @@ def tool(name):
 def cert_sha256(apk):
     r = subprocess.run([tool("apksigner"), "verify", "--print-certs", apk], capture_output=True, text=True)
     if r.returncode != 0: raise RuntimeError("apksigner verify failed: " + (r.stdout + r.stderr)[-400:])
-    # "Signer #1 certificate ..." or, for APKs signed per SDK range (v3.1), "Signer (minSdkVersion=..) certificate ...";
-    # source-stamp lines start with "Source Stamp" and are ignored.
-    certs = sorted(set(re.findall(r"(?m)^Signer[^\n]*? certificate SHA-256 digest: ([0-9a-f]{64})", r.stdout)))
+    # apksigner versions word it differently ("Signer #1 certificate SHA-256 digest: ..", "V3.0 Signer: certificate SHA-256 digest: ..",
+    # "Signer (minSdkVersion=..) certificate .."); source-stamp lines are a different key and are ignored.
+    certs = sorted({m.group(1) for line in r.stdout.splitlines() if "Signer" in line and not line.startswith("Source Stamp")
+                    for m in [re.search(r"certificate SHA-256 digest: ([0-9a-f]{64})", line)] if m})
     if len(certs) != 1: raise RuntimeError("expected exactly one signing certificate, got %s: %s" % (certs, r.stdout[:600]))
     return certs[0]
 
