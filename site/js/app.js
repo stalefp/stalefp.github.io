@@ -106,6 +106,25 @@
     return e;
   }
   var bound = {};
+  // "Last updated N hours ago": newest of the capture / board timestamps seen so far; refreshed every minute.
+  var lastStamp = 0;
+  function ago(ms) {
+    var m = Math.max(0, Math.round((Date.now() - ms) / 60000));
+    if (m < 1) return "just now";
+    if (m < 60) return m + (m === 1 ? " minute" : " minutes") + " ago";
+    var h = Math.round(m / 60); if (h < 48) return h + (h === 1 ? " hour" : " hours") + " ago";
+    return Math.round(h / 24) + " days ago";
+  }
+  function lastUpdated(iso) {
+    var t = iso ? Date.parse(iso) : NaN;
+    if (isNaN(t) || t <= lastStamp) return;
+    lastStamp = t;
+    var p = document.getElementById("last-updated"); if (!p) return;
+    var paint = function () { p.textContent = "Last updated " + ago(lastStamp) + " (" + new Date(lastStamp).toLocaleString() + ")"; p.title = new Date(lastStamp).toISOString(); };
+    paint(); p.hidden = false;
+    if (!lastUpdated.timer) lastUpdated.timer = setInterval(paint, 60000);
+  }
+
   function bind(name, value) {
     bound[name] = value;
     $$('[data-bind="' + name + '"]').forEach(function (n) { n.textContent = value == null || value === "" ? "not captured" : value; });
@@ -154,6 +173,7 @@
     bind("chrome_version_footer", ref.version);
     bind("chrome_build", "(" + [ref.browser, ref.channel, ref.os ? ref.os.split(" (")[0] : null].filter(Boolean).join(", ") + ")");
     bind("captured_at", localTime(ref.capturedAt));
+    lastUpdated(ref.capturedAt);
     $('[data-bind="captured_at"]').setAttribute("datetime", ref.capturedAt || "");
     bind("ja4", ref.ja4Fresh);
     bind("ja4_resumed", ref.ja4Resumed);
@@ -887,6 +907,7 @@
     bind("chrome_build_long", [r.browser, r.chrome_version, r.channel].filter(Boolean).join(" ") + (r.os ? " on " + r.os : ""));
     bind("endpoints", ((lb.harness || {}).endpoints || []).join(", "));
     bind("generated_at", localTime(lb.generated_at));
+    lastUpdated(lb.generated_at);
     $("#ca34-caveat").textContent = (lb.caveats || [])[0] || "";
     var ml = $("#method-list");
     (lb.caveats || []).slice(1).forEach(function (c) { ml.appendChild(el("li", { text: c })); });

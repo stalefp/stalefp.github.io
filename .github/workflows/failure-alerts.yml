@@ -1,0 +1,56 @@
+# Opens one GitHub issue when a scheduled workflow fails, and closes it when the next run of that workflow passes.
+# Uses only the built-in GITHUB_TOKEN. One open issue per workflow (matched by its exact title), never duplicates.
+name: Failure alerts
+
+on:
+  workflow_run:
+    workflows: ["Chrome capture", "Library release watch"]
+    types: [completed]
+
+permissions:
+  issues: write
+  actions: read
+
+concurrency:
+  group: failure-alerts-${{ github.event.workflow_run.name }}
+  cancel-in-progress: false
+
+jobs:
+  alert:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Open or close the alert issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          WF: ${{ github.event.workflow_run.name }}
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          EVENT: ${{ github.event.workflow_run.event }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          title="Scheduled workflow failing: $WF"
+          open=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
+                 --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ "$CONCLUSION" = "success" ]; then
+            if [ -n "$open" ]; then
+              gh issue close "$open" --comment "Fixed: the next run passed - $RUN_URL"
+            fi
+            exit 0
+          fi
+          # only scheduled runs raise alerts; cancelled/skipped runs are ignored
+          case "$EVENT/$CONCLUSION" in
+            schedule/failure|schedule/timed_out) ;;
+            *) echo "no alert ($EVENT / $CONCLUSION)"; exit 0 ;;
+          esac
+          body="The scheduled run of **$WF** ended with \`$CONCLUSION\`.
+
+          Run: $RUN_URL
+          Commit: $SHA
+
+          This issue closes itself when the next run of $WF passes."
+          if [ -n "$open" ]; then
+            gh issue comment "$open" --body "Failed again ($CONCLUSION): $RUN_URL"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
