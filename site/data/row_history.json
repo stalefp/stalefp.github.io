@@ -1140,10 +1140,30 @@
      "versions_behind": 10,
      "mismatches": 2
     },
+    "wreq|chrome149": {
+     "verdict": "behind",
+     "versions_behind": 6,
+     "mismatches": 2
+    },
     "utls|hellochrome_auto": {
      "verdict": "behind",
      "versions_behind": null,
      "mismatches": 3
+    },
+    "hrequests|chrome-131": {
+     "verdict": "behind",
+     "versions_behind": 24,
+     "mismatches": 3
+    },
+    "cycletls|readme-chrome-example": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 5
+    },
+    "got-scraping|chrome-(header-generator)": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 5
     },
     "tls-client-(python)|chrome_120": {
      "verdict": "behind",

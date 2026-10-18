@@ -248,7 +248,11 @@
     "azuretls-client": false,
     "primp": false,
     "rnet": false,
+    "wreq": false,
     "uTLS": false,
+    "hrequests": false,
+    "CycleTLS": false,
+    "got-scraping": false,
     "tls-client (Python)": false
    }
   }

@@ -1,6 +1,6 @@
 {
  "schema_version": "leaderboard-0.2",
- "generated_at": "2026-10-18T10:10:06Z",
+ "generated_at": "2026-10-18T13:01:54Z",
  "reference": {
   "source": "capture/data/latest.json",
   "schema": "capture/SCHEMA.md v1",
@@ -11,7 +11,7 @@
   "branded": true,
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
-  "captured_at": "2026-10-18T04:57:55-05:00",
+  "captured_at": "2026-10-18T07:46:12-05:00",
   "reference_config": "default-headed",
   "is_current_linux_stable": true,
   "variations_source": "default seed",
@@ -137,22 +137,47 @@
    "h3_grease_settings": 1,
    "transport_params": [
     {
-     "id": "0x20",
-     "name": "max_datagram_frame_size",
-     "len": 4,
-     "value": 65536
-    },
-    {
      "id": "0x1",
      "name": "max_idle_timeout",
      "len": 4,
      "value": 30000
     },
     {
+     "id": "0x20",
+     "name": "max_datagram_frame_size",
+     "len": 4,
+     "value": 65536
+    },
+    {
+     "id": "0x11",
+     "name": "version_information",
+     "len": 12,
+     "hex": "000000018a3a0a2a00000001"
+    },
+    {
+     "id": "0x3128",
+     "name": "google_connection_options",
+     "len": 4,
+     "hex": "4f524947",
+     "ascii": "ORIG"
+    },
+    {
+     "id": "0x3",
+     "name": "max_udp_payload_size",
+     "len": 2,
+     "value": 1472
+    },
+    {
      "id": "0x5",
      "name": "initial_max_stream_data_bidi_local",
      "len": 4,
      "value": 6291456
+    },
+    {
+     "id": "0x9",
+     "name": "initial_max_streams_uni",
+     "len": 2,
+     "value": 103
     },
     {
      "id": "0x4",
@@ -167,41 +192,10 @@
      "value": 6291456
     },
     {
-     "id": "0x11",
-     "name": "version_information",
-     "len": 12,
-     "hex": "00000001000000010acaea5a"
-    },
-    {
-     "id": "0x9",
-     "name": "initial_max_streams_uni",
-     "len": 2,
-     "value": 103
-    },
-    {
-     "id": "0x3",
-     "name": "max_udp_payload_size",
-     "len": 2,
-     "value": 1472
-    },
-    {
-     "id": "0x3128",
-     "name": "google_connection_options",
+     "id": "0x7",
+     "name": "initial_max_stream_data_uni",
      "len": 4,
-     "hex": "4f524947",
-     "ascii": "ORIG"
-    },
-    {
-     "id": "0x73475f7b9ee1d5e",
-     "name": "grease",
-     "len": 5,
-     "value": 60
-    },
-    {
-     "id": "0xf",
-     "name": "initial_source_connection_id",
-     "len": 0,
-     "hex": ""
+     "value": 6291456
     },
     {
      "id": "0x8",
@@ -210,10 +204,16 @@
      "value": 100
     },
     {
-     "id": "0x7",
-     "name": "initial_max_stream_data_uni",
-     "len": 4,
-     "value": 6291456
+     "id": "0xf",
+     "name": "initial_source_connection_id",
+     "len": 0,
+     "hex": ""
+    },
+    {
+     "id": "0x15f78a525cc82158",
+     "name": "grease",
+     "len": 1,
+     "hex": "8c"
     }
    ],
    "header_order": [
@@ -357,13 +357,12 @@
   "Reference: branded Google Chrome 155.0.8059.84 (stable), captured Oct 18, 2026 on Linux x86_64 against a local capture server (capture/lib/server.py).",
   "No population figure exists in the capture for Chrome without ca34 (no Finch study in the seed toggles it), so none is shown.",
   "HTTP/3: 8 library profiles were tested over QUIC against the same local aioquic endpoint that captured Chrome's QUIC fingerprint; libraries without an HTTP/3 client are marked 'no HTTP/3 support'.",
-  "Resumption was only tested for bogdanfinn tls-client (Chrome_152 and Chrome_152_PSK).",
-  "Header order is informational: the harness sets Chrome headers for the Go libraries, while Python cases use each library's defaults.",
+  "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",
   "Verdicts compare against the Linux Chrome capture. Windows and macOS Chrome are captured separately and shown next to Linux; libraries are not scored against them."
  ],
  "harness": {
   "runs_used": [
-   "20261018T100943Z"
+   "20261018T125825Z"
   ],
   "endpoints": [
    "https://tls.peet.ws/api/all"
@@ -381,8 +380,8 @@
    "profile": "Chrome_152",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/tls-client(go)_Chrome_152.json",
-    "tested_at": "2026-10-18T10:09:54Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152.json",
+    "tested_at": "2026-10-18T13:01:41Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152",
@@ -678,14 +677,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/go/out/tls-client(go)_Chrome_152.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/tls-client(go)_Chrome_152.json",
+    "fresh": "leaderboard/raw/20261018T125825Z/go/out/tls-client(go)_Chrome_152.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152.json",
     "resumed": [
-     "leaderboard/raw/20261018T100943Z/resume/tls-client(go)_Chrome_152_req2.json",
-     "leaderboard/raw/20261018T100943Z/resume/tls-client(go)_Chrome_152_req3.json"
+     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_req2.json",
+     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_req3.json"
     ]
    },
    "fingerprint": {
@@ -987,19 +986,10 @@
     "settings": true,
     "header_order": true
    },
+   "recent_match": null,
    "notes": [
     "Fresh handshakes match Chrome exactly, but switch to Chrome_152_PSK if you need session resumption to look like Chrome too."
    ],
-   "resumed_status": "never",
-   "fix": {
-    "to_id": "tls-client|chrome_152_psk",
-    "to_profile": "Chrome_152_PSK",
-    "to_verdict": "exact",
-    "old": "tls_client.WithClientProfile(profiles.Chrome_152)",
-    "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
-   },
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "exact",
    "base_counted": [],
    "behaviour": [
@@ -1066,7 +1056,16 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "never",
+   "fix": {
+    "to_id": "tls-client|chrome_152_psk",
+    "to_profile": "Chrome_152_PSK",
+    "to_verdict": "exact",
+    "old": "tls_client.WithClientProfile(profiles.Chrome_152)",
+    "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
+   },
+   "release_update": null
   },
   {
    "id": "tls-client|chrome_152_psk",
@@ -1076,8 +1075,8 @@
    "profile": "Chrome_152_PSK",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/tls-client(go)_Chrome_152_PSK.json",
-    "tested_at": "2026-10-18T10:09:55Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "tested_at": "2026-10-18T13:01:42Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_152_PSK",
@@ -1375,14 +1374,14 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/tls-client(go)_Chrome_152_PSK.json",
+    "fresh": "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_PSK_req1.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_152_PSK.json",
     "resumed": [
-     "leaderboard/raw/20261018T100943Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
-     "leaderboard/raw/20261018T100943Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
+     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_PSK_req2.json",
+     "leaderboard/raw/20261018T125825Z/resume/tls-client(go)_Chrome_152_PSK_req3.json"
     ]
    },
    "fingerprint": {
@@ -1658,13 +1657,10 @@
     "settings": true,
     "header_order": false
    },
+   "recent_match": null,
    "notes": [
     "Best pick today: in v1.16.0 this profile matched current Chrome's default fingerprint exactly, including resumed connections."
    ],
-   "resumed_status": "match",
-   "fix": null,
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "exact",
    "base_counted": [],
    "behaviour": [
@@ -1731,7 +1727,10 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "match",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "tls-client|chrome_150",
@@ -1741,8 +1740,8 @@
    "profile": "Chrome_150",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/tls-client(go)_Chrome_150.json",
-    "tested_at": "2026-10-18T10:09:57Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_150.json",
+    "tested_at": "2026-10-18T13:01:44Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "tls-client:Chrome_150",
@@ -2038,11 +2037,11 @@
     }
    },
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/go/out/tls-client(go)_Chrome_150.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/tls-client(go)_Chrome_150.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/go/out/tls-client(go)_Chrome_150.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/tls-client(go)_Chrome_150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -2345,19 +2344,10 @@
     "settings": true,
     "header_order": true
    },
+   "recent_match": null,
    "notes": [
     "Matches Chrome only with trust anchors turned off (the no_ca34 variant), so prefer Chrome_152_PSK in the same release."
    ],
-   "resumed_status": "never",
-   "fix": {
-    "to_id": "tls-client|chrome_152_psk",
-    "to_profile": "Chrome_152_PSK",
-    "to_verdict": "exact",
-    "old": "tls_client.WithClientProfile(profiles.Chrome_150)",
-    "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
-   },
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "exact_variant",
    "base_counted": [
     "extensions"
@@ -2426,7 +2416,16 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "never",
+   "fix": {
+    "to_id": "tls-client|chrome_152_psk",
+    "to_profile": "Chrome_152_PSK",
+    "to_verdict": "exact",
+    "old": "tls_client.WithClientProfile(profiles.Chrome_150)",
+    "new": "tls_client.WithClientProfile(profiles.Chrome_152_PSK)"
+   },
+   "release_update": null
   },
   {
    "id": "curl_cffi|chrome150",
@@ -2436,8 +2435,8 @@
    "profile": "chrome150",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/curl_cffi_chrome150.json",
-    "tested_at": "2026-10-18T10:10:00Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome150.json",
+    "tested_at": "2026-10-18T13:01:47Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -2475,19 +2474,19 @@
      "priority"
     ],
     "transport_params": [
-     "initial_source_connection_id",
-     "max_udp_payload_size",
-     "initial_max_stream_data_bidi_local",
-     "initial_max_stream_data_bidi_remote",
-     "max_datagram_frame_size",
-     "initial_max_streams_bidi",
-     "grease",
-     "initial_max_streams_uni",
-     "max_idle_timeout",
-     "version_information",
      "google_connection_options",
+     "initial_source_connection_id",
+     "initial_max_streams_bidi",
+     "initial_max_stream_data_bidi_remote",
      "initial_max_stream_data_uni",
-     "initial_max_data"
+     "grease",
+     "initial_max_data",
+     "initial_max_streams_uni",
+     "initial_max_stream_data_bidi_local",
+     "version_information",
+     "max_idle_timeout",
+     "max_datagram_frame_size",
+     "max_udp_payload_size"
     ],
     "ja4_matches": {
      "default": false,
@@ -2714,11 +2713,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/curl_cffi_chrome150.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/curl_cffi_chrome150.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/curl_cffi_chrome150.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome150.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -3021,13 +3020,10 @@
     "settings": true,
     "header_order": true
    },
+   "recent_match": null,
    "notes": [
     "Newest curl_cffi profile we tested (0.16.3); it matches Chrome only with trust anchors turned off, so it lacks the ca34 extension default Chrome now sends."
    ],
-   "resumed_status": "match_variant",
-   "fix": null,
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "exact_variant",
    "base_counted": [
     "extensions"
@@ -3096,7 +3092,10 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "match_variant",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "noble-tls|chrome_146",
@@ -3106,8 +3105,8 @@
    "profile": "chrome_146",
    "note": "wraps Go tls-client",
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/noble-tls_chrome_146.json",
-    "tested_at": "2026-10-18T10:10:05Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/noble-tls_chrome_146.json",
+    "tested_at": "2026-10-18T13:01:52Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -3404,11 +3403,11 @@
     }
    },
    "version": "0.1.9",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/noble-tls_chrome_146.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/noble-tls_chrome_146.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/noble-tls_chrome_146.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/noble-tls_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1517h2_8daaf6152771_dcad5a053991",
@@ -3698,13 +3697,10 @@
     "settings": true,
     "header_order": false
    },
+   "recent_match": null,
    "notes": [
     "Wraps Go tls-client, whose own Chrome_152_PSK profile matched current Chrome exactly."
    ],
-   "resumed_status": "never",
-   "fix": null,
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "close",
    "base_counted": [
     "signature_algorithms"
@@ -3773,7 +3769,10 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "never",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "azuretls-client|chrome",
@@ -3783,8 +3782,8 @@
    "profile": "Chrome",
    "note": null,
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/azuretls_Chrome.json",
-    "tested_at": "2026-10-18T10:09:58Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/azuretls_Chrome.json",
+    "tested_at": "2026-10-18T13:01:45Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "case": "azuretls:Chrome",
@@ -3802,24 +3801,24 @@
      ":authority",
      ":scheme",
      ":path",
-     "accept-encoding",
-     "user-agent"
+     "user-agent",
+     "accept-encoding"
     ],
     "transport_params": [
-     "initial_max_stream_data_bidi_remote",
-     "version_information",
-     "google_connection_options",
-     "initial_max_streams_uni",
-     "initial_max_streams_bidi",
-     "initial_max_stream_data_uni",
-     "google_user_agent_id",
-     "max_idle_timeout",
-     "max_udp_payload_size",
      "max_datagram_frame_size",
-     "grease",
-     "initial_source_connection_id",
+     "max_idle_timeout",
+     "version_information",
      "initial_max_stream_data_bidi_local",
-     "initial_max_data"
+     "grease",
+     "google_user_agent_id",
+     "initial_max_streams_uni",
+     "initial_max_stream_data_bidi_remote",
+     "max_udp_payload_size",
+     "initial_max_streams_bidi",
+     "google_connection_options",
+     "initial_max_data",
+     "initial_max_stream_data_uni",
+     "initial_source_connection_id"
     ],
     "ja4_matches": {
      "default": false,
@@ -4048,11 +4047,11 @@
     }
    },
    "version": "v1.13.2",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/go/out/azuretls_Chrome.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/azuretls_Chrome.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/go/out/azuretls_Chrome.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/azuretls_Chrome.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -4369,11 +4368,8 @@
     "settings": true,
     "header_order": true
    },
-   "notes": [],
-   "resumed_status": "unsupported",
-   "fix": null,
-   "release_update": null,
    "recent_match": null,
+   "notes": [],
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -4443,7 +4439,10 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "unsupported",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "curl_cffi|chrome136",
@@ -4453,8 +4452,8 @@
    "profile": "chrome136",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/curl_cffi_chrome136.json",
-    "tested_at": "2026-10-18T10:10:03Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome136.json",
+    "tested_at": "2026-10-18T13:01:50Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -4731,11 +4730,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/curl_cffi_chrome136.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/curl_cffi_chrome136.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/curl_cffi_chrome136.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome136.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5052,19 +5051,10 @@
     "settings": true,
     "header_order": true
    },
+   "recent_match": null,
    "notes": [
     "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
    ],
-   "resumed_status": "mismatch",
-   "fix": {
-    "to_id": "curl_cffi|chrome150",
-    "to_profile": "chrome150",
-    "to_verdict": "exact_variant",
-    "old": "requests.get(url, impersonate=\"chrome136\")",
-    "new": "requests.get(url, impersonate=\"chrome150\")"
-   },
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -5134,7 +5124,16 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "mismatch",
+   "fix": {
+    "to_id": "curl_cffi|chrome150",
+    "to_profile": "chrome150",
+    "to_verdict": "exact_variant",
+    "old": "requests.get(url, impersonate=\"chrome136\")",
+    "new": "requests.get(url, impersonate=\"chrome150\")"
+   },
+   "release_update": null
   },
   {
    "id": "curl_cffi|chrome146",
@@ -5144,8 +5143,8 @@
    "profile": "chrome146",
    "note": "binds curl-impersonate (C/BoringSSL)",
    "http3": {
-    "source": "leaderboard/raw/20261018T100943Z/h3/curl_cffi_chrome146.json",
-    "tested_at": "2026-10-18T10:10:01Z",
+    "source": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome146.json",
+    "tested_at": "2026-10-18T13:01:49Z",
     "endpoint": "local capture/lib/server.py QUICServer (aioquic) on UDP 28544, SNI localhost",
     "client": {
      "ok": true,
@@ -5183,20 +5182,20 @@
      "priority"
     ],
     "transport_params": [
+     "google_connection_options",
+     "max_udp_payload_size",
+     "max_idle_timeout",
+     "google_initial_rtt",
+     "initial_max_streams_uni",
      "initial_max_stream_data_uni",
-     "initial_source_connection_id",
+     "initial_max_stream_data_bidi_remote",
      "grease",
      "max_datagram_frame_size",
      "initial_max_streams_bidi",
      "initial_max_stream_data_bidi_local",
-     "google_initial_rtt",
-     "google_connection_options",
-     "initial_max_streams_uni",
-     "initial_max_stream_data_bidi_remote",
-     "max_idle_timeout",
      "initial_max_data",
      "version_information",
-     "max_udp_payload_size"
+     "initial_source_connection_id"
     ],
     "ja4_matches": {
      "default": false,
@@ -5381,7 +5380,7 @@
       },
       "library": {
        "google_connection_options": "ORIG",
-       "google_initial_rtt": 308976,
+       "google_initial_rtt": 338049,
        "initial_max_data": 15728640,
        "initial_max_stream_data_bidi_local": 6291456,
        "initial_max_stream_data_bidi_remote": 6291456,
@@ -5429,11 +5428,11 @@
     }
    },
    "version": "0.16.3",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/curl_cffi_chrome146.json",
-    "http3": "leaderboard/raw/20261018T100943Z/h3/curl_cffi_chrome146.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/curl_cffi_chrome146.json",
+    "http3": "leaderboard/raw/20261018T125825Z/h3/curl_cffi_chrome146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5750,19 +5749,10 @@
     "settings": true,
     "header_order": true
    },
+   "recent_match": null,
    "notes": [
     "Upgrade to the chrome150 profile in the same curl_cffi 0.16.3 release, which only lacks trust anchors."
    ],
-   "resumed_status": "mismatch",
-   "fix": {
-    "to_id": "curl_cffi|chrome150",
-    "to_profile": "chrome150",
-    "to_verdict": "exact_variant",
-    "old": "requests.get(url, impersonate=\"chrome146\")",
-    "new": "requests.get(url, impersonate=\"chrome150\")"
-   },
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -5832,7 +5822,16 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "mismatch",
+   "fix": {
+    "to_id": "curl_cffi|chrome150",
+    "to_profile": "chrome150",
+    "to_verdict": "exact_variant",
+    "old": "requests.get(url, impersonate=\"chrome146\")",
+    "new": "requests.get(url, impersonate=\"chrome150\")"
+   },
+   "release_update": null
   },
   {
    "id": "primp|chrome_146",
@@ -5846,10 +5845,10 @@
     "reason": "primp 2.0.1 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "2.0.1",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/primp_chrome_146.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/primp_chrome_146.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -5857,7 +5856,7 @@
     "ja4_resumed": null,
     "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
     "http3_ja4": null,
-    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
     "sends_ca34": false,
     "sends_12e0": false
    },
@@ -6166,11 +6165,8 @@
     "settings": true,
     "header_order": true
    },
-   "notes": [],
-   "resumed_status": "mismatch",
-   "fix": null,
-   "release_update": null,
    "recent_match": null,
+   "notes": [],
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -6240,7 +6236,10 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "mismatch",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "rnet|chrome137",
@@ -6254,10 +6253,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/rnet_Chrome137.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/rnet_Chrome137.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -6573,13 +6572,10 @@
     "settings": true,
     "header_order": false
    },
+   "recent_match": null,
    "notes": [
     "Chrome145 is the newer rnet profile we tested, but it has the same two gaps."
    ],
-   "resumed_status": "mismatch",
-   "fix": null,
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -6649,7 +6645,10 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "mismatch",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "rnet|chrome145",
@@ -6663,10 +6662,10 @@
     "reason": "rnet 3.0.0rc22 has no HTTP/3 option and its binary contains no HTTP/3 stack"
    },
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/rnet_Chrome145.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/rnet_Chrome145.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -6982,11 +6981,8 @@
     "settings": true,
     "header_order": false
    },
-   "notes": [],
-   "resumed_status": "mismatch",
-   "fix": null,
-   "release_update": null,
    "recent_match": null,
+   "notes": [],
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -7056,7 +7052,358 @@
      ":scheme",
      ":path"
     ]
-   }
+   },
+   "resumed_status": "mismatch",
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "wreq|chrome149",
+   "library": "wreq",
+   "maintainer": "0x676e67",
+   "language": "Rust",
+   "profile": "Chrome149",
+   "note": "Rust crate (BoringSSL); profile from wreq-util 0.2.0, platform Linux",
+   "http3": {
+    "status": "not_tested",
+    "reason": "no HTTP/3 case in the harness"
+   },
+   "version": "0.16.1",
+   "tested_at": "2026-10-18T12:58:25Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261018T125825Z/ext/wreq_Chrome149.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": true,
+    "http3": "not_tested"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-language",
+      "priority"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-language",
+      "priority"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "HTTP/3 (QUIC) fingerprint",
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 149,
+   "versions_behind_by_platform": {
+    "linux": 6,
+    "win": 6,
+    "mac": 6
+   },
+   "versions_behind": 6,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true,
+   "behind_text": "Copies Chrome 149, 6 versions behind current 155; 2 counted fields differ from current Chrome.",
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
+    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154."
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "recent_match": null,
+   "notes": [],
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "resumed_status": "not_tested",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "utls|hellochrome_auto",
@@ -7070,10 +7417,10 @@
     "reason": "uTLS is a TLS-only library (no QUIC/HTTP/3 client); the harness pairs it with golang.org/x/net/http2"
    },
    "version": "v1.8.2",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/go/out/utls_HelloChrome_Auto.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/go/out/utls_HelloChrome_Auto.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
@@ -7360,19 +7707,19 @@
       ":method",
       ":path",
       ":scheme",
+      "sec-fetch-user",
+      "accept-encoding",
+      "upgrade-insecure-requests",
+      "sec-fetch-site",
+      "sec-fetch-dest",
+      "accept-language",
+      "priority",
+      "sec-ch-ua",
       "sec-ch-ua-mobile",
       "sec-ch-ua-platform",
       "user-agent",
       "accept",
-      "sec-fetch-mode",
-      "sec-fetch-user",
-      "accept-language",
-      "priority",
-      "sec-ch-ua",
-      "upgrade-insecure-requests",
-      "sec-fetch-site",
-      "sec-fetch-dest",
-      "accept-encoding"
+      "sec-fetch-mode"
      ],
      "missing": [],
      "extra": [],
@@ -7403,13 +7750,10 @@
     "settings": false,
     "header_order": false
    },
+   "recent_match": null,
    "notes": [
     "Tested with Go's golang.org/x/net/http2 because uTLS only does TLS, so the HTTP/2 settings mismatch reflects that pairing rather than uTLS alone."
    ],
-   "resumed_status": "unsupported",
-   "fix": null,
-   "release_update": null,
-   "recent_match": null,
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -7443,19 +7787,19 @@
     "fair": false,
     "unfair_reason": "the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it",
     "sent": [
-     "user-agent",
+     "upgrade-insecure-requests",
      "accept",
-     "sec-fetch-dest",
-     "accept-encoding",
      "sec-fetch-site",
      "sec-fetch-mode",
-     "sec-fetch-user",
-     "accept-language",
-     "priority",
-     "sec-ch-ua",
+     "sec-fetch-dest",
      "sec-ch-ua-mobile",
      "sec-ch-ua-platform",
-     "upgrade-insecure-requests"
+     "user-agent",
+     "sec-fetch-user",
+     "accept-encoding",
+     "accept-language",
+     "priority",
+     "sec-ch-ua"
     ],
     "browser": [
      "sec-ch-ua",
@@ -7480,7 +7824,1139 @@
      ":path",
      ":scheme"
     ]
-   }
+   },
+   "resumed_status": "unsupported",
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "hrequests|chrome-131",
+   "library": "hrequests",
+   "maintainer": "daijro",
+   "language": "Python",
+   "profile": "chrome 131",
+   "note": "wraps a Go tls-client bridge (hrequests-cgo), downloaded from its GitHub releases on first use",
+   "http3": {
+    "status": "not_tested",
+    "reason": "no HTTP/3 case in the harness"
+   },
+   "version": "0.9.2",
+   "tested_at": "2026-10-18T12:58:25Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261018T125825Z/ext/hrequests_chrome131.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "alps"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms",
+       "alps"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "alps"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": true,
+    "http3": "not_tested"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "3 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms, alps.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "alps"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "alps",
+     "label": "New ALPS codepoint (sends application_settings (old ALPS, 17513))",
+     "kind": "different"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "4469"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "accept",
+      "accept-encoding",
+      "accept-language",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "HTTP/3 (QUIC) fingerprint",
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": 131,
+   "versions_behind_by_platform": {
+    "linux": 24,
+    "win": 24,
+    "mac": 24
+   },
+   "versions_behind": 24,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true,
+   "behind_text": "Copies Chrome 131, 24 versions behind current 155; 3 counted fields differ from current Chrome.",
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
+    "Uses the old ALPS codepoint 0x4469; Chrome sends the new one, 0x44cd.",
+    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before sec-ch-ua; Chrome sends sec-ch-ua first."
+   ],
+   "http2_grade": {
+    "grade": "header_order_differs",
+    "settings": true,
+    "header_order": false
+   },
+   "recent_match": null,
+   "notes": [],
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "alps"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "resumed_status": "not_tested",
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "cycletls|readme-chrome-example",
+   "library": "CycleTLS",
+   "maintainer": "Danny-Dasilva",
+   "language": "Node.js",
+   "profile": "README Chrome example",
+   "note": "no built-in browser profiles; this is the README's Chrome example (ja4r + Chrome HTTP/2 fingerprint + Chrome 138 UA)",
+   "http3": {
+    "status": "not_tested",
+    "reason": "no HTTP/3 case in the harness"
+   },
+   "version": "2.0.5",
+   "tested_at": "2026-10-18T12:58:25Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261018T125825Z/ext/cycletls_chrome.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1516h2_8daaf6152771_d8a2da3f94cd",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "1:65536;3:1000;4:6291456;5:16384;6:262144|15663105|0|m,a,s,p",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": false,
+    "http3": "not_tested"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    },
+    {
+     "id": "h2",
+     "label": "Chrome HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "ca34"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "001d X25519",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": [
+      "0017"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": "44cd"
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": [
+      "brotli"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "1:65536;3:1000;4:6291456;5:16384;6:262144|15663105|0|m,a,s,p"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "user-agent"
+     ],
+     "library": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "user-agent"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "HTTP/3 (QUIC) fingerprint",
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind_by_platform": {
+    "linux": null,
+    "win": null,
+    "mac": null
+   },
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true,
+   "behind_text": "The profile name doesn't say which Chrome version it copies; 5 counted fields differ from current Chrome.",
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Chrome already sent it in 151, the oldest version we've captured.",
+    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
+    "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 1:65536;3:1000;4:6291456;5:16384;6:262144|15663105|0|m,a,s,p."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": true
+   },
+   "recent_match": null,
+   "notes": [],
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "resumed_status": "not_tested",
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "got-scraping|chrome-(header-generator)",
+   "library": "got-scraping",
+   "maintainer": "apify",
+   "language": "Node.js",
+   "profile": "chrome (header-generator)",
+   "note": "Node's own TLS (OpenSSL) with got-scraping's Chrome cipher/sigalg/curve lists; headers from header-generator",
+   "http3": {
+    "status": "not_tested",
+    "reason": "no HTTP/3 case in the harness"
+   },
+   "version": "4.2.2",
+   "tested_at": "2026-10-18T12:58:25Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/20261018T125825Z/ext/got-scraping_chrome.json"
+   },
+   "fingerprint": {
+    "ja4_fresh": "t13d1513h2_8daaf6152771_ff9cead5a15b",
+    "ja4_r_fresh": "t13d1513h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0016,0017,0023,002b,002d,0033,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_resumed": null,
+    "http2_akamai": "2:0;4:33554432|4128769|0|m,p,a,s",
+    "http3_ja4": null,
+    "user_agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
+    "sends_ca34": false,
+    "sends_12e0": false
+   },
+   "resumption": {
+    "tested": false,
+    "resumed": null,
+    "ja4": null,
+    "ja4s": null
+   },
+   "matches": {
+    "variants": {
+     "default": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     },
+     "no_ca34": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     },
+     "pq": {
+      "ja4_fresh": false,
+      "ja4_resumed": null,
+      "fields_exact": false,
+      "counted_mismatches": [
+       "extensions",
+       "signature_algorithms",
+       "supported_groups",
+       "key_shares",
+       "http2_akamai"
+      ],
+      "quic_ja4": null
+     }
+    },
+    "http2": false,
+    "http3": "not_tested"
+   },
+   "matched_variant": null,
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Chrome's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "missing": [
+    {
+     "id": "ml-dsa",
+     "label": "ML-DSA signature algorithms (0x0904-0906)",
+     "kind": "missing"
+    },
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-0012",
+     "label": "Extension 0012 signed_certificate_timestamp",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-001b",
+     "label": "Extension 001b compress_certificate",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-ca34",
+     "label": "ca34 trust anchors (Chrome's default sends it)",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-fe0d",
+     "label": "Extension fe0d encrypted_client_hello",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0016",
+     "label": "Extra extension 0016",
+     "kind": "extra"
+    },
+    {
+     "id": "h2",
+     "label": "Chrome HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ca34 trust_anchors (ca34)",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0016",
+      "0017 extended_master_secret",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "0012",
+      "001b",
+      "ca34",
+      "fe0d"
+     ],
+     "extra": [
+      "0016"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0904 ML-DSA-44",
+      "0905 ML-DSA-65",
+      "0906 ML-DSA-87",
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0804 rsa_pss_rsae_sha256",
+      "0401 rsa_pkcs1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0805 rsa_pss_rsae_sha384",
+      "0501 rsa_pkcs1_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0904",
+      "0905",
+      "0906"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": "44cd",
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "brotli"
+     ],
+     "library": null
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "library": "2:0;4:33554432|4128769|0|m,p,a,s"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":authority",
+      ":scheme",
+      ":path",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language"
+     ],
+     "library": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "upgrade-insecure-requests",
+      "user-agent",
+      "accept",
+      "sec-fetch-site",
+      "sec-fetch-mode",
+      "sec-fetch-user",
+      "sec-fetch-dest",
+      "accept-encoding",
+      "accept-language"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "not_tested": [
+    "HTTP/3 (QUIC) fingerprint",
+    "TLS resumption (resumed JA4)"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind_by_platform": {
+    "linux": null,
+    "win": null,
+    "mac": null
+   },
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "is_newest_profile": true,
+   "behind_text": "The profile name doesn't say which Chrome version it copies; 5 counted fields differ from current Chrome.",
+   "why": [
+    "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906); Chrome already sent them in 151, the oldest version we've captured.",
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Chrome already sent it in 151, the oldest version we've captured.",
+    "Missing 1 extension: signed certificate timestamp (0012); Chrome already sent it in 151, the oldest version we've captured.",
+    "Missing 1 extension: compress certificate (001b); Chrome already sent it in 151, the oldest version we've captured.",
+    "Missing 1 extension: trust anchors (ca34); Chrome added it in 154.",
+    "Missing 1 extension: encrypted client hello (fe0d); Chrome already sent it in 151, the oldest version we've captured.",
+    "Sends extension 0016, which Chrome doesn't send.",
+    "HTTP/2 settings differ: Chrome sends 1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p, this library sends 2:0;4:33554432|4128769|0|m,p,a,s.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends :path before :authority; Chrome sends :authority first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "recent_match": null,
+   "notes": [],
+   "base_verdict": "behind",
+   "base_counted": [
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "resumed_status": "not_tested",
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "tls-client-(python)|chrome_120",
@@ -7494,10 +8970,10 @@
     "reason": "tls-client (Python) 1.0.1 bundles Go tls-client v1.7.2, which has no HTTP/3 support"
    },
    "version": "2.0.0",
-   "tested_at": "2026-10-18T10:09:43Z",
+   "tested_at": "2026-10-18T12:58:25Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/20261018T100943Z/py/tls-client(py)_chrome_120.json"
+    "fresh": "leaderboard/raw/20261018T125825Z/py/tls-client(py)_chrome_120.json"
    },
    "fingerprint": {
     "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
@@ -7827,18 +9303,10 @@
     "settings": true,
     "header_order": false
    },
+   "recent_match": null,
    "notes": [
     "Wraps Go tls-client; using Go tls-client v1.16.0 with Chrome_152_PSK directly matched current Chrome exactly."
    ],
-   "resumed_status": "never",
-   "fix": null,
-   "release_update": {
-    "version": "2.0.0",
-    "released_at": "2026-10-10T15:22:07.197014Z",
-    "retested_at": "2026-10-16T00:17:28Z",
-    "text": "Updated to 2.0.0 on Oct 16, 2026: still 35 versions behind."
-   },
-   "recent_match": null,
    "base_verdict": "behind",
    "base_counted": [
     "extensions",
@@ -7911,9 +9379,61 @@
      ":scheme",
      ":path"
     ]
+   },
+   "resumed_status": "never",
+   "fix": null,
+   "release_update": {
+    "version": "2.0.0",
+    "released_at": "2026-10-10T15:22:07.197014Z",
+    "retested_at": "2026-10-16T00:17:28Z",
+    "text": "Updated to 2.0.0 on Oct 16, 2026: still 35 versions behind."
    }
   }
  ],
+ "probe_reference": {
+  "captures": 60,
+  "distinct_orders": 60,
+  "varies": true,
+  "resumed_ja4s": [
+   "t13d1517h2_8daaf6152771_a87ad97598a9",
+   "t13d1518h2_8daaf6152771_e2d80978ab2e",
+   "t13d1519h2_8daaf6152771_3d1b1b7bef36"
+  ],
+  "default_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+  "header_order": [
+   "sec-ch-ua",
+   "sec-ch-ua-mobile",
+   "sec-ch-ua-platform",
+   "upgrade-insecure-requests",
+   "user-agent",
+   "accept",
+   "sec-fetch-site",
+   "sec-fetch-mode",
+   "sec-fetch-user",
+   "sec-fetch-dest",
+   "accept-encoding",
+   "accept-language",
+   "priority"
+  ],
+  "connections_per_row": 8,
+  "generated_at": "2026-10-18T12:59:46Z",
+  "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
+  "requested_headers": [
+   "sec-ch-ua",
+   "sec-ch-ua-mobile",
+   "sec-ch-ua-platform",
+   "upgrade-insecure-requests",
+   "user-agent",
+   "accept",
+   "sec-fetch-site",
+   "sec-fetch-mode",
+   "sec-fetch-user",
+   "sec-fetch-dest",
+   "accept-encoding",
+   "accept-language",
+   "priority"
+  ]
+ },
  "chrome_timeline": [
   {
    "major": 151,
@@ -7934,7 +9454,7 @@
    "status": "captured",
    "version": "157.0.8103.6",
    "major": 157,
-   "captured_at": "2026-10-18T04:57:56-05:00",
+   "captured_at": "2026-10-18T07:46:18-05:00",
    "stable_version": "155.0.8059.84",
    "same_as_stable": true,
    "differences": [],
@@ -7945,7 +9465,7 @@
    "status": "captured",
    "version": "158.0.8106.0",
    "major": 158,
-   "captured_at": "2026-10-18T04:57:59-05:00",
+   "captured_at": "2026-10-18T07:46:16-05:00",
    "stable_version": "155.0.8059.84",
    "same_as_stable": true,
    "differences": [],
@@ -7956,7 +9476,7 @@
    "status": "captured",
    "version": "158.0.8110.0",
    "major": 158,
-   "captured_at": "2026-10-18T04:58:02-05:00",
+   "captured_at": "2026-10-18T07:46:23-05:00",
    "stable_version": "155.0.8059.84",
    "same_as_stable": true,
    "differences": [],
@@ -7970,6 +9490,14 @@
   "enough_data": false,
   "libraries": [
    {
+    "library": "CycleTLS",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false,
+    "releases": []
+   },
+   {
     "library": "azuretls-client",
     "avg_days": null,
     "caught_up": [],
@@ -7979,6 +9507,22 @@
    },
    {
     "library": "curl_cffi",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false,
+    "releases": []
+   },
+   {
+    "library": "got-scraping",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false,
+    "releases": []
+   },
+   {
+    "library": "hrequests",
     "avg_days": null,
     "caught_up": [],
     "still_behind": [],
@@ -8039,52 +9583,16 @@
     "still_behind": [],
     "enough_data": false,
     "releases": []
+   },
+   {
+    "library": "wreq",
+    "avg_days": null,
+    "caught_up": [],
+    "still_behind": [],
+    "enough_data": false,
+    "releases": []
    }
   ],
   "method": "Counts only changes of Chrome's default TLS JA4 seen after tracking began; a library catches up on the first logged day one of its tested profiles is an exact match again."
- },
- "probe_reference": {
-  "captures": 60,
-  "distinct_orders": 60,
-  "varies": true,
-  "resumed_ja4s": [
-   "t13d1517h2_8daaf6152771_a87ad97598a9",
-   "t13d1518h2_8daaf6152771_e2d80978ab2e",
-   "t13d1519h2_8daaf6152771_3d1b1b7bef36"
-  ],
-  "default_resumed_ja4": "t13d1518h2_8daaf6152771_e2d80978ab2e",
-  "header_order": [
-   "sec-ch-ua",
-   "sec-ch-ua-mobile",
-   "sec-ch-ua-platform",
-   "upgrade-insecure-requests",
-   "user-agent",
-   "accept",
-   "sec-fetch-site",
-   "sec-fetch-mode",
-   "sec-fetch-user",
-   "sec-fetch-dest",
-   "accept-encoding",
-   "accept-language",
-   "priority"
-  ],
-  "connections_per_row": 8,
-  "generated_at": "2026-10-18T12:37:00Z",
-  "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
-  "requested_headers": [
-   "sec-ch-ua",
-   "sec-ch-ua-mobile",
-   "sec-ch-ua-platform",
-   "upgrade-insecure-requests",
-   "user-agent",
-   "accept",
-   "sec-fetch-site",
-   "sec-fetch-mode",
-   "sec-fetch-user",
-   "sec-fetch-dest",
-   "accept-encoding",
-   "accept-language",
-   "priority"
-  ]
  }
 }

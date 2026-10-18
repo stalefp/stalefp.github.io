@@ -1,11 +1,11 @@
 {
  "schema_version": "firefox-leaderboard-1",
- "generated_at": "2026-10-18T10:10:11Z",
+ "generated_at": "2026-10-18T13:02:00Z",
  "reference": {
   "browser": "Mozilla Firefox",
   "firefox_version": "158.0",
   "firefox_major": 158,
-  "captured_at": "2026-10-18T05:06:55-05:00",
+  "captured_at": "2026-10-18T07:55:09-05:00",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
   "ja4_fresh": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
   "http2_akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
@@ -14,8 +14,8 @@
  "verdict_rules": "Same counted fields and thresholds as the Chrome leaderboard, against Firefox's default fingerprint. Versions behind = current Firefox release major minus the major in the profile name.",
  "caveats": [
   "Libraries are tested against the public TLS echo endpoint (tls.peet.ws); real Firefox is captured against our local capture server. Both record the raw ClientHello and HTTP/2 frames.",
-  "Header order is informational: the Go cases send Firefox's captured header names in Firefox's order; Python cases use each library's defaults.",
-  "Resumption and HTTP/3 are not tested for Firefox profiles yet."
+  "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",
+  "HTTP/3 is not tested for Firefox profiles yet."
  ],
  "libraries": [
   {
@@ -26,10 +26,10 @@
    "profile": "Firefox",
    "note": null,
    "version": "v1.13.2",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/go/out/azuretls_Firefox.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/go/out/azuretls_Firefox.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -313,11 +313,6 @@
    },
    "behind_text": "The profile name doesn't say which Firefox version it copies; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
-   "notes": [
-    "No profile in this library matches current Firefox yet; it still sends cipher suites 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -383,7 +378,12 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; it still sends cipher suites 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
+   ],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "tls-client|firefox_148",
@@ -393,10 +393,10 @@
    "profile": "Firefox_148",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/go/out/tls-client(go)_Firefox_148.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/go/out/tls-client(go)_Firefox_148.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -684,11 +684,6 @@
    },
    "behind_text": "Copies Firefox 148, 10 versions behind current 158; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
-   "notes": [
-    "Best tls-client Firefox profile we tested, but it still sends cipher suites 0x0033, 0x0039, 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -754,7 +749,12 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "Best tls-client Firefox profile we tested, but it still sends cipher suites 0x0033, 0x0039, 0xc009 and 0xc00a and offers ffdhe2048/ffdhe3072, which Firefox 158 doesn't."
+   ],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "curl_cffi|firefox144",
@@ -764,10 +764,10 @@
    "profile": "firefox144",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/py/curl_cffi_firefox144.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/py/curl_cffi_firefox144.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -1051,11 +1051,6 @@
    },
    "behind_text": "Copies Firefox 144, 14 versions behind current 158; 2 counted fields differ from current Firefox.",
    "is_newest_profile": false,
-   "notes": [
-    "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -1121,7 +1116,12 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "curl_cffi|firefox147",
@@ -1131,10 +1131,10 @@
    "profile": "firefox147",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/py/curl_cffi_firefox147.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/py/curl_cffi_firefox147.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -1418,11 +1418,6 @@
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
-   "notes": [
-    "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -1488,7 +1483,12 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; firefox147 and firefox144 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "rnet|firefox139",
@@ -1498,10 +1498,10 @@
    "profile": "Firefox139",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/py/rnet_Firefox139.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/py/rnet_Firefox139.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -1784,11 +1784,6 @@
    },
    "behind_text": "Copies Firefox 139, 19 versions behind current 158; 2 counted fields differ from current Firefox.",
    "is_newest_profile": false,
-   "notes": [
-    "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -1854,7 +1849,12 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "rnet|firefox147",
@@ -1864,10 +1864,10 @@
    "profile": "Firefox147",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/py/rnet_Firefox147.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/py/rnet_Firefox147.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
@@ -2150,11 +2150,6 @@
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
-   "notes": [
-    "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -2220,7 +2215,320 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; Firefox147 and Firefox139 have the same gaps, both still sending cipher suites 0xc009 and 0xc00a and offering ffdhe2048/ffdhe3072."
+   ],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "wreq|firefox151",
+   "library": "wreq",
+   "maintainer": "0x676e67",
+   "language": "Rust",
+   "profile": "Firefox151",
+   "note": "Rust crate (BoringSSL); profile from wreq-util 0.2.0, platform Linux",
+   "version": "0.16.1",
+   "tested_at": "2026-10-18T13:01:55Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/ext/wreq_Firefox151.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "counted_mismatches": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c009",
+      "c00a",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "missing": [],
+     "extra": [
+      "c009",
+      "c00a"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "001c",
+      "0022",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "001c",
+      "0022",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512",
+      "0203 ecdsa_sha1",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512",
+      "0203 ecdsa_sha1",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521",
+      "0100 ffdhe2048",
+      "0101 ffdhe3072"
+     ],
+     "missing": [],
+     "extra": [
+      "0100",
+      "0101"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib",
+      "brotli",
+      "zstd"
+     ],
+     "library": [
+      "zlib",
+      "brotli",
+      "zstd"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
+     "library": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "user-agent",
+      "accept",
+      "accept-language",
+      "upgrade-insecure-requests",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "priority",
+      "te"
+     ],
+     "library": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "user-agent",
+      "accept",
+      "accept-language",
+      "upgrade-insecure-requests",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "priority",
+      "te"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d1717h2_5b57614c22b0_3cbfd9057e0d",
+    "ja4_r_fresh": "t13d1717h2_002f,0035,009c,009d,1301,1302,1303,c009,c00a,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,001c,0022,0023,002b,002d,0033,fe0d,ff01_0403,0503,0603,0804,0805,0806,0401,0501,0601,0203,0201",
+    "http2_akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
+    "user_agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:151.0) Gecko/20100101 Firefox/151.0"
+   },
+   "matches": {
+    "http2": true,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "ciphers",
+     "label": "Cipher suite list differs",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 151,
+   "versions_behind": 7,
+   "versions_behind_uniform": true,
+   "why": [
+    "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
+    "Supported groups differ: offers ffdhe2048 (0x0100), ffdhe3072 (0x0101), which Firefox doesn't."
+   ],
+   "http2_grade": {
+    "grade": "match",
+    "settings": true,
+    "header_order": true
+   },
+   "behind_text": "Copies Firefox 151, 7 versions behind current 158; 2 counted fields differ from current Firefox.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "supported_groups"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "notes": [],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "tls-client|firefox_147",
@@ -2230,10 +2538,10 @@
    "profile": "Firefox_147",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/go/out/tls-client(go)_Firefox_147.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/go/out/tls-client(go)_Firefox_147.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Firefox's default fingerprint: ciphers, signature_algorithms, supported_groups.",
@@ -2527,19 +2835,6 @@
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 3 counted fields differ from current Firefox.",
    "is_newest_profile": false,
-   "notes": [
-    "Firefox_148 in the same release has one fewer counted difference (its signature algorithms match Firefox), though it sends two extra cipher suites Firefox doesn't (0x0033, 0x0039)."
-   ],
-   "fix": {
-    "to_id": "tls-client|firefox_148",
-    "to_profile": "Firefox_148",
-    "to_verdict": "behind",
-    "from_diffs": 3,
-    "to_diffs": 2,
-    "old": "tls_client.WithClientProfile(profiles.Firefox_147)",
-    "new": "tls_client.WithClientProfile(profiles.Firefox_148)"
-   },
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -2606,7 +2901,20 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "Firefox_148 in the same release has one fewer counted difference (its signature algorithms match Firefox), though it sends two extra cipher suites Firefox doesn't (0x0033, 0x0039)."
+   ],
+   "fix": {
+    "to_id": "tls-client|firefox_148",
+    "to_profile": "Firefox_148",
+    "to_verdict": "behind",
+    "from_diffs": 3,
+    "to_diffs": 2,
+    "old": "tls_client.WithClientProfile(profiles.Firefox_147)",
+    "new": "tls_client.WithClientProfile(profiles.Firefox_148)"
+   },
+   "release_update": null
   },
   {
    "id": "noble-tls|firefox_147",
@@ -2616,10 +2924,10 @@
    "profile": "firefox_147",
    "note": "wraps Go tls-client",
    "version": "0.1.9",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/py/noble-tls_firefox_147.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/py/noble-tls_firefox_147.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Firefox's default fingerprint: ciphers, signature_algorithms, supported_groups.",
@@ -2900,11 +3208,6 @@
    },
    "behind_text": "Copies Firefox 147, 11 versions behind current 158; 3 counted fields differ from current Firefox.",
    "is_newest_profile": true,
-   "notes": [
-    "No profile in this library matches current Firefox yet; it wraps Go tls-client, whose Firefox_148 profile had one fewer counted difference in our test."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -2971,7 +3274,354 @@
      ":authority",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; it wraps Go tls-client, whose Firefox_148 profile had one fewer counted difference in our test."
+   ],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "hrequests|firefox-132",
+   "library": "hrequests",
+   "maintainer": "daijro",
+   "language": "Python",
+   "profile": "firefox 132",
+   "note": "wraps a Go tls-client bridge (hrequests-cgo), downloaded from its GitHub releases on first use",
+   "version": "0.9.2",
+   "tested_at": "2026-10-18T13:01:55Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/ext/hrequests_firefox132.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "4 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, http2_akamai.",
+   "counted_mismatches": [
+    "ciphers",
+    "extensions",
+    "supported_groups",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c009",
+      "c00a",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "missing": [],
+     "extra": [
+      "c009",
+      "c00a"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "001c",
+      "0022",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "001c",
+      "0022",
+      "002b supported_versions",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "0012",
+      "0023",
+      "002d"
+     ],
+     "extra": []
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512",
+      "0203 ecdsa_sha1",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512",
+      "0203 ecdsa_sha1",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521",
+      "0100 ffdhe2048",
+      "0101 ffdhe3072"
+     ],
+     "missing": [],
+     "extra": [
+      "0100",
+      "0101"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256"
+     ],
+     "library": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256"
+     ]
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib",
+      "brotli",
+      "zstd"
+     ],
+     "library": [
+      "zlib",
+      "brotli",
+      "zstd"
+     ]
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
+     "library": "1:65536;2:0;4:131072;5:16384;9:1|12517377|0|m,p,a,s"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "mismatch",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "user-agent",
+      "accept",
+      "accept-language",
+      "accept-encoding",
+      "upgrade-insecure-requests",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "te"
+     ],
+     "library": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "accept",
+      "accept-encoding",
+      "accept-language",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "te",
+      "upgrade-insecure-requests",
+      "user-agent"
+     ],
+     "missing": [],
+     "extra": [],
+     "note": "same items, different order Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d1714h2_5b57614c22b0_3dd24b5ebec4",
+    "ja4_r_fresh": "t13d1714h2_002f,0035,009c,009d,1301,1302,1303,c009,c00a,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0017,001b,001c,0022,002b,0033,fe0d,ff01_0403,0503,0603,0804,0805,0806,0401,0501,0601,0203,0201",
+    "http2_akamai": "1:65536;2:0;4:131072;5:16384;9:1|12517377|0|m,p,a,s",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:150.0) Gecko/20100101 Firefox/150.0"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "ciphers",
+     "label": "Cipher suite list differs",
+     "kind": "different"
+    },
+    {
+     "id": "ext-0012",
+     "label": "Extension 0012 signed_certificate_timestamp",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-0023",
+     "label": "Extension 0023 session_ticket",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-002d",
+     "label": "Extension 002d psk_key_exchange_modes",
+     "kind": "missing"
+    },
+    {
+     "id": "h2",
+     "label": "Firefox HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": 132,
+   "versions_behind": 26,
+   "versions_behind_uniform": true,
+   "why": [
+    "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
+    "Missing 1 extension: signed certificate timestamp (0012); Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: session ticket (0023); Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: psk key exchange modes (002d); Firefox already sent it in 158, the oldest version we've captured.",
+    "HTTP/2 settings differ: Firefox sends 1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s, this library sends 1:65536;2:0;4:131072;5:16384;9:1|12517377|0|m,p,a,s.",
+    "Supported groups differ: offers ffdhe2048 (0x0100), ffdhe3072 (0x0101), which Firefox doesn't.",
+    "HTTP/2 header order differs (not counted in the verdict; it depends partly on which headers the caller sets): this library sends accept before user-agent; Firefox sends user-agent first."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": false
+   },
+   "behind_text": "Copies Firefox 132, 26 versions behind current 158; 4 counted fields differ from current Firefox.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "extensions",
+    "supported_groups",
+    "http2_akamai"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "notes": [],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "utls|hellofirefox_auto",
@@ -2981,10 +3631,10 @@
    "profile": "HelloFirefox_Auto",
    "note": "HTTP/2 via golang.org/x/net/http2 (uTLS is TLS-only)",
    "version": "v1.8.2",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/go/out/utls_HelloFirefox_Auto.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/go/out/utls_HelloFirefox_Auto.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
@@ -3220,17 +3870,17 @@
       ":method",
       ":path",
       ":scheme",
-      "user-agent",
-      "accept-encoding",
-      "upgrade-insecure-requests",
-      "sec-fetch-dest",
-      "sec-fetch-site",
-      "sec-fetch-user",
-      "te",
       "accept",
+      "accept-encoding",
+      "sec-fetch-dest",
+      "sec-fetch-user",
+      "user-agent",
       "accept-language",
+      "upgrade-insecure-requests",
       "sec-fetch-mode",
-      "priority"
+      "sec-fetch-site",
+      "priority",
+      "te"
      ],
      "missing": [],
      "extra": [],
@@ -3300,11 +3950,6 @@
    },
    "behind_text": "The profile name doesn't say which Firefox version it copies; 5 counted fields differ from current Firefox.",
    "is_newest_profile": true,
-   "notes": [
-    "No profile in this library matches current Firefox yet; HelloFirefox_Auto lacks the X25519MLKEM768 key share and the 0012 and 001b extensions Firefox 158 sends."
-   ],
-   "fix": null,
-   "release_update": null,
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -3340,17 +3985,17 @@
     "fair": false,
     "unfair_reason": "the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it",
     "sent": [
-     "user-agent",
-     "accept-encoding",
      "upgrade-insecure-requests",
      "sec-fetch-dest",
-     "priority",
-     "te",
-     "accept",
-     "accept-language",
      "sec-fetch-mode",
      "sec-fetch-site",
-     "sec-fetch-user"
+     "sec-fetch-user",
+     "priority",
+     "user-agent",
+     "accept",
+     "accept-language",
+     "te",
+     "accept-encoding"
     ],
     "browser": [
      "user-agent",
@@ -3373,7 +4018,362 @@
      ":path",
      ":scheme"
     ]
-   }
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; HelloFirefox_Auto lacks the X25519MLKEM768 key share and the 0012 and 001b extensions Firefox 158 sends."
+   ],
+   "fix": null,
+   "release_update": null
+  },
+  {
+   "id": "cycletls|readme-firefox-example",
+   "library": "CycleTLS",
+   "maintainer": "Danny-Dasilva",
+   "language": "Node.js",
+   "profile": "README Firefox example",
+   "note": "no built-in browser profiles; this is the README's Firefox example (ja3 + Firefox HTTP/2 fingerprint + Firefox 141 UA)",
+   "version": "2.0.5",
+   "tested_at": "2026-10-18T13:01:55Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/ext/cycletls_firefox.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "ciphers",
+    "extensions",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "000a",
+      "002f",
+      "0033",
+      "0035",
+      "0039",
+      "1301",
+      "1302",
+      "1303",
+      "c009",
+      "c00a",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "missing": [
+      "009c",
+      "009d"
+     ],
+     "extra": [
+      "000a",
+      "0033",
+      "0039",
+      "c009",
+      "c00a"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "001c",
+      "0022",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0015 padding",
+      "0017 extended_master_secret",
+      "001c",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "0012",
+      "001b",
+      "0022",
+      "fe0d"
+     ],
+     "extra": [
+      "0015"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "match",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512",
+      "0203 ecdsa_sha1",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512",
+      "0203 ecdsa_sha1",
+      "0201 rsa_pkcs1_sha1"
+     ]
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521",
+      "0100 ffdhe2048",
+      "0101 ffdhe3072"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": [
+      "0100",
+      "0101"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib",
+      "brotli",
+      "zstd"
+     ],
+     "library": null
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
+     "library": "1:65536;4:131072;5:16384|12517377|3:0:0:201,5:0:0:101,7:0:0:1,9:0:7:1,11:0:3:1,13:0:0:241|m,p,a,s"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "user-agent"
+     ],
+     "library": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "user-agent"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t12d1814h2_29a2cd9e9f10_d267a5f792d4",
+    "ja4_r_fresh": "t12d1814h2_000a,002f,0033,0035,0039,1301,1302,1303,c009,c00a,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0015,0017,001c,0023,002b,002d,0033,ff01_0403,0503,0603,0804,0805,0806,0401,0501,0601,0203,0201",
+    "http2_akamai": "1:65536;4:131072;5:16384|12517377|3:0:0:201,5:0:0:101,7:0:0:1,9:0:7:1,11:0:3:1,13:0:0:241|m,p,a,s",
+    "user_agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "ciphers",
+     "label": "Cipher suite list differs",
+     "kind": "different"
+    },
+    {
+     "id": "ext-0012",
+     "label": "Extension 0012 signed_certificate_timestamp",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-001b",
+     "label": "Extension 001b compress_certificate",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-0022",
+     "label": "Extension 0022",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-fe0d",
+     "label": "Extension fe0d encrypted_client_hello",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
+    },
+    {
+     "id": "h2",
+     "label": "Firefox HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Firefox already sent it in 158, the oldest version we've captured.",
+    "Cipher suites differ: sends 0x000a, 0x0033, 0x0039, 0xc009, 0xc00a, which Firefox doesn't; doesn't send 0x009c, 0x009d.",
+    "Missing 1 extension: signed certificate timestamp (0012); Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: compress certificate (001b); Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: 0022; Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: encrypted client hello (fe0d); Firefox already sent it in 158, the oldest version we've captured.",
+    "Sends extension padding (0015), which Firefox doesn't send.",
+    "HTTP/2 settings differ: Firefox sends 1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s, this library sends 1:65536;4:131072;5:16384|12517377|3:0:0:201,5:0:0:101,7:0:0:1,9:0:7:1,11:0:3:1,13:0:0:241|m,p,a,s."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": true
+   },
+   "behind_text": "The profile name doesn't say which Firefox version it copies; 5 counted fields differ from current Firefox.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "extensions",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "notes": [],
+   "fix": null,
+   "release_update": null
   },
   {
    "id": "tls-client-(python)|firefox_120",
@@ -3383,10 +4383,10 @@
    "profile": "firefox_120",
    "note": "wraps Go tls-client",
    "version": "2.0.0",
-   "tested_at": "2026-10-18T10:10:07Z",
+   "tested_at": "2026-10-18T13:01:55Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261018T101007Z/py/tls-client(py)_firefox_120.json"
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/py/tls-client(py)_firefox_120.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
@@ -3698,16 +4698,6 @@
    },
    "behind_text": "Copies Firefox 120, 38 versions behind current 158; 5 counted fields differ from current Firefox.",
    "is_newest_profile": true,
-   "notes": [
-    "No profile in this library matches current Firefox yet; firefox_120 is the only Firefox profile we tested, and it lacks the X25519MLKEM768 key share and four extensions Firefox 158 sends."
-   ],
-   "fix": null,
-   "release_update": {
-    "version": "2.0.0",
-    "released_at": "2026-10-10T15:22:07.197014Z",
-    "retested_at": "2026-10-16T00:17:28Z",
-    "text": "Updated to 2.0.0 on Oct 16, 2026: still 38 versions behind."
-   },
    "base_verdict": "behind",
    "base_counted": [
     "ciphers",
@@ -3776,7 +4766,395 @@
      ":authority",
      ":scheme"
     ]
+   },
+   "notes": [
+    "No profile in this library matches current Firefox yet; firefox_120 is the only Firefox profile we tested, and it lacks the X25519MLKEM768 key share and four extensions Firefox 158 sends."
+   ],
+   "fix": null,
+   "release_update": {
+    "version": "2.0.0",
+    "released_at": "2026-10-10T15:22:07.197014Z",
+    "retested_at": "2026-10-16T00:17:28Z",
+    "text": "Updated to 2.0.0 on Oct 16, 2026: still 38 versions behind."
    }
+  },
+  {
+   "id": "got-scraping|firefox-(header-generator)",
+   "library": "got-scraping",
+   "maintainer": "apify",
+   "language": "Node.js",
+   "profile": "firefox (header-generator)",
+   "note": "Node's own TLS (OpenSSL) with got-scraping's Firefox cipher/sigalg/curve lists; headers from header-generator",
+   "version": "4.2.2",
+   "tested_at": "2026-10-18T13:01:55Z",
+   "endpoint": "https://tls.peet.ws/api/all",
+   "sources": {
+    "fresh": "leaderboard/raw/firefox-20261018T130155Z/ext/got-scraping_firefox.json"
+   },
+   "verdict": "behind",
+   "verdict_reason": "6 counted fields differ from Firefox's default fingerprint: ciphers, extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "counted_mismatches": [
+    "ciphers",
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "diff": [
+    {
+     "field": "ciphers",
+     "label": "Cipher suites (JA4 b)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "library": [
+      "002f",
+      "0035",
+      "009c",
+      "009d",
+      "1301",
+      "1302",
+      "1303",
+      "c009",
+      "c00a",
+      "c013",
+      "c014",
+      "c02b",
+      "c02c",
+      "c02f",
+      "c030",
+      "cca8",
+      "cca9"
+     ],
+     "missing": [],
+     "extra": [
+      "c009",
+      "c00a"
+     ]
+    },
+    {
+     "field": "extensions",
+     "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0012 signed_certificate_timestamp",
+      "0017 extended_master_secret",
+      "001b compress_certificate",
+      "001c",
+      "0022",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "fe0d encrypted_client_hello",
+      "ff01 renegotiation_info"
+     ],
+     "library": [
+      "0005 status_request",
+      "000a supported_groups",
+      "000b ec_point_formats",
+      "000d signature_algorithms",
+      "0016",
+      "0017 extended_master_secret",
+      "0023 session_ticket",
+      "002b supported_versions",
+      "002d psk_key_exchange_modes",
+      "0033 key_share",
+      "ff01 renegotiation_info"
+     ],
+     "missing": [
+      "0012",
+      "001b",
+      "001c",
+      "0022",
+      "fe0d"
+     ],
+     "extra": [
+      "0016"
+     ]
+    },
+    {
+     "field": "signature_algorithms",
+     "label": "Signature algorithms",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512",
+      "0203 ecdsa_sha1",
+      "0201 rsa_pkcs1_sha1"
+     ],
+     "library": [
+      "0403 ecdsa_secp256r1_sha256",
+      "0503 ecdsa_secp384r1_sha384",
+      "0603 ecdsa_secp521r1_sha512",
+      "0804 rsa_pss_rsae_sha256",
+      "0805 rsa_pss_rsae_sha384",
+      "0806 rsa_pss_rsae_sha512",
+      "0401 rsa_pkcs1_sha256",
+      "0501 rsa_pkcs1_sha384",
+      "0601 rsa_pkcs1_sha512"
+     ],
+     "missing": [
+      "0203",
+      "0201"
+     ],
+     "extra": []
+    },
+    {
+     "field": "supported_groups",
+     "label": "Supported groups",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521"
+     ],
+     "library": [
+      "001d X25519",
+      "0017 P-256",
+      "0018 P-384",
+      "0019 P-521",
+      "0100 ffdhe2048",
+      "0101 ffdhe3072"
+     ],
+     "missing": [
+      "11ec"
+     ],
+     "extra": [
+      "0100",
+      "0101"
+     ]
+    },
+    {
+     "field": "key_shares",
+     "label": "Key shares",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "11ec X25519MLKEM768",
+      "001d X25519",
+      "0017 P-256"
+     ],
+     "library": [
+      "001d X25519"
+     ],
+     "missing": [
+      "11ec",
+      "0017"
+     ],
+     "extra": []
+    },
+    {
+     "field": "alps",
+     "label": "ALPS codepoint",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": null,
+     "library": null
+    },
+    {
+     "field": "cert_compression",
+     "label": "Certificate compression",
+     "status": "not_tested",
+     "counts_toward_verdict": true,
+     "chrome": [
+      "zlib",
+      "brotli",
+      "zstd"
+     ],
+     "library": null
+    },
+    {
+     "field": "http2_akamai",
+     "label": "HTTP/2 fingerprint (Akamai)",
+     "status": "mismatch",
+     "counts_toward_verdict": true,
+     "chrome": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
+     "library": "2:0;4:33554432|4128769|0|m,p,a,s"
+    },
+    {
+     "field": "header_order",
+     "label": "HTTP/2 header order (headers both send)",
+     "status": "match",
+     "counts_toward_verdict": false,
+     "chrome": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "user-agent",
+      "accept",
+      "accept-language",
+      "accept-encoding",
+      "upgrade-insecure-requests",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "te"
+     ],
+     "library": [
+      ":method",
+      ":path",
+      ":authority",
+      ":scheme",
+      "user-agent",
+      "accept",
+      "accept-language",
+      "accept-encoding",
+      "upgrade-insecure-requests",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "sec-fetch-user",
+      "te"
+     ],
+     "note": "Informational: depends on which headers the caller sets."
+    }
+   ],
+   "fingerprint": {
+    "ja4_fresh": "t13d1713h2_5b57614c22b0_3048bb26050b",
+    "ja4_r_fresh": "t13d1713h2_002f,0035,009c,009d,1301,1302,1303,c009,c00a,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0016,0017,0023,002b,002d,0033,ff01_0403,0503,0603,0804,0805,0806,0401,0501,0601",
+    "http2_akamai": "2:0;4:33554432|4128769|0|m,p,a,s",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0"
+   },
+   "matches": {
+    "http2": false,
+    "variants": {
+     "default": {
+      "ja4_fresh": false
+     }
+    }
+   },
+   "missing": [
+    {
+     "id": "mlkem",
+     "label": "X25519MLKEM768 (MLKEM) key share",
+     "kind": "missing"
+    },
+    {
+     "id": "ciphers",
+     "label": "Cipher suite list differs",
+     "kind": "different"
+    },
+    {
+     "id": "ext-0012",
+     "label": "Extension 0012 signed_certificate_timestamp",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-001b",
+     "label": "Extension 001b compress_certificate",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-001c",
+     "label": "Extension 001c",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-0022",
+     "label": "Extension 0022",
+     "kind": "missing"
+    },
+    {
+     "id": "ext-fe0d",
+     "label": "Extension fe0d encrypted_client_hello",
+     "kind": "missing"
+    },
+    {
+     "id": "extra-0016",
+     "label": "Extra extension 0016",
+     "kind": "extra"
+    },
+    {
+     "id": "sigalgs",
+     "label": "Signature algorithm list differs",
+     "kind": "different"
+    },
+    {
+     "id": "h2",
+     "label": "Firefox HTTP/2 SETTINGS / WINDOW_UPDATE",
+     "kind": "different"
+    }
+   ],
+   "not_tested": [
+    "TLS resumption (resumed JA4)",
+    "HTTP/3 (QUIC) fingerprint"
+   ],
+   "profile_chrome_major": null,
+   "versions_behind": null,
+   "versions_behind_uniform": true,
+   "why": [
+    "Doesn't send the X25519MLKEM768 post-quantum key share; Firefox already sent it in 158, the oldest version we've captured.",
+    "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
+    "Missing 1 extension: signed certificate timestamp (0012); Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: compress certificate (001b); Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: 001c; Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: 0022; Firefox already sent it in 158, the oldest version we've captured.",
+    "Missing 1 extension: encrypted client hello (fe0d); Firefox already sent it in 158, the oldest version we've captured.",
+    "Sends extension 0016, which Firefox doesn't send.",
+    "Signature algorithm list differs.",
+    "HTTP/2 settings differ: Firefox sends 1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s, this library sends 2:0;4:33554432|4128769|0|m,p,a,s."
+   ],
+   "http2_grade": {
+    "grade": "settings_differ",
+    "settings": false,
+    "header_order": true
+   },
+   "behind_text": "The profile name doesn't say which Firefox version it copies; 6 counted fields differ from current Firefox.",
+   "is_newest_profile": true,
+   "base_verdict": "behind",
+   "base_counted": [
+    "ciphers",
+    "extensions",
+    "signature_algorithms",
+    "supported_groups",
+    "key_shares",
+    "http2_akamai"
+   ],
+   "behaviour": [],
+   "resumption_probe": {
+    "status": "not_tested"
+   },
+   "shuffle": null,
+   "header_order_probe": null,
+   "notes": [],
+   "fix": null,
+   "release_update": null
   }
  ],
  "probe_reference": {
@@ -3801,7 +5179,7 @@
    "te"
   ],
   "connections_per_row": 8,
-  "generated_at": "2026-10-18T12:37:00Z",
+  "generated_at": "2026-10-18T12:59:46Z",
   "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
   "requested_headers": [
    "user-agent",

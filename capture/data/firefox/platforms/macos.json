@@ -5,7 +5,7 @@
  "version": "158.0",
  "platform": "macos",
  "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
- "captured_at": "2026-10-18T05:08:24-05:00",
+ "captured_at": "2026-10-18T07:57:35-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -209,13 +209,13 @@
     "id": "0xf",
     "name": "initial_source_connection_id",
     "len": 3,
-    "hex": "3c25bb"
+    "hex": "a7b9bf"
    },
    {
     "id": "0x11",
     "name": "version_information",
     "len": 16,
-    "hex": "00000001dababa3a6b3343cf00000001"
+    "hex": "000000012a8acaca6b3343cf00000001"
    },
    {
     "id": "0x1d",
@@ -236,9 +236,32 @@
     "value": 65535
    }
   ],
-  "h3_settings": null,
-  "header_order": null,
-  "request_over_h3": false,
+  "h3_settings": {
+   "1": 65536,
+   "7": 20,
+   "727725890": 0,
+   "16765559": 1,
+   "51": 1,
+   "8": 1
+  },
+  "header_order": [
+   ":method",
+   ":scheme",
+   ":authority",
+   ":path",
+   "user-agent",
+   "accept",
+   "accept-language",
+   "accept-encoding",
+   "alt-used",
+   "upgrade-insecure-requests",
+   "sec-fetch-dest",
+   "sec-fetch-mode",
+   "sec-fetch-site",
+   "sec-fetch-user",
+   "priority"
+  ],
+  "request_over_h3": true,
   "errors": []
  },
  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:158.0) Gecko/20100101 Firefox/158.0",

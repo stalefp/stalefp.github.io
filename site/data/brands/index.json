@@ -1,0 +1,66 @@
+{
+ "note": "Linux captures of other Chromium-based browsers (capture/lib/capture_brand.py); vs_chrome compares the default profile with the Chrome reference capture (true = identical).",
+ "brands": {
+  "edge": {
+   "status": "captured",
+   "browser": "Microsoft Edge",
+   "version": "155.0.4283.62",
+   "brand_version": "155.0.4283.62",
+   "chromium_major": 155,
+   "captured_at": "2026-10-18T07:55:27-05:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
+   "package": {
+    "version": "155.0.4283.62-1",
+    "repo": "https://packages.microsoft.com/repos/edge",
+    "sha256": "3e53834d9d6e505bc57e6bff44d92cfe8cf0bed9064e88efc5b0d8f1c75f70fa",
+    "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF"
+   },
+   "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+   "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+   "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+   "header_order": [
+    ":method",
+    ":authority",
+    ":scheme",
+    ":path",
+    "sec-ch-ua",
+    "sec-ch-ua-mobile",
+    "sec-ch-ua-platform",
+    "upgrade-insecure-requests",
+    "user-agent",
+    "accept",
+    "sec-fetch-site",
+    "sec-fetch-mode",
+    "sec-fetch-user",
+    "sec-fetch-dest",
+    "accept-encoding",
+    "accept-language",
+    "priority"
+   ],
+   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+   "sec_ch_ua": "\"Microsoft Edge\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+   "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+   "h3_settings": {
+    "1": 65536,
+    "6": 262144,
+    "7": 100,
+    "51": 1
+   },
+   "vs_chrome": {
+    "chrome_version": "155.0.8059.84",
+    "ja4": false,
+    "ja4_resumed": false,
+    "h2_akamai": true,
+    "header_order": true,
+    "quic_ja4": false,
+    "h3_settings": true
+   },
+   "id": "edge"
+  },
+  "brave": {
+   "status": "not captured yet",
+   "browser": "Brave Browser",
+   "id": "brave"
+  }
+ }
+}
