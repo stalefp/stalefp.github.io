@@ -24,10 +24,16 @@ def main():
     ap.add_argument("--package-version"); ap.add_argument("--repo"); ap.add_argument("--deb-sha256"); ap.add_argument("--signing-key")
     a = ap.parse_args()
     name = BRANDS[a.brand]
-    out = subprocess.run([a.bin, "--version"], capture_output=True, text=True, timeout=60).stdout.strip()
-    m = re.match(re.escape(name) + r"\s+([\d.]+)", out)
-    if not m: raise SystemExit("unexpected --version output for %s: %r" % (name, out))
+    if capture.IS_WIN:   # msedge.exe / brave.exe --version print nothing on Windows; read the PE version resource
+        out = capture._win_version(a.bin)
+        m = re.match(r"(?:%s|%s)\s+([\d.]+)" % (re.escape(name), re.escape(name.split()[0])), out)
+    else:
+        out = subprocess.run([a.bin, "--version"], capture_output=True, text=True, timeout=60).stdout.strip()
+        m = re.match(re.escape(name) + r"\s+([\d.]+)", out)
+    if not m: raise SystemExit("unexpected version output for %s: %r" % (name, out))
     ver = m.group(1)
+    if a.brand == "brave" and int(ver.split(".")[0]) < 100 and a.package_version and int(a.package_version.split(".")[0]) >= 100:
+        ver = a.package_version
     info = {"path": os.path.realpath(a.bin), "browser": name, "version": ver, "channel": "stable", "version_string": out}
     capture.detect_chrome = lambda explicit=None: info
     capture.fetch_current_stable = lambda *x, **k: {}       # Chrome's VersionHistory is not this browser's release feed
@@ -39,9 +45,10 @@ def main():
     # Brave's version is <chromium major>.<brave version>; Edge's major is the Chromium major
     d["chromium_major"] = int(ver.split(".")[0])
     d["brand_version"] = ".".join(ver.split(".")[1:]) if a.brand == "brave" else ver
-    d["package"] = {"version": a.package_version, "repo": a.repo, "sha256": a.deb_sha256, "signing_key": a.signing_key}
+    d["package"] = {"version": a.package_version, "repo": a.repo, "sha256": a.deb_sha256, "signing_key": a.signing_key,
+                    "kind": "windows installer (SHA256 + Authenticode checked)" if capture.IS_WIN else "signed apt repo .deb"}
     d["notes"] = [n for n in d.get("notes", []) if "VersionHistory" not in n and "Finch" not in n]
-    d["notes"].append("Only the default profile was captured (%s, no relaunch). 'Current' = newest %s in the vendor's official apt repo at capture time." % (a.modes, name))
+    d["notes"].append("Only the default profile was captured (%s, no relaunch). 'Current' = newest %s %s at capture time." % (a.modes, name, "from the vendor's Windows release feed" if capture.IS_WIN else "in the vendor's official apt repo"))
     js = json.dumps(d, indent=2)
     open(p, "w").write(js)
     for f in os.listdir(a.out):   # rewrite the versioned copy too (capture.py names it chrome-<ver>-<date>.json)

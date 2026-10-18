@@ -230,6 +230,38 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
+      # Microsoft Edge + Brave on Windows: Edge from the runner image (updated from Microsoft's own Stable MSI feed when newer),
+      # Brave from its official GitHub release installer; SHA256 + Authenticode checked (capture/install_brand_win.ps1). Isolated like Firefox.
+      - name: Edge + Brave capture (official Windows builds)
+        if: ${{ !cancelled() && matrix.id == 'windows' }}
+        continue-on-error: true
+        timeout-minutes: 15
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          for b in edge brave; do
+            if pwsh -NoProfile -File capture/install_brand_win.ps1 "$b" "$RUNNER_TEMP/brand-$b" > "$RUNNER_TEMP/brand-$b.env"; then
+              tr -d '\r' < "$RUNNER_TEMP/brand-$b.env" > "$RUNNER_TEMP/brand-$b.env2"; cat "$RUNNER_TEMP/brand-$b.env2"
+              while IFS='=' read -r k v; do export "$k=$v"; done < "$RUNNER_TEMP/brand-$b.env2"
+              python -W ignore capture/lib/capture_brand.py --brand "$b" --bin "$BRAND_BIN" --out "out/brands/$b-windows" \
+                --package-version "$BRAND_PKG_VERSION" --repo "$BRAND_REPO" --deb-sha256 "$BRAND_DEB_SHA256" --signing-key "$BRAND_KEY" \
+                || echo "::warning::$b Windows capture failed"
+            else
+              echo "::warning::$b Windows install/verification failed"
+            fi
+          done
+
+      - name: Upload Edge + Brave Windows capture JSON
+        if: ${{ !cancelled() && matrix.id == 'windows' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: brands-windows
+          path: out/brands/*/latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
   publish:
     name: merge, leaderboard, commit
     needs: capture

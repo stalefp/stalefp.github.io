@@ -714,24 +714,32 @@
     if ((ff.errors || []).length) box.appendChild(el("p", { cls: "muted small", text: "Capture notes: " + ff.errors.join("; ") }));
   }
 
-  /* Edge + Brave on Linux (data/brands/index.json, capture/merge_brands.py) */
+  /* Edge / Brave, one card per OS (data/brands/index.json, capture/merge_brands.py). Older index files have no
+     platforms map; then the top-level (Linux) summary is the only card. */
   function renderBrands(idx, only) {
     var box = $("#brand-grid"); if (!box || !idx || !idx.brands) return; box.innerHTML = "";
     (only || ["edge", "brave"]).forEach(function (bid) {
-      var b = idx.brands[bid] || {}, vs = b.vs_chrome || {};
-      if (b.captured_at) lastUpdated(b.captured_at);
-      var same = function (k) { return vs[k] == null ? "" : vs[k] ? " (same as Chrome)" : " (differs from Chrome)"; };
-      var row = function (label, val, k) { return el("div", {}, [el("dt", { text: label + (k ? same(k) : "") }), el("dd", {}, [el("code", { text: val || "not captured" })])]); };
-      var pkg = b.package || {};
-      box.appendChild(el("div", { cls: "card plat" }, [el("h3", { text: b.browser || bid }),
-        el("p", { cls: "muted small", text: b.version ? (b.browser + " " + (b.brand_version || b.version) + " (Chromium " + b.chromium_major + ") · " + localDate(b.captured_at) +
-          (b.status === "captured" ? "" : " · " + b.status)) : (b.status || "not captured yet") }),
-        b.version ? el("dl", { cls: "fp small" }, [row("JA4", b.ja4, "ja4"), row("JA4 resumed", b.ja4_resumed, "ja4_resumed"), row("HTTP/2", b.h2_akamai, "h2_akamai"),
-          row("Header order", (b.header_order || []).join(", "), "header_order"), row("QUIC JA4", b.quic_ja4, "quic_ja4"),
-          row("HTTP/3 SETTINGS", h3SettingsText(b.h3_settings), "h3_settings"), row("User-Agent", b.user_agent)]) : null,
-        b.version && pkg.version ? el("p", { cls: "muted small", text: "Package " + pkg.version + " from " + pkg.repo + ", sha256 " + String(pkg.sha256 || "").slice(0, 16) + "…, repo signed by key " + (pkg.signing_key || "?") + ". Compared with Chrome " + (vs.chrome_version || "?") + "." }) : null]));
+      var top = idx.brands[bid] || {};
+      var plats = top.platforms ? ["linux", "windows"].map(function (o) { return top.platforms[o]; }).filter(Boolean) : [dict(top, { label: "Linux", platform: "linux" })];
+      plats.forEach(function (b) {
+        var vs = b.vs_chrome || {}, win = b.platform === "windows";
+        if (b.captured_at) lastUpdated(b.captured_at);
+        var same = function (k) { return vs[k] == null ? "" : vs[k] ? " (same as Chrome)" : " (differs from Chrome)"; };
+        var row = function (label, val, k) { return el("div", {}, [el("dt", { text: label + (k ? same(k) : "") }), el("dd", {}, [el("code", { text: val || "not captured" })])]); };
+        var pkg = b.package || {};
+        var src = win ? "Build " + pkg.version + " (" + pkg.repo + (pkg.sha256 ? ", installer sha256 " + String(pkg.sha256).slice(0, 16) + "…" : "") + "), signed by " + (pkg.signing_key || "?") + "."
+                      : "Package " + pkg.version + " from " + pkg.repo + ", sha256 " + String(pkg.sha256 || "").slice(0, 16) + "…, repo signed by key " + (pkg.signing_key || "?") + ".";
+        box.appendChild(el("div", { cls: "card plat" }, [el("h3", { text: (b.label || b.platform || "Linux") }),
+          el("p", { cls: "muted small", text: b.version ? (b.browser + " " + (b.brand_version || b.version) + " (Chromium " + b.chromium_major + ") · " + localDate(b.captured_at) +
+            (b.status === "captured" ? "" : " · " + b.status)) : (b.status || "not captured yet") }),
+          b.version ? el("dl", { cls: "fp small" }, [row("JA4", b.ja4, "ja4"), row("JA4 resumed", b.ja4_resumed, "ja4_resumed"), row("HTTP/2", b.h2_akamai, "h2_akamai"),
+            row("Header order", (b.header_order || []).join(", "), "header_order"), row("QUIC JA4", b.quic_ja4, "quic_ja4"),
+            row("HTTP/3 SETTINGS", h3SettingsText(b.h3_settings), "h3_settings"), row("User-Agent", b.user_agent)]) : null,
+          b.version && pkg.version ? el("p", { cls: "muted small", text: src + " Compared with Chrome " + (vs.chrome_version || "?") + " on " + (b.label || "Linux") + "." }) : null]));
+      });
     });
   }
+  function dict(a, b) { var o = {}; Object.keys(a).forEach(function (k) { o[k] = a[k]; }); Object.keys(b).forEach(function (k) { o[k] = b[k]; }); return o; }
 
   /* Firefox on each OS (data/firefox/platforms.json, capture/merge_firefox.py) */
   function renderFirefoxPlatforms(idx) {

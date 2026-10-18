@@ -15,7 +15,7 @@
   <div class="wrap">
     <h1 class="brand"><a href="/" class="brand-link">Stale</a></h1>
     <p class="last-updated muted small" id="last-updated" hidden></p>
-    <p class="tagline">What real Brave sends on Linux right now, and where it differs from real Chrome.</p>
+    <p class="tagline">What real Brave sends on Linux and Windows right now, and where it differs from real Chrome.</p>
     <p class="subline">Brave is built on Chromium. Built from real Brave captures and compared field by field.</p>
     <!-- BROWSER NAV: keep this block identical on every page (index.html, firefox/, safari/, ...). One <a> per page;
          data-page must equal that page's <body data-page>, which js/app.js uses to mark the current link. -->
@@ -37,15 +37,15 @@
 
     <!-- Current Brave (Linux), data/brands/index.json from capture/merge_brands.py -->
   <section id="brave" class="card" aria-labelledby="brands-h">
-    <h2 id="brands-h">Current Brave fingerprint (Linux)</h2>
-    <p class="muted small">The official stable build from Brave's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256), fresh profile, no flags, headed, same local capture server as Chrome. Captured daily, kept separate from the Chrome data; "same as Chrome" compares with the Chrome reference capture.</p>
-    <div id="brand-grid" class="plat-grid one"><p class="muted">No Brave capture yet. It's added to the daily capture and will appear after the next run.</p></div>
+    <h2 id="brands-h">Current Brave fingerprint (Linux and Windows)</h2>
+    <p class="muted small">On Linux: the official stable build from Brave's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256). On Windows: Brave's official standalone installer from its GitHub release, checked against the published SHA256 and Brave's Authenticode signature. Fresh profile, no flags, headed, same local capture server as Chrome, captured daily and kept separate from the Chrome data. "Same as Chrome" compares with our Chrome capture on the same OS.</p>
+    <div id="brand-grid" class="plat-grid two"><p class="muted">No Brave capture yet. It's added to the daily capture and will appear after the next run.</p></div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Stale is a free, public reference. Brave is captured daily on Linux. Every value comes from a real capture; anything we didn't measure is shown as "not captured", never guessed. Chrome, which most people use, is on the <a href="/">main page</a>.</p>
+    <p>Stale is a free, public reference. Brave is captured daily on Linux and Windows. Every value comes from a real capture; anything we didn't measure is shown as "not captured", never guessed. Chrome, which most people use, is on the <a href="/">main page</a>.</p>
   </div>
 </footer>
 <div id="toast" role="status" aria-live="polite"></div>

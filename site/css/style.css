@@ -160,3 +160,4 @@ tr.detail td{background:var(--code);padding:12px}
 .brand-link{color:inherit;text-decoration:none}
 .sum-grid.one{grid-template-columns:1fr}
 @media (max-width:480px){.browser-nav{gap:5px}.browser-nav a{padding:3px 10px;font-size:.88rem}}
+.plat-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:900px){.plat-grid.two{grid-template-columns:minmax(0,1fr)}}
