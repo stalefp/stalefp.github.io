@@ -262,9 +262,15 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
+  # Chrome for Android on an emulator (android-capture.yml). Its job is continue-on-error and writes its own artifact
+  # (capture-android), so a failure there can never block or change the desktop captures.
+  android:
+    name: capture (android)
+    uses: ./.github/workflows/android-capture.yml
+
   publish:
     name: merge, leaderboard, commit
-    needs: capture
+    needs: [capture, android]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -302,6 +308,12 @@ jobs:
           for p in windows macos; do
             [ -f capture/data/platforms/$p.json ] && { python capture/check_capture.py capture/data/platforms/$p.json --expect-channel stable || ok=0; }
           done
+          # Android can never stop the desktop publish: a failing Android capture is reverted to the previous one (or dropped)
+          if [ -f capture/data/platforms/android.json ] && ! python capture/check_capture.py capture/data/platforms/android.json --expect-channel stable; then
+            git checkout -- capture/data/platforms/android.json 2>/dev/null || rm -f capture/data/platforms/android.json
+            python capture/merge_platforms.py
+            echo "::warning::Android capture failed the check; kept the previous Android data"
+          fi
           if [ $ok = 0 ]; then
             git checkout -- capture/data leaderboard/data site/data && git clean -fdq capture/data
             echo "::error::merged capture failed the check; kept the previous data and stopped before publishing"; exit 1
@@ -383,6 +395,13 @@ jobs:
       - name: Merge Edge + Brave captures (isolated, can't fail the Chrome run)
         continue-on-error: true
         run: python capture/merge_brands.py --artifacts brand-artifacts
+      - name: Chrome for Android library comparison (isolated, can't fail the Chrome run; only grades a verified capture)
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          HARNESS_PYTHON: python
+          BUILD_PYTHON: python
+        run: leaderboard/run_android.sh || echo "::warning::Android leaderboard run failed"
       - name: Sync site data
         run: site/sync.sh
       - name: Commit data to main

@@ -221,8 +221,10 @@
   /* ---------------- 1b. Chrome per platform ---------------- */
   // data/platforms.json is written by capture/merge_platforms.py (summary of data/latest.json = Linux and the
   // Windows/macOS captures). The Linux panel always uses REF (data/latest.json) so it can't disagree with the card above.
-  var OSES = [["linux", "Linux"], ["windows", "Windows"], ["macos", "macOS"]];
-  var VH_PLAT = { linux: "linux", windows: "win", macos: "mac" };
+  // android: Android emulator capture (capture/lib/capture_android.py); merge_platforms.py only lists it as captured when its
+  // Chrome version was verified, and the page shows no Android panel at all until then.
+  var OSES = [["linux", "Linux"], ["windows", "Windows"], ["macos", "macOS"], ["android", "Android"]];
+  var VH_PLAT = { linux: "linux", windows: "win", macos: "mac", android: "android" };
   function linuxFromRef(ref) {
     var v = function (id) {
       var x = variantById(ref, id); if (!x) return null;
@@ -237,10 +239,12 @@
   function renderPlatforms(ref, idx) {
     var grid = $("#platform-grid"); grid.innerHTML = "";
     var plats = (idx && idx.platforms) || {}, cmp = (idx && idx.comparison) || {}, att = (idx && idx.last_attempt) || {};
-    var captured = 0;
+    var captured = 0, shown = 0;
     OSES.forEach(function (o) {
       var id = o[0], name = o[1];
       var p = id === "linux" ? linuxFromRef(ref) : plats[id];
+      if (id === "android" && (!p || p.status !== "captured" || !(p.android || {}).version_verified)) return;
+      shown++;
       if (!p || p.status !== "captured") {
         var a = att[id];
         grid.appendChild(el("div", { cls: "plat pending" }, [
@@ -253,7 +257,12 @@
       captured++;
       var d = (p.variants || {})["default"] || {};
       var nw = p.platform_stable_newest, full = p.platform_stable_full_rollout, verTxt = p.version || "unknown";
-      if (nw && nw !== p.version) verTxt += full === p.version ? " (fully rolled-out " + name + " stable; " + nw + " was rolling out to some users)" : " (newest " + name + " stable then: " + nw + ")";
+      var an = id === "android" ? (p.android || {}) : null;
+      if (an) {
+        var sv = an.android_stable_serving || {}, share = an.serving_share;
+        verTxt += share ? " (serving to about " + pct(share) + " of Android stable users at capture time" + (nw && nw !== p.version ? "; newest " + nw + " at " + pct(sv[nw]) : "") + ")"
+          : " (NOT serving on Android stable at capture time; current: " + Object.keys(sv).join(", ") + ")";
+      } else if (nw && nw !== p.version) verTxt += full === p.version ? " (fully rolled-out " + name + " stable; " + nw + " was rolling out to some users)" : " (newest " + name + " stable then: " + nw + ")";
       var row = function (label, val) { return el("div", {}, [el("dt", { text: label }), el("dd", {}, [el("code", { text: val || "not captured" })])]); };
       var note;
       if (id === "linux") note = el("p", { cls: "plat-cmp muted", text: "Reference for the leaderboard below." });
@@ -270,12 +279,16 @@
           row("TLS JA4, fresh", d.ja4), row("JA4, resumed", d.ja4_resumed), row("HTTP/3 (QUIC) JA4", d.quic_ja4),
           row("HTTP/2 fingerprint", d.h2_akamai),
           row("Trust anchors (ca34)", d.has_trust_anchors == null ? null : d.has_trust_anchors ? "present" : "absent")
-        ]),
+        ].concat(an ? [row("User-Agent", d.user_agent),
+          row("Extension order", an.connections ? an.distinct_extension_orders + " different orders in " + an.connections + " connections" : null),
+          row("Where this Chrome came from", an.source === "apk" ? "Google-signed APK (signer verified), installed on an Android " + ((an.emulator || {}).release || "") + " emulator (" + ((an.emulator || {}).abi || "") + ")"
+            : "Chrome preinstalled in the Android " + ((an.emulator || {}).release || "") + " emulator image")] : [])),
         note
       ]));
     });
-    $("#platform-meta").textContent = captured === OSES.length
-      ? "Captured on GitHub's hosted runners. User-agent strings differ by OS by design and aren't part of JA4."
+    if (plats.android && plats.android.status === "captured" && (plats.android.android || {}).version_verified) $("#platforms-h").textContent = "Chrome on Linux, Windows, macOS and Android";
+    $("#platform-meta").textContent = captured === shown
+      ? "Captured on GitHub's hosted runners" + (shown > 3 ? " (Android on an emulator, not a physical phone)" : "") + ". User-agent strings differ by OS by design and aren't part of JA4."
       : "Platforms without a capture are left empty on purpose: we never copy the Linux values over.";
   }
 
@@ -951,6 +964,12 @@
         renderPlatforms(REF, res[3]);
         initTable(res[1]);
         sumBoard("#sum-chrome", "Chrome", res[1], REF.version);
+        var andP = ((res[3] || {}).platforms || {}).android || {};
+        if (andP.status === "captured" && (andP.android || {}).version_verified) getJSON("data/android_libraries.json").then(function (f) {
+          if (!f || !(f.reference || {}).version_verified) return;
+          var sec = $("#android-board"); if (sec) sec.hidden = false;
+          renderFirefoxBoard(f, { box: "#and-board", name: "Chrome for Android", ver: "android_version", anchor: "#android-board", badge: null });
+        }, function () { /* no Android board yet */ });
         getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); sumMovers(h, res[1]); }, function () { /* no history yet */ });
         renderBadges(res[1]);
         renderFooter(res[1]);

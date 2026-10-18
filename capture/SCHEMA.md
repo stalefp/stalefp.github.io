@@ -20,7 +20,7 @@ Conventions
 | `version` | string | Full version, e.g. `"154.0.8037.57"`. |
 | `channel` | string | From `CHROME_VERSION_EXTRA`, e.g. `"stable"`. |
 | `os` | string | Capture machine OS, e.g. `"Linux x86_64 (Debian GNU/Linux 13 (trixie), kernel …)"`. |
-| `platform` | string | `linux`, `windows` or `macos` (added for the per-OS captures; absent in captures before 2026-10-02 = linux). |
+| `platform` | string | `linux`, `windows`, `macos` or `android` (added for the per-OS captures; absent in captures before 2026-10-02 = linux). |
 | `captured_at` | string | Start time of the run, ISO 8601 with America/Chicago offset. |
 | `chrome_path` | string | Binary used. |
 | `chrome_version_string` | string | Raw `chrome --version` output. |
@@ -144,3 +144,13 @@ Decoded with a minimal protobuf reader (`lib/seedparse.py`) from the seed Chrome
 
 `{baseline, baseline_version, baseline_file, same_version, matches: {<config name>: {ja4, ja4_resumed, h2_akamai}}}` –
 booleans, meaningful only when `same_version` is true.
+
+## Android (`platform: "android"`, lib/capture_android.py)
+
+Same layout, captured on an Android emulator (Google Play x86_64 system image). Configs use mode `headed` (Android has no
+headless Chrome). Extra fields: `configs[default-headed].extension_orders` (one sorted-free extension list per TLS connection,
+for the shuffle check) and a top-level `android` block: `source` (`apk` = Google-signed APK installed over the image's
+Chrome, `preinstalled` = the image's own Chrome), `apk_sha256`, `signer_cert_sha256` (must equal `google_cert_pin`),
+`version_checks` (package manager / DevTools / chrome://version), `version_verified`, `flags_applied`,
+`is_serving_on_android_stable`, `android_stable_serving` (version -> rollout fraction), `emulator`. `is_current_platform_stable`
+means "serving on Android stable at capture time". merge_platforms.py and the site only use it when `version_verified` is true.

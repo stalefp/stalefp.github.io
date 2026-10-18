@@ -62,3 +62,7 @@ rm -rf "$SITE/data/safari"; mkdir -p "$SITE/data/safari"
 [[ -f "$TB/capture/data/safari/platforms/index.json" ]] && cp "$TB/capture/data/safari/platforms/index.json" "$SITE/data/safari/platforms.json"
 [[ -f "$TB/leaderboard/data/safari_libraries.json" ]] && cp "$TB/leaderboard/data/safari_libraries.json" "$SITE/data/safari_libraries.json"
 echo "safari/       <- capture/data/safari, leaderboard/data/safari_libraries.json"
+# Chrome for Android leaderboard (leaderboard/build_android.py); optional, only built from a verified Android capture
+rm -f "$SITE/data/android_libraries.json"
+[[ -f "$TB/leaderboard/data/android_libraries.json" ]] && cp "$TB/leaderboard/data/android_libraries.json" "$SITE/data/android_libraries.json" && echo "android_libraries.json <- leaderboard/data/android_libraries.json"
+true

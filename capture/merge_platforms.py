@@ -21,12 +21,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 PLAT_DIR = os.path.join(DATA, "platforms")
 HIST = os.path.join(DATA, "history")
-PLATFORMS = ["linux", "windows", "macos"]
+PLATFORMS = ["linux", "windows", "macos", "android"]   # android: emulator capture (lib/capture_android.py)
 CHANNELS = ["beta", "dev", "canary"]          # pre-release Linux captures (artifact capture-<channel>), stored in data/channels/
 CHAN_DIR = os.path.join(DATA, "channels")
 CHAN_ALIAS = {"unstable": "dev"}              # google-chrome-unstable's CHROME_VERSION_EXTRA
-LABEL = {"linux": "Linux", "windows": "Windows", "macos": "macOS"}
-VH = {"linux": "linux", "windows": "win", "macos": "mac"}
+LABEL = {"linux": "Linux", "windows": "Windows", "macos": "macOS", "android": "Android"}
+VH = {"linux": "linux", "windows": "win", "macos": "mac", "android": "android"}
 COMPARE = [("ja4", "TLS JA4 (fresh)"), ("ja4_resumed", "TLS JA4 (resumed)"), ("quic_ja4", "QUIC JA4"),
            ("h2_akamai", "HTTP/2 fingerprint"), ("h3_settings", "HTTP/3 SETTINGS"), ("has_trust_anchors", "trust anchors (ca34)"),
            ("extensions_sorted", "TLS extension set"), ("sig_algs", "signature algorithms"), ("groups", "supported groups"),
@@ -44,6 +44,8 @@ def usable(d):
     if not d or not d.get("configs"):
         return False
     ref = next((c for c in d["configs"] if c["name"] == d.get("reference_config")), None)
+    if d.get("platform") == "android" and not (d.get("android") or {}).get("version_verified"):
+        return False   # Android is only published when its version was verified (capture_android.py / check_capture.py)
     return bool(ref and ref.get("ja4") and ref.get("h2_akamai"))
 
 
@@ -79,7 +81,19 @@ def summary(d, platform, file):
                 platform_stable_newest=cs.get("newest"), platform_stable_full_rollout=cs.get("highest_full_rollout"),
                 reference_config=d.get("reference_config"),
                 variants=dict(default=fp(cfg(d, "default")), no_ca34=fp(cfg(d, "disable-TLSTrustAnchorIDs")),
-                              pq=fp(cfg(d, "finch-AddTLSServerHandshakePadding"))))
+                              pq=fp(cfg(d, "finch-AddTLSServerHandshakePadding"))),
+                android=android_info(d) if platform == "android" else None)
+
+
+def android_info(d):
+    an = d.get("android") or {}
+    ref = next((c for c in d.get("configs", []) if c["name"] == d.get("reference_config")), {})
+    orders = ref.get("extension_orders") or []
+    return dict(source=an.get("source"), source_detail=an.get("source_detail"), version_verified=an.get("version_verified"),
+                version_checks=an.get("version_checks"), serving_on_stable=an.get("is_serving_on_android_stable"),
+                serving_share=(an.get("android_stable_serving") or {}).get(d.get("version")), android_stable_serving=an.get("android_stable_serving"),
+                apk_sha256=an.get("apk_sha256"), signer_cert_sha256=an.get("signer_cert_sha256"), emulator=an.get("emulator"),
+                connections=len(orders), distinct_extension_orders=len({tuple(o) for o in orders}) if orders else None)
 
 
 def fingerprint_key(d):
@@ -149,7 +163,7 @@ def build_index(attempts):
         else:
             out["platforms"][p] = dict(status="not_captured", platform=p, label=LABEL[p])
     lin = out["platforms"]["linux"]
-    for p in ("windows", "macos"):
+    for p in ("windows", "macos", "android"):
         s = out["platforms"][p]
         if s["status"] != "captured" or lin["status"] != "captured":
             continue
