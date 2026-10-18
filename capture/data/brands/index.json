@@ -7,7 +7,7 @@
    "version": "155.0.4283.62",
    "brand_version": "155.0.4283.62",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T08:12:47-05:00",
+   "captured_at": "2026-10-18T08:37:49-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "155.0.4283.62-1",
@@ -58,8 +58,60 @@
    "id": "edge"
   },
   "brave": {
-   "status": "not captured yet",
+   "status": "captured",
    "browser": "Brave Browser",
+   "version": "155.1.97.59",
+   "brand_version": "1.97.59",
+   "chromium_major": 155,
+   "captured_at": "2026-10-18T08:38:18-05:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
+   "package": {
+    "version": "1.97.59",
+    "repo": "https://brave-browser-apt-release.s3.brave.com",
+    "sha256": "666f817b640a3284fbb5c9b34917b78854e2acd92fa7febad704dc2b29349be5",
+    "signing_key": "DBF1A116C220B8C7164F98230686B78420038257"
+   },
+   "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+   "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+   "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+   "header_order": [
+    ":method",
+    ":authority",
+    ":scheme",
+    ":path",
+    "sec-ch-ua",
+    "sec-ch-ua-mobile",
+    "sec-ch-ua-platform",
+    "upgrade-insecure-requests",
+    "user-agent",
+    "accept",
+    "sec-gpc",
+    "sec-fetch-site",
+    "sec-fetch-mode",
+    "sec-fetch-user",
+    "sec-fetch-dest",
+    "accept-encoding",
+    "accept-language",
+    "priority"
+   ],
+   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+   "sec_ch_ua": "\"Brave\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+   "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+   "h3_settings": {
+    "1": 65536,
+    "6": 262144,
+    "7": 100,
+    "51": 1
+   },
+   "vs_chrome": {
+    "chrome_version": "155.0.8059.84",
+    "ja4": false,
+    "ja4_resumed": false,
+    "h2_akamai": true,
+    "header_order": false,
+    "quic_ja4": false,
+    "h3_settings": true
+   },
    "id": "brave"
   }
  }

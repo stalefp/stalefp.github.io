@@ -1,0 +1,480 @@
+{
+  "schema_version": "brand-capture-1",
+  "label": null,
+  "browser": "Brave Browser",
+  "version": "155.1.97.59",
+  "channel": "stable",
+  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
+  "platform": "linux",
+  "captured_at": "2026-10-18T08:38:18-05:00",
+  "chrome_path": "/opt/brave.com/brave/brave",
+  "chrome_version_string": "Brave Browser 155.1.97.59 unknown",
+  "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39131668533",
+  "reference_config": "default-headed",
+  "finch_network_studies": null,
+  "configs": [
+    {
+      "name": "default-headed",
+      "base_config": "default",
+      "mode": "headed",
+      "flags": [],
+      "relaunch_of": null,
+      "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
+      "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
+      "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+      "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+      "ja3": "9e5f0d969099a71b3c32ffcef1332ea5",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-11-5-27-17613-0-10-45-65037-35-51-18-23-13-43-16,4588-29-23-24,0",
+      "ja3n": "8e19337e7524d2573be54efb2b0784c9",
+      "extensions": [
+        "0xff01",
+        "0x000b",
+        "0x0005",
+        "0x001b",
+        "0x44cd",
+        "0x0000",
+        "0x000a",
+        "0x002d",
+        "0xfe0d",
+        "0x0023",
+        "0x0033",
+        "0x0012",
+        "0x0017",
+        "0x000d",
+        "0x002b",
+        "0x0010"
+      ],
+      "extensions_resumed": [
+        "0x0010",
+        "0x000b",
+        "0x0012",
+        "0x0023",
+        "0x0005",
+        "0xff01",
+        "0x0033",
+        "0xfe0d",
+        "0x002d",
+        "0x000d",
+        "0x0017",
+        "0x001b",
+        "0x0000",
+        "0x44cd",
+        "0x000a",
+        "0x002b",
+        "0x0029"
+      ],
+      "extensions_sorted": [
+        "0x0000",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0010",
+        "0x0012",
+        "0x0017",
+        "0x001b",
+        "0x0023",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0x44cd",
+        "0xfe0d",
+        "0xff01"
+      ],
+      "has_trust_anchors": false,
+      "has_trust_anchors_resumed": false,
+      "trust_anchors_len": null,
+      "ciphers": [
+        "0x1301",
+        "0x1302",
+        "0x1303",
+        "0xc02b",
+        "0xc02f",
+        "0xc02c",
+        "0xc030",
+        "0xcca9",
+        "0xcca8",
+        "0xc013",
+        "0xc014",
+        "0x009c",
+        "0x009d",
+        "0x002f",
+        "0x0035"
+      ],
+      "sig_algs": [
+        "0x0904",
+        "0x0905",
+        "0x0906",
+        "0x0403",
+        "0x0804",
+        "0x0401",
+        "0x0503",
+        "0x0805",
+        "0x0501",
+        "0x0806",
+        "0x0601"
+      ],
+      "groups": [
+        "0x11ec",
+        "0x001d",
+        "0x0017",
+        "0x0018"
+      ],
+      "key_shares": [
+        {
+          "group": "0x11ec",
+          "name": "X25519MLKEM768",
+          "key_length": 1216
+        },
+        {
+          "group": "0x001d",
+          "name": "x25519",
+          "key_length": 32
+        }
+      ],
+      "tls_versions": [
+        "0x0304",
+        "0x0303"
+      ],
+      "alpn": [
+        "h2",
+        "http/1.1"
+      ],
+      "alps": [
+        "h2"
+      ],
+      "alps_codepoint": "0x44cd",
+      "has_ech": true,
+      "cert_compression": [
+        2
+      ],
+      "resumption_accepted_by_server": true,
+      "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+      "h2_settings": {
+        "1": 65536,
+        "2": 0,
+        "4": 6291456,
+        "6": 262144
+      },
+      "h2_window_update": 15663105,
+      "h2_priority_frames": [],
+      "h2_headers_priority": {
+        "exclusive": 1,
+        "depends_on": 0,
+        "weight": 256
+      },
+      "http_version": "h2",
+      "header_order": [
+        ":method",
+        ":authority",
+        ":scheme",
+        ":path",
+        "sec-ch-ua",
+        "sec-ch-ua-mobile",
+        "sec-ch-ua-platform",
+        "upgrade-insecure-requests",
+        "user-agent",
+        "accept",
+        "sec-gpc",
+        "sec-fetch-site",
+        "sec-fetch-mode",
+        "sec-fetch-user",
+        "sec-fetch-dest",
+        "accept-encoding",
+        "accept-language",
+        "priority"
+      ],
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+      "sec_ch_ua": "\"Brave\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+      "variations_source": "default seed",
+      "command_line_variations": "--enable-features=\"SingleAxisScrollContainers\" --disable-field-trial-config",
+      "active_variations_count": 0,
+      "active_variations": [],
+      "seed_present_at_exit": true,
+      "seed": {
+        "seed_file": null,
+        "seed_file_bytes": null,
+        "local_state_seed_bytes": 8764,
+        "seed_serial_number": "82c642e742a165d764220ec982d52fc4",
+        "variations_country": "us",
+        "last_fetch_time": "13436804301224404",
+        "seed_present": true,
+        "seed_mentions_TLSTrustAnchorIDs": false,
+        "seed_scan_error": null,
+        "seed_decompressed_bytes": 23209
+      },
+      "quic": {
+        "flags": [
+          "--enable-quic",
+          "--origin-to-force-quic-on=capture.test:18544"
+        ],
+        "ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+        "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
+        "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
+        "extensions": [
+          "0x001b",
+          "0x002d",
+          "0x44cd",
+          "0x0010",
+          "0x0033",
+          "0x000a",
+          "0x002b",
+          "0x0039",
+          "0x000d",
+          "0x0000",
+          "0xfe0d"
+        ],
+        "has_trust_anchors": false,
+        "ciphers": [
+          "0x1301",
+          "0x1302",
+          "0x1303"
+        ],
+        "sig_algs": [
+          "0x0403",
+          "0x0804",
+          "0x0401",
+          "0x0503",
+          "0x0805",
+          "0x0501",
+          "0x0806",
+          "0x0601",
+          "0x0201"
+        ],
+        "groups": [
+          "0x11ec",
+          "0x001d",
+          "0x0017",
+          "0x0018"
+        ],
+        "key_shares": [
+          {
+            "group": "0x11ec",
+            "name": "X25519MLKEM768",
+            "key_length": 1216
+          },
+          {
+            "group": "0x001d",
+            "name": "x25519",
+            "key_length": 32
+          }
+        ],
+        "alpn": [
+          "h3"
+        ],
+        "alps": [
+          "h3"
+        ],
+        "transport_params": [
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x27d8bfdad310b2e7",
+            "name": "grease",
+            "len": 1,
+            "hex": "64"
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000013ada8afa00000001"
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          }
+        ],
+        "h3_settings": {
+          "1": 65536,
+          "6": 262144,
+          "7": 100,
+          "51": 1
+        },
+        "h3_grease_settings": 1,
+        "http_version": "h3",
+        "header_order": [
+          ":method",
+          ":authority",
+          ":scheme",
+          ":path",
+          "sec-ch-ua",
+          "sec-ch-ua-mobile",
+          "sec-ch-ua-platform",
+          "upgrade-insecure-requests",
+          "user-agent",
+          "accept",
+          "sec-gpc",
+          "sec-fetch-site",
+          "sec-fetch-mode",
+          "sec-fetch-user",
+          "sec-fetch-dest",
+          "accept-encoding",
+          "accept-language",
+          "priority"
+        ],
+        "notes": []
+      },
+      "notes": [],
+      "network_trial_groups": null
+    }
+  ],
+  "code_names": {
+    "extensions": {
+      "0x0000": "server_name",
+      "0x0005": "status_request",
+      "0x000a": "supported_groups",
+      "0x000b": "ec_point_formats",
+      "0x000d": "signature_algorithms",
+      "0x0010": "application_layer_protocol_negotiation",
+      "0x0012": "signed_certificate_timestamp",
+      "0x0015": "padding",
+      "0x0017": "extended_master_secret",
+      "0x001b": "compress_certificate",
+      "0x0023": "session_ticket",
+      "0x0029": "pre_shared_key",
+      "0x002a": "early_data",
+      "0x002b": "supported_versions",
+      "0x002d": "psk_key_exchange_modes",
+      "0x0031": "post_handshake_auth",
+      "0x0033": "key_share",
+      "0x0039": "quic_transport_parameters",
+      "0x12e0": "unassigned 0x12e0: server handshake padding request (Chrome AddTLSServerHandshakePadding / Finch PqcBandwidthExperiment; payload = requested bytes)",
+      "0x4469": "application_settings_old (ALPS)",
+      "0x44cd": "application_settings (ALPS)",
+      "0xca34": "trust_anchors (TLSTrustAnchorIDs)",
+      "0xfe0d": "encrypted_client_hello",
+      "0xff01": "renegotiation_info"
+    },
+    "groups": {
+      "0x0017": "secp256r1",
+      "0x0018": "secp384r1",
+      "0x0019": "secp521r1",
+      "0x001d": "x25519",
+      "0x001e": "x448",
+      "0x0100": "ffdhe2048",
+      "0x0101": "ffdhe3072",
+      "0x0200": "MLKEM512",
+      "0x0201": "MLKEM768",
+      "0x0202": "MLKEM1024",
+      "0x11eb": "SecP256r1MLKEM768",
+      "0x11ec": "X25519MLKEM768",
+      "0x11ed": "SecP384r1MLKEM1024",
+      "0x6399": "X25519Kyber768Draft00"
+    },
+    "sig_algs": {
+      "0x0201": "rsa_pkcs1_sha1",
+      "0x0203": "ecdsa_sha1",
+      "0x0401": "rsa_pkcs1_sha256",
+      "0x0403": "ecdsa_secp256r1_sha256",
+      "0x0501": "rsa_pkcs1_sha384",
+      "0x0503": "ecdsa_secp384r1_sha384",
+      "0x0601": "rsa_pkcs1_sha512",
+      "0x0603": "ecdsa_secp521r1_sha512",
+      "0x0804": "rsa_pss_rsae_sha256",
+      "0x0805": "rsa_pss_rsae_sha384",
+      "0x0806": "rsa_pss_rsae_sha512",
+      "0x0807": "ed25519",
+      "0x0808": "ed448",
+      "0x0809": "rsa_pss_pss_sha256",
+      "0x080a": "rsa_pss_pss_sha384",
+      "0x080b": "rsa_pss_pss_sha512",
+      "0x0904": "mldsa44",
+      "0x0905": "mldsa65",
+      "0x0906": "mldsa87"
+    },
+    "ciphers": {
+      "0x002f": "RSA_AES_128_CBC_SHA",
+      "0x0035": "RSA_AES_256_CBC_SHA",
+      "0x009c": "RSA_AES_128_GCM_SHA256",
+      "0x009d": "RSA_AES_256_GCM_SHA384",
+      "0x1301": "TLS_AES_128_GCM_SHA256",
+      "0x1302": "TLS_AES_256_GCM_SHA384",
+      "0x1303": "TLS_CHACHA20_POLY1305_SHA256",
+      "0xc013": "ECDHE_RSA_AES_128_CBC_SHA",
+      "0xc014": "ECDHE_RSA_AES_256_CBC_SHA",
+      "0xc02b": "ECDHE_ECDSA_AES_128_GCM_SHA256",
+      "0xc02c": "ECDHE_ECDSA_AES_256_GCM_SHA384",
+      "0xc02f": "ECDHE_RSA_AES_128_GCM_SHA256",
+      "0xc030": "ECDHE_RSA_AES_256_GCM_SHA384",
+      "0xcca8": "ECDHE_RSA_CHACHA20_POLY1305",
+      "0xcca9": "ECDHE_ECDSA_CHACHA20_POLY1305"
+    }
+  },
+  "notes": [
+    "Chrome randomizes TLS extension order per connection: 'extensions' and 'ja3' reflect one observed connection; use 'ja4' / 'ja3n' / 'extensions_sorted' for stable comparison.",
+    "default-headed: fresh profile (Variations Source 'default seed', 0 active variations) has 0xca34=False; seed downloaded during the run: True; that seed does NOT mention TrustAnchor",
+    "Only the default profile was captured (headed, no relaunch). 'Current' = newest Brave Browser in the vendor's official apt repo at capture time."
+  ],
+  "brand": "brave",
+  "chromium_major": 155,
+  "brand_version": "1.97.59",
+  "package": {
+    "version": "1.97.59",
+    "repo": "https://brave-browser-apt-release.s3.brave.com",
+    "sha256": "666f817b640a3284fbb5c9b34917b78854e2acd92fa7febad704dc2b29349be5",
+    "signing_key": "DBF1A116C220B8C7164F98230686B78420038257"
+  }
+}
