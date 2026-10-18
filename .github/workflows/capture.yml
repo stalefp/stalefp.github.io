@@ -179,6 +179,35 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
+      # Microsoft Edge + Brave (Linux only): official stable .debs from the vendors' signed apt repos (pinned signing-key
+      # fingerprint -> InRelease signature -> Packages SHA256 -> .deb SHA256, capture/install_brand_deb.sh). Isolated like Firefox.
+      - name: Edge + Brave capture (official signed Linux packages)
+        if: ${{ !cancelled() && matrix.id == 'linux' }}
+        continue-on-error: true
+        timeout-minutes: 12
+        shell: bash
+        run: |
+          for b in edge brave; do
+            if capture/install_brand_deb.sh "$b" "$RUNNER_TEMP/brand-$b" > "$RUNNER_TEMP/brand-$b.env"; then
+              while IFS='=' read -r k v; do export "$k=$v"; done < "$RUNNER_TEMP/brand-$b.env"
+              python -W ignore capture/lib/capture_brand.py --brand "$b" --bin "$BRAND_BIN" --out "out/brands/$b-linux" \
+                --package-version "$BRAND_PKG_VERSION" --repo "$BRAND_REPO" --deb-sha256 "$BRAND_DEB_SHA256" --signing-key "$BRAND_KEY" \
+                || echo "::warning::$b capture failed"
+            else
+              echo "::warning::$b install/verification failed"
+            fi
+          done
+
+      - name: Upload Edge + Brave capture JSON
+        if: ${{ !cancelled() && matrix.id == 'linux' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: brands-linux
+          path: out/brands/*/latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
   publish:
     name: merge, leaderboard, commit
     needs: capture
@@ -259,6 +288,15 @@ jobs:
         run: |
           python capture/merge_firefox.py --artifacts ff-artifacts
           leaderboard/run_firefox.sh || echo "::warning::Firefox leaderboard run failed"
+      - name: Download Edge + Brave captures
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: brands-*
+          path: brand-artifacts
+      - name: Merge Edge + Brave captures (isolated, can't fail the Chrome run)
+        continue-on-error: true
+        run: python capture/merge_brands.py --artifacts brand-artifacts
       - name: Sync site data
         run: site/sync.sh
       - name: Commit data to main
