@@ -6,11 +6,11 @@
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
   "platform": "linux",
-  "captured_at": "2026-10-18T09:37:29-05:00",
+  "captured_at": "2026-10-18T09:54:50-05:00",
   "chrome_path": "/opt/microsoft/msedge/msedge",
   "chrome_version_string": "Microsoft Edge 155.0.4283.62 unknown",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39136084505",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39137387564",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "7b52fe92279da306c071ff363ad0f0e3",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,13-43-51-35-45-10-23-11-65037-18-65281-0-17613-27-16-5,4588-29-23-24,0",
+      "ja3": "dc51eb8da4f17cc0ae8cdbbf901cd0cd",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-27-5-45-10-11-17613-43-0-16-51-23-35-18-13-65281,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x000d",
-        "0x002b",
-        "0x0033",
-        "0x0023",
+        "0xfe0d",
+        "0x001b",
+        "0x0005",
         "0x002d",
         "0x000a",
-        "0x0017",
         "0x000b",
-        "0xfe0d",
-        "0x0012",
-        "0xff01",
-        "0x0000",
         "0x44cd",
-        "0x001b",
+        "0x002b",
+        "0x0000",
         "0x0010",
-        "0x0005"
+        "0x0033",
+        "0x0017",
+        "0x0023",
+        "0x0012",
+        "0x000d",
+        "0xff01"
       ],
       "extensions_resumed": [
-        "0x000b",
-        "0x0017",
-        "0x0023",
-        "0x000d",
-        "0x001b",
-        "0x000a",
-        "0xff01",
-        "0x002d",
         "0xfe0d",
-        "0x0005",
-        "0x0033",
-        "0x0000",
-        "0x0010",
-        "0x0012",
-        "0x44cd",
         "0x002b",
+        "0x000b",
+        "0x000d",
+        "0x002d",
+        "0x0017",
+        "0x000a",
+        "0x0033",
+        "0x44cd",
+        "0x001b",
+        "0x0000",
+        "0x0005",
+        "0xff01",
+        "0x0012",
+        "0x0023",
+        "0x0010",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -317,7 +317,7 @@
         "local_state_seed_bytes": 732,
         "seed_serial_number": "\"NusoTb7gejBy/c2hGB9h3d0ePe/ZptR2D5XrgN9702c=\"",
         "variations_country": "US",
-        "last_fetch_time": "13436807851709999",
+        "last_fetch_time": "13436808892173106",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": null,
         "seed_scan_error": "stored seed is only 938 bytes decompressed at exit; not a full seed, not scanned",
@@ -333,16 +333,16 @@
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
           "0x002b",
-          "0x000d",
-          "0x0039",
-          "0xfe0d",
-          "0x000a",
           "0x0033",
           "0x001b",
-          "0x002d",
-          "0x0010",
+          "0x0039",
+          "0x44cd",
+          "0x000d",
           "0x0000",
-          "0x44cd"
+          "0xfe0d",
+          "0x002d",
+          "0x000a",
+          "0x0010"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -387,16 +387,28 @@
         ],
         "transport_params": [
           {
-            "id": "0x4",
-            "name": "initial_max_data",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
-            "value": 15728640
+            "value": 6291456
           },
           {
             "id": "0x20",
             "name": "max_datagram_frame_size",
             "len": 4,
             "value": 65536
+          },
+          {
+            "id": "0x3cbe5995412f6ce6",
+            "name": "grease",
+            "len": 3,
+            "hex": "ec917d"
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
           },
           {
             "id": "0x3128",
@@ -406,10 +418,10 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001faba5aea00000001"
           },
           {
             "id": "0x8",
@@ -418,10 +430,16 @@
             "value": 100
           },
           {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
+            "id": "0x1",
+            "name": "max_idle_timeout",
             "len": 4,
-            "value": 6291456
+            "value": 30000
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x6",
@@ -430,40 +448,22 @@
             "value": 6291456
           },
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
           },
           {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
           },
           {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000015aaa3a5a"
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x3588ab8d217c2df8",
-            "name": "grease",
-            "len": 8,
-            "value": 403752671
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           }
         ],
         "h3_settings": {
