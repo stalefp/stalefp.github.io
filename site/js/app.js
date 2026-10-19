@@ -430,6 +430,16 @@
   function rowHistory(id) {
     return (ROWHIST.entries || []).filter(function (e) { return e.rows && e.rows[id]; }).map(function (e) { return { date: e.date, chrome: e.chrome_version, r: e.rows[id] }; });
   }
+  // Phones: each explanation row shows its one-line summary; the rest opens with this button (CSS hides it on wider screens).
+  var TOGGLE_PAGES = { firefox: 1, safari: 1 };   // not the main Chrome page (being rebuilt separately)
+  function whyToggle() {
+    var b = el("button", { type: "button", cls: "why-toggle", "aria-expanded": "false", text: "Details" });
+    b.addEventListener("click", function () {
+      var tr = b.closest("tr"); var open = tr.classList.toggle("open");
+      b.setAttribute("aria-expanded", open ? "true" : "false"); b.textContent = open ? "Hide details" : "Details";
+    });
+    return b;
+  }
   function fixLine(l, label) {
     return el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: label }), el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]);
   }
@@ -772,15 +782,16 @@
     o = o || { box: "#ff-body", name: "Firefox" };
     var box = $(o.box); if (!box || !ff || !ff.ja4) return; box.innerHTML = "";
     lastUpdated(ff.captured_at);
-    var h2 = ff.http2 || {};
+    var h2 = ff.http2 || {}, missing = [];
     var row = function (label, val, copy) {
-      return el("div", { cls: "wide" }, [el("dt", { text: label }), el("dd", { cls: "code-row" }, [el("code", { text: val || "not captured" })].concat(copy && val ? [copyBtn(val)] : []))]);
+      if (!val) { missing.push(label); return null; }
+      return el("div", { cls: "wide" }, [el("dt", { text: label }), el("dd", { cls: "code-row" }, [el("code", { text: val })].concat(copy ? [copyBtn(val)] : []))]);
     };
     box.appendChild(el("dl", { cls: "fp" }, [
       el("div", {}, [el("dt", { text: o.name + " version checked" }), el("dd", { text: ff.version + " (" + ff.channel + ", " + ff.os + ")" })]),
       el("div", {}, [el("dt", { text: "Last checked" }), el("dd", { text: localTime(ff.captured_at) })]),
       row("TLS fingerprint (JA4), fresh connection", ff.ja4, true),
-      row("JA4, resumed connection", ff.ja4_resumed, true),
+      row("JA4 on a resumed connection", ff.ja4_resumed, true),
       row("HTTP/2 fingerprint", h2.akamai, true),
       row("HTTP/2 header order", (h2.header_order || []).join(", ")),
       row("User-Agent", ff.user_agent),
@@ -789,6 +800,8 @@
       row("HTTP/3 header order", ((ff.http3 || {}).header_order || []).join(", ") || null),
       row("QUIC transport parameters", ((ff.http3 || {}).transport_params || []).filter(function (t) { return t.name !== "grease"; }).map(function (t) { return t.name + (t.value != null ? "=" + t.value : ""); }).join(", ") || null)
     ]));
+    if (missing.length) box.appendChild(el("p", { cls: "muted small not-captured", text: "Not captured for " + o.name + " yet: " + missing.join(", ") +
+      ". These fields were missing from our capture, so we don't show values for them (we never guess)." }));
     if (ff.http3 && ff.http3.ja4 && !ff.http3.request_over_h3)
       box.appendChild(el("p", { cls: "muted small", text: "HTTP/3: Firefox completed the QUIC handshake with our local endpoint, then sent the page request over TCP, so HTTP/3 SETTINGS and header order are not captured yet. The QUIC JA4 above is from the real QUIC ClientHello." }));
     if ((ff.errors || []).length) box.appendChild(el("p", { cls: "muted small", text: "Capture notes: " + ff.errors.join("; ") }));
@@ -898,7 +911,7 @@
       var md = o.badge ? "[![" + o.name + " match](https://img.shields.io/endpoint?url=" + encodeURIComponent(base + "api/badges/" + o.badge + "/" + badgeSlug(l.id) + ".json") + ")](" + base + o.anchor + ")" : null;
       var ids = [["JA4", f.ja4_fresh], ["HTTP/2", f.http2_akamai]].filter(function (x) { return x[1]; });
       tb.appendChild(el("tr", { cls: "why-row" }, [el("td", { colspan: "7" }, [
-        el("p", { cls: "why-head", text: l.behind_text || "" }),
+        el("p", { cls: "why-head", text: l.behind_text || "" }), TOGGLE_PAGES[PAGE] ? whyToggle() : null,
         ids.length ? el("div", { cls: "fp-ids" }, ids.map(function (x) { return el("span", { cls: "fp-id" }, [el("span", { cls: "muted", text: x[0] + " " }), el("code", { text: x[1] }), copyBtn(x[1])]); })) : null,
         (l.why || []).length ? el("ul", { cls: "why-list" }, l.why.map(function (w) { return el("li", { text: w }); })) : null,
         (l.behaviour || []).length ? el("ul", { cls: "why-list behaviour" }, l.behaviour.map(function (b) { return el("li", { text: b }); })) : null,
@@ -906,7 +919,7 @@
         l.fix ? el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): " }),
           el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]) : null
       ].concat((l.notes || []).map(function (n) { return el("p", { cls: "why-note", text: n }); })).concat([
-        md && l.verdict !== "not tested" ? el("div", { cls: "code-row small" }, [el("span", { cls: "muted", text: "Badge " }), el("code", { cls: "md", text: md }), copyBtn(md)]) : null
+        md && l.verdict !== "not tested" ? el("div", { cls: "code-row small badge-row" }, [el("span", { cls: "muted", text: "README badge (Markdown) " }), copyBtn(md)]) : null
       ]))]));
     });
     t.appendChild(tb); box.appendChild(el("div", { cls: "table-wrap" }, [t]));
@@ -1122,7 +1135,40 @@
 
   /* /edge/ and /brave/: one Chromium-based browser each (data/brands/index.json, capture/merge_brands.py). */
   function initBrand(bid) {
-    return function () { initCopy(); getJSON("data/brands/index.json").then(function (idx) { renderBrands(idx, [bid]); }, function () { /* no capture yet */ }); };
+    return function () {
+      initCopy();
+      Promise.all([getJSON("data/brands/index.json"), getJSON("data/latest.json").catch(function () { return null; })]).then(function (r) {
+        renderBrands(r[0], [bid]); renderBrandSummary(r[0], bid, r[1] ? adaptChromeReference(r[1]) : null);
+      }, function () { var b = $("#sum-brand"); if (b) b.innerHTML = "<p class=\"muted\">No capture yet.</p>"; });
+    };
+  }
+  // "Who's current" for a Chromium-based browser: what differs from Chrome, and what that means for picking a library.
+  var BRAND_FIELDS = [["ja4", "TLS fingerprint (JA4)"], ["ja4_resumed", "resumed JA4"], ["h2_akamai", "HTTP/2 settings"], ["header_order", "header order"],
+    ["quic_ja4", "QUIC JA4"], ["h3_settings", "HTTP/3 SETTINGS"]];
+  function renderBrandSummary(idx, bid, ref) {
+    var box = $("#sum-brand"); if (!box || !idx || !idx.brands || !idx.brands[bid]) return; box.innerHTML = "";
+    var top = idx.brands[bid], plats = top.platforms ? ["linux", "windows"].map(function (o) { return top.platforms[o]; }).filter(function (p) { return p && p.version; }) : (top.version ? [top] : []);
+    if (!plats.length) { box.appendChild(el("p", { cls: "muted", text: "No " + (top.browser || bid) + " capture yet." })); return; }
+    var name = plats[0].browser, label = function (p) { return p.label || "Linux"; };
+    box.appendChild(el("h3", { text: name + " " + (plats[0].brand_version || plats[0].version) }));
+    var same = [], diff = [];
+    BRAND_FIELDS.forEach(function (f) {
+      var v = plats.map(function (p) { return (p.vs_chrome || {})[f[0]]; }).filter(function (x) { return x != null; });
+      if (!v.length) return;
+      if (v.every(Boolean)) same.push(f[1]); else diff.push(f[1] + (v.some(Boolean) ? " (on " + plats.filter(function (p) { return (p.vs_chrome || {})[f[0]] === false; }).map(label).join(", ") + ")" : ""));
+    });
+    var chip = function (cls, text) { return el("span", { cls: "badge " + cls, text: text }); };
+    box.appendChild(el("p", { cls: "sum-chips" }, [chip("v-exact", same.length + " same as Chrome"), " ", chip("v-behind", diff.length + " differ")]));
+    if (diff.length) box.appendChild(el("p", { cls: "small", text: "Differs from Chrome (same OS): " + diff.join(", ") + "." }));
+    if (same.length) box.appendChild(el("p", { cls: "small", text: "Same as Chrome: " + same.join(", ") + "." }));
+    var v = ref && variantById(ref, "no_ca34"), d = ref && variantById(ref, "default");
+    var tlsLike = v && plats.every(function (p) { return p.ja4 === v.ja4; }) ? "Chrome's less common fingerprint without the trust-anchors extension (ca34)"
+      : d && plats.every(function (p) { return p.ja4 === d.ja4; }) ? "Chrome's main fingerprint" : null;
+    var note = "Picking a library: we don't grade any library's " + name + " profile. " + name + " is built on Chromium, so the place to start is a Chrome profile from the ";
+    box.appendChild(el("p", { cls: "small brand-note" }, [note, el("a", { href: ROOT + "#leaderboard", text: "Chrome leaderboard" }), ". " +
+      (tlsLike ? "At the TLS layer " + name + " sends " + tlsLike + ", so look for a profile that matches " + (tlsLike.indexOf("without") > 0 ? "that variant" : "it") + ". " : "") +
+      "A Chrome profile still sends Chrome's own user-agent and sec-ch-ua headers; to look like " + name + " you'd set the ones shown below yourself."]));
+    box.appendChild(el("p", { cls: "muted small", text: "Captured on " + plats.map(label).join(" and ") + "; compared with Chrome " + plats.map(function (p) { return (p.vs_chrome || {}).chrome_version + " on " + label(p); }).join(", ") + "." }));
   }
 
   // One entry per page; a new page adds its init here and sets <body data-page="...">.
