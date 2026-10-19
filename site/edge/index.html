@@ -27,7 +27,7 @@
       <a href="/brave/" data-page="brave">Brave</a>
     </nav>
     <nav class="nav" aria-label="Sections">
-      <a href="#edge">Current Edge</a><a href="/#leaderboard">Chrome leaderboard</a>
+      <a href="#summary">Compared with Chrome</a><a href="#edge">Current Edge</a><a href="/#leaderboard">Chrome leaderboard</a><a href="#how-edge">How we test</a>
     </nav>
   </div>
 </header>
@@ -44,8 +44,11 @@
     <!-- Current Microsoft Edge (Linux), data/brands/index.json from capture/merge_brands.py -->
   <section id="edge" class="card" aria-labelledby="brands-h">
     <h2 id="brands-h">Current Microsoft Edge fingerprint (Linux and Windows)</h2>
-    <p class="muted small">On Linux: the official stable build from Microsoft's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256). On Windows: the Edge that ships with the GitHub Windows runner, updated from Microsoft's own Stable MSI feed when that has a newer build (MSI checked against Microsoft's published SHA256 and Authenticode signature). Fresh profile, no flags, headed, same local capture server as Chrome, captured daily and kept separate from the Chrome data. "Same as Chrome" compares with our Chrome capture on the same OS.</p>
     <div id="brand-grid" class="plat-grid two"><p class="muted">No Microsoft Edge capture yet. It's added to the daily capture and will appear after the next run.</p></div>
+  <details class="how" id="how-edge">
+      <summary>How we test: where the Edge builds come from</summary>
+      <p class="muted small">On Linux: the official stable build from Microsoft's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256). On Windows: the Edge that ships with the GitHub Windows runner, updated from Microsoft's own Stable MSI feed when that has a newer build (MSI checked against Microsoft's published SHA256 and Authenticode signature). Fresh profile, no flags, headed, same local capture server as Chrome, captured daily and kept separate from the Chrome data. "Same as Chrome" compares with our Chrome capture on the same OS.</p>
+    </details>
   </section>
 </main>
 

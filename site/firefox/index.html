@@ -27,7 +27,7 @@
       <a href="/brave/" data-page="brave">Brave</a>
     </nav>
     <nav class="nav" aria-label="Sections">
-      <a href="#firefox">Current Firefox</a><a href="#ff-platforms-card">By platform</a><a href="#firefox-board">Leaderboard</a><a href="#firefox-changes">What changed</a><a href="#api">JSON feed &amp; badges</a>
+      <a href="#firefox-board">Leaderboard</a><a href="#firefox">Current Firefox</a><a href="#firefox-changes">What changed</a><a href="#api">JSON feed</a>
     </nav>
   </div>
 </header>
@@ -41,13 +41,31 @@
     <div class="sum-grid one">
       <div id="sum-firefox"><p class="muted">Loading…</p></div>
     </div>
-    <p class="muted small">Details below: <a href="#firefox-board">Firefox leaderboard</a> · <a href="#firefox">Current Firefox</a> · <a href="#api">JSON feed</a></p>
+    <p class="muted small">Details below: <a href="#firefox-board">Firefox leaderboard</a> · <a href="#firefox">Current Firefox</a> · <a href="#firefox-changes">What changed</a> · <a href="#api">JSON feed</a></p>
+  </section>
+
+  <!-- Firefox leaderboard (leaderboard/build_firefox.py): compact <details> rows + language filter, as on the Chrome page -->
+  <section id="firefox-board" aria-labelledby="ffb-h">
+    <h2 id="ffb-h">How far behind is each library's Firefox profile?</h2>
+    <p>We run each library's Firefox profiles, compare what they send against our capture of real Firefox, and check the results field by field, the same way as the <a href="/#leaderboard">Chrome leaderboard</a>.</p>
+    <div class="lang-filter" id="ff-lang" role="group" aria-label="Filter the Firefox leaderboard by language"></div>
+    <div id="ff-board" class="lbx"><p class="muted">The Firefox leaderboard is built by the daily capture and will appear after the next run.</p></div>
+    <details class="how" id="how-firefox">
+      <summary>How we test: verdicts, endpoint, reconnecting and header order</summary>
+        <div class="legend" aria-label="Verdict legend">
+          <p><span class="badge v-exact">Exact</span> Matches real Firefox on every counted TLS and HTTP/2 field.</p>
+          <p><span class="badge v-close">Close</span> One counted field is different.</p>
+          <p><span class="badge v-behind">Behind</span> Two or more counted fields are different, so a site checking the handshake has more than one way to tell the library apart from Firefox.</p>
+          <p class="muted small">Same counted fields as the <a href="/#leaderboard">Chrome leaderboard</a>: cipher suites, extension set, signature algorithms, supported groups, key shares, certificate compression, HTTP/2 fingerprint. Resumption and extension-order shuffling are shown but never counted.</p>
+        </div>
+      <div id="ff-how-notes"></div>
+    </details>
   </section>
 
   <!-- Current Firefox (capture/lib/capture_firefox.py), incl. HTTP/3 -->
   <section id="firefox" class="card" aria-labelledby="ff-h">
     <h2 id="ff-h">Current Firefox fingerprint</h2>
-    <p class="muted small">Official Mozilla Firefox release, fresh profile, headless, against the same local capture server as Chrome. The Firefox leaderboard below grades the libraries' Firefox profiles against it.</p>
+    <p class="muted small">Official Mozilla Firefox release, fresh profile, headless, against the same local capture server as Chrome. The leaderboard above grades the libraries' Firefox profiles against it.</p>
     <div id="ff-body"><p class="muted">No Firefox capture yet. It's added to the daily capture and will appear after the next run.</p></div>
   </section>
 
@@ -57,27 +75,19 @@
     <div id="ff-platforms" class="plat-grid"><p class="muted">No per-OS Firefox capture yet. Windows and macOS are captured daily from now on.</p></div>
   </section>
 
-  <!-- Firefox leaderboard (leaderboard/build_firefox.py) -->
-  <section id="firefox-board" aria-labelledby="ffb-h">
-    <h2 id="ffb-h">How far behind is each library's Firefox profile?</h2>
-    <p>We run each library's Firefox profiles, compare what they send against our capture of real Firefox, and check the results field by field, the same way as the <a href="/#leaderboard">Chrome leaderboard</a>.</p>
-    <div id="ff-board"><p class="muted">The Firefox leaderboard is built by the daily capture and will appear after the next run.</p></div>
-  </section>
-
   <!-- Firefox history + what changed (data/firefox/history/) -->
   <section id="firefox-changes" class="card" aria-labelledby="ffc-h">
     <h2 id="ffc-h">What changed in Firefox</h2>
     <div id="ff-history"></div>
   </section>
 
-  <!-- Firefox JSON feed + badges -->
+  <!-- Firefox JSON feed -->
   <section id="api" class="card" aria-labelledby="api-h">
-    <h2 id="api-h">Firefox JSON feed and badges</h2>
+    <h2 id="api-h">Firefox JSON feed</h2>
     <p>Free, no key, CORS open, refreshed by the same daily capture.</p>
     <dl class="fp small">
       <div class="wide"><dt><a href="/api/firefox.json"><code>/api/firefox.json</code></a></dt><dd>Latest real Firefox capture (Linux): version, JA4 (fresh and resumed), HTTP/2 fingerprint and header order, HTTP/3 (QUIC) JA4, SETTINGS and transport parameters.</dd></div>
       <div class="wide"><dt><a href="/api/firefox_libraries.json"><code>/api/firefox_libraries.json</code></a></dt><dd>The Firefox leaderboard: every library's Firefox profile with its fingerprint, verdict and field-by-field reasons.</dd></div>
-      <div class="wide"><dt><code>/api/badges/firefox/&lt;id&gt;.json</code></dt><dd>A <a href="https://shields.io/badges/endpoint-badge">shields.io endpoint</a> badge per row. Each row in the leaderboard above has its Markdown ready to copy.</dd></div>
     </dl>
   </section>
 </main>

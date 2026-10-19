@@ -430,16 +430,6 @@
   function rowHistory(id) {
     return (ROWHIST.entries || []).filter(function (e) { return e.rows && e.rows[id]; }).map(function (e) { return { date: e.date, chrome: e.chrome_version, r: e.rows[id] }; });
   }
-  // Phones: each explanation row shows its one-line summary; the rest opens with this button (CSS hides it on wider screens).
-  var TOGGLE_PAGES = { firefox: 1, safari: 1 };   // not the main Chrome page (being rebuilt separately)
-  function whyToggle() {
-    var b = el("button", { type: "button", cls: "why-toggle", "aria-expanded": "false", text: "Details" });
-    b.addEventListener("click", function () {
-      var tr = b.closest("tr"); var open = tr.classList.toggle("open");
-      b.setAttribute("aria-expanded", open ? "true" : "false"); b.textContent = open ? "Hide details" : "Details";
-    });
-    return b;
-  }
   function fixLine(l, label) {
     return el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: label }), el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]);
   }
@@ -774,7 +764,7 @@
     a.addEventListener("change", run); b.addEventListener("change", run); return run();
   }
 
-  /* Row ids -> URL-safe slugs (row anchors; also the /api/badges/<slug>.json file names built by leaderboard/badges.py) */
+  /* Row ids -> URL-safe slugs (row anchors, #row-<slug>) */
   function badgeSlug(id) { return id.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
 
   /* ---------------- Current Firefox ---------------- */
@@ -886,43 +876,60 @@
     a.addEventListener("change", run); b.addEventListener("change", run); run();
   }
 
-  /* Firefox leaderboard (data/firefox_libraries.json, leaderboard/build_firefox.py) */
-  // Also renders the Safari board (data/safari_libraries.json, leaderboard/build_safari.py): same row shape.
-  var FF_OPTS = { box: "#ff-board", name: "Firefox", ver: "firefox_version", anchor: "firefox/#firefox-board", badge: "firefox" };
-  function renderFirefoxBoard(lb, o) {
-    o = o || FF_OPTS;
-    var box = $(o.box); if (!box || !lb || !lb.libraries) return; box.innerHTML = "";
+  /* Firefox and Safari boards (data/firefox_libraries.json, data/safari_libraries.json; leaderboard/build_firefox.py,
+     build_safari.py): the same compact <details> rows and language filter as the Chrome boards. */
+  var BOARDS = {
+    firefox: { box: "#ff-board", lang: "#ff-lang", how: "#ff-how-notes", name: "Firefox", ver: "firefox_version", prefix: "firefox-", open: {}, lb: null },
+    safari: { box: "#sf-board", lang: "#sf-lang", how: "#sf-how-notes", name: "Safari", ver: "safari_version", prefix: "safari-", open: {}, lb: null }
+  };
+  function browserPanel(l, name) {
+    var g = l.http2_grade || {}, f = l.fingerprint || {};
+    var kids = [panelGrid([
+      ["TLS match (JA4)", [mark(((l.matches || {}).variants || {}).default ? l.matches.variants.default.ja4_fresh : null)]],
+      ["HTTP/2", [el("span", { cls: "line" }, ["settings ", mark(g.settings)]), el("span", { cls: "line" }, ["header order ", mark(g.header_order)])]],
+      (l.missing || []).length ? ["Missing vs. " + name, missingChips(l)] : null,
+      ["Tested", [el("time", { datetime: l.tested_at || "", text: localDate(l.tested_at) || "not tested" })]]
+    ])];
+    if (l.behind_text) kids.push(el("p", { cls: "why-head", text: l.behind_text }));
+    var ids = [["JA4", f.ja4_fresh], ["HTTP/2", f.http2_akamai]].filter(function (x) { return x[1]; });
+    if (ids.length) kids.push(el("div", { cls: "fp-ids" }, ids.map(function (x) { return el("span", { cls: "fp-id" }, [el("span", { cls: "muted", text: x[0] + " " }), el("code", { text: x[1] }), copyBtn(x[1])]); })));
+    if ((l.why || []).length) kids.push(el("ul", { cls: "why-list" }, l.why.map(function (w) { return el("li", { text: w }); })));
+    if ((l.behaviour || []).length) kids.push(el("ul", { cls: "why-list behaviour" }, l.behaviour.map(function (b) { return el("li", { text: b }); })));
+    if (l.release_update) kids.push(el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?"), text: l.release_update.text }));
+    if (l.fix) kids.push(fixLine(l, "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): "));
+    (l.notes || []).forEach(function (n) { kids.push(el("p", { cls: "why-note", text: n })); });
+    if ((l.diff || []).length) kids.push(el("details", { cls: "more deep" }, [el("summary", { text: "Field-by-field diff" }),
+      diffTable(["Field (vs " + name + ")", "Status", name, "Library"], l.diff),
+      (l.not_tested || []).length ? el("p", { cls: "muted small", text: "Not tested: " + l.not_tested.join("; ") }) : null]));
+    return kids;
+  }
+  function renderBrowserBoard(key) {
+    var o = BOARDS[key], lb = o.lb, box = $(o.box); if (!box || !lb || !lb.libraries) return;
     var r = lb.reference || {};
-    box.appendChild(el("p", { cls: "muted small", text: "Graded against real " + o.name + " " + r[o.ver] + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard. " + (lb.caveats || []).join(" ") }));
-    var base = ROOT;
-    var t = el("table", { cls: "lb" }, [el("thead", {}, [el("tr", {}, ["Library", o.name + " profile", "Versions behind", "TLS match", "HTTP/2", "Verdict", "Tested"].map(function (h) { return el("th", { text: h }); }))])]);
-    var tb = el("tbody");
-    lb.libraries.forEach(function (l) {
-      var f = l.fingerprint || {}, g = l.http2_grade || {};
-      tb.appendChild(el("tr", { cls: "row" }, [
-        td("Library", [el("span", { cls: "lib", text: l.library }), el("span", { cls: "lang", text: l.language + (l.version ? " · " + l.version : "") })], "first"),
-        td(o.name + " profile", [el("code", { text: l.profile })]),
-        td("Versions behind", [el("span", { text: l.versions_behind == null ? "unknown" : String(l.versions_behind) })]),
-        td("TLS match", [mark(((l.matches || {}).variants || {}).default ? l.matches.variants.default.ja4_fresh : null)]),
-        td("HTTP/2", [el("span", { cls: "line" }, ["settings ", mark(g.settings)]), el("span", { cls: "line" }, ["header order ", mark(g.header_order)])]),
-        td("Verdict", [el("span", { cls: "badge " + (VCLS[l.verdict] || "v-na"), text: VLABEL[l.verdict] || l.verdict })]),
-        td("Tested", [el("time", { text: localDate(l.tested_at) || "not tested" })])
-      ]));
-      var md = o.badge ? "[![" + o.name + " match](https://img.shields.io/endpoint?url=" + encodeURIComponent(base + "api/badges/" + o.badge + "/" + badgeSlug(l.id) + ".json") + ")](" + base + o.anchor + ")" : null;
-      var ids = [["JA4", f.ja4_fresh], ["HTTP/2", f.http2_akamai]].filter(function (x) { return x[1]; });
-      tb.appendChild(el("tr", { cls: "why-row" }, [el("td", { colspan: "7" }, [
-        el("p", { cls: "why-head", text: l.behind_text || "" }), TOGGLE_PAGES[PAGE] ? whyToggle() : null,
-        ids.length ? el("div", { cls: "fp-ids" }, ids.map(function (x) { return el("span", { cls: "fp-id" }, [el("span", { cls: "muted", text: x[0] + " " }), el("code", { text: x[1] }), copyBtn(x[1])]); })) : null,
-        (l.why || []).length ? el("ul", { cls: "why-list" }, l.why.map(function (w) { return el("li", { text: w }); })) : null,
-        (l.behaviour || []).length ? el("ul", { cls: "why-list behaviour" }, l.behaviour.map(function (b) { return el("li", { text: b }); })) : null,
-        l.release_update ? el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?"), text: l.release_update.text }) : null,
-        l.fix ? el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): " }),
-          el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]) : null
-      ].concat((l.notes || []).map(function (n) { return el("p", { cls: "why-note", text: n }); })).concat([
-        md && l.verdict !== "not tested" ? el("div", { cls: "code-row small badge-row" }, [el("span", { cls: "muted", text: "README badge (Markdown) " }), copyBtn(md)]) : null
-      ]))]));
+    box.innerHTML = "";
+    box.appendChild(el("p", { cls: "muted small", text: "Graded against real " + o.name + " " + r[o.ver] + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard." }));
+    var how = $(o.how); if (how) { how.innerHTML = ""; (lb.caveats || []).forEach(function (c) { how.appendChild(el("p", { cls: "muted small", text: c })); }); }
+    var rows = lb.libraries.filter(langOk);
+    box.appendChild(boardHead([["library", "Library"], ["profile", o.name + " profile"], ["verdict", "Verdict"], ["behind", "Versions behind"]], false));
+    var list = el("div", { cls: "lbrows" });
+    rows.forEach(function (l) {
+      list.appendChild(boardRow(l, { prefix: o.prefix, profileLabel: o.name + " profile", open: o.open, panel: function (x) { return browserPanel(x, o.name); },
+        behind: function (x) { return [el("span", { text: x.versions_behind == null ? "unknown" : String(x.versions_behind) })]; } }));
     });
-    t.appendChild(tb); box.appendChild(el("div", { cls: "table-wrap" }, [t]));
+    if (!rows.length) list.appendChild(el("p", { cls: "empty", text: "No " + langName(state.lang) + " library offers a " + o.name + " profile we test." }));
+    box.appendChild(list);
+    renderLangFilter($(o.lang), lb.libraries);
+  }
+  function loadBrowserBoard(key, file, sumBox) {
+    var o = BOARDS[key];
+    return getJSON(file).then(function (f) {
+      o.lb = f; LANG_LIBS = LANG_LIBS.concat(f.libraries || []); langRenderers.push(function () { renderBrowserBoard(key); });
+      renderBrowserBoard(key); sumBoard(sumBox, o.name, f, (f.reference || {})[o.ver]);
+    }, function () { var b = $(sumBox); if (b) b.innerHTML = "<p class=\"muted\">The " + o.name + " leaderboard isn't built yet.</p>"; });
+  }
+  function openRowFromHash() {
+    var h = location.hash && location.hash.indexOf("#row-") === 0 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+    if (h && h.tagName === "DETAILS") { h.open = true; h.scrollIntoView(); }
   }
 
   /* Chrome for Android board (data/android_libraries.json, leaderboard/build_android.py): same compact rows and
@@ -1116,21 +1123,17 @@
     Promise.all([
       getJSON("data/firefox.json").then(renderFirefox, function () { /* no Firefox capture yet */ }),
       getJSON("data/firefox/history/index.json").then(initFirefoxHistory, function () { initFirefoxHistory(null); }),
-      getJSON("data/firefox_libraries.json").then(function (f) { renderFirefoxBoard(f); sumBoard("#sum-firefox", "Firefox", f, (f.reference || {}).firefox_version); },
-        function () { var b = $("#sum-firefox"); if (b) b.innerHTML = "<p class=\"muted\">The Firefox leaderboard isn't built yet.</p>"; }),
+      loadBrowserBoard("firefox", "data/firefox_libraries.json", "#sum-firefox"),
       getJSON("data/firefox/platforms.json").then(renderFirefoxPlatforms, function () { /* no per-OS Firefox data yet */ })
-    ]).catch(loadError);
+    ]).catch(loadError).then(openRowFromHash);
   }
 
   /* /safari/: current Safari and the Safari leaderboard. */
   function initSafari() {
     Promise.all([
       getJSON("data/safari/latest.json").then(function (sf) { renderFirefox(sf, { box: "#sf-body", name: "Safari" }); }, function () { /* no Safari capture yet */ }),
-      getJSON("data/safari_libraries.json").then(function (f) {
-        renderFirefoxBoard(f, { box: "#sf-board", name: "Safari", ver: "safari_version", anchor: "safari/#safari-board", badge: null });
-        sumBoard("#sum-safari", "Safari", f, (f.reference || {}).safari_version);
-      }, function () { var b = $("#sum-safari"); if (b) b.innerHTML = "<p class=\"muted\">The Safari leaderboard isn't built yet.</p>"; })
-    ]).catch(loadError);
+      loadBrowserBoard("safari", "data/safari_libraries.json", "#sum-safari")
+    ]).catch(loadError).then(openRowFromHash);
   }
 
   /* /edge/ and /brave/: one Chromium-based browser each (data/brands/index.json, capture/merge_brands.py). */

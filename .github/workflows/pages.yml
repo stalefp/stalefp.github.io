@@ -42,12 +42,7 @@ jobs:
           [ -f site/data/history/index.json ] && cp site/data/history/index.json _site/api/history.json || true
           [ -f site/data/firefox.json ] && cp site/data/firefox.json _site/api/firefox.json || true
           [ -f site/data/android_libraries.json ] && cp site/data/android_libraries.json _site/api/android_libraries.json || true
-          # README badges (shields.io endpoint JSON), one per leaderboard row, built from the libraries.json being published
-          python3 leaderboard/badges.py site/data/libraries.json _site/api/badges
-          if [ -f site/data/firefox_libraries.json ]; then
-            python3 leaderboard/badges.py site/data/firefox_libraries.json _site/api/badges/firefox "Firefox match"
-            cp site/data/firefox_libraries.json _site/api/firefox_libraries.json
-          fi
+          [ -f site/data/firefox_libraries.json ] && cp site/data/firefox_libraries.json _site/api/firefox_libraries.json || true
       # Main page: write today's real numbers and leaderboard rows into index.html, so it reads correctly without JS and
       # without a "Loading…" flash. Best effort: on any failure the script writes nothing and the plain page deploys.
       - uses: actions/setup-node@v4

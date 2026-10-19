@@ -222,13 +222,6 @@ details.how[open] > summary{margin-bottom:6px}
   table.stack code{white-space:normal;word-break:break-all}
   .diff-table.stack{overflow:visible}
 }
-/* UX fixes (Firefox, Safari, Edge, Brave pages only; the main Chrome page is unchanged): phone detail toggle, copy buttons that don't wrap, badge copy row, brand summary */
+/* Firefox, Safari, Edge, Brave pages: copy buttons never wrap; Edge / Brave summary note */
 body:not([data-page="chrome"]) button.copy{white-space:nowrap;flex:none}
-button.why-toggle{display:none;font:inherit;font-size:.82rem;color:var(--accent);background:none;border:1px solid var(--line);border-radius:6px;padding:2px 10px;margin:6px 0 2px;cursor:pointer}
-@media (max-width:600px){
-  body[data-page="firefox"] button.why-toggle,body[data-page="safari"] button.why-toggle{display:inline-block}
-  body[data-page="firefox"] tr.why-row:not(.open) td>*:not(.why-head):not(.why-toggle):not(.recent-note),
-  body[data-page="safari"] tr.why-row:not(.open) td>*:not(.why-head):not(.why-toggle):not(.recent-note){display:none}
-}
-.badge-row{margin-top:4px}
 .brand-note{border-left:3px solid var(--accent);padding-left:10px}

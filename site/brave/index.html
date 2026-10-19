@@ -27,7 +27,7 @@
       <a href="/brave/" data-page="brave">Brave</a>
     </nav>
     <nav class="nav" aria-label="Sections">
-      <a href="#brave">Current Brave</a><a href="/#leaderboard">Chrome leaderboard</a>
+      <a href="#summary">Compared with Chrome</a><a href="#brave">Current Brave</a><a href="/#leaderboard">Chrome leaderboard</a><a href="#how-brave">How we test</a>
     </nav>
   </div>
 </header>
@@ -44,8 +44,11 @@
     <!-- Current Brave (Linux), data/brands/index.json from capture/merge_brands.py -->
   <section id="brave" class="card" aria-labelledby="brands-h">
     <h2 id="brands-h">Current Brave fingerprint (Linux and Windows)</h2>
-    <p class="muted small">On Linux: the official stable build from Brave's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256). On Windows: Brave's official standalone installer from its GitHub release, checked against the published SHA256 and Brave's Authenticode signature. Fresh profile, no flags, headed, same local capture server as Chrome, captured daily and kept separate from the Chrome data. "Same as Chrome" compares with our Chrome capture on the same OS.</p>
     <div id="brand-grid" class="plat-grid two"><p class="muted">No Brave capture yet. It's added to the daily capture and will appear after the next run.</p></div>
+  <details class="how" id="how-brave">
+      <summary>How we test: where the Brave builds come from</summary>
+      <p class="muted small">On Linux: the official stable build from Brave's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256). On Windows: Brave's official standalone installer from its GitHub release, checked against the published SHA256 and Brave's Authenticode signature. Fresh profile, no flags, headed, same local capture server as Chrome, captured daily and kept separate from the Chrome data. "Same as Chrome" compares with our Chrome capture on the same OS.</p>
+    </details>
   </section>
 </main>
 

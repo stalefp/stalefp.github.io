@@ -27,7 +27,7 @@
       <a href="/brave/" data-page="brave">Brave</a>
     </nav>
     <nav class="nav" aria-label="Sections">
-      <a href="#safari">Current Safari</a><a href="#safari-board">Leaderboard</a>
+      <a href="#safari-board">Leaderboard</a><a href="#safari">Current Safari</a><a href="#how-safari">How we test</a>
     </nav>
   </div>
 </header>
@@ -44,19 +44,32 @@
     <p class="muted small">Details below: <a href="#safari-board">Safari leaderboard</a> · <a href="#safari">Current Safari</a></p>
   </section>
 
+  <!-- Safari leaderboard (leaderboard/build_safari.py): compact <details> rows + language filter, as on the Chrome page -->
+  <section id="safari-board" aria-labelledby="sfb-h">
+    <h2 id="sfb-h">How far behind is each library's Safari profile?</h2>
+    <p>The same check as the <a href="/#leaderboard">Chrome leaderboard</a>, for the libraries' desktop Safari profiles, graded against our capture of real Safari on macOS.</p>
+    <div class="lang-filter" id="sf-lang" role="group" aria-label="Filter the Safari leaderboard by language"></div>
+    <div id="sf-board" class="lbx"><p class="muted">The Safari leaderboard is built by the daily capture once real Safari has been captured.</p></div>
+    <details class="how" id="how-safari">
+      <summary>How we test: verdicts, endpoint, reconnecting and header order</summary>
+        <div class="legend" aria-label="Verdict legend">
+          <p><span class="badge v-exact">Exact</span> Matches real Safari on every counted TLS and HTTP/2 field.</p>
+          <p><span class="badge v-close">Close</span> One counted field is different.</p>
+          <p><span class="badge v-behind">Behind</span> Two or more counted fields are different, so a site checking the handshake has more than one way to tell the library apart from Safari.</p>
+          <p class="muted small">Same counted fields as the <a href="/#leaderboard">Chrome leaderboard</a>: cipher suites, extension set, signature algorithms, supported groups, key shares, certificate compression, HTTP/2 fingerprint. Resumption and extension-order shuffling are shown but never counted.</p>
+        </div>
+      <p class="muted small">iOS profiles aren't graded: we have no real iPhone capture to compare them with.</p>
+      <div id="sf-how-notes"></div>
+    </details>
+  </section>
+
   <!-- Current Safari (capture/lib/capture_safari.py, macOS runner) -->
   <section id="safari" class="card" aria-labelledby="sf-h">
     <h2 id="sf-h">Current Safari fingerprint</h2>
-    <p class="muted small">The Safari that ships with macOS on the GitHub macOS runner, driven by Apple's safaridriver against the same local capture server as Chrome. The Safari leaderboard below grades the libraries' desktop Safari profiles against it.</p>
+    <p class="muted small">The Safari that ships with macOS on the GitHub macOS runner, driven by Apple's safaridriver against the same local capture server as Chrome. The leaderboard above grades the libraries' desktop Safari profiles against it.</p>
     <div id="sf-body"><p class="muted">No Safari capture yet. It's part of the daily capture on macOS and will appear after the next successful run.</p></div>
   </section>
 
-  <!-- Safari leaderboard (leaderboard/build_safari.py) -->
-  <section id="safari-board" aria-labelledby="sfb-h">
-    <h2 id="sfb-h">How far behind is each library's Safari profile?</h2>
-    <p>The same check as the <a href="/#leaderboard">Chrome leaderboard</a>, for the libraries' desktop Safari profiles, graded against our capture of real Safari on macOS. iOS profiles aren't graded: we have no real iPhone capture to compare them with.</p>
-    <div id="sf-board"><p class="muted">The Safari leaderboard is built by the daily capture once real Safari has been captured.</p></div>
-  </section>
 </main>
 
 <footer class="site-footer">

@@ -51,7 +51,7 @@ const VIEWS = [
     const { result } = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => {
       const q = (s) => document.querySelector(s), t = (s) => (q(s) ? q(s).textContent : null);
       const page = document.body.dataset.page || "chrome";
-      const board = { chrome: "#lb .row", firefox: "#ff-board tbody tr.row", safari: "#sf-board tbody tr.row", edge: "#brand-grid .plat dl", brave: "#brand-grid .plat dl" }[page] || "tbody tr.row";
+      const board = { chrome: "#lb .row", firefox: "#ff-board .row", safari: "#sf-board .row", edge: "#brand-grid .plat dl", brave: "#brand-grid .plat dl" }[page] || "tbody tr.row";
       return {
       page,
       navCurrent: t('.browser-nav a[aria-current=page]'),
