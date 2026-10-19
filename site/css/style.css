@@ -225,3 +225,5 @@ details.how[open] > summary{margin-bottom:6px}
 /* Firefox, Safari, Edge, Brave pages: copy buttons never wrap; Edge / Brave summary note */
 body:not([data-page="chrome"]) button.copy{white-space:nowrap;flex:none}
 .brand-note{border-left:3px solid var(--accent);padding-left:10px}
+.alt-note{margin:6px 0;font-size:.85rem}.vmatch{color:var(--ok);font-weight:600}
+@media (max-width:760px){#lb .lbsum .c-behind,#and-board .lbsum .c-behind{grid-column:1 / -1;grid-row:auto;text-align:left;white-space:normal}}

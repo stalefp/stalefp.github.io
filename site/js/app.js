@@ -297,7 +297,7 @@
   var VORDER = { exact: 0, exact_variant: 1, close: 2, behind: 3, "not tested": 4 };
   var VLABEL = { exact: "Exact", exact_variant: "Exact, less common variant", close: "Close", behind: "Behind", "not tested": "Not tested" };
   var VCLS = { exact: "v-exact", exact_variant: "v-variant", close: "v-close", behind: "v-behind", "not tested": "v-na" };
-  var VARLABEL = { "default": "Chrome's default", no_ca34: "Chrome without ca34", pq: "the post-quantum variant" };
+  var VARLABEL = { "default": "Chrome's usual fingerprint", no_ca34: "Chrome's less common fingerprint", pq: "the post-quantum variant" };
   var state = { sort: "verdict", dir: 1, showOlder: false, open: {} };
   var LIBS = [], REF = {};
 
@@ -509,9 +509,9 @@
         el("span", { cls: "c-lib" }, [el("span", { cls: "lib", text: l.library }),
           el("span", { cls: "lang", text: l.language + (l.maintainer ? " · " + l.maintainer : "") + (l.version ? " · " + l.version : "") })]),
         el("span", { cls: "c-prof" }, [el("span", { cls: "mlabel", text: o.profileLabel + ": " }), el("code", { text: l.profile }),
-          l.is_newest_profile === false ? el("span", { cls: "sub", text: "older profile" }) : null]),
+          o.profileSub ? o.profileSub(l) : l.is_newest_profile === false ? el("span", { cls: "sub", text: "older profile" }) : null]),
         el("span", { cls: "c-verdict" }, verdict),
-        el("span", { cls: "c-behind" }, [el("span", { cls: "mlabel", text: "Versions behind: " })].concat(o.behind(l))),
+        el("span", { cls: "c-behind" }, (o.behindLabel === "" ? [] : [el("span", { cls: "mlabel", text: o.behindLabel || "Versions behind: " })]).concat(o.behind(l))),
         el("span", { cls: "c-more", "aria-hidden": "true" })
       ]),
       el("div", { cls: "panel" }, o.panel(l))
@@ -528,9 +528,9 @@
     return [el("div", { cls: "missing" }, chips.length ? chips : [el("span", { cls: "chip none", text: "nothing" })])];
   }
   function chromeVerdictNote(l) {
-    if (l.verdict === "exact") return "matches Chrome's default (with ca34)";
+    if (l.verdict === "exact") return "matches Chrome's usual fingerprint";
     if (l.verdict === "exact_variant") return "matches " + (VARLABEL[l.matched_variant] || l.matched_variant) + "; " +
-      (l.counted_mismatches.length === 1 ? "1 field differs" : l.counted_mismatches.length + " fields differ") + " from the default";
+      (l.counted_mismatches.length === 1 ? "1 field differs" : l.counted_mismatches.length + " fields differ") + " from the usual one";
     if (l.counted_mismatches && l.counted_mismatches.length) return l.counted_mismatches.length === 1 ? "1 field differs" : l.counted_mismatches.length + " fields differ";
     return null;
   }
@@ -543,10 +543,60 @@
       ["HTTP/2 match", h2Cell(l, m)],
       ["HTTP/3", h3Cell(l)],
       ["Missing vs. Chrome", missingChips(l)],
+      ["Versions behind", vbCell(l)],
       ["Tested", [el("time", { datetime: l.tested_at || "", text: localDate(l.tested_at) || "not tested" })]]
-    ])].concat(whyKids(l)).concat([detailBlock(l)]);
+    ]), altNote(l)].concat(whyKids(l)).concat([detailBlock(l)]);
   }
-  var CHROME_COLS = [["library", "Library"], ["profile", "Newest Chrome profile"], ["verdict", "Verdict"], ["behind", "Versions behind"]];
+  /* One row per library in the default view. When a library has several newest profiles (tls-client: Chrome_152 and
+     Chrome_152_PSK), the best match leads (verdict, then fewest counted differences, then resumed connections), and
+     the others are listed in its panel and under "Also show older profiles we tested". */
+  var RESORDER = ["match", "match_variant", "mismatch", "never", "unsupported", "not_tested"];
+  function bestKey(l) {
+    var r = RESORDER.indexOf(l.resumed_status || "not_tested");
+    return [VORDER[l.verdict] == null ? 9 : VORDER[l.verdict], (l.counted_mismatches || []).length, r < 0 ? 9 : r, l.profile.toLowerCase()];
+  }
+  function groupNewest(libs) {
+    var by = {}, order = [];
+    libs.filter(function (l) { return l.is_newest_profile !== false; }).forEach(function (l) {
+      if (!by[l.library]) { by[l.library] = []; order.push(l.library); }
+      by[l.library].push(l);
+    });
+    var lead = {}, alts = {}, altOf = {};
+    order.forEach(function (k) {
+      var g = by[k].slice().sort(function (a, b) { return cmp(bestKey(a), bestKey(b)); });
+      lead[g[0].id] = true; alts[g[0].id] = g.slice(1);
+      g.slice(1).forEach(function (x) { altOf[x.id] = g[0]; });
+    });
+    return { lead: lead, alts: alts, altOf: altOf };
+  }
+  var GROUPS = { lead: {}, alts: {}, altOf: {} };
+  // Plain-words version line: a matching row says it still matches; otherwise how old the profile's Chrome version is.
+  function versionLine(l, curMajor, browser) {
+    var named = l.profile_chrome_major;
+    if (l.verdict === "exact" || l.verdict === "exact_variant")
+      return [el("span", { cls: "vmatch", text: named ? "Named after " + browser + " " + named + ", still matches " + curMajor : "Still matches " + browser + " " + curMajor })];
+    if (l.versions_behind == null) return [el("span", { cls: "na", title: "The profile name doesn't state a Chrome version", text: "Profile name doesn't state a " + browser + " version" })];
+    var by = l.versions_behind_by_platform || {}, keys = Object.keys(by);
+    var old = function (n) { return n + (n === 1 ? " version" : " versions") + " old"; };
+    var head = named ? "Named after " + browser + " " + named : "Profile";
+    if (l.versions_behind_uniform !== false || !keys.length) return [el("span", { text: head + " (" + old(l.versions_behind) + ")" })];
+    return [el("span", { text: head + " (" + keys.map(function (p) { return (PLAT[p] || p) + " " + (by[p] == null ? "?" : by[p]); }).join(", ") + " versions old)" })];
+  }
+  function chromeProfileSub(l) {
+    var lead = GROUPS.altOf[l.id];
+    if (lead) return el("span", { cls: "sub", text: "same Chrome version as " + lead.profile + ", which leads this library's row" });
+    var a = GROUPS.alts[l.id] || [];
+    if (a.length) return el("span", { cls: "sub", text: "also tested: " + a.map(function (x) { return x.profile; }).join(", ") });
+    return l.is_newest_profile === false ? el("span", { cls: "sub", text: "older profile" }) : null;
+  }
+  function altNote(l) {
+    var a = GROUPS.alts[l.id] || [];
+    if (!a.length) return null;
+    return el("p", { cls: "alt-note" }, [el("strong", { text: "Other newest profile" + (a.length === 1 ? "" : "s") + " of this library: " }),
+      a.map(function (x) { return x.profile + " (" + (VLABEL[x.verdict] || x.verdict) + "; resumed connection: " + ((RESUMED[x.resumed_status] || RESUMED.not_tested)[1]).replace(/^[✓✗] /, "") + ")"; }).join("; ") +
+      ". This row shows " + l.profile + " because it matches best" + (a.some(function (x) { return x.verdict === l.verdict; }) ? ", including on resumed connections" : "") + ". Tick \"Also show older profiles we tested\" to see " + (a.length === 1 ? "it as a separate row." : "them as separate rows.")]);
+  }
+  var CHROME_COLS = [["library", "Library"], ["profile", "Newest Chrome profile"], ["verdict", "Verdict"], ["behind", "Chrome version"]];
   function boardHead(cols, sortable) {
     return el("div", { cls: "lbhead", "aria-hidden": sortable ? null : "true" }, cols.map(function (c) {
       if (!sortable) return el("span", { text: c[1] });
@@ -558,23 +608,25 @@
 
   function renderTable() {
     var box = $("#lb"); if (!box) return;
-    var pool = LIBS.filter(function (l) { return state.showOlder || l.is_newest_profile !== false; });
+    GROUPS = groupNewest(LIBS);
+    var pool = LIBS.filter(function (l) { return state.showOlder || GROUPS.lead[l.id]; });
     var rows = pool.filter(langOk);
     rows.sort(function (a, b) { return state.dir * cmp(SORTS[state.sort](a), SORTS[state.sort](b)); });
     box.innerHTML = "";
     box.appendChild(boardHead(CHROME_COLS, true));
     var list = el("div", { cls: "lbrows" });
     rows.forEach(function (l) {
-      list.appendChild(boardRow(l, { profileLabel: "Newest Chrome profile", behind: vbCell, verdictNote: chromeVerdictNote, panel: chromePanel, open: state.open }));
+      list.appendChild(boardRow(l, { profileLabel: "Newest Chrome profile", behindLabel: "", behind: function (x) { return versionLine(x, REF.major, "Chrome"); },
+        profileSub: chromeProfileSub, verdictNote: chromeVerdictNote, panel: chromePanel, open: state.open }));
     });
     if (!rows.length) list.appendChild(el("p", { cls: "empty", text: "No " + langName(state.lang) + " library has a Chrome profile in this list." }));
     box.appendChild(list);
-    renderLangFilter($("#lb-lang"), LIBS.filter(function (l) { return state.showOlder || l.is_newest_profile !== false; }));
+    renderLangFilter($("#lb-lang"), pool);
     if ($("#sort-select option[value='" + state.sort + "']")) $("#sort-select").value = state.sort;
     var hidden = LIBS.length - pool.length;
-    var why = [state.lang !== "all" ? langName(state.lang) + " only" : null, hidden ? hidden + " older profiles hidden" : null].filter(Boolean);
+    var why = [state.lang !== "all" ? langName(state.lang) + " only" : null, hidden ? hidden + " more hidden: older profiles, plus extra newest profiles of libraries already listed" : null].filter(Boolean);
     $("#lb-meta").textContent = rows.length + " of " + LIBS.length + " library profiles shown" + (why.length ? " (" + why.join("; ") + ")" : "") +
-      ". Verdicts compare against Chrome " + (REF.version || "?") + "'s default fingerprint. Tap or click a row for the full comparison.";
+      ". Verdicts compare against Chrome " + (REF.version || "?") + "'s usual fingerprint. Tap or click a row for the full comparison.";
   }
 
   function renderVbNote(lb) {
@@ -941,6 +993,7 @@
       ["TLS match (JA4)", [mark(((l.matches || {}).variants || {}).default ? l.matches.variants.default.ja4_fresh : null)]],
       ["HTTP/2", [el("span", { cls: "line" }, ["settings ", mark(g.settings)]), el("span", { cls: "line" }, ["header order ", mark(g.header_order)])]],
       (l.missing || []).length ? ["Missing vs. Chrome for Android", missingChips(l)] : null,
+      ["Versions behind", [el("span", { text: l.versions_behind == null ? "unknown" : String(l.versions_behind) })]],
       ["Tested", [el("time", { datetime: l.tested_at || "", text: localDate(l.tested_at) || "not tested" })]]
     ])];
     if (l.behind_text) kids.push(el("p", { cls: "why-head", text: l.behind_text }));
@@ -962,11 +1015,11 @@
     box.innerHTML = "";
     box.appendChild(el("p", { cls: "muted small", text: "Graded against real Chrome for Android " + r.android_version + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard. " + (lb.caveats || []).join(" ") }));
     var rows = lb.libraries.filter(langOk);
-    box.appendChild(boardHead([["library", "Library"], ["profile", "Chrome for Android profile"], ["verdict", "Verdict"], ["behind", "Versions behind"]], false));
+    box.appendChild(boardHead([["library", "Library"], ["profile", "Chrome for Android profile"], ["verdict", "Verdict"], ["behind", "Chrome version"]], false));
     var list = el("div", { cls: "lbrows" });
     rows.forEach(function (l) {
-      list.appendChild(boardRow(l, { prefix: "android-", profileLabel: "Chrome for Android profile", panel: androidPanel, open: ANDROID.open,
-        behind: function (x) { return [el("span", { text: x.versions_behind == null ? "unknown" : String(x.versions_behind) })]; } }));
+      list.appendChild(boardRow(l, { prefix: "android-", profileLabel: "Chrome for Android profile", panel: androidPanel, open: ANDROID.open, behindLabel: "",
+        behind: function (x) { return versionLine(x, parseInt(String(r.android_version || "").split(".")[0], 10) || "?", "Chrome"); } }));
     });
     if (!rows.length) list.appendChild(el("p", { cls: "empty", text: "No " + langName(state.lang) + " library offers a Chrome for Android profile we test." }));
     box.appendChild(list);
@@ -975,18 +1028,21 @@
 
   /* ---------------- Summary at the top ---------------- */
   var SUMVR = { exact: 0, exact_variant: 1, close: 2, behind: 3, "not tested": 4 };
-  function sumBoard(boxId, title, lb, browserVersion) {
+  function sumBoard(boxId, title, lb, browserVersion, onePerLibrary) {
     var box = $(boxId); if (!box || !lb) return; box.innerHTML = "";
-    var rows = (lb.libraries || []).filter(function (l) { return l.is_newest_profile !== false && l.verdict !== "not tested"; });
+    var g = onePerLibrary ? groupNewest(lb.libraries || []) : null;
+    var rows = (lb.libraries || []).filter(function (l) { return (g ? g.lead[l.id] : l.is_newest_profile !== false) && l.verdict !== "not tested"; });
     var count = function (v) { return rows.filter(function (l) { return l.verdict === v; }).length; };
     var exact = rows.filter(function (l) { return l.verdict === "exact"; });
     var chip = function (n, v, label) { return n ? el("span", { cls: "badge " + VCLS[v], text: n + " " + label }) : null; };
     box.appendChild(el("h3", { text: title + " " + (browserVersion || "") }));
     box.appendChild(el("p", { cls: "sum-chips" }, [chip(count("exact"), "exact", "exact"), " ", chip(count("exact_variant"), "exact_variant", "less common variant"), " ",
       chip(count("close"), "close", "close"), " ", chip(count("behind"), "behind", "behind")]));
-    box.appendChild(el("p", { cls: "small", text: exact.length ? "Matching current " + title + " exactly: " + exact.map(function (l) { return l.library + " " + l.profile; }).join(", ") + "."
+    var also = function (l) { var a = g ? (g.alts[l.id] || []).filter(function (x) { return x.verdict === "exact"; }) : []; return a.length ? " (also " + a.map(function (x) { return x.profile; }).join(", ") + ")" : ""; };
+    box.appendChild(el("p", { cls: "small", text: exact.length ? "Matching current " + title + " exactly: " + exact.map(function (l) { return l.library + " " + l.profile + also(l); }).join(", ") + "."
       : "No library profile matches current " + title + " exactly right now." }));
-    box.appendChild(el("p", { cls: "muted small", text: "Counts each library's newest tested profiles (" + rows.length + " in total)." }));
+    box.appendChild(el("p", { cls: "muted small", text: g ? "Counts one row per library, its best-matching newest profile (" + rows.length + " libraries)."
+      : "Counts each library's newest tested profiles (" + rows.length + " in total)." }));
   }
   function sumMovers(hist, lb) {
     var box = $("#sum-movers"); if (!box) return; box.innerHTML = "";
@@ -1092,7 +1148,7 @@
         renderChrome(REF, res[1]);
         renderPlatforms(REF, res[3]);
         initTable(res[1]);
-        sumBoard("#sum-chrome", "Chrome", res[1], REF.version);
+        sumBoard("#sum-chrome", "Chrome", res[1], REF.version, true);
         var andP = ((res[3] || {}).platforms || {}).android || {};
         var sec = $("#android-board");
         var jobs = [];
