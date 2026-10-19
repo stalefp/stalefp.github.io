@@ -931,8 +931,8 @@
   /* Firefox and Safari boards (data/firefox_libraries.json, data/safari_libraries.json; leaderboard/build_firefox.py,
      build_safari.py): the same compact <details> rows and language filter as the Chrome boards. */
   var BOARDS = {
-    firefox: { box: "#ff-board", lang: "#ff-lang", how: "#ff-how-notes", name: "Firefox", ver: "firefox_version", prefix: "firefox-", open: {}, lb: null },
-    safari: { box: "#sf-board", lang: "#sf-lang", how: "#sf-how-notes", name: "Safari", ver: "safari_version", prefix: "safari-", open: {}, lb: null }
+    firefox: { box: "#ff-board", lang: "#ff-lang", how: "#ff-how-notes", name: "Firefox", ver: "firefox_version", major: "firefox_major", prefix: "firefox-", open: {}, lb: null },
+    safari: { box: "#sf-board", lang: "#sf-lang", how: "#sf-how-notes", name: "Safari", ver: "safari_version", major: "safari_major", prefix: "safari-", open: {}, lb: null }
   };
   function browserPanel(l, name) {
     var g = l.http2_grade || {}, f = l.fingerprint || {};
@@ -962,11 +962,12 @@
     box.appendChild(el("p", { cls: "muted small", text: "Graded against real " + o.name + " " + r[o.ver] + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard." }));
     var how = $(o.how); if (how) { how.innerHTML = ""; (lb.caveats || []).forEach(function (c) { how.appendChild(el("p", { cls: "muted small", text: c })); }); }
     var rows = lb.libraries.filter(langOk);
-    box.appendChild(boardHead([["library", "Library"], ["profile", o.name + " profile"], ["verdict", "Verdict"], ["behind", "Versions behind"]], false));
+    box.appendChild(boardHead([["library", "Library"], ["profile", o.name + " profile"], ["verdict", "Verdict"], ["behind", o.name + " version"]], false));
     var list = el("div", { cls: "lbrows" });
     rows.forEach(function (l) {
-      list.appendChild(boardRow(l, { prefix: o.prefix, profileLabel: o.name + " profile", open: o.open, panel: function (x) { return browserPanel(x, o.name); },
-        behind: function (x) { return [el("span", { text: x.versions_behind == null ? "unknown" : String(x.versions_behind) })]; } }));
+      list.appendChild(boardRow(l, { prefix: o.prefix, profileLabel: o.name + " profile", open: o.open, panel: function (x) { return browserPanel(x, o.name); }, behindLabel: "",
+        behind: function (x) {
+          return x.versions_behind === 0 && x.verdict !== "exact" ? [el("span", { text: "Named after " + o.name + " " + x.profile_chrome_major + " (current version)" })] : versionLine(x, r[o.major] || "?", o.name); } }));
     });
     if (!rows.length) list.appendChild(el("p", { cls: "empty", text: "No " + langName(state.lang) + " library offers a " + o.name + " profile we test." }));
     box.appendChild(list);
@@ -1221,11 +1222,11 @@
     if (diff.length) box.appendChild(el("p", { cls: "small", text: "Differs from Chrome (same OS): " + diff.join(", ") + "." }));
     if (same.length) box.appendChild(el("p", { cls: "small", text: "Same as Chrome: " + same.join(", ") + "." }));
     var v = ref && variantById(ref, "no_ca34"), d = ref && variantById(ref, "default");
-    var tlsLike = v && plats.every(function (p) { return p.ja4 === v.ja4; }) ? "Chrome's less common fingerprint without the trust-anchors extension (ca34)"
-      : d && plats.every(function (p) { return p.ja4 === d.ja4; }) ? "Chrome's main fingerprint" : null;
+    var tlsLike = v && plats.every(function (p) { return p.ja4 === v.ja4; }) ? "Chrome's less common fingerprint"
+      : d && plats.every(function (p) { return p.ja4 === d.ja4; }) ? "Chrome's usual fingerprint" : null;
     var note = "Picking a library: we don't grade any library's " + name + " profile. " + name + " is built on Chromium, so the place to start is a Chrome profile from the ";
     box.appendChild(el("p", { cls: "small brand-note" }, [note, el("a", { href: ROOT + "#leaderboard", text: "Chrome leaderboard" }), ". " +
-      (tlsLike ? "At the TLS layer " + name + " sends " + tlsLike + ", so look for a profile that matches " + (tlsLike.indexOf("without") > 0 ? "that variant" : "it") + ". " : "") +
+      (tlsLike ? "At the TLS layer " + name + " sends " + tlsLike + ", so look for a profile that matches " + (tlsLike.indexOf("less common") > 0 ? "that one" : "it") + ". " : "") +
       "A Chrome profile still sends Chrome's own user-agent and sec-ch-ua headers; to look like " + name + " you'd set the ones shown below yourself."]));
     box.appendChild(el("p", { cls: "muted small", text: "Captured on " + plats.map(label).join(" and ") + "; compared with Chrome " + plats.map(function (p) { return (p.vs_chrome || {}).chrome_version + " on " + label(p); }).join(", ") + "." }));
   }

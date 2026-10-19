@@ -11,7 +11,7 @@
   "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
   "source": "capture/data/safari/latest.json"
  },
- "verdict_rules": "Same counted fields and thresholds as the Chrome leaderboard, against Safari's default fingerprint. Versions behind = current Safari major minus the major in the profile name.",
+ "verdict_rules": "Same counted fields and thresholds as the Chrome leaderboard, against Safari's usual fingerprint. Versions behind = current Safari major minus the major in the profile name.",
  "caveats": [
   "Libraries are tested against the public TLS echo endpoint (tls.peet.ws); real Safari (preinstalled on the GitHub macOS runner, driven by safaridriver) is captured against our local capture server. Both record the raw ClientHello and HTTP/2 frames.",
   "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",
@@ -32,7 +32,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/py/curl_cffi_safari2601.json"
    },
    "verdict": "exact",
-   "verdict_reason": "Every counted TLS and HTTP/2 field matches Safari's default fingerprint (with ca34).",
+   "verdict_reason": "Every counted TLS and HTTP/2 field matches Safari's usual fingerprint.",
    "counted_mismatches": [],
    "diff": [
     {
@@ -350,7 +350,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/py/primp_safari_26.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Safari's default fingerprint: supported_groups, cert_compression.",
+   "verdict_reason": "2 counted fields differ from Safari's usual fingerprint: supported_groups, cert_compression.",
    "counted_mismatches": [
     "supported_groups",
     "cert_compression"
@@ -696,7 +696,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/py/curl_cffi_safari184.json"
    },
    "verdict": "behind",
-   "verdict_reason": "3 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares.",
+   "verdict_reason": "3 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares.",
    "counted_mismatches": [
     "extensions",
     "supported_groups",
@@ -1055,7 +1055,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/py/rnet_Safari18_5.json"
    },
    "verdict": "behind",
-   "verdict_reason": "3 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares.",
+   "verdict_reason": "3 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares.",
    "counted_mismatches": [
     "extensions",
     "supported_groups",
@@ -1406,7 +1406,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/py/rnet_Safari26_2.json"
    },
    "verdict": "behind",
-   "verdict_reason": "3 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares.",
+   "verdict_reason": "3 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares.",
    "counted_mismatches": [
     "extensions",
     "supported_groups",
@@ -1757,7 +1757,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/go/out/azuretls_Safari.json"
    },
    "verdict": "behind",
-   "verdict_reason": "4 counted fields differ from Safari's default fingerprint: extensions, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "4 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "extensions",
     "supported_groups",
@@ -2119,7 +2119,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/go/out/tls-client(go)_Safari_15_6_1.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "extensions",
     "signature_algorithms",
@@ -2494,7 +2494,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/go/out/tls-client(go)_Safari_16_0.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "extensions",
     "signature_algorithms",
@@ -2869,7 +2869,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/go/out/utls_HelloSafari_Auto.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "extensions",
     "signature_algorithms",
@@ -3244,7 +3244,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/py/noble-tls_safari_16_0.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "extensions",
     "signature_algorithms",
@@ -3609,7 +3609,7 @@
     "fresh": "leaderboard/raw/safari-20261018T152330Z/py/tls-client(py)_safari_16_0.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Safari's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "extensions",
     "signature_algorithms",

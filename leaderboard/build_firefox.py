@@ -65,6 +65,9 @@ def timeline():
 
 
 def to_ff(text):
+    # Plain words, as on the Chrome board: "usual fingerprint", no ca34 jargon outside the technical details.
+    if text:
+        text = text.replace(" (with ca34)", "").replace("default fingerprint", "usual fingerprint")
     return text.replace("Chrome's", "Firefox's").replace("Chrome", "Firefox") if text else text
 
 
@@ -146,7 +149,7 @@ def build(run):
     data = dict(schema_version="firefox-leaderboard-1", generated_at=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 reference=dict(browser="Mozilla Firefox", firefox_version=raw["version"], firefox_major=cur, captured_at=raw["captured_at"],
                                os=raw.get("os"), ja4_fresh=rf["ja4"], http2_akamai=rf["http2"]["akamai"], source="capture/data/firefox/latest.json"),
-                verdict_rules="Same counted fields and thresholds as the Chrome leaderboard, against Firefox's default fingerprint. "
+                verdict_rules="Same counted fields and thresholds as the Chrome leaderboard, against Firefox's usual fingerprint. "
                               "Versions behind = current Firefox release major minus the major in the profile name.",
                 caveats=["Libraries are tested against the public TLS echo endpoint (tls.peet.ws); real Firefox is captured against our local capture server. Both record the raw ClientHello and HTTP/2 frames.",
                          "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",

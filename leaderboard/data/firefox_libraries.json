@@ -11,7 +11,7 @@
   "http2_akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
   "source": "capture/data/firefox/latest.json"
  },
- "verdict_rules": "Same counted fields and thresholds as the Chrome leaderboard, against Firefox's default fingerprint. Versions behind = current Firefox release major minus the major in the profile name.",
+ "verdict_rules": "Same counted fields and thresholds as the Chrome leaderboard, against Firefox's usual fingerprint. Versions behind = current Firefox release major minus the major in the profile name.",
  "caveats": [
   "Libraries are tested against the public TLS echo endpoint (tls.peet.ws); real Firefox is captured against our local capture server. Both record the raw ClientHello and HTTP/2 frames.",
   "Resumption, extension-order shuffling and header order come from the behaviour probe (leaderboard/harness/probe.py): 8 requests per row on one client against our local capture server, which closes each connection, with the browser's captured header set passed in the browser's order. Header order counts toward the verdict only where the exact header set arrived in the same order on every request.",
@@ -32,7 +32,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/go/out/azuretls_Firefox.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "supported_groups"
@@ -399,7 +399,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/go/out/tls-client(go)_Firefox_148.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "supported_groups"
@@ -770,7 +770,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/py/curl_cffi_firefox144.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "supported_groups"
@@ -1137,7 +1137,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/py/curl_cffi_firefox147.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "supported_groups"
@@ -1504,7 +1504,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/py/rnet_Firefox139.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "supported_groups"
@@ -1870,7 +1870,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/py/rnet_Firefox147.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "supported_groups"
@@ -2236,7 +2236,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/ext/wreq_Firefox151.json"
    },
    "verdict": "behind",
-   "verdict_reason": "2 counted fields differ from Firefox's default fingerprint: ciphers, supported_groups.",
+   "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "supported_groups"
@@ -2599,7 +2599,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/go/out/tls-client(go)_Firefox_147.json"
    },
    "verdict": "behind",
-   "verdict_reason": "3 counted fields differ from Firefox's default fingerprint: ciphers, signature_algorithms, supported_groups.",
+   "verdict_reason": "3 counted fields differ from Firefox's usual fingerprint: ciphers, signature_algorithms, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "signature_algorithms",
@@ -2985,7 +2985,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/py/noble-tls_firefox_147.json"
    },
    "verdict": "behind",
-   "verdict_reason": "3 counted fields differ from Firefox's default fingerprint: ciphers, signature_algorithms, supported_groups.",
+   "verdict_reason": "3 counted fields differ from Firefox's usual fingerprint: ciphers, signature_algorithms, supported_groups.",
    "counted_mismatches": [
     "ciphers",
     "signature_algorithms",
@@ -3350,7 +3350,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/ext/hrequests_firefox132.json"
    },
    "verdict": "behind",
-   "verdict_reason": "4 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, http2_akamai.",
+   "verdict_reason": "4 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, http2_akamai.",
    "counted_mismatches": [
     "ciphers",
     "extensions",
@@ -3747,7 +3747,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/go/out/utls_HelloFirefox_Auto.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "ciphers",
     "extensions",
@@ -4149,7 +4149,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/ext/cycletls_firefox.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "ciphers",
     "extensions",
@@ -4554,7 +4554,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/py/tls-client(py)_firefox_120.json"
    },
    "verdict": "behind",
-   "verdict_reason": "5 counted fields differ from Firefox's default fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "5 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "ciphers",
     "extensions",
@@ -4957,7 +4957,7 @@
     "fresh": "leaderboard/raw/firefox-20261018T152323Z/ext/got-scraping_firefox.json"
    },
    "verdict": "behind",
-   "verdict_reason": "6 counted fields differ from Firefox's default fingerprint: ciphers, extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
+   "verdict_reason": "6 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
    "counted_mismatches": [
     "ciphers",
     "extensions",

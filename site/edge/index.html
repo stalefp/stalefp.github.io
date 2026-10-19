@@ -45,9 +45,10 @@
   <section id="edge" class="card" aria-labelledby="brands-h">
     <h2 id="brands-h">Current Microsoft Edge fingerprint (Linux and Windows)</h2>
     <div id="brand-grid" class="plat-grid two"><p class="muted">No Microsoft Edge capture yet. It's added to the daily capture and will appear after the next run.</p></div>
-  <details class="how" id="how-edge">
-      <summary>How we test: where the Edge builds come from</summary>
+    <details class="how" id="how-edge">
+      <summary>How we test: where the Edge builds come from, and what the fingerprint names mean</summary>
       <p class="muted small">On Linux: the official stable build from Microsoft's signed Linux apt repo (repo signature checked against a pinned key, package checked against the signed SHA256). On Windows: the Edge that ships with the GitHub Windows runner, updated from Microsoft's own Stable MSI feed when that has a newer build (MSI checked against Microsoft's published SHA256 and Authenticode signature). Fresh profile, no flags, headed, same local capture server as Chrome, captured daily and kept separate from the Chrome data. "Same as Chrome" compares with our Chrome capture on the same OS.</p>
+      <p class="muted small">Technical detail: "Chrome's usual fingerprint" is the TLS ClientHello Chrome sends by default, which includes the trust-anchors extension (ca34). "Chrome's less common fingerprint" is the same ClientHello without ca34, which Chrome sends when that feature is switched off for a share of users. They have different JA4 values; the Chrome leaderboard checks library profiles against both.</p>
     </details>
   </section>
 </main>
