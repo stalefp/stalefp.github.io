@@ -7,7 +7,7 @@
    "version": "155.0.4283.62",
    "brand_version": "155.0.4283.62",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T10:14:56-05:00",
+   "captured_at": "2026-10-19T05:20:13-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "155.0.4283.62-1",
@@ -66,7 +66,7 @@
      "version": "155.0.4283.62",
      "brand_version": "155.0.4283.62",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T10:14:56-05:00",
+     "captured_at": "2026-10-19T05:20:13-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
       "version": "155.0.4283.62-1",
@@ -125,13 +125,13 @@
      "version": "155.0.4283.62",
      "brand_version": "155.0.4283.62",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T10:18:44-05:00",
+     "captured_at": "2026-10-19T05:23:38-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "155.0.4283.62",
       "repo": "edgeupdates.microsoft.com Stable x64 MSI",
       "sha256": "20119979eb1670f670d38c093fd1c61f5a91d880c473f8614825ce9aef35f68a",
-      "signing_key": "CN=Microsoft Corporation",
+      "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
      "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
@@ -186,7 +186,7 @@
    "version": "155.1.97.59",
    "brand_version": "1.97.59",
    "chromium_major": 155,
-   "captured_at": "2026-10-18T10:15:25-05:00",
+   "captured_at": "2026-10-19T05:20:42-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
     "version": "1.97.59",
@@ -246,7 +246,7 @@
      "version": "155.1.97.59",
      "brand_version": "1.97.59",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T10:15:25-05:00",
+     "captured_at": "2026-10-19T05:20:42-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
       "version": "1.97.59",
@@ -306,13 +306,13 @@
      "version": "155.1.97.59",
      "brand_version": "1.97.59",
      "chromium_major": 155,
-     "captured_at": "2026-10-18T10:20:18-05:00",
+     "captured_at": "2026-10-19T05:25:03-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "155.1.97.59",
       "repo": "github.com/brave/brave-browser v1.97.59 BraveBrowserStandaloneSilentSetup.exe",
       "sha256": "0288daea8edaa8cb2ffd9009b056cbb8eb149face1b5960ef12f3fa667d098b1",
-      "signing_key": "CN=\"Brave Software",
+      "signing_key": "Brave Software, Inc.",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
      "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
