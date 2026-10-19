@@ -577,10 +577,10 @@
       return [el("span", { cls: "vmatch", text: named ? "Named after " + browser + " " + named + ", still matches " + curMajor : "Still matches " + browser + " " + curMajor })];
     if (l.versions_behind == null) return [el("span", { cls: "na", title: "The profile name doesn't state a Chrome version", text: "Profile name doesn't state a " + browser + " version" })];
     var by = l.versions_behind_by_platform || {}, keys = Object.keys(by);
-    var old = function (n) { return n + (n === 1 ? " version" : " versions") + " old"; };
+    var old = function (n) { return n === 0 ? "current version" : n + (n === 1 ? " version" : " versions") + " old"; };
     var head = named ? "Named after " + browser + " " + named : "Profile";
     if (l.versions_behind_uniform !== false || !keys.length) return [el("span", { text: head + " (" + old(l.versions_behind) + ")" })];
-    return [el("span", { text: head + " (" + keys.map(function (p) { return (PLAT[p] || p) + " " + (by[p] == null ? "?" : by[p]); }).join(", ") + " versions old)" })];
+    return [el("span", { text: head + " (" + keys.map(function (p) { return (PLAT[p] || p) + " " + (by[p] == null ? "?" : by[p] === 0 ? "current" : by[p]); }).join(", ") + " versions old)" })];
   }
   function chromeProfileSub(l) {
     var lead = GROUPS.altOf[l.id];
