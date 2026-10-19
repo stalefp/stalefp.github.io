@@ -764,22 +764,8 @@
     a.addEventListener("change", run); b.addEventListener("change", run); return run();
   }
 
-  /* ---------------- README badges (files built by leaderboard/badges.py at deploy) ---------------- */
+  /* Row ids -> URL-safe slugs (row anchors; also the /api/badges/<slug>.json file names built by leaderboard/badges.py) */
   function badgeSlug(id) { return id.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
-  function renderBadges(lb) {
-    var box = $("#badge-list"); if (!box) return; box.innerHTML = "";
-    var base = ROOT;
-    (lb.libraries || []).filter(function (l) { return l.is_newest_profile !== false; }).forEach(function (l) {
-      var ep = base + "api/badges/" + badgeSlug(l.id) + ".json";
-      var img = "https://img.shields.io/endpoint?url=" + encodeURIComponent(ep);
-      var md = "[![Chrome match](" + img + ")](" + base + "#leaderboard)";
-      box.appendChild(el("div", { cls: "badge-item" }, [
-        el("span", { cls: "lib", text: l.library + " " }), el("code", { text: l.profile }), " ",
-        el("img", { src: img, alt: "Chrome match badge for " + l.library + " " + l.profile, loading: "lazy", height: "20" }),
-        el("div", { cls: "code-row" }, [el("code", { cls: "md", text: md }), copyBtn(md)])
-      ]));
-    });
-  }
 
   /* ---------------- Current Firefox ---------------- */
   function renderFirefox(ff, o) {
@@ -1098,7 +1084,6 @@
         }, function () { if (sec) sec.hidden = true; }));
         else if (sec) sec.hidden = true;
         jobs.push(getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); sumMovers(h, res[1]); }, function () { /* no history yet */ }));
-        renderBadges(res[1]);
         renderFooter(res[1]);
         jobs.push(getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { return initVersionDiff(REF, res[0], res[2], arch); }));
         jobs.push(renderChanges(REF, res[2]));

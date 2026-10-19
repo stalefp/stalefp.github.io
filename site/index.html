@@ -210,15 +210,8 @@
       <div class="wide"><dt><a href="api/android_libraries.json"><code>/api/android_libraries.json</code></a></dt><dd>The Chrome for Android leaderboard: each library's Android profile graded against our verified Chrome for Android capture, same row format as <code>libraries.json</code>.</dd></div>
       <div class="wide"><dt><a href="api/history.json"><code>/api/history.json</code></a></dt><dd>Index of past captures; each file is at <code>/data/history/&lt;file&gt;</code>.</dd></div>
     </dl>
-    <p class="muted small">Firefox has its own feeds and badges, listed on the <a href="/firefox/#api">Firefox page</a>.</p>
+    <p class="muted small">Firefox has its own feeds, listed on the <a href="/firefox/#api">Firefox page</a>.</p>
     <p class="muted small">Example: <code>curl -s https://stalefp.github.io/api/latest.json | jq -r .version</code>. Field names may grow but existing ones won't be renamed without notice here.</p>
-  </section>
-
-  <!-- README badges -->
-  <section id="badges" class="card" aria-labelledby="badges-h">
-    <h2 id="badges-h">README badges</h2>
-    <p class="muted small">Show how current a library's Chrome profile is. Each badge is a <a href="https://shields.io/badges/endpoint-badge">shields.io endpoint</a> at <code>/api/badges/&lt;id&gt;.json</code>, rebuilt every time the site deploys. Paste the Markdown into a README.</p>
-    <div id="badge-list"><p class="muted">Loading…</p></div>
   </section>
 
   <!-- 4. Early access -->
