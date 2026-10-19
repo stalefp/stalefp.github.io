@@ -20,3 +20,11 @@ node --experimental-websocket tools/verify.js http://127.0.0.1:8765/   # headles
 - `data/platforms.json` (from `capture/data/platforms/index.json`) feeds the "Chrome on Linux, Windows and macOS" card;
   a platform without a capture shows a "Not captured yet" note, never Linux values.
 - The early-access form posts to FormSubmit via `fetch` (`FORMSUBMIT_ENDPOINT` in `js/app.js`).
+
+## Pre-rendered main page
+
+At deploy, `.github/workflows/pages.yml` runs `site/tools/prerender.js _site index.html`: it loads the assembled main page in
+headless Chrome, waits for `js/app.js` to finish (`<html data-rendered="1">`), and writes the rendered HTML back, so the
+deployed `/` already contains the current numbers and leaderboard rows. `js/app.js` then runs on top and rebuilds the same
+nodes, so every renderer on the main page must clear its container before filling it. If the script fails it writes nothing
+and the plain page is deployed.

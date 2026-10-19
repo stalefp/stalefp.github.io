@@ -48,6 +48,15 @@ jobs:
             python3 leaderboard/badges.py site/data/firefox_libraries.json _site/api/badges/firefox "Firefox match"
             cp site/data/firefox_libraries.json _site/api/firefox_libraries.json
           fi
+      # Main page: write today's real numbers and leaderboard rows into index.html, so it reads correctly without JS and
+      # without a "Loading…" flash. Best effort: on any failure the script writes nothing and the plain page deploys.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pre-render the main page
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node --experimental-websocket site/tools/prerender.js _site index.html
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

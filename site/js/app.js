@@ -200,7 +200,7 @@
       stale.hidden = false;
       stale.textContent = "This capture is Chrome " + ref.version + "; when it was taken, Linux stable was " + lin.newest + ".";
     }
-    var dl = $("#chrome-details");
+    var dl = $("#chrome-details"); dl.innerHTML = "";
     var rows = [
       ["Signature algorithms", named(ref.sigalgs, NAMES.sig)],
       ["Supported groups", named(ref.groups, NAMES.grp)],
@@ -286,7 +286,8 @@
         note
       ]));
     });
-    if (plats.android && plats.android.status === "captured" && (plats.android.android || {}).version_verified) $("#platforms-h").textContent = "Chrome on Linux, Windows, macOS and Android";
+    $("#platforms-h").textContent = plats.android && plats.android.status === "captured" && (plats.android.android || {}).version_verified
+      ? "Chrome on Linux, Windows, macOS and Android" : "Chrome on Linux, Windows and macOS";
     $("#platform-meta").textContent = captured === shown
       ? "Captured on GitHub's hosted runners" + (shown > 3 ? " (Android on an emulator, not a physical phone)" : "") + ". User-agent strings differ by OS by design and aren't part of JA4."
       : "Platforms without a capture are left empty on purpose: we never copy the Linux values over.";
@@ -374,7 +375,23 @@
     return Object.keys(by).map(function (p) { return el("span", { cls: "line", text: (PLAT[p] || p) + " " + (by[p] == null ? "?" : by[p]) }); });
   }
 
-  function detailRow(l) {
+  // Full comparison for one row (opened from the row's details panel): variant table, field diff, HTTP/3 diff.
+  function diffTable(head, list) {
+    var show = function (v) { return v == null ? "not tested" : Array.isArray(v) ? v.join(", ") : typeof v === "object" ? JSON.stringify(v) : String(v); };
+    var t = el("table", { cls: "diff-table stack" }, [el("thead", {}, [el("tr", {}, head.map(function (h) { return el("th", { text: h }); }))])]);
+    var tb = el("tbody");
+    (list || []).forEach(function (d) {
+      tb.appendChild(el("tr", {}, [
+        el("td", { "data-label": head[0], text: d.label + (d.counts_toward_verdict ? "" : " (not counted)") }),
+        el("td", { "data-label": head[1], cls: "st-" + d.status, text: d.status.replace("_", " ") + (d.note ? " · " + d.note : "") }),
+        el("td", { "data-label": head[2] }, [el("code", { text: show(d.chrome) })]),
+        el("td", { "data-label": head[3] }, [el("code", { text: show(d.library) })])
+      ]));
+    });
+    t.appendChild(tb);
+    return t;
+  }
+  function detailBlock(l) {
     var f = l.fingerprint || {};
     var info = el("div", { cls: "small" }, [
       el("p", {}, ["JA4 fresh: ", el("code", { text: f.ja4_fresh || "not tested" })]),
@@ -384,49 +401,39 @@
       el("p", {}, ["HTTP/2: ", el("code", { text: f.http2_akamai || "not tested" })]),
       el("p", { cls: "muted" }, ["Version " + (l.version || "unknown") + (l.note ? " · " + l.note : "") + " · verdict: " + l.verdict_reason])
     ]);
-    var vt = el("table", { cls: "diff-table variant-table" }, [el("thead", {}, [el("tr", {}, [el("th", { text: "Chrome variant" }), el("th", { text: "Chrome JA4" }),
-      el("th", { text: "JA4 match" }), el("th", { text: "Counted fields that differ" }), el("th", { text: "Resumed JA4" }), el("th", { text: "QUIC JA4" })])])]);
+    var vhead = ["Chrome variant", "Chrome JA4", "JA4 match", "Counted fields that differ", "Resumed JA4", "QUIC JA4"];
+    var vt = el("table", { cls: "diff-table stack variant-table" }, [el("thead", {}, [el("tr", {}, vhead.map(function (h) { return el("th", { text: h }); }))])]);
     var vtb = el("tbody");
     (REF.variants || []).forEach(function (v) {
       var x = pv(l, v.id);
-      vtb.appendChild(el("tr", {}, [el("td", { text: v.label + (v.isDefault ? " · verdict basis" : "") }), el("td", {}, [el("code", { text: v.ja4 || "not captured" })]),
-        el("td", {}, [mark(x.ja4_fresh)]),
-        el("td", { text: x.counted_mismatches ? (x.counted_mismatches.length ? x.counted_mismatches.join(", ") : "none") : "not tested" }),
-        el("td", {}, [x.ja4_resumed == null ? el("span", { cls: "na", text: "n/a" }) : mark(x.ja4_resumed)]),
-        el("td", {}, [x.quic_ja4 == null ? el("span", { cls: "na", text: "n/a" }) : mark(x.quic_ja4)])]));
+      vtb.appendChild(el("tr", {}, [el("td", { "data-label": vhead[0], text: v.label + (v.isDefault ? " · verdict basis" : "") }), el("td", { "data-label": vhead[1] }, [el("code", { text: v.ja4 || "not captured" })]),
+        el("td", { "data-label": vhead[2] }, [mark(x.ja4_fresh)]),
+        el("td", { "data-label": vhead[3], text: x.counted_mismatches ? (x.counted_mismatches.length ? x.counted_mismatches.join(", ") : "none") : "not tested" }),
+        el("td", { "data-label": vhead[4] }, [x.ja4_resumed == null ? el("span", { cls: "na", text: "n/a" }) : mark(x.ja4_resumed)]),
+        el("td", { "data-label": vhead[5] }, [x.quic_ja4 == null ? el("span", { cls: "na", text: "n/a" }) : mark(x.quic_ja4)])]));
     });
     vt.appendChild(vtb);
-    var tbl = el("table", { cls: "diff-table" }, [el("thead", {}, [el("tr", {}, [el("th", { text: "Field (vs Chrome's default)" }), el("th", { text: "Status" }), el("th", { text: "Chrome" }), el("th", { text: "Library" })])])]);
-    var show = function (v) { return v == null ? "not tested" : Array.isArray(v) ? v.join(", ") : typeof v === "object" ? JSON.stringify(v) : String(v); };
-    var fill = function (tbody, list) {
-      (list || []).forEach(function (d) {
-        tbody.appendChild(el("tr", {}, [
-          el("td", { text: d.label + (d.counts_toward_verdict ? "" : " (not counted)") }),
-          el("td", { cls: "st-" + d.status, text: d.status.replace("_", " ") + (d.note ? " · " + d.note : "") }),
-          el("td", {}, [el("code", { text: show(d.chrome) })]),
-          el("td", {}, [el("code", { text: show(d.library) })])
-        ]));
-      });
-    };
-    var tb = el("tbody"); fill(tb, l.diff); tbl.appendChild(tb);
+    var tbl = diffTable(["Field (vs Chrome's default)", "Status", "Chrome", "Library"], l.diff);
     var h = l.http3 || {}, h3block;
     if (h.status === "tested") {
-      var ht = el("table", { cls: "diff-table" }, [el("thead", {}, [el("tr", {}, [el("th", { text: "HTTP/3 field" }), el("th", { text: "Status" }), el("th", { text: "Chrome" }), el("th", { text: "Library" })])])]);
-      var htb = el("tbody"); fill(htb, h.diff); ht.appendChild(htb);
       h3block = el("div", { cls: "small" }, [el("p", {}, ["HTTP/3: QUIC JA4 ", el("code", { text: h.ja4 }), " vs Chrome ", el("code", { text: h.chrome_ja4 }),
-        " · SETTINGS ", el("code", { text: h3SettingsText(h.h3_settings, h.h3_grease_settings) || "not seen" }), " · tested " + (localDate(h.tested_at) || "")]), ht]);
+        " · SETTINGS ", el("code", { text: h3SettingsText(h.h3_settings, h.h3_grease_settings) || "not seen" }), " · tested " + (localDate(h.tested_at) || "")]),
+        diffTable(["HTTP/3 field", "Status", "Chrome", "Library"], h.diff)]);
     } else {
       h3block = el("p", { cls: "small muted", text: "HTTP/3: " + (h.status === "no_support" ? "no HTTP/3 support" : h.status === "failed" ? "failed" : "not tested") + (h.reason ? " (" + h.reason + ")" : "") });
     }
     var nt = (l.not_tested || []).length ? el("p", { cls: "muted small", text: "Not tested: " + l.not_tested.join("; ") }) : null;
-    return el("tr", { cls: "detail" }, [el("td", { colspan: "11" }, [info, vt, tbl, h3block, nt])]);
+    return el("details", { cls: "more deep" }, [el("summary", { text: "Field-by-field diff and all three Chrome variants" }), info, vt, tbl, h3block, nt]);
   }
 
   var ROWHIST = { entries: [] };
   function rowHistory(id) {
     return (ROWHIST.entries || []).filter(function (e) { return e.rows && e.rows[id]; }).map(function (e) { return { date: e.date, chrome: e.chrome_version, r: e.rows[id] }; });
   }
-  function whyRow(l) {
+  function fixLine(l, label) {
+    return el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: label }), el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]);
+  }
+  function whyKids(l) {
     // Plain-words summary + reasons, generated by leaderboard/build.py from the field diff; notes from leaderboard/notes.json
     var kids = [];
     if (l.behind_text) kids.push(el("p", { cls: "why-head", text: l.behind_text }));
@@ -449,52 +456,125 @@
     if (items.length) kids.push(el("ul", { cls: "why-list" }, items));
     if ((l.behaviour || []).length) kids.push(el("ul", { cls: "why-list behaviour" }, l.behaviour.map(function (b) { return el("li", { text: b }); })));
     if (l.release_update) kids.push(el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?") + "; we re-tested it the day we saw it.", text: l.release_update.text }));
-    if (l.fix) kids.push(el("div", { cls: "fix" }, [el("span", { cls: "fix-label", text: "One-line fix (same library, " + (VLABEL[l.fix.to_verdict] || l.fix.to_verdict) + " in our test): " }),
-      el("code", { cls: "fix-old", text: l.fix.old }), " → ", el("code", { cls: "fix-new", text: l.fix.new })]));
+    if (l.fix) kids.push(fixLine(l, "One-line fix (same library, " + (VLABEL[l.fix.to_verdict] || l.fix.to_verdict) + " in our test): "));
     (l.notes || []).forEach(function (n) { kids.push(el("p", { cls: "why-note", text: n })); });
-    return el("tr", { cls: "why-row" }, [el("td", { colspan: "11" }, kids)]);
+    return kids;
+  }
+
+  /* Language filter (?lang=python): one setting shared by the Chrome and Android boards, kept in the URL so it can be linked.
+     Languages come from each row's "language" field, which leaderboard/build*.py copy from their library registries. */
+  var LANG_FIRST = ["Python", "Go", "Node.js", "Rust"];
+  function langSlug(s) { return String(s || "").toLowerCase().replace(/\.js$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
+  function langFromUrl() { try { return langSlug(new URLSearchParams(location.search).get("lang") || "") || "all"; } catch (e) { return "all"; } }
+  state.lang = langFromUrl();
+  var LANG_LIBS = [];   // every row the filter applies to (Chrome + Android), for the button list
+  var langRenderers = [];
+  function langList() {
+    var seen = {};
+    LANG_LIBS.forEach(function (l) { if (l.language) seen[l.language] = 1; });
+    var all = Object.keys(seen);
+    return LANG_FIRST.filter(function (x) { return seen[x]; }).concat(all.filter(function (x) { return LANG_FIRST.indexOf(x) < 0; }).sort());
+  }
+  function langName(slug) { var m = langList().filter(function (x) { return langSlug(x) === slug; })[0]; return m || slug; }
+  function setLang(slug) {
+    state.lang = slug;
+    try {
+      var u = new URL(location.href);
+      if (slug === "all") u.searchParams.delete("lang"); else u.searchParams.set("lang", slug);
+      history.replaceState(null, "", u.pathname + u.search + u.hash);
+    } catch (e) { /* file:// or old browser: filter still works, just not in the URL */ }
+    langRenderers.forEach(function (f) { f(); });
+  }
+  function renderLangFilter(box, libs) {
+    if (!box) return;
+    box.innerHTML = "";
+    var count = function (slug) { return libs.filter(function (l) { return slug === "all" || langSlug(l.language) === slug; }).length; };
+    [["all", "All"]].concat(langList().map(function (x) { return [langSlug(x), x]; })).forEach(function (x) {
+      var b = el("button", { type: "button", cls: "lang-btn", "aria-pressed": state.lang === x[0] ? "true" : "false", "data-lang": x[0] },
+        [x[1], el("span", { cls: "lang-n", text: " " + count(x[0]) })]);
+      b.addEventListener("click", function () { setLang(x[0]); });
+      box.appendChild(b);
+    });
+  }
+  function langOk(l) { return state.lang === "all" || langSlug(l.language) === state.lang; }
+
+  // One leaderboard row: a native <details> (keyboard and screen-reader friendly, works without JS). The summary shows
+  // library, newest profile, verdict and versions behind; the panel holds everything else.
+  function boardRow(l, o) {
+    var vid = "row-" + (o.prefix || "") + badgeSlug(l.id);
+    var verdict = [el("span", { cls: "badge " + (VCLS[l.verdict] || "v-na"), text: VLABEL[l.verdict] || l.verdict })];
+    if (o.verdictNote) { var vn = o.verdictNote(l); if (vn) verdict.push(el("span", { cls: "pop-note", text: vn })); }
+    var det = el("details", { cls: "row lbrow", id: vid, "data-lang": langSlug(l.language) }, [
+      el("summary", { cls: "lbsum" }, [
+        el("span", { cls: "c-lib" }, [el("span", { cls: "lib", text: l.library }),
+          el("span", { cls: "lang", text: l.language + (l.maintainer ? " · " + l.maintainer : "") + (l.version ? " · " + l.version : "") })]),
+        el("span", { cls: "c-prof" }, [el("span", { cls: "mlabel", text: o.profileLabel + ": " }), el("code", { text: l.profile }),
+          l.is_newest_profile === false ? el("span", { cls: "sub", text: "older profile" }) : null]),
+        el("span", { cls: "c-verdict" }, verdict),
+        el("span", { cls: "c-behind" }, [el("span", { cls: "mlabel", text: "Versions behind: " })].concat(o.behind(l))),
+        el("span", { cls: "c-more", "aria-hidden": "true" })
+      ]),
+      el("div", { cls: "panel" }, o.panel(l))
+    ]);
+    if (o.open && o.open[l.id]) det.open = true;
+    det.addEventListener("toggle", function () { if (o.open) o.open[l.id] = det.open; });
+    return det;
+  }
+  function panelGrid(pairs) {
+    return el("dl", { cls: "panel-grid" }, pairs.filter(Boolean).map(function (p) { return el("div", {}, [el("dt", { text: p[0] }), el("dd", {}, p[1])]); }));
+  }
+  function missingChips(l) {
+    var chips = (l.missing || []).map(function (i) { return el("span", { cls: "chip", title: i.label, text: shortLabel(i) }); });
+    return [el("div", { cls: "missing" }, chips.length ? chips : [el("span", { cls: "chip none", text: "nothing" })])];
+  }
+  function chromeVerdictNote(l) {
+    if (l.verdict === "exact") return "matches Chrome's default (with ca34)";
+    if (l.verdict === "exact_variant") return "matches " + (VARLABEL[l.matched_variant] || l.matched_variant) + "; " +
+      (l.counted_mismatches.length === 1 ? "1 field differs" : l.counted_mismatches.length + " fields differ") + " from the default";
+    if (l.counted_mismatches && l.counted_mismatches.length) return l.counted_mismatches.length === 1 ? "1 field differs" : l.counted_mismatches.length + " fields differ";
+    return null;
+  }
+  function chromePanel(l) {
+    var m = l.matches || {}, d0 = pv(l, "default"), d1 = pv(l, "no_ca34"), d2 = pv(l, "pq");
+    return [panelGrid([
+      ["TLS match (JA4)", [el("span", { cls: "line" }, ["default ", mark(d0.ja4_fresh)]), el("span", { cls: "line" }, ["without ca34 ", mark(d1.ja4_fresh)])]],
+      ["Resumed connection", resumedCell(l)],
+      ["Post-quantum experiment", [mark(d2.ja4_fresh), d2.counted_mismatches ? el("span", { cls: "sub", text: d2.counted_mismatches.length ? (d2.counted_mismatches.length === 1 ? "1 field differs" : d2.counted_mismatches.length + " fields differ") : "all fields match" }) : null]],
+      ["HTTP/2 match", h2Cell(l, m)],
+      ["HTTP/3", h3Cell(l)],
+      ["Missing vs. Chrome", missingChips(l)],
+      ["Tested", [el("time", { datetime: l.tested_at || "", text: localDate(l.tested_at) || "not tested" })]]
+    ])].concat(whyKids(l)).concat([detailBlock(l)]);
+  }
+  var CHROME_COLS = [["library", "Library"], ["profile", "Newest Chrome profile"], ["verdict", "Verdict"], ["behind", "Versions behind"]];
+  function boardHead(cols, sortable) {
+    return el("div", { cls: "lbhead", "aria-hidden": sortable ? null : "true" }, cols.map(function (c) {
+      if (!sortable) return el("span", { text: c[1] });
+      var b = el("button", { type: "button", "data-sort": c[0], "aria-pressed": state.sort === c[0] ? "true" : "false", text: c[1] + (state.sort === c[0] ? (state.dir === 1 ? " ▲" : " ▼") : "") });
+      b.addEventListener("click", function () { state.dir = state.sort === c[0] ? -state.dir : 1; state.sort = c[0]; renderTable(); });
+      return b;
+    }).concat([el("span")]));
   }
 
   function renderTable() {
-    var rows = LIBS.filter(function (l) { return state.showOlder || l.is_newest_profile !== false; });
+    var box = $("#lb"); if (!box) return;
+    var pool = LIBS.filter(function (l) { return state.showOlder || l.is_newest_profile !== false; });
+    var rows = pool.filter(langOk);
     rows.sort(function (a, b) { return state.dir * cmp(SORTS[state.sort](a), SORTS[state.sort](b)); });
-    var tbody = $("#lb tbody"); tbody.innerHTML = "";
+    box.innerHTML = "";
+    box.appendChild(boardHead(CHROME_COLS, true));
+    var list = el("div", { cls: "lbrows" });
     rows.forEach(function (l) {
-      var m = l.matches || {};
-      var verdictCell = [el("span", { cls: "badge " + (VCLS[l.verdict] || "v-na"), text: VLABEL[l.verdict] || l.verdict })];
-      if (l.verdict === "exact") verdictCell.push(el("span", { cls: "pop-note", text: "matches Chrome's default (with ca34)" }));
-      else if (l.verdict === "exact_variant") verdictCell.push(el("span", { cls: "pop-note", text: "matches " + (VARLABEL[l.matched_variant] || l.matched_variant) + "; " +
-        (l.counted_mismatches.length === 1 ? "1 field differs" : l.counted_mismatches.length + " fields differ") + " from the default" }));
-      else if (l.counted_mismatches && l.counted_mismatches.length) verdictCell.push(el("span", { cls: "pop-note", text: l.counted_mismatches.length === 1 ? "1 field differs" : l.counted_mismatches.length + " fields differ" }));
-      var chips = (l.missing || []).map(function (i) { return el("span", { cls: "chip", title: i.label, text: shortLabel(i) }); });
-      if (!chips.length) chips = [el("span", { cls: "chip none", text: "nothing" })];
-      var toggle = el("button", { cls: "diff-toggle", type: "button", "aria-expanded": state.open[l.id] ? "true" : "false", text: state.open[l.id] ? "Hide field diff" : "Field diff" });
-      toggle.addEventListener("click", function () { state.open[l.id] = !state.open[l.id]; renderTable(); });
-      var d0 = pv(l, "default"), d1 = pv(l, "no_ca34"), d2 = pv(l, "pq");
-      var tr = el("tr", { cls: "row" }, [
-        td("Library", [el("span", { cls: "lib", text: l.library }), el("span", { cls: "lang", text: l.language + (l.maintainer ? " · " + l.maintainer : "") + (l.version ? " · " + l.version : "") }), toggle], "first"),
-        td("Chrome profile", [el("code", { text: l.profile })]),
-        td("Versions behind", vbCell(l)),
-        td("TLS match (JA4)", [el("span", { cls: "line" }, ["default ", mark(d0.ja4_fresh)]), el("span", { cls: "line" }, ["without ca34 ", mark(d1.ja4_fresh)])], "tls-cell"),
-        td("Resumed connection", resumedCell(l)),
-        td("Post-quantum experiment", [mark(d2.ja4_fresh), d2.counted_mismatches ? el("span", { cls: "sub", text: d2.counted_mismatches.length ? (d2.counted_mismatches.length === 1 ? "1 field differs" : d2.counted_mismatches.length + " fields differ") : "all fields match" }) : null]),
-        td("HTTP/2 match", h2Cell(l, m)),
-        td("HTTP/3", h3Cell(l)),
-        td("Verdict", verdictCell),
-        td("Missing vs. Chrome", [el("div", { cls: "missing" }, chips)]),
-        td("Tested", [el("time", { datetime: l.tested_at || "", text: localDate(l.tested_at) || "not tested" })])
-      ]);
-      tbody.appendChild(tr);
-      tbody.appendChild(whyRow(l));
-      if (state.open[l.id]) tbody.appendChild(detailRow(l));
+      list.appendChild(boardRow(l, { profileLabel: "Newest Chrome profile", behind: vbCell, verdictNote: chromeVerdictNote, panel: chromePanel, open: state.open }));
     });
-    $$("#lb th[data-sort]").forEach(function (th) {
-      th.setAttribute("aria-sort", th.dataset.sort === state.sort ? (state.dir === 1 ? "ascending" : "descending") : "none");
-    });
+    if (!rows.length) list.appendChild(el("p", { cls: "empty", text: "No " + langName(state.lang) + " library has a Chrome profile in this list." }));
+    box.appendChild(list);
+    renderLangFilter($("#lb-lang"), LIBS.filter(function (l) { return state.showOlder || l.is_newest_profile !== false; }));
     if ($("#sort-select option[value='" + state.sort + "']")) $("#sort-select").value = state.sort;
-    var hidden = LIBS.length - rows.length;
-    $("#lb-meta").textContent = rows.length + " of " + LIBS.length + " library profiles shown" + (hidden ? " (" + hidden + " older profiles hidden)" : "") +
-      ". Verdicts compare against Chrome " + (REF.version || "?") + "'s default fingerprint. Click a column header to sort.";
+    var hidden = LIBS.length - pool.length;
+    var why = [state.lang !== "all" ? langName(state.lang) + " only" : null, hidden ? hidden + " older profiles hidden" : null].filter(Boolean);
+    $("#lb-meta").textContent = rows.length + " of " + LIBS.length + " library profiles shown" + (why.length ? " (" + why.join("; ") + ")" : "") +
+      ". Verdicts compare against Chrome " + (REF.version || "?") + "'s default fingerprint. Tap or click a row for the full comparison.";
   }
 
   function renderVbNote(lb) {
@@ -515,14 +595,14 @@
 
   function initTable(lb) {
     LIBS = lb.libraries || [];
-    $$("#lb th[data-sort] button").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var k = b.closest("th").dataset.sort;
-        state.dir = state.sort === k ? -state.dir : 1; state.sort = k; renderTable();
-      });
-    });
-    $("#sort-select").addEventListener("change", function (e) { state.sort = e.target.value; state.dir = 1; renderTable(); });
-    $("#show-older").addEventListener("change", function (e) { state.showOlder = e.target.checked; renderTable(); });
+    LANG_LIBS = LANG_LIBS.concat(LIBS);
+    langRenderers.push(renderTable);
+    var ss = $("#sort-select"), so = $("#show-older");
+    // Fresh copies drop any listeners from an earlier run (the deployed HTML is pre-rendered, then hydrated here)
+    ss.replaceWith(ss = ss.cloneNode(true)); so.replaceWith(so = so.cloneNode(true));
+    ss.addEventListener("change", function (e) { state.sort = e.target.value; state.dir = 1; renderTable(); });
+    so.addEventListener("change", function (e) { state.showOlder = e.target.checked; renderTable(); });
+    state.showOlder = so.checked;
     renderVbNote(lb);
     renderTable();
     renderUpcoming(lb.upcoming || []);
@@ -663,14 +743,15 @@
     var opts = list.sort(function (a, b) { return Date.parse(a.at) - Date.parse(b.at); });
     opts.push({ key: "latest", label: "Chrome " + ref.version + " (" + localDate(ref.capturedAt) + ", latest)" });
     var a = $("#vd-a"), b = $("#vd-b"), out = $("#vd-out");
-    if (!a || opts.length < 2) { if (out) out.textContent = "Only one capture so far, so there's nothing to compare yet."; return; }
+    if (!a || opts.length < 2) { if (out) out.textContent = "Only one capture so far, so there's nothing to compare yet."; return Promise.resolve(); }
+    a.innerHTML = ""; b.innerHTML = "";
     opts.forEach(function (o) { a.appendChild(el("option", { value: o.key, text: o.label })); b.appendChild(el("option", { value: o.key, text: o.label })); });
     a.value = opts[0].key; b.value = "latest";
     var cache = { latest: Promise.resolve(latestRaw) };
     var load = function (k) { return cache[k] || (cache[k] = getJSON(k)); };
     var run = function () {
-      out.innerHTML = ""; out.appendChild(el("p", { cls: "muted", text: "Loading…" }));
-      Promise.all([load(a.value), load(b.value)]).then(function (res) {
+      if (!out.children.length) out.appendChild(el("p", { cls: "muted", text: "Loading…" }));
+      return Promise.all([load(a.value), load(b.value)]).then(function (res) {
         var p = adaptChromeReference(res[0]), c = adaptChromeReference(res[1]);
         var rows = diffRefs(p, c).filter(function (r) { return r[0] !== "Chrome version"; });
         out.innerHTML = "";
@@ -680,7 +761,7 @@
         out.appendChild(el("ul", { cls: "vd-list" }, rows.map(function (r) { return el("li", { cls: "vd-row", text: plainDiff(r) }); })));
       }).catch(function (e) { out.textContent = "Couldn't load a capture (" + e.message + ")."; });
     };
-    a.addEventListener("change", run); b.addEventListener("change", run); run();
+    a.addEventListener("change", run); b.addEventListener("change", run); return run();
   }
 
   /* ---------------- README badges (files built by leaderboard/badges.py at deploy) ---------------- */
@@ -845,6 +926,47 @@
     t.appendChild(tb); box.appendChild(el("div", { cls: "table-wrap" }, [t]));
   }
 
+  /* Chrome for Android board (data/android_libraries.json, leaderboard/build_android.py): same compact rows and
+     language filter as the Chrome leaderboard. */
+  var ANDROID = { lb: null, open: {} };
+  function androidPanel(l) {
+    var g = l.http2_grade || {}, f = l.fingerprint || {};
+    var kids = [panelGrid([
+      ["TLS match (JA4)", [mark(((l.matches || {}).variants || {}).default ? l.matches.variants.default.ja4_fresh : null)]],
+      ["HTTP/2", [el("span", { cls: "line" }, ["settings ", mark(g.settings)]), el("span", { cls: "line" }, ["header order ", mark(g.header_order)])]],
+      (l.missing || []).length ? ["Missing vs. Chrome for Android", missingChips(l)] : null,
+      ["Tested", [el("time", { datetime: l.tested_at || "", text: localDate(l.tested_at) || "not tested" })]]
+    ])];
+    if (l.behind_text) kids.push(el("p", { cls: "why-head", text: l.behind_text }));
+    var ids = [["JA4", f.ja4_fresh], ["HTTP/2", f.http2_akamai]].filter(function (x) { return x[1]; });
+    if (ids.length) kids.push(el("div", { cls: "fp-ids" }, ids.map(function (x) { return el("span", { cls: "fp-id" }, [el("span", { cls: "muted", text: x[0] + " " }), el("code", { text: x[1] }), copyBtn(x[1])]); })));
+    if ((l.why || []).length) kids.push(el("ul", { cls: "why-list" }, l.why.map(function (w) { return el("li", { text: w }); })));
+    if ((l.behaviour || []).length) kids.push(el("ul", { cls: "why-list behaviour" }, l.behaviour.map(function (b) { return el("li", { text: b }); })));
+    if (l.release_update) kids.push(el("p", { cls: "release-note", title: "Released " + (localDate(l.release_update.released_at) || "?"), text: l.release_update.text }));
+    if (l.fix) kids.push(fixLine(l, "One-line fix (same library, " + l.fix.to_diffs + " counted difference" + (l.fix.to_diffs === 1 ? "" : "s") + " instead of " + l.fix.from_diffs + "): "));
+    (l.notes || []).forEach(function (n) { kids.push(el("p", { cls: "why-note", text: n })); });
+    if ((l.diff || []).length) kids.push(el("details", { cls: "more deep" }, [el("summary", { text: "Field-by-field diff" }),
+      diffTable(["Field (vs Chrome for Android)", "Status", "Chrome for Android", "Library"], l.diff),
+      (l.not_tested || []).length ? el("p", { cls: "muted small", text: "Not tested: " + l.not_tested.join("; ") }) : null]));
+    return kids;
+  }
+  function renderAndroidBoard() {
+    var lb = ANDROID.lb, box = $("#and-board"); if (!box || !lb) return;
+    var r = lb.reference || {};
+    box.innerHTML = "";
+    box.appendChild(el("p", { cls: "muted small", text: "Graded against real Chrome for Android " + r.android_version + " (" + localDate(r.captured_at) + "), same counted fields as the Chrome leaderboard. " + (lb.caveats || []).join(" ") }));
+    var rows = lb.libraries.filter(langOk);
+    box.appendChild(boardHead([["library", "Library"], ["profile", "Chrome for Android profile"], ["verdict", "Verdict"], ["behind", "Versions behind"]], false));
+    var list = el("div", { cls: "lbrows" });
+    rows.forEach(function (l) {
+      list.appendChild(boardRow(l, { prefix: "android-", profileLabel: "Chrome for Android profile", panel: androidPanel, open: ANDROID.open,
+        behind: function (x) { return [el("span", { text: x.versions_behind == null ? "unknown" : String(x.versions_behind) })]; } }));
+    });
+    if (!rows.length) list.appendChild(el("p", { cls: "empty", text: "No " + langName(state.lang) + " library offers a Chrome for Android profile we test." }));
+    box.appendChild(list);
+    renderLangFilter($("#and-lang"), lb.libraries);
+  }
+
   /* ---------------- Summary at the top ---------------- */
   var SUMVR = { exact: 0, exact_variant: 1, close: 2, behind: 3, "not tested": 4 };
   function sumBoard(boxId, title, lb, browserVersion) {
@@ -914,7 +1036,7 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
       button.disabled = true;
       status.className = "muted small";
-      status.textContent = "Joining the waitlist…";
+      status.textContent = "Signing you up…";
       var values = {};
       new FormData(form).forEach(function (value, key) { values[key] = value; });
       fetch(FORMSUBMIT_ENDPOINT, {
@@ -926,7 +1048,7 @@
         return response.json();
       }).then(function () {
         status.className = "signup-success small";
-        status.textContent = "You're on the list. We'll email you when the feed opens.";
+        status.textContent = "You're on the list. We'll email you when we add to the feed.";
         form.reset();
       }).catch(function () {
         status.className = "signup-error small";
@@ -941,7 +1063,8 @@
     bind("generated_at", localTime(lb.generated_at));
     $("#ca34-caveat").textContent = (lb.caveats || [])[0] || "";
     var ml = $("#method-list");
-    (lb.caveats || []).slice(1).forEach(function (c) { ml.appendChild(el("li", { text: c })); });
+    $$("li.gen", ml).forEach(function (n) { n.remove(); });
+    (lb.caveats || []).slice(1).forEach(function (c) { ml.appendChild(el("li", { cls: "gen", text: c })); });
   }
 
   function loadError(err) {
@@ -965,18 +1088,29 @@
         initTable(res[1]);
         sumBoard("#sum-chrome", "Chrome", res[1], REF.version);
         var andP = ((res[3] || {}).platforms || {}).android || {};
-        if (andP.status === "captured" && (andP.android || {}).version_verified) getJSON("data/android_libraries.json").then(function (f) {
-          if (!f || !(f.reference || {}).version_verified) return;
-          var sec = $("#android-board"); if (sec) sec.hidden = false;
-          renderFirefoxBoard(f, { box: "#and-board", name: "Chrome for Android", ver: "android_version", anchor: "#android-board", badge: null });
-        }, function () { /* no Android board yet */ });
-        getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); sumMovers(h, res[1]); }, function () { /* no history yet */ });
+        var sec = $("#android-board");
+        var jobs = [];
+        if (andP.status === "captured" && (andP.android || {}).version_verified) jobs.push(getJSON("data/android_libraries.json").then(function (f) {
+          if (!f || !(f.reference || {}).version_verified || !f.libraries) { if (sec) sec.hidden = true; return; }
+          if (sec) sec.hidden = false;
+          ANDROID.lb = f; LANG_LIBS = LANG_LIBS.concat(f.libraries); langRenderers.push(renderAndroidBoard);
+          renderAndroidBoard(); renderTable();   // the Chrome filter row gains any Android-only language
+        }, function () { if (sec) sec.hidden = true; }));
+        else if (sec) sec.hidden = true;
+        jobs.push(getJSON("data/row_history.json").then(function (h) { ROWHIST = h; renderTable(); sumMovers(h, res[1]); }, function () { /* no history yet */ }));
         renderBadges(res[1]);
         renderFooter(res[1]);
-        getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { initVersionDiff(REF, res[0], res[2], arch); });
-        return renderChanges(REF, res[2]);
+        jobs.push(getJSON("data/archive/index.json").catch(function () { return { captures: [] }; }).then(function (arch) { return initVersionDiff(REF, res[0], res[2], arch); }));
+        jobs.push(renderChanges(REF, res[2]));
+        return Promise.all(jobs.map(function (j) { return Promise.resolve(j).catch(function () {}); }));
       })
-      .catch(loadError);
+      .catch(loadError)
+      .then(function () {
+        // Deep link to one row (#row-<id>): open its panel
+        var h = location.hash && location.hash.indexOf("#row-") === 0 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+        if (h && h.tagName === "DETAILS") { h.open = true; h.scrollIntoView(); }
+        document.documentElement.setAttribute("data-rendered", "1");
+      });
   }
 
   /* /firefox/: current Firefox (incl. HTTP/3), per-OS, leaderboard, history. */
