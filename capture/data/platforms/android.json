@@ -6,8 +6,8 @@
   "channel": "stable",
   "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
   "platform": "android",
-  "captured_at": "2026-10-19T05:12:37-05:00",
-  "chrome_path": "/data/app/~~2y_xEQRNnH_4q2tcdR3QLQ==/com.android.chrome-Mr5Z2bdEw0bd3_RENCXwkw==",
+  "captured_at": "2026-10-20T05:07:13-05:00",
+  "chrome_path": "/data/app/~~NVfQ_i8SlgnZnQZMdsDjXg==/com.android.chrome-EknYpSqp54LC0CcW8KyLrA==",
   "chrome_version_string": "Google Chrome 155.0.8059.84 (com.android.chrome)",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543 via adb reverse, QUIC/h3 on 127.0.0.1:18544 via the emulator's 10.0.2.2 host alias, SNI capture.test",
   "current_stable": {
@@ -49,27 +49,16 @@
         {
           "version": "155.0.8059.85",
           "fraction": 1,
-          "fraction_group": "155",
-          "serving_since": "2026-10-15T15:38:35-05:00",
+          "fraction_group": "156",
+          "serving_since": "2026-10-19T16:15:30-05:00",
           "rollout_tags": []
         },
         {
-          "version": "155.0.8059.84",
-          "fraction": 0.25,
-          "fraction_group": "156",
-          "serving_since": "2026-10-16T15:04:12-05:00",
-          "rollout_tags": [
-            "rollout"
-          ]
-        },
-        {
-          "version": "155.0.8059.82",
-          "fraction": 0.25,
-          "fraction_group": "156",
-          "serving_since": "2026-10-16T15:04:12-05:00",
-          "rollout_tags": [
-            "control"
-          ]
+          "version": "155.0.8059.85",
+          "fraction": 1,
+          "fraction_group": "155",
+          "serving_since": "2026-10-15T15:38:35-05:00",
+          "rollout_tags": []
         },
         {
           "version": "155.0.8059.81",
@@ -79,13 +68,6 @@
           "rollout_tags": [
             "control"
           ]
-        },
-        {
-          "version": "155.0.8059.80",
-          "fraction": 0.5,
-          "fraction_group": "156",
-          "serving_since": "2026-10-16T15:04:12-05:00",
-          "rollout_tags": []
         },
         {
           "version": "154.0.8037.100",
@@ -123,27 +105,16 @@
         {
           "version": "155.0.8059.85",
           "fraction": 1,
-          "fraction_group": "199",
-          "serving_since": "2026-10-15T15:40:01-05:00",
+          "fraction_group": "200",
+          "serving_since": "2026-10-19T16:16:30-05:00",
           "rollout_tags": []
         },
         {
-          "version": "155.0.8059.84",
-          "fraction": 0.25,
-          "fraction_group": "200",
-          "serving_since": "2026-10-16T15:04:09-05:00",
-          "rollout_tags": [
-            "rollout"
-          ]
-        },
-        {
-          "version": "155.0.8059.82",
-          "fraction": 0.25,
-          "fraction_group": "200",
-          "serving_since": "2026-10-16T15:04:09-05:00",
-          "rollout_tags": [
-            "control"
-          ]
+          "version": "155.0.8059.85",
+          "fraction": 1,
+          "fraction_group": "199",
+          "serving_since": "2026-10-15T15:40:01-05:00",
+          "rollout_tags": []
         },
         {
           "version": "155.0.8059.81",
@@ -153,13 +124,6 @@
           "rollout_tags": [
             "control"
           ]
-        },
-        {
-          "version": "155.0.8059.80",
-          "fraction": 0.5,
-          "fraction_group": "200",
-          "serving_since": "2026-10-16T15:04:09-05:00",
-          "rollout_tags": []
         },
         {
           "version": "154.0.8037.100",
@@ -173,49 +137,14 @@
       ]
     },
     "android": {
-      "newest": "156.0.8078.39",
-      "highest_full_rollout": null,
+      "newest": "155.0.8059.84",
+      "highest_full_rollout": "155.0.8059.84",
       "releases": [
         {
-          "version": "156.0.8078.39",
-          "fraction": 0.0025,
-          "fraction_group": "61",
-          "serving_since": "2026-10-14T11:53:00-05:00",
-          "rollout_tags": []
-        },
-        {
           "version": "155.0.8059.84",
-          "fraction": 0.24875,
+          "fraction": 1,
           "fraction_group": "61",
-          "serving_since": "2026-10-15T16:40:00-05:00",
-          "rollout_tags": []
-        },
-        {
-          "version": "155.0.8059.81",
-          "fraction": 0.24875,
-          "fraction_group": "61",
-          "serving_since": "2026-10-15T16:40:00-05:00",
-          "rollout_tags": []
-        },
-        {
-          "version": "155.0.8059.80",
-          "fraction": 0.0025,
-          "fraction_group": "61",
-          "serving_since": "2026-10-14T11:53:00-05:00",
-          "rollout_tags": []
-        },
-        {
-          "version": "155.0.8059.79",
-          "fraction": 0.4975,
-          "fraction_group": "61",
-          "serving_since": "2026-10-15T16:40:00-05:00",
-          "rollout_tags": []
-        },
-        {
-          "version": "155.0.8059.39",
-          "fraction": 0,
-          "fraction_group": "61",
-          "serving_since": "2026-10-15T15:57:29-05:00",
+          "serving_since": "2026-10-19T16:35:48-05:00",
           "rollout_tags": []
         }
       ]
@@ -236,7 +165,7 @@
   },
   "is_current_linux_stable": null,
   "is_current_platform_stable": true,
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39235525375",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39405402025",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -250,46 +179,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "793a54860d9e9d7cfa4ef7711f628214",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,35-13-18-11-27-43-23-65037-65281-5-17613-51-45-51764-16-0-10,4588-29-23-24,0",
+      "ja3": "d2496f055bbd7ac31425272e1c0d220e",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51764-51-35-0-27-17613-5-11-45-13-10-43-18-65281-65037-23-16,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0x0023",
-        "0x000d",
-        "0x0012",
-        "0x000b",
-        "0x001b",
-        "0x002b",
-        "0x0017",
-        "0xfe0d",
-        "0xff01",
-        "0x0005",
-        "0x44cd",
-        "0x0033",
-        "0x002d",
         "0xca34",
-        "0x0010",
+        "0x0033",
+        "0x0023",
         "0x0000",
-        "0x000a"
+        "0x001b",
+        "0x44cd",
+        "0x0005",
+        "0x000b",
+        "0x002d",
+        "0x000d",
+        "0x000a",
+        "0x002b",
+        "0x0012",
+        "0xff01",
+        "0xfe0d",
+        "0x0017",
+        "0x0010"
       ],
       "extensions_resumed": [
-        "0x000a",
-        "0x44cd",
-        "0x0012",
-        "0x0023",
-        "0x000b",
-        "0x002b",
-        "0x000d",
         "0x002d",
         "0x0033",
         "0x0000",
-        "0x0017",
         "0xff01",
-        "0xca34",
-        "0x001b",
         "0xfe0d",
         "0x0010",
+        "0x0023",
+        "0x002b",
+        "0x000a",
+        "0x001b",
         "0x0005",
+        "0x44cd",
+        "0x000b",
+        "0x000d",
+        "0x0012",
+        "0x0017",
+        "0xca34",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -485,18 +414,18 @@
         "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x002d",
-          "0x0039",
-          "0x000a",
+          "0x0000",
           "0x002b",
-          "0x000d",
-          "0x44cd",
           "0xfe0d",
+          "0x0039",
+          "0x002d",
+          "0x000a",
           "0x0033",
           "0xca34",
-          "0x0010",
           "0x001b",
-          "0x0000"
+          "0x44cd",
+          "0x000d",
+          "0x0010"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -541,46 +470,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000012a1a6afa"
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
           },
           {
             "id": "0x9",
@@ -589,16 +482,28 @@
             "value": 103
           },
           {
-            "id": "0x26b840a838581791",
-            "name": "grease",
-            "len": 4,
-            "value": 78189168
-          },
-          {
             "id": "0x4",
             "name": "initial_max_data",
             "len": 4,
             "value": 15728640
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001ca3a5ada00000001"
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
             "id": "0x3128",
@@ -608,16 +513,40 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x8",
             "name": "initial_max_streams_bidi",
             "len": 2,
             "value": 100
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x1beed46c9bd6f2cf",
+            "name": "grease",
+            "len": 11,
+            "hex": "0acf9c0084cbd3492d40d1"
           }
         ],
         "h3_settings": {
@@ -652,187 +581,187 @@
       "notes": [],
       "extension_orders": [
         [
-          "0x0023",
-          "0x000d",
-          "0x0012",
-          "0x000b",
-          "0x001b",
-          "0x002b",
-          "0x0017",
-          "0xfe0d",
-          "0xff01",
-          "0x0005",
-          "0x44cd",
-          "0x0033",
-          "0x002d",
           "0xca34",
-          "0x0010",
-          "0x0000",
-          "0x000a"
-        ],
-        [
-          "0x000a",
-          "0x44cd",
-          "0x0012",
-          "0x0023",
-          "0x000b",
-          "0x002b",
-          "0x000d",
-          "0x002d",
-          "0x0033",
-          "0x0000",
-          "0x0017",
-          "0xff01",
-          "0xca34",
-          "0x001b",
-          "0xfe0d",
-          "0x0010",
-          "0x0005",
-          "0x0029"
-        ],
-        [
-          "0x0017",
-          "0x000b",
-          "0x0023",
-          "0x001b",
-          "0x002d",
-          "0x0005",
-          "0x0010",
-          "0xff01",
-          "0x0012",
-          "0x0033",
-          "0x44cd",
-          "0x002b",
-          "0x000d",
-          "0xca34",
-          "0xfe0d",
-          "0x0000",
-          "0x000a",
-          "0x0029"
-        ],
-        [
-          "0x002b",
-          "0x000b",
-          "0xfe0d",
-          "0xff01",
-          "0x0000",
           "0x0033",
           "0x0023",
-          "0x001b",
-          "0x0010",
-          "0x44cd",
-          "0x0017",
-          "0x002d",
-          "0x0005",
-          "0xca34",
-          "0x000a",
-          "0x0012",
-          "0x000d",
-          "0x0029"
-        ],
-        [
-          "0x0012",
           "0x0000",
-          "0xff01",
-          "0x0017",
+          "0x001b",
+          "0x44cd",
+          "0x0005",
+          "0x000b",
+          "0x002d",
+          "0x000d",
           "0x000a",
           "0x002b",
-          "0x000b",
-          "0x0005",
-          "0x000d",
-          "0x001b",
+          "0x0012",
+          "0xff01",
+          "0xfe0d",
+          "0x0017",
+          "0x0010"
+        ],
+        [
           "0x002d",
-          "0x44cd",
+          "0x0033",
+          "0x0000",
+          "0xff01",
           "0xfe0d",
           "0x0010",
           "0x0023",
-          "0x0033",
+          "0x002b",
+          "0x000a",
+          "0x001b",
+          "0x0005",
+          "0x44cd",
+          "0x000b",
+          "0x000d",
+          "0x0012",
+          "0x0017",
           "0xca34",
           "0x0029"
         ],
         [
-          "0x000b",
           "0xff01",
+          "0x0010",
+          "0x0033",
+          "0x001b",
+          "0xfe0d",
+          "0x000b",
+          "0x0023",
+          "0x0017",
           "0x002d",
           "0x0005",
-          "0xfe0d",
-          "0x0017",
-          "0xca34",
-          "0x44cd",
-          "0x000d",
-          "0x0023",
-          "0x0033",
           "0x0000",
-          "0x0012",
-          "0x0010",
-          "0x002b",
-          "0x001b",
+          "0x44cd",
           "0x000a",
+          "0x002b",
+          "0x0012",
+          "0x000d",
+          "0xca34",
           "0x0029"
         ],
         [
-          "0x002d",
-          "0xff01",
-          "0x000d",
-          "0x000b",
+          "0xfe0d",
           "0x0017",
+          "0x0010",
+          "0x0023",
+          "0x44cd",
+          "0x000a",
+          "0x000b",
+          "0x0005",
+          "0x0000",
+          "0x001b",
+          "0x0033",
+          "0x002d",
+          "0x000d",
+          "0xff01",
+          "0x0012",
           "0x002b",
           "0xca34",
-          "0x001b",
-          "0x0005",
-          "0xfe0d",
-          "0x0023",
-          "0x000a",
-          "0x0033",
-          "0x0012",
+          "0x0029"
+        ],
+        [
           "0x0010",
-          "0x0000",
+          "0xca34",
+          "0x0023",
+          "0x0005",
+          "0x000a",
           "0x44cd",
+          "0x000d",
+          "0xff01",
+          "0x0017",
+          "0x002b",
+          "0x0012",
+          "0x002d",
+          "0x000b",
+          "0x001b",
+          "0x0000",
+          "0x0033",
+          "0xfe0d",
           "0x0029"
         ],
         [
           "0x0017",
-          "0xfe0d",
-          "0x0005",
-          "0x000b",
-          "0x000d",
           "0x001b",
-          "0x0010",
-          "0x0023",
-          "0xff01",
-          "0x0033",
           "0x000a",
+          "0x0010",
+          "0xff01",
+          "0x0023",
           "0x44cd",
+          "0x0012",
+          "0x0000",
+          "0xfe0d",
+          "0xca34",
+          "0x0005",
           "0x002b",
           "0x002d",
-          "0xca34",
-          "0x0000",
-          "0x0012",
+          "0x000b",
+          "0x0033",
+          "0x000d",
           "0x0029"
         ],
         [
-          "0x0033",
-          "0x0012",
+          "0xff01",
+          "0x0005",
           "0x002b",
           "0x002d",
+          "0x0033",
           "0xfe0d",
-          "0x000d",
-          "0x0023",
-          "0x44cd",
-          "0x000b",
           "0x000a",
+          "0x44cd",
+          "0x0000",
           "0x0010",
+          "0x001b",
+          "0x000d",
+          "0x000b",
+          "0x0012",
+          "0xca34",
+          "0x0023",
+          "0x0017",
+          "0x0029"
+        ],
+        [
+          "0x0017",
+          "0x002b",
+          "0x002d",
+          "0x000d",
+          "0x000a",
+          "0x44cd",
+          "0x0033",
+          "0x000b",
+          "0xfe0d",
+          "0x0023",
           "0x0005",
+          "0xff01",
+          "0x0012",
+          "0xca34",
+          "0x001b",
+          "0x0000",
+          "0x0010",
+          "0x0029"
+        ],
+        [
+          "0x000d",
+          "0x000b",
+          "0x0000",
+          "0xff01",
+          "0x002d",
+          "0x000a",
+          "0xfe0d",
+          "0x0005",
+          "0x0017",
+          "0x0033",
+          "0x002b",
+          "0x44cd",
           "0x001b",
           "0xca34",
-          "0xff01",
-          "0x0017",
-          "0x0000",
+          "0x0012",
+          "0x0023",
+          "0x0010",
           "0x0029"
         ]
       ],
       "connections": 9,
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=VYtmfAiJM0Jw9tbvK5fQ7vR3ZRkyQ3P3/2o4xxsoVaY= --disable-fre --no-default-browser-check --no-first-run"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=GfFFxrr4IZI0QiEhedmzvYq08opatL9vTUhxCaXX1E8= --disable-fre --no-default-browser-check --no-first-run"
     },
     {
       "name": "disable-field-trial-config-headed",
@@ -846,46 +775,46 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "75ffaa28172867b1565218f7ac2cd3a0",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,18-43-5-10-16-0-13-23-11-17613-65281-27-51764-51-65037-45-35,4588-29-23-24,0",
+      "ja3": "a0f81eacc9a9571a1ffbbe9743020ae9",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,10-65281-18-51764-11-35-45-27-43-23-51-16-17613-5-13-0-65037,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0x0012",
-        "0x002b",
-        "0x0005",
         "0x000a",
-        "0x0010",
-        "0x0000",
-        "0x000d",
-        "0x0017",
-        "0x000b",
-        "0x44cd",
         "0xff01",
-        "0x001b",
+        "0x0012",
         "0xca34",
-        "0x0033",
-        "0xfe0d",
+        "0x000b",
+        "0x0023",
         "0x002d",
-        "0x0023"
+        "0x001b",
+        "0x002b",
+        "0x0017",
+        "0x0033",
+        "0x0010",
+        "0x44cd",
+        "0x0005",
+        "0x000d",
+        "0x0000",
+        "0xfe0d"
       ],
       "extensions_resumed": [
-        "0x000b",
-        "0x0005",
-        "0x0010",
-        "0x0017",
+        "0x002b",
         "0x0000",
-        "0x002d",
-        "0x0012",
-        "0x000d",
-        "0xfe0d",
-        "0x0023",
+        "0xff01",
+        "0x0017",
         "0xca34",
+        "0x44cd",
+        "0x000b",
+        "0x000a",
+        "0x002d",
+        "0x0005",
+        "0xfe0d",
+        "0x0012",
+        "0x0010",
+        "0x0023",
         "0x0033",
         "0x001b",
-        "0x44cd",
-        "0x000a",
-        "0x002b",
-        "0xff01",
+        "0x000d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1055,10 +984,10 @@
         "a08097fd-ca7d8d80",
         "a4406b35-1657e2d6",
         "408da146-1657e2d6",
-        "5168dcfa-9c6e7a3e",
-        "f6918184-75e97c92",
         "d69d967d-3695c92e",
         "3c8f75a1-164d9a15",
+        "5168dcfa-9c6e7a3e",
+        "f6918184-75e97c92",
         "d4e26075-fea05d06"
       ],
       "field_trials": {
@@ -1082,18 +1011,18 @@
         "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x002b",
-          "0x0033",
-          "0x0039",
-          "0xfe0d",
-          "0x001b",
-          "0x0010",
-          "0xca34",
           "0x000d",
+          "0x0039",
+          "0x002d",
+          "0x001b",
           "0x44cd",
-          "0x0000",
+          "0xca34",
+          "0x002b",
+          "0x0010",
+          "0x0033",
           "0x000a",
-          "0x002d"
+          "0xfe0d",
+          "0x0000"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -1138,6 +1067,37 @@
         ],
         "transport_params": [
           {
+            "id": "0xfddd05b45d74c0a",
+            "name": "grease",
+            "len": 5,
+            "value": 343
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
             "id": "0x3",
             "name": "max_udp_payload_size",
             "len": 2,
@@ -1150,10 +1110,10 @@
             "value": 103
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000019a3a9a2a00000001"
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
           },
           {
             "id": "0x8",
@@ -1162,41 +1122,10 @@
             "value": 100
           },
           {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
             "id": "0x20",
             "name": "max_datagram_frame_size",
             "len": 4,
             "value": 65536
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
           },
           {
             "id": "0x4",
@@ -1205,16 +1134,16 @@
             "value": 15728640
           },
           {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000016acaaaba00000001"
+          },
+          {
             "id": "0xf",
             "name": "initial_source_connection_id",
             "len": 0,
             "hex": ""
-          },
-          {
-            "id": "0x19f4e447b7289d07",
-            "name": "grease",
-            "len": 14,
-            "hex": "a119727fc5b4f7357954e5ac6803"
           }
         ],
         "h3_settings": {
@@ -1247,7 +1176,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=VYtmfAiJM0Jw9tbvK5fQ7vR3ZRkyQ3P3/2o4xxsoVaY= --disable-fre --no-default-browser-check --no-first-run --disable-field-trial-config"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=GfFFxrr4IZI0QiEhedmzvYq08opatL9vTUhxCaXX1E8= --disable-fre --no-default-browser-check --no-first-run --disable-field-trial-config"
     },
     {
       "name": "disable-TLSTrustAnchorIDs-headed",
@@ -1261,44 +1190,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "c9ed11fc80d8ba0655f1a0657055420f",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,35-0-5-16-65037-27-65281-18-13-10-17613-51-45-23-43-11,4588-29-23-24,0",
+      "ja3": "f90fb315240585ecee7656a9e658eca7",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,11-45-65037-65281-35-18-51-17613-43-16-23-0-13-27-5-10,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x0023",
-        "0x0000",
-        "0x0005",
-        "0x0010",
-        "0xfe0d",
-        "0x001b",
-        "0xff01",
-        "0x0012",
-        "0x000d",
-        "0x000a",
-        "0x44cd",
-        "0x0033",
+        "0x000b",
         "0x002d",
-        "0x0017",
+        "0xfe0d",
+        "0xff01",
+        "0x0023",
+        "0x0012",
+        "0x0033",
+        "0x44cd",
         "0x002b",
-        "0x000b"
+        "0x0010",
+        "0x0017",
+        "0x0000",
+        "0x000d",
+        "0x001b",
+        "0x0005",
+        "0x000a"
       ],
       "extensions_resumed": [
-        "0x000d",
-        "0x0023",
-        "0x002b",
-        "0x0012",
+        "0x002d",
         "0x000b",
+        "0x001b",
+        "0x0033",
+        "0x002b",
+        "0x0000",
+        "0x0012",
+        "0x0010",
+        "0x000d",
         "0x000a",
         "0x44cd",
-        "0x0010",
-        "0x002d",
         "0x0005",
-        "0x001b",
-        "0x0000",
+        "0x0023",
         "0x0017",
-        "0x0033",
-        "0xfe0d",
         "0xff01",
+        "0xfe0d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1424,12 +1353,12 @@
       "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
       "sec_ch_ua": "\"Google Chrome\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
       "variations_source": "command line or about flags",
-      "command_line_variations": "--force-fieldtrials=\"*MetricsAndCrashSampling/OutOfReportingSample/*PostFREFixMetricsAndCrashSampling/OutOfReportingSample/*SeedFileTrial/Control_V12/UkmSamplingRate/Sampled_NoSeed_Stable\" --force-fieldtrial-params=\"MetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/947,PostFREFixMetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/900,UkmSamplingRate.Sampled_NoSeed_Stable:_default_sampling/1000000\" --enable-features=\"UkmSamplingRate<UkmSamplingRate\" --disable-features=\"MetricsReporting<MetricsAndCrashSampling,PostFREFixMetricsReporting<PostFREFixMetricsAndCrashSampling,TLSTrustAnchorIDs\" --disable-field-trial-config",
+      "command_line_variations": "--force-fieldtrials=\"*MetricsAndCrashSampling/OutOfReportingSample/*PostFREFixMetricsAndCrashSampling/OutOfReportingSample/*SeedFileTrial/Default/UkmSamplingRate/Sampled_NoSeed_Stable\" --force-fieldtrial-params=\"MetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/947,PostFREFixMetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/900,UkmSamplingRate.Sampled_NoSeed_Stable:_default_sampling/1000000\" --enable-features=\"UkmSamplingRate<UkmSamplingRate\" --disable-features=\"MetricsReporting<MetricsAndCrashSampling,PostFREFixMetricsReporting<PostFREFixMetricsAndCrashSampling,TLSTrustAnchorIDs\" --disable-field-trial-config",
       "active_variations_count": 45,
       "active_variations": [
         "5e3a236d-4113a79e",
         "62e82091-4113a79e",
-        "b6f29041-cc4bff92",
+        "b6f29041-ca7d8d80",
         "f4f00e05-ca7d8d80",
         "9481ce98-3d47f4f4",
         "2a426c03-3d47f4f4",
@@ -1465,10 +1394,10 @@
         "370ace14-3f4a17df",
         "386dc267-3d47f4f4",
         "a08097fd-ca7d8d80",
-        "a4406b35-1657e2d6",
-        "408da146-1657e2d6",
         "d69d967d-3695c92e",
         "3c8f75a1-164d9a15",
+        "a4406b35-1657e2d6",
+        "408da146-1657e2d6",
         "5168dcfa-9c6e7a3e",
         "f6918184-75e97c92",
         "d4e26075-fea05d06"
@@ -1476,7 +1405,7 @@
       "field_trials": {
         "MetricsAndCrashSampling": "OutOfReportingSample",
         "PostFREFixMetricsAndCrashSampling": "OutOfReportingSample",
-        "SeedFileTrial": "Control_V12",
+        "SeedFileTrial": "Default",
         "UkmSamplingRate": "Sampled_NoSeed_Stable"
       },
       "seed_present_at_exit": null,
@@ -1494,17 +1423,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
+          "0x002b",
+          "0x001b",
+          "0x000a",
+          "0xfe0d",
+          "0x000d",
+          "0x0000",
           "0x0010",
           "0x002d",
-          "0x0000",
-          "0x002b",
-          "0x000a",
           "0x44cd",
-          "0x001b",
-          "0xfe0d",
           "0x0033",
-          "0x0039",
-          "0x000d"
+          "0x0039"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -1549,52 +1478,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x23676b195128ae40",
-            "name": "grease",
-            "len": 13,
-            "hex": "ae7126ef7835df619f124679d4"
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000010a9aca6a"
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
             "id": "0x8",
             "name": "initial_max_streams_bidi",
             "len": 2,
             "value": 100
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
           },
           {
             "id": "0x6",
@@ -1603,10 +1490,22 @@
             "value": 6291456
           },
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "0000000100000001fafaaa0a"
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x3128",
@@ -1614,6 +1513,36 @@
             "len": 4,
             "hex": "4f524947",
             "ascii": "ORIG"
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x22f2380fae8f8fac",
+            "name": "grease",
+            "len": 10,
+            "hex": "caecf2839664cf258b20"
           },
           {
             "id": "0x7",
@@ -1658,7 +1587,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=VYtmfAiJM0Jw9tbvK5fQ7vR3ZRkyQ3P3/2o4xxsoVaY= --disable-fre --no-default-browser-check --no-first-run --disable-features=TLSTrustAnchorIDs"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=GfFFxrr4IZI0QiEhedmzvYq08opatL9vTUhxCaXX1E8= --disable-fre --no-default-browser-check --no-first-run --disable-features=TLSTrustAnchorIDs"
     },
     {
       "name": "finch-AddTLSServerHandshakePadding-headed",
@@ -1672,48 +1601,48 @@
       "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
       "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1519h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "ea99e9a3cc9fbbe5718323e88e94d89d",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51-0-27-23-43-17613-65037-45-4832-16-35-5-10-18-13-51764-11-65281,4588-29-23-24,0",
+      "ja3": "338226c66f86a64019d4889de4f2469c",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,27-45-43-16-4832-51-65281-13-35-23-11-65037-51764-17613-0-10-18-5,4588-29-23-24,0",
       "ja3n": "a3a3161a080b73bda9cc285fb367fcc0",
       "extensions": [
-        "0x0033",
-        "0x0000",
         "0x001b",
-        "0x0017",
-        "0x002b",
-        "0x44cd",
-        "0xfe0d",
         "0x002d",
-        "0x12e0",
+        "0x002b",
         "0x0010",
+        "0x12e0",
+        "0x0033",
+        "0xff01",
+        "0x000d",
         "0x0023",
-        "0x0005",
+        "0x0017",
+        "0x000b",
+        "0xfe0d",
+        "0xca34",
+        "0x44cd",
+        "0x0000",
         "0x000a",
         "0x0012",
-        "0x000d",
-        "0xca34",
-        "0x000b",
-        "0xff01"
+        "0x0005"
       ],
       "extensions_resumed": [
-        "0x001b",
-        "0x002d",
-        "0x0010",
-        "0x0033",
+        "0xfe0d",
+        "0x0005",
+        "0x000b",
         "0x000a",
-        "0x44cd",
-        "0xca34",
+        "0x002b",
+        "0x0033",
         "0x000d",
+        "0x12e0",
+        "0x0000",
         "0x0023",
+        "0x002d",
+        "0x001b",
         "0xff01",
         "0x0012",
         "0x0017",
-        "0xfe0d",
-        "0x0005",
-        "0x12e0",
-        "0x000b",
-        "0x0000",
-        "0x002b",
+        "0x0010",
+        "0x44cd",
+        "0xca34",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1841,12 +1770,12 @@
       "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
       "sec_ch_ua": "\"Google Chrome\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
       "variations_source": "command line or about flags",
-      "command_line_variations": "--force-fieldtrials=\"*MetricsAndCrashSampling/OutOfReportingSample/*PostFREFixMetricsAndCrashSampling/OutOfReportingSample/*SeedFileTrial/SeedFiles_V12/*StudyAddTLSServerHandshakePadding/GroupAddTLSServerHandshakePadding/UkmSamplingRate/Sampled_NoSeed_Stable\" --force-fieldtrial-params=\"MetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/947,PostFREFixMetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/900,StudyAddTLSServerHandshakePadding.GroupAddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000,UkmSamplingRate.Sampled_NoSeed_Stable:_default_sampling/1000000\" --enable-features=\"AddTLSServerHandshakePadding<StudyAddTLSServerHandshakePadding,UkmSamplingRate<UkmSamplingRate\" --disable-features=\"MetricsReporting<MetricsAndCrashSampling,PostFREFixMetricsReporting<PostFREFixMetricsAndCrashSampling\" --disable-field-trial-config",
+      "command_line_variations": "--force-fieldtrials=\"*MetricsAndCrashSampling/OutOfReportingSample/*PostFREFixMetricsAndCrashSampling/OutOfReportingSample/*SeedFileTrial/Default/*StudyAddTLSServerHandshakePadding/GroupAddTLSServerHandshakePadding/UkmSamplingRate/Sampled_NoSeed_Stable\" --force-fieldtrial-params=\"MetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/947,PostFREFixMetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/900,StudyAddTLSServerHandshakePadding.GroupAddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000,UkmSamplingRate.Sampled_NoSeed_Stable:_default_sampling/1000000\" --enable-features=\"AddTLSServerHandshakePadding<StudyAddTLSServerHandshakePadding,UkmSamplingRate<UkmSamplingRate\" --disable-features=\"MetricsReporting<MetricsAndCrashSampling,PostFREFixMetricsReporting<PostFREFixMetricsAndCrashSampling\" --disable-field-trial-config",
       "active_variations_count": 46,
       "active_variations": [
         "5e3a236d-4113a79e",
         "62e82091-4113a79e",
-        "b6f29041-26b74639",
+        "b6f29041-ca7d8d80",
         "1deb8d49-898663ff",
         "f4f00e05-ca7d8d80",
         "9481ce98-3d47f4f4",
@@ -1883,18 +1812,18 @@
         "370ace14-3f4a17df",
         "386dc267-3d47f4f4",
         "a08097fd-ca7d8d80",
-        "d69d967d-3695c92e",
-        "3c8f75a1-164d9a15",
-        "5168dcfa-9c6e7a3e",
-        "f6918184-75e97c92",
         "a4406b35-1657e2d6",
         "408da146-1657e2d6",
+        "5168dcfa-9c6e7a3e",
+        "f6918184-75e97c92",
+        "d69d967d-3695c92e",
+        "3c8f75a1-164d9a15",
         "d4e26075-fea05d06"
       ],
       "field_trials": {
         "MetricsAndCrashSampling": "OutOfReportingSample",
         "PostFREFixMetricsAndCrashSampling": "OutOfReportingSample",
-        "SeedFileTrial": "SeedFiles_V12",
+        "SeedFileTrial": "Default",
         "StudyAddTLSServerHandshakePadding": "GroupAddTLSServerHandshakePadding",
         "UkmSamplingRate": "Sampled_NoSeed_Stable"
       },
@@ -1913,18 +1842,18 @@
         "ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
         "ja4_r": "q13d0313h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,12e0,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0000",
-          "0x002d",
-          "0x0033",
-          "0xca34",
-          "0x000a",
           "0x002b",
+          "0x0033",
           "0x0010",
-          "0x000d",
-          "0x44cd",
           "0x0039",
+          "0x002d",
+          "0x0000",
+          "0x000a",
           "0x001b",
+          "0x44cd",
           "0xfe0d",
+          "0x000d",
+          "0xca34",
           "0x12e0"
         ],
         "has_trust_anchors": true,
@@ -1970,11 +1899,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           },
           {
             "id": "0x1",
@@ -1983,14 +1911,8 @@
             "value": 30000
           },
           {
-            "id": "0x3d0dbb80e3770579",
-            "name": "grease",
-            "len": 4,
-            "value": 39
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
           },
@@ -2001,16 +1923,17 @@
             "value": 65536
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
           },
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
           },
           {
             "id": "0x4",
@@ -2019,10 +1942,10 @@
             "value": 15728640
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000019abafa3a00000001"
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
           },
           {
             "id": "0xf",
@@ -2031,22 +1954,28 @@
             "hex": ""
           },
           {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x13cf75c5688aeccb",
+            "name": "grease",
+            "len": 9,
+            "hex": "8c0157579e383ff561"
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000012a0ada0a"
+          },
+          {
             "id": "0x7",
             "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
           }
         ],
         "h3_settings": {
@@ -2079,7 +2008,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=VYtmfAiJM0Jw9tbvK5fQ7vR3ZRkyQ3P3/2o4xxsoVaY= --disable-fre --no-default-browser-check --no-first-run --enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=GfFFxrr4IZI0QiEhedmzvYq08opatL9vTUhxCaXX1E8= --disable-fre --no-default-browser-check --no-first-run --enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
     }
   ],
   "baseline_comparisons": [],
@@ -2166,14 +2095,13 @@
     }
   },
   "notes": [
-    "captured Chrome 155.0.8059.84 is serving on Android stable (24.9% of users); newest serving is 156.0.8078.39 (0.25%)",
     "extension order across 9 TLS connections of one Chrome session: 9 distinct orders",
     "Captured on an Android emulator (system-images;android-35;google_apis_playstore;x86_64, Android 15 / API 35, x86_64), not a physical phone. Cipher order and other TLS choices come from Chrome's own BoringSSL; the x86_64 CPU has AES instructions, like current arm64 phones."
   ],
   "android": {
     "package": "com.android.chrome",
     "version_code": "805908408",
-    "code_path": "/data/app/~~2y_xEQRNnH_4q2tcdR3QLQ==/com.android.chrome-Mr5Z2bdEw0bd3_RENCXwkw==",
+    "code_path": "/data/app/~~NVfQ_i8SlgnZnQZMdsDjXg==/com.android.chrome-EknYpSqp54LC0CcW8KyLrA==",
     "source": "apk",
     "source_detail": "Google-signed x86_64 APK from APKMirror, installed over the image's preinstalled Chrome: https://www.apkmirror.com/apk/google-inc/chrome/google-chrome-155-0-8059-84-release/google-chrome-155-0-8059-84-6-android-apk-download/",
     "apk_sha256": "3d3ea63b7388f16011fce960715cf692c65187eb82d07021246083bb87b4529d",
@@ -2191,11 +2119,7 @@
     "flags_applied": true,
     "is_serving_on_android_stable": true,
     "android_stable_serving": {
-      "156.0.8078.39": 0.0025,
-      "155.0.8059.84": 0.24875,
-      "155.0.8059.81": 0.24875,
-      "155.0.8059.80": 0.0025,
-      "155.0.8059.79": 0.4975
+      "155.0.8059.84": 1
     },
     "emulator": {
       "release": "15",

@@ -1,11 +1,11 @@
 {
  "schema_version": "android-leaderboard-1",
- "generated_at": "2026-10-19T10:28:34Z",
+ "generated_at": "2026-10-20T10:23:40Z",
  "reference": {
   "browser": "Google Chrome (Android)",
   "android_version": "155.0.8059.84",
   "android_major": 155,
-  "captured_at": "2026-10-19T05:12:37-05:00",
+  "captured_at": "2026-10-20T05:07:13-05:00",
   "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
   "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
   "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
@@ -27,10 +27,10 @@
    "profile": "chrome_146 (os android)",
    "note": "desktop Chrome 146 profile with impersonate_os=\"android\"",
    "version": "2.0.1",
-   "tested_at": "2026-10-19T10:28:32Z",
+   "tested_at": "2026-10-20T10:23:39Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261019T102832Z/py/primp_chrome_146_android.json"
+    "fresh": "leaderboard/raw/android-20261020T102339Z/py/primp_chrome_146_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
@@ -333,10 +333,10 @@
    "profile": "Chrome145 (EmulationOS.Android)",
    "note": "desktop Chrome 145 emulation with emulation_os=Android",
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-19T10:28:32Z",
+   "tested_at": "2026-10-20T10:23:39Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261019T102832Z/py/rnet_Chrome145_Android.json"
+    "fresh": "leaderboard/raw/android-20261020T102339Z/py/rnet_Chrome145_Android.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
@@ -638,10 +638,10 @@
    "profile": "chrome131_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-19T10:28:32Z",
+   "tested_at": "2026-10-20T10:23:39Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261019T102832Z/py/curl_cffi_chrome131_android.json"
+    "fresh": "leaderboard/raw/android-20261020T102339Z/py/curl_cffi_chrome131_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps.",
@@ -974,10 +974,10 @@
    "profile": "chrome99_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-19T10:28:32Z",
+   "tested_at": "2026-10-20T10:23:39Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261019T102832Z/py/curl_cffi_chrome99_android.json"
+    "fresh": "leaderboard/raw/android-20261020T102339Z/py/curl_cffi_chrome99_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "6 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps, http2_akamai.",
