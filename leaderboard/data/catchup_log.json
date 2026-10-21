@@ -293,6 +293,25 @@
     "got-scraping": false,
     "tls-client (Python)": false
    }
+  },
+  {
+   "date": "2026-10-21",
+   "chrome_version": "156.0.8078.47",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "curl_cffi": false,
+    "noble-tls": false,
+    "azuretls-client": false,
+    "primp": false,
+    "rnet": false,
+    "wreq": false,
+    "uTLS": false,
+    "hrequests": false,
+    "CycleTLS": false,
+    "got-scraping": false,
+    "tls-client (Python)": false
+   }
   }
  ]
 }
