@@ -1,11 +1,11 @@
 {
  "schema_version": "safari-leaderboard-1",
- "generated_at": "2026-10-22T10:27:46Z",
+ "generated_at": "2026-10-23T10:24:54Z",
  "reference": {
   "browser": "Apple Safari",
   "safari_version": "26.6.2",
   "safari_major": 26,
-  "captured_at": "2026-10-22T05:23:13-05:00",
+  "captured_at": "2026-10-23T05:18:14-05:00",
   "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
   "ja4_fresh": "t13d2013h2_a09f3c656075_7f0f34a4126d",
   "http2_akamai": "2:0;3:100;4:2097152;9:1|10420225|0|m,s,a,p",
@@ -26,10 +26,10 @@
    "profile": "safari2601",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/py/curl_cffi_safari2601.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/py/curl_cffi_safari2601.json"
    },
    "verdict": "exact",
    "verdict_reason": "Every counted TLS and HTTP/2 field matches Safari's usual fingerprint.",
@@ -344,10 +344,10 @@
    "profile": "safari_26",
    "note": null,
    "version": "2.0.1",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/py/primp_safari_26.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/py/primp_safari_26.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Safari's usual fingerprint: supported_groups, cert_compression.",
@@ -690,10 +690,10 @@
    "profile": "safari184",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/py/curl_cffi_safari184.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/py/curl_cffi_safari184.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares.",
@@ -1049,10 +1049,10 @@
    "profile": "Safari18_5",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/py/rnet_Safari18_5.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/py/rnet_Safari18_5.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares.",
@@ -1400,10 +1400,10 @@
    "profile": "Safari26_2",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/py/rnet_Safari26_2.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/py/rnet_Safari26_2.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares.",
@@ -1751,10 +1751,10 @@
    "profile": "Safari",
    "note": null,
    "version": "v1.13.2",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/go/out/azuretls_Safari.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/go/out/azuretls_Safari.json"
    },
    "verdict": "behind",
    "verdict_reason": "4 counted fields differ from Safari's usual fingerprint: extensions, supported_groups, key_shares, http2_akamai.",
@@ -2113,10 +2113,10 @@
    "profile": "Safari_15_6_1",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/go/out/tls-client(go)_Safari_15_6_1.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/go/out/tls-client(go)_Safari_15_6_1.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
@@ -2488,10 +2488,10 @@
    "profile": "Safari_16_0",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/go/out/tls-client(go)_Safari_16_0.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/go/out/tls-client(go)_Safari_16_0.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
@@ -2863,10 +2863,10 @@
    "profile": "HelloSafari_Auto",
    "note": "HTTP/2 via golang.org/x/net/http2 (uTLS is TLS-only)",
    "version": "v1.8.2",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/go/out/utls_HelloSafari_Auto.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/go/out/utls_HelloSafari_Auto.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
@@ -3092,14 +3092,14 @@
       ":method",
       ":path",
       ":scheme",
-      "sec-fetch-dest",
-      "priority",
       "accept",
       "sec-fetch-site",
       "accept-encoding",
       "sec-fetch-mode",
       "user-agent",
-      "accept-language"
+      "accept-language",
+      "sec-fetch-dest",
+      "priority"
      ],
      "missing": [],
      "extra": [],
@@ -3174,7 +3174,7 @@
    "behaviour": [
     "Reconnecting: never resumed the TLS session in 8 connections, and no profile of this library resumed in our test; real Safari didn't resume in our capture either, which matches.",
     "Extension order: Safari stays the same on every connection; this library's stayed the same in all 8 connections, which matches.",
-    "Header order (not graded for this row): the header order changed from request to request (4 different orders in 8 requests), so the caller can't control it."
+    "Header order (not graded for this row): the header order changed from request to request (6 different orders in 8 requests), so the caller can't control it."
    ],
    "resumption_probe": {
     "status": "no_resume",
@@ -3196,7 +3196,7 @@
    },
    "header_order_probe": {
     "fair": false,
-    "unfair_reason": "the header order changed from request to request (4 different orders in 8 requests), so the caller can't control it",
+    "unfair_reason": "the header order changed from request to request (6 different orders in 8 requests), so the caller can't control it",
     "sent": [
      "accept-encoding",
      "sec-fetch-dest",
@@ -3238,10 +3238,10 @@
    "profile": "safari_16_0",
    "note": "wraps Go tls-client",
    "version": "0.1.9",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/py/noble-tls_safari_16_0.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/py/noble-tls_safari_16_0.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
@@ -3603,10 +3603,10 @@
    "profile": "safari_16_0",
    "note": "wraps Go tls-client",
    "version": "2.0.0",
-   "tested_at": "2026-10-22T10:27:42Z",
+   "tested_at": "2026-10-23T10:24:51Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/safari-20261022T102742Z/py/tls-client(py)_safari_16_0.json"
+    "fresh": "leaderboard/raw/safari-20261023T102451Z/py/tls-client(py)_safari_16_0.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Safari's usual fingerprint: extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
@@ -3967,7 +3967,7 @@
   }
  ],
  "probe_reference": {
-  "captures": 63,
+  "captures": 72,
   "distinct_orders": 1,
   "varies": false,
   "resumed_ja4s": [],
@@ -3983,7 +3983,7 @@
    "accept-encoding"
   ],
   "connections_per_row": 8,
-  "generated_at": "2026-10-22T10:28:02Z",
+  "generated_at": "2026-10-23T10:25:09Z",
   "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
   "requested_headers": [
    "sec-fetch-dest",

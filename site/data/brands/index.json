@@ -4,15 +4,15 @@
   "edge": {
    "status": "captured",
    "browser": "Microsoft Edge",
-   "version": "155.0.4283.62",
-   "brand_version": "155.0.4283.62",
-   "chromium_major": 155,
-   "captured_at": "2026-10-22T05:19:53-05:00",
+   "version": "156.0.4314.42",
+   "brand_version": "156.0.4314.42",
+   "chromium_major": 156,
+   "captured_at": "2026-10-23T05:17:24-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
-    "version": "155.0.4283.62-1",
+    "version": "156.0.4314.42-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "3e53834d9d6e505bc57e6bff44d92cfe8cf0bed9064e88efc5b0d8f1c75f70fa",
+    "sha256": "a8642f829e105fe7a4ac440548e6fa7eb726b49fff8ffc6a27f3d0fb25a5b405",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
    },
@@ -38,8 +38,8 @@
     "accept-language",
     "priority"
    ],
-   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
-   "sec_ch_ua": "\"Microsoft Edge\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+   "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Microsoft Edge\";v=\"156\"",
    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
    "h3_settings": {
     "1": 65536,
@@ -63,15 +63,15 @@
     "linux": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "155.0.4283.62",
-     "brand_version": "155.0.4283.62",
-     "chromium_major": 155,
-     "captured_at": "2026-10-22T05:19:53-05:00",
+     "version": "156.0.4314.42",
+     "brand_version": "156.0.4314.42",
+     "chromium_major": 156,
+     "captured_at": "2026-10-23T05:17:24-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
-      "version": "155.0.4283.62-1",
+      "version": "156.0.4314.42-1",
       "repo": "https://packages.microsoft.com/repos/edge",
-      "sha256": "3e53834d9d6e505bc57e6bff44d92cfe8cf0bed9064e88efc5b0d8f1c75f70fa",
+      "sha256": "a8642f829e105fe7a4ac440548e6fa7eb726b49fff8ffc6a27f3d0fb25a5b405",
       "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
       "kind": "signed apt repo .deb"
      },
@@ -97,8 +97,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
-     "sec_ch_ua": "\"Microsoft Edge\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Microsoft Edge\";v=\"156\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,
@@ -122,15 +122,15 @@
     "windows": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "155.0.4283.62",
-     "brand_version": "155.0.4283.62",
-     "chromium_major": 155,
-     "captured_at": "2026-10-22T05:22:52-05:00",
+     "version": "156.0.4314.42",
+     "brand_version": "156.0.4314.42",
+     "chromium_major": 156,
+     "captured_at": "2026-10-23T05:20:02-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "155.0.4283.62",
-      "repo": "preinstalled on the runner image",
-      "sha256": "",
+      "version": "156.0.4314.42",
+      "repo": "edgeupdates.microsoft.com Stable x64 MSI",
+      "sha256": "324d226c5ade08c2776645cfc2a7b12af9c08214abf18c6499410cd8ed92d1b3",
       "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -156,8 +156,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
-     "sec_ch_ua": "\"Microsoft Edge\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Microsoft Edge\";v=\"156\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,
@@ -183,15 +183,15 @@
   "brave": {
    "status": "captured",
    "browser": "Brave Browser",
-   "version": "155.1.97.59",
-   "brand_version": "1.97.59",
-   "chromium_major": 155,
-   "captured_at": "2026-10-22T05:20:20-05:00",
+   "version": "156.1.98.60",
+   "brand_version": "1.98.60",
+   "chromium_major": 156,
+   "captured_at": "2026-10-23T05:17:53-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
    "package": {
-    "version": "1.97.59",
+    "version": "1.98.60",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
-    "sha256": "666f817b640a3284fbb5c9b34917b78854e2acd92fa7febad704dc2b29349be5",
+    "sha256": "812a001d7631b5ab49e55dec6148a0bc2d459e9fc03106c286295ee03fd062fc",
     "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
     "kind": "signed apt repo .deb"
    },
@@ -218,8 +218,8 @@
     "accept-language",
     "priority"
    ],
-   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
-   "sec_ch_ua": "\"Brave\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+   "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Brave\";v=\"156\"",
    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
    "h3_settings": {
     "1": 65536,
@@ -243,15 +243,15 @@
     "linux": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "155.1.97.59",
-     "brand_version": "1.97.59",
-     "chromium_major": 155,
-     "captured_at": "2026-10-22T05:20:20-05:00",
+     "version": "156.1.98.60",
+     "brand_version": "1.98.60",
+     "chromium_major": 156,
+     "captured_at": "2026-10-23T05:17:53-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
      "package": {
-      "version": "1.97.59",
+      "version": "1.98.60",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
-      "sha256": "666f817b640a3284fbb5c9b34917b78854e2acd92fa7febad704dc2b29349be5",
+      "sha256": "812a001d7631b5ab49e55dec6148a0bc2d459e9fc03106c286295ee03fd062fc",
       "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
       "kind": "signed apt repo .deb"
      },
@@ -278,8 +278,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Brave\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Brave\";v=\"156\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,
@@ -303,15 +303,15 @@
     "windows": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "155.1.97.59",
-     "brand_version": "1.97.59",
-     "chromium_major": 155,
-     "captured_at": "2026-10-22T05:24:26-05:00",
+     "version": "156.1.98.60",
+     "brand_version": "1.98.60",
+     "chromium_major": 156,
+     "captured_at": "2026-10-23T05:21:28-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "155.1.97.59",
-      "repo": "github.com/brave/brave-browser v1.97.59 BraveBrowserStandaloneSilentSetup.exe",
-      "sha256": "0288daea8edaa8cb2ffd9009b056cbb8eb149face1b5960ef12f3fa667d098b1",
+      "version": "156.1.98.60",
+      "repo": "github.com/brave/brave-browser v1.98.60 BraveBrowserStandaloneSilentSetup.exe",
+      "sha256": "e5af741d7371a06676ce83afc942ba7adfbd909d10a985a37b17bc8eca6a29b7",
       "signing_key": "Brave Software, Inc.",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -338,8 +338,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Brave\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Brave\";v=\"156\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,
