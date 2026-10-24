@@ -6,8 +6,8 @@
   "channel": "stable",
   "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
   "platform": "android",
-  "captured_at": "2026-10-23T05:09:26-05:00",
-  "chrome_path": "/data/app/~~RoxX6FFXQE_6sqn10H4ZRA==/com.android.chrome-k2RvJr5COWsfrM6Gl7wBYQ==",
+  "captured_at": "2026-10-24T05:03:29-05:00",
+  "chrome_path": "/data/app/~~rybGYw0so5jtiCARPwoqyA==/com.android.chrome--4vcW50dada1Pc01RVFA3A==",
   "chrome_version_string": "Google Chrome 156.0.8078.47 (com.android.chrome)",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543 via adb reverse, QUIC/h3 on 127.0.0.1:18544 via the emulator's 10.0.2.2 host alias, SNI capture.test",
   "current_stable": {
@@ -261,7 +261,7 @@
   },
   "is_current_linux_stable": null,
   "is_current_platform_stable": true,
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/39936816623",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40084246381",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -275,46 +275,621 @@
       "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
       "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "7c75faf47e585568e0364672d85eb709",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,16-13-35-23-51764-43-17613-27-10-11-18-65281-51-65037-5-0-45,4588-29-23-24,0",
+      "ja3": "d656baec632aafbfe704ed201d7be890",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,45-18-10-13-23-43-11-51764-16-35-5-17613-65281-27-51-0-65037,4588-29-23-24,0",
       "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
       "extensions": [
-        "0x0010",
-        "0x000d",
-        "0x0023",
-        "0x0017",
-        "0xca34",
-        "0x002b",
-        "0x44cd",
-        "0x001b",
-        "0x000a",
-        "0x000b",
+        "0x002d",
         "0x0012",
-        "0xff01",
-        "0x0033",
-        "0xfe0d",
+        "0x000a",
+        "0x000d",
+        "0x0017",
+        "0x002b",
+        "0x000b",
+        "0xca34",
+        "0x0010",
+        "0x0023",
         "0x0005",
+        "0x44cd",
+        "0xff01",
+        "0x001b",
+        "0x0033",
         "0x0000",
-        "0x002d"
+        "0xfe0d"
       ],
       "extensions_resumed": [
+        "0x001b",
+        "0x0010",
         "0x002d",
-        "0x0000",
-        "0xff01",
         "0x002b",
-        "0x44cd",
-        "0x000a",
         "0x0033",
-        "0x0012",
-        "0xfe0d",
-        "0x0023",
         "0xca34",
+        "0x000a",
+        "0x000d",
+        "0x44cd",
+        "0xff01",
+        "0x0000",
+        "0x0005",
+        "0xfe0d",
+        "0x000b",
+        "0x0017",
+        "0x0023",
+        "0x0012",
+        "0x0029"
+      ],
+      "extensions_sorted": [
+        "0x0000",
+        "0x0005",
+        "0x000a",
+        "0x000b",
+        "0x000d",
+        "0x0010",
+        "0x0012",
         "0x0017",
         "0x001b",
-        "0x000d",
-        "0x000b",
+        "0x0023",
+        "0x002b",
+        "0x002d",
+        "0x0033",
+        "0x44cd",
+        "0xca34",
+        "0xfe0d",
+        "0xff01"
+      ],
+      "has_trust_anchors": true,
+      "has_trust_anchors_resumed": true,
+      "trust_anchors_len": 186,
+      "ciphers": [
+        "0x1301",
+        "0x1302",
+        "0x1303",
+        "0xc02b",
+        "0xc02f",
+        "0xc02c",
+        "0xc030",
+        "0xcca9",
+        "0xcca8",
+        "0xc013",
+        "0xc014",
+        "0x009c",
+        "0x009d",
+        "0x002f",
+        "0x0035"
+      ],
+      "sig_algs": [
+        "0x0904",
+        "0x0905",
+        "0x0906",
+        "0x0403",
+        "0x0804",
+        "0x0401",
+        "0x0503",
+        "0x0805",
+        "0x0501",
+        "0x0806",
+        "0x0601"
+      ],
+      "groups": [
+        "0x11ec",
+        "0x001d",
+        "0x0017",
+        "0x0018"
+      ],
+      "key_shares": [
+        {
+          "group": "0x11ec",
+          "name": "X25519MLKEM768",
+          "key_length": 1216
+        },
+        {
+          "group": "0x001d",
+          "name": "x25519",
+          "key_length": 32
+        }
+      ],
+      "tls_versions": [
+        "0x0304",
+        "0x0303"
+      ],
+      "alpn": [
+        "h2",
+        "http/1.1"
+      ],
+      "alps": [
+        "h2"
+      ],
+      "alps_codepoint": "0x44cd",
+      "has_ech": true,
+      "cert_compression": [
+        2
+      ],
+      "resumption_accepted_by_server": true,
+      "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+      "h2_settings": {
+        "1": 65536,
+        "2": 0,
+        "4": 6291456,
+        "6": 262144
+      },
+      "h2_window_update": 15663105,
+      "h2_priority_frames": [],
+      "h2_headers_priority": {
+        "exclusive": 1,
+        "depends_on": 0,
+        "weight": 256
+      },
+      "http_version": "h2",
+      "header_order": [
+        ":method",
+        ":authority",
+        ":scheme",
+        ":path",
+        "sec-ch-ua",
+        "sec-ch-ua-mobile",
+        "sec-ch-ua-platform",
+        "upgrade-insecure-requests",
+        "user-agent",
+        "accept",
+        "sec-fetch-site",
+        "sec-fetch-mode",
+        "sec-fetch-user",
+        "sec-fetch-dest",
+        "accept-encoding",
+        "accept-language",
+        "priority"
+      ],
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
+      "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+      "variations_source": "default seed",
+      "command_line_variations": "--force-fieldtrials=\"*MetricsAndCrashSampling/OutOfReportingSample/*PostFREFixMetricsAndCrashSampling/InReportingSample/*SeedFileTrial/Control_V13/UkmSamplingRate/Sampled_NoSeed_Stable\" --force-fieldtrial-params=\"MetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/947,PostFREFixMetricsAndCrashSampling.InReportingSample:sampling_rate_per_mille/100,UkmSamplingRate.Sampled_NoSeed_Stable:_default_sampling/1000000\" --enable-features=\"PostFREFixMetricsReporting<PostFREFixMetricsAndCrashSampling,UkmSamplingRate<UkmSamplingRate\" --disable-features=\"MetricsReporting<MetricsAndCrashSampling\" --disable-field-trial-config",
+      "active_variations_count": 44,
+      "active_variations": [
+        "5e3a236d-4113a79e",
+        "62e82091-59e286d0",
+        "b6f29041-9271d662",
+        "f4f00e05-ca7d8d80",
+        "9481ce98-3d47f4f4",
+        "2a426c03-3d47f4f4",
+        "aca9df2c-3f4a17df",
+        "a3bc7210-dee66fa8",
+        "b100ac4-dee66fa8",
+        "4651ad61-dee66fa8",
+        "59748665-dee66fa8",
+        "65250343-dee66fa8",
+        "553aead6-dee66fa8",
+        "fe4babb8-dee66fa8",
+        "6205871c-dee66fa8",
+        "382b54bb-dee66fa8",
+        "70678518-dee66fa8",
+        "be338734-dee66fa8",
+        "6f316e34-dee66fa8",
+        "5f9907a9-dee66fa8",
+        "8eeccb9a-dee66fa8",
+        "2b465683-dee66fa8",
+        "52fc7926-dee66fa8",
+        "bc9b361d-dee66fa8",
+        "a41a7188-dee66fa8",
+        "ff71bfdc-dee66fa8",
+        "a6fa7475-dee66fa8",
+        "2159dd0c-dee66fa8",
+        "4330e9a4-dee66fa8",
+        "92cfa89f-dee66fa8",
+        "6daa4147-dee66fa8",
+        "4b935545-3d47f4f4",
+        "9a38bae3-6046c8a7",
+        "2d1e43a3-3d47f4f4",
+        "370ace14-3f4a17df",
+        "386dc267-3d47f4f4",
+        "a08097fd-ca7d8d80",
+        "a4406b35-1657e2d6",
+        "408da146-1657e2d6",
+        "d4e26075-fea05d06",
+        "5168dcfa-9c6e7a3e",
+        "f6918184-75e97c92",
+        "d69d967d-3695c92e",
+        "3c8f75a1-164d9a15"
+      ],
+      "field_trials": {
+        "MetricsAndCrashSampling": "OutOfReportingSample",
+        "PostFREFixMetricsAndCrashSampling": "InReportingSample",
+        "SeedFileTrial": "Control_V13",
+        "UkmSamplingRate": "Sampled_NoSeed_Stable"
+      },
+      "seed_present_at_exit": null,
+      "seed": {
+        "seed_present": null
+      },
+      "_network_studies": null,
+      "quic": {
+        "flags": [
+          "--enable-quic",
+          "--origin-to-force-quic-on=capture.test:18544"
+        ],
+        "ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
+        "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
+        "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
+        "extensions": [
+          "0x0039",
+          "0x000a",
+          "0x000d",
+          "0xfe0d",
+          "0xca34",
+          "0x002b",
+          "0x0033",
+          "0x0000",
+          "0x0010",
+          "0x001b",
+          "0x44cd",
+          "0x002d"
+        ],
+        "has_trust_anchors": true,
+        "ciphers": [
+          "0x1301",
+          "0x1302",
+          "0x1303"
+        ],
+        "sig_algs": [
+          "0x0403",
+          "0x0804",
+          "0x0401",
+          "0x0503",
+          "0x0805",
+          "0x0501",
+          "0x0806",
+          "0x0601",
+          "0x0201"
+        ],
+        "groups": [
+          "0x11ec",
+          "0x001d",
+          "0x0017",
+          "0x0018"
+        ],
+        "key_shares": [
+          {
+            "group": "0x11ec",
+            "name": "X25519MLKEM768",
+            "key_length": 1216
+          },
+          {
+            "group": "0x001d",
+            "name": "x25519",
+            "key_length": 32
+          }
+        ],
+        "alpn": [
+          "h3"
+        ],
+        "alps": [
+          "h3"
+        ],
+        "transport_params": [
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x849446d5dc651ad",
+            "name": "grease",
+            "len": 13,
+            "hex": "74486dd701991d8815b610bbb4"
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000016aaaba6a00000001"
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          }
+        ],
+        "h3_settings": {
+          "1": 65536,
+          "6": 262144,
+          "7": 100,
+          "51": 1
+        },
+        "h3_grease_settings": 1,
+        "http_version": "h3",
+        "header_order": [
+          ":method",
+          ":authority",
+          ":scheme",
+          ":path",
+          "sec-ch-ua",
+          "sec-ch-ua-mobile",
+          "sec-ch-ua-platform",
+          "upgrade-insecure-requests",
+          "user-agent",
+          "accept",
+          "sec-fetch-site",
+          "sec-fetch-mode",
+          "sec-fetch-user",
+          "sec-fetch-dest",
+          "accept-encoding",
+          "accept-language",
+          "priority"
+        ],
+        "notes": []
+      },
+      "notes": [],
+      "extension_orders": [
+        [
+          "0x002d",
+          "0x0012",
+          "0x000a",
+          "0x000d",
+          "0x0017",
+          "0x002b",
+          "0x000b",
+          "0xca34",
+          "0x0010",
+          "0x0023",
+          "0x0005",
+          "0x44cd",
+          "0xff01",
+          "0x001b",
+          "0x0033",
+          "0x0000",
+          "0xfe0d"
+        ],
+        [
+          "0x001b",
+          "0x0010",
+          "0x002d",
+          "0x002b",
+          "0x0033",
+          "0xca34",
+          "0x000a",
+          "0x000d",
+          "0x44cd",
+          "0xff01",
+          "0x0000",
+          "0x0005",
+          "0xfe0d",
+          "0x000b",
+          "0x0017",
+          "0x0023",
+          "0x0012",
+          "0x0029"
+        ],
+        [
+          "0x002d",
+          "0x000b",
+          "0xfe0d",
+          "0x0000",
+          "0x000a",
+          "0x0033",
+          "0xca34",
+          "0x000d",
+          "0xff01",
+          "0x002b",
+          "0x0012",
+          "0x0017",
+          "0x0010",
+          "0x0023",
+          "0x001b",
+          "0x0005",
+          "0x44cd",
+          "0x0029"
+        ],
+        [
+          "0xff01",
+          "0x0000",
+          "0x0012",
+          "0x44cd",
+          "0x002b",
+          "0x0005",
+          "0xca34",
+          "0xfe0d",
+          "0x0017",
+          "0x0010",
+          "0x000d",
+          "0x002d",
+          "0x000b",
+          "0x0033",
+          "0x001b",
+          "0x000a",
+          "0x0023",
+          "0x0029"
+        ],
+        [
+          "0xff01",
+          "0x0005",
+          "0x44cd",
+          "0xca34",
+          "0x0033",
+          "0x002b",
+          "0x0010",
+          "0x0023",
+          "0x002d",
+          "0x000b",
+          "0x000a",
+          "0x0017",
+          "0x0000",
+          "0x000d",
+          "0x0012",
+          "0xfe0d",
+          "0x001b",
+          "0x0029"
+        ],
+        [
+          "0x002d",
+          "0x000b",
+          "0x0033",
+          "0xca34",
+          "0x0023",
+          "0x001b",
+          "0x44cd",
+          "0xff01",
+          "0x0010",
+          "0x000a",
+          "0xfe0d",
+          "0x0000",
+          "0x0012",
+          "0x002b",
+          "0x000d",
+          "0x0017",
+          "0x0005",
+          "0x0029"
+        ],
+        [
+          "0x001b",
+          "0x002d",
+          "0x0033",
+          "0x44cd",
+          "0x000d",
+          "0x002b",
+          "0xca34",
+          "0x0012",
+          "0x0005",
+          "0x000a",
+          "0x0023",
+          "0x0010",
+          "0x0017",
+          "0xff01",
+          "0x000b",
+          "0xfe0d",
+          "0x0000",
+          "0x0029"
+        ],
+        [
+          "0x0000",
+          "0x002b",
+          "0x0005",
+          "0x001b",
+          "0x0033",
+          "0x0023",
+          "0x0012",
+          "0xca34",
+          "0x000b",
+          "0x002d",
+          "0xff01",
+          "0x0017",
+          "0xfe0d",
+          "0x000a",
+          "0x000d",
+          "0x0010",
+          "0x44cd",
+          "0x0029"
+        ]
+      ],
+      "connections": 8,
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=8cUs4ZbtmbIzEvulAKyyBvIxRkyR4ZWfCJizYiO70Wc= --disable-fre --no-default-browser-check --no-first-run"
+    },
+    {
+      "name": "disable-field-trial-config-headed",
+      "base_config": "disable-field-trial-config",
+      "mode": "headed",
+      "flags": [
+        "--disable-field-trial-config"
+      ],
+      "relaunch_of": null,
+      "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+      "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
+      "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+      "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
+      "ja3": "0cb0ea3b3085f91671f52fddb32acd15",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,10-51-17613-51764-35-65037-45-5-43-13-65281-18-16-27-23-0-11,4588-29-23-24,0",
+      "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
+      "extensions": [
+        "0x000a",
+        "0x0033",
+        "0x44cd",
+        "0xca34",
+        "0x0023",
+        "0xfe0d",
+        "0x002d",
         "0x0005",
+        "0x002b",
+        "0x000d",
+        "0xff01",
+        "0x0012",
         "0x0010",
+        "0x001b",
+        "0x0017",
+        "0x0000",
+        "0x000b"
+      ],
+      "extensions_resumed": [
+        "0xca34",
+        "0x000b",
+        "0x0033",
+        "0x0017",
+        "0x002b",
+        "0x0023",
+        "0xff01",
+        "0x0010",
+        "0x44cd",
+        "0x001b",
+        "0x0000",
+        "0x002d",
+        "0x0012",
+        "0x0005",
+        "0x000a",
+        "0x000d",
+        "0xfe0d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -483,611 +1058,15 @@
         "a08097fd-ca7d8d80",
         "a4406b35-1657e2d6",
         "408da146-1657e2d6",
-        "d69d967d-3695c92e",
-        "3c8f75a1-164d9a15",
         "5168dcfa-9c6e7a3e",
         "f6918184-75e97c92",
-        "d4e26075-fea05d06"
+        "d4e26075-fea05d06",
+        "d69d967d-3695c92e",
+        "3c8f75a1-164d9a15"
       ],
       "field_trials": {
         "MetricsAndCrashSampling": "OutOfReportingSample",
         "PostFREFixMetricsAndCrashSampling": "OutOfReportingSample",
-        "SeedFileTrial": "Default",
-        "UkmSamplingRate": "Sampled_NoSeed_Stable"
-      },
-      "seed_present_at_exit": null,
-      "seed": {
-        "seed_present": null
-      },
-      "_network_studies": null,
-      "quic": {
-        "flags": [
-          "--enable-quic",
-          "--origin-to-force-quic-on=capture.test:18544"
-        ],
-        "ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
-        "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
-        "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
-        "extensions": [
-          "0x0039",
-          "0x0033",
-          "0x0010",
-          "0x000d",
-          "0x002d",
-          "0x001b",
-          "0x44cd",
-          "0x000a",
-          "0x002b",
-          "0x0000",
-          "0xfe0d",
-          "0xca34"
-        ],
-        "has_trust_anchors": true,
-        "ciphers": [
-          "0x1301",
-          "0x1302",
-          "0x1303"
-        ],
-        "sig_algs": [
-          "0x0403",
-          "0x0804",
-          "0x0401",
-          "0x0503",
-          "0x0805",
-          "0x0501",
-          "0x0806",
-          "0x0601",
-          "0x0201"
-        ],
-        "groups": [
-          "0x11ec",
-          "0x001d",
-          "0x0017",
-          "0x0018"
-        ],
-        "key_shares": [
-          {
-            "group": "0x11ec",
-            "name": "X25519MLKEM768",
-            "key_length": 1216
-          },
-          {
-            "group": "0x001d",
-            "name": "x25519",
-            "key_length": 32
-          }
-        ],
-        "alpn": [
-          "h3"
-        ],
-        "alps": [
-          "h3"
-        ],
-        "transport_params": [
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x3c6869ddf03c9277",
-            "name": "grease",
-            "len": 5,
-            "hex": "f47e61e581"
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000014a8a5a0a00000001"
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          }
-        ],
-        "h3_settings": {
-          "1": 65536,
-          "6": 262144,
-          "7": 100,
-          "51": 1
-        },
-        "h3_grease_settings": 1,
-        "http_version": "h3",
-        "header_order": [
-          ":method",
-          ":authority",
-          ":scheme",
-          ":path",
-          "sec-ch-ua",
-          "sec-ch-ua-mobile",
-          "sec-ch-ua-platform",
-          "upgrade-insecure-requests",
-          "user-agent",
-          "accept",
-          "sec-fetch-site",
-          "sec-fetch-mode",
-          "sec-fetch-user",
-          "sec-fetch-dest",
-          "accept-encoding",
-          "accept-language",
-          "priority"
-        ],
-        "notes": []
-      },
-      "notes": [],
-      "extension_orders": [
-        [
-          "0x0010",
-          "0x000d",
-          "0x0023",
-          "0x0017",
-          "0xca34",
-          "0x002b",
-          "0x44cd",
-          "0x001b",
-          "0x000a",
-          "0x000b",
-          "0x0012",
-          "0xff01",
-          "0x0033",
-          "0xfe0d",
-          "0x0005",
-          "0x0000",
-          "0x002d"
-        ],
-        [
-          "0x002d",
-          "0x0000",
-          "0xff01",
-          "0x002b",
-          "0x44cd",
-          "0x000a",
-          "0x0033",
-          "0x0012",
-          "0xfe0d",
-          "0x0023",
-          "0xca34",
-          "0x0017",
-          "0x001b",
-          "0x000d",
-          "0x000b",
-          "0x0005",
-          "0x0010",
-          "0x0029"
-        ],
-        [
-          "0x002d",
-          "0xfe0d",
-          "0x0023",
-          "0x002b",
-          "0x0033",
-          "0x001b",
-          "0x000a",
-          "0x0010",
-          "0x0005",
-          "0xca34",
-          "0x44cd",
-          "0x0000",
-          "0x000d",
-          "0x0012",
-          "0x0017",
-          "0x000b",
-          "0xff01",
-          "0x0029"
-        ],
-        [
-          "0x000d",
-          "0x000a",
-          "0xca34",
-          "0x0017",
-          "0x0023",
-          "0x001b",
-          "0x0010",
-          "0x002b",
-          "0x0000",
-          "0x002d",
-          "0xfe0d",
-          "0xff01",
-          "0x0012",
-          "0x0033",
-          "0x0005",
-          "0x000b",
-          "0x44cd",
-          "0x0029"
-        ],
-        [
-          "0x002d",
-          "0x001b",
-          "0x0017",
-          "0x0012",
-          "0x002b",
-          "0x0005",
-          "0x44cd",
-          "0xff01",
-          "0x000a",
-          "0x0010",
-          "0x0023",
-          "0x0000",
-          "0xca34",
-          "0x000d",
-          "0x0033",
-          "0xfe0d",
-          "0x000b",
-          "0x0029"
-        ],
-        [
-          "0x000d",
-          "0x002d",
-          "0x000a",
-          "0xff01",
-          "0xca34",
-          "0x0005",
-          "0x44cd",
-          "0x0023",
-          "0x0033",
-          "0xfe0d",
-          "0x001b",
-          "0x0000",
-          "0x0010",
-          "0x002b",
-          "0x0012",
-          "0x0017",
-          "0x000b",
-          "0x0029"
-        ],
-        [
-          "0x000a",
-          "0x44cd",
-          "0x002d",
-          "0xff01",
-          "0x0033",
-          "0x0017",
-          "0x000d",
-          "0x000b",
-          "0x0010",
-          "0x0012",
-          "0xca34",
-          "0x0005",
-          "0x001b",
-          "0xfe0d",
-          "0x0023",
-          "0x002b",
-          "0x0000",
-          "0x0029"
-        ],
-        [
-          "0x002b",
-          "0x0017",
-          "0x0033",
-          "0x44cd",
-          "0x002d",
-          "0x0005",
-          "0x001b",
-          "0x0012",
-          "0x0010",
-          "0x0000",
-          "0x000d",
-          "0x0023",
-          "0xca34",
-          "0xfe0d",
-          "0x000a",
-          "0x000b",
-          "0xff01",
-          "0x0029"
-        ],
-        [
-          "0x0010",
-          "0xff01",
-          "0x002b",
-          "0x000a",
-          "0x002d",
-          "0x0000",
-          "0xfe0d",
-          "0x0005",
-          "0x000d",
-          "0x0033",
-          "0x000b",
-          "0x44cd",
-          "0x0017",
-          "0x0023",
-          "0x0012",
-          "0xca34",
-          "0x001b",
-          "0x0029"
-        ]
-      ],
-      "connections": 9,
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=/lxtHGjMK5QQC8WGbrsuZ5IGXttDtfd+TqySHobzk+I= --disable-fre --no-default-browser-check --no-first-run"
-    },
-    {
-      "name": "disable-field-trial-config-headed",
-      "base_config": "disable-field-trial-config",
-      "mode": "headed",
-      "flags": [
-        "--disable-field-trial-config"
-      ],
-      "relaunch_of": null,
-      "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
-      "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
-      "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja4_r_resumed": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "21870bcd127ac04c93344137f170cdba",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-43-17613-11-27-35-10-45-0-13-23-16-5-51-65281-51764-18,4588-29-23-24,0",
-      "ja3n": "bd4930bd9b000ee684830e44bab76fdf",
-      "extensions": [
-        "0xfe0d",
-        "0x002b",
-        "0x44cd",
-        "0x000b",
-        "0x001b",
-        "0x0023",
-        "0x000a",
-        "0x002d",
-        "0x0000",
-        "0x000d",
-        "0x0017",
-        "0x0010",
-        "0x0005",
-        "0x0033",
-        "0xff01",
-        "0xca34",
-        "0x0012"
-      ],
-      "extensions_resumed": [
-        "0x000d",
-        "0x0033",
-        "0x0023",
-        "0xca34",
-        "0x0005",
-        "0x001b",
-        "0x000b",
-        "0x002b",
-        "0x002d",
-        "0x000a",
-        "0x0000",
-        "0xfe0d",
-        "0xff01",
-        "0x0012",
-        "0x0017",
-        "0x0010",
-        "0x44cd",
-        "0x0029"
-      ],
-      "extensions_sorted": [
-        "0x0000",
-        "0x0005",
-        "0x000a",
-        "0x000b",
-        "0x000d",
-        "0x0010",
-        "0x0012",
-        "0x0017",
-        "0x001b",
-        "0x0023",
-        "0x002b",
-        "0x002d",
-        "0x0033",
-        "0x44cd",
-        "0xca34",
-        "0xfe0d",
-        "0xff01"
-      ],
-      "has_trust_anchors": true,
-      "has_trust_anchors_resumed": true,
-      "trust_anchors_len": 186,
-      "ciphers": [
-        "0x1301",
-        "0x1302",
-        "0x1303",
-        "0xc02b",
-        "0xc02f",
-        "0xc02c",
-        "0xc030",
-        "0xcca9",
-        "0xcca8",
-        "0xc013",
-        "0xc014",
-        "0x009c",
-        "0x009d",
-        "0x002f",
-        "0x0035"
-      ],
-      "sig_algs": [
-        "0x0904",
-        "0x0905",
-        "0x0906",
-        "0x0403",
-        "0x0804",
-        "0x0401",
-        "0x0503",
-        "0x0805",
-        "0x0501",
-        "0x0806",
-        "0x0601"
-      ],
-      "groups": [
-        "0x11ec",
-        "0x001d",
-        "0x0017",
-        "0x0018"
-      ],
-      "key_shares": [
-        {
-          "group": "0x11ec",
-          "name": "X25519MLKEM768",
-          "key_length": 1216
-        },
-        {
-          "group": "0x001d",
-          "name": "x25519",
-          "key_length": 32
-        }
-      ],
-      "tls_versions": [
-        "0x0304",
-        "0x0303"
-      ],
-      "alpn": [
-        "h2",
-        "http/1.1"
-      ],
-      "alps": [
-        "h2"
-      ],
-      "alps_codepoint": "0x44cd",
-      "has_ech": true,
-      "cert_compression": [
-        2
-      ],
-      "resumption_accepted_by_server": true,
-      "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
-      "h2_settings": {
-        "1": 65536,
-        "2": 0,
-        "4": 6291456,
-        "6": 262144
-      },
-      "h2_window_update": 15663105,
-      "h2_priority_frames": [],
-      "h2_headers_priority": {
-        "exclusive": 1,
-        "depends_on": 0,
-        "weight": 256
-      },
-      "http_version": "h2",
-      "header_order": [
-        ":method",
-        ":authority",
-        ":scheme",
-        ":path",
-        "cache-control",
-        "sec-ch-ua",
-        "sec-ch-ua-mobile",
-        "sec-ch-ua-platform",
-        "upgrade-insecure-requests",
-        "user-agent",
-        "accept",
-        "sec-fetch-site",
-        "sec-fetch-mode",
-        "sec-fetch-user",
-        "sec-fetch-dest",
-        "accept-encoding",
-        "accept-language",
-        "priority"
-      ],
-      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
-      "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
-      "variations_source": "default seed",
-      "command_line_variations": "--force-fieldtrials=\"*MetricsAndCrashSampling/OutOfReportingSample/*PostFREFixMetricsAndCrashSampling/InReportingSample/*SeedFileTrial/Default/UkmSamplingRate/Sampled_NoSeed_Stable\" --force-fieldtrial-params=\"MetricsAndCrashSampling.OutOfReportingSample:sampling_rate_per_mille/947,PostFREFixMetricsAndCrashSampling.InReportingSample:sampling_rate_per_mille/100,UkmSamplingRate.Sampled_NoSeed_Stable:_default_sampling/1000000\" --enable-features=\"PostFREFixMetricsReporting<PostFREFixMetricsAndCrashSampling,UkmSamplingRate<UkmSamplingRate\" --disable-features=\"MetricsReporting<MetricsAndCrashSampling\" --disable-field-trial-config",
-      "active_variations_count": 44,
-      "active_variations": [
-        "5e3a236d-4113a79e",
-        "62e82091-59e286d0",
-        "b6f29041-ca7d8d80",
-        "f4f00e05-ca7d8d80",
-        "9481ce98-3d47f4f4",
-        "2a426c03-3d47f4f4",
-        "aca9df2c-3f4a17df",
-        "a3bc7210-dee66fa8",
-        "b100ac4-dee66fa8",
-        "4651ad61-dee66fa8",
-        "59748665-dee66fa8",
-        "65250343-dee66fa8",
-        "553aead6-dee66fa8",
-        "fe4babb8-dee66fa8",
-        "6205871c-dee66fa8",
-        "382b54bb-dee66fa8",
-        "70678518-dee66fa8",
-        "be338734-dee66fa8",
-        "6f316e34-dee66fa8",
-        "5f9907a9-dee66fa8",
-        "8eeccb9a-dee66fa8",
-        "2b465683-dee66fa8",
-        "52fc7926-dee66fa8",
-        "bc9b361d-dee66fa8",
-        "a41a7188-dee66fa8",
-        "ff71bfdc-dee66fa8",
-        "a6fa7475-dee66fa8",
-        "2159dd0c-dee66fa8",
-        "4330e9a4-dee66fa8",
-        "92cfa89f-dee66fa8",
-        "6daa4147-dee66fa8",
-        "4b935545-3d47f4f4",
-        "9a38bae3-6046c8a7",
-        "2d1e43a3-3d47f4f4",
-        "370ace14-3f4a17df",
-        "386dc267-3d47f4f4",
-        "a08097fd-ca7d8d80",
-        "a4406b35-1657e2d6",
-        "408da146-1657e2d6",
-        "d69d967d-3695c92e",
-        "3c8f75a1-164d9a15",
-        "5168dcfa-9c6e7a3e",
-        "f6918184-75e97c92",
-        "d4e26075-fea05d06"
-      ],
-      "field_trials": {
-        "MetricsAndCrashSampling": "OutOfReportingSample",
-        "PostFREFixMetricsAndCrashSampling": "InReportingSample",
         "SeedFileTrial": "Default",
         "UkmSamplingRate": "Sampled_NoSeed_Stable"
       },
@@ -1106,17 +1085,17 @@
         "ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
         "ja4_r": "q13d0312h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x001b",
-          "0xfe0d",
-          "0x0010",
           "0x0033",
-          "0x000d",
-          "0xca34",
-          "0x44cd",
           "0x0000",
+          "0x001b",
+          "0x44cd",
+          "0xfe0d",
+          "0x000d",
+          "0x000a",
+          "0x0010",
           "0x002d",
           "0x002b",
-          "0x000a",
+          "0xca34",
           "0x0039"
         ],
         "has_trust_anchors": true,
@@ -1162,16 +1141,29 @@
         ],
         "transport_params": [
           {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
             "len": 4,
-            "value": 6291456
+            "value": 65536
           },
           {
             "id": "0x3",
             "name": "max_udp_payload_size",
             "len": 2,
             "value": 1472
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
           },
           {
             "id": "0x4",
@@ -1186,16 +1178,16 @@
             "value": 100
           },
           {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
-            "value": 65536
+            "value": 6291456
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000016a7a0a7a00000001"
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
           },
           {
             "id": "0x6",
@@ -1204,29 +1196,10 @@
             "value": 6291456
           },
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0x1a47bc702234343f",
+            "id": "0x194e6ee67140ffaf",
             "name": "grease",
-            "len": 11,
-            "hex": "ef42fa066e43fe0a49ad81"
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
+            "len": 2,
+            "value": 45
           },
           {
             "id": "0xf",
@@ -1235,10 +1208,16 @@
             "hex": ""
           },
           {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
+            "id": "0x1",
+            "name": "max_idle_timeout",
             "len": 4,
-            "value": 6291456
+            "value": 30000
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "0000000100000001da8a7a1a"
           }
         ],
         "h3_settings": {
@@ -1271,7 +1250,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=/lxtHGjMK5QQC8WGbrsuZ5IGXttDtfd+TqySHobzk+I= --disable-fre --no-default-browser-check --no-first-run --disable-field-trial-config"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=8cUs4ZbtmbIzEvulAKyyBvIxRkyR4ZWfCJizYiO70Wc= --disable-fre --no-default-browser-check --no-first-run --disable-field-trial-config"
     },
     {
       "name": "disable-TLSTrustAnchorIDs-headed",
@@ -1285,44 +1264,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "6eb139071584a1bf794b2b60a6744872",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-16-18-43-11-5-23-45-51-65037-27-0-35-17613-10-13,4588-29-23-24,0",
+      "ja3": "b3010d5e6c80c7c24263cb4dbd017d1e",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,10-13-18-43-27-65037-11-17613-65281-23-0-16-51-45-35-5,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0xff01",
-        "0x0010",
+        "0x000a",
+        "0x000d",
         "0x0012",
         "0x002b",
-        "0x000b",
-        "0x0005",
-        "0x0017",
-        "0x002d",
-        "0x0033",
-        "0xfe0d",
         "0x001b",
-        "0x0000",
-        "0x0023",
+        "0xfe0d",
+        "0x000b",
         "0x44cd",
-        "0x000a",
-        "0x000d"
+        "0xff01",
+        "0x0017",
+        "0x0000",
+        "0x0010",
+        "0x0033",
+        "0x002d",
+        "0x0023",
+        "0x0005"
       ],
       "extensions_resumed": [
-        "0x002d",
-        "0xff01",
-        "0x000d",
-        "0x0033",
-        "0x0005",
-        "0x0000",
-        "0x000b",
         "0x0023",
-        "0x0010",
-        "0x0012",
+        "0x002d",
+        "0x000d",
+        "0x000b",
         "0x44cd",
-        "0x0017",
-        "0x000a",
         "0xfe0d",
-        "0x002b",
+        "0x0017",
+        "0xff01",
+        "0x0033",
+        "0x0000",
+        "0x000a",
+        "0x0012",
+        "0x0010",
         "0x001b",
+        "0x0005",
+        "0x002b",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1488,10 +1467,10 @@
         "370ace14-3f4a17df",
         "386dc267-3d47f4f4",
         "a08097fd-ca7d8d80",
-        "d69d967d-3695c92e",
-        "3c8f75a1-164d9a15",
         "a4406b35-1657e2d6",
         "408da146-1657e2d6",
+        "d69d967d-3695c92e",
+        "3c8f75a1-164d9a15",
         "5168dcfa-9c6e7a3e",
         "f6918184-75e97c92",
         "d4e26075-fea05d06"
@@ -1517,17 +1496,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
+          "0x0039",
           "0x000a",
           "0x0000",
-          "0x000d",
-          "0x0039",
-          "0x0033",
-          "0x002b",
-          "0xfe0d",
-          "0x001b",
-          "0x0010",
           "0x44cd",
-          "0x002d"
+          "0x000d",
+          "0xfe0d",
+          "0x0033",
+          "0x002d",
+          "0x002b",
+          "0x0010",
+          "0x001b"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -1572,34 +1551,16 @@
         ],
         "transport_params": [
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
           },
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
+            "id": "0x3",
+            "name": "max_udp_payload_size",
             "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
+            "value": 1472
           },
           {
             "id": "0x1",
@@ -1608,16 +1569,10 @@
             "value": 30000
           },
           {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
+            "id": "0x3b78d170db05f3d4",
+            "name": "grease",
+            "len": 5,
+            "value": 702362212
           },
           {
             "id": "0x4",
@@ -1629,7 +1584,13 @@
             "id": "0x11",
             "name": "version_information",
             "len": 12,
-            "hex": "0000000100000001eaaaaa2a"
+            "hex": "0000000100000001faea4ada"
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
           },
           {
             "id": "0x3128",
@@ -1639,16 +1600,34 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
           },
           {
-            "id": "0x214d3d909f887528",
-            "name": "grease",
-            "len": 12,
-            "hex": "149b06ed16563b47e0e58302"
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           }
         ],
         "h3_settings": {
@@ -1681,7 +1660,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=/lxtHGjMK5QQC8WGbrsuZ5IGXttDtfd+TqySHobzk+I= --disable-fre --no-default-browser-check --no-first-run --disable-features=TLSTrustAnchorIDs"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=8cUs4ZbtmbIzEvulAKyyBvIxRkyR4ZWfCJizYiO70Wc= --disable-fre --no-default-browser-check --no-first-run --disable-features=TLSTrustAnchorIDs"
     },
     {
       "name": "finch-AddTLSServerHandshakePadding-headed",
@@ -1695,48 +1674,48 @@
       "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
       "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1519h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "f10c5cd4e8682efe5a06a85f46a62e14",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,18-17613-65281-43-65037-51764-45-35-0-23-10-4832-5-11-16-27-13-51,4588-29-23-24,0",
+      "ja3": "c068dc020f87a0090cfc820284bbdd58",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,45-43-5-0-27-51764-23-13-65281-11-35-65037-16-18-4832-17613-10-51,4588-29-23-24,0",
       "ja3n": "a3a3161a080b73bda9cc285fb367fcc0",
       "extensions": [
-        "0x0012",
-        "0x44cd",
-        "0xff01",
-        "0x002b",
-        "0xfe0d",
-        "0xca34",
         "0x002d",
-        "0x0023",
-        "0x0000",
-        "0x0017",
-        "0x000a",
-        "0x12e0",
+        "0x002b",
         "0x0005",
-        "0x000b",
-        "0x0010",
+        "0x0000",
         "0x001b",
+        "0xca34",
+        "0x0017",
         "0x000d",
+        "0xff01",
+        "0x000b",
+        "0x0023",
+        "0xfe0d",
+        "0x0010",
+        "0x0012",
+        "0x12e0",
+        "0x44cd",
+        "0x000a",
         "0x0033"
       ],
       "extensions_resumed": [
-        "0x002d",
-        "0x002b",
-        "0x0005",
-        "0x0010",
         "0x12e0",
-        "0xfe0d",
-        "0x000d",
+        "0x0010",
         "0xca34",
+        "0x44cd",
+        "0x000b",
+        "0x0023",
         "0x001b",
         "0xff01",
-        "0x0000",
-        "0x0023",
-        "0x0017",
-        "0x000b",
         "0x0033",
+        "0x000d",
+        "0x002b",
+        "0xfe0d",
+        "0x0005",
         "0x000a",
-        "0x44cd",
         "0x0012",
+        "0x0000",
+        "0x002d",
+        "0x0017",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1907,10 +1886,10 @@
         "a08097fd-ca7d8d80",
         "a4406b35-1657e2d6",
         "408da146-1657e2d6",
-        "d69d967d-3695c92e",
-        "3c8f75a1-164d9a15",
         "5168dcfa-9c6e7a3e",
         "f6918184-75e97c92",
+        "d69d967d-3695c92e",
+        "3c8f75a1-164d9a15",
         "d4e26075-fea05d06"
       ],
       "field_trials": {
@@ -1935,19 +1914,19 @@
         "ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
         "ja4_r": "q13d0313h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,12e0,44cd,ca34,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0033",
-          "0x000a",
-          "0x12e0",
-          "0x0039",
           "0x002d",
+          "0x000d",
           "0x0010",
-          "0xfe0d",
-          "0x002b",
           "0x001b",
-          "0x0000",
-          "0x44cd",
           "0xca34",
-          "0x000d"
+          "0x12e0",
+          "0xfe0d",
+          "0x0000",
+          "0x000a",
+          "0x002b",
+          "0x44cd",
+          "0x0033",
+          "0x0039"
         ],
         "has_trust_anchors": true,
         "ciphers": [
@@ -1992,41 +1971,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x2dff7a73a5664d94",
-            "name": "grease",
-            "len": 13,
-            "hex": "dac898cbc014f618d9d7300832"
-          },
-          {
             "id": "0xf",
             "name": "initial_source_connection_id",
             "len": 0,
             "hex": ""
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
-            "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
           },
           {
             "id": "0x5",
@@ -2041,16 +1989,23 @@
             "value": 65536
           },
           {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
             "id": "0x7",
             "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
           },
           {
-            "id": "0x1",
-            "name": "max_idle_timeout",
+            "id": "0x3128",
+            "name": "google_connection_options",
             "len": 4,
-            "value": 30000
+            "hex": "4f524947",
+            "ascii": "ORIG"
           },
           {
             "id": "0x6",
@@ -2059,16 +2014,40 @@
             "value": 6291456
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "0000000100000001ca5a2a1a"
-          },
-          {
             "id": "0x4",
             "name": "initial_max_data",
             "len": 4,
             "value": 15728640
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000017a7acaba"
+          },
+          {
+            "id": "0x1fece79406f22a3a",
+            "name": "grease",
+            "len": 11,
+            "hex": "ad25416a69e52a080c5283"
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
           }
         ],
         "h3_settings": {
@@ -2101,7 +2080,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=/lxtHGjMK5QQC8WGbrsuZ5IGXttDtfd+TqySHobzk+I= --disable-fre --no-default-browser-check --no-first-run --enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=8cUs4ZbtmbIzEvulAKyyBvIxRkyR4ZWfCJizYiO70Wc= --disable-fre --no-default-browser-check --no-first-run --enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
     }
   ],
   "baseline_comparisons": [],
@@ -2189,13 +2168,13 @@
   },
   "notes": [
     "captured Chrome 156.0.8078.47 is serving on Android stable (24.4% of users); newest serving is 157.0.8103.14 (0.24%)",
-    "extension order across 9 TLS connections of one Chrome session: 9 distinct orders",
+    "extension order across 8 TLS connections of one Chrome session: 8 distinct orders",
     "Captured on an Android emulator (system-images;android-35;google_apis_playstore;x86_64, Android 15 / API 35, x86_64), not a physical phone. Cipher order and other TLS choices come from Chrome's own BoringSSL; the x86_64 CPU has AES instructions, like current arm64 phones."
   ],
   "android": {
     "package": "com.android.chrome",
     "version_code": "807804708",
-    "code_path": "/data/app/~~RoxX6FFXQE_6sqn10H4ZRA==/com.android.chrome-k2RvJr5COWsfrM6Gl7wBYQ==",
+    "code_path": "/data/app/~~rybGYw0so5jtiCARPwoqyA==/com.android.chrome--4vcW50dada1Pc01RVFA3A==",
     "source": "apk",
     "source_detail": "Google-signed x86_64 APK from APKMirror, installed over the image's preinstalled Chrome: https://www.apkmirror.com/apk/google-inc/chrome/google-chrome-156-0-8078-47-release/google-chrome-156-0-8078-47-3-android-apk-download/",
     "apk_sha256": "d22fe1f2c486db0468c2cf2a58cff8ba1e5077cc994f453de667040488b38fc8",
