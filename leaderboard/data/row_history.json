@@ -1724,6 +1724,98 @@
     }
    },
    "source": "build"
+  },
+  {
+   "date": "2026-10-25",
+   "chrome_version": "156.0.8078.47",
+   "rows": {
+    "tls-client|chrome_152": {
+     "verdict": "exact",
+     "versions_behind": 4,
+     "mismatches": 0
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "exact",
+     "versions_behind": 4,
+     "mismatches": 0
+    },
+    "tls-client|chrome_150": {
+     "verdict": "exact_variant",
+     "versions_behind": 6,
+     "mismatches": 1
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "exact_variant",
+     "versions_behind": 6,
+     "mismatches": 1
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "close",
+     "versions_behind": 10,
+     "mismatches": 1
+    },
+    "azuretls-client|chrome": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "behind",
+     "versions_behind": 20,
+     "mismatches": 2
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "primp|chrome_146": {
+     "verdict": "behind",
+     "versions_behind": 10,
+     "mismatches": 2
+    },
+    "rnet|chrome137": {
+     "verdict": "behind",
+     "versions_behind": 19,
+     "mismatches": 2
+    },
+    "rnet|chrome145": {
+     "verdict": "behind",
+     "versions_behind": 11,
+     "mismatches": 2
+    },
+    "wreq|chrome149": {
+     "verdict": "behind",
+     "versions_behind": 7,
+     "mismatches": 2
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 3
+    },
+    "hrequests|chrome-131": {
+     "verdict": "behind",
+     "versions_behind": 25,
+     "mismatches": 3
+    },
+    "cycletls|readme-chrome-example": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 5
+    },
+    "got-scraping|chrome-(header-generator)": {
+     "verdict": "behind",
+     "versions_behind": null,
+     "mismatches": 6
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "behind",
+     "versions_behind": 36,
+     "mismatches": 5
+    }
+   },
+   "source": "build"
   }
  ]
 }
