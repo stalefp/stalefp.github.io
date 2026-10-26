@@ -6,7 +6,7 @@
  "build": "21624.5.1.11.3",
  "platform": "macos",
  "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
- "captured_at": "2026-10-25T05:12:55-05:00",
+ "captured_at": "2026-10-26T05:29:45-05:00",
  "mode": "headed (safaridriver)",
  "source": "Safari preinstalled on the GitHub macOS runner, driven by Apple's safaridriver",
  "ja4": "t13d2013h2_a09f3c656075_7f0f34a4126d",

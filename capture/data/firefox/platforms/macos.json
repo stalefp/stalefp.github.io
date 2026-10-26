@@ -5,7 +5,7 @@
  "version": "158.0.1",
  "platform": "macos",
  "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
- "captured_at": "2026-10-25T05:11:51-05:00",
+ "captured_at": "2026-10-26T05:28:38-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -209,13 +209,13 @@
     "id": "0xf",
     "name": "initial_source_connection_id",
     "len": 3,
-    "hex": "8470d4"
+    "hex": "529308"
    },
    {
     "id": "0x11",
     "name": "version_information",
     "len": 16,
-    "hex": "000000014afa4a9a6b3343cf00000001"
+    "hex": "00000001cacafa5a6b3343cf00000001"
    },
    {
     "id": "0x1d",
