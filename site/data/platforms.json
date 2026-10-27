@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-10-26T10:34:06Z",
+ "generated_at": "2026-10-27T10:32:39Z",
  "platforms": {
   "linux": {
    "status": "captured",
@@ -11,8 +11,8 @@
    "version": "156.0.8078.47",
    "channel": "stable",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
-   "captured_at": "2026-10-26T05:18:12-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "captured_at": "2026-10-27T05:14:27-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "platform_stable_newest": "156.0.8078.47",
    "platform_stable_full_rollout": "156.0.8078.47",
    "reference_config": "default-headed",
@@ -290,8 +290,8 @@
    "version": "156.0.8078.48",
    "channel": "stable",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
-   "captured_at": "2026-10-26T05:18:07-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "captured_at": "2026-10-27T05:14:32-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "platform_stable_newest": "157.0.8103.15",
    "platform_stable_full_rollout": "156.0.8078.48",
    "reference_config": "default-headed",
@@ -569,8 +569,8 @@
    "version": "156.0.8078.48",
    "channel": "stable",
    "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
-   "captured_at": "2026-10-26T05:18:55-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "captured_at": "2026-10-27T05:15:10-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "platform_stable_newest": "156.0.8078.48",
    "platform_stable_full_rollout": "156.0.8078.48",
    "reference_config": "default-headed",
@@ -848,8 +848,8 @@
    "version": "156.0.8078.47",
    "channel": "stable",
    "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
-   "captured_at": "2026-10-26T05:19:45-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "captured_at": "2026-10-27T05:16:18-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "platform_stable_newest": "157.0.8103.14",
    "platform_stable_full_rollout": null,
    "reference_config": "default-headed",
@@ -928,7 +928,6 @@
       "0x11=",
       "0x1=30000",
       "0x20=65536",
-      "0x3127=400000",
       "0x3128=ORIG",
       "0x3=1472",
       "0x4=15728640",
@@ -1015,7 +1014,6 @@
       "0x11=",
       "0x1=30000",
       "0x20=65536",
-      "0x3127=400000",
       "0x3128=ORIG",
       "0x3=1472",
       "0x4=15728640",
@@ -1104,7 +1102,6 @@
       "0x11=",
       "0x1=30000",
       "0x20=65536",
-      "0x3127=400000",
       "0x3128=ORIG",
       "0x3=1472",
       "0x4=15728640",
@@ -1130,15 +1127,13 @@
      "expected": "156.0.8078.47"
     },
     "serving_on_stable": true,
-    "serving_share": 0.243775,
+    "serving_share": 0.9751,
     "android_stable_serving": {
      "157.0.8103.14": 0.00245,
      "156.0.8078.48": 0.00245,
-     "156.0.8078.47": 0.243775,
-     "155.0.8059.87": 0.243775,
+     "156.0.8078.47": 0.9751,
      "155.0.8059.86": 0.01,
-     "155.0.8059.85": 0.01,
-     "155.0.8059.84": 0.48755
+     "155.0.8059.85": 0.01
     },
     "apk_sha256": "d22fe1f2c486db0468c2cf2a58cff8ba1e5077cc994f453de667040488b38fc8",
     "signer_cert_sha256": "f0fd6c5b410f25cb25c3b53346c8972fae30f8ee7411df910480ad6b2d60db83",
@@ -1151,8 +1146,8 @@
      "model": "sdk_gphone64_x86_64",
      "image": "system-images;android-35;google_apis_playstore;x86_64"
     },
-    "connections": 8,
-    "distinct_extension_orders": 8
+    "connections": 10,
+    "distinct_extension_orders": 10
    }
   }
  },
@@ -1281,11 +1276,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_params": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameters"
-     ]
+     "differs": []
     },
     "no_ca34": {
      "fields": {
@@ -1299,11 +1292,9 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_params": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameters"
-     ]
+     "differs": []
     },
     "pq": {
      "fields": {
@@ -1317,38 +1308,36 @@
       "sig_algs": true,
       "groups": true,
       "ciphers": true,
-      "quic_transport_params": false
+      "quic_transport_params": true
      },
-     "differs": [
-      "QUIC transport parameters"
-     ]
+     "differs": []
     }
    }
   }
  },
  "last_attempt": {
   "linux": {
-   "at": "2026-10-26T10:31:56Z",
+   "at": "2026-10-27T10:29:51Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "detail": null
   },
   "windows": {
-   "at": "2026-10-26T10:31:56Z",
+   "at": "2026-10-27T10:29:51Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "detail": null
   },
   "macos": {
-   "at": "2026-10-26T10:31:56Z",
+   "at": "2026-10-27T10:29:51Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "detail": null
   },
   "android": {
-   "at": "2026-10-26T10:31:56Z",
+   "at": "2026-10-27T10:29:51Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40306265655",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
    "detail": null
   }
  }

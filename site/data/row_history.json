@@ -1908,6 +1908,98 @@
     }
    },
    "source": "build"
+  },
+  {
+   "date": "2026-10-27",
+   "chrome_version": "156.0.8078.47",
+   "rows": {
+    "azuretls-client|chrome": {
+     "verdict": "not tested",
+     "versions_behind": null,
+     "mismatches": null
+    },
+    "tls-client|chrome_150": {
+     "verdict": "not tested",
+     "versions_behind": 6,
+     "mismatches": null
+    },
+    "tls-client|chrome_152": {
+     "verdict": "not tested",
+     "versions_behind": 4,
+     "mismatches": null
+    },
+    "tls-client|chrome_152_psk": {
+     "verdict": "not tested",
+     "versions_behind": 4,
+     "mismatches": null
+    },
+    "utls|hellochrome_auto": {
+     "verdict": "not tested",
+     "versions_behind": null,
+     "mismatches": null
+    },
+    "cycletls|readme-chrome-example": {
+     "verdict": "not tested",
+     "versions_behind": null,
+     "mismatches": null
+    },
+    "got-scraping|chrome-(header-generator)": {
+     "verdict": "not tested",
+     "versions_behind": null,
+     "mismatches": null
+    },
+    "curl_cffi|chrome136": {
+     "verdict": "not tested",
+     "versions_behind": 20,
+     "mismatches": null
+    },
+    "curl_cffi|chrome146": {
+     "verdict": "not tested",
+     "versions_behind": 10,
+     "mismatches": null
+    },
+    "curl_cffi|chrome150": {
+     "verdict": "not tested",
+     "versions_behind": 6,
+     "mismatches": null
+    },
+    "hrequests|chrome-131": {
+     "verdict": "not tested",
+     "versions_behind": 25,
+     "mismatches": null
+    },
+    "noble-tls|chrome_146": {
+     "verdict": "not tested",
+     "versions_behind": 10,
+     "mismatches": null
+    },
+    "primp|chrome_146": {
+     "verdict": "not tested",
+     "versions_behind": 10,
+     "mismatches": null
+    },
+    "rnet|chrome137": {
+     "verdict": "not tested",
+     "versions_behind": 19,
+     "mismatches": null
+    },
+    "rnet|chrome145": {
+     "verdict": "not tested",
+     "versions_behind": 11,
+     "mismatches": null
+    },
+    "tls-client-(python)|chrome_120": {
+     "verdict": "not tested",
+     "versions_behind": 36,
+     "mismatches": null
+    },
+    "wreq|chrome149": {
+     "verdict": "not tested",
+     "versions_behind": 7,
+     "mismatches": null
+    }
+   },
+   "source": "build"
   }
  ]
 }
