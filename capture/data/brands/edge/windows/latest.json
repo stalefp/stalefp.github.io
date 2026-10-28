@@ -6,11 +6,11 @@
   "channel": "stable",
   "os": "Windows 2025Server (AMD64, build 10.0.26100)",
   "platform": "windows",
-  "captured_at": "2026-10-27T05:27:02-05:00",
+  "captured_at": "2026-10-28T05:33:12-05:00",
   "chrome_path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
   "chrome_version_string": "Microsoft Edge 156.0.4314.50",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40486867735",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "7c359292bd92eb328d312fe77458b01c",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-18-17613-5-13-43-23-35-0-27-11-10-65037-16-51-45,4588-29-23-24,0",
+      "ja3": "9eb18439ef9f4ec2bb3f064f90e3608d",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-11-51-16-23-13-17613-65281-27-45-35-43-18-10-5-0,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0xff01",
-        "0x0012",
-        "0x44cd",
-        "0x0005",
-        "0x000d",
-        "0x002b",
-        "0x0017",
-        "0x0023",
-        "0x0000",
-        "0x001b",
-        "0x000b",
-        "0x000a",
         "0xfe0d",
-        "0x0010",
+        "0x000b",
         "0x0033",
-        "0x002d"
+        "0x0010",
+        "0x0017",
+        "0x000d",
+        "0x44cd",
+        "0xff01",
+        "0x001b",
+        "0x002d",
+        "0x0023",
+        "0x002b",
+        "0x0012",
+        "0x000a",
+        "0x0005",
+        "0x0000"
       ],
       "extensions_resumed": [
-        "0x000d",
-        "0xfe0d",
-        "0x0012",
-        "0x000b",
-        "0x002d",
-        "0x44cd",
-        "0x0023",
-        "0x0010",
         "0x002b",
-        "0x001b",
-        "0x0033",
         "0x0017",
+        "0x001b",
+        "0x000d",
+        "0x0010",
+        "0x44cd",
         "0xff01",
+        "0x0023",
+        "0x000b",
         "0x0000",
         "0x000a",
+        "0x002d",
         "0x0005",
+        "0xfe0d",
+        "0x0012",
+        "0x0033",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -187,7 +187,7 @@
       "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
       "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Microsoft Edge\";v=\"156\"",
       "variations_source": "default seed",
-      "command_line_variations": "--force-fieldtrials=\"*BackToOpener/triggered/*ConsumerCopilotLabelButtonWithDropdown/triggered/*DefaultBrowserChangedOffline/triggered/*DefaultBrowserVisibleWindow/triggered/*DelegatedCompositing/triggered/*DomStorageSqliteNewDatabases/triggered/*EdgeFastTextLanguageDetection/triggered/*EdgeSleepingTabsFadeExperimentTrigger/triggered/EdgeUnifiedFREAB/Exp/EmptyEdgeFirstRunConfig/Default/EmptyEdgeRuntimeConfig/DefaultRuntime/*FeatureGroupHoldoutDefaultBrowser/triggered/*LCPPPrefetchSubresourceTrigger/triggered/MetaOSMidgardVersionConfig/DefaultRuntime/*NewDeviceExperimentation_ChromeInstalled/triggered/PayloadEdgeSoftFREBeacon/Exp/PreLaunchFREWebUI2Migration/Exp/*RenderDocument/triggered/*RequestHeaderIntegrityRollout/DefaultRuntime/*RustBrotliNet/triggered/*SeedFileTrial/SeedFilesLaunched/*SkuPermanentOverrides/Default/*TestFeatureDisabled/triggered/*TestFeatureEnabled/triggered/UACompatibilityFix/ExpRuntime/*ValidateCommitOriginAtCommit/triggered/*msAISearchEnabled/triggered/*msArbitrationServiceBypassDynamicSuppression/triggered/*msArbitrationServiceBypassModelSuppression/triggered/*msArbitrationServiceExperienceDataReset/triggered/*msArbitrationServiceGlobalSuppression/triggered/*msArbitrationServiceNotificationsSuppressLists/triggered/*msArbitrationServiceReady/triggered/*msArbitrationServiceReserveBeforeShow/triggered/*msArbitrationServiceServerSignalFunction/triggered/*msAutoLaunchPredictorComponent/triggered/*msAvoidRedundantSetCursorCalls/triggered/*msBookmarkBarSettingIsDefaultStartup/triggered/*msBrowserHorizontalTabsTrigger/triggered/*msBrowserLaunched/triggered/*msBrowserLightModeTrigger/triggered/*msChildPreReadMainDllTrigger/triggered/*msChromeInstalled/triggered/*msCloudMessagingThreadPool/triggered/*msCompactNeutralThemeAppliedTrigger/triggered/*msComponentUpdaterBridgeArbitrationTrigger/triggered/*msComponentUpdaterBridgeSignalTriggersTrigger/triggered/*msCopilotAndSidebarContextMenuUpdate/triggered/*msCopilotMode2/triggered/*msCopilotNtpMoreMenuToggle/triggered/*msCopilotOmniboxEntryPoint/triggered/*msDefaultThemeEverAppliedTrigger/triggered/*msDeviceCpuCoresLE2Trigger/triggered/*msDeviceHardDriveNoSeekPenaltyTrigger/triggered/*msDeviceMemoryGT12LE16GB/triggered/*msDisableGwpAsanOnLowMemoryDevices/triggered/*msDisablePopups_CheckedAfterFRESession/triggered/*msDynamicCSPCheckForExtensionAPIs/triggered/*msEEOnnxAutofill/triggered/*msEdgeAccountNameEmailProfile/triggered/*msEdgeAffiliationBackend/triggered/*msEdgeAorakiToolbarDeclutter/triggered/*msEdgeAutofillComplexFormDetection/triggered/*msEdgeAutofillMlUnifiedSettings/triggered/*msEdgeBackgroundRestartManager/triggered/*msEdgeBrowserHasslesCookieStorageTriggerHubAA/triggered/*msEdgeBrowserHasslesExtensionContentScriptTriggerHubAA/triggered/*msEdgeBrowserHasslesExtensionDnrTriggerHubAA/triggered/*msEdgeBrowserHasslesExtensionWebRequestTriggerHubAA/triggered/*msEdgeBrowserHasslesPageInfo/triggered/*msEdgeBrowserHasslesPageInfoExperiment/triggered/*msEdgeBrowserHasslesThirdPartyCookieTriggerHubAA/triggered/*msEdgeBrowserHasslesTriggerHub/triggered/*msEdgeBrowserHasslesTriggeringFramework/triggered/*msEdgeBrowserTypeNormal/triggered/*msEdgeCohortsRunEventSuccessInBackgroundThread/triggered/*msEdgeDsatCollection/triggered/*msEdgeEDropUI/triggered/*msEdgeHJEnableChromeBannerDetection/triggered/*msEdgeImportFavBarSetting/triggered/*msEdgeLayoutHorizontalTabStrip/triggered/*msEdgeLens/triggered/*msEdgeLocalFavoriteDetectTrigger/triggered/*msEdgeMetaOSAppService/triggered/*msEdgeMouseGestureDefaultEnabled/triggered/*msEdgeMouseGestureSupported/triggered/*msEdgeNewDeviceFre/triggered/*msEdgeNotDefaultBingDefaultTrigger/triggered/*msEdgeOnRampImport/triggered/*msEdgePartnerCodeActive/triggered/*msEdgePasswordImportCSV/triggered/*msEdgeReadingViewEligibilityModelV2/triggered/*msEdgeSessionZeroTrigger/triggered/*msEdgeShoppingBackgroundAutoApply/triggered/*msEdgeShoppingDisableDefaultExperience/triggered/*msEdgeShoppingDisableForAADUsers/triggered/*msEdgeShoppingOmniboxNotificationsENP/triggered/*msEdgeShowHomeButtonByDefault/triggered/*msEdgeSplitWindowDragAndDrop/triggered/*msEdgeSunflowerFavbar/triggered/*msEdgeSuperDragDefaultEnabled/triggered/*msEdgeSuperDragRetentionMetric/triggered/*msEdgeTabSearch/triggered/*msEdgeTools/triggered/*msEdgeToolsBrowserSandbox/triggered/*msEdgeV8ETWTracing/triggered/*msEnableSingleMonitorScreenLookupOptimization/triggered/*msExtensionsGrowthInitiativeHoldout/triggered/*msFastFollowSCFRENotEligibleNonAutolaunchSession/triggered/*msFavoritesBackfillFavicon/triggered/*msFavoritesBarTreatment1/triggered/*msFeatureGroupEdgeENPDyn/triggered/*msFeatureGroupEdgeMT/triggered/*msFeatureGroupEdgeR01Clean/triggered/*msFeatureGroupRevisitationHoldout/triggered/*msHideCopilotNavigatesToSettings/triggered/*msHistoryActiveVisitDuration/triggered/*msNewDeviceExperimentation_NotSignedIn/triggered/*msNewDevicesRubyNtp_CheckedAfterFRESession/triggered/*msNewDevicesTopSites_CheckedAfterFRESession/triggered/*msNewFRESkippedNonAutolaunchSession/triggered/*msNonCIConsentedNonAutolaunchSession/triggered/*msNonColorThemeAppliedTrigger/triggered/*msNtpMostVisitedSitesIncludedInTopSites/triggered/*msNurturingFeatureBrowserLaunchCooldown/triggered/*msNurturingFeaturePinRecommendationCooldownPolicy/triggered/*msNurturingRecommendedSettingsWsbTrigger/triggered/*msNurturingRecordNTPFCHistory/triggered/*msNurturingServerDrivenENP/triggered/*msNurturingShoppingNotificationUpdateInvoked/triggered/*msNurturingUserAcceptedCountEqualToDismissedCount/triggered/*msNurturingUserAcceptedNoNotification/triggered/*msNurturingUserDismissedNoNotification/triggered/*msOSFirstLogonLE14/triggered/*msPerformanceModeToggle/triggered/*msPreloadTopChromeWebUI/triggered/*msPrerenderEligible/triggered/*msPrerenderEligibleForNtp/triggered/*msPrerenderEligibleForStartPage/triggered/*msPrimaryScreenResolution1024X768/triggered/*msProauthReduceRequestsFromBackground/triggered/*msProcessPooling/triggered/*msProtocolLaunchSessionTracker/triggered/*msSSDPreReadFileTrigger/triggered/*msSanPersonalizationConsentInSCOOBE/triggered/*msSearchBoxInToolbar/triggered/*msSegmentationPlatformDoNotDisturbFeature/triggered/*msSegmentationPlatformNotificationPersonalization/triggered/*msSidebarContextMenuQuitAppIfAppOpen/triggered/*msSidebarHidden/triggered/*msSidebarVisibilityPrefDefaultFalse/triggered/*msSidebarVisibilityTurnOnEngagement/triggered/*msSignInStarted/triggered/*msSmartScreenSendReferrerChain/triggered/*msStackSamplingProfiler/triggered/*msSwagM1Google/triggered/*msTabGroupsInFavoriteBar/triggered/*msTestFeatureHoldout/triggered/*msTieUnpackedExtensionsToDevMode/triggered/*msTriggerEdgeLaunch/triggered/*msUseComponentUpdaterBridge/triggered/*msVisualRejuvMicaTrigger/triggered/*msWindowTabManagerPublic/triggered/*msWindowsUserActivities/triggered/*msWorkspaceMigrationTrigger/triggered\" --force-fieldtrial-params=\"EdgeUnifiedFREAB.Exp:screen_order_variant/PersonalizeFirstFlow,MetaOSMidgardVersionConfig.DefaultRuntime:MetaOSMidgardVersion/1%2E20260615%2E8%2E0,RequestHeaderIntegrityRollout.DefaultRuntime:eid/cVUMTYOAOHoAWoaT1x6%2FKuond38%3D,UACompatibilityFix.ExpRuntime:ApplyUACompatibilityDefaultFix/true\" --enable-features=\"EdgeSoftFREBeacon<PayloadEdgeSoftFREBeacon,EdgeUnifiedFRE<EdgeUnifiedFREAB,FetchMetaOSMidgardVersion<MetaOSMidgardVersionConfig,RequestHeaderIntegrity<RequestHeaderIntegrityRollout,eefrc<EmptyEdgeFirstRunConfig,eerc<EmptyEdgeRuntimeConfig,msEdgePreLaunchFREWebUI2Migration<PreLaunchFREWebUI2Migration,msUACompatibilityDefaultFix<UACompatibilityFix\" --disable-features=\"EdgeSunflowerBackgroundImport<SkuPermanentOverrides,SegmentationPlatformLiveEventBadgeServiceFeature<SkuPermanentOverrides,msOnHoverSearchInSidebar<SkuPermanentOverrides,msWinPdfOCR<SkuPermanentOverrides\" --disable-field-trial-config",
+      "command_line_variations": "--force-fieldtrials=\"*BackToOpener/triggered/*ConsumerCopilotLabelButtonWithDropdown/triggered/*DefaultBrowserChangedOffline/triggered/*DefaultBrowserVisibleWindow/triggered/*DelegatedCompositing/triggered/*DomStorageSqliteNewDatabases/triggered/*EdgeFastTextLanguageDetection/triggered/*EdgeSleepingTabsFadeExperimentTrigger/triggered/EdgeUnifiedFREAB/Exp/EmptyEdgeFirstRunConfig/Default/EmptyEdgeRuntimeConfig/DefaultRuntime/*FeatureGroupHoldoutDefaultBrowser/triggered/*LCPPPrefetchSubresourceTrigger/triggered/MetaOSMidgardVersionConfig/DefaultRuntime/*NewDeviceExperimentation_ChromeInstalled/triggered/PayloadEdgeSoftFREBeacon/Exp/PreLaunchFREWebUI2Migration/Exp/*RenderDocument/triggered/*RequestHeaderIntegrityRollout/DefaultRuntime/*RustBrotliNet/triggered/*SeedFileTrial/SeedFilesLaunched/*SkuPermanentOverrides/Default/*TestFeatureDisabled/triggered/*TestFeatureEnabled/triggered/UACompatibilityFix/ExpRuntime/*ValidateCommitOriginAtCommit/triggered/*msAISearchEnabled/triggered/*msArbitrationServiceBypassDynamicSuppression/triggered/*msArbitrationServiceBypassModelSuppression/triggered/*msArbitrationServiceExperienceDataReset/triggered/*msArbitrationServiceGlobalSuppression/triggered/*msArbitrationServiceNotificationsSuppressLists/triggered/*msArbitrationServiceReady/triggered/*msArbitrationServiceReserveBeforeShow/triggered/*msArbitrationServiceServerSignalFunction/triggered/*msAutoLaunchPredictorComponent/triggered/*msAvoidRedundantSetCursorCalls/triggered/*msBookmarkBarSettingIsDefaultStartup/triggered/*msBrowserHorizontalTabsTrigger/triggered/*msBrowserLaunched/triggered/*msBrowserLightModeTrigger/triggered/*msChildPreReadMainDllTrigger/triggered/*msChromeInstalled/triggered/*msCloudMessagingThreadPool/triggered/*msCompactNeutralThemeAppliedTrigger/triggered/*msComponentUpdaterBridgeArbitrationTrigger/triggered/*msComponentUpdaterBridgeSignalTriggersTrigger/triggered/*msCopilotAndSidebarContextMenuUpdate/triggered/*msCopilotMode2/triggered/*msCopilotNtpMoreMenuToggle/triggered/*msCopilotOmniboxEntryPoint/triggered/*msDefaultThemeEverAppliedTrigger/triggered/*msDeviceCpuCoresLE2Trigger/triggered/*msDeviceHardDriveModernTrigger/triggered/*msDeviceMemoryGT12LE16GB/triggered/*msDisableGwpAsanOnLowMemoryDevices/triggered/*msDisablePopups_CheckedAfterFRESession/triggered/*msDynamicCSPCheckForExtensionAPIs/triggered/*msEEOnnxAutofill/triggered/*msEdgeAccountNameEmailProfile/triggered/*msEdgeAffiliationBackend/triggered/*msEdgeAorakiToolbarDeclutter/triggered/*msEdgeAutofillComplexFormDetection/triggered/*msEdgeAutofillMlUnifiedSettings/triggered/*msEdgeBackgroundRestartManager/triggered/*msEdgeBrowserHasslesCookieStorageTriggerHubAA/triggered/*msEdgeBrowserHasslesExtensionContentScriptTriggerHubAA/triggered/*msEdgeBrowserHasslesExtensionDnrTriggerHubAA/triggered/*msEdgeBrowserHasslesExtensionWebRequestTriggerHubAA/triggered/*msEdgeBrowserHasslesPageInfo/triggered/*msEdgeBrowserHasslesPageInfoExperiment/triggered/*msEdgeBrowserHasslesThirdPartyCookieTriggerHubAA/triggered/*msEdgeBrowserHasslesTriggerHub/triggered/*msEdgeBrowserHasslesTriggeringFramework/triggered/*msEdgeBrowserTypeNormal/triggered/*msEdgeCohortsRunEventSuccessInBackgroundThread/triggered/*msEdgeDsatCollection/triggered/*msEdgeEDropUI/triggered/*msEdgeHJEnableChromeBannerDetection/triggered/*msEdgeImportFavBarSetting/triggered/*msEdgeLayoutHorizontalTabStrip/triggered/*msEdgeLens/triggered/*msEdgeLocalFavoriteDetectTrigger/triggered/*msEdgeMetaOSAppService/triggered/*msEdgeMouseGestureDefaultEnabled/triggered/*msEdgeMouseGestureSupported/triggered/*msEdgeNewDeviceFre/triggered/*msEdgeNotDefaultBingDefaultTrigger/triggered/*msEdgeOnRampImport/triggered/*msEdgePartnerCodeActive/triggered/*msEdgePasswordImportCSV/triggered/*msEdgeReadingViewEligibilityModelV2/triggered/*msEdgeSessionZeroTrigger/triggered/*msEdgeShoppingBackgroundAutoApply/triggered/*msEdgeShoppingDisableDefaultExperience/triggered/*msEdgeShoppingDisableForAADUsers/triggered/*msEdgeShoppingOmniboxNotificationsENP/triggered/*msEdgeShowHomeButtonByDefault/triggered/*msEdgeSplitWindowDragAndDrop/triggered/*msEdgeSunflowerFavbar/triggered/*msEdgeSuperDragDefaultEnabled/triggered/*msEdgeSuperDragRetentionMetric/triggered/*msEdgeTabSearch/triggered/*msEdgeTools/triggered/*msEdgeToolsBrowserSandbox/triggered/*msEdgeV8ETWTracing/triggered/*msEnableSingleMonitorScreenLookupOptimization/triggered/*msExtensionsGrowthInitiativeHoldout/triggered/*msFastFollowSCFRENotEligibleNonAutolaunchSession/triggered/*msFavoritesBackfillFavicon/triggered/*msFavoritesBarTreatment1/triggered/*msFeatureGroupEdgeENPDyn/triggered/*msFeatureGroupEdgeMT/triggered/*msFeatureGroupEdgeR01Clean/triggered/*msFeatureGroupRevisitationHoldout/triggered/*msHideCopilotNavigatesToSettings/triggered/*msHistoryActiveVisitDuration/triggered/*msNewDeviceExperimentation_NotSignedIn/triggered/*msNewDevicesRubyNtp_CheckedAfterFRESession/triggered/*msNewDevicesTopSites_CheckedAfterFRESession/triggered/*msNewFRESkippedNonAutolaunchSession/triggered/*msNonCIConsentedNonAutolaunchSession/triggered/*msNonColorThemeAppliedTrigger/triggered/*msNtpMostVisitedSitesIncludedInTopSites/triggered/*msNurturingFeatureBrowserLaunchCooldown/triggered/*msNurturingFeaturePinRecommendationCooldownPolicy/triggered/*msNurturingRecommendedSettingsWsbTrigger/triggered/*msNurturingRecordNTPFCHistory/triggered/*msNurturingServerDrivenENP/triggered/*msNurturingShoppingNotificationUpdateInvoked/triggered/*msNurturingUserAcceptedCountEqualToDismissedCount/triggered/*msNurturingUserAcceptedNoNotification/triggered/*msNurturingUserDismissedNoNotification/triggered/*msOSFirstLogonLE14/triggered/*msPerformanceModeToggle/triggered/*msPreloadTopChromeWebUI/triggered/*msPrerenderEligible/triggered/*msPrerenderEligibleForNtp/triggered/*msPrerenderEligibleForStartPage/triggered/*msPrimaryScreenResolution1024X768/triggered/*msProauthReduceRequestsFromBackground/triggered/*msProcessPooling/triggered/*msProtocolLaunchSessionTracker/triggered/*msSSDPreReadFileTrigger/triggered/*msSanPersonalizationConsentInSCOOBE/triggered/*msSearchBoxInToolbar/triggered/*msSegmentationPlatformDoNotDisturbFeature/triggered/*msSegmentationPlatformNotificationPersonalization/triggered/*msSidebarContextMenuQuitAppIfAppOpen/triggered/*msSidebarHidden/triggered/*msSidebarVisibilityPrefDefaultFalse/triggered/*msSidebarVisibilityTurnOnEngagement/triggered/*msSignInStarted/triggered/*msSmartScreenSendReferrerChain/triggered/*msStackSamplingProfiler/triggered/*msSwagM1Google/triggered/*msTabGroupsInFavoriteBar/triggered/*msTestFeatureHoldout/triggered/*msTieUnpackedExtensionsToDevMode/triggered/*msTriggerEdgeLaunch/triggered/*msUseComponentUpdaterBridge/triggered/*msVisualRejuvMicaTrigger/triggered/*msWindowTabManagerPublic/triggered/*msWindowsUserActivities/triggered/*msWorkspaceMigrationTrigger/triggered\" --force-fieldtrial-params=\"EdgeUnifiedFREAB.Exp:screen_order_variant/PersonalizeFirstFlow,MetaOSMidgardVersionConfig.DefaultRuntime:MetaOSMidgardVersion/1%2E20260615%2E8%2E0,RequestHeaderIntegrityRollout.DefaultRuntime:eid/rOajNjfwi3oE%2FfgT%2FUhGGlC%2B5dw%3D,UACompatibilityFix.ExpRuntime:ApplyUACompatibilityDefaultFix/true\" --enable-features=\"EdgeSoftFREBeacon<PayloadEdgeSoftFREBeacon,EdgeUnifiedFRE<EdgeUnifiedFREAB,FetchMetaOSMidgardVersion<MetaOSMidgardVersionConfig,RequestHeaderIntegrity<RequestHeaderIntegrityRollout,eefrc<EmptyEdgeFirstRunConfig,eerc<EmptyEdgeRuntimeConfig,msEdgePreLaunchFREWebUI2Migration<PreLaunchFREWebUI2Migration,msUACompatibilityDefaultFix<UACompatibilityFix\" --disable-features=\"EdgeSunflowerBackgroundImport<SkuPermanentOverrides,SegmentationPlatformLiveEventBadgeServiceFeature<SkuPermanentOverrides,msOnHoverSearchInSidebar<SkuPermanentOverrides,msWinPdfOCR<SkuPermanentOverrides\" --disable-field-trial-config",
       "active_variations_count": 172,
       "active_variations": [
         "7b46cc51-d8d26f5e",
@@ -236,7 +236,7 @@
         "e02b01a7-d8d26f5e",
         "fc5c65f0-d8d26f5e",
         "8f63b308-d8d26f5e",
-        "e53d63d0-d8d26f5e",
+        "af89d238-d8d26f5e",
         "e89a957d-d8d26f5e",
         "63b7524f-d8d26f5e",
         "50d7fac4-d8d26f5e",
@@ -366,15 +366,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 7326,
+        "seed_file_bytes": 7239,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "\"DB1X9mYPp00pX+1t1SIDW4rEqmKhyCfMqyvUb+KwLdw=\"",
+        "seed_serial_number": "\"3TSAMvl8IDvvOnqgWP0bqxbzJm0WcVRdpGGzk66lTrs=\"",
         "variations_country": "US",
-        "last_fetch_time": "13437570428981227",
+        "last_fetch_time": "13437657196755973",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 26911
+        "seed_decompressed_bytes": 26618
       },
       "quic": {
         "flags": [
@@ -387,15 +387,15 @@
         "extensions": [
           "0x0033",
           "0x001b",
-          "0x000d",
           "0xfe0d",
-          "0x0000",
-          "0x000a",
-          "0x002b",
-          "0x002d",
-          "0x44cd",
           "0x0039",
-          "0x0010"
+          "0x002b",
+          "0x0010",
+          "0x000a",
+          "0x002d",
+          "0x000d",
+          "0x44cd",
+          "0x0000"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -440,46 +440,16 @@
         ],
         "transport_params": [
           {
-            "id": "0x33186a8345118f0e",
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000010ada9a3a"
+          },
+          {
+            "id": "0x2d072964f636975",
             "name": "grease",
-            "len": 11,
-            "hex": "29ce3bb6acb801b21d4726"
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
             "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
+            "value": null
           },
           {
             "id": "0x5",
@@ -488,22 +458,10 @@
             "value": 6291456
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "000000012a3a2ada00000001"
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
           },
           {
             "id": "0x1",
@@ -517,6 +475,48 @@
             "len": 4,
             "hex": "4f524947",
             "ascii": "ORIG"
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           }
         ],
         "h3_settings": {

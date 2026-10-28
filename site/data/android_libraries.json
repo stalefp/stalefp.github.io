@@ -1,11 +1,11 @@
 {
  "schema_version": "android-leaderboard-1",
- "generated_at": "2026-10-27T10:33:04Z",
+ "generated_at": "2026-10-28T10:38:41Z",
  "reference": {
   "browser": "Google Chrome (Android)",
   "android_version": "156.0.8078.47",
   "android_major": 156,
-  "captured_at": "2026-10-27T05:16:18-05:00",
+  "captured_at": "2026-10-28T05:22:40-05:00",
   "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
   "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
   "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
@@ -27,10 +27,10 @@
    "profile": "chrome_146 (os android)",
    "note": "desktop Chrome 146 profile with impersonate_os=\"android\"",
    "version": "2.0.1",
-   "tested_at": "2026-10-26T10:34:34Z",
+   "tested_at": "2026-10-28T10:38:40Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261026T103434Z/py/primp_chrome_146_android.json"
+    "fresh": "leaderboard/raw/android-20261028T103840Z/py/primp_chrome_146_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
@@ -333,10 +333,10 @@
    "profile": "Chrome145 (EmulationOS.Android)",
    "note": "desktop Chrome 145 emulation with emulation_os=Android",
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-26T10:34:34Z",
+   "tested_at": "2026-10-28T10:38:40Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261026T103434Z/py/rnet_Chrome145_Android.json"
+    "fresh": "leaderboard/raw/android-20261028T103840Z/py/rnet_Chrome145_Android.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
@@ -638,10 +638,10 @@
    "profile": "chrome131_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-26T10:34:34Z",
+   "tested_at": "2026-10-28T10:38:40Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261026T103434Z/py/curl_cffi_chrome131_android.json"
+    "fresh": "leaderboard/raw/android-20261028T103840Z/py/curl_cffi_chrome131_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps.",
@@ -721,6 +721,7 @@
       "000b ec_point_formats",
       "000d signature_algorithms",
       "0012 signed_certificate_timestamp",
+      "0015 padding",
       "0017 extended_master_secret",
       "001b compress_certificate",
       "0023 session_ticket",
@@ -733,7 +734,9 @@
      "missing": [
       "ca34"
      ],
-     "extra": []
+     "extra": [
+      "0015"
+     ]
     },
     {
      "field": "signature_algorithms",
@@ -883,8 +886,8 @@
     }
    ],
    "fingerprint": {
-    "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
-    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_fresh": "t13d1517h2_8daaf6152771_b1ff8ab2d16f",
+    "ja4_r_fresh": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
     "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
    },
@@ -904,6 +907,7 @@
      "no_ca34": {
       "ja4_fresh": false,
       "counted_mismatches": [
+       "extensions",
        "signature_algorithms",
        "supported_groups",
        "key_shares",
@@ -942,6 +946,11 @@
      "id": "ext-ca34",
      "label": "ca34 trust anchors (Chrome for Android's default sends it)",
      "kind": "missing"
+    },
+    {
+     "id": "extra-0015",
+     "label": "Extra extension 0015 padding",
+     "kind": "extra"
     }
    ],
    "not_tested": [
@@ -956,7 +965,8 @@
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
     "Doesn't send the X25519MLKEM768 post-quantum key share.",
     "Uses the old ALPS codepoint 0x4469; Chrome sends the new one, 0x44cd.",
-    "Missing 1 extension: trust anchors (ca34)."
+    "Missing 1 extension: trust anchors (ca34).",
+    "Sends extension padding (0015), which Chrome doesn't send."
    ],
    "http2_grade": {
     "grade": "match",
@@ -974,10 +984,10 @@
    "profile": "chrome99_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-26T10:34:34Z",
+   "tested_at": "2026-10-28T10:38:40Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261026T103434Z/py/curl_cffi_chrome99_android.json"
+    "fresh": "leaderboard/raw/android-20261028T103840Z/py/curl_cffi_chrome99_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "6 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps, http2_akamai.",

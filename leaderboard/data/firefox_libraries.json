@@ -1,11 +1,11 @@
 {
  "schema_version": "firefox-leaderboard-1",
- "generated_at": "2026-10-27T10:32:43Z",
+ "generated_at": "2026-10-28T10:38:20Z",
  "reference": {
   "browser": "Mozilla Firefox",
-  "firefox_version": "158.0.1",
-  "firefox_major": 158,
-  "captured_at": "2026-10-27T05:23:25-05:00",
+  "firefox_version": "159.0",
+  "firefox_major": 159,
+  "captured_at": "2026-10-28T05:30:00-05:00",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
   "ja4_fresh": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
   "http2_akamai": "1:65536;2:0;4:131072;5:16384|12517377|0|m,p,a,s",
@@ -26,10 +26,10 @@
    "profile": "Firefox",
    "note": null,
    "version": "v1.13.2",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/go/out/azuretls_Firefox.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/go/out/azuretls_Firefox.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
@@ -393,10 +393,10 @@
    "profile": "Firefox_148",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/go/out/tls-client(go)_Firefox_148.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/go/out/tls-client(go)_Firefox_148.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
@@ -671,7 +671,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 148,
-   "versions_behind": 10,
+   "versions_behind": 11,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0x0033, 0x0039, 0xc009, 0xc00a, which Firefox doesn't.",
@@ -682,7 +682,7 @@
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Firefox 148, 10 versions behind current 158; 2 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 148, 11 versions behind current 159; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
    "base_verdict": "behind",
    "base_counted": [
@@ -764,10 +764,10 @@
    "profile": "firefox144",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/py/curl_cffi_firefox144.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/py/curl_cffi_firefox144.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
@@ -1038,7 +1038,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 144,
-   "versions_behind": 14,
+   "versions_behind": 15,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -1049,7 +1049,7 @@
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Firefox 144, 14 versions behind current 158; 2 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 144, 15 versions behind current 159; 2 counted fields differ from current Firefox.",
    "is_newest_profile": false,
    "base_verdict": "behind",
    "base_counted": [
@@ -1131,10 +1131,10 @@
    "profile": "firefox147",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/py/curl_cffi_firefox147.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/py/curl_cffi_firefox147.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
@@ -1405,7 +1405,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 147,
-   "versions_behind": 11,
+   "versions_behind": 12,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -1416,7 +1416,7 @@
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Firefox 147, 11 versions behind current 158; 2 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 147, 12 versions behind current 159; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
    "base_verdict": "behind",
    "base_counted": [
@@ -1498,10 +1498,10 @@
    "profile": "Firefox139",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/py/rnet_Firefox139.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/py/rnet_Firefox139.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
@@ -1770,7 +1770,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 139,
-   "versions_behind": 19,
+   "versions_behind": 20,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -1782,7 +1782,7 @@
     "settings": true,
     "header_order": false
    },
-   "behind_text": "Copies Firefox 139, 19 versions behind current 158; 2 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 139, 20 versions behind current 159; 2 counted fields differ from current Firefox.",
    "is_newest_profile": false,
    "base_verdict": "behind",
    "base_counted": [
@@ -1864,10 +1864,10 @@
    "profile": "Firefox147",
    "note": null,
    "version": "3.0.0rc22",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/py/rnet_Firefox147.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/py/rnet_Firefox147.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
@@ -2136,7 +2136,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 147,
-   "versions_behind": 11,
+   "versions_behind": 12,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -2148,7 +2148,7 @@
     "settings": true,
     "header_order": false
    },
-   "behind_text": "Copies Firefox 147, 11 versions behind current 158; 2 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 147, 12 versions behind current 159; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
    "base_verdict": "behind",
    "base_counted": [
@@ -2230,10 +2230,10 @@
    "profile": "Firefox151",
    "note": "Rust crate (BoringSSL); profile from wreq-util 0.2.0, platform Linux",
    "version": "0.16.1",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/ext/wreq_Firefox151.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/ext/wreq_Firefox151.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Firefox's usual fingerprint: ciphers, supported_groups.",
@@ -2502,7 +2502,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 151,
-   "versions_behind": 7,
+   "versions_behind": 8,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -2513,7 +2513,7 @@
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Firefox 151, 7 versions behind current 158; 2 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 151, 8 versions behind current 159; 2 counted fields differ from current Firefox.",
    "is_newest_profile": true,
    "base_verdict": "behind",
    "base_counted": [
@@ -2593,10 +2593,10 @@
    "profile": "Firefox_147",
    "note": null,
    "version": "v1.16.0",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/go/out/tls-client(go)_Firefox_147.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/go/out/tls-client(go)_Firefox_147.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Firefox's usual fingerprint: ciphers, signature_algorithms, supported_groups.",
@@ -2876,7 +2876,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 147,
-   "versions_behind": 11,
+   "versions_behind": 12,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -2888,7 +2888,7 @@
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Firefox 147, 11 versions behind current 158; 3 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 147, 12 versions behind current 159; 3 counted fields differ from current Firefox.",
    "is_newest_profile": false,
    "base_verdict": "behind",
    "base_counted": [
@@ -2979,10 +2979,10 @@
    "profile": "firefox_147",
    "note": "wraps Go tls-client",
    "version": "0.1.9",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/py/noble-tls_firefox_147.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/py/noble-tls_firefox_147.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Firefox's usual fingerprint: ciphers, signature_algorithms, supported_groups.",
@@ -3248,7 +3248,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 147,
-   "versions_behind": 11,
+   "versions_behind": 12,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -3261,7 +3261,7 @@
     "settings": true,
     "header_order": false
    },
-   "behind_text": "Copies Firefox 147, 11 versions behind current 158; 3 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 147, 12 versions behind current 159; 3 counted fields differ from current Firefox.",
    "is_newest_profile": true,
    "base_verdict": "behind",
    "base_counted": [
@@ -3344,10 +3344,10 @@
    "profile": "firefox 132",
    "note": "wraps a Go tls-client bridge (hrequests-cgo), downloaded from its GitHub releases on first use",
    "version": "0.9.2",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/ext/hrequests_firefox132.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/ext/hrequests_firefox132.json"
    },
    "verdict": "behind",
    "verdict_reason": "4 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, http2_akamai.",
@@ -3601,7 +3601,7 @@
     "ja4_fresh": "t13d1714h2_5b57614c22b0_3dd24b5ebec4",
     "ja4_r_fresh": "t13d1714h2_002f,0035,009c,009d,1301,1302,1303,c009,c00a,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0017,001b,001c,0022,002b,0033,fe0d,ff01_0403,0503,0603,0804,0805,0806,0401,0501,0601,0203,0201",
     "http2_akamai": "1:65536;2:0;4:131072;5:16384;9:1|12517377|0|m,p,a,s",
-    "user_agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:150.0) Gecko/20100101 Firefox/150.0"
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:150.0) Gecko/20100101 Firefox/150.0"
    },
    "matches": {
     "http2": false,
@@ -3643,7 +3643,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 132,
-   "versions_behind": 26,
+   "versions_behind": 27,
    "versions_behind_uniform": true,
    "why": [
     "Cipher suites differ: sends 0xc009, 0xc00a, which Firefox doesn't.",
@@ -3659,7 +3659,7 @@
     "settings": false,
     "header_order": false
    },
-   "behind_text": "Copies Firefox 132, 26 versions behind current 158; 4 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 132, 27 versions behind current 159; 4 counted fields differ from current Firefox.",
    "is_newest_profile": true,
    "base_verdict": "behind",
    "base_counted": [
@@ -3741,10 +3741,10 @@
    "profile": "HelloFirefox_Auto",
    "note": "HTTP/2 via golang.org/x/net/http2 (uTLS is TLS-only)",
    "version": "v1.8.2",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/go/out/utls_HelloFirefox_Auto.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/go/out/utls_HelloFirefox_Auto.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
@@ -3980,17 +3980,17 @@
       ":method",
       ":path",
       ":scheme",
+      "accept-encoding",
+      "upgrade-insecure-requests",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
       "sec-fetch-user",
       "priority",
       "user-agent",
-      "accept-encoding",
-      "upgrade-insecure-requests",
-      "sec-fetch-mode",
-      "te",
       "accept",
       "accept-language",
-      "sec-fetch-dest",
-      "sec-fetch-site"
+      "te"
      ],
      "missing": [],
      "extra": [],
@@ -4095,17 +4095,17 @@
     "fair": false,
     "unfair_reason": "the header order changed from request to request (8 different orders in 8 requests), so the caller can't control it",
     "sent": [
-     "user-agent",
-     "accept-language",
+     "sec-fetch-mode",
+     "accept",
      "accept-encoding",
-     "sec-fetch-dest",
+     "sec-fetch-site",
      "sec-fetch-user",
      "priority",
-     "accept",
+     "te",
+     "user-agent",
+     "accept-language",
      "upgrade-insecure-requests",
-     "sec-fetch-mode",
-     "sec-fetch-site",
-     "te"
+     "sec-fetch-dest"
     ],
     "browser": [
      "user-agent",
@@ -4143,10 +4143,10 @@
    "profile": "README Firefox example",
    "note": "no built-in browser profiles; this is the README's Firefox example (ja3 + Firefox HTTP/2 fingerprint + Firefox 141 UA)",
    "version": "2.0.5",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/ext/cycletls_firefox.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/ext/cycletls_firefox.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
@@ -4548,10 +4548,10 @@
    "profile": "firefox_120",
    "note": "wraps Go tls-client",
    "version": "2.0.0",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/py/tls-client(py)_firefox_120.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/py/tls-client(py)_firefox_120.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, supported_groups, key_shares, http2_akamai.",
@@ -4844,7 +4844,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 120,
-   "versions_behind": 38,
+   "versions_behind": 39,
    "versions_behind_uniform": true,
    "why": [
     "Doesn't send the X25519MLKEM768 post-quantum key share; Firefox already sent it in 158, the oldest version we've captured.",
@@ -4861,7 +4861,7 @@
     "settings": false,
     "header_order": false
    },
-   "behind_text": "Copies Firefox 120, 38 versions behind current 158; 5 counted fields differ from current Firefox.",
+   "behind_text": "Copies Firefox 120, 39 versions behind current 159; 5 counted fields differ from current Firefox.",
    "is_newest_profile": true,
    "base_verdict": "behind",
    "base_counted": [
@@ -4940,7 +4940,7 @@
     "version": "2.0.0",
     "released_at": "2026-10-10T15:22:07.197014Z",
     "retested_at": "2026-10-16T00:17:28Z",
-    "text": "Updated to 2.0.0 on Oct 16, 2026: still 38 versions behind."
+    "text": "Updated to 2.0.0 on Oct 16, 2026: still 39 versions behind."
    }
   },
   {
@@ -4951,10 +4951,10 @@
    "profile": "firefox (header-generator)",
    "note": "Node's own TLS (OpenSSL) with got-scraping's Firefox cipher/sigalg/curve lists; headers from header-generator",
    "version": "4.2.2",
-   "tested_at": "2026-10-26T10:34:07Z",
+   "tested_at": "2026-10-28T10:38:16Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/firefox-20261026T103407Z/ext/got-scraping_firefox.json"
+    "fresh": "leaderboard/raw/firefox-20261028T103816Z/ext/got-scraping_firefox.json"
    },
    "verdict": "behind",
    "verdict_reason": "6 counted fields differ from Firefox's usual fingerprint: ciphers, extensions, signature_algorithms, supported_groups, key_shares, http2_akamai.",
@@ -5378,7 +5378,7 @@
   }
  ],
  "probe_reference": {
-  "captures": 18,
+  "captures": 19,
   "distinct_orders": 1,
   "varies": false,
   "resumed_ja4s": [
@@ -5399,7 +5399,7 @@
    "te"
   ],
   "connections_per_row": 8,
-  "generated_at": "2026-10-27T10:32:25Z",
+  "generated_at": "2026-10-28T10:38:01Z",
   "endpoint": "local capture/lib/server.py TCPServer (closes each connection after one response; TLS 1.3 session tickets on)",
   "requested_headers": [
    "user-agent",
