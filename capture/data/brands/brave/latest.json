@@ -2,15 +2,15 @@
   "schema_version": "brand-capture-1",
   "label": null,
   "browser": "Brave Browser",
-  "version": "156.1.98.60",
+  "version": "156.1.98.62",
   "channel": "stable",
-  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
+  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
   "platform": "linux",
-  "captured_at": "2026-10-28T05:30:44-05:00",
+  "captured_at": "2026-10-29T05:32:12-05:00",
   "chrome_path": "/opt/brave.com/brave/brave",
-  "chrome_version_string": "Brave Browser 156.1.98.60 unknown",
+  "chrome_version_string": "Brave Browser 156.1.98.62 unknown",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "aef88fc9ff85d2021ec1d59a8705a330",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,27-18-35-16-11-45-17613-10-65037-43-0-13-5-65281-23-51,4588-29-23-24,0",
+      "ja3": "4037328b258ad3ed4fa8febc80ae4264",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,17613-43-13-23-10-0-35-5-27-65281-11-16-65037-51-18-45,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x001b",
-        "0x0012",
-        "0x0023",
-        "0x0010",
-        "0x000b",
-        "0x002d",
         "0x44cd",
-        "0x000a",
-        "0xfe0d",
         "0x002b",
-        "0x0000",
         "0x000d",
-        "0x0005",
-        "0xff01",
         "0x0017",
-        "0x0033"
+        "0x000a",
+        "0x0000",
+        "0x0023",
+        "0x0005",
+        "0x001b",
+        "0xff01",
+        "0x000b",
+        "0x0010",
+        "0xfe0d",
+        "0x0033",
+        "0x0012",
+        "0x002d"
       ],
       "extensions_resumed": [
-        "0x44cd",
-        "0x0010",
-        "0x0000",
-        "0x0012",
-        "0x000b",
-        "0x002b",
-        "0x002d",
-        "0x000d",
-        "0xff01",
-        "0xfe0d",
-        "0x0005",
-        "0x0017",
-        "0x0023",
         "0x001b",
+        "0x44cd",
+        "0x0005",
+        "0x000d",
+        "0xfe0d",
+        "0x0017",
+        "0x0000",
+        "0x000b",
+        "0x002d",
         "0x000a",
+        "0x0023",
+        "0x002b",
         "0x0033",
+        "0x0010",
+        "0xff01",
+        "0x0012",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -198,7 +198,7 @@
         "local_state_seed_bytes": 8788,
         "seed_serial_number": "5f28ee914eb97ea682f087b1f441c328",
         "variations_country": "us",
-        "last_fetch_time": "13437657046921511",
+        "last_fetch_time": "13437743535437145",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
@@ -214,16 +214,16 @@
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
           "0x0033",
+          "0x0039",
+          "0x002d",
+          "0x002b",
           "0x000d",
           "0x0010",
-          "0x002b",
-          "0x001b",
-          "0x000a",
-          "0x0000",
-          "0x0039",
-          "0xfe0d",
           "0x44cd",
-          "0x002d"
+          "0x001b",
+          "0xfe0d",
+          "0x000a",
+          "0x0000"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -268,16 +268,58 @@
         ],
         "transport_params": [
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
           },
           {
             "id": "0x6",
             "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000016aaa9aea00000001"
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x27067656cf124e56",
+            "name": "grease",
+            "len": 2,
+            "value": 53
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
             "id": "0x3128",
@@ -287,22 +329,10 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x3f1b74185dec664c",
-            "name": "grease",
-            "len": 15,
-            "hex": "7a7e8399c0614fd026c1b3d0065410"
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           },
           {
             "id": "0x5",
@@ -311,40 +341,10 @@
             "value": 6291456
           },
           {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001ca8a0aca00000001"
-          },
-          {
             "id": "0x9",
             "name": "initial_max_streams_uni",
             "len": 2,
             "value": 103
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
           }
         ],
         "h3_settings": {
@@ -470,11 +470,11 @@
   ],
   "brand": "brave",
   "chromium_major": 156,
-  "brand_version": "1.98.60",
+  "brand_version": "1.98.62",
   "package": {
-    "version": "1.98.60",
+    "version": "1.98.62",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
-    "sha256": "812a001d7631b5ab49e55dec6148a0bc2d459e9fc03106c286295ee03fd062fc",
+    "sha256": "fb2b6c767726db2b562d766198618bc29a590e98f82996ade2a3a29153b555c1",
     "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
     "kind": "signed apt repo .deb"
   }

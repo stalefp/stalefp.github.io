@@ -4,8 +4,8 @@
  "channel": "release",
  "version": "159.0",
  "platform": "linux",
- "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
- "captured_at": "2026-10-28T05:30:00-05:00",
+ "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+ "captured_at": "2026-10-29T05:31:24-05:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -209,13 +209,13 @@
     "id": "0xf",
     "name": "initial_source_connection_id",
     "len": 3,
-    "hex": "7a5dfe"
+    "hex": "76ad9f"
    },
    {
     "id": "0x11",
     "name": "version_information",
     "len": 16,
-    "hex": "000000012a4afa5a6b3343cf00000001"
+    "hex": "00000001da4a5a0a6b3343cf00000001"
    },
    {
     "id": "0x1d",

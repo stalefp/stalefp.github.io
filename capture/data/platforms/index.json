@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-10-28T10:38:14Z",
+ "generated_at": "2026-10-29T10:40:47Z",
  "platforms": {
   "linux": {
    "status": "captured",
@@ -10,9 +10,9 @@
    "browser": "Google Chrome",
    "version": "156.0.8078.73",
    "channel": "stable",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure)",
-   "captured_at": "2026-10-28T05:21:08-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+   "captured_at": "2026-10-29T05:22:27-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
    "platform_stable_newest": "156.0.8078.73",
    "platform_stable_full_rollout": "156.0.8078.73",
    "reference_config": "default-headed",
@@ -290,9 +290,9 @@
    "version": "156.0.8078.74",
    "channel": "stable",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
-   "captured_at": "2026-10-28T05:21:49-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
-   "platform_stable_newest": "157.0.8103.15",
+   "captured_at": "2026-10-29T05:23:40-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
+   "platform_stable_newest": "157.0.8103.27",
    "platform_stable_full_rollout": "156.0.8078.74",
    "reference_config": "default-headed",
    "variants": {
@@ -569,9 +569,9 @@
    "version": "156.0.8078.74",
    "channel": "stable",
    "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
-   "captured_at": "2026-10-28T05:22:03-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
-   "platform_stable_newest": "156.0.8078.74",
+   "captured_at": "2026-10-29T05:23:12-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
+   "platform_stable_newest": "157.0.8103.26",
    "platform_stable_full_rollout": "156.0.8078.74",
    "reference_config": "default-headed",
    "variants": {
@@ -845,22 +845,22 @@
    "platform": "android",
    "label": "Android",
    "browser": "Google Chrome",
-   "version": "156.0.8078.47",
+   "version": "124.0.6367.219",
    "channel": "stable",
    "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
-   "captured_at": "2026-10-28T05:22:40-05:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
-   "platform_stable_newest": "157.0.8103.14",
+   "captured_at": "2026-10-29T05:30:09-05:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
+   "platform_stable_newest": "157.0.8103.30",
    "platform_stable_full_rollout": null,
    "reference_config": "default-headed",
    "variants": {
     "default": {
      "config": "default-headed",
-     "ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
-     "ja4_resumed": "t13d1518h2_8daaf6152771_e2d80978ab2e",
-     "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-     "quic_ja4": "q13d0312h3_55b375c5d22e_178839b6cec1",
-     "quic_ja4_resumed": "q13d0314h3_55b375c5d22e_79cc91d6b50c",
+     "ja4": "t13d1517h2_8daaf6152771_b1ff8ab2d16f",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_b0da82dd1658",
+     "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_5a1f323ef56d",
+     "quic_ja4_resumed": "q13d0313h3_55b375c5d22e_c7319ce65786",
      "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
      "h3_settings": {
       "1": 65536,
@@ -868,7 +868,7 @@
       "7": 100,
       "51": 1
      },
-     "has_trust_anchors": true,
+     "has_trust_anchors": false,
      "extensions_sorted": [
       "0x0000",
       "0x0005",
@@ -877,21 +877,18 @@
       "0x000d",
       "0x0010",
       "0x0012",
+      "0x0015",
       "0x0017",
       "0x001b",
       "0x0023",
       "0x002b",
       "0x002d",
       "0x0033",
-      "0x44cd",
-      "0xca34",
+      "0x4469",
       "0xfe0d",
       "0xff01"
      ],
      "sig_algs": [
-      "0x0904",
-      "0x0905",
-      "0x0906",
       "0x0403",
       "0x0804",
       "0x0401",
@@ -902,7 +899,6 @@
       "0x0601"
      ],
      "groups": [
-      "0x11ec",
       "0x001d",
       "0x0017",
       "0x0018"
@@ -925,29 +921,112 @@
       "0x0035"
      ],
      "quic_transport_params": [
-      "0x11=",
       "0x1=30000",
       "0x20=65536",
-      "0x3128=ORIG",
       "0x3=1472",
+      "0x4752=",
       "0x4=15728640",
       "0x5=6291456",
       "0x6=6291456",
       "0x7=6291456",
       "0x8=100",
       "0x9=103",
-      "0xf="
+      "0xf=",
+      "0xff73db="
      ],
-     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
+     "sec_ch_ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\""
     },
     "no_ca34": {
      "config": "disable-TLSTrustAnchorIDs-headed",
-     "ja4": "t13d1516h2_8daaf6152771_806a8c22fdea",
-     "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
-     "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
-     "quic_ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
+     "ja4": "t13d1517h2_8daaf6152771_b1ff8ab2d16f",
+     "ja4_resumed": "t13d1517h2_8daaf6152771_b0da82dd1658",
+     "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_5a1f323ef56d",
+     "quic_ja4_resumed": "q13d0313h3_55b375c5d22e_c7319ce65786",
+     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
+     "has_trust_anchors": false,
+     "extensions_sorted": [
+      "0x0000",
+      "0x0005",
+      "0x000a",
+      "0x000b",
+      "0x000d",
+      "0x0010",
+      "0x0012",
+      "0x0015",
+      "0x0017",
+      "0x001b",
+      "0x0023",
+      "0x002b",
+      "0x002d",
+      "0x0033",
+      "0x4469",
+      "0xfe0d",
+      "0xff01"
+     ],
+     "sig_algs": [
+      "0x0403",
+      "0x0804",
+      "0x0401",
+      "0x0503",
+      "0x0805",
+      "0x0501",
+      "0x0806",
+      "0x0601"
+     ],
+     "groups": [
+      "0x001d",
+      "0x0017",
+      "0x0018"
+     ],
+     "ciphers": [
+      "0x1301",
+      "0x1302",
+      "0x1303",
+      "0xc02b",
+      "0xc02f",
+      "0xc02c",
+      "0xc030",
+      "0xcca9",
+      "0xcca8",
+      "0xc013",
+      "0xc014",
+      "0x009c",
+      "0x009d",
+      "0x002f",
+      "0x0035"
+     ],
+     "quic_transport_params": [
+      "0x1=30000",
+      "0x20=65536",
+      "0x3=1472",
+      "0x4752=",
+      "0x4=15728640",
+      "0x5=6291456",
+      "0x6=6291456",
+      "0x7=6291456",
+      "0x8=100",
+      "0x9=103",
+      "0xf=",
+      "0xff73db="
+     ],
+     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
+     "sec_ch_ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\""
+    },
+    "pq": {
+     "config": "finch-AddTLSServerHandshakePadding-headed",
+     "ja4": "t13d1516h2_8daaf6152771_02713d6af862",
+     "ja4_resumed": null,
+     "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+     "quic_ja4": "q13d0311h3_55b375c5d22e_5a1f323ef56d",
+     "quic_ja4_resumed": "q13d0313h3_55b375c5d22e_c7319ce65786",
      "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
      "h3_settings": {
       "1": 65536,
@@ -970,14 +1049,11 @@
       "0x002b",
       "0x002d",
       "0x0033",
-      "0x44cd",
+      "0x4469",
       "0xfe0d",
       "0xff01"
      ],
      "sig_algs": [
-      "0x0904",
-      "0x0905",
-      "0x0906",
       "0x0403",
       "0x0804",
       "0x0401",
@@ -988,7 +1064,6 @@
       "0x0601"
      ],
      "groups": [
-      "0x11ec",
       "0x001d",
       "0x0017",
       "0x0018"
@@ -1011,133 +1086,45 @@
       "0x0035"
      ],
      "quic_transport_params": [
-      "0x11=",
       "0x1=30000",
       "0x20=65536",
-      "0x3128=ORIG",
       "0x3=1472",
+      "0x4752=",
       "0x4=15728640",
       "0x5=6291456",
       "0x6=6291456",
       "0x7=6291456",
       "0x8=100",
       "0x9=103",
-      "0xf="
+      "0xf=",
+      "0xff73db="
      ],
-     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
-    },
-    "pq": {
-     "config": "finch-AddTLSServerHandshakePadding-headed",
-     "ja4": "t13d1518h2_8daaf6152771_4980c97edce0",
-     "ja4_resumed": "t13d1519h2_8daaf6152771_3d1b1b7bef36",
-     "ja4_r": "t13d1518h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,12e0,44cd,ca34,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-     "quic_ja4": "q13d0313h3_55b375c5d22e_eb028bd37c08",
-     "quic_ja4_resumed": "q13d0315h3_55b375c5d22e_7a6cb47ef016",
-     "h2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
-     "h3_settings": {
-      "1": 65536,
-      "6": 262144,
-      "7": 100,
-      "51": 1
-     },
-     "has_trust_anchors": true,
-     "extensions_sorted": [
-      "0x0000",
-      "0x0005",
-      "0x000a",
-      "0x000b",
-      "0x000d",
-      "0x0010",
-      "0x0012",
-      "0x0017",
-      "0x001b",
-      "0x0023",
-      "0x002b",
-      "0x002d",
-      "0x0033",
-      "0x12e0",
-      "0x44cd",
-      "0xca34",
-      "0xfe0d",
-      "0xff01"
-     ],
-     "sig_algs": [
-      "0x0904",
-      "0x0905",
-      "0x0906",
-      "0x0403",
-      "0x0804",
-      "0x0401",
-      "0x0503",
-      "0x0805",
-      "0x0501",
-      "0x0806",
-      "0x0601"
-     ],
-     "groups": [
-      "0x11ec",
-      "0x001d",
-      "0x0017",
-      "0x0018"
-     ],
-     "ciphers": [
-      "0x1301",
-      "0x1302",
-      "0x1303",
-      "0xc02b",
-      "0xc02f",
-      "0xc02c",
-      "0xc030",
-      "0xcca9",
-      "0xcca8",
-      "0xc013",
-      "0xc014",
-      "0x009c",
-      "0x009d",
-      "0x002f",
-      "0x0035"
-     ],
-     "quic_transport_params": [
-      "0x11=",
-      "0x1=30000",
-      "0x20=65536",
-      "0x3128=ORIG",
-      "0x3=1472",
-      "0x4=15728640",
-      "0x5=6291456",
-      "0x6=6291456",
-      "0x7=6291456",
-      "0x8=100",
-      "0x9=103",
-      "0xf="
-     ],
-     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
+     "sec_ch_ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\""
     }
    },
    "android": {
-    "source": "apk",
-    "source_detail": "Google-signed x86_64 APK from APKMirror, installed over the image's preinstalled Chrome: https://www.apkmirror.com/apk/google-inc/chrome/google-chrome-156-0-8078-47-release/google-chrome-156-0-8078-47-3-android-apk-download/",
+    "source": "preinstalled",
+    "source_detail": "Chrome preinstalled in the Google system image (not updated: no Play sign-in)",
     "version_verified": true,
     "version_checks": {
-     "package_manager": "156.0.8078.47",
-     "devtools": "156.0.8078.47",
-     "chrome_version_page": "156.0.8078.47",
-     "expected": "156.0.8078.47"
+     "package_manager": "124.0.6367.219",
+     "devtools": "124.0.6367.219",
+     "chrome_version_page": "124.0.6367.219",
+     "expected": "124.0.6367.219"
     },
-    "serving_on_stable": true,
-    "serving_share": 0.48755,
+    "serving_on_stable": false,
+    "serving_share": null,
     "android_stable_serving": {
-     "157.0.8103.14": 0.00245,
+     "157.0.8103.30": 0.00245,
+     "156.0.8078.74": 0.00245,
      "156.0.8078.73": 0.243775,
      "156.0.8078.49": 0.243775,
-     "156.0.8078.48": 0.00245,
      "156.0.8078.47": 0.48755,
      "155.0.8059.86": 0.01,
      "155.0.8059.85": 0.01
     },
-    "apk_sha256": "d22fe1f2c486db0468c2cf2a58cff8ba1e5077cc994f453de667040488b38fc8",
+    "apk_sha256": null,
     "signer_cert_sha256": "f0fd6c5b410f25cb25c3b53346c8972fae30f8ee7411df910480ad6b2d60db83",
     "emulator": {
      "release": "15",
@@ -1268,78 +1255,103 @@
    "variants": {
     "default": {
      "fields": {
-      "ja4": true,
-      "ja4_resumed": true,
-      "quic_ja4": true,
+      "ja4": false,
+      "ja4_resumed": false,
+      "quic_ja4": false,
       "h2_akamai": true,
       "h3_settings": true,
-      "has_trust_anchors": true,
-      "extensions_sorted": true,
-      "sig_algs": true,
-      "groups": true,
+      "has_trust_anchors": false,
+      "extensions_sorted": false,
+      "sig_algs": false,
+      "groups": false,
       "ciphers": true,
-      "quic_transport_params": true
+      "quic_transport_params": false
      },
-     "differs": []
+     "differs": [
+      "TLS JA4 (fresh)",
+      "TLS JA4 (resumed)",
+      "QUIC JA4",
+      "trust anchors (ca34)",
+      "TLS extension set",
+      "signature algorithms",
+      "supported groups",
+      "QUIC transport parameters"
+     ]
     },
     "no_ca34": {
      "fields": {
-      "ja4": true,
-      "ja4_resumed": true,
-      "quic_ja4": true,
+      "ja4": false,
+      "ja4_resumed": false,
+      "quic_ja4": false,
       "h2_akamai": true,
       "h3_settings": true,
       "has_trust_anchors": true,
-      "extensions_sorted": true,
-      "sig_algs": true,
-      "groups": true,
+      "extensions_sorted": false,
+      "sig_algs": false,
+      "groups": false,
       "ciphers": true,
-      "quic_transport_params": true
+      "quic_transport_params": false
      },
-     "differs": []
+     "differs": [
+      "TLS JA4 (fresh)",
+      "TLS JA4 (resumed)",
+      "QUIC JA4",
+      "TLS extension set",
+      "signature algorithms",
+      "supported groups",
+      "QUIC transport parameters"
+     ]
     },
     "pq": {
      "fields": {
-      "ja4": true,
-      "ja4_resumed": true,
-      "quic_ja4": true,
+      "ja4": false,
+      "ja4_resumed": null,
+      "quic_ja4": false,
       "h2_akamai": true,
       "h3_settings": true,
-      "has_trust_anchors": true,
-      "extensions_sorted": true,
-      "sig_algs": true,
-      "groups": true,
+      "has_trust_anchors": false,
+      "extensions_sorted": false,
+      "sig_algs": false,
+      "groups": false,
       "ciphers": true,
-      "quic_transport_params": true
+      "quic_transport_params": false
      },
-     "differs": []
+     "differs": [
+      "TLS JA4 (fresh)",
+      "QUIC JA4",
+      "trust anchors (ca34)",
+      "TLS extension set",
+      "signature algorithms",
+      "supported groups",
+      "QUIC transport parameters"
+     ]
     }
    }
   }
  },
  "last_attempt": {
   "linux": {
-   "at": "2026-10-28T10:35:36Z",
+   "at": "2026-10-29T10:38:36Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
    "detail": null
   },
   "windows": {
-   "at": "2026-10-28T10:35:36Z",
+   "at": "2026-10-29T10:38:36Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
    "detail": null
   },
   "macos": {
-   "at": "2026-10-28T10:35:36Z",
+   "at": "2026-10-29T10:38:36Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
    "detail": null
   },
   "android": {
-   "at": "2026-10-28T10:35:36Z",
+   "at": "2026-10-29T10:38:36Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40671342325",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/40856987076",
    "detail": null
   }
  }
