@@ -4,15 +4,15 @@
   "edge": {
    "status": "captured",
    "browser": "Microsoft Edge",
-   "version": "156.0.4314.50",
-   "brand_version": "156.0.4314.50",
+   "version": "156.0.4314.56",
+   "brand_version": "156.0.4314.56",
    "chromium_major": 156,
-   "captured_at": "2026-10-29T05:31:44-05:00",
+   "captured_at": "2026-10-30T05:32:33-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "156.0.4314.50-1",
+    "version": "156.0.4314.56-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "0d0bc6303a8b935424e20afa7116c61dd7e7ccbca249c3cf49803ae343eacf8d",
+    "sha256": "808447677313fda7bb2b74a9428734d193a0b3d1d8308844ce29144fde6e2b82",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
    },
@@ -48,7 +48,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "156.0.8078.73",
+    "chrome_version": "156.0.8078.79",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -63,15 +63,15 @@
     "linux": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "156.0.4314.50",
-     "brand_version": "156.0.4314.50",
+     "version": "156.0.4314.56",
+     "brand_version": "156.0.4314.56",
      "chromium_major": 156,
-     "captured_at": "2026-10-29T05:31:44-05:00",
+     "captured_at": "2026-10-30T05:32:33-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "156.0.4314.50-1",
+      "version": "156.0.4314.56-1",
       "repo": "https://packages.microsoft.com/repos/edge",
-      "sha256": "0d0bc6303a8b935424e20afa7116c61dd7e7ccbca249c3cf49803ae343eacf8d",
+      "sha256": "808447677313fda7bb2b74a9428734d193a0b3d1d8308844ce29144fde6e2b82",
       "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
       "kind": "signed apt repo .deb"
      },
@@ -107,7 +107,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.73",
+      "chrome_version": "156.0.8078.79",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -122,15 +122,15 @@
     "windows": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "156.0.4314.50",
-     "brand_version": "156.0.4314.50",
+     "version": "156.0.4314.56",
+     "brand_version": "156.0.4314.56",
      "chromium_major": 156,
-     "captured_at": "2026-10-29T05:36:05-05:00",
+     "captured_at": "2026-10-30T05:35:30-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "156.0.4314.50",
+      "version": "156.0.4314.56",
       "repo": "edgeupdates.microsoft.com Stable x64 MSI",
-      "sha256": "f7bc427c4d26aefe12bd492a24959cc6ca328aea2851614637d7133cae329071",
+      "sha256": "b6c7186c05bc8531cd9cd2d012a597ef17fdd3e2515de7ebb223ab79e9014c8e",
       "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -166,7 +166,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.74",
+      "chrome_version": "156.0.8078.80",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -186,7 +186,7 @@
    "version": "156.1.98.62",
    "brand_version": "1.98.62",
    "chromium_major": 156,
-   "captured_at": "2026-10-29T05:32:12-05:00",
+   "captured_at": "2026-10-30T05:33:05-05:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "1.98.62",
@@ -228,7 +228,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "156.0.8078.73",
+    "chrome_version": "156.0.8078.79",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -246,7 +246,7 @@
      "version": "156.1.98.62",
      "brand_version": "1.98.62",
      "chromium_major": 156,
-     "captured_at": "2026-10-29T05:32:12-05:00",
+     "captured_at": "2026-10-30T05:33:05-05:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "1.98.62",
@@ -288,7 +288,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.73",
+      "chrome_version": "156.0.8078.79",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -306,7 +306,7 @@
      "version": "156.1.98.62",
      "brand_version": "1.98.62",
      "chromium_major": 156,
-     "captured_at": "2026-10-29T05:37:41-05:00",
+     "captured_at": "2026-10-30T05:36:50-05:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "156.1.98.62",
@@ -340,16 +340,21 @@
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Brave\";v=\"156\"",
-     "quic_ja4": null,
-     "h3_settings": null,
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.74",
+      "chrome_version": "156.0.8078.80",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
       "header_order": false,
-      "quic_ja4": null,
-      "h3_settings": null
+      "quic_ja4": false,
+      "h3_settings": true
      },
      "id": "brave",
      "platform": "windows",
