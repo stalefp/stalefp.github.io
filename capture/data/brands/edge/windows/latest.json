@@ -2,15 +2,15 @@
   "schema_version": "brand-capture-1",
   "label": null,
   "browser": "Microsoft Edge",
-  "version": "156.0.4314.56",
+  "version": "156.0.4314.58",
   "channel": "stable",
   "os": "Windows 2025Server (AMD64, build 10.0.26100)",
   "platform": "windows",
-  "captured_at": "2026-10-30T05:35:30-05:00",
+  "captured_at": "2026-10-31T05:24:49-05:00",
   "chrome_path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  "chrome_version_string": "Microsoft Edge 156.0.4314.56",
+  "chrome_version_string": "Microsoft Edge 156.0.4314.58",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41040296839",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41191759162",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "ef0af46daefde7f46b36d49ec7118393",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,11-0-18-65281-45-13-35-43-5-23-65037-16-51-17613-10-27,4588-29-23-24,0",
+      "ja3": "fb6f6f510f324a47a134bcaf16314a5a",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,23-45-51-18-13-11-43-10-35-65037-65281-0-16-27-5-17613,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x000b",
-        "0x0000",
-        "0x0012",
-        "0xff01",
-        "0x002d",
-        "0x000d",
-        "0x0023",
-        "0x002b",
-        "0x0005",
         "0x0017",
-        "0xfe0d",
-        "0x0010",
+        "0x002d",
         "0x0033",
-        "0x44cd",
+        "0x0012",
+        "0x000d",
+        "0x000b",
+        "0x002b",
         "0x000a",
-        "0x001b"
+        "0x0023",
+        "0xfe0d",
+        "0xff01",
+        "0x0000",
+        "0x0010",
+        "0x001b",
+        "0x0005",
+        "0x44cd"
       ],
       "extensions_resumed": [
-        "0x000b",
-        "0x0017",
-        "0x0000",
-        "0x002b",
-        "0x0023",
-        "0x000a",
-        "0x0012",
-        "0x44cd",
-        "0xfe0d",
         "0xff01",
-        "0x002d",
-        "0x001b",
+        "0x0000",
+        "0x0023",
         "0x0033",
         "0x0005",
+        "0x000b",
         "0x0010",
+        "0x44cd",
+        "0x0017",
+        "0x000a",
+        "0x002b",
+        "0xfe0d",
+        "0x002d",
+        "0x0012",
         "0x000d",
+        "0x001b",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -366,15 +366,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 7257,
+        "seed_file_bytes": 8128,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "\"ShzDuL4bLSZcknLXYCyrBrX+FPjPl2sZK8urXJ6oTPw=\"",
+        "seed_serial_number": "\"S+5Tv576N0gGx7mMczuSCdZUly7kfZi1TncoL2N/Biw=\"",
         "variations_country": "US",
-        "last_fetch_time": "13437830134807839",
+        "last_fetch_time": "13437915893096296",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 26699
+        "seed_decompressed_bytes": 32295
       },
       "quic": {
         "flags": [
@@ -385,17 +385,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x002b",
-          "0x0033",
-          "0x0000",
-          "0x0039",
-          "0xfe0d",
-          "0x44cd",
-          "0x001b",
-          "0x002d",
-          "0x000a",
           "0x000d",
-          "0x0010"
+          "0x002d",
+          "0x44cd",
+          "0x0000",
+          "0x0033",
+          "0x0010",
+          "0x002b",
+          "0xfe0d",
+          "0x000a",
+          "0x0039",
+          "0x001b"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -440,16 +440,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
             "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
+            "value": 65536
           },
           {
             "id": "0x7",
@@ -458,28 +452,10 @@
             "value": 6291456
           },
           {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
             "id": "0x5",
             "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
           },
           {
             "id": "0xf",
@@ -488,22 +464,28 @@
             "hex": ""
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
             "len": 2,
-            "value": 100
+            "value": 103
           },
           {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
+            "id": "0x1",
+            "name": "max_idle_timeout",
             "len": 4,
-            "value": 65536
+            "value": 30000
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001ba9a2a5a00000001"
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x3128",
@@ -513,10 +495,28 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x7a5157d09a6a180",
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x3c8389a7704fd5a6",
             "name": "grease",
-            "len": 15,
-            "hex": "6e43fc1aee7e9d5f54a53fa46bc117"
+            "len": 14,
+            "hex": "3d497ed53df903f7fdb1bd3c143b"
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001000000015aca3a2a"
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
           }
         ],
         "h3_settings": {
@@ -641,11 +641,11 @@
   ],
   "brand": "edge",
   "chromium_major": 156,
-  "brand_version": "156.0.4314.56",
+  "brand_version": "156.0.4314.58",
   "package": {
-    "version": "156.0.4314.56",
+    "version": "156.0.4314.58",
     "repo": "edgeupdates.microsoft.com Stable x64 MSI",
-    "sha256": "b6c7186c05bc8531cd9cd2d012a597ef17fdd3e2515de7ebb223ab79e9014c8e",
+    "sha256": "784051ebfcc8b28569127f381d515766866c4925312d35c52293382b97eef2fb",
     "signing_key": "Microsoft Corporation",
     "kind": "windows installer (SHA256 + Authenticode checked)"
   }

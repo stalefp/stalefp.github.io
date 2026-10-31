@@ -2,15 +2,15 @@
   "schema_version": "brand-capture-1",
   "label": null,
   "browser": "Brave Browser",
-  "version": "156.1.98.62",
+  "version": "156.1.98.63",
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
   "platform": "linux",
-  "captured_at": "2026-10-30T05:33:05-05:00",
+  "captured_at": "2026-10-31T05:22:06-05:00",
   "chrome_path": "/opt/brave.com/brave/brave",
-  "chrome_version_string": "Brave Browser 156.1.98.62 unknown",
+  "chrome_version_string": "Brave Browser 156.1.98.63 unknown",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41040296839",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41191759162",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "5283344626937ce8faf61b148dda3c73",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,18-16-45-65281-27-65037-10-17613-5-13-35-43-0-11-51-23,4588-29-23-24,0",
+      "ja3": "cb019d65876a170dd9516c19dcc6345d",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,18-16-65037-0-65281-51-43-5-27-13-23-35-11-17613-45-10,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
         "0x0012",
         "0x0010",
-        "0x002d",
-        "0xff01",
-        "0x001b",
         "0xfe0d",
-        "0x000a",
-        "0x44cd",
-        "0x0005",
-        "0x000d",
-        "0x0023",
-        "0x002b",
         "0x0000",
-        "0x000b",
+        "0xff01",
         "0x0033",
-        "0x0017"
+        "0x002b",
+        "0x0005",
+        "0x001b",
+        "0x000d",
+        "0x0017",
+        "0x0023",
+        "0x000b",
+        "0x44cd",
+        "0x002d",
+        "0x000a"
       ],
       "extensions_resumed": [
-        "0xfe0d",
+        "0x0033",
         "0x0017",
-        "0x0010",
-        "0x0000",
-        "0x000b",
-        "0x000a",
-        "0x001b",
-        "0x002d",
+        "0x0012",
         "0xff01",
-        "0x002b",
-        "0x44cd",
+        "0xfe0d",
+        "0x000d",
+        "0x0000",
+        "0x002d",
+        "0x000a",
         "0x0005",
         "0x0023",
-        "0x000d",
-        "0x0012",
-        "0x0033",
+        "0x0010",
+        "0x44cd",
+        "0x000b",
+        "0x002b",
+        "0x001b",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -195,14 +195,14 @@
       "seed": {
         "seed_file": null,
         "seed_file_bytes": null,
-        "local_state_seed_bytes": 8908,
-        "seed_serial_number": "be292e41120db00fb332d15d87bd2da8",
+        "local_state_seed_bytes": 9020,
+        "seed_serial_number": "98010303d1fa78690caf88ccb44e2c8a",
         "variations_country": "us",
-        "last_fetch_time": "13437829987851147",
+        "last_fetch_time": "13437915729641814",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 23707
+        "seed_decompressed_bytes": 24030
       },
       "quic": {
         "flags": [
@@ -213,17 +213,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x000a",
-          "0x000d",
-          "0x001b",
-          "0x0000",
           "0x002b",
-          "0xfe0d",
-          "0x0010",
-          "0x44cd",
+          "0x001b",
           "0x0033",
+          "0x44cd",
+          "0x002d",
+          "0x0010",
+          "0x000a",
+          "0x0000",
+          "0x000d",
           "0x0039",
-          "0x002d"
+          "0xfe0d"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -268,10 +268,46 @@
         ],
         "transport_params": [
           {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
             "id": "0x11",
             "name": "version_information",
             "len": 12,
-            "hex": "00000001000000016a0a3a0a"
+            "hex": "00000001aa0a0afa00000001"
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
           },
           {
             "id": "0x3128",
@@ -281,34 +317,10 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
             "id": "0x5",
             "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
           },
           {
             "id": "0x8",
@@ -317,34 +329,22 @@
             "value": 100
           },
           {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0xead455323416e74",
+            "name": "grease",
+            "len": 9,
+            "hex": "368f52eda15458ff17"
+          },
+          {
             "id": "0x6",
             "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x320021183013b81f",
-            "name": "grease",
-            "len": 6,
-            "hex": "d18ab7e8771d"
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
           }
         ],
         "h3_settings": {
@@ -470,11 +470,11 @@
   ],
   "brand": "brave",
   "chromium_major": 156,
-  "brand_version": "1.98.62",
+  "brand_version": "1.98.63",
   "package": {
-    "version": "1.98.62",
+    "version": "1.98.63",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
-    "sha256": "fb2b6c767726db2b562d766198618bc29a590e98f82996ade2a3a29153b555c1",
+    "sha256": "24227cd5a9259ebdc5108db394cc5998df5ac3635f84f8838a7464a7b5cddd55",
     "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
     "kind": "signed apt repo .deb"
   }

@@ -2,15 +2,15 @@
   "schema_version": "brand-capture-1",
   "label": null,
   "browser": "Brave Browser",
-  "version": "156.1.98.62",
+  "version": "156.1.98.63",
   "channel": "stable",
   "os": "Windows 2025Server (AMD64, build 10.0.26100)",
   "platform": "windows",
-  "captured_at": "2026-10-30T05:36:50-05:00",
+  "captured_at": "2026-10-31T05:26:12-05:00",
   "chrome_path": "C:\\Users\\runneradmin\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
-  "chrome_version_string": "Brave Browser 156.1.98.62",
+  "chrome_version_string": "Brave Browser 156.1.98.63",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41040296839",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41191759162",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "b3a9d1208a37c54aba33b032e99439e4",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65281-45-43-17613-51-16-5-65037-23-10-11-18-35-27-0-13,4588-29-23-24,0",
+      "ja3": "e6d9beb14924b561d4bf20e0b3f731b0",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51-11-43-18-10-17613-23-65281-5-65037-35-45-16-0-27-13,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0xff01",
-        "0x002d",
-        "0x002b",
-        "0x44cd",
         "0x0033",
-        "0x0010",
+        "0x000b",
+        "0x002b",
+        "0x0012",
+        "0x000a",
+        "0x44cd",
+        "0x0017",
+        "0xff01",
         "0x0005",
         "0xfe0d",
-        "0x0017",
-        "0x000a",
-        "0x000b",
-        "0x0012",
         "0x0023",
-        "0x001b",
+        "0x002d",
+        "0x0010",
         "0x0000",
+        "0x001b",
         "0x000d"
       ],
       "extensions_resumed": [
+        "0xfe0d",
+        "0x0033",
+        "0x001b",
+        "0x0005",
         "0x002d",
         "0xff01",
-        "0x000b",
-        "0x0012",
-        "0xfe0d",
-        "0x0010",
-        "0x0033",
-        "0x000d",
-        "0x0017",
-        "0x000a",
         "0x44cd",
-        "0x0000",
+        "0x0012",
         "0x0023",
-        "0x0005",
+        "0x000d",
+        "0x0000",
+        "0x0017",
         "0x002b",
-        "0x001b",
+        "0x0010",
+        "0x000b",
+        "0x000a",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -196,15 +196,15 @@
       "seed_present_at_exit": true,
       "seed": {
         "seed_file": "VariationsSeedV2",
-        "seed_file_bytes": 7353,
+        "seed_file_bytes": 7430,
         "local_state_seed_bytes": null,
-        "seed_serial_number": "be292e41120db00fb332d15d87bd2da8",
+        "seed_serial_number": "98010303d1fa78690caf88ccb44e2c8a",
         "variations_country": "us",
-        "last_fetch_time": "13437830217465822",
+        "last_fetch_time": "13437915977269807",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
-        "seed_decompressed_bytes": 23853
+        "seed_decompressed_bytes": 24176
       },
       "quic": {
         "flags": [
@@ -215,17 +215,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x000a",
-          "0x0000",
-          "0x000d",
-          "0x0039",
-          "0x002b",
-          "0xfe0d",
-          "0x0033",
-          "0x002d",
-          "0x001b",
           "0x0010",
-          "0x44cd"
+          "0x44cd",
+          "0x0033",
+          "0xfe0d",
+          "0x001b",
+          "0x000a",
+          "0x002b",
+          "0x002d",
+          "0x0039",
+          "0x000d",
+          "0x0000"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -270,6 +270,24 @@
         ],
         "transport_params": [
           {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
             "id": "0x20",
             "name": "max_datagram_frame_size",
             "len": 4,
@@ -282,10 +300,22 @@
             "value": 6291456
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
+            "id": "0x3",
+            "name": "max_udp_payload_size",
             "len": 2,
-            "value": 100
+            "value": 1472
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x1",
+            "name": "max_idle_timeout",
+            "len": 4,
+            "value": 30000
           },
           {
             "id": "0x3128",
@@ -295,58 +325,28 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000017a2a4ada"
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
           },
           {
-            "id": "0x3382c0f39b472ef9",
+            "id": "0x26e5956921f57fa6",
             "name": "grease",
             "len": 15,
-            "hex": "f225dcbe0016cc747b30e6cb7c4ae8"
+            "hex": "1236d400de51c3de9d77328bd1594e"
           },
           {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001ba7a0ada00000001"
           },
           {
             "id": "0x4",
             "name": "initial_max_data",
             "len": 4,
             "value": 15728640
-          },
-          {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
           }
         ],
         "h3_settings": {
@@ -472,11 +472,11 @@
   ],
   "brand": "brave",
   "chromium_major": 156,
-  "brand_version": "1.98.62",
+  "brand_version": "1.98.63",
   "package": {
-    "version": "156.1.98.62",
-    "repo": "github.com/brave/brave-browser v1.98.62 BraveBrowserStandaloneSilentSetup.exe",
-    "sha256": "335c34b06ebbb7997131fac4be4b6d01d720a2df52893a491b4014c0ee1c9be9",
+    "version": "156.1.98.63",
+    "repo": "github.com/brave/brave-browser v1.98.63 BraveBrowserStandaloneSilentSetup.exe",
+    "sha256": "6c139a6915432e72b626ce8566865f12854f744310c19543c498ecfd87d5cffa",
     "signing_key": "Brave Software, Inc.",
     "kind": "windows installer (SHA256 + Authenticode checked)"
   }
