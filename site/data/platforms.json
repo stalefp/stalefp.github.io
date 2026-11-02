@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-11-01T10:31:51Z",
+ "generated_at": "2026-11-02T20:01:37Z",
  "platforms": {
   "linux": {
    "status": "captured",
@@ -11,8 +11,8 @@
    "version": "156.0.8078.79",
    "channel": "stable",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
-   "captured_at": "2026-11-01T04:15:23-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "captured_at": "2026-11-02T13:44:10-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "platform_stable_newest": "156.0.8078.79",
    "platform_stable_full_rollout": "156.0.8078.79",
    "reference_config": "default-headed",
@@ -290,8 +290,8 @@
    "version": "156.0.8078.80",
    "channel": "stable",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
-   "captured_at": "2026-11-01T04:16:05-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "captured_at": "2026-11-02T13:44:11-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "platform_stable_newest": "157.0.8103.27",
    "platform_stable_full_rollout": "156.0.8078.80",
    "reference_config": "default-headed",
@@ -569,8 +569,8 @@
    "version": "156.0.8078.80",
    "channel": "stable",
    "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
-   "captured_at": "2026-11-01T04:15:44-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "captured_at": "2026-11-02T13:45:01-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "platform_stable_newest": "157.0.8103.26",
    "platform_stable_full_rollout": "156.0.8078.80",
    "reference_config": "default-headed",
@@ -848,8 +848,8 @@
    "version": "156.0.8078.79",
    "channel": "stable",
    "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
-   "captured_at": "2026-11-01T04:17:31-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "captured_at": "2026-11-02T13:45:47-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "platform_stable_newest": "157.0.8103.30",
    "platform_stable_full_rollout": null,
    "reference_config": "default-headed",
@@ -1127,13 +1127,11 @@
      "expected": "156.0.8078.79"
     },
     "serving_on_stable": true,
-    "serving_share": 0.243775,
+    "serving_share": 0.9751,
     "android_stable_serving": {
      "157.0.8103.30": 0.00245,
-     "156.0.8078.79": 0.243775,
-     "156.0.8078.75": 0.243775,
+     "156.0.8078.79": 0.9751,
      "156.0.8078.74": 0.00245,
-     "156.0.8078.73": 0.48755,
      "155.0.8059.86": 0.01,
      "155.0.8059.85": 0.01
     },
@@ -1148,8 +1146,8 @@
      "model": "sdk_gphone64_x86_64",
      "image": "system-images;android-35;google_apis_playstore;x86_64"
     },
-    "connections": 8,
-    "distinct_extension_orders": 8
+    "connections": 9,
+    "distinct_extension_orders": 9
    }
   }
  },
@@ -1319,27 +1317,27 @@
  },
  "last_attempt": {
   "linux": {
-   "at": "2026-11-01T10:29:29Z",
+   "at": "2026-11-02T19:59:38Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "detail": null
   },
   "windows": {
-   "at": "2026-11-01T10:29:29Z",
+   "at": "2026-11-02T19:59:38Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "detail": null
   },
   "macos": {
-   "at": "2026-11-01T10:29:29Z",
+   "at": "2026-11-02T19:59:38Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "detail": null
   },
   "android": {
-   "at": "2026-11-01T10:29:29Z",
+   "at": "2026-11-02T19:59:38Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41296634730",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41512601720",
    "detail": null
   }
  }

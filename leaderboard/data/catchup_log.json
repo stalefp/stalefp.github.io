@@ -506,6 +506,12 @@
     "hrequests": false,
     "tls-client (Python)": false
    }
+  },
+  {
+   "date": "2026-11-02",
+   "chrome_version": "156.0.8078.79",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {}
   }
  ]
 }
