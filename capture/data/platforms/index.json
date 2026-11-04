@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-11-03T17:33:38Z",
+ "generated_at": "2026-11-04T17:45:13Z",
  "platforms": {
   "linux": {
    "status": "captured",
@@ -8,13 +8,13 @@
    "platform": "linux",
    "label": "Linux",
    "browser": "Google Chrome",
-   "version": "156.0.8078.79",
+   "version": "157.0.8103.38",
    "channel": "stable",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
-   "captured_at": "2026-11-03T11:17:20-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
-   "platform_stable_newest": "156.0.8078.79",
-   "platform_stable_full_rollout": "156.0.8078.79",
+   "captured_at": "2026-11-04T11:28:01-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
+   "platform_stable_newest": "157.0.8103.38",
+   "platform_stable_full_rollout": "157.0.8103.38",
    "reference_config": "default-headed",
    "variants": {
     "default": {
@@ -101,8 +101,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "no_ca34": {
      "config": "disable-TLSTrustAnchorIDs-headed",
@@ -187,8 +187,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "pq": {
      "config": "finch-AddTLSServerHandshakePadding-headed",
@@ -275,8 +275,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     }
    },
    "android": null
@@ -287,13 +287,13 @@
    "platform": "windows",
    "label": "Windows",
    "browser": "Google Chrome",
-   "version": "156.0.8078.80",
+   "version": "157.0.8103.39",
    "channel": "stable",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
-   "captured_at": "2026-11-03T11:17:13-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
-   "platform_stable_newest": "157.0.8103.27",
-   "platform_stable_full_rollout": "156.0.8078.80",
+   "captured_at": "2026-11-04T11:28:48-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
+   "platform_stable_newest": "157.0.8103.39",
+   "platform_stable_full_rollout": "157.0.8103.39",
    "reference_config": "default-headed",
    "variants": {
     "default": {
@@ -380,8 +380,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "no_ca34": {
      "config": "disable-TLSTrustAnchorIDs-headed",
@@ -466,8 +466,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "pq": {
      "config": "finch-AddTLSServerHandshakePadding-headed",
@@ -554,8 +554,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     }
    },
    "android": null
@@ -566,13 +566,13 @@
    "platform": "macos",
    "label": "macOS",
    "browser": "Google Chrome",
-   "version": "156.0.8078.80",
+   "version": "157.0.8103.39",
    "channel": "stable",
    "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
-   "captured_at": "2026-11-03T11:17:54-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
-   "platform_stable_newest": "157.0.8103.26",
-   "platform_stable_full_rollout": "156.0.8078.80",
+   "captured_at": "2026-11-04T11:28:38-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
+   "platform_stable_newest": "157.0.8103.39",
+   "platform_stable_full_rollout": "157.0.8103.39",
    "reference_config": "default-headed",
    "variants": {
     "default": {
@@ -659,8 +659,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "no_ca34": {
      "config": "disable-TLSTrustAnchorIDs-headed",
@@ -745,8 +745,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "pq": {
      "config": "finch-AddTLSServerHandshakePadding-headed",
@@ -833,8 +833,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     }
    },
    "android": null
@@ -848,9 +848,9 @@
    "version": "156.0.8078.79",
    "channel": "stable",
    "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
-   "captured_at": "2026-11-03T11:19:16-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
-   "platform_stable_newest": "157.0.8103.30",
+   "captured_at": "2026-11-04T11:29:52-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
+   "platform_stable_newest": "157.0.8103.38",
    "platform_stable_full_rollout": null,
    "reference_config": "default-headed",
    "variants": {
@@ -1127,13 +1127,11 @@
      "expected": "156.0.8078.79"
     },
     "serving_on_stable": true,
-    "serving_share": 0.9751,
+    "serving_share": 0.8,
     "android_stable_serving": {
-     "157.0.8103.30": 0.00245,
-     "156.0.8078.79": 0.9751,
-     "156.0.8078.74": 0.00245,
-     "155.0.8059.86": 0.01,
-     "155.0.8059.85": 0.01
+     "157.0.8103.38": 0.1,
+     "156.0.8078.80": 0.1,
+     "156.0.8078.79": 0.8
     },
     "apk_sha256": "41ae834c778a31d9fd55769eb6776eaa88b9370751608ca3b1b668c3f2052fc1",
     "signer_cert_sha256": "f0fd6c5b410f25cb25c3b53346c8972fae30f8ee7411df910480ad6b2d60db83",
@@ -1146,8 +1144,8 @@
      "model": "sdk_gphone64_x86_64",
      "image": "system-images;android-35;google_apis_playstore;x86_64"
     },
-    "connections": 8,
-    "distinct_extension_orders": 8
+    "connections": 9,
+    "distinct_extension_orders": 9
    }
   }
  },
@@ -1262,7 +1260,7 @@
   },
   "android": {
    "vs": "linux",
-   "same_version": true,
+   "same_version": false,
    "variants": {
     "default": {
      "fields": {
@@ -1317,27 +1315,27 @@
  },
  "last_attempt": {
   "linux": {
-   "at": "2026-11-03T17:31:34Z",
+   "at": "2026-11-04T17:42:41Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
    "detail": null
   },
   "windows": {
-   "at": "2026-11-03T17:31:34Z",
+   "at": "2026-11-04T17:42:41Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
    "detail": null
   },
   "macos": {
-   "at": "2026-11-03T17:31:34Z",
+   "at": "2026-11-04T17:42:41Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
    "detail": null
   },
   "android": {
-   "at": "2026-11-03T17:31:34Z",
+   "at": "2026-11-04T17:42:41Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41682647189",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/41877692958",
    "detail": null
   }
  }

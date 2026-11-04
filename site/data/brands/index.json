@@ -48,7 +48,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "156.0.8078.79",
+    "chrome_version": "157.0.8103.38",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -107,7 +107,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.79",
+      "chrome_version": "157.0.8103.38",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -125,7 +125,7 @@
      "version": "156.0.4314.58",
      "brand_version": "156.0.4314.58",
      "chromium_major": 156,
-     "captured_at": "2026-11-03T11:28:59-06:00",
+     "captured_at": "2026-11-04T11:40:25-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "156.0.4314.58",
@@ -166,7 +166,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.80",
+      "chrome_version": "157.0.8103.39",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -186,7 +186,7 @@
    "version": "156.1.98.63",
    "brand_version": "1.98.63",
    "chromium_major": 156,
-   "captured_at": "2026-11-03T11:28:56-06:00",
+   "captured_at": "2026-11-04T11:39:22-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "1.98.63",
@@ -228,7 +228,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "156.0.8078.79",
+    "chrome_version": "157.0.8103.38",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -246,7 +246,7 @@
      "version": "156.1.98.63",
      "brand_version": "1.98.63",
      "chromium_major": 156,
-     "captured_at": "2026-11-03T11:28:56-06:00",
+     "captured_at": "2026-11-04T11:39:22-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "1.98.63",
@@ -288,7 +288,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.79",
+      "chrome_version": "157.0.8103.38",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -306,7 +306,7 @@
      "version": "156.1.98.63",
      "brand_version": "1.98.63",
      "chromium_major": 156,
-     "captured_at": "2026-11-03T11:30:34-06:00",
+     "captured_at": "2026-11-04T11:41:50-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "156.1.98.63",
@@ -348,7 +348,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "156.0.8078.80",
+      "chrome_version": "157.0.8103.39",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
