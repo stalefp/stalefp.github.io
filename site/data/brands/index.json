@@ -125,7 +125,7 @@
      "version": "156.0.4314.58",
      "brand_version": "156.0.4314.58",
      "chromium_major": 156,
-     "captured_at": "2026-11-04T11:40:25-06:00",
+     "captured_at": "2026-11-05T11:49:42-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "156.0.4314.58",
@@ -183,15 +183,15 @@
   "brave": {
    "status": "captured",
    "browser": "Brave Browser",
-   "version": "156.1.98.63",
-   "brand_version": "1.98.63",
-   "chromium_major": 156,
-   "captured_at": "2026-11-04T11:39:22-06:00",
+   "version": "157.1.99.55",
+   "brand_version": "1.99.55",
+   "chromium_major": 157,
+   "captured_at": "2026-11-05T11:48:13-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "1.98.63",
+    "version": "1.99.55",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
-    "sha256": "24227cd5a9259ebdc5108db394cc5998df5ac3635f84f8838a7464a7b5cddd55",
+    "sha256": "364e954a2ad84d5ba3e0e217a229d5873c4ae7107d15e6120e4207529539c88d",
     "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
     "kind": "signed apt repo .deb"
    },
@@ -218,8 +218,8 @@
     "accept-language",
     "priority"
    ],
-   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-   "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Brave\";v=\"156\"",
+   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+   "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Brave\";v=\"157\", \"Chromium\";v=\"157\"",
    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
    "h3_settings": {
     "1": 65536,
@@ -243,15 +243,15 @@
     "linux": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "156.1.98.63",
-     "brand_version": "1.98.63",
-     "chromium_major": 156,
-     "captured_at": "2026-11-04T11:39:22-06:00",
+     "version": "157.1.99.55",
+     "brand_version": "1.99.55",
+     "chromium_major": 157,
+     "captured_at": "2026-11-05T11:48:13-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "1.98.63",
+      "version": "1.99.55",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
-      "sha256": "24227cd5a9259ebdc5108db394cc5998df5ac3635f84f8838a7464a7b5cddd55",
+      "sha256": "364e954a2ad84d5ba3e0e217a229d5873c4ae7107d15e6120e4207529539c88d",
       "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
       "kind": "signed apt repo .deb"
      },
@@ -278,8 +278,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Brave\";v=\"156\"",
+     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Brave\";v=\"157\", \"Chromium\";v=\"157\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,
@@ -303,15 +303,15 @@
     "windows": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "156.1.98.63",
-     "brand_version": "1.98.63",
-     "chromium_major": 156,
-     "captured_at": "2026-11-04T11:41:50-06:00",
+     "version": "157.1.99.55",
+     "brand_version": "1.99.55",
+     "chromium_major": 157,
+     "captured_at": "2026-11-05T11:51:12-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "156.1.98.63",
-      "repo": "github.com/brave/brave-browser v1.98.63 BraveBrowserStandaloneSilentSetup.exe",
-      "sha256": "6c139a6915432e72b626ce8566865f12854f744310c19543c498ecfd87d5cffa",
+      "version": "157.1.99.55",
+      "repo": "github.com/brave/brave-browser v1.99.55 BraveBrowserStandaloneSilentSetup.exe",
+      "sha256": "40b34286f6d32d2c80deaae2f0832b2759a20e98cd7cc2b1c20a7e4ffb243a7e",
       "signing_key": "Brave Software, Inc.",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -338,8 +338,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Brave\";v=\"156\"",
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Brave\";v=\"157\", \"Chromium\";v=\"157\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,

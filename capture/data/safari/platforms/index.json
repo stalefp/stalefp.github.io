@@ -1,7 +1,7 @@
 {
  "platforms": {
   "macos": {
-   "status": "captured",
+   "status": "previous (today's capture failed)",
    "version": "26.6.2",
    "captured_at": "2026-11-04T11:39:36-06:00",
    "os": "macOS 26.6.2 (arm64, Darwin 25.6.0)",
