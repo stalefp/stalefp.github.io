@@ -6,11 +6,11 @@
   "channel": "stable",
   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
   "platform": "linux",
-  "captured_at": "2026-11-05T11:48:13-06:00",
+  "captured_at": "2026-11-06T11:04:28-06:00",
   "chrome_path": "/opt/brave.com/brave/brave",
   "chrome_version_string": "Brave Browser 157.1.99.55 unknown",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42076277741",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42256651381",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "000a85e20ab0cfc069f6eb0d3eeae7b6",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,11-10-23-43-0-65281-45-65037-27-5-16-17613-13-35-18-51,4588-29-23-24,0",
+      "ja3": "b4d8b30e60acdbe5033fd95bfe77f58d",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,11-23-27-51-18-65281-45-5-43-13-65037-17613-35-0-10-16,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
         "0x000b",
-        "0x000a",
         "0x0017",
-        "0x002b",
-        "0x0000",
+        "0x001b",
+        "0x0033",
+        "0x0012",
         "0xff01",
         "0x002d",
-        "0xfe0d",
-        "0x001b",
         "0x0005",
-        "0x0010",
-        "0x44cd",
+        "0x002b",
         "0x000d",
+        "0xfe0d",
+        "0x44cd",
         "0x0023",
-        "0x0012",
-        "0x0033"
+        "0x0000",
+        "0x000a",
+        "0x0010"
       ],
       "extensions_resumed": [
-        "0x44cd",
-        "0x0023",
-        "0x0005",
-        "0x000d",
-        "0x001b",
-        "0x000a",
-        "0x0033",
-        "0x0017",
         "0xff01",
-        "0xfe0d",
-        "0x000b",
-        "0x0010",
-        "0x0000",
-        "0x002b",
         "0x002d",
         "0x0012",
+        "0x0005",
+        "0x001b",
+        "0x000a",
+        "0x000d",
+        "0x44cd",
+        "0x0033",
+        "0xfe0d",
+        "0x0023",
+        "0x0010",
+        "0x000b",
+        "0x0017",
+        "0x002b",
+        "0x0000",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -196,9 +196,9 @@
         "seed_file": null,
         "seed_file_bytes": null,
         "local_state_seed_bytes": 9008,
-        "seed_serial_number": "adc9fb85caaa2b4c8dd26a054ce82994",
+        "seed_serial_number": "f3110ceee313d6ac506afa4680d8ad53",
         "variations_country": "us",
-        "last_fetch_time": "13438374496007501",
+        "last_fetch_time": "13438458271119958",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": false,
         "seed_scan_error": null,
@@ -213,17 +213,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x002b",
-          "0x000a",
-          "0x0039",
           "0x002d",
-          "0x0000",
-          "0xfe0d",
           "0x44cd",
+          "0x0000",
           "0x000d",
           "0x001b",
+          "0x0039",
           "0x0010",
-          "0x0033"
+          "0xfe0d",
+          "0x002b",
+          "0x0033",
+          "0x000a"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -268,23 +268,17 @@
         ],
         "transport_params": [
           {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000017a7aeaaa"
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
             "id": "0x3128",
             "name": "google_connection_options",
             "len": 4,
             "hex": "4f524947",
             "ascii": "ORIG"
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           },
           {
             "id": "0x20",
@@ -293,8 +287,14 @@
             "value": 65536
           },
           {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
             "value": 6291456
           },
@@ -305,22 +305,16 @@
             "value": 15728640
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
           },
           {
-            "id": "0x33b44811bae88c6d",
-            "name": "grease",
-            "len": 15,
-            "hex": "42dec3ea3392b402a4f83891527866"
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "00000001da7a3aca00000001"
           },
           {
             "id": "0x1",
@@ -329,20 +323,26 @@
             "value": 30000
           },
           {
+            "id": "0x3a8c192e5d8b3bdb",
+            "name": "grease",
+            "len": 10,
+            "hex": "b8109c070f895c0405c4"
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
             "id": "0x9",
             "name": "initial_max_streams_uni",
             "len": 2,
             "value": 103
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
           }
