@@ -2,10 +2,10 @@
  "schema": "firefox-capture-2",
  "browser": "Mozilla Firefox",
  "channel": "release",
- "version": "159.0.1",
+ "version": "160.0",
  "platform": "linux",
  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
- "captured_at": "2026-11-09T14:08:21-06:00",
+ "captured_at": "2026-11-10T11:24:16-06:00",
  "mode": "headless",
  "source": "official Mozilla release build (archive.mozilla.org, SHA512 verified by the workflow)",
  "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
@@ -209,13 +209,13 @@
     "id": "0xf",
     "name": "initial_source_connection_id",
     "len": 3,
-    "hex": "58dd80"
+    "hex": "bbf5ee"
    },
    {
     "id": "0x11",
     "name": "version_information",
     "len": 16,
-    "hex": "00000001fa5a2a9a6b3343cf00000001"
+    "hex": "00000001ea5a0a1a6b3343cf00000001"
    },
    {
     "id": "0x1d",
@@ -264,7 +264,7 @@
   "request_over_h3": true,
   "errors": []
  },
- "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:159.0) Gecko/20100101 Firefox/159.0",
+ "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:160.0) Gecko/20100101 Firefox/160.0",
  "protocol": "h2",
  "errors": []
 }

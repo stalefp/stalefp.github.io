@@ -162,6 +162,12 @@
    "firefox_version": "159.0.1",
    "captured_at": "2026-11-09T14:08:21-06:00",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d"
+  },
+  {
+   "file": "firefox-160.0-2026-11-10.json",
+   "firefox_version": "160.0",
+   "captured_at": "2026-11-10T11:24:16-06:00",
+   "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d"
   }
  ]
 }

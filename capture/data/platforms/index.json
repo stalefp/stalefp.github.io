@@ -1,6 +1,6 @@
 {
  "note": "Per-platform branded Google Chrome captures (capture/merge_platforms.py). Full data: linux = latest.json, others = platforms/<os>.json (capture/SCHEMA.md layout).",
- "generated_at": "2026-11-09T20:16:36Z",
+ "generated_at": "2026-11-10T17:31:50Z",
  "platforms": {
   "linux": {
    "status": "captured",
@@ -8,13 +8,13 @@
    "platform": "linux",
    "label": "Linux",
    "browser": "Google Chrome",
-   "version": "157.0.8103.38",
+   "version": "157.0.8103.50",
    "channel": "stable",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
-   "captured_at": "2026-11-09T13:59:28-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
-   "platform_stable_newest": "157.0.8103.38",
-   "platform_stable_full_rollout": "157.0.8103.38",
+   "captured_at": "2026-11-10T11:15:19-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
+   "platform_stable_newest": "157.0.8103.50",
+   "platform_stable_full_rollout": "157.0.8103.50",
    "reference_config": "default-headed",
    "variants": {
     "default": {
@@ -287,13 +287,13 @@
    "platform": "windows",
    "label": "Windows",
    "browser": "Google Chrome",
-   "version": "157.0.8103.39",
+   "version": "157.0.8103.51",
    "channel": "stable",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
-   "captured_at": "2026-11-09T14:00:13-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
+   "captured_at": "2026-11-10T11:16:00-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
    "platform_stable_newest": "158.0.8127.18",
-   "platform_stable_full_rollout": "157.0.8103.39",
+   "platform_stable_full_rollout": "157.0.8103.51",
    "reference_config": "default-headed",
    "variants": {
     "default": {
@@ -566,13 +566,13 @@
    "platform": "macos",
    "label": "macOS",
    "browser": "Google Chrome",
-   "version": "157.0.8103.39",
+   "version": "157.0.8103.51",
    "channel": "stable",
    "os": "macOS 26.7.2 (arm64, Darwin 25.6.0)",
-   "captured_at": "2026-11-09T14:00:16-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
+   "captured_at": "2026-11-10T11:16:14-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
    "platform_stable_newest": "158.0.8127.18",
-   "platform_stable_full_rollout": "157.0.8103.39",
+   "platform_stable_full_rollout": "157.0.8103.51",
    "reference_config": "default-headed",
    "variants": {
     "default": {
@@ -845,11 +845,11 @@
    "platform": "android",
    "label": "Android",
    "browser": "Google Chrome",
-   "version": "156.0.8078.81",
+   "version": "157.0.8103.48",
    "channel": "stable",
    "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
-   "captured_at": "2026-11-09T14:01:08-06:00",
-   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
+   "captured_at": "2026-11-10T11:17:35-06:00",
+   "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
    "platform_stable_newest": "158.0.8127.22",
    "platform_stable_full_rollout": null,
    "reference_config": "default-headed",
@@ -938,8 +938,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Mobile Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "no_ca34": {
      "config": "disable-TLSTrustAnchorIDs-headed",
@@ -1024,8 +1024,8 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Mobile Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     },
     "pq": {
      "config": "finch-AddTLSServerHandshakePadding-headed",
@@ -1112,30 +1112,32 @@
       "0x9=103",
       "0xf="
      ],
-     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
-     "sec_ch_ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\""
+     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Mobile Safari/537.36",
+     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\""
     }
    },
    "android": {
     "source": "apk",
-    "source_detail": "Google-signed x86_64 APK from APKMirror, installed over the image's preinstalled Chrome: https://www.apkmirror.com/apk/google-inc/chrome/google-chrome-156-0-8078-81-release/google-chrome-156-0-8078-81-5-android-apk-download/",
+    "source_detail": "Google-signed x86_64 APK from APKMirror, installed over the image's preinstalled Chrome: https://www.apkmirror.com/apk/google-inc/chrome/google-chrome-157-0-8103-48-release/google-chrome-157-0-8103-48-5-android-apk-download/",
     "version_verified": true,
     "version_checks": {
-     "package_manager": "156.0.8078.81",
-     "devtools": "156.0.8078.81",
-     "chrome_version_page": "156.0.8078.81",
-     "expected": "156.0.8078.81"
+     "package_manager": "157.0.8103.48",
+     "devtools": "157.0.8103.48",
+     "chrome_version_page": "157.0.8103.48",
+     "expected": "157.0.8103.48"
     },
     "serving_on_stable": true,
-    "serving_share": 0.0995,
+    "serving_share": 0.24875,
     "android_stable_serving": {
      "158.0.8127.22": 0.0025,
+     "157.0.8103.50": 0.24875,
+     "157.0.8103.48": 0.24875,
      "157.0.8103.47": 0.0025,
-     "157.0.8103.46": 0.0995,
-     "156.0.8078.81": 0.0995,
-     "156.0.8078.79": 0.796
+     "157.0.8103.46": 0.04975,
+     "156.0.8078.81": 0.04975,
+     "156.0.8078.79": 0.398
     },
-    "apk_sha256": "ea2868a823d0327b1be4ac2f33eca43d95902803d45e5cccea1ff78311f11dbb",
+    "apk_sha256": "5b4007899cb20a80ca343d971774017157a7aafdde1c16ac25f0c9497710af16",
     "signer_cert_sha256": "f0fd6c5b410f25cb25c3b53346c8972fae30f8ee7411df910480ad6b2d60db83",
     "emulator": {
      "release": "15",
@@ -1146,8 +1148,8 @@
      "model": "sdk_gphone64_x86_64",
      "image": "system-images;android-35;google_apis_playstore;x86_64"
     },
-    "connections": 10,
-    "distinct_extension_orders": 10
+    "connections": 8,
+    "distinct_extension_orders": 8
    }
   }
  },
@@ -1317,27 +1319,27 @@
  },
  "last_attempt": {
   "linux": {
-   "at": "2026-11-09T20:14:21Z",
+   "at": "2026-11-10T17:29:45Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
    "detail": null
   },
   "windows": {
-   "at": "2026-11-09T20:14:21Z",
+   "at": "2026-11-10T17:29:45Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
    "detail": null
   },
   "macos": {
-   "at": "2026-11-09T20:14:21Z",
+   "at": "2026-11-10T17:29:45Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
    "detail": null
   },
   "android": {
-   "at": "2026-11-09T20:14:21Z",
+   "at": "2026-11-10T17:29:45Z",
    "ok": true,
-   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42688529493",
+   "run": "https://github.com/stalefp/stalefp.github.io/actions/runs/42862942114",
    "detail": null
   }
  }

@@ -4,15 +4,15 @@
   "edge": {
    "status": "captured",
    "browser": "Microsoft Edge",
-   "version": "157.0.4341.42",
-   "brand_version": "157.0.4341.42",
+   "version": "157.0.4341.46",
+   "brand_version": "157.0.4341.46",
    "chromium_major": 157,
-   "captured_at": "2026-11-09T14:08:41-06:00",
+   "captured_at": "2026-11-10T11:24:36-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "157.0.4341.42-1",
+    "version": "157.0.4341.46-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "1bd6f4753cf139ec751ca74b47054693c5a6c28128461ec1c3dd80c05640e2b9",
+    "sha256": "b22585500e6d0366d959cc10cf5864fc1a28524ba2b1eb97ead3eb7ee351b61a",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
    },
@@ -48,7 +48,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "157.0.8103.38",
+    "chrome_version": "157.0.8103.50",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -63,15 +63,15 @@
     "linux": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.42",
-     "brand_version": "157.0.4341.42",
+     "version": "157.0.4341.46",
+     "brand_version": "157.0.4341.46",
      "chromium_major": 157,
-     "captured_at": "2026-11-09T14:08:41-06:00",
+     "captured_at": "2026-11-10T11:24:36-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "157.0.4341.42-1",
+      "version": "157.0.4341.46-1",
       "repo": "https://packages.microsoft.com/repos/edge",
-      "sha256": "1bd6f4753cf139ec751ca74b47054693c5a6c28128461ec1c3dd80c05640e2b9",
+      "sha256": "b22585500e6d0366d959cc10cf5864fc1a28524ba2b1eb97ead3eb7ee351b61a",
       "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
       "kind": "signed apt repo .deb"
      },
@@ -107,7 +107,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "157.0.8103.38",
+      "chrome_version": "157.0.8103.50",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -122,15 +122,15 @@
     "windows": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.42",
-     "brand_version": "157.0.4341.42",
+     "version": "157.0.4341.46",
+     "brand_version": "157.0.4341.46",
      "chromium_major": 157,
-     "captured_at": "2026-11-09T14:11:42-06:00",
+     "captured_at": "2026-11-10T11:27:26-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "157.0.4341.42",
+      "version": "157.0.4341.46",
       "repo": "edgeupdates.microsoft.com Stable x64 MSI",
-      "sha256": "14d79df658d7ad4b8e8d2f8d2456d10b98a860890da2352a394e346cbdb32fe7",
+      "sha256": "0bdba24e2d64a4de639468cb1b196d2540d2b50adf198b637f43cf563852bb58",
       "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -166,7 +166,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "157.0.8103.39",
+      "chrome_version": "157.0.8103.51",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -183,15 +183,15 @@
   "brave": {
    "status": "captured",
    "browser": "Brave Browser",
-   "version": "157.1.99.55",
-   "brand_version": "1.99.55",
+   "version": "157.1.99.56",
+   "brand_version": "1.99.56",
    "chromium_major": 157,
-   "captured_at": "2026-11-09T14:09:09-06:00",
+   "captured_at": "2026-11-10T11:25:06-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "1.99.55",
+    "version": "1.99.56",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
-    "sha256": "364e954a2ad84d5ba3e0e217a229d5873c4ae7107d15e6120e4207529539c88d",
+    "sha256": "5b5af4d108758fe5e82b7cb119af203977a90fcb34b9b07319317f863f38bc72",
     "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
     "kind": "signed apt repo .deb"
    },
@@ -228,7 +228,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "157.0.8103.38",
+    "chrome_version": "157.0.8103.50",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -243,15 +243,15 @@
     "linux": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "157.1.99.55",
-     "brand_version": "1.99.55",
+     "version": "157.1.99.56",
+     "brand_version": "1.99.56",
      "chromium_major": 157,
-     "captured_at": "2026-11-09T14:09:09-06:00",
+     "captured_at": "2026-11-10T11:25:06-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "1.99.55",
+      "version": "1.99.56",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
-      "sha256": "364e954a2ad84d5ba3e0e217a229d5873c4ae7107d15e6120e4207529539c88d",
+      "sha256": "5b5af4d108758fe5e82b7cb119af203977a90fcb34b9b07319317f863f38bc72",
       "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
       "kind": "signed apt repo .deb"
      },
@@ -288,7 +288,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "157.0.8103.38",
+      "chrome_version": "157.0.8103.50",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -303,15 +303,15 @@
     "windows": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "157.1.99.55",
-     "brand_version": "1.99.55",
+     "version": "157.1.99.56",
+     "brand_version": "1.99.56",
      "chromium_major": 157,
-     "captured_at": "2026-11-09T14:13:04-06:00",
+     "captured_at": "2026-11-10T11:28:51-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "157.1.99.55",
-      "repo": "github.com/brave/brave-browser v1.99.55 BraveBrowserStandaloneSilentSetup.exe",
-      "sha256": "40b34286f6d32d2c80deaae2f0832b2759a20e98cd7cc2b1c20a7e4ffb243a7e",
+      "version": "157.1.99.56",
+      "repo": "github.com/brave/brave-browser v1.99.56 BraveBrowserStandaloneSilentSetup.exe",
+      "sha256": "ddabc3923b8e6a0e7b995c1026bfae8e7c0a82c4ed955ae236acf57601fc9ca2",
       "signing_key": "Brave Software, Inc.",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -348,7 +348,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "157.0.8103.39",
+      "chrome_version": "157.0.8103.51",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,

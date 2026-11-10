@@ -1,11 +1,11 @@
 {
  "schema_version": "android-leaderboard-1",
- "generated_at": "2026-11-09T20:17:04Z",
+ "generated_at": "2026-11-10T17:32:18Z",
  "reference": {
   "browser": "Google Chrome (Android)",
-  "android_version": "156.0.8078.81",
-  "android_major": 156,
-  "captured_at": "2026-11-09T14:01:08-06:00",
+  "android_version": "157.0.8103.48",
+  "android_major": 157,
+  "captured_at": "2026-11-10T11:17:35-06:00",
   "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
   "ja4_fresh": "t13d1517h2_8daaf6152771_cb7bf5808d99",
   "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
@@ -27,10 +27,10 @@
    "profile": "chrome_146 (os android)",
    "note": "desktop Chrome 146 profile with impersonate_os=\"android\"",
    "version": "2.0.1",
-   "tested_at": "2026-11-09T20:17:03Z",
+   "tested_at": "2026-11-10T17:32:17Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261109T201703Z/py/primp_chrome_146_android.json"
+    "fresh": "leaderboard/raw/android-20261110T173217Z/py/primp_chrome_146_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
@@ -311,7 +311,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 146,
-   "versions_behind": 10,
+   "versions_behind": 11,
    "versions_behind_uniform": true,
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
@@ -322,7 +322,7 @@
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Chrome 146, 10 versions behind current 156; 2 counted fields differ from current Chrome for Android.",
+   "behind_text": "Copies Chrome 146, 11 versions behind current 157; 2 counted fields differ from current Chrome for Android.",
    "is_newest_profile": true
   },
   {
@@ -333,10 +333,10 @@
    "profile": "Chrome145 (EmulationOS.Android)",
    "note": "desktop Chrome 145 emulation with emulation_os=Android",
    "version": "3.0.0rc22",
-   "tested_at": "2026-11-09T20:17:03Z",
+   "tested_at": "2026-11-10T17:32:17Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261109T201703Z/py/rnet_Chrome145_Android.json"
+    "fresh": "leaderboard/raw/android-20261110T173217Z/py/rnet_Chrome145_Android.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms.",
@@ -615,7 +615,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 145,
-   "versions_behind": 11,
+   "versions_behind": 12,
    "versions_behind_uniform": true,
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
@@ -627,7 +627,7 @@
     "settings": true,
     "header_order": false
    },
-   "behind_text": "Copies Chrome 145, 11 versions behind current 156; 2 counted fields differ from current Chrome for Android.",
+   "behind_text": "Copies Chrome 145, 12 versions behind current 157; 2 counted fields differ from current Chrome for Android.",
    "is_newest_profile": true
   },
   {
@@ -638,10 +638,10 @@
    "profile": "chrome131_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-11-09T20:17:03Z",
+   "tested_at": "2026-11-10T17:32:17Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261109T201703Z/py/curl_cffi_chrome131_android.json"
+    "fresh": "leaderboard/raw/android-20261110T173217Z/py/curl_cffi_chrome131_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "5 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps.",
@@ -950,7 +950,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 131,
-   "versions_behind": 25,
+   "versions_behind": 26,
    "versions_behind_uniform": true,
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
@@ -963,7 +963,7 @@
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Chrome 131, 25 versions behind current 156; 5 counted fields differ from current Chrome for Android.",
+   "behind_text": "Copies Chrome 131, 26 versions behind current 157; 5 counted fields differ from current Chrome for Android.",
    "is_newest_profile": true
   },
   {
@@ -974,10 +974,10 @@
    "profile": "chrome99_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-11-09T20:17:03Z",
+   "tested_at": "2026-11-10T17:32:17Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261109T201703Z/py/curl_cffi_chrome99_android.json"
+    "fresh": "leaderboard/raw/android-20261110T173217Z/py/curl_cffi_chrome99_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "6 counted fields differ from Chrome for Android's default fingerprint: extensions, signature_algorithms, supported_groups, key_shares, alps, http2_akamai.",
@@ -1307,7 +1307,7 @@
     "HTTP/3 (QUIC) fingerprint"
    ],
    "profile_chrome_major": 99,
-   "versions_behind": 57,
+   "versions_behind": 58,
    "versions_behind_uniform": true,
    "why": [
     "Doesn't offer the ML-DSA post-quantum signature algorithms (0x0904-0906).",
@@ -1323,7 +1323,7 @@
     "settings": false,
     "header_order": true
    },
-   "behind_text": "Copies Chrome 99, 57 versions behind current 156; 6 counted fields differ from current Chrome for Android.",
+   "behind_text": "Copies Chrome 99, 58 versions behind current 157; 6 counted fields differ from current Chrome for Android.",
    "is_newest_profile": false
   }
  ]
