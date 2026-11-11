@@ -659,6 +659,21 @@
     "got-scraping": false,
     "tls-client (Python)": false
    }
+  },
+  {
+   "date": "2026-11-11",
+   "chrome_version": "157.0.8103.50",
+   "chrome_ja4": "t13d1517h2_8daaf6152771_cb7bf5808d99",
+   "exact": {
+    "tls-client": true,
+    "azuretls-client": false,
+    "wreq": false,
+    "uTLS": false,
+    "hrequests": false,
+    "CycleTLS": false,
+    "got-scraping": false,
+    "tls-client (Python)": false
+   }
   }
  ]
 }

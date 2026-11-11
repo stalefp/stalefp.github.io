@@ -3,7 +3,7 @@
   "linux": {
    "status": "captured",
    "version": "160.0",
-   "captured_at": "2026-11-10T11:24:16-06:00",
+   "captured_at": "2026-11-11T11:33:03-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
    "ja4_resumed": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
@@ -15,7 +15,7 @@
   "windows": {
    "status": "captured",
    "version": "160.0",
-   "captured_at": "2026-11-10T11:26:12-06:00",
+   "captured_at": "2026-11-11T11:35:22-06:00",
    "os": "Windows 2025Server (AMD64, build 10.0.26100)",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
    "ja4_resumed": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
@@ -27,7 +27,7 @@
   "macos": {
    "status": "captured",
    "version": "160.0",
-   "captured_at": "2026-11-10T11:26:10-06:00",
+   "captured_at": "2026-11-11T11:35:32-06:00",
    "os": "macOS 26.7.2 (arm64, Darwin 25.6.0)",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d",
    "ja4_resumed": "t13d1517h2_8daaf6152771_e6dcd7ae0a9e",
