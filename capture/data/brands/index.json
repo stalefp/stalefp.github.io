@@ -2,17 +2,17 @@
  "note": "Captures of other Chromium-based browsers on Linux and Windows (capture/lib/capture_brand.py). The top-level fields of each brand are the Linux capture (unchanged layout); platforms.<os> holds every OS. vs_chrome compares the default profile with the Chrome capture from the same OS (true = identical).",
  "brands": {
   "edge": {
-   "status": "previous (today's capture failed)",
+   "status": "captured",
    "browser": "Microsoft Edge",
-   "version": "157.0.4341.46",
-   "brand_version": "157.0.4341.46",
+   "version": "157.0.4341.57",
+   "brand_version": "157.0.4341.57",
    "chromium_major": 157,
-   "captured_at": "2026-11-11T11:33:22-06:00",
+   "captured_at": "2026-11-13T11:30:27-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "157.0.4341.46-1",
+    "version": "157.0.4341.57-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "b22585500e6d0366d959cc10cf5864fc1a28524ba2b1eb97ead3eb7ee351b61a",
+    "sha256": "348d3fe0be9989c8694c66d566d118dba273044599e3f50fd21f47b50d792d55",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
    },
@@ -61,17 +61,17 @@
    "label": "Linux",
    "platforms": {
     "linux": {
-     "status": "previous (today's capture failed)",
+     "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.46",
-     "brand_version": "157.0.4341.46",
+     "version": "157.0.4341.57",
+     "brand_version": "157.0.4341.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-11T11:33:22-06:00",
+     "captured_at": "2026-11-13T11:30:27-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "157.0.4341.46-1",
+      "version": "157.0.4341.57-1",
       "repo": "https://packages.microsoft.com/repos/edge",
-      "sha256": "b22585500e6d0366d959cc10cf5864fc1a28524ba2b1eb97ead3eb7ee351b61a",
+      "sha256": "348d3fe0be9989c8694c66d566d118dba273044599e3f50fd21f47b50d792d55",
       "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
       "kind": "signed apt repo .deb"
      },
@@ -122,15 +122,15 @@
     "windows": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.46",
-     "brand_version": "157.0.4341.46",
+     "version": "157.0.4341.57",
+     "brand_version": "157.0.4341.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-12T11:56:38-06:00",
+     "captured_at": "2026-11-13T11:33:16-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "157.0.4341.46",
+      "version": "157.0.4341.57",
       "repo": "edgeupdates.microsoft.com Stable x64 MSI",
-      "sha256": "0bdba24e2d64a4de639468cb1b196d2540d2b50adf198b637f43cf563852bb58",
+      "sha256": "a397bf93bd77bb9e9717619ff3012773e813e80522b1a7e42880758e0671b195",
       "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -186,7 +186,7 @@
    "version": "157.1.99.57",
    "brand_version": "1.99.57",
    "chromium_major": 157,
-   "captured_at": "2026-11-12T11:54:50-06:00",
+   "captured_at": "2026-11-13T11:30:58-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "1.99.57",
@@ -246,7 +246,7 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-12T11:54:50-06:00",
+     "captured_at": "2026-11-13T11:30:58-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "1.99.57",
@@ -306,7 +306,7 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-12T11:58:11-06:00",
+     "captured_at": "2026-11-13T11:34:36-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "157.1.99.57",
@@ -340,16 +340,21 @@
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Brave\";v=\"157\", \"Chromium\";v=\"157\"",
-     "quic_ja4": null,
-     "h3_settings": null,
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
      "vs_chrome": {
       "chrome_version": "157.0.8103.79",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
       "header_order": false,
-      "quic_ja4": null,
-      "h3_settings": null
+      "quic_ja4": false,
+      "h3_settings": true
      },
      "id": "brave",
      "platform": "windows",
