@@ -4,15 +4,15 @@
   "edge": {
    "status": "captured",
    "browser": "Microsoft Edge",
-   "version": "157.0.4341.57",
-   "brand_version": "157.0.4341.57",
+   "version": "157.0.4341.60",
+   "brand_version": "157.0.4341.60",
    "chromium_major": 157,
-   "captured_at": "2026-11-13T11:30:27-06:00",
+   "captured_at": "2026-11-14T10:11:41-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "157.0.4341.57-1",
+    "version": "157.0.4341.60-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "348d3fe0be9989c8694c66d566d118dba273044599e3f50fd21f47b50d792d55",
+    "sha256": "492b2d336d9c337814db72c51293807038ee0104654427f283fd344bca17c500",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
    },
@@ -63,15 +63,15 @@
     "linux": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.57",
-     "brand_version": "157.0.4341.57",
+     "version": "157.0.4341.60",
+     "brand_version": "157.0.4341.60",
      "chromium_major": 157,
-     "captured_at": "2026-11-13T11:30:27-06:00",
+     "captured_at": "2026-11-14T10:11:41-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "157.0.4341.57-1",
+      "version": "157.0.4341.60-1",
       "repo": "https://packages.microsoft.com/repos/edge",
-      "sha256": "348d3fe0be9989c8694c66d566d118dba273044599e3f50fd21f47b50d792d55",
+      "sha256": "492b2d336d9c337814db72c51293807038ee0104654427f283fd344bca17c500",
       "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
       "kind": "signed apt repo .deb"
      },
@@ -122,15 +122,15 @@
     "windows": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.57",
-     "brand_version": "157.0.4341.57",
+     "version": "157.0.4341.60",
+     "brand_version": "157.0.4341.60",
      "chromium_major": 157,
-     "captured_at": "2026-11-13T11:33:16-06:00",
+     "captured_at": "2026-11-14T10:14:24-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "157.0.4341.57",
+      "version": "157.0.4341.60",
       "repo": "edgeupdates.microsoft.com Stable x64 MSI",
-      "sha256": "a397bf93bd77bb9e9717619ff3012773e813e80522b1a7e42880758e0671b195",
+      "sha256": "b86b238035c47673e1c70589a28f2e0961e8cabdd3ff25edbb1e52239d7ecd76",
       "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -186,7 +186,7 @@
    "version": "157.1.99.57",
    "brand_version": "1.99.57",
    "chromium_major": 157,
-   "captured_at": "2026-11-13T11:30:58-06:00",
+   "captured_at": "2026-11-14T10:12:11-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "1.99.57",
@@ -246,7 +246,7 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-13T11:30:58-06:00",
+     "captured_at": "2026-11-14T10:12:11-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "1.99.57",
@@ -306,7 +306,7 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-13T11:34:36-06:00",
+     "captured_at": "2026-11-14T10:15:43-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "157.1.99.57",
