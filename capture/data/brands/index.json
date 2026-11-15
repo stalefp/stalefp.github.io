@@ -7,8 +7,8 @@
    "version": "157.0.4341.60",
    "brand_version": "157.0.4341.60",
    "chromium_major": 157,
-   "captured_at": "2026-11-14T10:11:41-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+   "captured_at": "2026-11-15T10:41:39-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
    "package": {
     "version": "157.0.4341.60-1",
     "repo": "https://packages.microsoft.com/repos/edge",
@@ -66,8 +66,8 @@
      "version": "157.0.4341.60",
      "brand_version": "157.0.4341.60",
      "chromium_major": 157,
-     "captured_at": "2026-11-14T10:11:41-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+     "captured_at": "2026-11-15T10:41:39-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
      "package": {
       "version": "157.0.4341.60-1",
       "repo": "https://packages.microsoft.com/repos/edge",
@@ -125,7 +125,7 @@
      "version": "157.0.4341.60",
      "brand_version": "157.0.4341.60",
      "chromium_major": 157,
-     "captured_at": "2026-11-14T10:14:24-06:00",
+     "captured_at": "2026-11-15T10:44:25-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "157.0.4341.60",
@@ -186,8 +186,8 @@
    "version": "157.1.99.57",
    "brand_version": "1.99.57",
    "chromium_major": 157,
-   "captured_at": "2026-11-14T10:12:11-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+   "captured_at": "2026-11-15T10:42:06-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
    "package": {
     "version": "1.99.57",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -246,8 +246,8 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-14T10:12:11-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+     "captured_at": "2026-11-15T10:42:06-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
      "package": {
       "version": "1.99.57",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -306,7 +306,7 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-14T10:15:43-06:00",
+     "captured_at": "2026-11-15T10:45:51-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "157.1.99.57",
