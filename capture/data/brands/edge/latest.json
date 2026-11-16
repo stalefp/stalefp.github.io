@@ -4,13 +4,13 @@
   "browser": "Microsoft Edge",
   "version": "157.0.4341.60",
   "channel": "stable",
-  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
   "platform": "linux",
-  "captured_at": "2026-11-15T10:41:39-06:00",
+  "captured_at": "2026-11-16T13:57:18-06:00",
   "chrome_path": "/opt/microsoft/msedge/msedge",
   "chrome_version_string": "Microsoft Edge 157.0.4341.60 unknown",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/43735963514",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/43942994657",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "618d4c45ed8e4748b1a9fd1863be10c5",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,16-18-10-13-51-65281-65037-35-0-27-45-11-23-5-17613-43,4588-29-23-24,0",
+      "ja3": "b554502416c7dbc47dfe90eaf5b6d2b3",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,10-43-27-51-13-65281-65037-35-45-16-11-18-23-5-0-17613,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x0010",
-        "0x0012",
         "0x000a",
-        "0x000d",
+        "0x002b",
+        "0x001b",
         "0x0033",
+        "0x000d",
         "0xff01",
         "0xfe0d",
         "0x0023",
-        "0x0000",
-        "0x001b",
         "0x002d",
+        "0x0010",
         "0x000b",
+        "0x0012",
         "0x0017",
         "0x0005",
-        "0x44cd",
-        "0x002b"
+        "0x0000",
+        "0x44cd"
       ],
       "extensions_resumed": [
-        "0x002b",
-        "0xfe0d",
-        "0x000d",
-        "0x002d",
-        "0x0017",
-        "0x000a",
         "0xff01",
-        "0x0012",
-        "0x0033",
-        "0x0010",
-        "0x0000",
-        "0x0005",
+        "0x002b",
         "0x44cd",
-        "0x0023",
+        "0x0017",
+        "0x000d",
+        "0x0000",
         "0x000b",
+        "0x0012",
+        "0x000a",
+        "0x0023",
+        "0x0033",
         "0x001b",
+        "0x002d",
+        "0x0010",
+        "0xfe0d",
+        "0x0005",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -312,14 +312,14 @@
       "seed": {
         "seed_file": null,
         "seed_file_bytes": null,
-        "local_state_seed_bytes": 748,
+        "local_state_seed_bytes": 732,
         "seed_serial_number": "\"NusoTb7gejBy/c2hGB9h3d0ePe/ZptR2D5XrgN9702c=\"",
-        "variations_country": "US",
-        "last_fetch_time": "13439234501694200",
+        "variations_country": "CA",
+        "last_fetch_time": "13439332640889612",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": null,
-        "seed_scan_error": "stored seed is only 958 bytes decompressed at exit; not a full seed, not scanned",
-        "seed_decompressed_bytes": 958
+        "seed_scan_error": "stored seed is only 938 bytes decompressed at exit; not a full seed, not scanned",
+        "seed_decompressed_bytes": 938
       },
       "quic": {
         "flags": [
@@ -330,17 +330,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_226f3f127bbe",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0010",
+          "0x000d",
+          "0x0000",
+          "0x002d",
+          "0x002b",
           "0x0033",
           "0x44cd",
-          "0x0039",
-          "0x000d",
-          "0x002b",
           "0x000a",
-          "0x002d",
+          "0x0010",
+          "0x0039",
           "0x001b",
-          "0xfe0d",
-          "0x0000"
+          "0xfe0d"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -385,6 +385,18 @@
         ],
         "transport_params": [
           {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x90c1a78fd71820e",
+            "name": "grease",
+            "len": 14,
+            "hex": "e834c63f64ccb1f35c387a6fc9f7"
+          },
+          {
             "id": "0x3128",
             "name": "google_connection_options",
             "len": 4,
@@ -392,22 +404,40 @@
             "ascii": "ORIG"
           },
           {
-            "id": "0x1b1a7dd8d9e1dd3d",
-            "name": "grease",
-            "len": 8,
-            "value": 5
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
-            "value": 15728640
+            "value": 6291456
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x11",
+            "name": "version_information",
+            "len": 12,
+            "hex": "000000014aea1a7a00000001"
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
             "id": "0x3",
@@ -422,46 +452,16 @@
             "value": 103
           },
           {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x11",
-            "name": "version_information",
-            "len": 12,
-            "hex": "00000001000000019a5afa3a"
-          },
-          {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
           },
           {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           }
         ],
         "h3_settings": {

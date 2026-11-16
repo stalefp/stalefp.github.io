@@ -7,8 +7,8 @@
    "version": "157.0.4341.60",
    "brand_version": "157.0.4341.60",
    "chromium_major": 157,
-   "captured_at": "2026-11-15T10:41:39-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+   "captured_at": "2026-11-16T13:57:18-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "157.0.4341.60-1",
     "repo": "https://packages.microsoft.com/repos/edge",
@@ -66,8 +66,8 @@
      "version": "157.0.4341.60",
      "brand_version": "157.0.4341.60",
      "chromium_major": 157,
-     "captured_at": "2026-11-15T10:41:39-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+     "captured_at": "2026-11-16T13:57:18-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "157.0.4341.60-1",
       "repo": "https://packages.microsoft.com/repos/edge",
@@ -125,7 +125,7 @@
      "version": "157.0.4341.60",
      "brand_version": "157.0.4341.60",
      "chromium_major": 157,
-     "captured_at": "2026-11-15T10:44:25-06:00",
+     "captured_at": "2026-11-16T14:00:53-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "157.0.4341.60",
@@ -186,8 +186,8 @@
    "version": "157.1.99.57",
    "brand_version": "1.99.57",
    "chromium_major": 157,
-   "captured_at": "2026-11-15T10:42:06-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+   "captured_at": "2026-11-16T13:57:49-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "1.99.57",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -246,8 +246,8 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-15T10:42:06-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+     "captured_at": "2026-11-16T13:57:49-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "1.99.57",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -306,7 +306,7 @@
      "version": "157.1.99.57",
      "brand_version": "1.99.57",
      "chromium_major": 157,
-     "captured_at": "2026-11-15T10:45:51-06:00",
+     "captured_at": "2026-11-16T14:02:23-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "157.1.99.57",
@@ -340,21 +340,16 @@
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Brave\";v=\"157\", \"Chromium\";v=\"157\"",
-     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
-     "h3_settings": {
-      "1": 65536,
-      "6": 262144,
-      "7": 100,
-      "51": 1
-     },
+     "quic_ja4": null,
+     "h3_settings": null,
      "vs_chrome": {
       "chrome_version": "157.0.8103.79",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
       "header_order": false,
-      "quic_ja4": false,
-      "h3_settings": true
+      "quic_ja4": null,
+      "h3_settings": null
      },
      "id": "brave",
      "platform": "windows",
