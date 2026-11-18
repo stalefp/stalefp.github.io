@@ -1,11 +1,11 @@
 {
  "schema_version": "android-leaderboard-1",
- "generated_at": "2026-11-17T19:23:47Z",
+ "generated_at": "2026-11-18T18:41:06Z",
  "reference": {
   "browser": "Google Chrome (Android)",
   "android_version": "124.0.6367.219",
   "android_major": 124,
-  "captured_at": "2026-11-17T12:45:15-06:00",
+  "captured_at": "2026-11-18T12:22:07-06:00",
   "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
   "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
   "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
@@ -27,17 +27,15 @@
    "profile": "chrome131_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-11-17T19:23:47Z",
+   "tested_at": "2026-11-18T18:41:04Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261117T192347Z/py/curl_cffi_chrome131_android.json"
+    "fresh": "leaderboard/raw/android-20261118T184104Z/py/curl_cffi_chrome131_android.json"
    },
-   "verdict": "close",
-   "verdict_reason": "One counted field differs from Chrome for Android's default fingerprint: extensions.",
-   "matched_variant": null,
-   "counted_mismatches": [
-    "extensions"
-   ],
+   "verdict": "exact",
+   "verdict_reason": "Every counted TLS and HTTP/2 field matches Chrome for Android's default fingerprint (with ca34).",
+   "matched_variant": "default",
+   "counted_mismatches": [],
    "diff": [
     {
      "field": "ciphers",
@@ -82,7 +80,7 @@
     {
      "field": "extensions",
      "label": "Extension set (incl. ca34 / 0x12e0; ALPS listed separately)",
-     "status": "mismatch",
+     "status": "match",
      "counts_toward_verdict": true,
      "chrome": [
       "0005 status_request",
@@ -105,7 +103,6 @@
       "000b ec_point_formats",
       "000d signature_algorithms",
       "0012 signed_certificate_timestamp",
-      "0015 padding",
       "0017 extended_master_secret",
       "001b compress_certificate",
       "0023 session_ticket",
@@ -114,10 +111,6 @@
       "0033 key_share",
       "fe0d encrypted_client_hello",
       "ff01 renegotiation_info"
-     ],
-     "missing": [],
-     "extra": [
-      "0015"
      ]
     },
     {
@@ -249,8 +242,8 @@
     }
    ],
    "fingerprint": {
-    "ja4_fresh": "t13d1517h2_8daaf6152771_b1ff8ab2d16f",
-    "ja4_r_fresh": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+    "ja4_fresh": "t13d1516h2_8daaf6152771_02713d6af862",
+    "ja4_r_fresh": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
     "http2_akamai": "1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p",
     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
    },
@@ -258,32 +251,20 @@
     "http2": true,
     "variants": {
      "default": {
-      "ja4_fresh": false,
-      "counted_mismatches": [
-       "extensions"
-      ]
+      "ja4_fresh": true,
+      "counted_mismatches": []
      },
      "no_ca34": {
-      "ja4_fresh": false,
-      "counted_mismatches": [
-       "extensions"
-      ]
+      "ja4_fresh": true,
+      "counted_mismatches": []
      },
      "pq": {
-      "ja4_fresh": false,
-      "counted_mismatches": [
-       "extensions"
-      ]
+      "ja4_fresh": true,
+      "counted_mismatches": []
      }
     }
    },
-   "missing": [
-    {
-     "id": "extra-0015",
-     "label": "Extra extension 0015 padding",
-     "kind": "extra"
-    }
-   ],
+   "missing": [],
    "not_tested": [
     "TLS resumption (resumed JA4)",
     "extension-order shuffling",
@@ -292,15 +273,13 @@
    "profile_chrome_major": 131,
    "versions_behind": -7,
    "versions_behind_uniform": true,
-   "why": [
-    "Sends extension padding (0015), which Chrome doesn't send."
-   ],
+   "why": [],
    "http2_grade": {
     "grade": "match",
     "settings": true,
     "header_order": true
    },
-   "behind_text": "Copies Chrome 131, newer than the Chrome for Android 124 we captured; 1 counted field differs from current Chrome for Android.",
+   "behind_text": "Copies Chrome 131, newer than the Chrome for Android 124 we captured; its fingerprint still matches current Chrome for Android on every counted field.",
    "is_newest_profile": true
   },
   {
@@ -311,10 +290,10 @@
    "profile": "chrome99_android",
    "note": null,
    "version": "0.16.3",
-   "tested_at": "2026-11-17T19:23:47Z",
+   "tested_at": "2026-11-18T18:41:04Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261117T192347Z/py/curl_cffi_chrome99_android.json"
+    "fresh": "leaderboard/raw/android-20261118T184104Z/py/curl_cffi_chrome99_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "2 counted fields differ from Chrome for Android's default fingerprint: extensions, http2_akamai.",
@@ -610,10 +589,10 @@
    "profile": "chrome_146 (os android)",
    "note": "desktop Chrome 146 profile with impersonate_os=\"android\"",
    "version": "2.0.1",
-   "tested_at": "2026-11-17T19:23:47Z",
+   "tested_at": "2026-11-18T18:41:04Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261117T192347Z/py/primp_chrome_146_android.json"
+    "fresh": "leaderboard/raw/android-20261118T184104Z/py/primp_chrome_146_android.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Chrome for Android's default fingerprint: supported_groups, key_shares, alps.",
@@ -909,10 +888,10 @@
    "profile": "Chrome145 (EmulationOS.Android)",
    "note": "desktop Chrome 145 emulation with emulation_os=Android",
    "version": "3.0.0rc22",
-   "tested_at": "2026-11-17T19:23:47Z",
+   "tested_at": "2026-11-18T18:41:04Z",
    "endpoint": "https://tls.peet.ws/api/all",
    "sources": {
-    "fresh": "leaderboard/raw/android-20261117T192347Z/py/rnet_Chrome145_Android.json"
+    "fresh": "leaderboard/raw/android-20261118T184104Z/py/rnet_Chrome145_Android.json"
    },
    "verdict": "behind",
    "verdict_reason": "3 counted fields differ from Chrome for Android's default fingerprint: supported_groups, key_shares, alps.",
