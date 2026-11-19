@@ -2,7 +2,7 @@
  "note": "Captures of other Chromium-based browsers on Linux and Windows (capture/lib/capture_brand.py). The top-level fields of each brand are the Linux capture (unchanged layout); platforms.<os> holds every OS. vs_chrome compares the default profile with the Chrome capture from the same OS (true = identical).",
  "brands": {
   "edge": {
-   "status": "captured",
+   "status": "previous (today's capture failed)",
    "browser": "Microsoft Edge",
    "version": "157.0.4341.60",
    "brand_version": "157.0.4341.60",
@@ -61,7 +61,7 @@
    "label": "Linux",
    "platforms": {
     "linux": {
-     "status": "captured",
+     "status": "previous (today's capture failed)",
      "browser": "Microsoft Edge",
      "version": "157.0.4341.60",
      "brand_version": "157.0.4341.60",
@@ -125,7 +125,7 @@
      "version": "157.0.4341.60",
      "brand_version": "157.0.4341.60",
      "chromium_major": 157,
-     "captured_at": "2026-11-18T12:33:16-06:00",
+     "captured_at": "2026-11-19T12:48:40-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "157.0.4341.60",
@@ -186,7 +186,7 @@
    "version": "158.1.100.58",
    "brand_version": "1.100.58",
    "chromium_major": 158,
-   "captured_at": "2026-11-18T12:31:24-06:00",
+   "captured_at": "2026-11-19T12:48:41-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
    "package": {
     "version": "1.100.58",
@@ -246,7 +246,7 @@
      "version": "158.1.100.58",
      "brand_version": "1.100.58",
      "chromium_major": 158,
-     "captured_at": "2026-11-18T12:31:24-06:00",
+     "captured_at": "2026-11-19T12:48:41-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
      "package": {
       "version": "1.100.58",
@@ -306,7 +306,7 @@
      "version": "158.1.100.58",
      "brand_version": "1.100.58",
      "chromium_major": 158,
-     "captured_at": "2026-11-18T12:34:48-06:00",
+     "captured_at": "2026-11-19T12:49:55-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.1.100.58",

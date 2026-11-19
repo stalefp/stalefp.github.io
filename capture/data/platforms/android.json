@@ -6,8 +6,8 @@
   "channel": "stable",
   "os": "Android 15 (API 35, x86_64 emulator, system-images;android-35;google_apis_playstore;x86_64)",
   "platform": "android",
-  "captured_at": "2026-11-18T12:22:07-06:00",
-  "chrome_path": "/data/app/~~wUJKbNLJVRBitWUrbyGa-w==/com.android.chrome-pkfJcw-bOeZ9rugbbumKPQ==",
+  "captured_at": "2026-11-19T12:38:06-06:00",
+  "chrome_path": "/data/app/~~LjjZ18Ib6s9UQlNkZVBkew==/com.android.chrome-J5aaOD8ZqJIsIrbi7gzgiw==",
   "chrome_version_string": "Google Chrome 124.0.6367.219 (com.android.chrome)",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543 via adb reverse, QUIC/h3 on 127.0.0.1:18544 via the emulator's 10.0.2.2 host alias, SNI capture.test",
   "current_stable": {
@@ -25,9 +25,18 @@
       ]
     },
     "win": {
-      "newest": "158.0.8127.37",
+      "newest": "159.0.8154.13",
       "highest_full_rollout": "158.0.8127.37",
       "releases": [
+        {
+          "version": "159.0.8154.13",
+          "fraction": 0.005,
+          "fraction_group": "156",
+          "serving_since": "2026-11-18T12:53:23-06:00",
+          "rollout_tags": [
+            "rollout"
+          ]
+        },
         {
           "version": "158.0.8127.37",
           "fraction": 1,
@@ -46,27 +55,36 @@
         },
         {
           "version": "158.0.8127.36",
-          "fraction": 0.1,
+          "fraction": 0.099,
           "fraction_group": "156",
-          "serving_since": "2026-11-17T13:07:25-06:00",
+          "serving_since": "2026-11-18T12:53:23-06:00",
           "rollout_tags": [
             "rollout"
           ]
         },
         {
-          "version": "157.0.8103.80",
-          "fraction": 0.1,
+          "version": "157.0.8103.81",
+          "fraction": 0.005,
           "fraction_group": "156",
-          "serving_since": "2026-11-17T13:07:25-06:00",
+          "serving_since": "2026-11-18T12:53:23-06:00",
+          "rollout_tags": [
+            "control"
+          ]
+        },
+        {
+          "version": "157.0.8103.80",
+          "fraction": 0.099,
+          "fraction_group": "156",
+          "serving_since": "2026-11-18T12:53:23-06:00",
           "rollout_tags": [
             "control"
           ]
         },
         {
           "version": "157.0.8103.79",
-          "fraction": 0.8,
+          "fraction": 0.792,
           "fraction_group": "156",
-          "serving_since": "2026-11-17T13:07:25-06:00",
+          "serving_since": "2026-11-18T12:53:23-06:00",
           "rollout_tags": []
         },
         {
@@ -81,9 +99,18 @@
       ]
     },
     "mac": {
-      "newest": "158.0.8127.37",
+      "newest": "159.0.8154.13",
       "highest_full_rollout": "158.0.8127.37",
       "releases": [
+        {
+          "version": "159.0.8154.13",
+          "fraction": 0.005,
+          "fraction_group": "200",
+          "serving_since": "2026-11-18T12:53:47-06:00",
+          "rollout_tags": [
+            "rollout"
+          ]
+        },
         {
           "version": "158.0.8127.37",
           "fraction": 1,
@@ -102,27 +129,36 @@
         },
         {
           "version": "158.0.8127.36",
-          "fraction": 0.1,
+          "fraction": 0.099,
           "fraction_group": "200",
-          "serving_since": "2026-11-17T13:07:20-06:00",
+          "serving_since": "2026-11-18T12:53:47-06:00",
           "rollout_tags": [
             "rollout"
           ]
         },
         {
-          "version": "157.0.8103.80",
-          "fraction": 0.1,
+          "version": "157.0.8103.81",
+          "fraction": 0.005,
           "fraction_group": "200",
-          "serving_since": "2026-11-17T13:07:20-06:00",
+          "serving_since": "2026-11-18T12:53:47-06:00",
+          "rollout_tags": [
+            "control"
+          ]
+        },
+        {
+          "version": "157.0.8103.80",
+          "fraction": 0.099,
+          "fraction_group": "200",
+          "serving_since": "2026-11-18T12:53:47-06:00",
           "rollout_tags": [
             "control"
           ]
         },
         {
           "version": "157.0.8103.79",
-          "fraction": 0.8,
+          "fraction": 0.792,
           "fraction_group": "200",
-          "serving_since": "2026-11-17T13:07:20-06:00",
+          "serving_since": "2026-11-18T12:53:47-06:00",
           "rollout_tags": []
         },
         {
@@ -137,28 +173,42 @@
       ]
     },
     "android": {
-      "newest": "158.0.8127.42",
+      "newest": "159.0.8154.18",
       "highest_full_rollout": null,
       "releases": [
         {
-          "version": "158.0.8127.42",
-          "fraction": 0.1,
+          "version": "159.0.8154.18",
+          "fraction": 0.0025,
           "fraction_group": "61",
-          "serving_since": "2026-11-17T13:41:46-06:00",
+          "serving_since": "2026-11-18T12:58:56-06:00",
+          "rollout_tags": []
+        },
+        {
+          "version": "158.0.8127.43",
+          "fraction": 0.0025,
+          "fraction_group": "61",
+          "serving_since": "2026-11-18T12:58:56-06:00",
+          "rollout_tags": []
+        },
+        {
+          "version": "158.0.8127.42",
+          "fraction": 0.0995,
+          "fraction_group": "61",
+          "serving_since": "2026-11-18T12:58:56-06:00",
           "rollout_tags": []
         },
         {
           "version": "157.0.8103.80",
-          "fraction": 0.1,
+          "fraction": 0.0995,
           "fraction_group": "61",
-          "serving_since": "2026-11-17T13:41:46-06:00",
+          "serving_since": "2026-11-18T12:58:56-06:00",
           "rollout_tags": []
         },
         {
           "version": "157.0.8103.78",
-          "fraction": 0.8,
+          "fraction": 0.796,
           "fraction_group": "61",
-          "serving_since": "2026-11-17T13:41:46-06:00",
+          "serving_since": "2026-11-18T12:58:56-06:00",
           "rollout_tags": []
         }
       ]
@@ -179,7 +229,7 @@
   },
   "is_current_linux_stable": null,
   "is_current_platform_stable": false,
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/44368574092",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/44589563070",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -193,44 +243,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_b0da82dd1658",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "95587611c0a11da67ae923a8f26f9181",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,0-11-10-13-23-27-65037-16-43-5-17513-18-45-65281-35-51,29-23-24,0",
+      "ja3": "3a0fc00027279a83e602d3871ba47e50",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,45-65037-65281-43-5-16-51-17513-13-35-23-11-10-27-0-18,29-23-24,0",
       "ja3n": "473f0e7c0b6a0f7b049072f4e683068b",
       "extensions": [
-        "0x0000",
-        "0x000b",
-        "0x000a",
-        "0x000d",
-        "0x0017",
-        "0x001b",
+        "0x002d",
         "0xfe0d",
-        "0x0010",
+        "0xff01",
         "0x002b",
         "0x0005",
-        "0x4469",
-        "0x0012",
-        "0x002d",
-        "0xff01",
-        "0x0023",
-        "0x0033"
-      ],
-      "extensions_resumed": [
-        "0x0000",
         "0x0010",
         "0x0033",
-        "0x0012",
-        "0x000d",
-        "0xff01",
-        "0x0005",
-        "0x001b",
-        "0xfe0d",
-        "0x000b",
-        "0x002d",
-        "0x002b",
         "0x4469",
+        "0x000d",
+        "0x0023",
+        "0x0017",
+        "0x000b",
+        "0x000a",
+        "0x001b",
+        "0x0000",
+        "0x0012"
+      ],
+      "extensions_resumed": [
+        "0x001b",
+        "0x0005",
+        "0x0012",
         "0x0017",
         "0x000a",
+        "0x0033",
+        "0xfe0d",
+        "0x000d",
+        "0x002b",
+        "0x4469",
+        "0x0000",
+        "0x000b",
+        "0xff01",
+        "0x0010",
         "0x0023",
+        "0x002d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -372,17 +422,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_c7319ce65786",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,4469,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0039",
-          "0xfe0d",
-          "0x002d",
-          "0x002b",
-          "0x0010",
-          "0x000a",
-          "0x0033",
-          "0x000d",
-          "0x0000",
           "0x4469",
-          "0x001b"
+          "0x000d",
+          "0x0010",
+          "0x0033",
+          "0x001b",
+          "0x0000",
+          "0x000a",
+          "0x0039",
+          "0x002b",
+          "0x002d",
+          "0xfe0d"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -421,10 +471,16 @@
         ],
         "transport_params": [
           {
-            "id": "0x1baccff2df393e5f",
-            "name": "grease",
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
-            "value": 526772635
+            "value": 6291456
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
           },
           {
             "id": "0x20",
@@ -433,16 +489,22 @@
             "value": 65536
           },
           {
+            "id": "0x4752",
+            "name": "google_user_agent_id",
+            "len": 4,
+            "hex": "00000001"
+          },
+          {
             "id": "0x8",
             "name": "initial_max_streams_bidi",
             "len": 2,
             "value": 100
           },
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x1",
+            "name": "max_idle_timeout",
             "len": 4,
-            "value": 6291456
+            "value": 30000
           },
           {
             "id": "0x3",
@@ -457,22 +519,10 @@
             "value": 103
           },
           {
-            "id": "0x4752",
-            "name": "google_user_agent_id",
-            "len": 4,
-            "hex": "00000001"
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0xff73db",
-            "name": "version_information_draft",
-            "len": 12,
-            "hex": "00000001baba4aea00000001"
+            "id": "0x1876cd5ebe31632a",
+            "name": "grease",
+            "len": 1,
+            "value": 60
           },
           {
             "id": "0x4",
@@ -487,16 +537,16 @@
             "value": 6291456
           },
           {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
+            "id": "0xff73db",
+            "name": "version_information_draft",
+            "len": 12,
+            "hex": "0000000100000001baaa9a2a"
           }
         ],
         "h3_settings": {
@@ -531,178 +581,178 @@
       "notes": [],
       "extension_orders": [
         [
-          "0x0000",
-          "0x000b",
-          "0x000a",
-          "0x000d",
-          "0x0017",
-          "0x001b",
-          "0xfe0d",
-          "0x0010",
-          "0x002b",
-          "0x0005",
-          "0x4469",
-          "0x0012",
-          "0x002d",
-          "0xff01",
-          "0x0023",
-          "0x0033"
-        ],
-        [
-          "0x0000",
-          "0x0010",
-          "0x0033",
-          "0x0012",
-          "0x000d",
-          "0xff01",
-          "0x0005",
-          "0x001b",
-          "0xfe0d",
-          "0x000b",
-          "0x002d",
-          "0x002b",
-          "0x4469",
-          "0x0017",
-          "0x000a",
-          "0x0023",
-          "0x0029"
-        ],
-        [
-          "0x002b",
-          "0x001b",
-          "0x0000",
           "0x002d",
           "0xfe0d",
-          "0x0005",
-          "0x0033",
-          "0x0012",
-          "0x000d",
-          "0x0017",
-          "0x0010",
-          "0x0023",
           "0xff01",
-          "0x4469",
-          "0x000a",
-          "0x000b",
-          "0x0029"
-        ],
-        [
-          "0xff01",
-          "0x0010",
-          "0xfe0d",
-          "0x0012",
           "0x002b",
+          "0x0005",
+          "0x0010",
+          "0x0033",
+          "0x4469",
+          "0x000d",
+          "0x0023",
+          "0x0017",
           "0x000b",
           "0x000a",
-          "0x0017",
-          "0x000d",
           "0x001b",
           "0x0000",
+          "0x0012"
+        ],
+        [
+          "0x001b",
           "0x0005",
-          "0x0023",
-          "0x4469",
+          "0x0012",
+          "0x0017",
+          "0x000a",
           "0x0033",
+          "0xfe0d",
+          "0x000d",
+          "0x002b",
+          "0x4469",
+          "0x0000",
+          "0x000b",
+          "0xff01",
+          "0x0010",
+          "0x0023",
           "0x002d",
           "0x0029"
         ],
         [
+          "0x0005",
+          "0x0023",
+          "0xfe0d",
+          "0x000d",
+          "0x001b",
           "0x002b",
+          "0x000a",
+          "0x000b",
+          "0x0012",
           "0xff01",
           "0x0000",
-          "0xfe0d",
-          "0x001b",
-          "0x0012",
-          "0x000d",
-          "0x0023",
-          "0x0017",
-          "0x0005",
-          "0x000b",
+          "0x0010",
           "0x0033",
           "0x002d",
           "0x4469",
-          "0x000a",
-          "0x0010",
+          "0x0017",
           "0x0029"
         ],
         [
-          "0x0023",
-          "0x0033",
-          "0x0010",
-          "0x0017",
-          "0x001b",
-          "0x0012",
-          "0xff01",
-          "0x002d",
-          "0x000a",
-          "0x000d",
-          "0x4469",
-          "0x002b",
-          "0x000b",
-          "0x0000",
           "0xfe0d",
-          "0x0005",
-          "0x0029"
-        ],
-        [
-          "0x4469",
-          "0x0005",
-          "0xff01",
-          "0x0010",
-          "0x0023",
-          "0x000d",
-          "0x0033",
-          "0x002d",
-          "0x002b",
-          "0x0012",
-          "0xfe0d",
-          "0x0000",
-          "0x001b",
-          "0x0017",
-          "0x000b",
           "0x000a",
+          "0x0023",
+          "0x0010",
+          "0x000b",
+          "0x002b",
+          "0xff01",
+          "0x0000",
+          "0x002d",
+          "0x001b",
+          "0x4469",
+          "0x000d",
+          "0x0005",
+          "0x0012",
+          "0x0017",
+          "0x0033",
           "0x0029"
         ],
         [
           "0x000b",
-          "0x0017",
           "0x001b",
-          "0x000d",
-          "0x002d",
-          "0x0012",
+          "0x0017",
+          "0x4469",
+          "0x000a",
           "0x0005",
           "0x0023",
-          "0x002b",
-          "0x4469",
-          "0xfe0d",
-          "0xff01",
-          "0x0033",
-          "0x000a",
           "0x0010",
+          "0xff01",
+          "0xfe0d",
+          "0x002b",
+          "0x000d",
+          "0x0012",
+          "0x002d",
           "0x0000",
+          "0x0033",
           "0x0029"
         ],
         [
+          "0x002b",
           "0x0012",
-          "0x000b",
+          "0x001b",
+          "0x0005",
+          "0x002d",
+          "0x0000",
+          "0x000d",
+          "0xfe0d",
+          "0x0017",
+          "0x0023",
+          "0x0033",
           "0x4469",
+          "0x000b",
+          "0x0010",
+          "0x000a",
+          "0xff01",
+          "0x0029"
+        ],
+        [
+          "0x0017",
+          "0x000b",
+          "0x0010",
+          "0x0005",
+          "0x001b",
+          "0x0033",
+          "0xff01",
+          "0x0000",
+          "0x0023",
+          "0x0012",
+          "0x000a",
+          "0x000d",
+          "0x002b",
+          "0xfe0d",
+          "0x002d",
+          "0x4469",
+          "0x0029"
+        ],
+        [
+          "0x000d",
+          "0x0012",
+          "0x0023",
+          "0x4469",
+          "0x002d",
+          "0x000a",
+          "0xfe0d",
+          "0x0000",
+          "0xff01",
+          "0x000b",
+          "0x0033",
+          "0x0017",
+          "0x0005",
+          "0x001b",
           "0x0010",
           "0x002b",
-          "0x0005",
-          "0xff01",
-          "0x0023",
-          "0x001b",
-          "0x000a",
+          "0x0029"
+        ],
+        [
           "0x002d",
-          "0x0017",
+          "0xff01",
+          "0x0012",
+          "0x0023",
           "0x000d",
-          "0x0000",
+          "0x000b",
           "0x0033",
+          "0x001b",
+          "0x002b",
+          "0x4469",
+          "0x000a",
+          "0x0005",
+          "0x0017",
+          "0x0000",
           "0xfe0d",
+          "0x0010",
           "0x0029"
         ]
       ],
       "connections": 9,
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=tznSh1wjbFDWVGC8+Jv/xJEt7vnBBVvJeYro5ssfFmw= --disable-fre --no-default-browser-check --no-first-run"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=T1CCdPGTdEXo5T3ENa0NoteO3D+rykfY/0QhTOGXrTM= --disable-fre --no-default-browser-check --no-first-run"
     },
     {
       "name": "disable-field-trial-config-headed",
@@ -712,48 +762,49 @@
         "--disable-field-trial-config"
       ],
       "relaunch_of": null,
-      "ja4": "t13d1516h2_8daaf6152771_02713d6af862",
+      "ja4": "t13d1517h2_8daaf6152771_b1ff8ab2d16f",
       "ja4_resumed": "t13d1517h2_8daaf6152771_b0da82dd1658",
-      "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
+      "ja4_r": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0015,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "bc62055fec5b739e26fd972630804861",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,23-45-65281-17513-0-35-18-43-16-10-65037-11-13-27-5-51,29-23-24,0",
-      "ja3n": "473f0e7c0b6a0f7b049072f4e683068b",
+      "ja3": "aa5af2d66fe516398063749abba1b4be",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,11-51-23-18-16-35-13-5-43-45-0-27-65037-65281-17513-10-21,29-23-24,0",
+      "ja3n": "8a9ee1d3c6f0f892b4d43cabcf554150",
       "extensions": [
+        "0x000b",
+        "0x0033",
         "0x0017",
+        "0x0012",
+        "0x0010",
+        "0x0023",
+        "0x000d",
+        "0x0005",
+        "0x002b",
         "0x002d",
+        "0x0000",
+        "0x001b",
+        "0xfe0d",
         "0xff01",
         "0x4469",
-        "0x0000",
-        "0x0023",
-        "0x0012",
-        "0x002b",
-        "0x0010",
         "0x000a",
-        "0xfe0d",
-        "0x000b",
-        "0x000d",
-        "0x001b",
-        "0x0005",
-        "0x0033"
+        "0x0015"
       ],
       "extensions_resumed": [
-        "0x002d",
-        "0x000d",
-        "0x002b",
-        "0x001b",
-        "0x000b",
-        "0x000a",
-        "0x0033",
-        "0xff01",
-        "0x0010",
-        "0xfe0d",
-        "0x0000",
-        "0x0005",
+        "0x4469",
         "0x0023",
         "0x0012",
-        "0x4469",
+        "0x0000",
+        "0x000b",
+        "0x002b",
+        "0xfe0d",
+        "0x000d",
         "0x0017",
+        "0x002d",
+        "0x001b",
+        "0x0010",
+        "0x000a",
+        "0x0033",
+        "0x0005",
+        "0xff01",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -764,6 +815,7 @@
         "0x000d",
         "0x0010",
         "0x0012",
+        "0x0015",
         "0x0017",
         "0x001b",
         "0x0023",
@@ -896,17 +948,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_c7319ce65786",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,4469,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0xfe0d",
-          "0x002d",
+          "0x0010",
           "0x000a",
-          "0x0039",
-          "0x0033",
-          "0x002b",
-          "0x000d",
           "0x001b",
-          "0x0000",
+          "0xfe0d",
+          "0x000d",
           "0x4469",
-          "0x0010"
+          "0x002d",
+          "0x002b",
+          "0x0000",
+          "0x0033",
+          "0x0039"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -945,6 +997,18 @@
         ],
         "transport_params": [
           {
+            "id": "0xff73db",
+            "name": "version_information_draft",
+            "len": 12,
+            "hex": "00000001000000011a0aaaca"
+          },
+          {
+            "id": "0x4752",
+            "name": "google_user_agent_id",
+            "len": 4,
+            "hex": "00000001"
+          },
+          {
             "id": "0x3",
             "name": "max_udp_payload_size",
             "len": 2,
@@ -957,52 +1021,10 @@
             "hex": ""
           },
           {
-            "id": "0xff73db",
-            "name": "version_information_draft",
-            "len": 12,
-            "hex": "0000000100000001dafafa6a"
-          },
-          {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
-          },
-          {
-            "id": "0x4752",
-            "name": "google_user_agent_id",
-            "len": 4,
-            "hex": "00000001"
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
-          },
-          {
-            "id": "0x1a03bc523978fe5f",
-            "name": "grease",
-            "len": 12,
-            "hex": "514f53536ac5e919e42d10e2"
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
           },
           {
             "id": "0x6",
@@ -1011,16 +1033,46 @@
             "value": 6291456
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
+            "id": "0x1d9a93d5828bc3d",
+            "name": "grease",
+            "len": 11,
+            "hex": "201b88814bdb0200bb8129"
+          },
+          {
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
             "len": 2,
-            "value": 100
+            "value": 103
           },
           {
             "id": "0x4",
             "name": "initial_max_data",
             "len": 4,
             "value": 15728640
+          },
+          {
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
+            "len": 4,
+            "value": 65536
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           }
         ],
         "h3_settings": {
@@ -1053,7 +1105,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=tznSh1wjbFDWVGC8+Jv/xJEt7vnBBVvJeYro5ssfFmw= --disable-fre --no-default-browser-check --no-first-run --disable-field-trial-config"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=T1CCdPGTdEXo5T3ENa0NoteO3D+rykfY/0QhTOGXrTM= --disable-fre --no-default-browser-check --no-first-run --disable-field-trial-config"
     },
     {
       "name": "disable-TLSTrustAnchorIDs-headed",
@@ -1067,44 +1119,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_b0da82dd1658",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "fcfd427c4a1126a5e20594b7a4fc9e72",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51-27-16-23-5-18-65037-0-65281-10-43-11-45-35-17513-13,29-23-24,0",
+      "ja3": "07ec686d486ffa6c60b1db98b9f5a572",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,43-11-13-65037-35-18-0-10-65281-17513-5-23-45-27-51-16,29-23-24,0",
       "ja3n": "473f0e7c0b6a0f7b049072f4e683068b",
       "extensions": [
-        "0x0033",
-        "0x001b",
-        "0x0010",
-        "0x0017",
-        "0x0005",
-        "0x0012",
-        "0xfe0d",
-        "0x0000",
-        "0xff01",
-        "0x000a",
         "0x002b",
         "0x000b",
-        "0x002d",
+        "0x000d",
+        "0xfe0d",
         "0x0023",
+        "0x0012",
+        "0x0000",
+        "0x000a",
+        "0xff01",
         "0x4469",
-        "0x000d"
+        "0x0005",
+        "0x0017",
+        "0x002d",
+        "0x001b",
+        "0x0033",
+        "0x0010"
       ],
       "extensions_resumed": [
         "0x0010",
-        "0xfe0d",
         "0x0023",
-        "0x000a",
-        "0x001b",
-        "0x0033",
-        "0x002b",
-        "0x002d",
-        "0x0012",
-        "0xff01",
-        "0x4469",
         "0x0000",
+        "0x002b",
+        "0xff01",
+        "0x002d",
+        "0x001b",
         "0x000d",
-        "0x0017",
-        "0x000b",
+        "0x000a",
         "0x0005",
+        "0x0033",
+        "0x000b",
+        "0xfe0d",
+        "0x0017",
+        "0x0012",
+        "0x4469",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1247,17 +1299,17 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_c7319ce65786",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,4469,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0039",
           "0x001b",
-          "0xfe0d",
+          "0x002d",
           "0x002b",
-          "0x4469",
-          "0x0033",
-          "0x0000",
           "0x000d",
-          "0x0010",
+          "0x0039",
+          "0x0033",
           "0x000a",
-          "0x002d"
+          "0xfe0d",
+          "0x0000",
+          "0x0010",
+          "0x4469"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -1296,20 +1348,56 @@
         ],
         "transport_params": [
           {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
           },
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
+            "id": "0x29a5ba4c6000e5c0",
+            "name": "grease",
+            "len": 3,
+            "value": 15080
+          },
+          {
+            "id": "0x4752",
+            "name": "google_user_agent_id",
+            "len": 4,
+            "hex": "00000001"
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
+          },
+          {
+            "id": "0xff73db",
+            "name": "version_information_draft",
+            "len": 12,
+            "hex": "00000001000000010a1a8a2a"
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x3",
+            "name": "max_udp_payload_size",
+            "len": 2,
+            "value": 1472
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
             "len": 4,
             "value": 6291456
           },
@@ -1320,28 +1408,10 @@
             "value": 65536
           },
           {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0xff73db",
-            "name": "version_information_draft",
-            "len": 12,
-            "hex": "00000001000000014a8a7a0a"
-          },
-          {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
             "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
+            "value": 103
           },
           {
             "id": "0x5",
@@ -1350,28 +1420,10 @@
             "value": 6291456
           },
           {
-            "id": "0x3",
-            "name": "max_udp_payload_size",
-            "len": 2,
-            "value": 1472
-          },
-          {
-            "id": "0x3639bd694e9c16da",
-            "name": "grease",
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
             "len": 4,
-            "hex": "f2084d6d"
-          },
-          {
-            "id": "0x4752",
-            "name": "google_user_agent_id",
-            "len": 4,
-            "hex": "00000001"
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
+            "value": 6291456
           }
         ],
         "h3_settings": {
@@ -1404,7 +1456,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=tznSh1wjbFDWVGC8+Jv/xJEt7vnBBVvJeYro5ssfFmw= --disable-fre --no-default-browser-check --no-first-run --disable-features=TLSTrustAnchorIDs"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=T1CCdPGTdEXo5T3ENa0NoteO3D+rykfY/0QhTOGXrTM= --disable-fre --no-default-browser-check --no-first-run --disable-features=TLSTrustAnchorIDs"
     },
     {
       "name": "finch-AddTLSServerHandshakePadding-headed",
@@ -1418,44 +1470,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_b0da82dd1658",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,4469,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "2a8fa18f460d2d4628d6bec0eb217d0b",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51-16-65281-43-0-5-35-10-18-27-17513-45-65037-13-11-23,29-23-24,0",
+      "ja3": "7802229e4d8782a49fecb576a9b38586",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,43-16-65281-27-13-65037-11-18-0-45-5-35-51-17513-23-10,29-23-24,0",
       "ja3n": "473f0e7c0b6a0f7b049072f4e683068b",
       "extensions": [
-        "0x0033",
+        "0x002b",
         "0x0010",
         "0xff01",
-        "0x002b",
+        "0x001b",
+        "0x000d",
+        "0xfe0d",
+        "0x000b",
+        "0x0012",
         "0x0000",
+        "0x002d",
         "0x0005",
         "0x0023",
-        "0x000a",
-        "0x0012",
-        "0x001b",
+        "0x0033",
         "0x4469",
-        "0x002d",
-        "0xfe0d",
-        "0x000d",
-        "0x000b",
-        "0x0017"
+        "0x0017",
+        "0x000a"
       ],
       "extensions_resumed": [
-        "0x0000",
-        "0xfe0d",
-        "0x0012",
-        "0x000a",
-        "0x002b",
-        "0x0005",
-        "0x000d",
-        "0x0017",
-        "0xff01",
-        "0x0010",
-        "0x4469",
         "0x001b",
+        "0x0005",
+        "0x0000",
+        "0x0012",
+        "0xfe0d",
+        "0x000a",
+        "0xff01",
+        "0x4469",
+        "0x0010",
         "0x002d",
-        "0x0023",
+        "0x0017",
+        "0x002b",
         "0x0033",
+        "0x0023",
         "0x000b",
+        "0x000d",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -1599,16 +1651,16 @@
         "ja4_resumed": "q13d0313h3_55b375c5d22e_c7319ce65786",
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,4469,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
-          "0x0010",
-          "0x002d",
           "0xfe0d",
           "0x0000",
-          "0x002b",
-          "0x001b",
           "0x0039",
+          "0x001b",
+          "0x4469",
+          "0x002b",
+          "0x002d",
+          "0x0010",
           "0x000a",
           "0x0033",
-          "0x4469",
           "0x000d"
         ],
         "has_trust_anchors": false,
@@ -1648,64 +1700,10 @@
         ],
         "transport_params": [
           {
-            "id": "0x6",
-            "name": "initial_max_stream_data_bidi_remote",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x4752",
-            "name": "google_user_agent_id",
-            "len": 4,
-            "hex": "00000001"
-          },
-          {
-            "id": "0xf",
-            "name": "initial_source_connection_id",
-            "len": 0,
-            "hex": ""
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
             "id": "0x3",
             "name": "max_udp_payload_size",
             "len": 2,
             "value": 1472
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x4",
-            "name": "initial_max_data",
-            "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0xff73db",
-            "name": "version_information_draft",
-            "len": 12,
-            "hex": "00000001fa9a5a1a00000001"
-          },
-          {
-            "id": "0x1a93542ea1248252",
-            "name": "grease",
-            "len": 0,
-            "value": null
           },
           {
             "id": "0x20",
@@ -1714,16 +1712,70 @@
             "value": 65536
           },
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xff73db",
+            "name": "version_information_draft",
+            "len": 12,
+            "hex": "00000001000000015a6adaca"
+          },
+          {
+            "id": "0x4752",
+            "name": "google_user_agent_id",
+            "len": 4,
+            "hex": "00000001"
+          },
+          {
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
             "len": 2,
-            "value": 100
+            "value": 103
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0x3fafc072e3de034d",
+            "name": "grease",
+            "len": 2,
+            "hex": "a513"
+          },
+          {
+            "id": "0x6",
+            "name": "initial_max_stream_data_bidi_remote",
+            "len": 4,
+            "value": 6291456
+          },
+          {
+            "id": "0xf",
+            "name": "initial_source_connection_id",
+            "len": 0,
+            "hex": ""
           },
           {
             "id": "0x1",
             "name": "max_idle_timeout",
             "len": 4,
             "value": 30000
+          },
+          {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           }
         ],
         "h3_settings": {
@@ -1756,7 +1808,7 @@
         "notes": []
       },
       "notes": [],
-      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=tznSh1wjbFDWVGC8+Jv/xJEt7vnBBVvJeYro5ssfFmw= --disable-fre --no-default-browser-check --no-first-run --enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
+      "command_line_file": "_ \"--host-resolver-rules=MAP capture.test 127.0.0.1\" --ignore-certificate-errors-spki-list=T1CCdPGTdEXo5T3ENa0NoteO3D+rykfY/0QhTOGXrTM= --disable-fre --no-default-browser-check --no-first-run --enable-features=AddTLSServerHandshakePadding:AddTLSServerHandshakePaddingBytes/9000"
     }
   ],
   "baseline_comparisons": [],
@@ -1843,14 +1895,14 @@
     }
   },
   "notes": [
-    "captured Chrome 124.0.6367.219 is NOT currently serving on Android stable (serving: ['157.0.8103.78', '157.0.8103.80', '158.0.8127.42'])",
+    "captured Chrome 124.0.6367.219 is NOT currently serving on Android stable (serving: ['157.0.8103.78', '157.0.8103.80', '158.0.8127.42', '158.0.8127.43', '159.0.8154.18'])",
     "extension order across 9 TLS connections of one Chrome session: 9 distinct orders",
     "Captured on an Android emulator (system-images;android-35;google_apis_playstore;x86_64, Android 15 / API 35, x86_64), not a physical phone. Cipher order and other TLS choices come from Chrome's own BoringSSL; the x86_64 CPU has AES instructions, like current arm64 phones."
   ],
   "android": {
     "package": "com.android.chrome",
     "version_code": "636771938",
-    "code_path": "/data/app/~~wUJKbNLJVRBitWUrbyGa-w==/com.android.chrome-pkfJcw-bOeZ9rugbbumKPQ==",
+    "code_path": "/data/app/~~LjjZ18Ib6s9UQlNkZVBkew==/com.android.chrome-J5aaOD8ZqJIsIrbi7gzgiw==",
     "source": "preinstalled",
     "source_detail": "Chrome preinstalled in the Google system image (not updated: no Play sign-in)",
     "apk_sha256": null,
@@ -1868,9 +1920,11 @@
     "flags_applied": true,
     "is_serving_on_android_stable": false,
     "android_stable_serving": {
-      "158.0.8127.42": 0.1,
-      "157.0.8103.80": 0.1,
-      "157.0.8103.78": 0.8
+      "159.0.8154.18": 0.0025,
+      "158.0.8127.43": 0.0025,
+      "158.0.8127.42": 0.0995,
+      "157.0.8103.80": 0.0995,
+      "157.0.8103.78": 0.796
     },
     "emulator": {
       "release": "15",
