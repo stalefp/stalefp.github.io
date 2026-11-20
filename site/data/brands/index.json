@@ -2,17 +2,17 @@
  "note": "Captures of other Chromium-based browsers on Linux and Windows (capture/lib/capture_brand.py). The top-level fields of each brand are the Linux capture (unchanged layout); platforms.<os> holds every OS. vs_chrome compares the default profile with the Chrome capture from the same OS (true = identical).",
  "brands": {
   "edge": {
-   "status": "previous (today's capture failed)",
+   "status": "captured",
    "browser": "Microsoft Edge",
-   "version": "157.0.4341.60",
-   "brand_version": "157.0.4341.60",
-   "chromium_major": 157,
-   "captured_at": "2026-11-18T12:30:57-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+   "version": "158.0.4370.33",
+   "brand_version": "158.0.4370.33",
+   "chromium_major": 158,
+   "captured_at": "2026-11-20T12:07:45-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "157.0.4341.60-1",
+    "version": "158.0.4370.33-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "492b2d336d9c337814db72c51293807038ee0104654427f283fd344bca17c500",
+    "sha256": "9bce17d2a83e104bc6751022180c732987379d78a005221d677a81fb659068cb",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
    },
@@ -38,8 +38,8 @@
     "accept-language",
     "priority"
    ],
-   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
-   "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Microsoft Edge\";v=\"157\", \"Chromium\";v=\"157\"",
+   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36 Edg/158.0.0.0",
+   "sec_ch_ua": "\"Chromium\";v=\"158\", \"Not.A/Brand\";v=\"24\", \"Microsoft Edge\";v=\"158\"",
    "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
    "h3_settings": {
     "1": 65536,
@@ -61,17 +61,17 @@
    "label": "Linux",
    "platforms": {
     "linux": {
-     "status": "previous (today's capture failed)",
+     "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.60",
-     "brand_version": "157.0.4341.60",
-     "chromium_major": 157,
-     "captured_at": "2026-11-18T12:30:57-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+     "version": "158.0.4370.33",
+     "brand_version": "158.0.4370.33",
+     "chromium_major": 158,
+     "captured_at": "2026-11-20T12:07:45-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "157.0.4341.60-1",
+      "version": "158.0.4370.33-1",
       "repo": "https://packages.microsoft.com/repos/edge",
-      "sha256": "492b2d336d9c337814db72c51293807038ee0104654427f283fd344bca17c500",
+      "sha256": "9bce17d2a83e104bc6751022180c732987379d78a005221d677a81fb659068cb",
       "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
       "kind": "signed apt repo .deb"
      },
@@ -97,8 +97,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
-     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Microsoft Edge\";v=\"157\", \"Chromium\";v=\"157\"",
+     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36 Edg/158.0.0.0",
+     "sec_ch_ua": "\"Chromium\";v=\"158\", \"Not.A/Brand\";v=\"24\", \"Microsoft Edge\";v=\"158\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,
@@ -122,15 +122,15 @@
     "windows": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "157.0.4341.60",
-     "brand_version": "157.0.4341.60",
-     "chromium_major": 157,
-     "captured_at": "2026-11-19T12:48:40-06:00",
+     "version": "158.0.4370.33",
+     "brand_version": "158.0.4370.33",
+     "chromium_major": 158,
+     "captured_at": "2026-11-20T12:13:03-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "157.0.4341.60",
+      "version": "158.0.4370.33",
       "repo": "edgeupdates.microsoft.com Stable x64 MSI",
-      "sha256": "b86b238035c47673e1c70589a28f2e0961e8cabdd3ff25edbb1e52239d7ecd76",
+      "sha256": "54eeab6848e54294ca9c5ae62032304bf2f078dbd76eda8efd4c05791335c4ec",
       "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -156,8 +156,8 @@
       "accept-language",
       "priority"
      ],
-     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
-     "sec_ch_ua": "\"Not-A.Brand\";v=\"99\", \"Microsoft Edge\";v=\"157\", \"Chromium\";v=\"157\"",
+     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36 Edg/158.0.0.0",
+     "sec_ch_ua": "\"Chromium\";v=\"158\", \"Not.A/Brand\";v=\"24\", \"Microsoft Edge\";v=\"158\"",
      "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
      "h3_settings": {
       "1": 65536,
@@ -186,8 +186,8 @@
    "version": "158.1.100.58",
    "brand_version": "1.100.58",
    "chromium_major": 158,
-   "captured_at": "2026-11-19T12:48:41-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+   "captured_at": "2026-11-20T12:08:13-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "1.100.58",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -246,8 +246,8 @@
      "version": "158.1.100.58",
      "brand_version": "1.100.58",
      "chromium_major": 158,
-     "captured_at": "2026-11-19T12:48:41-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1014-aws)",
+     "captured_at": "2026-11-20T12:08:13-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "1.100.58",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -306,7 +306,7 @@
      "version": "158.1.100.58",
      "brand_version": "1.100.58",
      "chromium_major": 158,
-     "captured_at": "2026-11-19T12:49:55-06:00",
+     "captured_at": "2026-11-20T12:14:26-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.1.100.58",
