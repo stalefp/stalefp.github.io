@@ -7,7 +7,7 @@
    "version": "158.0.4370.33",
    "brand_version": "158.0.4370.33",
    "chromium_major": 158,
-   "captured_at": "2026-11-22T11:30:19-06:00",
+   "captured_at": "2026-11-23T15:47:47-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "158.0.4370.33-1",
@@ -48,7 +48,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "158.0.8127.36",
+    "chrome_version": "158.0.8127.88",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -66,7 +66,7 @@
      "version": "158.0.4370.33",
      "brand_version": "158.0.4370.33",
      "chromium_major": 158,
-     "captured_at": "2026-11-22T11:30:19-06:00",
+     "captured_at": "2026-11-23T15:47:47-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "158.0.4370.33-1",
@@ -107,7 +107,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "158.0.8127.36",
+      "chrome_version": "158.0.8127.88",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -125,7 +125,7 @@
      "version": "158.0.4370.33",
      "brand_version": "158.0.4370.33",
      "chromium_major": 158,
-     "captured_at": "2026-11-22T11:34:06-06:00",
+     "captured_at": "2026-11-23T15:51:32-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.0.4370.33",
@@ -166,7 +166,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "158.0.8127.37",
+      "chrome_version": "158.0.8127.89",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -186,7 +186,7 @@
    "version": "158.1.100.58",
    "brand_version": "1.100.58",
    "chromium_major": 158,
-   "captured_at": "2026-11-22T11:30:50-06:00",
+   "captured_at": "2026-11-23T15:48:14-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "1.100.58",
@@ -228,7 +228,7 @@
     "51": 1
    },
    "vs_chrome": {
-    "chrome_version": "158.0.8127.36",
+    "chrome_version": "158.0.8127.88",
     "ja4": false,
     "ja4_resumed": false,
     "h2_akamai": true,
@@ -246,7 +246,7 @@
      "version": "158.1.100.58",
      "brand_version": "1.100.58",
      "chromium_major": 158,
-     "captured_at": "2026-11-22T11:30:50-06:00",
+     "captured_at": "2026-11-23T15:48:14-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "1.100.58",
@@ -288,7 +288,7 @@
       "51": 1
      },
      "vs_chrome": {
-      "chrome_version": "158.0.8127.36",
+      "chrome_version": "158.0.8127.88",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
@@ -306,7 +306,7 @@
      "version": "158.1.100.58",
      "brand_version": "1.100.58",
      "chromium_major": 158,
-     "captured_at": "2026-11-22T11:35:39-06:00",
+     "captured_at": "2026-11-23T15:52:54-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.1.100.58",
@@ -340,21 +340,16 @@
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"158\", \"Not.A/Brand\";v=\"24\", \"Brave\";v=\"158\"",
-     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
-     "h3_settings": {
-      "1": 65536,
-      "6": 262144,
-      "7": 100,
-      "51": 1
-     },
+     "quic_ja4": null,
+     "h3_settings": null,
      "vs_chrome": {
-      "chrome_version": "158.0.8127.37",
+      "chrome_version": "158.0.8127.89",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
       "header_order": false,
-      "quic_ja4": false,
-      "h3_settings": true
+      "quic_ja4": null,
+      "h3_settings": null
      },
      "id": "brave",
      "platform": "windows",
