@@ -7,7 +7,7 @@
    "version": "158.0.4370.33",
    "brand_version": "158.0.4370.33",
    "chromium_major": 158,
-   "captured_at": "2026-11-23T15:47:47-06:00",
+   "captured_at": "2026-11-24T14:28:26-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
     "version": "158.0.4370.33-1",
@@ -66,7 +66,7 @@
      "version": "158.0.4370.33",
      "brand_version": "158.0.4370.33",
      "chromium_major": 158,
-     "captured_at": "2026-11-23T15:47:47-06:00",
+     "captured_at": "2026-11-24T14:28:26-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
       "version": "158.0.4370.33-1",
@@ -125,7 +125,7 @@
      "version": "158.0.4370.33",
      "brand_version": "158.0.4370.33",
      "chromium_major": 158,
-     "captured_at": "2026-11-23T15:51:32-06:00",
+     "captured_at": "2026-11-24T14:32:33-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.0.4370.33",
@@ -183,15 +183,15 @@
   "brave": {
    "status": "captured",
    "browser": "Brave Browser",
-   "version": "158.1.100.58",
-   "brand_version": "1.100.58",
+   "version": "158.1.100.59",
+   "brand_version": "1.100.59",
    "chromium_major": 158,
-   "captured_at": "2026-11-23T15:48:14-06:00",
+   "captured_at": "2026-11-24T14:28:55-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
    "package": {
-    "version": "1.100.58",
+    "version": "1.100.59",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
-    "sha256": "2d9d1e664efd60343c77324c836be402cbe57ce12549975584dfa7d073f156a5",
+    "sha256": "eff29257c56974a79d74aa8c168d5062557da36c0c82c8c2412de70fdcb17861",
     "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
     "kind": "signed apt repo .deb"
    },
@@ -243,15 +243,15 @@
     "linux": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "158.1.100.58",
-     "brand_version": "1.100.58",
+     "version": "158.1.100.59",
+     "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-23T15:48:14-06:00",
+     "captured_at": "2026-11-24T14:28:55-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
      "package": {
-      "version": "1.100.58",
+      "version": "1.100.59",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
-      "sha256": "2d9d1e664efd60343c77324c836be402cbe57ce12549975584dfa7d073f156a5",
+      "sha256": "eff29257c56974a79d74aa8c168d5062557da36c0c82c8c2412de70fdcb17861",
       "signing_key": "DBF1A116C220B8C7164F98230686B78420038257",
       "kind": "signed apt repo .deb"
      },
@@ -303,15 +303,15 @@
     "windows": {
      "status": "captured",
      "browser": "Brave Browser",
-     "version": "158.1.100.58",
-     "brand_version": "1.100.58",
+     "version": "158.1.100.59",
+     "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-23T15:52:54-06:00",
+     "captured_at": "2026-11-24T14:34:04-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "158.1.100.58",
-      "repo": "github.com/brave/brave-browser v1.100.58 BraveBrowserStandaloneSilentSetup.exe",
-      "sha256": "73d1280104a08cc23fcfc6ee9026e22d927575090e9b58a26682672bbe5b8523",
+      "version": "158.1.100.59",
+      "repo": "github.com/brave/brave-browser v1.100.59 BraveBrowserStandaloneSilentSetup.exe",
+      "sha256": "5a16bc8523b5c6b53f8184320804cd5578ed2e2c813e617fb73b8f1d6a080922",
       "signing_key": "Brave Software, Inc.",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -340,16 +340,21 @@
      ],
      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36",
      "sec_ch_ua": "\"Chromium\";v=\"158\", \"Not.A/Brand\";v=\"24\", \"Brave\";v=\"158\"",
-     "quic_ja4": null,
-     "h3_settings": null,
+     "quic_ja4": "q13d0311h3_55b375c5d22e_653d80c3fe9d",
+     "h3_settings": {
+      "1": 65536,
+      "6": 262144,
+      "7": 100,
+      "51": 1
+     },
      "vs_chrome": {
       "chrome_version": "158.0.8127.89",
       "ja4": false,
       "ja4_resumed": false,
       "h2_akamai": true,
       "header_order": false,
-      "quic_ja4": null,
-      "h3_settings": null
+      "quic_ja4": false,
+      "h3_settings": true
      },
      "id": "brave",
      "platform": "windows",

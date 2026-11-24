@@ -246,6 +246,12 @@
    "firefox_version": "160.0.1",
    "captured_at": "2026-11-23T15:47:27-06:00",
    "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d"
+  },
+  {
+   "file": "firefox-161.0-2026-11-24.json",
+   "firefox_version": "161.0",
+   "captured_at": "2026-11-24T14:28:05-06:00",
+   "ja4": "t13d1517h2_8daaf6152771_3cbfd9057e0d"
   }
  ]
 }
