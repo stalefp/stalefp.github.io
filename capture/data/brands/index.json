@@ -2,7 +2,7 @@
  "note": "Captures of other Chromium-based browsers on Linux and Windows (capture/lib/capture_brand.py). The top-level fields of each brand are the Linux capture (unchanged layout); platforms.<os> holds every OS. vs_chrome compares the default profile with the Chrome capture from the same OS (true = identical).",
  "brands": {
   "edge": {
-   "status": "captured",
+   "status": "previous (today's capture failed)",
    "browser": "Microsoft Edge",
    "version": "158.0.4370.33",
    "brand_version": "158.0.4370.33",
@@ -61,7 +61,7 @@
    "label": "Linux",
    "platforms": {
     "linux": {
-     "status": "captured",
+     "status": "previous (today's capture failed)",
      "browser": "Microsoft Edge",
      "version": "158.0.4370.33",
      "brand_version": "158.0.4370.33",
@@ -125,7 +125,7 @@
      "version": "158.0.4370.33",
      "brand_version": "158.0.4370.33",
      "chromium_major": 158,
-     "captured_at": "2026-11-24T14:32:33-06:00",
+     "captured_at": "2026-11-25T13:45:58-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.0.4370.33",
@@ -186,8 +186,8 @@
    "version": "158.1.100.59",
    "brand_version": "1.100.59",
    "chromium_major": 158,
-   "captured_at": "2026-11-24T14:28:55-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+   "captured_at": "2026-11-25T13:44:24-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
    "package": {
     "version": "1.100.59",
     "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -246,8 +246,8 @@
      "version": "158.1.100.59",
      "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-24T14:28:55-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+     "captured_at": "2026-11-25T13:44:24-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
      "package": {
       "version": "1.100.59",
       "repo": "https://brave-browser-apt-release.s3.brave.com",
@@ -306,7 +306,7 @@
      "version": "158.1.100.59",
      "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-24T14:34:04-06:00",
+     "captured_at": "2026-11-25T13:47:23-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.1.100.59",
