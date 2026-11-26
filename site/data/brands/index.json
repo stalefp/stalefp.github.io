@@ -2,17 +2,17 @@
  "note": "Captures of other Chromium-based browsers on Linux and Windows (capture/lib/capture_brand.py). The top-level fields of each brand are the Linux capture (unchanged layout); platforms.<os> holds every OS. vs_chrome compares the default profile with the Chrome capture from the same OS (true = identical).",
  "brands": {
   "edge": {
-   "status": "previous (today's capture failed)",
+   "status": "captured",
    "browser": "Microsoft Edge",
-   "version": "158.0.4370.33",
-   "brand_version": "158.0.4370.33",
+   "version": "158.0.4370.45",
+   "brand_version": "158.0.4370.45",
    "chromium_major": 158,
-   "captured_at": "2026-11-24T14:28:26-06:00",
-   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+   "captured_at": "2026-11-26T13:24:47-06:00",
+   "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
    "package": {
-    "version": "158.0.4370.33-1",
+    "version": "158.0.4370.45-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "9bce17d2a83e104bc6751022180c732987379d78a005221d677a81fb659068cb",
+    "sha256": "cff51a8f3f86515ac406aa0fdd59cf74bd35b4e5a497fd40fdd8df92fa34f91c",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
    },
@@ -61,17 +61,17 @@
    "label": "Linux",
    "platforms": {
     "linux": {
-     "status": "previous (today's capture failed)",
+     "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "158.0.4370.33",
-     "brand_version": "158.0.4370.33",
+     "version": "158.0.4370.45",
+     "brand_version": "158.0.4370.45",
      "chromium_major": 158,
-     "captured_at": "2026-11-24T14:28:26-06:00",
-     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+     "captured_at": "2026-11-26T13:24:47-06:00",
+     "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
      "package": {
-      "version": "158.0.4370.33-1",
+      "version": "158.0.4370.45-1",
       "repo": "https://packages.microsoft.com/repos/edge",
-      "sha256": "9bce17d2a83e104bc6751022180c732987379d78a005221d677a81fb659068cb",
+      "sha256": "cff51a8f3f86515ac406aa0fdd59cf74bd35b4e5a497fd40fdd8df92fa34f91c",
       "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
       "kind": "signed apt repo .deb"
      },
@@ -122,15 +122,15 @@
     "windows": {
      "status": "captured",
      "browser": "Microsoft Edge",
-     "version": "158.0.4370.33",
-     "brand_version": "158.0.4370.33",
+     "version": "158.0.4370.45",
+     "brand_version": "158.0.4370.45",
      "chromium_major": 158,
-     "captured_at": "2026-11-25T13:45:58-06:00",
+     "captured_at": "2026-11-26T13:27:34-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
-      "version": "158.0.4370.33",
+      "version": "158.0.4370.45",
       "repo": "edgeupdates.microsoft.com Stable x64 MSI",
-      "sha256": "54eeab6848e54294ca9c5ae62032304bf2f078dbd76eda8efd4c05791335c4ec",
+      "sha256": "8bfccaf626627e37b72e3e57108530b1479fac5710f939e528866cc1095ca172",
       "signing_key": "Microsoft Corporation",
       "kind": "windows installer (SHA256 + Authenticode checked)"
      },
@@ -186,7 +186,7 @@
    "version": "158.1.100.59",
    "brand_version": "1.100.59",
    "chromium_major": 158,
-   "captured_at": "2026-11-25T13:44:24-06:00",
+   "captured_at": "2026-11-26T13:25:18-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
    "package": {
     "version": "1.100.59",
@@ -246,7 +246,7 @@
      "version": "158.1.100.59",
      "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-25T13:44:24-06:00",
+     "captured_at": "2026-11-26T13:25:18-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
      "package": {
       "version": "1.100.59",
@@ -306,7 +306,7 @@
      "version": "158.1.100.59",
      "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-25T13:47:23-06:00",
+     "captured_at": "2026-11-26T13:28:57-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.1.100.59",

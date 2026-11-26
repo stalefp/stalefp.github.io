@@ -2,15 +2,15 @@
   "schema_version": "brand-capture-1",
   "label": null,
   "browser": "Microsoft Edge",
-  "version": "158.0.4370.33",
+  "version": "158.0.4370.45",
   "channel": "stable",
-  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1017-azure)",
+  "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
   "platform": "linux",
-  "captured_at": "2026-11-24T14:28:26-06:00",
+  "captured_at": "2026-11-26T13:24:47-06:00",
   "chrome_path": "/opt/microsoft/msedge/msedge",
-  "chrome_version_string": "Microsoft Edge 158.0.4370.33 unknown",
+  "chrome_version_string": "Microsoft Edge 158.0.4370.45 unknown",
   "capture_server": "local (lib/server.py): TLS/h2 on 127.0.0.1:18543, QUIC/h3 (aioquic) on 127.0.0.1:18544, SNI capture.test",
-  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/45479434645",
+  "ci_run": "https://github.com/stalefp/stalefp.github.io/actions/runs/45882191730",
   "reference_config": "default-headed",
   "finch_network_studies": null,
   "configs": [
@@ -24,44 +24,44 @@
       "ja4_resumed": "t13d1517h2_8daaf6152771_a87ad97598a9",
       "ja4_r": "t13d1516h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
       "ja4_r_resumed": "t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0904,0905,0906,0403,0804,0401,0503,0805,0501,0806,0601",
-      "ja3": "5394646417ed3034bcab88f2d578cca6",
-      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51-16-23-18-27-0-45-65037-10-13-43-35-17613-5-65281-11,4588-29-23-24,0",
+      "ja3": "9da71b9ea72e4a91e1a0d24a3adacc10",
+      "ja3_string": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,23-11-65281-5-18-16-27-45-10-51-35-43-17613-13-65037-0,4588-29-23-24,0",
       "ja3n": "8e19337e7524d2573be54efb2b0784c9",
       "extensions": [
-        "0x0033",
-        "0x0010",
         "0x0017",
-        "0x0012",
-        "0x001b",
-        "0x0000",
-        "0x002d",
-        "0xfe0d",
-        "0x000a",
-        "0x000d",
-        "0x002b",
-        "0x0023",
-        "0x44cd",
-        "0x0005",
+        "0x000b",
         "0xff01",
-        "0x000b"
+        "0x0005",
+        "0x0012",
+        "0x0010",
+        "0x001b",
+        "0x002d",
+        "0x000a",
+        "0x0033",
+        "0x0023",
+        "0x002b",
+        "0x44cd",
+        "0x000d",
+        "0xfe0d",
+        "0x0000"
       ],
       "extensions_resumed": [
+        "0x0005",
+        "0x000d",
+        "0x0023",
+        "0x0017",
+        "0x0010",
         "0x000a",
-        "0x002b",
+        "0x0000",
+        "0x0012",
+        "0x44cd",
         "0x0033",
         "0x000b",
-        "0x0012",
-        "0x0000",
-        "0x002d",
-        "0x0017",
-        "0x0023",
-        "0x44cd",
-        "0x0005",
-        "0x0010",
-        "0x000d",
-        "0xff01",
-        "0x001b",
         "0xfe0d",
+        "0x002d",
+        "0x002b",
+        "0x001b",
+        "0xff01",
         "0x0029"
       ],
       "extensions_sorted": [
@@ -313,7 +313,7 @@
         "local_state_seed_bytes": 748,
         "seed_serial_number": "\"NusoTb7gejBy/c2hGB9h3d0ePe/ZptR2D5XrgN9702c=\"",
         "variations_country": "US",
-        "last_fetch_time": "13440025708220064",
+        "last_fetch_time": "13440194689088952",
         "seed_present": true,
         "seed_mentions_TLSTrustAnchorIDs": null,
         "seed_scan_error": "stored seed is only 958 bytes decompressed at exit; not a full seed, not scanned",
@@ -329,16 +329,16 @@
         "ja4_r": "q13d0311h3_1301,1302,1303_000a,000d,001b,002b,002d,0033,0039,44cd,fe0d_0403,0804,0401,0503,0805,0501,0806,0601,0201",
         "extensions": [
           "0x002d",
-          "0x001b",
-          "0x44cd",
-          "0x0010",
           "0x000a",
           "0x0000",
-          "0xfe0d",
-          "0x0033",
+          "0x44cd",
+          "0x0010",
           "0x0039",
+          "0xfe0d",
+          "0x001b",
           "0x000d",
-          "0x002b"
+          "0x002b",
+          "0x0033"
         ],
         "has_trust_anchors": false,
         "ciphers": [
@@ -383,27 +383,26 @@
         ],
         "transport_params": [
           {
-            "id": "0x8",
-            "name": "initial_max_streams_bidi",
-            "len": 2,
-            "value": 100
-          },
-          {
-            "id": "0x3128",
-            "name": "google_connection_options",
+            "id": "0x20",
+            "name": "max_datagram_frame_size",
             "len": 4,
-            "hex": "4f524947",
-            "ascii": "ORIG"
+            "value": 65536
           },
           {
-            "id": "0xe31cdb3add9a2e9",
+            "id": "0x9",
+            "name": "initial_max_streams_uni",
+            "len": 2,
+            "value": 103
+          },
+          {
+            "id": "0xda02a50504ab927",
             "name": "grease",
-            "len": 3,
-            "value": 6
+            "len": 11,
+            "hex": "0152832d0f8644e55678ae"
           },
           {
-            "id": "0x7",
-            "name": "initial_max_stream_data_uni",
+            "id": "0x5",
+            "name": "initial_max_stream_data_bidi_local",
             "len": 4,
             "value": 6291456
           },
@@ -414,10 +413,10 @@
             "value": 1472
           },
           {
-            "id": "0x1",
-            "name": "max_idle_timeout",
-            "len": 4,
-            "value": 30000
+            "id": "0x8",
+            "name": "initial_max_streams_bidi",
+            "len": 2,
+            "value": 100
           },
           {
             "id": "0xf",
@@ -426,28 +425,10 @@
             "hex": ""
           },
           {
-            "id": "0x4",
-            "name": "initial_max_data",
+            "id": "0x1",
+            "name": "max_idle_timeout",
             "len": 4,
-            "value": 15728640
-          },
-          {
-            "id": "0x5",
-            "name": "initial_max_stream_data_bidi_local",
-            "len": 4,
-            "value": 6291456
-          },
-          {
-            "id": "0x9",
-            "name": "initial_max_streams_uni",
-            "len": 2,
-            "value": 103
-          },
-          {
-            "id": "0x20",
-            "name": "max_datagram_frame_size",
-            "len": 4,
-            "value": 65536
+            "value": 30000
           },
           {
             "id": "0x6",
@@ -456,10 +437,29 @@
             "value": 6291456
           },
           {
+            "id": "0x4",
+            "name": "initial_max_data",
+            "len": 4,
+            "value": 15728640
+          },
+          {
+            "id": "0x3128",
+            "name": "google_connection_options",
+            "len": 4,
+            "hex": "4f524947",
+            "ascii": "ORIG"
+          },
+          {
             "id": "0x11",
             "name": "version_information",
             "len": 12,
-            "hex": "00000001000000011afafa6a"
+            "hex": "000000010a3aba5a00000001"
+          },
+          {
+            "id": "0x7",
+            "name": "initial_max_stream_data_uni",
+            "len": 4,
+            "value": 6291456
           }
         ],
         "h3_settings": {
@@ -584,11 +584,11 @@
   ],
   "brand": "edge",
   "chromium_major": 158,
-  "brand_version": "158.0.4370.33",
+  "brand_version": "158.0.4370.45",
   "package": {
-    "version": "158.0.4370.33-1",
+    "version": "158.0.4370.45-1",
     "repo": "https://packages.microsoft.com/repos/edge",
-    "sha256": "9bce17d2a83e104bc6751022180c732987379d78a005221d677a81fb659068cb",
+    "sha256": "cff51a8f3f86515ac406aa0fdd59cf74bd35b4e5a497fd40fdd8df92fa34f91c",
     "signing_key": "BC528686B50D79E339D3721CEB3E94ADBE1229CF",
     "kind": "signed apt repo .deb"
   }
