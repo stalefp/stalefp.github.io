@@ -7,7 +7,7 @@
    "version": "158.0.4370.45",
    "brand_version": "158.0.4370.45",
    "chromium_major": 158,
-   "captured_at": "2026-11-26T13:24:47-06:00",
+   "captured_at": "2026-11-27T13:18:23-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
    "package": {
     "version": "158.0.4370.45-1",
@@ -66,7 +66,7 @@
      "version": "158.0.4370.45",
      "brand_version": "158.0.4370.45",
      "chromium_major": 158,
-     "captured_at": "2026-11-26T13:24:47-06:00",
+     "captured_at": "2026-11-27T13:18:23-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
      "package": {
       "version": "158.0.4370.45-1",
@@ -125,7 +125,7 @@
      "version": "158.0.4370.45",
      "brand_version": "158.0.4370.45",
      "chromium_major": 158,
-     "captured_at": "2026-11-26T13:27:34-06:00",
+     "captured_at": "2026-11-27T13:21:45-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.0.4370.45",
@@ -186,7 +186,7 @@
    "version": "158.1.100.59",
    "brand_version": "1.100.59",
    "chromium_major": 158,
-   "captured_at": "2026-11-26T13:25:18-06:00",
+   "captured_at": "2026-11-27T13:18:51-06:00",
    "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
    "package": {
     "version": "1.100.59",
@@ -246,7 +246,7 @@
      "version": "158.1.100.59",
      "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-26T13:25:18-06:00",
+     "captured_at": "2026-11-27T13:18:51-06:00",
      "os": "Linux x86_64 (Ubuntu 24.04.5 LTS, kernel 7.0.0-1020-azure)",
      "package": {
       "version": "1.100.59",
@@ -306,7 +306,7 @@
      "version": "158.1.100.59",
      "brand_version": "1.100.59",
      "chromium_major": 158,
-     "captured_at": "2026-11-26T13:28:57-06:00",
+     "captured_at": "2026-11-27T13:23:09-06:00",
      "os": "Windows 2025Server (AMD64, build 10.0.26100)",
      "package": {
       "version": "158.1.100.59",
